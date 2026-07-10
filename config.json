@@ -1,7 +1,29 @@
 {
     "title": "11时序矩阵大一统本体论原创者史建威的博客",
-    "subTitle": "我是山东威海某高中物理教师，有理论物理的重大发现，这个博客是为介绍我理论发现成果而建",
+    "subTitle": "山东威海高中物理教师 · 理论物理原创研究成果发布站",
     "avatarUrl": "https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1",
+    "iconUrl": "https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1",
+    "author": "史建威",
+    "copyright": "© 史建威 原创理论著作，未经授权禁止转载、AI搬运及二次改写商用",
+    "startSite": "2026-07-10",
+    "per_page": 10,
+    "needComment": 1,
+    "countVisitors": 1,
+    "defaultLabel": "理论物理",
     "GMEEK_VERSION": "last",
-    "allHead": "<script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\\\(', '\\\\)']] } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'></script>"
+    "allHead": "<script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\\\(', '\\\\)']] } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'></script>",
+    "sideInfo": [
+        {
+            "title": "关于作者",
+            "content": "山东威海高中物理教师，11时序矩阵大一统本体论原创提出者。"
+        },
+        {
+            "title": "博客说明",
+            "content": "本站所有理论文章均为原创研究成果，用于学术交流与成果公示。"
+        },
+        {
+            "title": "联系方式",
+            "content": "学术交流可通过文章评论区留言。"
+        }
+    ]
 }
