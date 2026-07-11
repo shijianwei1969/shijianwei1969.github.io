@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var a=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',a)}else{a()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 016 M₃ 时序饱和度矩阵：粒子静质量生成的定量机制
+
+作者：山东威海 史建威
+
+
+## 马宝先唠两句
+
+上一篇我们讲完了映射层的M₉，把量子效应的投影根源讲清楚了。">
+<meta property="og:title" content="016 M₃ 时序饱和度矩阵：粒子静质量生成的定量机制">
+<meta property="og:description" content="# 016 M₃ 时序饱和度矩阵：粒子静质量生成的定量机制
+
+作者：山东威海 史建威
+
+
+## 马宝先唠两句
+
+上一篇我们讲完了映射层的M₉，把量子效应的投影根源讲清楚了。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/016%20M%E2%82%83%20-shi-xu-bao-he-du-ju-zhen-%EF%BC%9A-li-zi-jing-zhi-liang-sheng-cheng-de-ding-liang-ji-zhi.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>016 M₃ 时序饱和度矩阵：粒子静质量生成的定量机制</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">016 M₃ 时序饱和度矩阵：粒子静质量生成的定量机制</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/24" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>016 M₃ 时序饱和度矩阵：粒子静质量生成的定量机制</h1>
+<p>作者：山东威海 史建威</p>
+<h2>马宝先唠两句</h2>
+<p>上一篇我们讲完了映射层的M₉，把量子效应的投影根源讲清楚了。</p>
+<p>从这一篇开始，我们进入微观粒子层的矩阵。先讲最核心的问题：质量是怎么来的。</p>
+<p>主流物理里，质量靠希格斯场解释——粒子跟希格斯场耦合，像穿了一件大衣，大衣的重量就是质量。但这个解释需要引入希格斯玻色子、好几个耦合参数，而且中微子质量至今还是个谜。</p>
+<p>我们的解释要简洁得多：<strong>粒子的静质量，就是三维时序饱和度的投影读数</strong>。粒子在根域里是一个闭合拓扑回路，这个回路在三个时间维度上占了多少名额、填得有多满，投影到表象世界，就是它的质量。</p>
+<p>下面马宝给你细说。</p>
+<h2>一、M₃的核心定位：质量生成的拓扑描述</h2>
+<p>M₃矩阵的全称是<strong>时序饱和度矩阵</strong>，用来描述一个粒子的闭合拓扑回路，在根域三维时序维度上的填充程度。简单说：粒子占了多少时序名额位点，填充得越满，质量就越大。</p>
+<h3>核心结论</h3>
+<p>粒子的静质量不是什么“内禀属性”，也不是靠希格斯场“粘”上去的，它是粒子拓扑结构的时序填充度，通过M₁投影到表象后的读数。填充度越高，质量越大；完全没有时序填充的粒子，静质量就是零，比如光子。</p>
+<p><strong>马宝说：</strong> 这个解释很直观。你可以想象根域里有一排排的名额位点，就像停车位。粒子是一个“车队”，占的车位越多，就越“重”。光子是个“自行车”，不占车位，所以没质量。希格斯机制是给自行车加了个沉重的锁，让它变重——但我们觉得，自行车本来就该轻，没必要加锁。</p>
+<p>我们可以用水杯做类比：</p>
+<ul>
+<li>粒子的闭合拓扑回路就是杯子的容积，决定了最多能装多少水；</li>
+<li>时序饱和度就是杯子里装了多少水，装得越满越“沉”，对应质量越大；</li>
+<li>空杯子就是光子，没有装水，所以静质量为零，速度永远是光速。</li>
+</ul>
+<h2>二、时序饱和度的物理本质</h2>
+<p>根域里的粒子不是点状实体，是三维时序上的闭合拓扑回路，回路会占据一定数量的名额位点，这些位点被能量填充的比例，就是<strong>时序饱和度</strong>。</p>
+<h3>三个时序维度的独立饱和度</h3>
+<p>三维时序T₀、T₁、T₂各有独立的饱和度：</p>
+<ul>
+<li>
+$\kappa_0$：T₀本征时序饱和度，对应粒子的真空相位填充度；</li>
+<li>
+$\kappa_1$：T₁因果时序饱和度，对应粒子的静质量主体分量，占比最高；</li>
+<li>
+$\kappa_2$：T₂同步时序饱和度，对应粒子的非定域关联分量，占比很低。</li>
+</ul>
+<p>三个维度的饱和度不是独立无关的，由粒子的拓扑缠绕结构共同决定，不同种类的粒子有不同的饱和度配比。</p>
+<p><strong>马宝说：</strong> 这里要注意，三个饱和度不是随便取的，它们由粒子的拓扑结构唯一确定。电子有电子的配比，夸克有夸克的配比，中微子有中微子的配比。就像不同的车型，轮胎大小、轴距、排量都不一样，但都是车。</p>
+<h3>饱和上限约束</h3>
+<p>受名额排他公理限制，每个时序维度的饱和度最大为1（完全填满），不可能超过100%。因此粒子的静质量天然存在上限，不可能出现无限大质量的粒子——这也是消解奇点的核心约束之一。</p>
+<p><strong>马宝说：</strong> 质量有上限，这是名额排他公理的直接推论。你不可能把一辆卡车塞进一个自行车位里。同样，粒子的拓扑回路不能无限填充名额，到了上限就满了。所以黑洞不会有无限大的密度——因为粒子质量有上限。</p>
+<h2>三、M₃矩阵的结构与质量公式</h2>
+<h3>矩阵形式</h3>
+<p>M₃是3×3的对角占优矩阵，对角元对应三个时序维度的独立饱和度，非对角元对应不同时序之间的耦合激发项：</p>
+<p>$$
+
+\mathbf{M}_3 =
+
+\begin{pmatrix}
+
+\kappa_0 &amp;amp; \epsilon_{01} &amp;amp; \epsilon_{02} \\
+
+\epsilon_{10} &amp;amp; \kappa_1 &amp;amp; \epsilon_{12} \\
+
+\epsilon_{20} &amp;amp; \epsilon_{21} &amp;amp; \kappa_2
+
+\end{pmatrix}
+
+$$</p>
+<p>基态粒子的非对角耦合项为零，矩阵是对角化的；当粒子处于激发态时，非对角元不为零，对应能级跃迁和相互作用过程。</p>
+<p><strong>马宝说：</strong> 这个矩阵看着简单，但信息量很大。对角元是“基态质量”，非对角元是“激发态耦合”。当粒子吸收能量跃迁时，非对角元就出现了，质量也跟着变化——这就是激发态比基态重的来源。</p>
+<h3>静质量定量公式</h3>
+<p>粒子的总静质量，是三个时序饱和度按投影权重加权求和的结果，权重和M₁投影矩阵的时序折叠权重完全一致：</p>
+<p>$$ m = m_0 \cdot (\alpha_0 \kappa_0 + \alpha_1 \kappa_1 + \alpha_2 \kappa_2) $$</p>
+<p>其中 $m_0$ 是单名额的基准质量，由唯一自由参数 $l_{\mathrm{r},0}$ 唯一确定；<br>
+$$\alpha_0,\alpha_1,\alpha_2$$<br>
+就是时序折叠的三个权重系数，和M₁矩阵的时序行向量完全统一。</p>
+<p>因为 $\alpha_1$ 占绝对主导，所以我们日常说的静质量，绝大部分来自T₁因果时序的饱和度，这也是质量和时间演化强相关的根源。</p>
+<p><strong>马宝说：</strong> 这里有一个重要的理论细节需要注意：M₁矩阵的时序折叠权重是针对宏观统计投影的，而微观粒子的质量投影应该通过M₉矩阵进行。严格来说，微观粒子的质量读数应该使用M₉的投影规则，而不是直接套用M₁的权重。不过，在单粒子静质量的基态计算中，M₁的权重与M₉的权重在形式上是一致的，因为两者都源自同一个双时空映射规则。所以这个公式在定性上是正确的，但在后续的精确计算中需要明确使用M₉的投影核。这里先不深究，记住“质量是时序饱和度的加权和”这个核心思想就行。</p>
+<h2>四、核心物理推论</h2>
+<h3>1. 光子零质量的天然解释</h3>
+<p>光子的拓扑结构是横向开放的波动，不填充T₁因果时序的名额，<br>
+$\kappa_1=0$，因此静质量严格为零，只能以光速运动。</p>
+<p>这不是人为设定的，是拓扑结构决定的必然结果：不占据因果时序名额的粒子，就没有静质量，速度必然等于投影速度上限c。</p>
+<p><strong>马宝说：</strong> 光子为什么没质量？因为它的拓扑结构是“开放”的，不像电子那样是“闭合”的回路。开放的拓扑不占名额，所以没质量。就像一根敞开的管子，水能流过去但不存水——光子就是那个水流，不停留，所以没重量。</p>
+<h3>2. 质量量子化的来源</h3>
+<p>时序饱和度是离散的，因为名额位点是离散的，所以粒子的质量天然是量子化的，只能取特定的离散值——这就是不同粒子有固定质量的根源，不需要额外假设质量本征态。</p>
+<p><strong>马宝说：</strong> 名额位点就像台阶，你只能站在台阶上，不能站在两级台阶之间。所以粒子的质量也只能取特定的值，不能是任意值。这就是为什么电子永远是0.511 MeV，不能是0.512 MeV——因为台阶的高度是固定的。</p>
+<h3>3. 动质量与相对论质量</h3>
+<p>当粒子运动时，时序耦合项增大，等效总饱和度升高，因此动质量增加，刚好对应狭义相对论的质速关系。这不是“质量真的变大了”，是运动改变了时序投影的权重，导致质量读数变大，本质还是投影效应。</p>
+<p><strong>马宝说：</strong> 这里要特别注意区分静质量和动质量。粒子的根域本征饱和度（静质量）是不随运动改变的，它是洛伦兹不变量。但当我们测量运动粒子的质量时，投影权重会因速度而变化，导致测得的动质量变大。这就像你称一个移动的物体，秤的读数会因为震动而偏高——不是物体变重了，是测量方式变了。所以质速关系是投影效应，不是粒子本身的质量增加了。</p>
+<h3>4. 质能方程的本源</h3>
+<p>质量是能量的时序锁定形态，质量和能量本质上是同一个东西的不同表现，因此天然满足 $E=mc^2$，不需要额外推导——质量就是锁定的能量，能量就是解锁的质量。</p>
+<p><strong>马宝说：</strong> $E=mc^2$ 不是爱因斯坦“发明”的，它是能量和质量同一性的必然结果。质量是“冻住”的能量，能量是“融化”的质量。就像冰和水——冰是固态的水，水是液态的冰，两者本质相同，只是状态不同。所以核反应释放的能量，其实就是质量解锁了。</p>
+<h2>五、和希格斯机制的本质区别</h2>
+<p>很多人会问：这个机制和希格斯机制有什么不一样？二者是完全不同层级的解释：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">对比维度</th>
+<th align="left">希格斯机制</th>
+<th align="left">M₃时序饱和度机制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">核心逻辑</td>
+<td align="left">粒子通过和希格斯场耦合获得质量</td>
+<td align="left">质量是粒子拓扑结构的时序填充度投影</td>
+</tr>
+<tr>
+<td align="left">额外实体</td>
+<td align="left">需要引入希格斯场、希格斯玻色子</td>
+<td align="left">不需要额外场，基于已有双时空+名额公理</td>
+</tr>
+<tr>
+<td align="left">自由参数</td>
+<td align="left">多个耦合常数、真空期望值，靠实验拟合</td>
+<td align="left">所有参数锚定到唯一基础长度 $l_{\mathrm{r},0}$
+</td>
+</tr>
+<tr>
+<td align="left">解释范围</td>
+<td align="left">只能解释部分粒子质量，中微子质量仍存疑</td>
+<td align="left">统一解释所有粒子质量、零质量粒子、质速关系</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>简单说：希格斯机制是“给粒子额外粘一个质量”，而我们的机制是“质量本来就是粒子结构的一部分，是投影出来的读数”，不需要额外的场和粒子。</p>
+<p><strong>马宝说：</strong> 希格斯机制就像给每个人发一件铅背心，穿上就有重量。我们的机制是：每个人的体重本来就由骨骼肌肉决定，不需要铅背心。哪个更自然？当然是后者。而且希格斯机制解释不了中微子质量——中微子太轻了，铅背心得做得像纸一样薄，还得专门调参数。我们的机制里，中微子就是时序饱和度很低而已，自然就轻。</p>
+<h2>六、在矩阵体系中的位置</h2>
+<p>M₃是微观粒子层的第一个核心矩阵，它和其他矩阵的联动非常紧密：</p>
+<ul>
+<li>和M₁投影矩阵结合：算出表象中的静质量读数；</li>
+<li>和M₉量子映射矩阵结合：得到粒子的波函数质量分布；</li>
+<li>和M₈引力极化张量结合：质量决定极化引力的强度，对应引力质量=惯性质量的等效原理。</li>
+</ul>
+<p>质量是粒子最核心的属性，M₃矩阵就是这个核心属性的定量描述，是整个粒子物理板块的基石。</p>
+<p><strong>马宝说：</strong> 质量是连接微观和宏观的桥梁。微观上，M₃决定粒子的质量；宏观上，M₈用质量算引力。两者通过M₁/M₉投影联系起来，整个体系就贯通了。</p>
+<h2>结语</h2>
+<p>M₃时序饱和度矩阵，给了静质量一个非常简洁的第一性解释。</p>
+<p>不需要希格斯场，不需要额外参数，只需要“粒子是时序拓扑回路 + 名额填充度投影”，就能自然导出质量的所有特征：零质量光子、质量量子化、质速关系、质能等效。所有的质量差异，本质都是拓扑结构的时序填充度不同。</p>
+<p><strong>马宝说：</strong> 质量不再是神秘的内禀属性，而是可计算、可理解的拓扑读数。这比“上帝粒子”的解释要清爽得多。</p>
+<p>下一篇我们讲粒子的另一个核心内禀属性——自旋，对应M₄自旋拓扑映射矩阵，看看半整数自旋、泡利不相容原理，是怎么从拓扑缠绕的手性里自然推导出来的。</p>
+<hr>
+<p>物理意义解读：马宝</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
