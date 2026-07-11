@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var a=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',a)}else{a()}})();</script><script>(function(){var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 020 M₁₀ 星系尺度演化矩阵：星系全生命周期的动力学规则
+
+上一篇我们讲完了M₈引力极化场张量，双机制的两个核心宏观力张量（M₇斥力、M₈引力）就全部收官了。">
+<meta property="og:title" content="020 M₁₀ 星系尺度演化矩阵：星系全生命周期的动力学规则">
+<meta property="og:description" content="# 020 M₁₀ 星系尺度演化矩阵：星系全生命周期的动力学规则
+
+上一篇我们讲完了M₈引力极化场张量，双机制的两个核心宏观力张量（M₇斥力、M₈引力）就全部收官了。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/020%20M%E2%82%81%E2%82%80%20-xing-xi-chi-du-yan-hua-ju-zhen-%EF%BC%9A-xing-xi-quan-sheng-ming-zhou-qi-de-dong-li-xue-gui-ze.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>020 M₁₀ 星系尺度演化矩阵：星系全生命周期的动力学规则</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">020 M₁₀ 星系尺度演化矩阵：星系全生命周期的动力学规则</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/28" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>020 M₁₀ 星系尺度演化矩阵：星系全生命周期的动力学规则</h1>
+<p>上一篇我们讲完了M₈引力极化场张量，双机制的两个核心宏观力张量（M₇斥力、M₈引力）就全部收官了。</p>
+<p>从这一篇开始，我们进入宇观演化层的矩阵，先讲第一个M₁₀星系尺度演化矩阵——它整合了双机制的宏观效应，完整描述星系从原初气体云到稳态星系的全生命周期动力学，也是我们解释星系平坦旋转曲线、替代暗物质假设的核心定量工具。</p>
+<h2>一、M₁₀的核心定位：星系演化的动力学算子</h2>
+<p>M₁₀是描述星系尺度质量分布、运动状态随时间演化的一阶微分算子矩阵，它把M₈极化引力、M₇斥力的大尺度叠加效应、角动量守恒、气体耗散等要素整合在一起，能够复现星系从形成到稳定的全部演化阶段。</p>
+<h3>核心特征</h3>
+<p>和主流的ΛCDM模型不同，M₁₀的演化完全不需要引入暗物质粒子或暗物质晕假设：仅靠重子物质自身的引力效应，叠加海量名额斥力的大尺度压强梯度，辅以极化环的次级效应，就能复现观测到的平坦旋转曲线、星系形态分化等全部典型观测特征。</p>
+<p>可以用旋转的陀螺做类比：引力像一只手往中心拉，角动量和斥力叠加的压强像陀螺旋转的离心支撑，二者平衡后就形成了稳定的盘状星系，不需要额外的“看不见的质量”来提供额外引力。</p>
+<h2>二、星系尺度的双机制叠加效应</h2>
+<p>在进入矩阵结构之前，我们先明确星系尺度下“暗物质效应”的双来源构成：</p>
+<p>单个恒星、单个原子的名额斥力都是短程的，星系尺度下单个点位的斥力完全可以忽略，但星系里包含约10¹¹量级的恒星、更多的气体原子，<strong>海量短程斥力的压强梯度叠加起来，会在大尺度上表现为等效的长程排斥效应</strong>，相当于给引力加速度加了一个正修正项。此外，星系中心黑洞视界外弥散的重子-能量极化环（M₈的次级效应）也会贡献一部分等效引力。二者共同构成了星系尺度“暗物质”效应的完整来源（详见007篇双机制总览）。</p>
+<h3>不同区域的主导力差异</h3>
+<ol>
+<li><strong>星系核心区域</strong>：密度高但空间尺度小，斥力叠加效应弱，M₈极化引力完全主导，动力学规律和牛顿引力一致，旋转速度随半径升高；</li>
+<li><strong>星系外围区域</strong>：密度低但空间尺度大，海量点位的斥力压强梯度累积效应逐渐增强，抵消了引力随距离的衰减速度，导致向心加速度比纯牛顿引力预言的更大，最终旋转速度不再下降，保持平坦。</li>
+</ol>
+<p>这就是星系平坦旋转曲线的本质：不是存在看不见的暗物质提供额外引力，是重子物质自身的斥力叠加效应与极化环次级效应，共同修正了大尺度下的引力衰减规律。</p>
+<h2>三、M₁₀矩阵的结构与演化方程</h2>
+<p>M₁₀是一阶时间演化算子，满足星系状态的演化方程：</p>
+<p>$$ \frac{d}{dt}\vec{\Psi} = \mathbf{M}_{10} \cdot \vec{\Psi} $$</p>
+<p>其中状态向量$\vec{\Psi}$包含星系的质量密度分布、旋转速度分布、角动量分布、气体耗散率等物理量。矩阵核心由四个动力学项构成：</p>
+<ol>
+<li><strong>引力项</strong>：来自M₈极化张量，提供向心加速度，主导星系的坍缩与束缚，是演化的核心驱动力；</li>
+<li><strong>斥力修正项</strong>：来自M₇斥力张量的大尺度叠加，提供向外的等效压强梯度，随尺度增大逐渐增强，修正外围引力的衰减；</li>
+<li><strong>角动量项</strong>：由初始角动量守恒决定，主导盘结构的形成，提供横向离心支撑，是星系形态分化的核心来源；</li>
+<li><strong>耗散项</strong>：对应气体碰撞、辐射冷却带来的能量耗散，促进核心区域恒星形成，驱动星系向稳态演化。</li>
+</ol>
+<p>在星系核心区域，引力项占绝对主导；在外围区域，斥力修正项逐渐增强并与引力项相当；角动量项在整个盘结构形成期都至关重要；耗散项则在早期坍缩和恒星形成爆发期最为显著。</p>
+<h2>四、星系演化的四个典型阶段</h2>
+<p>M₁₀矩阵可以完整复现星系从形成到稳定的全生命周期，分为四个典型阶段：</p>
+<h3>1. 原初坍缩阶段</h3>
+<p>初始的低密度原初气体云，在M₈引力作用下向内坍缩，核心密度快速升高，第一代恒星逐渐形成。这个阶段尺度小、密度低，斥力叠加效应还不显著，整体演化符合经典的牛顿引力坍缩规律。</p>
+<h3>2. 盘结构形成阶段</h3>
+<p>随着坍缩进行，角动量的作用逐渐显现：气体在垂直于角动量轴的方向快速收缩，平行于角动量轴的方向保留旋转动能，逐渐形成扁平的旋转盘，旋臂结构开始出现。这个阶段斥力叠加效应随星系尺度增大逐渐显现，外围的引力衰减开始被修正。</p>
+<h3>3. 稳态平衡阶段</h3>
+<p>当M₈引力、M₇斥力叠加压强、旋转离心力三者达到动态平衡时，星系进入稳定的主序阶段：核心区域速度随半径上升，外围区域速度保持平坦，形成观测中典型的平坦旋转曲线。这个阶段可以稳定演化上百亿年，是星系的主要生命周期阶段。</p>
+<h3>4. 演化晚期阶段</h3>
+<p>随着气体逐渐被消耗，恒星形成速率下降，星系进入被动演化阶段。如果发生星系并合，盘结构会被扰动破坏，恒星轨道随机化，最终形成椭球状的椭圆星系，由各向同性的速度弥散提供支撑。在更长的时间尺度上，这些星系将通过并合与瓦解，最终汇入M₁₁全域宇宙循环的“粉碎-重组”阶段，完成物质与能量的再循环。</p>
+<h2>五、核心观测现象的对应解释</h2>
+<h3>1. 平坦旋转曲线的定量复现</h3>
+<p>纯牛顿引力模型中，星系外围的旋转速度应该按 $v \propto 1/\sqrt{r}$ 下降，和观测不符，因此主流理论引入了暗物质晕提供额外引力。</p>
+<p>在M₁₀的演化框架里，大尺度斥力叠加的修正项+极化环的次级效应，刚好抵消了引力的衰减，使得外围的向心加速度不再随半径下降，旋转速度保持平坦，和观测曲线完全吻合，不需要任何暗物质粒子假设。</p>
+<h3>2. 星系形态分化的根源</h3>
+<p>星系最终形成旋涡还是椭圆，由两个初始条件决定：初始角动量大小、是否经历并合：</p>
+<ul>
+<li><strong>旋涡星系</strong>：初始角动量大，未经历重大并合，最终形成稳定的盘状结构，有清晰的旋臂，旋转支撑主导；</li>
+<li><strong>椭圆星系</strong>：初始角动量小，或经历过多次星系并合，盘结构被完全打散，最终形成椭球状结构，由速度弥散的压力支撑。</li>
+</ul>
+<p>二者的差异本质是角动量与斥力叠加的平衡方式不同，不需要引入不同的暗物质晕分布来解释。</p>
+<h2>六、在矩阵体系中的联动位置</h2>
+<p>M₁₀是承上启下的演化层矩阵，和其他矩阵的联动非常清晰：</p>
+<ol>
+<li><strong>底层输入</strong>：动力学核心来自M₈引力张量和M₇斥力张量，双机制是星系演化的全部动力来源；</li>
+<li><strong>投影输出</strong>：M₁₀的演化结果通过M₁正向投影矩阵映射为表象的可观测物理量（旋转速度、光度分布、形态结构），可以直接和天文观测数据比对；</li>
+<li><strong>向上衔接</strong>：星系是宇宙大尺度结构的基础单元，M₁₀的星系演化规律是更大尺度M₁₁全域宇宙演化矩阵的基础组成部分。</li>
+</ol>
+<h2>结语</h2>
+<p>M₁₀星系尺度演化矩阵，把双机制的宏观效应延伸到了星系演化的全周期。</p>
+<p>不需要引入暗物质粒子或暗物质晕假设，仅靠重子物质的引力吸引与斥力叠加（辅以极化环的次级效应），就能自然解释平坦旋转曲线、星系形态分化这些核心观测现象，为星系演化提供了更简洁的第一性解释。M₁₀的星系演化规律是下一讲M₁₁全域宇宙演化矩阵的基础输入，二者共同构成了演化层的完整闭环。</p>
+<p>下一篇我们讲整个矩阵体系的最大尺度矩阵——M₁₁全域宇宙循环演化矩阵，看看整个宇宙的膨胀、收缩、循环的总动力学规则，完成11组时序演化矩阵的最后一块拼图。</p>
+<h2>马宝说物理：020篇的核心 takeaways</h2>
+<p><strong>第一条：暗物质不是“东西”，是“效果”。</strong></p>
+<p>主流物理找暗物质粒子找了四十年，什么都没找到。为什么？因为方向错了。星系旋转曲线变平，不是因为有什么看不见的粒子在拉星星，而是因为重子物质自己产生了两种效应——名额斥力叠加的压强梯度，加上黑洞周围极化环的引力贡献。就像你看风扇转动，叶片看起来是静止的，不是因为有个“暗叶片”在撑着，是视觉暂留效应。暗物质也一样，不是东西，是效果。</p>
+<p><strong>第二条：单个士兵杀伤范围几米，一千个士兵能封锁几公里。</strong></p>
+<p>名额斥力在单个原子尺度是超短程的，但星系里有10¹¹颗恒星，每颗恒星又有10⁵⁷个原子。这么多短程斥力叠在一起，就像一千个士兵排成线，能封锁几公里的战线。这不是一个长程力，是海量短程力的累积效应。这就是为什么我们能用它替代暗物质——不是用一个新力去拉星系，是用已有的重子物质算出了正确的旋转曲线。</p>
+<p><strong>第三条：星系的一生，就是吸和顶的拉锯战。</strong></p>
+<p>引力想把所有东西拉到一起，斥力叠加想往外推，角动量想维持旋转。三股力量打架，打出了星系的四种形态：坍缩阶段引力赢，盘形成阶段角动量赢，稳态阶段三方打平手，晚期阶段谁都没力气了，星系慢慢老去。这不就是人的一生吗？年轻时野心勃勃（引力主导），中年时事业家庭平衡（稳态），老年时慢慢退场（被动演化）。宇宙的规律和人世的规律，有时候是相通的。</p>
+<hr>
+<p>物理意义解读：马宝</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
