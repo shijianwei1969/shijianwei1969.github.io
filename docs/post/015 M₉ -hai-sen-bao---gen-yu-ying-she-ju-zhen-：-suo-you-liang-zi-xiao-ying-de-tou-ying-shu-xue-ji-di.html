@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var a=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',a)}else{a()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 015 M₉ 海森堡-根域映射矩阵：所有量子效应的投影数学基底
+
+作者：山东威海 史建威
+
+
+## 马宝先唠两句
+
+上一篇我们完成了M₁/M₂四维投影矩阵对的收官，搞清楚了宏观尺度下双时空映射的完整数学形式。">
+<meta property="og:title" content="015 M₉ 海森堡-根域映射矩阵：所有量子效应的投影数学基底">
+<meta property="og:description" content="# 015 M₉ 海森堡-根域映射矩阵：所有量子效应的投影数学基底
+
+作者：山东威海 史建威
+
+
+## 马宝先唠两句
+
+上一篇我们完成了M₁/M₂四维投影矩阵对的收官，搞清楚了宏观尺度下双时空映射的完整数学形式。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/015%20M%E2%82%89%20-hai-sen-bao---gen-yu-ying-she-ju-zhen-%EF%BC%9A-suo-you-liang-zi-xiao-ying-de-tou-ying-shu-xue-ji-di.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>015 M₉ 海森堡-根域映射矩阵：所有量子效应的投影数学基底</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">015 M₉ 海森堡-根域映射矩阵：所有量子效应的投影数学基底</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/23" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>015 M₉ 海森堡-根域映射矩阵：所有量子效应的投影数学基底</h1>
+<p>作者：山东威海 史建威</p>
+<h2>马宝先唠两句</h2>
+<p>上一篇我们完成了M₁/M₂四维投影矩阵对的收官，搞清楚了宏观尺度下双时空映射的完整数学形式。</p>
+<p>今天讲映射层的第三组矩阵——<strong>M₉ 海森堡-根域映射矩阵</strong>。</p>
+<p>如果说M₁是宏观统计平均的“经典投影仪”，那M₉就是微观尺度的“量子投影仪”。M₁拍的是远景，画面清晰、整体完整，适合看大场面；M₉拍的是微距特写，能看到单个像素的边缘弥散，但也正因为放得太大了，反而看不清全貌。</p>
+<p>M₉专门描述单粒子级别的精确投影规则，是波粒二象性、不确定性原理、波函数坍缩这些量子效应的底层数学基底。说白了，量子力学里那些让你头疼的“反常识”现象，根子都在M₉这里。</p>
+<h2>一、M₉的核心定位：微观尺度的精确投影算子</h2>
+<p>M₁和M₉都是根域→表象的投影矩阵，二者的区别是尺度和精度：</p>
+<ul>
+<li><strong>M₁矩阵</strong>：宏观大尺度的统计平均投影，描述大量粒子集体效应的宏观规律，对应经典物理、广义相对论的适用范围；</li>
+<li><strong>M₉矩阵</strong>：微观单粒子尺度的精确投影，描述单个名额激发态的投影分布，对应量子力学的适用范围。</li>
+</ul>
+<p><strong>马宝说：</strong> M₁和M₉的关系，就像你用肉眼看沙滩和用放大镜看沙滩。肉眼看，沙滩是一片平滑的黄褐色平面，你可以在上面跑步、写字、堆城堡——这是经典物理。放大镜看，每一粒沙子都是不规则的石英颗粒，有棱有角，大小不一——这是量子物理。沙滩还是那片沙滩，只是你看的尺度不同。</p>
+<h3>核心作用</h3>
+<p>M₉矩阵的核心功能，是把根域中单个粒子的名额密度分布，映射为表象空间里的三维波函数</p>
+<p>$$
+\psi(\vec{r})
+$$</p>
+<p>量子力学里我们一直说“波函数是粒子的概率幅”，但波函数的物理本质是什么，始终没有答案。在我们的体系里，波函数不是抽象的概率波，是<strong>根域名额密度分布在表象空间的投影弥散</strong>——波函数的模平方 $|\psi|^2$，直接对应观测到粒子的名额密度投影值。</p>
+<p><strong>马宝说：</strong> 这句话是整个M₉矩阵的核心。波函数不是“概率幅”这种玄乎的东西，它是一个实实在在的物理量——根域名额密度投影到表象空间后的弥散分布。就像你把一滴墨水滴到宣纸上，墨水会洇开成一个弥散的圆斑。波函数就是那个“墨迹”，墨迹浓的地方（   $|\psi|^2$  大），找到粒子的概率就大；墨迹淡的地方，概率就小。</p>
+<p>打个比方：M₁投影是你站在远处看电影幕布，看到的是清晰完整的画面（经典世界）；M₉投影是你把脸贴到幕布上看，能看到每个像素的弥散边缘，边缘的模糊程度就是投影的固有分辨率极限，也就是量子不确定性的来源。</p>
+<h2>二、矩阵结构与投影规则</h2>
+<h3>输入与输出</h3>
+<ul>
+<li>输入：根域中单个粒子的径向名额密度分布 $\rho(\sigma)$，是一维径向的离散分布，最小单元是 $l_{\mathrm{r},0}$；</li>
+<li>输出：表象三维空间中的波函数 $\psi(x,y,z)$，是连续弥散的三维分布。</li>
+</ul>
+<h3>投影核形式</h3>
+<p>M₉是一个积分变换矩阵，核心是带截止频率的投影核，本质是根域离散名额经过双时空投影后的弥散响应函数：</p>
+<p>$$ \psi(\vec{r}) = \int M_9(r, \sigma) \rho(\sigma) d\sigma $$</p>
+<p>投影核的最小分辨尺度由 $l_{\mathrm{r},0}$ 唯一确定，这是整个投影系统的固有分辨率下限，无法突破。</p>
+<p><strong>马宝说：</strong> 这个积分的意思很简单：根域里每个离散的名额位点，投影到表象后都会变成一个弥散的“小波包”。所有小波包叠加起来，就形成了波函数。就像你把一堆小石子扔进水里，每个石子都会激起一圈涟漪，所有涟漪叠加起来，就是水面上的波纹图案。</p>
+<h3>核心特征</h3>
+<ol>
+<li><strong>固有分辨率极限</strong>：投影存在最小可分辨尺度，根域的离散名额投影到表象后，会弥散成一个最小波包，不可能得到无限小的点粒子；</li>
+<li><strong>傅里叶对偶关系</strong>：位置空间和动量空间的投影互为傅里叶变换，这是波粒二象性的数学根源；</li>
+<li><strong>线性叠加性</strong>：多个名额态的投影等于各自投影的线性叠加，对应量子力学的叠加态原理。</li>
+</ol>
+<p><strong>马宝说：</strong> 线性叠加性很重要。它意味着两个粒子的波函数可以直接相加，形成干涉图案。这不是什么神秘的现象，就是涟漪的叠加——两个石子扔进水里，涟漪相遇的地方会加强或抵消，形成干涉条纹。杨氏双缝实验的干涉条纹，本质就是这个原理。</p>
+<h2>三、海森堡不确定性原理的自然导出</h2>
+<p>M₉矩阵最直接的结论，就是海森堡不确定性原理，它不是量子的“内禀属性”，是投影系统的固有分辨率极限。</p>
+<h3>推导逻辑</h3>
+<ol>
+<li>位置分辨率极限：投影的最小空间弥散尺度 $\Delta x$ 由 $l_{\mathrm{r},0}$ 的投影大小决定，不可能无限小；</li>
+<li>动量分辨率极限：动量对应根域时序的相位变化率，相位分辨率也有下限，因此动量 $\Delta p$ 也不可能无限精确；</li>
+<li>傅里叶变换的固有约束：位置和动量互为傅里叶对偶，一个越精确另一个就越弥散，二者乘积存在下限：</li>
+</ol>
+<p>$$ \Delta x \cdot \Delta p \geq \frac{\hbar}{2} $$</p>
+<p><strong>马宝说：</strong> 这不是粒子“测不准”，是投影系统本身“分辨不了”。就像你用像素有限的相机拍一个小点，点越小越模糊，你永远不可能同时得到精确的位置和精确的形状——不是点本身不确定，是相机的分辨率有极限。</p>
+<p>一个更直观的例子：你想同时知道一首歌的“音高”和“节奏”。音高越精确，你需要听的时长就越长，节奏信息就丢了；节奏越精确，你听的时长就越短，音高信息就丢了。这不是歌的问题，是时间和频率本身就是傅里叶对偶的。位置和动量也是一样的道理。</p>
+<h2>四、核心量子效应的对应解释</h2>
+<p>M₉矩阵可以统一解释几乎所有基础量子效应，不需要额外假设：</p>
+<h3>1. 波粒二象性</h3>
+<ul>
+<li>粒子性：根域里的粒子是离散的名额激发态，是局域的、粒子性的；</li>
+<li>波动性：投影到表象后弥散成连续的波函数，呈现波动性。</li>
+</ul>
+<p>所谓波粒二象性，本质就是“根域粒子性 + 投影波动性”，粒子本身不是“既是波又是粒子”，是本体是粒子，投影是波。</p>
+<p><strong>马宝说：</strong> 这个问题困扰了物理学家一百年。光到底是粒子还是波？答案是：根域里是粒子，表象里是波。就像一个人，在家里是父亲，在公司是经理。你不能问他“你到底是父亲还是经理”——都是，只是不同的场合呈现不同的面貌。</p>
+<h3>2. 波函数坍缩</h3>
+<p>为什么测量会让叠加态坍缩成确定值？</p>
+<ul>
+<li>未测量时，粒子以根域的叠加态存在，通过M₉投影为弥散的波函数；</li>
+<li>测量过程本质是宏观仪器和粒子相互作用，相当于把粒子纳入了宏观统计体系，投影规则从M₉量子投影切换为M₁经典投影，波函数就“坍缩”成了一个确定的经典观测值。</li>
+</ul>
+<p>坍缩不是什么神秘的物理过程，是投影矩阵的切换——从微观精确投影切换到了宏观统计投影。</p>
+<p><strong>马宝说：</strong> 薛定谔的猫让无数人头疼。猫到底是死是活？答案是：在微观层面（粒子），它是叠加态；一旦你和宏观仪器（毒气瓶、探测器）相互作用，就切换到了宏观投影规则，猫就确定了。不是猫“被观测才确定”，是它进入了宏观统计体系，自然就退相干了。就像你问一个演员“你在台上是皇帝，台下是乞丐，你到底是谁？”——台上台下，场景不同，状态不同，没什么好纠结的。</p>
+<h3>3. 量子隧穿</h3>
+<p>粒子为什么能穿过高于自身能量的壁垒？</p>
+<p>不是粒子“穿墙”了，是M₉投影的波函数本身就有弥散的尾巴，壁垒足够薄的时候，尾巴就能穿过去；从根域角度看，粒子通过T₀本征时序绕过了T₁因果时序的能量壁垒，本质是时序维度的“绕路”，不是真的突破了能量守恒。</p>
+<p><strong>马宝说：</strong> 粒子穿墙，不是它力气大把墙撞破了，是它的波函数尾巴伸到了墙的另一边。就像你的影子，墙挡不住它——墙这边有你，墙那边的地上也有你的影子。粒子就是那个“影子”，在墙的另一边出现的概率不为零。</p>
+<h2>五、和M₁/M₂矩阵的对应关系</h2>
+<p>M₉和M₁不是两套独立的投影规则，是同一套投影在不同尺度下的近似：</p>
+<ol>
+<li><strong>微观极限</strong>：单粒子、小尺度下，必须用M₉精确投影，量子效应显著，对应量子力学；</li>
+<li><strong>宏观极限</strong>：大量粒子、大尺度下，M₉的统计平均就退化为M₁经典投影，量子涨落被抹平，呈现经典物理规律，对应牛顿力学、广义相对论；</li>
+<li><strong>M₂反向还原</strong>：M₉的对偶逆算子就是量子力学里的算符映射，表象的力学量算符对应根域的物理量，和M₂的反向还原逻辑完全一致。</li>
+</ol>
+<p>整个投影体系是自洽的：从微观量子到宏观经典，只是同一套投影规则在不同尺度下的表现，不存在“量子世界和经典世界是两套规则”的割裂。</p>
+<p><strong>马宝说：</strong> 这一点太重要了。以前大家都觉得微观世界和宏观世界是两套规则，量子力学管微观，经典力学管宏观，中间有一条鸿沟。现在清楚了：没有鸿沟，只有尺度不同。微观用M₉，宏观用M₁，但M₁是M₉的统计平均——就像海浪是无数水分子的集体运动，你不能说“水分子运动和波浪运动是两套规则”。</p>
+<h2>结语</h2>
+<p>M₉海森堡-根域映射矩阵，是连接根域名额结构和表象量子世界的核心桥梁。</p>
+<p>量子力学里很多反常识、被当成“内禀属性”的规律，本质上都是双时空投影的固有特征。不需要把量子世界想得多么神秘，它只是微观尺度下，投影分辨率极限带来的表观效应——就像隔着毛玻璃看东西，模糊是玻璃的属性，不是物体本身模糊。</p>
+<p><strong>马宝说：</strong> 量子力学不神秘。它只是一个高清投影仪（M₉）在分辨率极限附近工作的表现。你把画面放得太大，自然就看到像素点了。那不是世界的本质，是你观察方式的局限。</p>
+<p>到这里，映射层的三组矩阵（M₁/M₂投影对、M₉量子映射）就全部讲完了。下一篇我们进入微观粒子层，讲M₃时序饱和度矩阵，看看粒子的静质量到底是怎么来的，为什么不需要希格斯机制。</p>
+<hr>
+<p>物理意义解读：马宝</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
