@@ -1,5 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Sat, 11 Jul 2026 01:53:45 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>012 标量投影核显式推导：斥力1/r³远场定律的严格数学证明</title><link>https://shijianwei1969.github.io/post/012%20-biao-liang-tou-ying-he-xian-shi-tui-dao-%EF%BC%9A-chi-li-1-r%C2%B3-yuan-chang-ding-lv-de-yan-ge-shu-xue-zheng-ming.html</link><description># 012 标量投影核显式推导：斥力1/r³远场定律的严格数学证明
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Sat, 11 Jul 2026 02:04:01 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>013 三维矢量空间投影：3×3空间子矩阵的完整构造</title><link>https://shijianwei1969.github.io/post/013%20-san-wei-shi-liang-kong-jian-tou-ying-%EF%BC%9A3%C3%973-kong-jian-zi-ju-zhen-de-wan-zheng-gou-zao.html</link><description># 013 三维矢量空间投影：3×3空间子矩阵的完整构造
+
+作者：山东威海 史建威
+
+
+## 马宝先唠两句
+
+上一篇我们推导了标量投影核，搞清楚了只有大小的标量物理量（比如势能、能量密度）怎么从根域一维空间投影到表象三维空间，也证明了斥力 $1/r^3$ 势能的衰减规律。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/013%20-san-wei-shi-liang-kong-jian-tou-ying-%EF%BC%9A3%C3%973-kong-jian-zi-ju-zhen-de-wan-zheng-gou-zao.html</guid><pubDate>Sat, 11 Jul 2026 02:03:36 +0000</pubDate></item><item><title>012 标量投影核显式推导：斥力1/r³远场定律的严格数学证明</title><link>https://shijianwei1969.github.io/post/012%20-biao-liang-tou-ying-he-xian-shi-tui-dao-%EF%BC%9A-chi-li-1-r%C2%B3-yuan-chang-ding-lv-de-yan-ge-shu-xue-zheng-ming.html</link><description># 012 标量投影核显式推导：斥力1/r³远场定律的严格数学证明
 
 作者：山东威海 史建威
 
