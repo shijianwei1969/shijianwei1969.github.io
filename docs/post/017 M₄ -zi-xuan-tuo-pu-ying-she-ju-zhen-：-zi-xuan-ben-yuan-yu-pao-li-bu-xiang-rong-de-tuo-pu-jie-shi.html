@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var a=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',a)}else{a()}})();</script><script>(function(){var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 017 M₄ 自旋拓扑映射矩阵：自旋本源与泡利不相容的拓扑解释
+
+作者：山东威海 史建威
+
+
+## 马宝先唠两句
+
+上一篇我们讲了M₃时序饱和度矩阵，解释了粒子的质量是怎么来的。">
+<meta property="og:title" content="017 M₄ 自旋拓扑映射矩阵：自旋本源与泡利不相容的拓扑解释">
+<meta property="og:description" content="# 017 M₄ 自旋拓扑映射矩阵：自旋本源与泡利不相容的拓扑解释
+
+作者：山东威海 史建威
+
+
+## 马宝先唠两句
+
+上一篇我们讲了M₃时序饱和度矩阵，解释了粒子的质量是怎么来的。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/017%20M%E2%82%84%20-zi-xuan-tuo-pu-ying-she-ju-zhen-%EF%BC%9A-zi-xuan-ben-yuan-yu-pao-li-bu-xiang-rong-de-tuo-pu-jie-shi.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>017 M₄ 自旋拓扑映射矩阵：自旋本源与泡利不相容的拓扑解释</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">017 M₄ 自旋拓扑映射矩阵：自旋本源与泡利不相容的拓扑解释</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/25" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>017 M₄ 自旋拓扑映射矩阵：自旋本源与泡利不相容的拓扑解释</h1>
+<p>作者：山东威海 史建威</p>
+<h2>马宝先唠两句</h2>
+<p>上一篇我们讲了M₃时序饱和度矩阵，解释了粒子的质量是怎么来的。</p>
+<p>今天讲粒子的第二个标志性内禀属性——自旋。</p>
+<p>自旋这个东西，在主流物理里一直有点“玄”。说它是角动量吧，点粒子不可能自转，一转表面速度就超光速了。说它是内禀属性吧，“内禀”这个词本身就是“不知道来源”的委婉说法。更别提自旋1/2的粒子要转两圈才能回到原样，这在宏观世界里完全没法想象。</p>
+<p>在我们的体系里，这些问题都有非常直观的答案：<strong>自旋不是粒子在自转，是三维时序拓扑缠绕的手性投影</strong>。</p>
+<p>就像一根绳子，你可以把它拧成麻花。拧的方向（左拧还是右拧）就是自旋的正负，拧的圈数就是自旋的大小。绳子本身没在转，是它的结构有拧劲儿。描述这个拧劲儿的，就是M₄自旋拓扑映射矩阵。</p>
+<h2>一、M₄的核心定位：拓扑缠绕的定量描述</h2>
+<p>M₄矩阵的全称是<strong>自旋拓扑映射矩阵</strong>，用来描述粒子闭合拓扑回路在三维时序上的缠绕方向、缠绕圈数，这些拓扑特征投影到表象时空，就是我们测量到的自旋量子数。</p>
+<h3>核心认知转换</h3>
+<p>自旋不是粒子“自己在旋转”：</p>
+<ul>
+<li>它不是点状粒子的机械自转，否则粒子表面速度会远超光速，完全不符合相对论；</li>
+<li>它是根域拓扑结构的固有缠绕属性，就像一根绳子拧成的麻花，拧的方向、拧的圈数是绳子本身的结构属性，不是绳子“在转”。</li>
+</ul>
+<p><strong>马宝说：</strong> 这个认知转换太重要了。你拿一根充电线，把它绕成麻花状。麻花有“左旋”和“右旋”的区别，但电线本身并没有在转动——它的“旋”是结构属性，不是运动属性。自旋也是一样：粒子没有在转，但它的拓扑结构有“拧劲儿”，这个拧劲儿投影到表象，就被我们测量为自旋角动量。</p>
+<p>我们可以用拧麻花做类比：</p>
+<ul>
+<li>粒子的拓扑回路就是那根绳子；</li>
+<li>拧的方向（顺时针/逆时针）对应自旋的正负（向上/向下）；</li>
+<li>拧的圈数对应自旋的大小，拧半圈就是1/2自旋，拧一整圈就是自旋1。</li>
+</ul>
+<h2>二、自旋的拓扑本质：三维时序的缠绕手性</h2>
+<p>根域里的粒子是三维时序上的闭合回路，回路会沿着时序维度发生拓扑缠绕，这种缠绕有两个核心特征：手性和阶数。</p>
+<h3>1. 手性：自旋的正负</h3>
+<p>缠绕有两种互为镜像的方向，也就是左手性和右手性，投影到表象就对应自旋向上和自旋向下。</p>
+<p>两种手性是镜像对称的，但不能完全重合，就像你的左手和右手，长得一样但永远没法叠在一起——这就是自旋投影只有正负两个取值的根源。</p>
+<p><strong>马宝说：</strong> 手性这个概念很关键。你的左手和右手，结构完全对称，但你不能把左手手套戴在右手上。自旋的正负也是这个道理——不是“一个朝上一个朝下”，是两种镜像对称的拓扑结构。所以电子只有自旋向上和自旋向下两种状态，没有第三种。</p>
+<h3>2. 阶数：自旋的大小</h3>
+<p>缠绕的圈数就是自旋的阶数，决定了自旋量子数的大小：</p>
+<ul>
+<li>缠绕整数圈（0、1、2圈）：投影为整数自旋，对应玻色子，比如光子自旋1、希格斯玻色子自旋0；</li>
+<li>缠绕半整数圈（1/2、3/2圈）：投影为半整数自旋，对应费米子，比如电子、夸克都是自旋1/2。</li>
+</ul>
+<p><strong>马宝说：</strong> 最常见的电子就是三维时序上缠绕了半圈的拓扑回路，所以自旋是1/2。它必须转两圈才能回到原来的状态——不是粒子转两圈，是拓扑结构要绕两圈才能恢复原样，这就是量子力学里“自旋1/2粒子旋转720°才复原”的底层原因。</p>
+<p>你可以想象一根莫比乌斯带：它只有一个面，你沿着它走一圈回不到起点，要走两圈才能回去。电子的拓扑结构也是这样——绕一圈回不到原样，绕两圈才行。</p>
+<h2>三、M₄矩阵的结构与自旋定量公式</h2>
+<h3>矩阵形式</h3>
+<p>M₄是3×3的反对称手性矩阵，对应三个时序维度的缠绕分量，对角元为零，非对角元对应两个时序维度之间的缠绕强度和方向：</p>
+<p>$$
+
+\mathbf{M}_4 =
+
+\begin{pmatrix}
+
+0 &amp;amp; \omega_{12} &amp;amp; \omega_{13} \\
+
+-\omega_{12} &amp;amp; 0 &amp;amp; \omega_{23} \\
+
+-\omega_{13} &amp;amp; -\omega_{23} &amp;amp; 0
+
+\end{pmatrix}
+
+$$</p>
+<p>其中 $\omega_{ij}$ 就是第i和第j个时序维度之间的缠绕数，正负号代表手性方向。</p>
+<p><strong>马宝说：</strong> 反对称矩阵的意思是 $\omega_{ij} = -\omega_{ji}$，这正好对应了缠绕的方向性——从i到j拧一圈，和从j到i拧一圈，方向相反。就像你拧螺丝，顺时针是拧紧，逆时针是拧松，方向相反。</p>
+<h3>总自旋量子数</h3>
+<p>总自旋的大小由矩阵的不变量决定，也就是所有缠绕分量的模长之和，刚好对应量子力学里的自旋角动量：（试了好几次，这个公式就是死活上不去了，上图吧）</p>
+<p>$$<br>
+S = \frac{\hbar}{2} \sqrt{\sum_{i&lt;j} |\omega_{ij}|^2}</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/7fd0a15f-bb61-4ce4-b9f5-034aaa18d587"><img width="220" height="51" alt="Image" src="https://github.com/user-attachments/assets/7fd0a15f-bb61-4ce4-b9f5-034aaa18d587" style="max-width: 100%; height: auto; max-height: 51px;; aspect-ratio: 220 / 51; background-color: var(--bgColor-muted); border-radius: 6px" class="js-gh-image-fallback"></a></p>
+<p>$$</p>
+<p>对于电子这样的单圈半缠绕费米子，总自旋就是 $\frac{\sqrt{3}}{2}\hbar$，和量子力学的计算结果完全一致。</p>
+<p><strong>马宝说：</strong> 这里要注意区分总自旋和自旋投影。总自旋是拓扑结构的整体缠绕强度，就像麻花总的拧劲儿有多大。自旋投影是你沿某一个方向测量到的值，只有 ±½ħ 两个可能，就像你只能看到麻花的“正面”或“反面”。</p>
+<h3>自旋投影值</h3>
+<p>我们测量到的沿某一方向的自旋投影（±1/2），就是矩阵在对应投影方向上的特征值，只有正负两个离散取值，对应两种手性。</p>
+<p><strong>马宝说：</strong> 自旋投影只有两个值，不是因为空间只有两个方向，而是因为拓扑手性只有两种。就像一枚硬币，只有正面和反面，没有第三种可能。你不管从哪个角度去看，它要么是正面要么是反面。</p>
+<h2>四、泡利不相容原理的拓扑解释</h2>
+<p>泡利不相容原理说：两个全同费米子不能处于完全相同的量子态。主流物理里这是一条实验规律，没有更深层的解释；在我们的体系里，它是名额排他公理+拓扑手性的直接结果。</p>
+<h3>底层逻辑</h3>
+<ol>
+<li>名额排他公理决定了：同一个名额位点不能容纳两份相同的能量结构；</li>
+<li>两个自旋相同的费米子，拓扑缠绕的手性完全一样，属于完全相同的结构，不能挤在同一个位点，因此不能同态；</li>
+<li>两个自旋相反的费米子，手性相反，拓扑结构互为镜像，可以叠加占据同一个位点，因此可以配对（比如电子对、库珀对）。</li>
+</ol>
+<p><strong>马宝说：</strong> 泡利不相容不是什么神秘的量子规则，就是“同手性的麻花不能叠在一起，反方向的可以拧成一股”的拓扑常识。</p>
+<p>你可以想象两根弹簧：两根都是右旋的弹簧，你没法把它们拧在一起，它们的螺纹会互相顶着。但一根右旋和一根左旋的弹簧，可以轻松地拧成一股。这就是泡利不相容的本质——不是“排斥力”，是拓扑结构不允许相同手性的结构重叠。</p>
+<h2>五、自旋统计定理的天然导出</h2>
+<p>为什么半整数自旋的费米子服从费米统计（不相容），整数自旋的玻色子服从玻色统计（可以同态叠加）？这个自旋统计定理在量子场论里需要非常复杂的推导，在我们的体系里是拓扑结构的天然结果：</p>
+<ul>
+<li><strong>玻色子（整数自旋）</strong>：缠绕整数圈的拓扑回路，自身闭合对称，可以无限叠加，同一个位点可以容纳任意多个，因此服从玻色统计，比如光子可以无限叠加形成激光；</li>
+<li><strong>费米子（半整数自旋）</strong>：缠绕半整数圈的拓扑回路，自身不对称，同手性不能重叠，因此服从费米统计，受泡利不相容约束。</li>
+</ul>
+<p><strong>马宝说：</strong> 不需要复杂的量子场论推导，只需要拓扑缠绕的基本性质，就能自然得出这个结论。</p>
+<p>整数圈的拓扑结构就像一个个完美的圆环，你可以把无数个圆环套在一起，互不干扰。半整数圈的拓扑结构就像一个个钩子，相同方向的钩子会勾在一起卡住，不能叠放。这就是玻色子和费米子统计性质差异的根源——不是数学规定，是几何必然。</p>
+<h2>六、在矩阵体系中的位置</h2>
+<p>M₄和M₃是描述粒子内禀属性的一对核心矩阵：</p>
+<ul>
+<li>M₃时序饱和度 → 决定粒子的静质量；</li>
+<li>M₄拓扑缠绕 → 决定粒子的自旋量子数。</li>
+</ul>
+<p>二者共同描述了粒子的拓扑结构特征，再通过M₁投影矩阵映射到表象时空，就得到了我们测量到的粒子质量、自旋等内禀属性。所有粒子的差异，本质上都是拓扑结构的饱和度、缠绕方式不同。</p>
+<p><strong>马宝说：</strong> M₃和M₄就像粒子的“身份证”。M₃告诉你这个粒子多重，M₄告诉你这个粒子怎么转。两个矩阵合在一起，就基本确定了粒子的身份——是电子还是光子，是夸克还是中微子，都由这两个矩阵的取值决定。</p>
+<h2>结语</h2>
+<p>M₄自旋拓扑映射矩阵，给了自旋一个非常直观的拓扑解释。</p>
+<p>不用再纠结“点粒子为什么会自转”“为什么转一圈半才复原”，这些反常识的特性，本质都是三维时序里拓扑缠绕的投影表现。泡利不相容、自旋统计定理这些基础量子规则，也都变成了拓扑结构的天然推论。</p>
+<p><strong>马宝说：</strong> 自旋不再神秘了。它就是根域里那根“绳子”拧成的麻花劲儿。拧的方向决定正负，拧的圈数决定大小。简单、直观、自洽——这就是第一性原理的魅力。</p>
+<p>到这里，微观粒子层的两个核心矩阵（M₃质量、M₄自旋）就讲完了。下一篇我们进入宏观力层，讲M₇根域斥力张量，把名额排他效应从标量扩展到完整的张量形式，看看排斥效应在全尺度下的定量描述。</p>
+<hr>
+<p>物理意义解读：马宝</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
