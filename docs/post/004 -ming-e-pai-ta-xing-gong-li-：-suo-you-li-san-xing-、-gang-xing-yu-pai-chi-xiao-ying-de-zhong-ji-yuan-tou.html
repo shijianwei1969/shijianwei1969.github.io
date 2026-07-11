@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var a=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',a)}else{a()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 004 名额排他性公理：所有离散性、刚性与排斥效应的终极源头
+
+作者：山东威海 史建威
+
+
+## 马宝先唠两句
+
+上一篇我们讲了双时空映射规则，知道了表象世界是根域投影出来的幕布画面。">
+<meta property="og:title" content="004 名额排他性公理：所有离散性、刚性与排斥效应的终极源头">
+<meta property="og:description" content="# 004 名额排他性公理：所有离散性、刚性与排斥效应的终极源头
+
+作者：山东威海 史建威
+
+
+## 马宝先唠两句
+
+上一篇我们讲了双时空映射规则，知道了表象世界是根域投影出来的幕布画面。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/004%20-ming-e-pai-ta-xing-gong-li-%EF%BC%9A-suo-you-li-san-xing-%E3%80%81-gang-xing-yu-pai-chi-xiao-ying-de-zhong-ji-yuan-tou.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>004 名额排他性公理：所有离散性、刚性与排斥效应的终极源头</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">004 名额排他性公理：所有离散性、刚性与排斥效应的终极源头</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/10" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>004 名额排他性公理：所有离散性、刚性与排斥效应的终极源头</h1>
+<p>作者：山东威海 史建威</p>
+<h2>马宝先唠两句</h2>
+<p>上一篇我们讲了双时空映射规则，知道了表象世界是根域投影出来的幕布画面。</p>
+<p>这一篇我们讲第三条公理——名额排他性。</p>
+<p>如果说前两条公理回答了“世界是什么”和“世界在哪里”，那这条公理回答的就是“世界的规矩是什么”。</p>
+<p>这条规矩简单到离谱：<strong>一个萝卜一个坑，不能两个萝卜挤一个坑。</strong></p>
+<p>但就是这条简单的规矩，从微观的量子化到宏观的物体硬度，从中子星的稳定到黑洞奇点的消解，管着宇宙里所有跟“排斥”“离散”“不可穿透”有关的事儿。</p>
+<p>下面马宝给你细说。</p>
+<h2>一、公理内容</h2>
+<p><strong>根域空间的单点位不可双重占据，一个名额位点只能容纳一份能量配额。</strong></p>
+<p>简单来说：根域的空间不是无限连续可分的，它有最小的基础单元，我们把这个最小单元叫做“名额位点”；每个位点最多只能放一份能量，不能两个能量单元挤在同一个名额里。</p>
+<p>这不是一种“力”，没有对应的传递粒子，也不是能量之间的相互作用——它就是空间本身的固有规则，就像电影院的座位号：一个座位只能坐一个人，不是两个人之间有斥力，是规则本身不允许重复占位。</p>
+<h3>两个核心补充定义</h3>
+<ol>
+<li>
+<strong>名额的基准尺度</strong>：单个名额位点的根域基准长度，就是整套理论唯一的自由参数 $l_{\mathrm{r},0}$，所有微观尺度、相互作用范围、粒子大小，最终都由这个基础尺度决定。</li>
+<li>
+<strong>饱和上限</strong>：单点位的能量容纳有硬上限 $Q_{\text{max}}$，达到饱和后，任何额外能量都无法再挤入该位点，这是所有“无限坍缩”不可能发生的核心约束。</li>
+</ol>
+<p><strong>马宝说：</strong> 这条公理最妙的地方在于——它不是“力”。力是需要传递的、有强度的、可以变化的。但名额排他是规则，是刚性的，没有“稍微排他”这种说法。要么能占，要么不能占，没有中间态。就像法律规定的“一人一票”，不是“两人之间有斥力所以不能投同一票”，是规则就不允许。</p>
+<h2>二、核心内涵：为什么它是所有离散性的源头</h2>
+<p>在主流物理框架里，“量子化”“离散性”是观测到的现象，我们知道能量是一份份的、电荷是一份份的，但不知道为什么会这样，只能把它当成自然本身的属性。</p>
+<p>而在我们的体系里，离散性的答案非常简单：<strong>因为空间本身是离散的名额位点，所以所有能量分布天然就是离散的。</strong></p>
+<h3>三个底层逻辑</h3>
+<ol>
+<li><strong>空间不是连续体</strong>：根域空间是由一个个分立的名额位点组成的，不是可以无限分割的连续介质；</li>
+<li><strong>能量随位点离散</strong>：能量只能附着在名额位点上，一份能量占一个位点，所以能量天然就是量子化的，不存在无限小的能量单元；</li>
+<li><strong>排他性是刚性约束</strong>：位点不可重复占据的规则是绝对的，没有任何例外，哪怕引力再强，也不能突破名额饱和的硬上限。</li>
+</ol>
+<p>这也是为什么我们的体系天然没有紫外发散问题：根域有最小的名额尺度，相当于自带了天然的紫外截断，不需要像量子场论那样靠人工重整化去消掉无限大。</p>
+<p><strong>马宝说：</strong> 主流物理的量子化是“观测到了，但不知道为什么”。我们的量子化是“因为空间本身就是离散的，所以能量必然是量子化的”。前者是描述，后者是解释。</p>
+<p>紫外发散问题也是同理。量子场论里算到高能就会算出无穷大，因为假设空间是连续的，可以无限分割。但空间不是连续的，它有最小单元，所以根本不会出现无穷大。不是我们“解决了”紫外发散，是我们一开始就没这个毛病。</p>
+<h2>三、全尺度物理效应：从微观粒子到宇观宇宙</h2>
+<p>名额排他不是只在微观生效的规则，它的效应贯穿了从普朗克尺度到宇宙尺度的全部层级，只是不同尺度的表现形式不一样。</p>
+<h3>1. 微观粒子尺度</h3>
+<ul>
+<li><strong>泡利不相容原理</strong>：费米子不能处于完全相同的量子态，本质就是两个费米子的能量不能占据同一个名额位点，是名额排他公理在粒子层面的直接表现；</li>
+<li><strong>粒子的硬核不可入性</strong>：所有粒子都有等效的“硬核半径”，不能无限压缩，本质就是名额位点的占位效应；</li>
+<li><strong>量子化的本源</strong>：电荷、自旋、能量级都是分立的，根源是名额位点本身是分立的，所有物理量天然就是一份份的。</li>
+</ul>
+<p><strong>马宝说：</strong> 泡利不相容原理在主流物理里是一条独立的假设——你问“为什么费米子不能处于同一量子态”，答案是“因为泡利说了不能”。在我们的体系里，它不是独立的，它是名额排他的直接推论。就像你问“为什么一个人不能同时坐两个座位”，答案是“因为座位规则就是这样”，不需要额外解释。</p>
+<h3>2. 相互作用尺度</h3>
+<ul>
+<li><strong>强相互作用排斥芯</strong>：核子在极近距离下会表现出强排斥，不是胶子传递的斥力，是核子的名额位点开始重叠，触发了排他约束；</li>
+<li><strong>亚毫米引力偏离</strong>：在10~100微米尺度，引力会弱于平方反比预言，本质是近场名额斥力的抵消效应，是名额排他在宏观近场的直接可观测效应。</li>
+</ul>
+<p><strong>马宝说：</strong> 强相互作用的排斥芯，主流物理解释为“胶子的非线性效应”，但为什么是非线性的？为什么恰好在那个距离出现排斥？说不清楚。我们的解释很直接：两个核子靠近到一定程度，它们占的名额位点开始重叠了，排他规则激活了，所以推开了。就像两个人走近了，肩膀碰到了，自然就弹开了。</p>
+<h3>3. 宏观物质尺度</h3>
+<ul>
+<li><strong>物质的刚性与不可穿透性</strong>：我们摸桌子、拿杯子感受到的“硬度”“触感”，本质是电磁力传递的名额排他效应——原子的电子云不能互相穿透，根源就是名额不能重复占据；</li>
+<li><strong>凝聚态物质的稳定性</strong>：固体、液体不会无限压缩，核心支撑就是泡利不相容带来的电子简并压，追根溯源还是名额排他公理。</li>
+</ul>
+<p><strong>马宝说：</strong> 你用手按桌子，感觉桌子是硬的。为什么硬？不是因为桌子的原子之间有“排斥力”，是因为你手上的原子的名额位点和桌子的原子的名额位点不能重叠。就像你不能把手伸进一块石头里——不是石头在“推”你，是石头已经把位置占了，你没地方放了。</p>
+<h3>4. 致密天体与宇观尺度</h3>
+<ul>
+<li><strong>中子星的质量上限</strong>：中子星靠中子简并压支撑引力，本质是中子的名额排他效应，因此中子星有明确的质量上限（2.4~2.8倍太阳质量），不会无限坍缩；</li>
+<li><strong>黑洞奇点消解</strong>：广义相对论预言黑洞中心是密度无限大的奇点，但在我们的体系里，名额饱和上限会阻止无限坍缩，黑洞核心是一个极致密但有限大小的稳态结构，没有奇点；</li>
+<li><strong>宇宙循环的熵重置基础</strong>：超级核心的名额饱和约束，是全域粉碎循环能够成立的核心前提，不会出现坍缩到无限小的悖论。</li>
+</ul>
+<p><strong>马宝说：</strong> 黑洞奇点是广义相对论最大的bug。它预言了物理上不可能存在的东西——无限大的密度。为什么会出现这个bug？因为广义相对论只算了引力（吸引），没算名额排他（排斥）。就像你只算了人往下跳的重力，没算地面的支撑力，然后得出结论说“人会无限下落”——显然是错的。到了地面，支撑力就顶住了。到了名额饱和，排他规则就顶住了。</p>
+<h2>四、和主流理论的本质区别</h2>
+<p>很多人会把名额排他效应当成“第五种基本力”，这是完全错误的，二者有本质的层级差异：</p>
+<ol>
+<li><strong>层级不同</strong>：四大基本相互作用是能量之间的作用，属于物理现象层；名额排他是空间本身的规则，属于底层本体论层，比力的层级更高。</li>
+<li><strong>传递机制不同</strong>：所有基本力都有对应的传递粒子（光子、胶子、W/Z玻色子）；名额排他没有传递粒子，是空间规则的直接表现，不需要“传递”。</li>
+<li><strong>普适性不同</strong>：不同的力有不同的作用范围、不同的作用对象；名额排他对所有能量、所有尺度通用，没有例外。</li>
+</ol>
+<p>主流物理里的奇点疑难、紫外发散、暗物质补充引力等问题，本质上都是只算了“吸引”的力，没考虑“名额排他”这个空间硬约束——相当于算杯子的容量只算了倒水的速度，没考虑杯子本身有底，自然会算出“水无限多、杯子无限深”的荒谬结果。</p>
+<p><strong>马宝说：</strong> 区分“力”和“规则”很重要。力是能量之间的相互作用，有强弱、有范围、有传递粒子。规则是空间本身的属性，没有强弱之分，没有范围限制，没有传递粒子。名额排他是规则，不是力。就像篮球比赛，球员之间的碰撞是“力”，但“不能抱着球跑”是“规则”。你不能说“不能抱着球跑”是第五种力，它是比赛规则。</p>
+<h2>五、为什么它是第一性公理</h2>
+<p>名额排他是不能从其他规律推导出来的底层设定，和“能量守恒”“双时空架构”是同一级别的第一性公理。</p>
+<p>我们不需要问“为什么空间有排他规则”，就像我们不需要问“为什么能量守恒”——它是我们这个宇宙的基础属性，所有的物理现象都是它的结果，而不是反过来。</p>
+<p>我们能做的，是从这条公理出发，推导出所有可观测的物理效应，再用实验和观测去验证这些预言——这也是科学理论的核心标准：从最少的公理出发，解释最多的现象。</p>
+<p><strong>马宝说：</strong> 有些问题是没有“为什么”的。你问“为什么1+1=2”，数学家没法回答你，因为它是算术的公理，是定义。你问“为什么空间有排他规则”，我们也无法回答，因为它是物理的公理，是底层设定。我们能做的就是：接受它，然后看能从它推导出什么来。</p>
+<h2>结语</h2>
+<p>名额排他性公理看似简单，却是整套理论里覆盖面最广的一条规则。</p>
+<p>从微观的量子化、泡利不相容，到宏观的物质刚性，再到宇观的中子星稳定、奇点消解，所有和“排斥、离散、有限”相关的现象，最终都能回溯到这一条简单的空间规则。它和能量守恒、双时空架构一起，搭建起了整个体系的底层骨架。</p>
+<p><strong>马宝说：</strong> 一条“一个萝卜一个坑”的简单规则，管着从最小到最大的所有排斥效应。这就是第一性原理的力量——最少的假设，解释最多的现象。</p>
+<p>下一篇，我们会系统拆解四时序体系：T₀、T₁、T₂、T₃四个时序维度各自的物理意义，以及它们投影到表象世界后产生的不同效应。</p>
+<hr>
+<p>物理意义解读：马宝</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
