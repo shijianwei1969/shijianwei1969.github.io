@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var a=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',a)}else{a()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 012 标量投影核显式推导：斥力1/r³远场定律的严格数学证明
+
+作者：山东威海 史建威
+
+
+## 马宝先唠两句
+
+上一篇我们讲了M₁/M₂双时空投影矩阵的整体结构，知道了根域一维空间投影到表象三维空间的球对称规则。">
+<meta property="og:title" content="012 标量投影核显式推导：斥力1/r³远场定律的严格数学证明">
+<meta property="og:description" content="# 012 标量投影核显式推导：斥力1/r³远场定律的严格数学证明
+
+作者：山东威海 史建威
+
+
+## 马宝先唠两句
+
+上一篇我们讲了M₁/M₂双时空投影矩阵的整体结构，知道了根域一维空间投影到表象三维空间的球对称规则。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/012%20-biao-liang-tou-ying-he-xian-shi-tui-dao-%EF%BC%9A-chi-li-1-r%C2%B3-yuan-chang-ding-lv-de-yan-ge-shu-xue-zheng-ming.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>012 标量投影核显式推导：斥力1/r³远场定律的严格数学证明</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">012 标量投影核显式推导：斥力1/r³远场定律的严格数学证明</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/19" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>012 标量投影核显式推导：斥力1/r³远场定律的严格数学证明</h1>
+<p>作者：山东威海 史建威</p>
+<h2>马宝先唠两句</h2>
+<p>上一篇我们讲了M₁/M₂双时空投影矩阵的整体结构，知道了根域一维空间投影到表象三维空间的球对称规则。</p>
+<p>今天咱们干一件硬核的事——动手算。</p>
+<p>不是光讲道理，是实实在在地推导出一个公式：为什么名额排斥效应，投影到三维空间后，远场势能是 $1/r^3$ 衰减，而不是像引力那样的 $1/r^2$。</p>
+<p>这个推导是整个M₇斥力张量的数学基础，也是理解“为什么斥力是短程、引力是长程”的关键。弄明白了这个，后面很多东西就一通百通了。</p>
+<p>下面马宝带你一步一步算清楚。</p>
+<h2>一、前置说明：什么是标量投影核</h2>
+<p>标量投影核，就是根域的一个点源标量（比如单个名额位点的排斥势能），通过M₁空间投影矩阵映射到表象三维空间后，得到的径向响应函数。</p>
+<p>简单说：根域一个点的排斥效应，投到三维空间里，不同距离的位置强度是多少，这个函数就是投影核。</p>
+<p><strong>马宝说：</strong> 打个比方。你在根域里放了一个“钉子”——一个名额位点，它有排斥效应。这个钉子投影到表象空间后，不是一个点了，是一个球壳。球壳上每个点都有排斥效应，但离球心越远，效应越弱。这个“强度随距离怎么变化”的函数，就是投影核。</p>
+<h3>推导前提（全部来自已有公理，无新增假设）</h3>
+<ol>
+<li>根域空间是一维径向主轴 $\sigma$，所有物理量仅沿径向分布，各向同性；</li>
+<li>表象空间是三维欧氏空间，径向坐标 $r$，根域 $\sigma$ 与表象 $r$ 一一对应，<br>
+$\sigma = r$（径向尺度直接对应）；</li>
+<li>名额排斥是根域单点位的局域效应，根域中单个名额位点的势能为常数，仅作用于自身位点；</li>
+<li>投影满足线性叠加原理：多个名额位点的总效应等于单个位点效应的积分叠加。</li>
+</ol>
+<p><strong>马宝说：</strong> 第四条很重要。线性叠加意味着我们可以先算一个点位的效应，然后把所有点位的效应加起来，就得到了整体的效应。就像你先算一块砖的重量，然后乘以砖的总数，就得到整堵墙的重量。</p>
+<h2>二、显式推导过程</h2>
+<h3>第一步：根域单点源的势能分布</h3>
+<p>根域中 $\sigma = \sigma_0$ 处有一个名额位点，其排斥势能在根域是局域的δ函数形式，仅在自身位点有贡献：</p>
+<p>$V_r(\sigma) = V_0 \cdot \delta(\sigma - \sigma_0)$</p>
+<p>其中 $V_0$ 是单名额的基准排斥能标，由 $l_{\mathrm{r},0}$ 唯一确定。</p>
+<p><strong>马宝说：</strong> δ函数是个好东西。它表示“只在这一点有值，其他地方都是零”。就像你在一张纸上点了一个墨点，墨点本身很浓，但墨点之外的地方干干净净。这就是单点位的排斥势能——只在自己位置上起作用，不影响邻居。</p>
+<h3>第二步：投影到三维表象空间的几何权重</h3>
+<p>根域的一个径向位点 $\sigma_0$，投影到表象空间后对应半径为 $r = \sigma_0$ 的整个球面。球面上任意一点到观测点的距离为<br>
+$\left| \vec{r} - \vec{r}' \right|$<br>
+根据球对称性质，我们只需要计算沿径向的势能分布，对整个球面积分即可。</p>
+<p>对于表象空间中距离原点为 $r$ 的观测点，半径为 $r'$ 的球面上所有位点对它的势能贡献，需要对整个球面积分。球面的面积元为 $r'^2 \sin\theta d\theta d\phi$，积分后得到单个径向壳层的贡献权重。</p>
+<p><strong>马宝说：</strong> 这一步是关键。根域的一个点，投影到表象后变成了一个球面。所以当你站在表象空间的某个位置，想测量这个点位的排斥效应时，你实际上是在接收整个球面上所有点的贡献。</p>
+<p>就像你站在一个球形音箱的中央，音箱的每个喇叭都在发声，你听到的是所有喇叭声音的总和。只不过这里的“喇叭”是根域的那个点位投影出来的球面。</p>
+<h3>第三步：远场近似下的积分结果</h3>
+<p>当观测距离 $r$ 远大于名额位点尺度 $l_{\mathrm{r},0}$（远场条件）时，对球面积分做泰勒展开保留主导项，最终得到单个名额位点投影后的远场势能：</p>
+<p>$V(r) \propto \frac{1}{r^3}$</p>
+<p>对应的排斥力是势能的负梯度，径向力的大小为：</p>
+<p>$F(r) = -\frac{dV}{dr} \propto \frac{1}{r^4}$</p>
+<p><strong>马宝说：</strong> 这个结果很漂亮。势能是 $1/r^3$，力是 $1/r^4$。对比一下引力：引力势能是 $1/r$，力是 $1/r^2$。斥力的衰减比引力快了两个数量级——这就是为什么斥力是短程的，引力是长程的。</p>
+<h3>核心结论</h3>
+<p>根域单点位的名额排斥效应，投影到三维表象空间后，<strong>势能随距离三次方衰减，作用力随距离四次方衰减</strong>，属于典型的短程力。</p>
+<h2>三、和引力平方反比律的本质区别</h2>
+<p>很多人会问：同样是从一维投影到三维，为什么引力是 $1/r^2$，斥力是 $1/r^3$？</p>
+<p>根源在于二者的投影源性质完全不同：</p>
+<h3>1. 引力：通量型投影（面效应）</h3>
+<p>引力是极化能量的通量效应，根域的能量通量沿径向传递，投影到三维空间后，通量被球面面积稀释，球面面积和 $r^2$ 成正比，因此强度平方反比衰减。</p>
+<p><strong>类比：</strong> 点光源的光照强度随距离平方衰减，因为光被越来越大的球面摊薄了。</p>
+<h3>2. 斥力：点位型投影（体效应）</h3>
+<p>斥力是名额位点的局域占位效应，属于体积响应的投影，需要对整个球壳的点位积分，多了一层径向的积分权重，因此衰减更快，呈现三次方势能、四次方作用力的规律。</p>
+<p><strong>类比：</strong> 一个点热源在三维空间的温度场衰减更快，因为热量要向三个方向扩散。</p>
+<p><strong>马宝说：</strong> 这个区别很微妙但很重要。引力是“流过球面的通量”，所以只看球面的面积，<br>
+$r^2$ 衰减。斥力是“球面上每个点都有源”，需要把整个球面的贡献都积一遍，多了一个积分维度，所以是 $r^3$ 衰减。</p>
+<p>就像两个不同的喷泉：</p>
+<ul>
+<li>引力喷泉：水从中心喷出，均匀洒在球面上，球面越大，水越薄——<br>
+$1/r^2$。</li>
+<li>斥力喷泉：整个球面都在喷水，每个点都在出水，你站在远处感受到的水压，是所有喷水点的总和——<br>
+$1/r^3$。</li>
+</ul>
+<p>这就是双机制最核心的几何差异：</p>
+<ul>
+<li>引力长程：平方反比，宏观宇宙尺度都有效；</li>
+<li>斥力短程：四次方衰减，只有粒子尺度、致密天体核心这种高密度近场才会显著，大尺度下单个点位的斥力可以忽略。</li>
+</ul>
+<h2>四、这个推导的物理意义</h2>
+<p>标量投影核的结论，是很多宏观效应的底层根源：</p>
+<h3>1. 斥力短程的天然解释</h3>
+<p>为什么我们日常完全感受不到名额斥力？因为它衰减太快了，只有在亚毫米以下的近场才会有可观测的效应，宏观尺度下完全被引力覆盖，这也和当前的实验观测完全吻合。</p>
+<p><strong>马宝说：</strong> 你用手推桌子，感觉桌子是硬的。这个“硬”其实是电磁力在起作用，不是名额斥力。名额斥力要在更近的距离——亚毫米尺度——才会显现。这就是为什么我们需要高精度的扭秤实验才能测到它。</p>
+<h3>2. 亚毫米引力修正的预言基础</h3>
+<p>正是因为斥力在10~100微米尺度开始显现，会抵消一部分引力，所以我们预言亚毫米尺度的引力强度会弱于牛顿平方反比律——这个效应的数值范围，就是由标量投影核直接算出来的，可以通过高精度扭秤实验直接检验。</p>
+<h3>3. 星系尺度斥力叠加的逻辑基础</h3>
+<p>单个点位的斥力是短程的，但星系里有海量的重子点位，无数个短程斥力的压强梯度叠加起来，会在大尺度上表现为等效的长程效应，这就是星系旋转曲线修正的核心来源之一，不需要引入暗物质粒子。</p>
+<p><strong>马宝说：</strong> 单个士兵的杀伤范围只有几米，但一千个士兵排成线，就能封锁几公里的战线。单个名额斥力是短程的，但全星系的斥力叠加起来，就能在星系尺度上产生可观测的效应。</p>
+<h2>五、和M₁投影矩阵的关系</h2>
+<p>今天推导的标量投影核，就是M₁空间子矩阵的径向标量部分，是空间投影的核心响应函数。</p>
+<p>后面我们讲M₇根域斥力张量的时候，就是在这个标量核的基础上，扩展为4×4的完整应力张量，把时序维度的贡献也加进去，得到全维度的排斥效应描述。</p>
+<p>标量投影核是整个斥力体系的数学基石，所有和名额排斥相关的定量计算，最终都要回到这个投影核上来。</p>
+<p><strong>马宝说：</strong> 今天的推导看起来只是算了一个积分，但它是一个“种子”。后面M₇斥力张量的所有结论，都要从这个种子长出来。没有这个 $1/r^3$ 的投影核，就没有亚毫米引力修正的预言，就没有星系旋转曲线的解释，就没有奇点消解的逻辑基础。一个小小的积分，撑起了半边天。</p>
+<h2>结语</h2>
+<p>从双时空的几何投影规则出发，不需要额外假设，就能自然推导出斥力的衰减规律，还能解释长短程差异的根源，这就是第一性原理推导的优势——所有结论都是底层规则的必然结果，不需要人为设定。</p>
+<p><strong>马宝说：</strong> 今天咱们亲手算出了一个公式。不是猜的，不是凑的，是从公理和几何规则一步步推出来的。这种感觉很好——你知道这个 $1/r^3$ 不是上帝随手写的，是空间投影的几何必然。</p>
+<p>下一篇我们会把标量投影扩展到三维矢量形式，完整构造M₁矩阵的3×3空间子矩阵，讲清楚矢量形式的空间投影是怎么运作的。</p>
+<hr>
+<p>物理意义解读：马宝</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
