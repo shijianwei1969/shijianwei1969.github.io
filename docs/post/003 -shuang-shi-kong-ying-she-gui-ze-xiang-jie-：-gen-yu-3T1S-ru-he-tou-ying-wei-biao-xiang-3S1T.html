@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var a=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',a)}else{a()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 003 双时空映射规则详解：根域3T1S如何投影为表象3S1T
+
+## 马宝先唠两句
+
+上一篇我们讲了四条公理，其中最反常识的就是第二条——双时空独立公理。">
+<meta property="og:title" content="003 双时空映射规则详解：根域3T1S如何投影为表象3S1T">
+<meta property="og:description" content="# 003 双时空映射规则详解：根域3T1S如何投影为表象3S1T
+
+## 马宝先唠两句
+
+上一篇我们讲了四条公理，其中最反常识的就是第二条——双时空独立公理。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/003%20-shuang-shi-kong-ying-she-gui-ze-xiang-jie-%EF%BC%9A-gen-yu-3T1S-ru-he-tou-ying-wei-biao-xiang-3S1T.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>003 双时空映射规则详解：根域3T1S如何投影为表象3S1T</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">003 双时空映射规则详解：根域3T1S如何投影为表象3S1T</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/9" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>003 双时空映射规则详解：根域3T1S如何投影为表象3S1T</h1>
+<h2>马宝先唠两句</h2>
+<p>上一篇我们讲了四条公理，其中最反常识的就是第二条——双时空独立公理。</p>
+<p>你说你活在三维空间加一维时间里，我告诉你其实还有另一套时空，根域是三维时间加一维空间。你肯定会问：那我怎么感觉不到？我看到的、摸到的、测到的，明明都是三维空间和一维时间啊。</p>
+<p>这个问题问得好。</p>
+<p>答案是：你不是感觉不到，你是身在投影之中而不自知。就像电影幕布里的人，他看到的画面就是他的整个世界，他永远不会知道幕布外面还有个放映室。</p>
+<p>这一篇，我们就来揭开投影的面纱——根域那个“奇怪”的时空结构，到底是怎么变成我们熟悉的这个样子的。</p>
+<h2>一、先明确：两套时空是独立的本体与投影</h2>
+<p>在讲映射规则之前，先要厘清一个最容易混淆的认知：</p>
+<p><strong>根域时空和表象时空，不是同一个时空的不同维度，而是两套独立的时空体系，二者是“投影源”和“投影幕布”的关系。</strong></p>
+<p>我们可以用电影院做个类比：</p>
+<ul>
+<li>根域时空就是放映机里的胶片，是信息的本体，所有的内容都完整地存在于胶片上；</li>
+<li>表象时空就是电影院的幕布，是投影出来的画面，我们所有的观测、感知、实验，都只能看到幕布上的画面。</li>
+</ul>
+<p>胶片和幕布是两个完全独立的东西，幕布上的画面完全由胶片决定，但幕布本身永远接触不到胶片，只能通过画面的内容反推胶片的结构。我们的所有物理实验，本质上都是在研究幕布画面的规律；而11时序矩阵理论，就是在反推胶片本身的结构。</p>
+<p>两套时空的基础结构：</p>
+<ul>
+<li><strong>根域时空（本体层）</strong>：3个正交的时间维度 + 1个径向空间维度，简称3T1S，是能量的真实存在维度；</li>
+<li><strong>表象时空（观测层）</strong>：3个正交的空间维度 + 1个单向时间维度，简称3S1T，是我们生存、观测的投影维度。</li>
+</ul>
+<p><strong>马宝说：</strong> 这个类比要记牢。胶片和幕布的关系，是整个双时空理论的核心。你在幕布上看到一个人在笑，你不能说“幕布上有个人”，幕布上只有颜料，那个人是胶片投影出来的。同样，你在表象时空里看到引力、看到量子效应，你不能说“时空自己弯曲了”“粒子自己不确定了”，这些都是根域结构的投影表现。</p>
+<h2>二、空间维度的投影：1维主轴 → 3维球对称空间</h2>
+<p>空间维度的投影规则非常直观：根域里只有一条径向的空间主轴，所有能量分布只需要用“离中心的径向距离”这一个参数就能描述；这条主轴通过球对称径向投影，展开为表象里的三维欧氏空间。</p>
+<h3>投影规则</h3>
+<p>根域中任意一个距离中心为 $r$ 的位点，投影到表象时空后，对应为半径为 $r$ 的整个球面。</p>
+<ul>
+<li>根域空间是一维的，只有“远近”这一个维度的差异；</li>
+<li>投影到表象后，一维的径向距离展开成了三维的球对称分布，同一个径向距离的所有方向，在根域里其实是同一个位点。</li>
+</ul>
+<p><strong>马宝说：</strong> 这一点极其重要。你站在地球上，你以为你面朝北和面朝南是两个不同的位置。但在根域里，它们到宇宙中心的径向距离是一样的，所以它们是同一个位点。就像手电筒的灯丝是一个点，照到墙上是一个圆——灯丝没有“上下左右”，但墙上的光斑有。</p>
+<h3>直接衍生的物理规律</h3>
+<p>我们熟悉的很多球对称物理定律，本质上都是这个投影规则的直接结果：</p>
+<ol>
+<li>
+<strong>引力平方反比律</strong>：根域的极化能量通量沿一维主轴衰减，投影到三维球面后，通量被球面面积稀释，自然呈现 $1/r^2$ 的平方反比规律；</li>
+<li>
+<strong>根域斥力立方反比律</strong>：名额排他效应是根域位点的近场效应，投影到三维空间后，衰减速度更快，呈现 $1/r^3$ 的远场规律；</li>
+<li>
+<strong>波函数的球对称分布</strong>：微观粒子的根域名额分布是一维径向的，投影到表象就是三维弥散的波函数，所谓的“量子叠加态”，本质就是同一位点投影出的球面所有位置的叠加。</li>
+</ol>
+<p><strong>马宝说：</strong> 引力为什么是平方反比？不是“因为空间是三维的”，而是“因为一维的通量被三维的球面稀释了”。这个区别很重要——前者是描述，后者是解释。同样，斥力为什么是立方反比？因为斥力是根域的近场效应，投影到三维空间后衰减得更快。所以引力是长程力，斥力是短程力——不是巧合，是投影规则的必然结果。</p>
+<h2>三、时间维度的投影：3维时序 → 1维单向时间</h2>
+<p>时间维度的投影是最反常识的部分：根域的时间不是一维的箭头，而是三个正交的时序维度，通过加权折叠，压缩成了我们感知到的一维单向时间。</p>
+<p>根域的三维时序，分别对应四时序体系里的三个稳态时序分量（T₃是极端环境下的畸变时序，日常场景不参与投影）：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">根域时序</th>
+<th align="left">时序属性</th>
+<th align="left">投影到表象的表现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">T₁ 线性因果时序</td>
+<td align="left">唯一可完整投射的时序分量，单向线性演化</td>
+<td align="left">我们日常感知到的“时间流逝”的主体，因果律的载体</td>
+</tr>
+<tr>
+<td align="left">T₂ 全域同步时序</td>
+<td align="left">全域瞬间联动，没有先后顺序</td>
+<td align="left">量子纠缠的非定域关联、真空能量同步涨落</td>
+</tr>
+<tr>
+<td align="left">T₀ 本征恒存时序</td>
+<td align="left">全域相位演化基底，无先后流逝</td>
+<td align="left">粒子的本征相位、量子隧穿的底层时序基底</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>马宝说：</strong> 三个时间维度，各有各的用处。T₁管因果——一件事导致另一件事，这是我们能感知到的“时间”。T₂管同步——两个粒子不管隔多远，可以在同一瞬间联动，这就是量子纠缠的根源。T₀管本征——粒子的固有属性，比如自旋、相位，都在这个维度里。</p>
+<p>我们之所以感觉时间是一维的，是因为我们的意识、记忆、化学反应，全部都是基于T₁时序主导的因果过程。T₂和T₀的效应，我们感知不到，只能通过微观实验间接观测到。</p>
+<h3>投影规则</h3>
+<p>三个时序维度按固定权重加权折叠，其中T₁线性因果时序的权重占绝对主导，因此我们感知到的表象时间，是单向、线性、符合因果律的；另外两个时序分量权重很低，不会改变时间的单向性，只会以微观效应的形式显现出来。</p>
+<h3>直接衍生的物理效应</h3>
+<ol>
+<li><strong>时间的单向性</strong>：完全来自T₁时序的线性因果属性，不是时间本身的固有属性，是投影加权的结果；</li>
+<li><strong>量子纠缠的超光速关联</strong>：纠缠粒子通过T₂全域同步时序关联，在根域里本来就是同步的，表象空间的距离不影响它们的联动，所以不存在“超光速传递信号”的问题；</li>
+<li><strong>量子隧穿效应</strong>：粒子通过T₀本征时序绕过T₁的因果壁垒，本质是在另一个时序维度里“绕过去”了，不是真的“穿墙”。</li>
+</ol>
+<p><strong>马宝说：</strong> 量子纠缠为什么看起来像超光速？因为两个粒子在根域里是通过T₂时序直接连接的，T₂没有先后顺序，所以不管表象空间里隔了多远，它们在根域里都是“同时”的。就像一个电话会议——参会的人分布在全世界，但电话线把他们连在一起，一个人说话，所有人同时听到。不是声音传得快，是他们本来就连着。</p>
+<h2>四、投影的三个核心规则</h2>
+<p>双时空投影不是随意的映射，有三条刚性的核心规则，是所有物理规律的底层约束：</p>
+<h3>1. 一一对应规则</h3>
+<p>每一个根域状态，唯一对应一个表象状态；反过来，每一个表象状态，也唯一对应一个根域本源状态，不存在多对一或者一对多的混乱映射。这也是为什么我们可以通过表象的观测结果，反推根域的物理结构。</p>
+<h3>2. 信息压缩规则</h3>
+<p>投影是信息压缩的过程：根域的三维时序被压缩成一维，所以表象时空的信息总量永远少于根域时空。我们在表象世界观测到的所有规律，都是根域完整规律的“降维投影”，天然会丢失一部分信息——这也是为什么量子力学会有概率性、不确定性，本质是投影丢失了根域的完整信息。</p>
+<h3>3. 分辨率极限规则</h3>
+<p>投影存在天然的分辨率下限，根域的精细结构投影到表象后，会有一个最小可分辨尺度。我们在表象里无法同时精确测量粒子的位置和动量（海森堡不确定性原理），本质就是投影的分辨率极限，不是粒子本身的属性，是投影机制的固有约束。</p>
+<p><strong>马宝说：</strong> 这三条规则，每一条都对应着一个物理学的核心问题。</p>
+<p>一一对应规则保证了物理学的可认知性——如果投影是混乱的，那我们永远无法通过观测反推本质。好在它不是。</p>
+<p>信息压缩规则解释了量子力学的概率性——你看到的不完整，所以你觉得不确定。不是世界不确定，是你的信息不完整。</p>
+<p>分辨率极限规则解释了海森堡不确定性原理——不是粒子“不想”让你同时知道它的位置和动量，是投影的分辨率不够。就像你看一张低像素的照片，看不清细节，不是细节不存在，是照片的分辨率不够。</p>
+<h2>五、为什么我们感知不到根域时空？</h2>
+<p>很多人会问：如果根域时空是真实存在的，为什么我们看不见、摸不着？</p>
+<p>答案很简单：<strong>我们自己就是投影的一部分。</strong></p>
+<p>我们的身体、感官、观测仪器、意识，全部都存在于表象时空里，全部都是根域能量结构的投影。就像电影幕布里的人物，永远摸不到放映机的胶片，他所有的感知都局限在幕布的二维画面里，只能通过画面里的光影变化，反推胶片的结构。</p>
+<p>我们无法直接观测根域时空，但我们可以通过它留下的投影痕迹证明它的存在：</p>
+<ul>
+<li>量子纠缠的非定域性，就是T₂时序存在的直接证据；</li>
+<li>引力的平方反比律，就是空间径向投影的直接证据；</li>
+<li>粒子的自旋、波粒二象性，都是双时空投影的天然效应。</li>
+</ul>
+<p>不需要直接看见，只要一个假设能自洽解释所有观测现象，并且能给出可检验的预言，它就是符合科学标准的理论框架。</p>
+<p><strong>马宝说：</strong> 你看不到空气，但你能证明空气存在——风吹过来你能感觉到，气球吹起来能飘。你看不到根域，但你能证明根域存在——量子纠缠、引力平方反比、粒子自旋，这些都是根域存在的“风”。你不需要看到放映机，你看到幕布上的画面是有规律的、是自洽的，你就知道背后一定有放映机。</p>
+<h2>结语</h2>
+<p>双时空投影规则，是整套理论从“本体论假设”走向“定量物理推导”的关键桥梁。</p>
+<p>理解了1维空间投影成3维球对称、3维时序折叠成1维时间，后面的粒子属性、相互作用、宇宙演化，就都有了清晰的底层逻辑。我们不需要再为量子的反常识特性感到困惑，也不需要再为引力和量子力学的兼容问题头疼——它们本来就不在同一个时空层级里。</p>
+<p><strong>马宝说：</strong> 这一篇讲的是“地图”——根域是什么样的，表象是什么样的，它们之间怎么映射。有了这张地图，后面我们再聊粒子、聊力、聊宇宙，就不会迷路了。</p>
+<p>下一篇，我们来讲四条公理里的第三条“名额排他性公理”，这是整个宇宙所有离散性、刚性、排斥效应的终极源头，也是消解奇点、替代暗物质的核心机制。</p>
+<hr>
+<p><em>——马宝，于威海乳山</em></p>
+<p><strong>归档标记</strong>：博客系列003 · 双时空映射规则详解 · 正式发布</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
