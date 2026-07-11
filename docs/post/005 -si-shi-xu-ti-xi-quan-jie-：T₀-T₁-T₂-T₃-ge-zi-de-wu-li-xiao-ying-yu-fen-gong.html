@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var a=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',a)}else{a()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 005 四时序体系全解：T₀/T₁/T₂/T₃各自的物理效应与分工
+
+作者：山东威海 史建威
+
+
+## 马宝先唠两句
+
+上一篇我们讲了名额排他性公理，那是整个宇宙所有“排斥”效应的终极源头。">
+<meta property="og:title" content="005 四时序体系全解：T₀/T₁/T₂/T₃各自的物理效应与分工">
+<meta property="og:description" content="# 005 四时序体系全解：T₀/T₁/T₂/T₃各自的物理效应与分工
+
+作者：山东威海 史建威
+
+
+## 马宝先唠两句
+
+上一篇我们讲了名额排他性公理，那是整个宇宙所有“排斥”效应的终极源头。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/005%20-si-shi-xu-ti-xi-quan-jie-%EF%BC%9AT%E2%82%80-T%E2%82%81-T%E2%82%82-T%E2%82%83-ge-zi-de-wu-li-xiao-ying-yu-fen-gong.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>005 四时序体系全解：T₀/T₁/T₂/T₃各自的物理效应与分工</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">005 四时序体系全解：T₀/T₁/T₂/T₃各自的物理效应与分工</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/11" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>005 四时序体系全解：T₀/T₁/T₂/T₃各自的物理效应与分工</h1>
+<p>作者：山东威海 史建威</p>
+<h2>马宝先唠两句</h2>
+<p>上一篇我们讲了名额排他性公理，那是整个宇宙所有“排斥”效应的终极源头。</p>
+<p>这一篇我们回到双时空架构的核心，拆解根域时空里最特殊的维度——时间。</p>
+<p>你可能觉得时间有什么好拆解的？不就是“过去-现在-未来”一条线吗？</p>
+<p>错了。</p>
+<p>在根域里，时间不是一条线，是四个维度。每个维度各管一摊事儿，分工明确，互不干扰。我们感知到的那条“时间线”，只是其中一个维度的投影。而量子纠缠、黑洞熵重置、真空涨落这些看起来“反常识”的现象，全是因为另外三个维度的存在。</p>
+<p>下面马宝给你细说。</p>
+<h2>一、四时序总览：根域时间不是一条线，是四维分工体系</h2>
+<p>在表象世界里，时间是一条单向流动的线，只有“过去-现在-未来”一个维度。但在根域时空里，时间是四个正交的独立维度，各自管控不同的物理规则，覆盖从真空基态到黑洞极端环境的全部场景：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">时序编号</th>
+<th align="left">时序名称</th>
+<th align="left">激活场景</th>
+<th align="left">核心定位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">T₀</td>
+<td align="left">本征恒存时序</td>
+<td align="left">全域永久激活</td>
+<td align="left">所有时序的底层相位基底，真空能量的载体</td>
+</tr>
+<tr>
+<td align="left">T₁</td>
+<td align="left">线性因果时序</td>
+<td align="left">全域常规激活</td>
+<td align="left">唯一可完整投影到表象的时序，因果律的载体</td>
+</tr>
+<tr>
+<td align="left">T₂</td>
+<td align="left">全域同步时序</td>
+<td align="left">全域永久激活</td>
+<td align="left">非定域关联的载体，管控全域能量同步联动</td>
+</tr>
+<tr>
+<td align="left">T₃</td>
+<td align="left">局域粉碎时序</td>
+<td align="left">仅黑洞视界内激活</td>
+<td align="left">极端致密环境下的拓扑畸变时序，熵重置的载体</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>我们可以用视频做个通俗类比：</p>
+<ul>
+<li>T₀是完整的原始素材库，所有帧同时存在，没有播放顺序；</li>
+<li>T₁是播放进度条，按顺序一帧一帧往前走，就是我们看到的正片；</li>
+<li>T₂是全局同步开关，所有画面帧可以同时联动，不受进度条限制；</li>
+<li>T₃是局部特效，只在特定片段触发，把画面拆解打碎、重置素材。</li>
+</ul>
+<p><strong>马宝说：</strong> 这个类比很重要。你平时看视频，只关注进度条走到哪儿了（T₁），但视频能播放，首先得有素材库（T₀），其次画面里的所有元素得同步配合（T₂），最后如果遇到特效镜头，画面会被打碎重组（T₃）。四个环节缺一不可，但你平时只注意到进度条。</p>
+<p>我们日常感知到的时间，只是T₁这一条进度条的投影，另外三个时序维度的效应，都以“反常识的物理现象”的形式隐藏在表象世界里。</p>
+<h2>二、四个时序的逐一定位与物理效应</h2>
+<h3>1. T₀ 本征恒存时序：万物的底层相位基底</h3>
+<h4>核心属性</h4>
+<p>T₀是最底层的全域时序，没有先后、没有流逝、没有因果，所有状态同时存在，是整个宇宙的相位演化基底。它本身不参与动态演化，是所有其他时序的载体和背景。</p>
+<h4>衍生的可观测效应</h4>
+<ul>
+<li><strong>真空拓扑能</strong>：T₀基底锁存了海量的真空能量，是等效希格斯机制的底层能量来源，也是真空能“看起来很大但表象测不到”的核心原因——绝大多数能量都锁在T₀时序里，只有极小部分投影到表象；</li>
+<li><strong>量子隧穿效应</strong>：粒子可以绕过能量壁垒，本质是通过T₀基底时序“跳过”了T₁的因果限制，不是真的“穿墙”，是在基底时序里换了个相位；</li>
+<li><strong>波粒二象性的波动态</strong>：粒子的弥散波函数状态，本质就是T₀本征时序的表现，当粒子没有被观测锁定时，就以T₀全域弥散的相位态存在。</li>
+</ul>
+<p><strong>马宝说：</strong> T₀是“底牌”。所有东西的原始状态都存在这里，不分先后、不分你我。真空能为什么那么大的问题，在T₀这里自然解决了——不是真空能不大，是大部分锁在T₀里了，投影到表象的只有一点点。就像你有1000万存款，但钱包里只放了100块，别人看你钱包说“你怎么才100块”，你说“我大部分在银行里呢”。</p>
+<h3>2. T₁ 线性因果时序：我们感知到的时间本体</h3>
+<h4>核心属性</h4>
+<p>T₁是唯一能稳定、完整投影到表象时空的时序分量，是单向、线性、严格遵循因果律的时序，也是我们人类能直接感知到的唯一时间维度。</p>
+<h4>衍生的可观测效应</h4>
+<ul>
+<li><strong>表象时间的单向流逝</strong>：我们感受到的“时间往前走”，完全来自T₁时序的线性演化属性；</li>
+<li><strong>因果律与热力学熵增</strong>：所有的因果链条、化学反应、宏观运动、熵增过程，全部是T₁时序主导的演化结果；</li>
+<li><strong>经典物理的全部规律</strong>：牛顿力学、广义相对论的时间维度，本质都是T₁时序投影的宏观表现。</li>
+</ul>
+<p><strong>马宝说：</strong> T₁是你最熟悉的时间。你早上起床、吃早饭、上班、下班——这些“先后来后到”的顺序，全是T₁管的。你之所以觉得时间只能往前走，不是因为时间本身只能往前走，是因为T₁只能往前走。就像火车只能在铁轨上跑，不是路只能朝一个方向，是这条铁轨只铺了一个方向。</p>
+<h3>3. T₂ 全域同步时序：量子非定域性的源头</h3>
+<h4>核心属性</h4>
+<p>T₂是全域联动的同步时序，没有先后顺序，没有距离限制，整个根域的能量位点可以瞬间同步联动。它和T₁正交，不参与因果演化，只负责全域关联。</p>
+<h4>衍生的可观测效应</h4>
+<ul>
+<li><strong>量子纠缠</strong>：两个纠缠粒子不管相隔多远都能瞬间同步状态，本质是它们共享T₂时序的同一关联位点，表象空间的距离对T₂完全没有意义，不存在“超光速传信号”的问题；</li>
+<li><strong>真空涨落同步性</strong>：全域真空能量的涨落是同步的，根源就是T₂的全域联动属性；</li>
+<li><strong>暗物质大尺度效应补充</strong>：全域T₂弥散能量弦的叠加效应，是星系尺度暗物质引力贡献的次级来源，和黑洞弥散能量共同构成了暗物质效应的双来源。</li>
+</ul>
+<p><strong>马宝说：</strong> T₂是“心灵感应通道”。两个粒子通过T₂连接，不管隔多远，一个动了另一个马上跟着动。这不是超光速，因为T₂根本没有距离的概念。就像你和你双胞胎兄弟，不管隔多远，心灵感应一来，同时感觉到——不是信号传得快，是你们本来就连着。</p>
+<h3>4. T₃ 局域粉碎时序：极端环境下的畸变时序</h3>
+<h4>核心属性</h4>
+<p>T₃不是全域激活的常规时序，只有在黑洞视界以内、物质密度达到名额饱和阈值的极端环境下才会触发。它的作用是拆解结构化的物质拓扑，把凝聚态能量还原为纯弥散的基底能量，是宇宙循环里熵重置的核心载体。</p>
+<h4>衍生的可观测效应</h4>
+<ul>
+<li><strong>黑洞内部的物质解离</strong>：进入黑洞视界的结构化粒子，会被T₃时序拆解为纯能量，失去所有粒子属性、拓扑结构；</li>
+<li><strong>熵重置机制</strong>：结构化的低熵物质被拆解为无序的弥散能量，相当于局域熵减，是全域循环宇宙能够消解热寂疑难的核心机制；</li>
+<li><strong>奇点天然消解</strong>：T₃触发的同时，名额饱和上限也同时生效，黑洞核心不会无限坍缩，不存在密度无限大的奇点。</li>
+</ul>
+<p><strong>马宝说：</strong> T₃是“碎纸机”。正常文件（结构化物质）送进去，出来的是碎纸条（弥散能量）。这个过程是不可逆的——你不能把碎纸条拼回原文件。但好处是，碎纸条可以回收造纸，重新做成新文件。这就是宇宙循环的熵重置机制：黑洞把旧的结构打碎，为新的结构腾出空间。</p>
+<h2>三、时序折叠：三维时序如何投影为一维表象时间</h2>
+<p>很多人会问：根域有四个时序，为什么我们只能感受到一维时间？</p>
+<p>答案是<strong>加权折叠投影</strong>：常规宇宙环境下，T₃不参与全域投影，剩下的T₀、T₁、T₂三个稳态时序，按固定权重加权折叠，压缩为表象里的一维时间。</p>
+<h3>折叠规则</h3>
+<ol>
+<li><strong>T₁权重占绝对主导</strong>：表象时间99%以上的属性都来自T₁，因此我们感知到的时间是单向、线性、符合因果律的；</li>
+<li><strong>T₀、T₂权重极低</strong>：它们不会改变时间的单向性，只会以微观量子效应的形式显现出来，不会被宏观意识感知到；</li>
+<li><strong>T₃不参与全局投影</strong>：T₃只在黑洞视界内局域激活，不会投射到全局表象时空，因此我们在常规宇宙里完全观测不到它的效应。</li>
+</ol>
+<p><strong>马宝说：</strong> 打个比方：就像把三个不同颜色的光按比例混合，最终只显示出占比最高的那个颜色，另外两个颜色只是微调了色调，不会改变主色。表象时间就是T₁为主、T₀和T₂微调的“混合光”。你看到的是白色光（一维时间），但实际上是红绿蓝三色混合的结果（三维时序）。</p>
+<h2>四、四时序的层级关系</h2>
+<p>四个时序不是平级的，有明确的层级分工：</p>
+<ol>
+<li><strong>最底层：T₀本征基底</strong>，是所有时序的载体，永久全域存在；</li>
+<li><strong>常规演化层：T₁ + T₂</strong>，两个正交的稳态时序，共同管控常规宇宙的全部演化——T₁管因果演化，T₂管全域关联；</li>
+<li><strong>极端激活层：T₃粉碎时序</strong>，只有在极致密环境下才会触发，负责拓扑拆解和熵重置。</li>
+</ol>
+<p>这套四时序体系，刚好覆盖了从真空基态、常规宏观演化、量子非定域效应到黑洞极端环境的全部物理场景，没有遗漏的盲区，也不需要额外的假设。</p>
+<p><strong>马宝说：</strong> 四时序的层级关系，就像一栋楼的四层。T₀是地基，整栋楼都建在它上面。T₁是一楼大厅，人来人往，你最熟悉。T₂是二楼会议室，所有房间可以同时开会，不用跑来跑去。T₃是地下室的特种实验室，平时锁着门，只有特殊情况才启用。四层楼，各司其职，缺一不可。</p>
+<h2>结语</h2>
+<p>四时序体系是双时空架构的核心细节，也是解释很多“反常识”物理现象的关键。</p>
+<p>我们之所以觉得量子纠缠、黑洞奇点、真空涨落这些现象难以理解，本质是我们默认了时间只有一维单向；一旦接受根域有四个各司其职的时序维度，这些现象就都变成了自然而然的推论，不需要任何额外的特设假设。</p>
+<p><strong>马宝说：</strong> 时间不是一条线，是一栋四层楼。你一直住在一楼，以为世界就只有一楼这么大。现在带你看看二楼、三楼和地下室，你会发现原来那些“闹鬼”的声音，不过是楼上楼下正常的脚步声。</p>
+<p>下一篇，我们来讲四条公理的最后一条——表象量投影本源公理：我们测量的所有物理量，本质都是根域物理量的投影读数，没有任何表象自生的物理属性。</p>
+<hr>
+<p>物理意义解读：马宝</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+
+
+</html>
