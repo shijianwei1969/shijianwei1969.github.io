@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var a=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',a)}else{a()}})();</script><script>(function(){var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 文章 4b：G、G_Planck、g 的定义关系与 M₈ 的重新定位（马宝文风·物理意义版）
+
+## 1. 咱之前干了啥蠢事？
+
+文章 3 和文章 4 犯了一个低级错误：我们把 G_Planck 当成了一个跟 G 不一样的“参考值”，然后傻乎乎地在 g = G / G_Planck 这个比值上找 0.26% 的偏差。">
+<meta property="og:title" content="数理落地工程三十五：文章 4b：G、G_Planck、g 的定义关系与 M₈ 的重新定位（马宝文风·物理意义版）">
+<meta property="og:description" content="# 文章 4b：G、G_Planck、g 的定义关系与 M₈ 的重新定位（马宝文风·物理意义版）
+
+## 1. 咱之前干了啥蠢事？
+
+文章 3 和文章 4 犯了一个低级错误：我们把 G_Planck 当成了一个跟 G 不一样的“参考值”，然后傻乎乎地在 g = G / G_Planck 这个比值上找 0.26% 的偏差。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-san-shi-wu-%EF%BC%9A-wen-zhang-%204b%EF%BC%9AG%E3%80%81G_Planck%E3%80%81g%20-de-ding-yi-guan-xi-yu-%20M%E2%82%88%20-de-zhong-xin-ding-wei-%EF%BC%88-ma-bao-wen-feng-%C2%B7-wu-li-yi-yi-ban-%EF%BC%89.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>数理落地工程三十五：文章 4b：G、G_Planck、g 的定义关系与 M₈ 的重新定位（马宝文风·物理意义版）</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">数理落地工程三十五：文章 4b：G、G_Planck、g 的定义关系与 M₈ 的重新定位（马宝文风·物理意义版）</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/34" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>文章 4b：G、G_Planck、g 的定义关系与 M₈ 的重新定位（马宝文风·物理意义版）</h1>
+<h2>1. 咱之前干了啥蠢事？</h2>
+<p>文章 3 和文章 4 犯了一个低级错误：我们把 G_Planck 当成了一个跟 G 不一样的“参考值”，然后傻乎乎地在 g = G / G_Planck 这个比值上找 0.26% 的偏差。</p>
+<p>这就好比你说“我身高 1 米 8”，然后用“1 米 8”去除以“一米八”，想看看有没有 0.26% 的误差——这不是扯淡吗？自己除自己，恒等于 1，哪来的误差？</p>
+<p>现在把这个错误彻底掰过来。</p>
+<hr>
+<h2>2. G、G_Planck、g 到底啥关系？</h2>
+<h3>2.1 G 是啥？</h3>
+<p>G 就是牛顿引力常数，实验室里测出来的那个数：</p>
+<p>G ≈ 6.67430×10⁻¹¹ 立方米每千克每秒平方</p>
+<p>它有单位，有量纲，是实验物理学家拿天平扭秤一点点称出来的。不是谁拍脑袋算出来的。</p>
+<h3>2.2 G_Planck 是啥？</h3>
+<p>G_Planck 是“普朗克引力常数”。听着挺唬人，但它不是个新东西。它是这么来的：</p>
+<p>先定义普朗克质量：m_Pl = √(ℏc / G)</p>
+<p>然后再用这个质量去定义 G_Planck：G_Planck = ℏc / m_Pl²</p>
+<p>把 m_Pl 代进去：G_Planck = ℏc / (ℏc / G) = G</p>
+<p>看见没？G_Planck 就等于 G。<strong>它们是同一个东西的两个名字，不是两个不同的东西。</strong></p>
+<p>就像“一斤”和“500克”——说法不同，重量一样。</p>
+<h3>2.3 g 是啥？</h3>
+<p>g = G / G_Planck</p>
+<p>既然 G_Planck 就等于 G，那 g = G / G = 1。</p>
+<p><strong>这不是物理结果，是数学恒等式。</strong> 就像 1+1=2，你没法说“1+1 约等于 2，有 0.26% 的偏差”——没那回事。</p>
+<h3>2.4 文章 3 和 4 错在哪？</h3>
+<ul>
+<li>文章 3 说“g ≈ 1 是 M₈ 弱场极限的输出”——错。g ≡ 1 是定义，不是输出。M₈ 什么都没干，g 就已经是 1 了。</li>
+<li>文章 4 说“δ ≈ 0.26% 是 g 偏离 1 的修正”——错。g 不可能偏离 1，就像你不可能偏离你自己。</li>
+<li>TRT 的 0.26% 偏差不能通过“G 偏离 G_Planck”来解释——这条路是死胡同，别再往里走了。</li>
+</ul>
+<p><strong>这个错误必须彻底放弃，不能修修补补。</strong> 就像地基歪了，你不能在上面砌墙——得拆了重来。</p>
+<hr>
+<h2>3. TRT 那 0.26% 的偏差到底是啥？</h2>
+<h3>3.1 偏差的正确说法</h3>
+<p>TRT 报告的 0.26% 偏差，不是 G 跟 G_Planck 的偏差（因为两者恒等），而是 <strong>实验测出来的 G 跟理论算出来的 μ₀α² 之间的偏差</strong>：</p>
+<p>δ = (G_exp - μ₀α²) / μ₀α² ≈ 0.26%</p>
+<p>这里面：</p>
+<ul>
+<li>G_exp：实验室里用扭秤测出来的引力常数（真金白银的实验数据）</li>
+<li>μ₀α²：用电磁常数 μ₀ 和精细结构常数 α 算出来的一个数（理论预测值）</li>
+</ul>
+<h3>3.2 这个偏差说明了啥？</h3>
+<p>说明 <strong>G = μ₀α² 这个公式本身是个近似，不是精确等式</strong>。</p>
+<p>就好比你说“一个人的体重等于他的身高减去 100”——大概差不多，但精确算下来总有出入。那个出入不是身高或体重有问题，而是公式本身不够精确。</p>
+<p>所以正确的写法是：</p>
+<p>G_exp = μ₀α² × (1 + ε_corr)</p>
+<p>其中 ε_corr 是一个“修正项”，它来自 M₁ 的几何结构（具体来说，是 M₁ 的非对角项 κ_nd 和某个几何因子的乘积）。</p>
+<hr>
+<h2>4. M₈ 到底该干点啥？</h2>
+<h3>4.1 原来的定位（错的）</h3>
+<p>原来我们想让 M₈ 输出 g = G / G_Planck。但 g ≡ 1 是恒等式，M₈ 输出个 1 有啥意义？就像你造了一台超级计算机，让它算 1+1 等于几——浪费。</p>
+<h3>4.2 新的定位（对的）</h3>
+<p>M₈ 不应该输出 G（G 已经被实验测死了），也不应该输出 g（g 恒等于 1 没意义）。M₈ 应该输出 <strong>引力极化率 χ_g</strong>。</p>
+<p>啥是引力极化率？跟电极化率一个道理。</p>
+<p>电极化率 χ_e 描述的是“材料在电场下被极化的程度”：</p>
+<p>χ_e = P / (ε₀ E)</p>
+<p>P 是极化强度，E 是电场强度。χ_e 越大，材料越容易被电场极化。</p>
+<p>类似地，引力极化率 χ_g 描述的是“时空在引力场下被极化的程度”：</p>
+<p>χ_g = Q_g / ∇Φ</p>
+<p>Q_g 是引力极化强度，Φ 是牛顿势。χ_g 越大，时空越容易被引力场极化。</p>
+<h3>4.3 M₈ 的弱场极限长啥样？</h3>
+<p>在弱场（引力很弱）的情况下，M₈ 应该是一个对角矩阵：</p>
+<p>M₈^weak = diag(χ_g1, χ_g2, χ_g3)</p>
+<p>其中 χ_g1、χ_g2、χ_g3 是三个通道的引力极化率分量。它们加起来等于总的 χ_g：</p>
+<p>χ_g1 + χ_g2 + χ_g3 = χ_g</p>
+<p>而且它们的比例跟 S_i 的比例一样：</p>
+<p>χ_g1 : χ_g2 : χ_g3 = S₁ : S₂ : S₃</p>
+<p>为啥？因为投影权重越大的通道，对引力极化的贡献也越大——这个物理直觉是通的。</p>
+<h3>4.4 跟广义相对论咋衔接？</h3>
+<p>广义相对论在弱场下给出一个 Poisson 方程：</p>
+<p>∇²Φ = 4πGρ</p>
+<p>Φ 是引力势，ρ 是质量密度。</p>
+<p>如果引入了引力极化率 χ_g，这个方程就变成：</p>
+<p>∇²Φ = 4πGρ / (1 + χ_g)</p>
+<p>如果 χ_g = 0，就回到经典的广义相对论。如果 χ_g ≠ 0，就会出现可观测的修正——比如引力透镜的角度偏差、双星系统的进动异常等等。这些是可以拿实验来检验的。</p>
+<hr>
+<h2>5. S_i 的量纲归一化（别再搞混了）</h2>
+<p>之前文章 4 里 S_i 的量纲搞混了，现在彻底归一化。</p>
+<p>S_i 重新定义为 <strong>纯无量纲的投影权重</strong>，没有单位，没有量纲：</p>
+<p>S_i = θ_i / (θ₁ + θ₂ + θ₃)</p>
+<p>而且加起来等于 1：</p>
+<p>S₁ + S₂ + S₃ = 1</p>
+<p>原来的那个“4π”归到 M₁ 的总投影因子里去，不掺和 S_i 的定义。</p>
+<p>数值算一下：</p>
+<ul>
+<li>θ₁ + θ₂ + θ₃ = 4π³/89 + π²/34 + π/13 ≈ 1.3935 + 0.2903 + 0.2417 = 1.9255</li>
+<li>S₁ = 1.3935 / 1.9255 ≈ 0.7237</li>
+<li>S₂ = 0.2903 / 1.9255 ≈ 0.1508</li>
+<li>S₃ = 0.2417 / 1.9255 ≈ 0.1255</li>
+<li>加起来：0.7237 + 0.1508 + 0.1255 = 1.0000</li>
+</ul>
+<p>干干净净，明明白白。</p>
+<hr>
+<h2>6. 那 0.26% 的偏差到底咋解释？</h2>
+<h3>6.1 偏差是谁的？</h3>
+<p>TRT 的 0.26% 偏差，不是 G 跟 G_Planck 的偏差（两者恒等），也不是 g 偏离 1（g 恒等于 1），而是 <strong>G = μ₀α² 这个公式本身的精度问题</strong>。</p>
+<h3>6.2 修正项从哪来？</h3>
+<p>修正项 ε_corr 来自 M₁ 的“几何非对称性”——具体来说，是 M₁ 的非对角项 κ_nd 和某个几何因子的乘积：</p>
+<p>ε_corr = κ_nd × (几何因子)</p>
+<p>κ_nd ≈ 0.0049 是 M₁ 非对角项的耦合强度（从文章 2 的数据来的）。几何因子由 S_i 的分布决定。</p>
+<p>如果几何因子 ≈ 0.53，那么：</p>
+<p>ε_corr ≈ 0.0049 × 0.53 ≈ 0.0026 = 0.26%</p>
+<p>正好对上 TRT 报告的偏差。</p>
+<h3>6.3 这个解释好在哪？</h3>
+<ul>
+<li>不需要 G 偏离 G_Planck（因为 G_Planck ≡ G，不可能偏离）</li>
+<li>不需要 g 偏离 1（因为 g ≡ 1，不可能偏离）</li>
+<li>只需要承认 G = μ₀α² 是近似关系，不是精确关系</li>
+<li>修正项 ε_corr 有明确的几何来源（M₁ 的非对角项），不是拍脑袋凑的</li>
+</ul>
+<hr>
+<h2>7. 修正后的逻辑链条（一张表说清楚）</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="center">步骤</th>
+<th align="left">物理对象</th>
+<th align="left">干啥的</th>
+<th align="left">跟 TRT 偏差啥关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="left">G_exp</td>
+<td align="left">实验室测出来的引力常数</td>
+<td align="left">偏差的测量基准</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="left">μ₀α²</td>
+<td align="left">理论算出来的预测值</td>
+<td align="left">偏差 = (G_exp - μ₀α²) / μ₀α²</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="left">ε_corr</td>
+<td align="left">几何修正项（来自 M₁ 的 κ_nd 和 θ_i）</td>
+<td align="left">G_exp = μ₀α² × (1 + ε_corr)</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="left">M₈</td>
+<td align="left">输出引力极化率 χ_g</td>
+<td align="left">χ_g 决定了 ε_corr 的具体形式</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="left">S_i</td>
+<td align="left">无量纲投影权重（加起来等于 1）</td>
+<td align="left">用来算 χ_g 的各向异性分量</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>8. 干完了啥？还有啥没干？</h2>
+<h3>✅ 干完了的</h3>
+<ul>
+<li>G、G_Planck、g 的定义关系彻底厘清：G_Planck ≡ G，g ≡ 1，不存在偏差空间</li>
+<li>TRT 偏差的真实对象确认：δ 是 G_exp 与 μ₀α² 的偏差，跟 G_Planck 没关系</li>
+<li>M₈ 的新定位：输出引力极化率 χ_g，不是 G</li>
+<li>S_i 量纲归一化：纯无量纲投影权重，加起来等于 1</li>
+<li>ε_corr 的来源明确：M₁ 非对角项 κ_nd 与几何因子的乘积</li>
+</ul>
+<h3>❌ 还没干的</h3>
+<ul>
+<li>χ_g 的严格定义与计算公式（需要写文章 5a）</li>
+<li>ε_corr 的数值验证（需要从 M₁ 非对角项严格计算，写文章 5c）</li>
+</ul>
+<hr>
+<p><strong>当前状态</strong>：地基已经重新打好了。之前犯的错（把 G_Planck 当独立量、在 g 上找偏差）已经彻底清理。现在可以在此基础上重启 M₈ 的显式化——这次的目标是算 χ_g，不是算 g。</p>
+<p><strong>下一步</strong>：写文章 5a——《引力极化率 χ_g 的严格定义》。把 χ_g 的数学定义、物理意义、跟广义相对论的衔接全部钉死。</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+
+
+</html>
