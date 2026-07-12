@@ -1,5 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Sun, 12 Jul 2026 13:10:27 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>数理落地工程三十三：θ_i 的几何自洽性验证（修正版 v1.1）</title><link>https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-san-shi-san-%EF%BC%9A%CE%B8_i%20-de-ji-he-zi-qia-xing-yan-zheng-%EF%BC%88-xiu-zheng-ban-%20v1.1%EF%BC%89.html</link><description># 文章 2：θ_i 的几何自洽性验证（修正版 v1.1）
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Sun, 12 Jul 2026 13:13:38 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>数理落地工程三十四:G = μ₀α² 的翻译验证-马宝文风·物理意义版</title><link>https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-san-shi-si--G%20%3D%20%CE%BC%E2%82%80%CE%B1%C2%B2%20-de-fan-yi-yan-zheng---ma-bao-wen-feng-%C2%B7-wu-li-yi-yi-ban.html</link><description># 文章 3：G = μ₀α² 的翻译验证（马宝文风·物理意义版）
+
+## 1. 咱要干啥？
+
+TRT 那帮人发现了一个怪事儿：引力常数 G 和电磁常数 μ₀、精细结构常数 α 之间，有这么个关系：
+
+**G = μ₀ × α²**
+
+而且这个关系还挺准，就差 0.26%。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-san-shi-si--G%20%3D%20%CE%BC%E2%82%80%CE%B1%C2%B2%20-de-fan-yi-yan-zheng---ma-bao-wen-feng-%C2%B7-wu-li-yi-yi-ban.html</guid><pubDate>Sun, 12 Jul 2026 13:13:13 +0000</pubDate></item><item><title>数理落地工程三十三：θ_i 的几何自洽性验证（修正版 v1.1）</title><link>https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-san-shi-san-%EF%BC%9A%CE%B8_i%20-de-ji-he-zi-qia-xing-yan-zheng-%EF%BC%88-xiu-zheng-ban-%20v1.1%EF%BC%89.html</link><description># 文章 2：θ_i 的几何自洽性验证（修正版 v1.1）
 
 ## 1. 问题定义
 

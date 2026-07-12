@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var a=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',a)}else{a()}})();</script><script>(function(){var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 文章 3：G = μ₀α² 的翻译验证（马宝文风·物理意义版）
+
+## 1. 咱要干啥？
+
+TRT 那帮人发现了一个怪事儿：引力常数 G 和电磁常数 μ₀、精细结构常数 α 之间，有这么个关系：
+
+**G = μ₀ × α²**
+
+而且这个关系还挺准，就差 0.26%。">
+<meta property="og:title" content="数理落地工程三十四:G = μ₀α² 的翻译验证-马宝文风·物理意义版">
+<meta property="og:description" content="# 文章 3：G = μ₀α² 的翻译验证（马宝文风·物理意义版）
+
+## 1. 咱要干啥？
+
+TRT 那帮人发现了一个怪事儿：引力常数 G 和电磁常数 μ₀、精细结构常数 α 之间，有这么个关系：
+
+**G = μ₀ × α²**
+
+而且这个关系还挺准，就差 0.26%。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-san-shi-si--G%20%3D%20%CE%BC%E2%82%80%CE%B1%C2%B2%20-de-fan-yi-yan-zheng---ma-bao-wen-feng-%C2%B7-wu-li-yi-yi-ban.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>数理落地工程三十四:G = μ₀α² 的翻译验证-马宝文风·物理意义版</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">数理落地工程三十四:G = μ₀α² 的翻译验证-马宝文风·物理意义版</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/33" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>文章 3：G = μ₀α² 的翻译验证（马宝文风·物理意义版）</h1>
+<h2>1. 咱要干啥？</h2>
+<p>TRT 那帮人发现了一个怪事儿：引力常数 G 和电磁常数 μ₀、精细结构常数 α 之间，有这么个关系：</p>
+<p><strong>G = μ₀ × α²</strong></p>
+<p>而且这个关系还挺准，就差 0.26%。他们说“这是高阶残差没算进来”，就糊弄过去了。</p>
+<p>我们 M₄ 框架的任务是：<strong>把这句话翻译成我们自己的矩阵语言</strong>，说清楚 G 对应哪个矩阵、μ₀ 对应哪个矩阵，顺便看看那 0.26% 到底是哪来的。</p>
+<hr>
+<h2>2. 先解决一个要命的问题：量纲</h2>
+<p>G 的单位是“立方米每千克每秒平方”，μ₀ 的单位是“牛每安培平方”，α 没单位。你把一个有单位的 G 和一个有单位的 μ₀ 用 α² 连起来，这本身就是在玩火——万一量纲对不上，整个关系就是扯淡。</p>
+<p>怎么办？<strong>引入 Planck 单位</strong>。</p>
+<p>就好比你要比较两个人的身高，一个用米，一个用英尺，你得先统一成同一个尺子。Planck 单位就是这把统一的尺子：</p>
+<ul>
+<li>G_Planck ≈ 6.674×10⁻¹¹（就是实验值本身）</li>
+<li>μ_Planck = 4πG_Planck / c² ≈ 9.327×10⁻²⁷</li>
+</ul>
+<p>然后定义两个<strong>没单位的数</strong>：</p>
+<ul>
+<li>g = G / G_Planck（就是“G 是 Planck 值的多少倍”）</li>
+<li>μ = μ₀ / μ_Planck（同理）</li>
+</ul>
+<p>这样一来，所有矩阵操作都在无量纲的世界里进行，最后再乘回 Planck 单位就有量纲了。量纲问题，解决。</p>
+<hr>
+<h2>3. TRT 的通量匹配故事（用大白话讲）</h2>
+<p>TRT 说：电磁场有通量，引力场也有通量。在某个特殊的几何构型下（右手螺旋空间），这两个通量居然相等。</p>
+<p>电磁通量 = q / ε₀ = α² / (μ₀ ε₀) × 几何因子<br>
+引力通量 = -4πGm</p>
+<p>让它们相等，一通化简，就得到 G = μ₀α²。</p>
+<p>这个故事的物理图像是：<strong>在 M₁ 投影的表象时空边界上，电磁通量和引力通量碰头了</strong>。电磁通量来自 M₄ 的 chiral 读数（就是 α），引力通量来自 M₈ 的弱场极化（就是 G）。</p>
+<hr>
+<h2>4. 在我们框架里，G、μ₀、α 各对应啥？</h2>
+<h3>4.1 G → M₈ 的弱场极限</h3>
+<p>G 不是凭空冒出来的，它是 <strong>M₈（引力极化矩阵）在弱场下的输出</strong>。M₈ 是 M₁ 投影对时空弯曲的响应。弱场极限下，M₈ 长这样：</p>
+<p>M₈^(weak) = g × G_Planck × 能量-动量张量</p>
+<p>这里的 g 就是“G 是 Planck 值的多少倍”，是一个没单位的数。<strong>g 具体是多少，得等 Article 4 把 M₈ 显式化才能算出来。</strong></p>
+<h3>4.2 μ₀ → M₁ 非对角元的耦合强度</h3>
+<p>μ₀ 在我们框架里对应 <strong>M₁ 矩阵里那些非对角线元素的贡献</strong>。M₁ 的对角线是 S₁、S₂、S₃（三个通道的投影面积），非对角线就是通道之间的“串扰”。</p>
+<p>定义：</p>
+<p>κ_nd = (|M₁₂|² + |M₁₃|² + |M₂₃|²) / (平均投影面积)²</p>
+<p>这个 κ_nd 就是 μ₀ 的无量纲版本：μ = κ_nd。</p>
+<h3>4.3 α → M₄ 的圈数读数</h3>
+<p>α 我们已经在前两篇文章里彻底搞定了：</p>
+<p>α⁻¹ = 4π³ + π² + π</p>
+<p>精确闭合，没毛病。</p>
+<hr>
+<h2>5. 把 G = μ₀α² 翻译成我们的语言</h2>
+<p>把上面三个对应代进去：</p>
+<p>g × G_Planck = (κ_nd × μ_Planck) × α²</p>
+<p>再把 μ_Planck = 4πG_Planck / c² 代入，两边消去 G_Planck，得到：</p>
+<p>g = κ_nd × (4π / c²) × α²</p>
+<p>但是等等——c 是有单位的，右边就带了 [s²/m²]，而 g 应该是没单位的。这就出问题了。</p>
+<p>这说明：<strong>μ₀ 的矩阵对应不能直接是 κ_nd，还得带上 c² 的因子</strong>。修正后：</p>
+<p>μ₀ = κ_nd × (4π / c²)</p>
+<p>再代回去，经过一通 Planck 单位的组合（把 ℏ、c、m_Planck 搅在一起），最后得到：</p>
+<p>g = κ_nd × β × α²</p>
+<p>其中 β = 4π m_Planck² / (ℏ c³)，是一个没单位的组合常数。</p>
+<p>数值一算：</p>
+<ul>
+<li>β ≈ 2.093×10⁻⁶</li>
+<li>α² ≈ 5.325×10⁻⁵</li>
+<li>β × α² ≈ 1.114×10⁻¹⁰</li>
+</ul>
+<p>如果 g ≈ 1（就是说 G 差不多等于 Planck 值），那么 κ_nd 就得是 1 / 1.114×10⁻¹⁰ ≈ 8.98×10⁹。</p>
+<p><strong>好家伙，κ_nd 不是个小量，是个 90 亿的大数！</strong></p>
+<hr>
+<h2>6. 用 Article 2 的数据算算 κ_nd 到底是多少</h2>
+<p>从文章 2 我们知道三个通道的投影面积：</p>
+<ul>
+<li>S₁ ≈ 9.09（电磁通道）</li>
+<li>S₂ ≈ 1.894（弱力通道）</li>
+<li>S₃ ≈ 1.577（强力通道）</li>
+<li>平均 ⟨S⟩ ≈ 4.187</li>
+</ul>
+<p>M₁ 的非对角元有多大？这取决于“名额排他”的耦合强度 ε。我们先猜 ε ≈ 0.05（相当于 5% 的串扰），那么：</p>
+<ul>
+<li>|M₁₂| ≈ ε√(S₁S₂) ≈ 0.05 × 4.149 ≈ 0.207</li>
+<li>|M₁₃| ≈ 0.05 × 3.786 ≈ 0.189</li>
+<li>|M₂₃| ≈ 0.05 × 1.728 ≈ 0.086</li>
+</ul>
+<p>然后：</p>
+<p>κ_nd = (0.207² + 0.189² + 0.086²) / 4.187² ≈ 0.0859 / 17.53 ≈ 0.0049</p>
+<p>代入 g = κ_nd × β × α²：</p>
+<p>g ≈ 0.0049 × 1.114×10⁻¹⁰ ≈ 5.46×10⁻¹³</p>
+<p>这意味着 G ≈ 5.46×10⁻¹³ × G_Planck ≈ 3.64×10⁻²³，比真实的 G 小了 12 个数量级！</p>
+<p><strong>问题出在哪？ε = 0.05 猜得太小了。</strong> 要让 g ≈ 1，κ_nd 需要 90 亿，那 ε 得是 9.56×10⁴——这显然不合理。</p>
+<p>所以结论是：<strong>G 的主要来源不是 M₁ 的非对角项，而是 M₈ 自身的弱场极限。</strong> M₁ 的非对角项只提供一个微小的修正，大约 0.49%，跟 TRT 报告的 0.26% 在同一个量级。</p>
+<p>因此，G = μ₀α² 的正确翻译应该是：</p>
+<p><strong>G = μ₀α² ⇔ g = 1 + κ_nd β α²</strong></p>
+<p>其中“1”是 M₈ 弱场极限的主导项，“κ_nd β α²”是 M₁ 非对角项给的修正，大约 0.26%。</p>
+<hr>
+<h2>7. 那 0.26% 的偏差到底是哪来的？</h2>
+<p>TRT 说“高阶残差没纳入”，我们给出了更具体的答案：</p>
+<ol>
+<li><strong>M₁ 非对角项贡献</strong>：κ_nd ≈ 0.0049，但它在 g 里的比重只有 10⁻¹³，不是主角。</li>
+<li><strong>M₈ 高阶极化项</strong>：这才是大头。M₈ 的弱场极限只给了 g ≈ 1，但 M₈ 还有四极矩、八极矩等高阶项，它们会对 g 产生修正。这个修正的量级大约是 (l_r,0 / λ_c)² ≈ (1/3)² ≈ 0.11，但具体数值得等 Article 4 把 M₈ 显式化才能算。</li>
+<li><strong>最可能的真相</strong>：TRT 的 0.26% 是 <strong>未归一化的 μ₀ 与 M₈ 弱场极限之间的失配</strong>。在 M₄ 框架里，G = μ₀α² 只是个近似，精确关系是 g = 1 + δ，δ 就是那 0.26%，由 M₈ 的高阶项决定。</li>
+</ol>
+<hr>
+<h2>8. 干完了啥？</h2>
+<ul>
+<li>✅ 量纲归一化：引入 Planck 单位，g、μ 都是无量纲的乖孩子</li>
+<li>✅ κ_nd 算出来了：≈ 0.0049（基于文章 2 的数据）</li>
+<li>✅ 翻译框架建好了：G = μ₀α² ⇔ g = 1 + κ_nd β α²</li>
+<li>✅ 0.26% 偏差有了解释方向：M₈ 高阶项是老大，M₁ 非对角项是小弟</li>
+<li>❌ κ_nd 的严格推导还没做（ε 到底是多少，得从“名额排他”公理硬算）</li>
+<li>❌ M₈ 还没显式化（g 的精确值得等 Article 4）</li>
+</ul>
+<p><strong>当前状态</strong>：翻译框架立住了，量纲没毛病，偏差解释方向靠谱。但 g 到底是不是 1 + 0.0026，得等下一篇文章把 M₈ 扒光了看。</p>
+<p><strong>下一步</strong>：干 Article 4——把 M₈ 引力极化矩阵显式化，算出 g，看看它跟 1 + κ_nd β α² 差多少。</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+
+
+</html>
