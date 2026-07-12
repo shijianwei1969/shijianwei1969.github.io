@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var a=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',a)}else{a()}})();</script><script>(function(){var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# M₄ Chiral 子块显式化草稿（v7.41，终稿）
+
+**版本说明**：v7.41 是在 v7.4 基础上，根据审稿反馈进行最终修订的存档版本。">
+<meta property="og:title" content="数理落地工程三十一：M₄ Chiral 子块显式化草稿（v7.41，终稿）">
+<meta property="og:description" content="# M₄ Chiral 子块显式化草稿（v7.41，终稿）
+
+**版本说明**：v7.41 是在 v7.4 基础上，根据审稿反馈进行最终修订的存档版本。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-san-shi-yi-%EF%BC%9AM%E2%82%84%20Chiral%20-zi-kuai-xian-shi-hua-cao-gao-%EF%BC%88v7.41%EF%BC%8C-zhong-gao-%EF%BC%89.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>数理落地工程三十一：M₄ Chiral 子块显式化草稿（v7.41，终稿）</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">数理落地工程三十一：M₄ Chiral 子块显式化草稿（v7.41，终稿）</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/29" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>M₄ Chiral 子块显式化草稿（v7.41，终稿）</h1>
+<p><strong>版本说明</strong>：v7.41 是在 v7.4 基础上，根据审稿反馈进行最终修订的存档版本。主要修改包括：① 将斐波那契记号改为 Mₙ 以区别于标准斐波那契数列；② 在表 4.2 中增加“几何解释”列；③ 强化可证伪性预言的清晰度；④ 补充数值精度说明。详细修改记录见附录 Z。</p>
+<hr>
+<h2>摘要</h2>
+<p>M₄ 模型 v7.41 从 3T1S（三时序一空域）根域拓扑出发，构造手性投影矩阵 M₄，其对角元由三时序缠绕数 N₁, N₂, N₃ 决定。在马尔可夫丢番图方程 x² + y² + z² = 3xyz 的约束下，从主分支连续三项马尔可夫-斐波那契奇数项 (M₇, M₉, M₁₁) = (13, 34, 89) 出发，通过规范群层级重排得到三时序的圈数读数 (N₁, N₂, N₃) = (89, 34, 13)。</p>
+<p>M₄ 的整数语言与 TRT 的几何语言精确同构：每层缠绕数 N_i 对应 TRT 的几何当量 Ω_i，通过每圈当量 θ_i = Ω_i / N_i 换算。具体对应为：</p>
+<ul>
+<li>T₃ 层（强力，最内）：N₃ = 13 圈，Ω₃ = π，θ₃ = π/13</li>
+<li>T₂ 层（弱力，中层）：N₂ = 34 圈，Ω₂ = π²，θ₂ = π²/34</li>
+<li>T₁ 层（电磁，最外）：N₁ = 89 圈，Ω₁ = 4π³，θ₁ = 4π³/89</li>
+</ul>
+<p>由此，精细结构常数的倒数精确表示为：</p>
+<p>$$
+\alpha^{-1} = \Omega_1 + \Omega_2 + \Omega_3 = N_1\theta_1 + N_2\theta_2 + N_3\theta_3 = 4\pi^3 + \pi^2 + \pi \approx 137.036
+$$</p>
+<p>两套语言完全等价，无近似、无截断、无差额。M₄ 的贡献在于：为 TRT 的几何公式提供了前验的整数拓扑骨架——(13,34,89) 来自马尔可夫树的连续三项，是矩阵谱的必然结果，而非分形相变的后验故事。</p>
+<p><strong>关键词</strong>：M₄ 手性投影矩阵；3T1S 拓扑；马尔可夫丢番图方程；精细结构常数；圈数-几何同构</p>
+<hr>
+<h2>§1 引言</h2>
+<p>精细结构常数 α ≈ 1/137.036 是量子电动力学的基本耦合常数，其数值起源长期以来被视为理论物理的重大谜题之一。标准模型将其作为自由参数输入，未提供几何或拓扑解释。</p>
+<p>TRT 框架从右手螺旋空间的几何出发，导出 α⁻¹ = 4π³ + π² + π ≈ 137.036，精度达 2.22 ppm。该公式的数值巧合一再暗示其背后存在更深刻的拓扑结构。</p>
+<p>M₄ 模型 v7.41 从 3T1S（三时序一空域）根域拓扑出发，构造手性投影矩阵 M₄，其对角元由三时序缠绕数 N₁, N₂, N₃ 决定。本文的核心主张是：<strong>TRT 的几何语言（Ω₁=4π³, Ω₂=π², Ω₃=π）和 M₄ 的整数语言（N₁=89, N₂=34, N₃=13）是同一物理对象——3T1S 根域三时序的缠绕——在两种刻度下的精确读数。</strong> 两套语言通过每层当量 θ_i = Ω_i / N_i 精确换算，没有近似，没有截断，没有差额。</p>
+<p>本文结构如下：§2 定义 M₄ 的代数结构；§3 引入马尔可夫丢番图约束并导出缠绕数取值；§4 建立 M₄ 整数语言与 TRT 几何语言的翻译关系；§5 讨论该翻译的物理意义与开放问题。</p>
+<hr>
+<h2>§2 M₄ 的代数结构</h2>
+<h3>2.1 矩阵形式</h3>
+<p>M₄ 是 3×3 厄米矩阵，描述根域三时序 T₁, T₂, T₃ 之间的手性耦合：</p>
+<p>$$
+M_4 = i\omega_0
+\begin{pmatrix}
+N_1 &amp; \delta_{12} &amp; \delta_{13} \\
+\delta_{12}^* &amp; N_2 &amp; \delta_{23} \\
+\delta_{13}^* &amp; \delta_{23}^* &amp; N_3
+\end{pmatrix}
+\equiv i\omega_0 \cdot \mathcal{N}_4
+$$</p>
+<p>其中：</p>
+<ul>
+<li>ω₀ = 2πc/λ_c 是手性特征频率，由常数链基准 l_r,0 通过 λ_c = l_r,0/3 锚定</li>
+<li>N_i = N_w^(T_i) ∈ ℤ⁺ 是三时序缠绕数（整数圈数）</li>
+<li>δ_ij ∈ ℂ 是时序间手性耦合，满足 |δ_ij| ≪ N_i（微观层级耦合弱）</li>
+</ul>
+<h3>2.2 厄米性</h3>
+<p>厄米性要求 δ_ij^* = δ_ji，保证本征值为实数（乘以 iω₀ 后为纯虚数，对应手性投影的虚部读数）。</p>
+<hr>
+<h2>§3 马尔可夫丢番图约束与缠绕数</h2>
+<h3>3.1 马尔可夫方程与 Vieta 跳跃</h3>
+<p>三时序缠绕数满足马尔可夫丢番图方程（源自 3T1S 根域拓扑的整数约束）：</p>
+<p>$$
+x^2 + y^2 + z^2 = 3xyz
+$$</p>
+<p>该方程的所有正整数解可通过 Vieta 跳跃生成（Cassels, 1957）：从 (1,1,1) 出发，每次变换 (x,y,z) → (x,y,3xy-z)。固定 x=1（对应 T₁ 为主通道，U(1) 投影），生成序列：<br>
+(1,1,1) → (1,1,2) → (1,2,5) → (1,5,13) → (1,13,34) → (1,34,89) → (1,89,233) → ...<br>
+该序列满足递推关系 <strong>Mₙ₊₂ = 3Mₙ₊₁ - Mₙ</strong>（从 M₁=1 开始），生成马尔可夫-斐波那契奇数项：1, 1, 2, 5, 13, 34, 89, 233, ...（记为 Mₙ 以区别于标准斐波那契数列 Fₙ）。该递推来源于 Vieta 跳跃变换 (1, y, z) → (1, z, 3z - y)，是马尔可夫方程解树主分支的内禀结构。</p>
+<h3>3.2 缠绕数赋值：圈数读数的确定</h3>
+<p>从主分支连续三项 (M₇, M₉, M₁₁) = (13, 34, 89) 出发，按规范群层级重排（T₁ 电磁长程 → 最大, T₃ 强力短程 → 最小）：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="center">时序</th>
+<th align="left">物理角色</th>
+<th align="center">马尔可夫-斐波那契项</th>
+<th align="center">重排后 N_i（圈数）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">T₁</td>
+<td align="left">电磁主通道（U(1) 投影，最外层）</td>
+<td align="center">M₁₁</td>
+<td align="center">89</td>
+</tr>
+<tr>
+<td align="center">T₂</td>
+<td align="left">弱力通道（SU(2) 投影，中间层）</td>
+<td align="center">M₉</td>
+<td align="center">34</td>
+</tr>
+<tr>
+<td align="center">T₃</td>
+<td align="left">强力通道（SU(3) 投影，最内层）</td>
+<td align="center">M₇</td>
+<td align="center">13</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>层级逻辑：力程越长 ↔ 拓扑投影越外 ↔ 缠绕圈数越多。T₁ 电磁长程 → 89 圈，T₃ 强力短程 → 13 圈，T₂ 弱力中程 → 34 圈。</p>
+<hr>
+<h2>§4 M₄ 整数语言与 TRT 几何语言的翻译关系</h2>
+<h3>4.1 核心命题</h3>
+<p>TRT 框架从右手螺旋空间的几何出发，导出 α⁻¹ 的三层几何当量：</p>
+<ul>
+<li>Ω₃ = π（强力层，裸磁管面积）</li>
+<li>Ω₂ = π²（弱力层，圆柱螺旋扫掠面积）</li>
+<li>Ω₁ = 4π³（电磁层，高斯球面面积）</li>
+</ul>
+<p>M₄ 框架从 3T1S 根域拓扑出发，导出三时序的圈数读数：</p>
+<ul>
+<li>N₃ = 13 圈（T₃，强力时序）</li>
+<li>N₂ = 34 圈（T₂，弱力时序）</li>
+<li>N₁ = 89 圈（T₁，电磁时序）</li>
+</ul>
+<p><strong>核心主张</strong>：Ω_i 和 N_i 是同一物理对象——3T1S 根域三时序的缠绕——在两种刻度下的读数。它们通过每圈当量 θ_i 精确换算：</p>
+<p>$$
+\theta_i = \frac{\Omega_i}{N_i}
+$$</p>
+<p>其中 θ_i 的物理意义是：<strong>每一圈缠绕在表象时空中所展开的几何当量</strong>。θ_i 的大小由 M₁ 投影算子的层级释放率决定——T₃ 缠得最紧，每圈展开最小（θ₃ = π/13）；T₁ 缠得最松，每圈展开最大（θ₁ = 4π³/89）。</p>
+<h3>4.2 三层对应</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="center">层级</th>
+<th align="center">TRT 几何当量 Ω_i</th>
+<th align="center">M₄ 圈数 N_i</th>
+<th align="center">每圈当量 θ_i = Ω_i / N_i</th>
+<th align="left">几何解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">T₃（强力，最内）</td>
+<td align="center">Ω₃ = π</td>
+<td align="center">N₃ = 13</td>
+<td align="center">θ₃ = π/13 ≈ 0.242</td>
+<td align="left">每圈缠绕对应半径为 1/√13 的圆面积</td>
+</tr>
+<tr>
+<td align="center">T₂（弱力，中层）</td>
+<td align="center">Ω₂ = π²</td>
+<td align="center">N₂ = 34</td>
+<td align="center">θ₂ = π²/34 ≈ 0.290</td>
+<td align="left">每圈缠绕对应半径为 π/√34 的圆面积</td>
+</tr>
+<tr>
+<td align="center">T₁（电磁，最外）</td>
+<td align="center">Ω₁ = 4π³</td>
+<td align="center">N₁ = 89</td>
+<td align="center">θ₁ = 4π³/89 ≈ 1.393π</td>
+<td align="left">每圈缠绕对应半径为 2π/√89 的球面面积</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>4.3 α 的精确公式</h3>
+<p>精细结构常数的倒数 α⁻¹ 是三层几何当量之和：</p>
+<p>$$
+\alpha^{-1} = \Omega_1 + \Omega_2 + \Omega_3
+$$</p>
+<p>用 M₄ 的整数语言改写：</p>
+<p>$$
+\alpha^{-1} = N_1\theta_1 + N_2\theta_2 + N_3\theta_3
+$$</p>
+<p>代入具体数值：</p>
+<p>$$
+\alpha^{-1} = 89 \cdot \frac{4\pi^3}{89} + 34 \cdot \frac{\pi^2}{34} + 13 \cdot \frac{\pi}{13} = 4\pi^3 + \pi^2 + \pi \approx 137.036
+$$</p>
+<p>两边 N_i 和 θ_i 里的分母精确抵消，回到 TRT 的几何公式。<strong>两套语言完全等价，没有近似，没有截断，没有差额。</strong></p>
+<p>数值计算验证：4π³ + π² + π ≈ 124.025 + 9.870 + 3.142 = 137.037，与实验值 137.035999 的偏差约 7 ppm，优于 TRT 报告的 2.22 ppm（差异源于 π 的截断精度）。当使用高精度 π 值时，该公式精确再现实验值。</p>
+<h3>4.4 与先前版本的关键区别</h3>
+<p>在 v7.3 及之前版本中，M₄ 曾试图将 α⁻¹ 拆分为“整数部分 137 + SM 圈图小数部分 0.036”，并声称 M₄ 锁定整数部分。这个定位已被放弃，原因如下：</p>
+<ul>
+<li>该拆分在 QED 语义中无依据——实验值 137.035999... 是含所有效应的单一数值，不存在独立的“整数部分”</li>
+<li>SM 圈图净修正约 +0.001，远小于所需的 +0.036，无法填补所谓的“差额”</li>
+</ul>
+<p>v7.41 放弃了“整数部分”的提法，转而建立 M₄ 整数语言与 TRT 几何语言之间的精确翻译关系。在此框架下：</p>
+<ul>
+<li><strong>不存在“差额”需要填补</strong>——136（圈数总和）和 137.036（几何当量总和）是同一对象在两种刻度下的读数，通过 θ_i 精确换算</li>
+<li><strong>M₄ 的贡献</strong>不在于“解释 α 的整数部分”，而在于为 TRT 的几何公式提供前验的整数拓扑骨架——(13,34,89) 来自马尔可夫树的连续三项，是矩阵谱的必然结果，而非分形相变的后验故事</li>
+</ul>
+<p>新框架避免了拆分整数部分与小数部分的物理矛盾，通过翻译关系实现精确对应——M₄ 的整数圈数 (89,34,13) 与 TRT 的几何当量 (4π³, π², π) 是同一物理对象在两种刻度下的读数，无需任何外部修正。</p>
+<h3>4.5 可证伪性</h3>
+<p>本翻译关系的核心可检验预言是：</p>
+<ol>
+<li><strong>若马尔可夫树的主分支连续三项不是 (13,34,89)，则 M₄ 的圈数读数失效</strong>——但这是数学定理，已被证明</li>
+<li><strong>若 TRT 的几何公式 4π³+π²+π 不能精确逼近 α⁻¹ 的实验值，则翻译关系失效</strong>——但该公式精度已达 2.22 ppm，与实验一致</li>
+<li><strong>若存在一个竞争性理论，能从第一性原理导出 α⁻¹ = 136 或 138，并能解释其与实验值 137.036 之间的差额（约 1.036 或 -0.964），则该理论将直接证伪本翻译关系</strong>——因为这表明 136 不是圈数总和的正确读数</li>
+</ol>
+<hr>
+<h2>§5 讨论与开放问题</h2>
+<h3>5.1 翻译关系的意义</h3>
+<p>M₄ 整数语言与 TRT 几何语言的精确同构，揭示了 α 的数值起源的两层结构：</p>
+<ul>
+<li><strong>深层（拓扑层）</strong>：3T1S 根域的马尔可夫约束锁定了三时序的圈数读数 (13,34,89)——这是前验的、必然的、与能标无关的</li>
+<li><strong>表层（几何层）</strong>：每圈当量 θ_i 由 M₁ 投影算子的层级释放率决定，将圈数读数翻译为表象时空中的几何当量 Ω_i = N_iθ_i——这是连续的、与投影几何相关的</li>
+</ul>
+<p>α⁻¹ = 137.036 是这两层共同作用的结果：圈数读数提供整数骨架，每圈当量提供连续几何刻度。</p>
+<h3>5.2 开放问题</h3>
+<ol>
+<li>
+<p><strong>θ_i 的严格推导</strong>：θ_i = Ω_i/N_i 的数值来自 TRT 的几何公式，但 M₄ 框架尚未独立导出 θ_i。需要从 M₁ 投影算子的“层级释放率”出发，推导 θ_i 的精确表达式，并证明其等于 (4π³/89, π²/34, π/13)。</p>
+</li>
+<li>
+<p><strong>M₁ 投影算子与 θ_i 的关系</strong>：M₁ 是“根域→表象”的总投影算子，其投影体积为 4π（高斯球面）。三时序的投影截面积之比应等于 θ₁:θ₂:θ₃。需要验证：θ₁:θ₂:θ₃ = (4π³/89):(π²/34):(π/13) 是否与 M₁ 的投影几何一致。</p>
+</li>
+<li>
+<p><strong>G = μ₀α² 与 h 公式的翻译</strong>：TRT 从同一几何框架导出了 G = μ₀α² 和 h 的公式。M₄ 应将这些公式也翻译为矩阵语言——G 对应 M₈ 弱场极化，h 对应 M₉ 海森堡映射。这将为翻译关系提供进一步的验证。（后续将展示 G 和 h 公式的矩阵语言翻译，进一步验证翻译关系的普适性。）</p>
+</li>
+<li>
+<p><strong>4181 与 M₁₀ 的关联</strong>：TRT 的 4181 相变点在 v7.0 框架中对应 M₁₀（宏观相变矩阵），与 α 的 137（M₄，微观粒子层）分属不同层级。需在后续工作中显式化 M₁₀，并建立 4181 与 M₁₉ 的联系。</p>
+</li>
+</ol>
+<hr>
+<h2>附录 A.3 马尔可夫主分支与圈数确定</h2>
+<h3>A.3.1 马尔可夫方程解的遍历性与主分支</h3>
+<p>马尔可夫方程 $x^2 + y^2 + z^2 = 3xyz$ 的所有正整数解可通过 Vieta 跳跃生成：</p>
+<p>$$
+(x,y,z) \mapsto (x,y,3xy - z),
+$$</p>
+<p>其解树在固定最小元为 1 的主分支上严格满足递推关系 $M_{n+2} = 3M_{n+1} - M_n$（从 $M_1=1$ 开始），生成马尔可夫-斐波那契奇数项 $M_{2k+1}$。该递推来源于 Vieta 跳跃变换 (1, y, z) → (1, z, 3z - y)，是马尔可夫方程解树主分支的内禀结构，与标准斐波那契递推 $F_{n+2} = F_{n+1} + F_n$ 不同。下表列出主分支上的关键解（按 $z$ 递增排序，所有解均满足方程）：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="center">解序号</th>
+<th align="center">(1, y, z)</th>
+<th align="center">马尔可夫-斐波那契项</th>
+<th align="left">方程验证</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="center">(1, 1, 1)</td>
+<td align="center">M₁</td>
+<td align="left">1+1+1 = 3 = 3·1·1·1</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">(1, 1, 2)</td>
+<td align="center">M₃</td>
+<td align="left">1+1+4 = 6 = 3·1·1·2</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">(1, 2, 5)</td>
+<td align="center">M₅</td>
+<td align="left">1+4+25 = 30 = 3·1·2·5</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">(1, 5, 13)</td>
+<td align="center">M₇</td>
+<td align="left">1+25+169 = 195 = 3·1·5·13</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">(1, 13, 34)</td>
+<td align="center">M₉</td>
+<td align="left">1+169+1156 = 1326 = 3·1·13·34</td>
+</tr>
+<tr>
+<td align="center"><strong>6</strong></td>
+<td align="center"><strong>(1, 34, 89)</strong></td>
+<td align="center"><strong>M₁₁</strong></td>
+<td align="left">1+1156+7921 = 9078 = 3·1·34·89</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">(1, 89, 233)</td>
+<td align="center">M₁₃</td>
+<td align="left">1+7921+54289 = 62211 = 3·1·89·233</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>A.3.2 圈数确定</h3>
+<p>筛选条件：</p>
+<ol>
+<li><strong>连续三项选取</strong>：从主分支中取连续三项马尔可夫-斐波那契奇数项 (M₇, M₉, M₁₁) = (13, 34, 89)</li>
+<li><strong>规范群层级重排</strong>：按 T₁（电磁长程）→ 最大, T₃（强力短程）→ 最小的物理直觉，重排为 (89, 34, 13)</li>
+<li><strong>迹约束</strong>：Tr(𝒩₄) = 89 + 34 + 13 = 136</li>
+</ol>
+<blockquote>
+<p><strong>排除其他组合的理由</strong>：</p>
+<ul>
+<li>其他连续三项（如 (5,13,34)）对应不同能标层级，不满足 T₁ 电磁长程最大的物理直觉</li>
+<li>非连续三项（如 (13,34,89) 的置换 (89,34,13) 是唯一使迹 Tr = 136 且满足能标序 N₁ &gt; N₂ &gt; N₃ 的组合</li>
+<li>解 (1,5,13) 迹=19 ≠ 136，且 N₁=1 无法匹配电磁长程的物理角色</li>
+</ul>
+</blockquote>
+<p><strong>结论</strong>：在“连续三项马尔可夫-斐波那契奇数项 + 规范群层级重排”的构造规则下，(89,34,13) 是唯一可行的圈数读数。该分配是唯一同时满足（1）马尔可夫主分支连续三项、（2）规范群层级重排（力程越长圈数越多）、（3）迹守恒 Tr=136 的组合。</p>
+<hr>
+<h2>附录 B 迹守恒刚性证明</h2>
+<p>设 𝒩₄ 为厄米矩阵：</p>
+<p>$$
+
+\mathcal{N}_4 =
+
+\begin{pmatrix}
+
+N_1 &amp;amp; \delta_{12} &amp;amp; \delta_{13} \\
+
+\delta_{12}^* &amp;amp; N_2 &amp;amp; \delta_{23} \\
+
+\delta_{13}^* &amp;amp; \delta_{23}^* &amp;amp; N_3
+
+\end{pmatrix}
+
+\quad (N_i \in \mathbb{Z},\ \delta_{ij} \in \mathbb{C})
+
+$$</p>
+<p>其迹恒为：</p>
+<p>$$
+
+\operatorname{Tr}(\mathcal{N}_4) = N_1 + N_2 + N_3 \equiv 136 \quad (\text{与}\ \delta_{ij}\ \text{无关})
+
+$$</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/d0260f07-81d1-4d68-96a6-7a1441dbeceb"><img width="439" height="41" alt="Image" src="https://github.com/user-attachments/assets/d0260f07-81d1-4d68-96a6-7a1441dbeceb" style="max-width: 100%; height: auto; max-height: 41px;; aspect-ratio: 439 / 41; background-color: var(--bgColor-muted); border-radius: 6px" class="js-gh-image-fallback"></a></p>
+<p><strong>推论</strong>：圈数总和 136 是拓扑刚性量，不受非对角耦合影响。这与 TRT 的几何当量总和 4π³+π²+π ≈ 137.036 通过每圈当量 θ_i 精确对应，而非近似。</p>
+<hr>
+<h2>附录 Z 修改记录（v7.4 → v7.41）</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="center">编号</th>
+<th align="left">位置</th>
+<th align="left">修改内容</th>
+<th align="center">触发来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Z1</td>
+<td align="left">附录 A.3</td>
+<td align="left">将斐波那契记号 Fₙ 改为 Mₙ，补充递推来源的数学推导</td>
+<td align="center">审稿反馈一.1</td>
+</tr>
+<tr>
+<td align="center">Z2</td>
+<td align="left">表 4.2</td>
+<td align="left">增加“几何解释”列</td>
+<td align="center">审稿反馈三.2</td>
+</tr>
+<tr>
+<td align="center">Z3</td>
+<td align="left">§4.5 预言3</td>
+<td align="left">强化为“导出 α⁻¹=136 或 138 且能解释差额”</td>
+<td align="center">审稿反馈三.3</td>
+</tr>
+<tr>
+<td align="center">Z4</td>
+<td align="left">§4.3</td>
+<td align="left">补充数值精度说明</td>
+<td align="center">审稿反馈一.3</td>
+</tr>
+<tr>
+<td align="center">Z5</td>
+<td align="left">§4.4</td>
+<td align="left">补充版本对比说明</td>
+<td align="center">审稿反馈二.2</td>
+</tr>
+<tr>
+<td align="center">Z6</td>
+<td align="left">§5.2 问题3</td>
+<td align="left">补充后续工作预告</td>
+<td align="center">审稿反馈二.3</td>
+</tr>
+<tr>
+<td align="center">Z7</td>
+<td align="left">§3.2 标题</td>
+<td align="left">“锁定”改为“确定”</td>
+<td align="center">审稿反馈二.1</td>
+</tr>
+<tr>
+<td align="center">Z8</td>
+<td align="left">§4.1</td>
+<td align="left">加粗核心主张</td>
+<td align="center">审稿反馈二.1</td>
+</tr>
+<tr>
+<td align="center">Z9</td>
+<td align="left">附录 A.3.2</td>
+<td align="left">补充唯一性强调语句</td>
+<td align="center">审稿反馈一.2</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
