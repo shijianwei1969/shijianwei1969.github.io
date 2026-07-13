@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="## 文章13第3节：局域化投影——从8维全局积分到3维子块的提取
+
+### 3.1 任务定位
+
+第2节建立了 $\chi_g$ 的微观定义：
+
+$$
+\chi_g = \frac{1}{V_8} \int_{M_8} [A \cdot c_2^2 + B \cdot c_4]
+$$
+
+但这是一个**标量**（全局平均极化率），而我们需要的 $(\chi_g^{(3)})_{ij}$ 是一个 $3 \times 3$ 矩阵，描述极化率在根域3个时序通道方向上的分布。">
+<meta property="og:title" content="数理落地工程四五：局域化投影——从8维全局积分到3维子块的提取">
+<meta property="og:description" content="## 文章13第3节：局域化投影——从8维全局积分到3维子块的提取
+
+### 3.1 任务定位
+
+第2节建立了 $\chi_g$ 的微观定义：
+
+$$
+\chi_g = \frac{1}{V_8} \int_{M_8} [A \cdot c_2^2 + B \cdot c_4]
+$$
+
+但这是一个**标量**（全局平均极化率），而我们需要的 $(\chi_g^{(3)})_{ij}$ 是一个 $3 \times 3$ 矩阵，描述极化率在根域3个时序通道方向上的分布。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-si-wu-%EF%BC%9A-ju-yu-hua-tou-ying-%E2%80%94%E2%80%94-cong-8-wei-quan-ju-ji-fen-dao-3-wei-zi-kuai-de-ti-qu.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>数理落地工程四五：局域化投影——从8维全局积分到3维子块的提取</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">数理落地工程四五：局域化投影——从8维全局积分到3维子块的提取</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/53" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h2>文章13第3节：局域化投影——从8维全局积分到3维子块的提取</h2>
+<h3>3.1 任务定位</h3>
+<p>第2节建立了 $\chi_g$ 的微观定义：</p>
+<p>$$
+\chi_g = \frac{1}{V_8} \int_{M_8} [A \cdot c_2^2 + B \cdot c_4]
+$$</p>
+<p>但这是一个<strong>标量</strong>（全局平均极化率），而我们需要的 $(\chi_g^{(3)})_{ij}$ 是一个 $3 \times 3$ 矩阵，描述极化率在根域3个时序通道方向上的分布。</p>
+<p>第3节的任务是：建立从8维全局积分到 $3 \times 3$ 子块的<strong>局域化投影规则</strong>，使得 $(\chi_g^{(3)})_{ij}$ 自然地携带 $S_i$ 的权重，并与文章12的参数化形式对接。</p>
+<hr>
+<h3>3.2 谐波形式与根域通道的对应</h3>
+<p>CY4的Kähler模空间由 $h^{1,1}$ 个谐波(1,1)-形式张成，记为 $\omega_a$（$a = 1, \dots, h^{1,1}$）。根域的3个时序通道对应 $M_8$ 的3个特殊方向，对应于3个特定的谐波(1,1)-形式，记为 $\omega_1, \omega_2, \omega_3$。</p>
+<p>为了数学上的严谨性，我们首先选择一组<strong>正交归一化基底</strong> $\hat{u}_i$（$i = 1, 2, 3$），满足：</p>
+<p>$$
+
+\int_{M_8} \hat{u}_i \wedge \star \hat{u}_j = V_8 \cdot \delta_{ij}
+
+$$</p>
+<p>其中 $\star$ 是Hodge星算子，$\hat{u}_i$ 是2-形式，$\star \hat{u}_i$ 是 $(8-2) = 6$-形式，因此 $\hat{u}_i \wedge \star \hat{u}_j$ 是 $2 + 6 = 8$-形式，可以在8维流形上积分。</p>
+<p>根域通道权重 $S_i$ 决定了这3个方向在总几何中的占比。谐波形式 $\omega_i$ 的模长正比于 $S_i$：</p>
+<p>$$
+\omega_i = \sqrt{S_i} \cdot \hat{u}_i
+$$</p>
+<p>这样：</p>
+<p>$$
+\int_{M_8} \omega_i \wedge \star \omega_i = S_i \cdot V_8
+$$</p>
+<p>即 $\omega_i$ 的模长平方正比于通道权重 $S_i$，与物理直觉一致。</p>
+<hr>
+<h3>3.3 投影积分的构造</h3>
+<p>$(\chi_g^{(3)})_{ij}$ 描述的是极化率在 $\omega_i$ 和 $\omega_j$ 方向上的分量。它应该由曲率分布在 $\omega_i, \omega_j$ 方向上的投影决定。</p>
+<p><strong>关键数学工具</strong>：使用Hodge星算子构造内积，而非直接楔乘。</p>
+<p>构造投影积分：</p>
+<p>$$
+P_{ij} = \int_{M_8} (\omega_i \wedge \star \omega_j) \cdot \mathcal{I}(\mathcal{R})
+$$</p>
+<p>其中 $\mathcal{I}(\mathcal{R})$ 是曲率的<strong>标量不变量</strong>（0-形式），例如：</p>
+<ul>
+<li>对于CY4（Ricci平坦），主要贡献来自Weyl张量的平方 $|C|^2$
+</li>
+<li>或者更一般地，$\mathcal{I}(\mathcal{R}) = A \cdot |\text{Riem}|^2 + B \cdot R_{abcd}R^{abcd}$ 的某种组合</li>
+</ul>
+<p><strong>度数验证</strong>：</p>
+<ul>
+<li>
+$\omega_i$ 是2-形式</li>
+<li>
+$\star \omega_j$ 是6-形式</li>
+<li>
+$\omega_i \wedge \star \omega_j$ 是8-形式</li>
+<li>
+$\mathcal{I}(\mathcal{R})$ 是0-形式（标量）</li>
+<li>被积形式总度数为 $8 + 0 = 8$，可以在8维流形上积分 ✅</li>
+</ul>
+<p><strong>物理含义</strong>：$\omega_i \wedge \star \omega_j$ 作为"探针"，探测曲率分布在 $(i, j)$ 方向上的分量。当 $i = j$ 时，探测的是对角分量（通道自身的极化响应）；当 $i \neq j$ 时，探测的是非对角分量（通道间的交叉极化）。</p>
+<hr>
+<h3>3.4 与 $S_i$ 权重的对接</h3>
+<p>代入 $\omega_i = \sqrt{S_i} \cdot \hat{u}_i$：</p>
+<p>$$
+P_{ij} = \int_{M_8} (\sqrt{S_i} \hat{u}_i \wedge \star \sqrt{S_j} \hat{u}_j) \cdot \mathcal{I}(\mathcal{R})
+$$</p>
+<p>$$
+= \sqrt{S_i S_j} \int_{M_8} (\hat{u}_i \wedge \star \hat{u}_j) \cdot \mathcal{I}(\mathcal{R})
+$$</p>
+<p>定义<strong>归一化投影矩阵</strong>：</p>
+<p>$$
+Q_{ij} = \frac{1}{V_8} \int_{M_8} (\hat{u}_i \wedge \star \hat{u}_j) \cdot \mathcal{I}(\mathcal{R})
+$$</p>
+<p>则：</p>
+<p>$$
+P_{ij} = V_8 \cdot \sqrt{S_i S_j} \cdot Q_{ij}
+$$</p>
+<p><strong>关键观察</strong>：$Q_{ij}$ 是由归一化基底 $\hat{u}<em>i$ 和曲率不变量 $\mathcal{I}(\mathcal{R})$ 决定的<strong>纯几何量</strong>，与通道权重 $S_i$ <strong>无关</strong>。这意味着 $Q</em>{ij}$ 是CY4流形的固有常数。</p>
+<hr>
+<h3>3.5 $(\chi_g^{(3)})_{ij}$ 的提取</h3>
+<p>$(\chi_g^{(3)})<em>{ij}$ 是极化率在 $(i, j)$ 方向上的分量，由投影积分 $P</em>{ij}$ 除以体积 $V_8$ 得到：</p>
+<p>$$
+
+(\chi_g^{(3)})_{ij} = \frac{P_{ij}}{V_8} = \sqrt{S_i S_j} \cdot Q_{ij}
+
+$$</p>
+<p>现在需要将 $Q_{ij}$ 与文章12的参数化形式对接。<strong>重要修正</strong>：文章12中的非对角元参数化 $(\chi_g^{(3)})<em>{ij} = \mu</em>{\text{eff}} \cdot S_i S_j$ 存在循环依赖问题（$Q_{ij}$ 不应依赖于 $S_i$）。</p>
+<p>更自然的参数化形式应为：</p>
+<p>$$
+
+(\chi_g^{(3)})_{ii} = \lambda_{\text{eff}} \cdot S_i
+
+$$</p>
+<p>$$
+
+(\chi_g^{(3)})_{ij} = \mu_{\text{eff}} \cdot \sqrt{S_i S_j} \quad (i \neq j)
+
+$$</p>
+<p>对比可得：</p>
+<p><strong>对角元</strong>（$i = j$）：</p>
+<p>$$
+\sqrt{S_i^2} \cdot Q_{ii} = S_i \cdot Q_{ii} = \lambda_{\text{eff}} \cdot S_i \implies Q_{ii} = \lambda_{\text{eff}}
+$$</p>
+<p><strong>非对角元</strong>（$i \neq j$）：</p>
+<p>$$
+\sqrt{S_i S_j} \cdot Q_{ij} = \mu_{\text{eff}} \cdot \sqrt{S_i S_j} \implies Q_{ij} = \mu_{\text{eff}}
+$$</p>
+<p>因此，归一化投影矩阵 $Q_{ij}$ 必须满足：</p>
+<p>$$
+Q_{ii} = \lambda_{\text{eff}} \quad \text{（与 $S_i$ 无关的常数）}
+$$</p>
+<p>$$
+Q_{ij} = \mu_{\text{eff}} \quad \text{（与 $S_i, S_j$ 无关的常数，$i \neq j$）}
+$$</p>
+<p>这意味着 $Q_{ij}$ 是一个<strong>对称矩阵</strong>，其对角元均为 $\lambda_{\text{eff}}$，非对角元均为 $\mu_{\text{eff}}$：</p>
+<p>$$
+Q = \begin{pmatrix} \lambda_{\text{eff}} &amp; \mu_{\text{eff}} &amp; \mu_{\text{eff}} \ \mu_{\text{eff}} &amp; \lambda_{\text{eff}} &amp; \mu_{\text{eff}} \ \mu_{\text{eff}} &amp; \mu_{\text{eff}} &amp; \lambda_{\text{eff}} \end{pmatrix}
+$$</p>
+<blockquote>
+<p><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji> <strong>漏洞警告</strong>：上述矩阵形式假设了三个谐波方向 $\hat{u}<em>1, \hat{u}<em>2, \hat{u}<em>3$ 在几何上完全对称，因此 $Q</em>{12} = Q</em>{13} = Q</em>{23}$。然而根域的通道权重 $S_i$ 已经不对称（$S_1=0.7237, S_2=0.1508, S_3=0.1255$），如果这种不对称性反映在谐波形式 $\hat{u}<em>i$ 的几何角色上，则 $Q</em>{ij}$ 的各个非对角元可能不同。更一般的写法为：</p>
+</blockquote>
+<p>$$
+Q = \begin{pmatrix} \lambda_{\text{eff}}^1 &amp; \mu_{\text{eff}}^{12} &amp; \mu_{\text{eff}}^{13} \ \mu_{\text{eff}}^{12} &amp; \lambda_{\text{eff}}^2 &amp; \mu_{\text{eff}}^{23} \ \mu_{\text{eff}}^{13} &amp; \mu_{\text{eff}}^{23} &amp; \lambda_{\text{eff}}^3 \end{pmatrix}
+$$</p>
+<p>其中 $\lambda_{\text{eff}}^i$ 和 $\mu_{\text{eff}}^{ij}$ 的具体数值需由CY4的相交数和曲率不变量的详细计算确定。本文后续推导中，若无特殊说明，采用对称假设（即 $\lambda_{\text{eff}}^i = \lambda_{\text{eff}}$，$\mu_{\text{eff}}^{ij} = \mu_{\text{eff}}$）作为简化起点。</p>
+<hr>
+<h3>3.6 $Q_{ij}$ 的几何含义</h3>
+<p>$Q_{ij}$ 的几何含义是：归一化谐波形式 $\hat{u}_i, \hat{u}_j$ 与曲率标量不变量 $\mathcal{I}(\mathcal{R})$ 的缩并在 $\hat{u}_i \wedge \star \hat{u}_j$ 方向上的投影密度。</p>
+<p><strong>对角元 $Q_{ii}$</strong>：描述的是曲率不变量在 $\hat{u}_i$ 方向上的"密度"，与通道权重 $S_i$ 无关——这符合物理直觉：每个通道自身的极化响应强度是固有的，不依赖于通道的权重。</p>
+<p><strong>非对角元 $Q_{ij}$</strong>（$i \neq j$）：描述的是曲率不变量在 $\hat{u}_i$ 和 $\hat{u}_j$ 交叉方向上的投影，是一个与 $S_i, S_j$ 无关的常数——这也符合物理直觉：交叉极化的<strong>几何耦合强度</strong>由流形的固有曲率分布决定，而非通道权重。</p>
+<p><strong>最终参数化形式</strong>：</p>
+<p>$$
+
+(\chi_g^{(3)})_{ii} = \lambda_{\text{eff}} \cdot S_i
+
+$$</p>
+<p>$$
+
+(\chi_g^{(3)})_{ij} = \mu_{\text{eff}} \cdot \sqrt{S_i S_j} \quad (i \neq j)
+
+$$</p>
+<p>其中 $\lambda_{\text{eff}}$ 和 $\mu_{\text{eff}}$ 是CY4的<strong>纯几何常数</strong>，由流形的曲率分布和谐波形式的选择决定。</p>
+<hr>
+<h3>3.7 第3节结论</h3>
+<ol>
+<li>
+<strong>投影规则建立</strong>：$(\chi_g^{(3)})<em>{ij} = \sqrt{S_i S_j} \cdot Q</em>{ij}$，其中 $Q_{ij}$ 是归一化投影矩阵</li>
+<li>
+<strong>Hodge星算子的关键作用</strong>：使用 $\omega_i \wedge \star \omega_j$ 确保积分形式度数为8，数学上严格自洽</li>
+<li>
+<strong>与文章12对接（修正版）</strong>：
+<ul>
+<li>对角元：$(\chi_g^{(3)})<em>{ii} = \lambda</em>{\text{eff}} \cdot S_i$</li>
+<li>非对角元：$(\chi_g^{(3)})<em>{ij} = \mu</em>{\text{eff}} \cdot \sqrt{S_i S_j}$</li>
+<li>
+$Q_{ii} = \lambda_{\text{eff}}$，$Q_{ij} = \mu_{\text{eff}}$</li>
+</ul>
+</li>
+<li>
+<strong>几何含义</strong>：$Q_{ij}$ 是曲率不变量在谐波形式 $\hat{u}_i \wedge \star \hat{u}_j$ 方向上的投影密度，为与 $S_i$ 无关的纯几何常数</li>
+<li>
+<strong>下一步</strong>：需要确定 $\lambda_{\text{eff}}$ 和 $\mu_{\text{eff}}$ 的具体数值——这依赖于CY4的相交数和曲率不变量的详细计算，将在P1-2（文章14）中完成</li>
+</ol>
+<hr>
+<p><em>第3节完。第4节将处理体积归一化问题，建立与模参数无关的 $\chi_g$ 定义。</em></p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
