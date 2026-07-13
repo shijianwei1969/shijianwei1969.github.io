@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var a=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',a)}else{a()}})();</script><script>(function(){var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 文章 5g（重构版 v2.0）：G = μ₀α² 在 M₄ 框架中的量纲补齐翻译
+
+## 第0节：历史注记
+
+早期草稿（文章5f）曾尝试将矢量 $v$ 与宏观材料属性（ $B/m$ ）挂钩，以解释“Big G”异常（不同实验室测得的 $G$ 值差异达数百 ppm）。">
+<meta property="og:title" content="数理落地工程三十六：G = μ₀α² 在 M₄ 框架中的量纲补齐翻译">
+<meta property="og:description" content="# 文章 5g（重构版 v2.0）：G = μ₀α² 在 M₄ 框架中的量纲补齐翻译
+
+## 第0节：历史注记
+
+早期草稿（文章5f）曾尝试将矢量 $v$ 与宏观材料属性（ $B/m$ ）挂钩，以解释“Big G”异常（不同实验室测得的 $G$ 值差异达数百 ppm）。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-san-shi-liu-%EF%BC%9AG%20%3D%20%CE%BC%E2%82%80%CE%B1%C2%B2%20-zai-%20M%E2%82%84%20-kuang-jia-zhong-de-liang-gang-bu-qi-fan-yi.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>数理落地工程三十六：G = μ₀α² 在 M₄ 框架中的量纲补齐翻译</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">数理落地工程三十六：G = μ₀α² 在 M₄ 框架中的量纲补齐翻译</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/35" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>文章 5g（重构版 v2.0）：G = μ₀α² 在 M₄ 框架中的量纲补齐翻译</h1>
+<h2>第0节：历史注记</h2>
+<p>早期草稿（文章5f）曾尝试将矢量 $v$ 与宏观材料属性（ $B/m$ ）挂钩，以解释“Big G”异常（不同实验室测得的 $G$ 值差异达数百 ppm）。但该路径与弱等效原理（WEP）实验（MICROSCOPE卫星上限  $10^{-15}$  ）存在11个数量级的直接冲突，已被放弃。</p>
+<p>本文（5g重构版）采用量纲补齐路径，回归TRT原始语境，将 $v$ 严格限制在 $M_4$ 内部几何参数（ $\theta_i, N_i, \kappa_{nd}$  ）中，并基于宫非（2024）对 $G = \mu_0 \alpha^2$   的量纲分析，重建 $M_4$ 框架对该关系的翻译。</p>
+<hr>
+<h2>第1节：问题背景</h2>
+<p>文章4b将TRT偏差 $\delta \approx 0.26%$ 重新定义为 $G_{\text{exp}}$ 与 $\mu_0 \alpha^2$ 的偏差，而非 $G$ 与  $G_{\text{Planck}}$  的偏差。这一定义在方向上是对的，但留下了一个关键缺口：<strong>$G$ 的量纲是   $[L^3 M^{-1} T^{-2}]$， $\mu_0 \alpha^2$  的量纲是   $[M L T^{-2} A^{-2}]$ ，两者量纲不匹配。</strong> 直接比较它们的数值，如同比较1米和1公斤——数字可以比，但物理上没有意义。</p>
+<p>宫非（2024）的文章明确指出：<strong>量纲不一致的常数等式纯属数字游戏，真正的物理规律必须满足量纲齐次性。</strong> 该文通过PSLQ算法证明，$G = \mu_0 \alpha^2$    在数值上可以被任意精度的组合公式替代（如 $G_3 = \mu_0^{-3/2} \alpha^2 c^{5/2} \hbar^{3/2} m_e^{-1/2}$），说明裸的 $\mu_0 \alpha^2$ 不具备物理唯一性。任何包含 $\mu_0$ 且指数非零的公式，在SI单位制下必然带有电流 $A$ 的量纲，不可能等于 $G$。</p>
+<p>因此，文章4b中“ $\delta \approx 0.26%$ 是 $G_{\text{exp}}$ 与 $\mu_0 \alpha^2$  的偏差”这一表述，虽然在概念上将偏差从  $G/G_{\text{Planck}}$  转移到 $G_{\text{exp}}/\mu_0 \alpha^2$ 是正确的，但在量纲层面仍然是不合法的。我们需要进一步追问：TRT的  $G = \mu_0 \alpha^2$  到底是在什么单位制下写出的？它真正的物理内核是什么？</p>
+<p>本文的任务是：<strong>在 $M_4$  框架内，给出  $G = \mu_0 \alpha^2$  的量纲齐次翻译。</strong> 我们将证明，TRT公式的真实物理内核是自然单位制下的几何投影关系——  $\alpha$ 由 $M_4$   的拓扑圈数锁定，$\mu_0$ 退化为几何因子  $4\pi$，$G$  的绝对数值由 $M_8$ 流形的特征质量尺度决定。量纲残缺的表象，源于TRT原始推导中省略了单位制转换因子和特征质量尺度。</p>
+<hr>
+<h2>第2节：单位制溯源与量纲批判</h2>
+<h3>2.1 SI单位制下的“安培量纲”铁证</h3>
+<p>在国际单位制（SI）中，基本量纲为 $M, L, T, A$（质量、长度、时间、电流）。</p>
+<p>各常数的量纲：</p>
+<ul>
+<li>真空磁导率 $\mu_0$：$[M \cdot L \cdot T^{-2} \cdot A^{-2}]$</li>
+<li>引力常数 $G$：$[M^{-1} \cdot L^3 \cdot T^{-2}]$（注意：$G$ 不含电流 $A$）</li>
+<li>光速 $c$：$[L \cdot T^{-1}]$</li>
+<li>约化普朗克常数 $\hbar$：$[M \cdot L^2 \cdot T^{-1}]$</li>
+<li>电子质量 $m_e$：$[M]$</li>
+<li>精细结构常数 $\alpha$：无量纲</li>
+</ul>
+<p><strong>关键洞察</strong>：在上述常数中，只有 $\mu_0$ 带有电流 $A$ 的量纲。任何包含 $\mu_0$ 且指数非零的组合，其结果必然带有 $A$ 的量纲。</p>
+<p>因此，在SI单位制下，$G = \mu_0 \alpha^2$ 或任何形式的 $G \propto \mu_0^x$ 都是量纲非法的。TRT原始公式绝不是在SI单位制下写出的物理等式。</p>
+<h3>2.2 对文章5g原版的自我批判</h3>
+<p>文章5g原版第2节引入了宫非文章中的<br>
+$G_3 = \mu_0^{-3/2} \cdot \alpha^2 \cdot c^{5/2} \cdot \hbar^{3/2} \cdot m_e^{-1/2}$<br>
+并声称这是“量纲齐次形式”。但 $G_3$ 中 $\mu_0$ 的指数是 $-3/2$，其实际量纲包含 $A^3$，根本不是引力常数 $G$ 的量纲。</p>
+<p>宫非文章给出 $G_3$，是为了展示PSLQ算法可以在5个自由参数下强行凑出 $6.67478 \times 10^{-11}$ 这个数值。$G_3$ 与 $G_{\text{exp}}$ 的7 ppm偏差，纯粹是数学拟合的残差，没有任何物理意义。文章5g原版误将这个“数学拟合残差”当成了“真实的物理几何残差 $\varepsilon_{\text{corr_true}}$”，这是根本性的错误。</p>
+<h3>2.3 自然单位制与高斯单位制的破局</h3>
+<p>在理论物理常用的自然单位制（$c = \hbar = 1$）配合高斯/Heaviside-Lorentz电磁单位制中：</p>
+<ul>
+<li>量纲简化为单一的质量/能量量纲 $[M]$ 或 $[E]$
+</li>
+<li>
+$G$ 的量纲为 $[M]^{-2}$（因为 $G = 1/M_{\text{Pl}}^2$）</li>
+<li>
+$\alpha$ 是无量纲的纯数字</li>
+<li>
+$\mu_0$ 不再是带有独立量纲的物理常数，而是退化为纯几何因子（如 $\mu_0 \to 4\pi$ 或 $1$，取决于具体约定）</li>
+</ul>
+<p>TRT公式的真实物理内核是：在自然单位制下，$G = \mu_0 \alpha^2$ 实际上是在表达引力耦合与电磁耦合的比例关系。为了让量纲匹配（左边 $[M]^{-2}$，右边无量纲），等式必然隐含了一个特征质量尺度 $M_{\text{scale}}$ 的平方：</p>
+<p>$$G_{\text{nat}} = \frac{C \cdot \alpha^2}{M_{\text{scale}}^2}$$</p>
+<p>其中 $C$ 为几何常数（如 $4\pi$）。TRT原始推导中省略或归一化了 $M_{\text{scale}}$，导致了表观上的“量纲残缺”。</p>
+<hr>
+<h2>第3节：$M_4$框架下的几何翻译</h2>
+<h3>3.1 翻译字典的重构</h3>
+<p>在自然单位制（$c = \hbar = 1$）下，$M_4$ 框架对TRT原始公式的翻译不再涉及量纲拼凑，而是揭示其几何起源：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>TRT原始表达</th>
+<th>自然单位制内核</th>
+<th>
+$M_4/M_8$ 几何对应</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\alpha$</td>
+<td>无量纲电磁耦合</td>
+<td>
+$M_4$ 圈数读数：$\alpha^{-1} = 4\pi^3 + \pi^2 + \pi$</td>
+</tr>
+<tr>
+<td>$\mu_0$</td>
+<td>几何因子 $4\pi$
+</td>
+<td>
+$M_1$ 非对角耦合在电磁侧的投影拓扑因子</td>
+</tr>
+<tr>
+<td>$M_{\text{scale}}$</td>
+<td>特征质量尺度</td>
+<td>
+$M_8$ 流形的紧化体积/特征模量</td>
+</tr>
+<tr>
+<td>$G_{\text{nat}}$</td>
+<td>$[M]^{-2}$</td>
+<td>
+$M_8$ 几何体积在4D时空的引力投影</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>3.2 $\alpha$ 的几何起源（$M_4$ 框架最坚实的基石）</h3>
+<p>$$\alpha^{-1} = 4\pi^3 + \pi^2 + \pi$$</p>
+<p>这个关系来自文章1-2的推导，是 $M_4$ 框架中唯一被严格锁定的几何读数。它不依赖于任何单位制选择，是纯粹拓扑的产物。</p>
+<h3>3.3 $G$ 的完整几何表达式</h3>
+<p>基于上述字典，$M_4$ 框架对 $G$ 的翻译不再是拼凑常数，而是揭示其几何起源：</p>
+<p>$$G_{\text{nat}} = \frac{4\pi \cdot \alpha^2}{M_{M_8}^2} \cdot (1 + \varepsilon_{\text{geom}})$$</p>
+<p>其中：</p>
+<ul>
+<li>
+$\alpha$ 由 $M_4$ 的拓扑圈数严格锁定（$\alpha^{-1} = 4\pi^3 + \pi^2 + \pi$）</li>
+<li>
+$M_{M_8}$ 是 $M_8$ 流形的特征质量尺度，决定了引力的绝对强度</li>
+<li>
+$\varepsilon_{\text{geom}}$ 是 $M_4/M_8$ 几何本身的微扰修正</li>
+</ul>
+<p><strong>重要澄清</strong>：$\varepsilon_{\text{geom}}$ 不再是7 ppm。7 ppm只是SI制下数学拟合的残差，无直接物理意义。$\varepsilon_{\text{geom}}$ 的数值需要由 $M_8$ 流形的完整几何计算来确定，而非从宏观常数拟合中反推。</p>
+<h3>3.4 与SI单位制的衔接</h3>
+<p>如果需要将  $G_{\text{nat}}$  转换为SI单位制下的数值，只需恢复 $\hbar$ 和 $c$：</p>
+<p>$$G_{\text{SI}} = G_{\text{nat}} \cdot \hbar \cdot c$$</p>
+<p>量纲恢复验证：</p>
+<ul>
+<li>在自然单位制中，$G_{\text{nat}}$ 的量纲是 $[\text{质量}]^{-2}$（即 $1/E^2$）。</li>
+<li>要将一个 $[\text{质量}]^{-2}$ 的量转换为SI中 $G$ 的量纲 $[M^{-1} L^3 T^{-2}]$，需要乘以一个量纲为 $[M^1 L^3 T^{-2}]$ 的因子。</li>
+<li>恰好：$[\hbar \cdot c] = [M L^2 T^{-1}] \cdot [L T^{-1}] = [M L^3 T^{-2}]$ ✓</li>
+</ul>
+<p>因此 $G_{\text{SI}} = G_{\text{nat}} \cdot \hbar \cdot c$ 在量纲上是自洽的。</p>
+<p>但需要强调的是，这个转换只是单位制翻译，不是物理发现。$M_4$ 框架在自然单位制下运作，其核心输出是几何关系（如 $\alpha^{-1} = 4\pi^3 + \pi^2 + \pi$），而非SI制下的数值拟合。</p>
+<hr>
+<h2>第4节：$\kappa_{nd}$ 的内部几何定标</h2>
+<h3>4.1 放弃外部拟合</h3>
+<p>文章5g原版第4节基于 $\varepsilon_{\text{corr_true}} \approx 7\text{ ppm}$ 反推 $\kappa_{nd} \approx 0.0034$，这个过程在数学上是正确的，但在物理上失去了锚点——因为7 ppm是PSLQ算法的数学拟合残差，不是物理量。</p>
+<p><strong>$\kappa_{nd}$（$M_1$ 矩阵的非对角耦合强度）是 $M_4$ 内部的纯几何参数，其数值应由 $M_4$ 流形本身的对称性或拓扑约束决定，而不应去拟合宏观常数（如 $G$）的测量残差。</strong></p>
+<h3>4.2 内部几何定标方案</h3>
+<p>以下提出几种 $M_4$ 内部的定标思路，作为后续研究的锚点：</p>
+<p><strong>方案A：几何自洽性约束</strong></p>
+<p>基于文章2的推导，$\kappa_{nd}$ 可能与 $M_4$ 三个时序通道的夹角 $\theta_i$ 存在严格的三角函数关系。例如：</p>
+<p>$$\kappa_{nd} \sim \sin(\theta_{12}) \cdot \sin(\theta_{23}) \cdot \sin(\theta_{31})$$</p>
+<p>其中 $\theta_{ij}$ 是通道 $i$ 与通道 $j$ 之间的夹角。如果这些夹角由 $M_4$ 的拓扑结构唯一确定，则 $\kappa_{nd}$ 也随之确定。</p>
+<p><strong>方案B：$M_1$ 矩阵的不变量约束</strong></p>
+<p>假设 $M_1$ 矩阵的迹（Trace）或行列式（Determinant）受到 $M_4$ 总体积的约束：</p>
+<p>$$\operatorname{Tr}(M_1) = \sum_i S_i = 1 \quad (\text{已知})$$
+$$\det(M_1) = f(\theta_i, \kappa_{nd})$$</p>
+<p>物理动机：$M_1$ 矩阵描述的是 $M_4$ 三个时序通道之间的耦合结构。如果 $M_4$ 的紧化流形具有某种整体拓扑约束（如 Gauss-Bonnet 定理将曲率积分与 Euler 示性数关联），那么 $M_1$ 的行列式——作为耦合强度的“总体度量”——可能被该拓扑不变量锁定。</p>
+<p>如果 $\det(M_1)$ 由 $M_4$ 的拓扑不变量决定（如某种Chern数），则可以反推出 $\kappa_{nd}$。</p>
+<p><strong>方案C：微扰论的自然量级</strong></p>
+<p>在没有精确计算前，基于自然性原则，假定 $\kappa_{nd}$ 处于典型的微扰量级（如 $10^{-3} \sim 10^{-2}$），并留待未来 $M_8$ 的拓扑不变量计算来最终固定。</p>
+<p>这个量级与文章2的初始假设（$\kappa_{nd} \approx 0.0049$）一致，也与物理直觉相符——非对角耦合本来就应该是微扰量级的。</p>
+<h3>4.3 结论</h3>
+<p>$\kappa_{nd}$ 的定标正式与 $G$ 的测量值脱钩。这标志着 $M_4$ 框架从“唯象拟合”走向了“第一性原理推导”。</p>
+<hr>
+<h2>第5节：$v$ 的重新定义</h2>
+<h3>5.1 放弃宏观材料依赖性</h3>
+<p>文章5f中 $v \propto B/m$ 的假设被正式放弃。理由有三：</p>
+<p>第一，<strong>WEP冲突</strong>：$v$ 若依赖宏观材料，必然预言 $10^{-4}$ 量级的WEP破缺，与MICROSCOPE卫星的 $10^{-15}$ 上限冲突11个数量级。这个冲突在5f的审阅中被判定为致命，无法通过参数微调回避。</p>
+<p>第二，<strong>量纲补齐后的残差极小</strong>：第2节已证明，TRT的 $G = \mu_0 \alpha^2$ 在SI制下量纲非法，所谓的 $0.26%$ 偏差主要是量纲残缺造成的伪差。不存在一个需要通过宏观材料 $B/m$ 差异来解释的“大残差”。</p>
+<p>第三，<strong>TRT不是Cavendish实验</strong>：TRT的 $G = \mu_0 \alpha^2$ 是几何推导中的投影读数，与宏观扭秤实验无关。将 $v$ 挂到宏观材料上，是用错了实验对象。</p>
+<h3>5.2 $v$ 的 $M_4$ 内部定义</h3>
+<p>$v$ 重新定义为 $M_4$ 框架内部几何参数的函数：</p>
+<p>$$v = (\sqrt{S_1}, \sqrt{S_2}, \sqrt{S_3})$$</p>
+<p>其中 $S_i = \theta_i / (\theta_1+\theta_2+\theta_3)$ 是无量纲投影权重，来自文章2的几何自洽性推导。</p>
+<p>这个选择不再 ad hoc，理由如下：</p>
+<ul>
+<li>
+<strong>自洽性</strong>：$M_1 = \operatorname{diag}(S_1, S_2, S_3)$，$v = \sqrt{S_i}$ 使得 $v^T M_1 v = \sum_i S_i^2$，即 $M_1$ 的“自投影”等于对角元的平方和。这是 $M_4$ 框架内唯一与 $M_1$ 对角形式自洽的矢量。</li>
+<li>
+<strong>归一化</strong>：$v$ 不是概率幅，不需要归一化到1。$v$ 的绝对大小不重要（因为 $G_{\text{eff}}$ 正比于 $v^T M_8 v$，比例常数由实验校准），重要的是 $v$ 的方向（即三个分量之间的比例）。</li>
+<li>
+<strong>几何意义</strong>：$\sqrt{S_i}$ 是通道 $i$ 的投影振幅，而非投影概率。在 $M_4$ 的3T1S根域中，三个时序通道的“激发强度”由其投影振幅决定，而非投影权重本身。</li>
+</ul>
+<h3>5.3 与WEP的关系</h3>
+<p>由于 $v$ 不依赖宏观材料，所有材料在同一个引力场中的 $v$ 相同，因此 $G_{\text{eff}}$ 相同，WEP严格成立。</p>
+<p>具体来说，对于任意两种材料 $A$ 和 $B$：</p>
+<p>$$v_A = v_B = (\sqrt{S_1}, \sqrt{S_2}, \sqrt{S_3})$$</p>
+<p>因此：</p>
+<p>$$G_{\text{eff}}(A) = G_{\text{eff}}(B) = v^T M_8 v$$</p>
+<p>两种材料在同一个源质量产生的引力场中的加速度相同：</p>
+<p>$$a_A = a_B = \frac{G_{\text{eff}} \cdot M_{\text{source}}}{r^2}$$</p>
+<p>Eötvös参数 $\eta = (a_A - a_B) / (a_A + a_B) = 0$</p>
+<p><strong>$M_4$ 框架不预言WEP破缺，与MICROSCOPE实验无冲突。</strong></p>
+<h3>5.4 与前文的衔接</h3>
+<p>第2节将TRT的 $G = \mu_0 \alpha^2$ 重新定位为自然单位制下的几何投影关系，第3节建立了 $\alpha$ 的几何起源和 $M_8$ 特征质量尺度的翻译字典，第4节将 $\kappa_{nd}$ 的定标与 $G$ 脱钩并回归 $M_4$ 内部几何。</p>
+<p>第5节完成了最后一块拼图：$v$ 挂回 $M_4$ 内部几何参数后，整个框架不再依赖任何宏观实验输入（除了用 $G_{\text{exp}}$ 校准 $M_{M_8}$ 的绝对数值）。$M_4$ 框架成为一个自洽的几何理论，其核心预言（$\alpha^{-1} = 4\pi^3 + \pi^2 + \pi$）是纯粹拓扑的产物，不受单位制选择和宏观实验误差的影响。</p>
+<hr>
+<h2>完成标准</h2>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 第0节（历史注记）：记录5f因WEP冲突被放弃</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 第1节（问题背景）：量纲缺口与宫非文章的警示</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 第2节（单位制溯源与量纲批判）：SI制安培量纲铁证 + 自然单位制破局</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 第3节（$M_4$ 框架下的几何翻译）：翻译字典 + $\alpha$ 几何起源 + $G$ 完整表达式 + SI衔接</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 第4节（$\kappa_{nd}$ 的内部几何定标）：放弃外部拟合 + 三种内部定标方案</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 第5节（$v$ 的重新定义）：放弃宏观材料依赖 + $M_4$ 内部定义 + WEP严格成立</li>
+</ul>
+<hr>
+<p><strong>文章5g（重构版 v2.0）完稿。</strong></p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
