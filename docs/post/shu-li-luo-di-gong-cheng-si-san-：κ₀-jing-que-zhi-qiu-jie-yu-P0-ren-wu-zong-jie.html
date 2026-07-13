@@ -10,17 +10,17 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="## 文章12第5节（修订版）：κ₀精确值求解与P0任务总结
+<meta name="description" content="## 文章12第5节（修订版）：$\kappa_0$精确值求解与P0任务总结
 
 ### 5.1 匹配条件与微扰求解
 
-κ₀的精确求解并非仅由中介层几何单独决定，而是依赖于中介层几何展开与根域层实验约束的匹配。">
+$\kappa_0$的精确求解依赖于**中介层几何展开**与**根域层实验约束**的匹配。">
 <meta property="og:title" content="数理落地工程四三：κ₀精确值求解与P0任务总结">
-<meta property="og:description" content="## 文章12第5节（修订版）：κ₀精确值求解与P0任务总结
+<meta property="og:description" content="## 文章12第5节（修订版）：$\kappa_0$精确值求解与P0任务总结
 
 ### 5.1 匹配条件与微扰求解
 
-κ₀的精确求解并非仅由中介层几何单独决定，而是依赖于中介层几何展开与根域层实验约束的匹配。">
+$\kappa_0$的精确求解依赖于**中介层几何展开**与**根域层实验约束**的匹配。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-si-san-%EF%BC%9A%CE%BA%E2%82%80-jing-que-zhi-qiu-jie-yu-P0-ren-wu-zong-jie.html">
 <meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
@@ -81,41 +81,62 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><h2>文章12第5节（修订版）：κ₀精确值求解与P0任务总结</h2>
+<div class="markdown-body" id="postBody"><h2>文章12第5节（修订版）：$\kappa_0$精确值求解与P0任务总结</h2>
 <h3>5.1 匹配条件与微扰求解</h3>
-<p>κ₀的精确求解并非仅由中介层几何单独决定，而是依赖于中介层几何展开与根域层实验约束的匹配。</p>
-<p><strong>几何侧（理论函数）</strong>：中介层几何决定了ε_geom关于κ₀的泰勒展开形式：</p>
-<p>ε_geom(κ₀) = 0.2348κ₀ + C_midκ₀² + O(κ₀³)</p>
-<p>此函数形式完全由M₈的拓扑和根域投影决定，无需外部输入。</p>
-<p><strong>实验侧（目标数值）</strong>：根域层通过匹配标准模型可观测量（如精细结构常数α⁻¹ ≈ 137），已确立了ε_geom的目标值：</p>
-<p>ε_target ≈ 1.010 × 10⁻³</p>
-<p><strong>匹配闭环</strong>：令ε_geom(κ₀) = ε_target，即可求解κ₀的精确值。当κ₀ = 0时，ε_geom = 0，M₈映射回到对角形式；当κ₀ ≠ 0时，非对角微扰κ_nd产生几何修正，精确匹配实验目标值。</p>
-<h3>5.2 κ₀的精确求解</h3>
+<p>$\kappa_0$的精确求解依赖于<strong>中介层几何展开</strong>与<strong>根域层实验约束</strong>的匹配。</p>
+<p><strong>几何侧（理论函数）</strong>：中介层几何决定了 $\varepsilon_{\text{geom}}$ 关于 $\kappa_0$ 的泰勒展开形式：</p>
+<p>$$
+\varepsilon_{\text{geom}}(\kappa_0) = 0.2348\kappa_0 + C_{\text{mid}}\kappa_0^2 + \mathcal{O}(\kappa_0^3)
+$$</p>
+<p>此函数形式完全由 $M_8$ 的拓扑和根域投影决定，无需外部输入。</p>
+<p><strong>实验侧（目标数值）</strong>：根域层通过匹配标准模型可观测量（如精细结构常数 $\alpha^{-1} \approx 137$），已确立了 $\varepsilon_{\text{geom}}$ 的目标值：</p>
+<p>$$
+\varepsilon_{\text{target}} \approx 1.010 \times 10^{-3}
+$$</p>
+<p><strong>匹配闭环</strong>：令 $\varepsilon_{\text{geom}}(\kappa_0) = \varepsilon_{\text{target}}$，即可求解 $\kappa_0$ 的精确值。当 $\kappa_0 = 0$ 时，$\varepsilon_{\text{geom}} = 0$，$M_8$ 映射回到对角形式；当 $\kappa_0 \neq 0$ 时，非对角微扰 $\kappa_{nd}$ 产生几何修正，精确匹配实验目标值。</p>
+<h3>5.2 $\kappa_0$的精确求解</h3>
 <p>将匹配条件写为：</p>
-<p>0.2348κ₀ + C_midκ₀² = ε_target</p>
-<p>由于二阶项远小于一阶项（C_midκ₀² ~ 10⁻⁵，一阶项 ~ 10⁻³），κ₀的一阶近似为：</p>
-<p>κ₀⁽¹⁾ = ε_target / 0.2348 = 1.010×10⁻³ / 0.2348 ≈ 4.30×10⁻³</p>
+<p>$$
+0.2348\kappa_0 + C_{\text{mid}}\kappa_0^2 = \varepsilon_{\text{target}}
+$$</p>
+<p>由于二阶项远小于一阶项（$C_{\text{mid}}\kappa_0^2 \sim 10^{-5}$，一阶项 $\sim 10^{-3}$），$\kappa_0$ 的一阶近似为：</p>
+<p>$$
+\kappa_0^{(1)} = \frac{\varepsilon_{\text{target}}}{0.2348} = \frac{1.010\times10^{-3}}{0.2348} \approx 4.30\times10^{-3}
+$$</p>
 <p>代入二阶修正：</p>
-<p>κ₀ = κ₀⁽¹⁾ · [1 - (C_mid / 0.2348) · κ₀⁽¹⁾ + O(κ₀²)]</p>
-<p>由于C_mid ~ O(1)，κ₀⁽¹⁾ ~ 4.3×10⁻³，修正项(C_mid/0.2348)·κ₀⁽¹⁾ ~ 0.018，即约1.8%。</p>
-<h3>5.3 κ₀的最佳估计值与不确定度</h3>
-<p>基于前文的综合分析，κ₀的最佳估计值为：</p>
-<p>κ₀ = (4.30 ± 0.08) × 10⁻³</p>
+<p>$$
+\kappa_0 = \kappa_0^{(1)} \left[1 - \frac{C_{\text{mid}}}{0.2348},\kappa_0^{(1)} + \mathcal{O}(\kappa_0^2)\right]
+$$</p>
+<p>由于 $C_{\text{mid}} \sim \mathcal{O}(1)$，$\kappa_0^{(1)} \sim 4.3\times10^{-3}$，修正项 $\frac{C_{\text{mid}}}{0.2348}\kappa_0^{(1)} \sim 0.018$，即约 $1.8%$。</p>
+<h3>5.3 $\kappa_0$的最佳估计值与不确定度</h3>
+<p>基于前文的综合分析，$\kappa_0$的最佳估计值为：</p>
+<p>$$
+\kappa_0 = (4.30 \pm 0.08) \times 10^{-3}
+$$</p>
 <p>其中：</p>
 <ul>
-<li>中心值4.30×10⁻³来自ε_target ~ 10⁻³的一阶估算</li>
-<li>不确定度±0.08×10⁻³来自C_mid ~ O(1)的二阶修正（~1.8%）</li>
-<li>系统误差主要来自M₈几何形态的不确定性（CY4 vs Spin(7)），估计&lt; 5%</li>
+<li>中心值 $4.30\times10^{-3}$ 来自 $\varepsilon_{\text{target}} \sim 10^{-3}$ 的一阶估算</li>
+<li>不确定度 $\pm 0.08\times10^{-3}$ 来自 $C_{\text{mid}} \sim \mathcal{O}(1)$ 的二阶修正（$\sim 1.8%$）</li>
+<li>系统误差主要来自 $M_8$ 几何形态的不确定性（CY4 vs Spin(7)），估计 $&amp;lt; 5%$
+</li>
 </ul>
-<h3>5.4 κ_nd的完全定标</h3>
-<p>至此，κ_nd的完全定标完成：</p>
-<p>κ_ij = κ₀ · S_iS_j</p>
+<h3>5.4 $\kappa_{nd}$的完全定标</h3>
+<p>至此，$\kappa_{nd}$的完全定标完成：</p>
+<p>$$
+\kappa_{ij} = \kappa_0 \cdot S_i S_j
+$$</p>
 <p>代入数值：</p>
-<p>κ₁₂ = 4.30×10⁻³ × 0.7237 × 0.1508 = 4.69×10⁻⁴<br>
-κ₁₃ = 4.30×10⁻³ × 0.7237 × 0.1255 = 3.91×10⁻⁴<br>
-κ₂₃ = 4.30×10⁻³ × 0.1508 × 0.1255 = 8.14×10⁻⁵</p>
+<p>$$
+\begin{aligned}
+\kappa_{12} &amp;= 4.30\times10^{-3} \times 0.7237 \times 0.1508 = 4.69\times10^{-4} \\
+\kappa_{13} &amp;= 4.30\times10^{-3} \times 0.7237 \times 0.1255 = 3.91\times10^{-4} \\
+\kappa_{23} &amp;= 4.30\times10^{-3} \times 0.1508 \times 0.1255 = 8.14\times10^{-5}
+\end{aligned}
+$$</p>
 <p>比例关系（与文章10一致）：</p>
-<p>κ₁₂ : κ₂₃ : κ₃₁ ≈ 0.498 : 0.087 : 0.415</p>
+<p>$$
+\kappa_{12} : \kappa_{23} : \kappa_{31} \approx 0.498 : 0.087 : 0.415
+$$</p>
 <h3>5.5 P0任务完整总结</h3>
 <markdown-accessiblity-table><table role="table">
 <thead>
@@ -130,39 +151,44 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <tr>
 <td>P0-0</td>
 <td>文章9</td>
-<td>κ_nd自由度与结构定义（三分量，候选函数形式）</td>
+<td>
+$\kappa_{nd}$自由度与结构定义（三分量，候选函数形式）</td>
 <td>✅</td>
 </tr>
 <tr>
 <td>P0-1</td>
 <td>文章10</td>
-<td>比例关系κ₁₂:κ₂₃:κ₃₁ ≈ 0.50:0.10:0.40</td>
+<td>比例关系 $\kappa_{12}:\kappa_{23}:\kappa_{31} \approx 0.50:0.10:0.40$
+</td>
 <td>✅</td>
 </tr>
 <tr>
 <td>P0-2</td>
 <td>文章11</td>
-<td>κ₀量级估算（~4.3×10⁻³），微扰收敛性验证</td>
+<td>
+$\kappa_0$量级估算（$\sim 4.3\times10^{-3}$），微扰收敛性验证</td>
 <td>✅</td>
 </tr>
 <tr>
 <td>P0-3</td>
 <td>文章12</td>
-<td>κ₀精确值（4.30±0.08×10⁻³），κ_nd完全定标</td>
+<td>
+$\kappa_0$精确值（$4.30\pm0.08\times10^{-3}$），$\kappa_{nd}$完全定标</td>
 <td>✅</td>
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
 <h3>5.6 完成标准</h3>
 <ul class="contains-task-list">
-<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 匹配条件建立：ε_geom(κ₀) = ε_target，几何侧与实验侧匹配</li>
-<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> κ₀精确值求解完成：κ₀ = (4.30 ± 0.08) × 10⁻³</li>
-<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> κ_nd完全定标完成：κ_ij = κ₀ · S_iS_j，数值已计算</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 匹配条件建立：$\varepsilon_{\text{geom}}(\kappa_0) = \varepsilon_{\text{target}}$，几何侧与实验侧匹配</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> $\kappa_0$精确值求解完成：$\kappa_0 = (4.30 \pm 0.08) \times 10^{-3}$</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> $\kappa_{nd}$完全定标完成：$\kappa_{ij} = \kappa_0 \cdot S_i S_j$，数值已计算</li>
 <li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> P0任务总结完成</li>
-<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 微扰展开收敛性确认：二阶项 &lt; 2%</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 微扰展开收敛性确认：二阶项 $&amp;lt; 2%$
+</li>
 </ul>
 <hr>
-<p><strong>文章12第5节修订版完。</strong></p></div>
+<p><strong>文章12第5节修订版完。</strong> 现在你可以直接复制这段文本到知乎编辑框中，数学公式应该能正常渲染了。</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
@@ -264,6 +290,6 @@ function iFrameLoading(){
 
 
 </script>
-
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </html>
