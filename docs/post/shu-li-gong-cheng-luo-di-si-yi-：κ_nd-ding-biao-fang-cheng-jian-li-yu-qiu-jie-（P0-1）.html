@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var a=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',a)}else{a()}})();</script><script>(function(){var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="## 文章10（二次修订版）：κ_nd定标方程建立与求解（P0-1）
+
+### 第1节：任务定位与方法选择
+
+#### 1.1 P0-1的任务
+
+P0-1是P0（κ_nd内部几何定标）的核心执行阶段。">
+<meta property="og:title" content="数理工程落地四一：κ_nd定标方程建立与求解（P0-1）">
+<meta property="og:description" content="## 文章10（二次修订版）：κ_nd定标方程建立与求解（P0-1）
+
+### 第1节：任务定位与方法选择
+
+#### 1.1 P0-1的任务
+
+P0-1是P0（κ_nd内部几何定标）的核心执行阶段。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/shu-li-gong-cheng-luo-di-si-yi-%EF%BC%9A%CE%BA_nd-ding-biao-fang-cheng-jian-li-yu-qiu-jie-%EF%BC%88P0-1%EF%BC%89.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>数理工程落地四一：κ_nd定标方程建立与求解（P0-1）</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">数理工程落地四一：κ_nd定标方程建立与求解（P0-1）</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/40" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h2>文章10（二次修订版）：κ_nd定标方程建立与求解（P0-1）</h2>
+<h3>第1节：任务定位与方法选择</h3>
+<h4>1.1 P0-1的任务</h4>
+<p>P0-1是P0（κ_nd内部几何定标）的核心执行阶段。基于P0-0（文章9）的输出，本文的任务是：</p>
+<ol>
+<li>建立κ_nd的定标方程</li>
+<li>代入候选函数形式，求解耦合常数κ₀</li>
+<li>判别κ_nd的实际结构类型</li>
+<li>输出κ_nd的定标结果</li>
+</ol>
+<h4>1.2 方法选择与执行逻辑</h4>
+<p>按文章5g §4和文章9 §2.4的设定，定标方案的执行顺序为：</p>
+<p><strong>方案B（M₁不变量约束）→ 方案A（三角函数关系）→ 方案C（自然性原则）</strong></p>
+<p>经本文执行后确认，各方案的实际角色为：</p>
+<ul>
+<li><strong>方案B</strong>：提供不等式约束（κ₀的上限）→ 作为“筛选器”</li>
+<li><strong>方案A</strong>：提供等式约束（κ₀的精确值）→ 作为“求解器”</li>
+<li><strong>方案C</strong>：自然性验证 → 交叉检验</li>
+</ul>
+<h4>1.3 候选函数形式的处理</h4>
+<p>按文章9 §2.4.3的列表，候选形式共4种。经分析，方案B的不等式约束对候选1、2、3的效果相同（均只能给出宽松上限），因此跳过候选2和候选3的重复检验，直接进入方案A。候选4（三个独立参数）在方案A的框架下另行处理。</p>
+<hr>
+<h3>第2节：方案B——M₁不变量约束方程</h3>
+<h4>2.1 M₁矩阵的完整形式</h4>
+<p>引入非对角耦合后，M₁的完整形式为：</p>
+<p>$$M_1 = \begin{pmatrix} S_1 &amp; \kappa_{12} &amp; \kappa_{13} \ \kappa_{12} &amp; S_2 &amp; \kappa_{23} \ \kappa_{13} &amp; \kappa_{23} &amp; S_3 \end{pmatrix}$$</p>
+<p>其中S_i为已知（文章2）：S₁ ≈ 0.7237, S₂ ≈ 0.1508, S₃ ≈ 0.1255，满足∑S_i = 1。</p>
+<h4>2.2 M₁的不变量</h4>
+<p>3×3实对称矩阵M₁有三个基本不变量：</p>
+<p><strong>迹（Trace）</strong>：Tr(M₁) = S₁ + S₂ + S₃ = 1</p>
+<p><strong>二阶矩（所有2×2主子式之和）</strong>：</p>
+<p>Tr(adj(M₁)) = (S₂S₃ − κ₂₃²) + (S₁S₃ − κ₁₃²) + (S₁S₂ − κ₁₂²)</p>
+<p><strong>行列式（Determinant）</strong>：</p>
+<p>det(M₁) = S₁S₂S₃ + 2κ₁₂κ₂₃κ₁₃ − S₁κ₂₃² − S₂κ₁₃² − S₃κ₁₂²</p>
+<h4>2.3 候选1（双线性耦合）的代入</h4>
+<p>候选1的形式为：κ_ij = κ₀ · S_i S_j</p>
+<p>代入行列式：</p>
+<p>det(M₁) = S₁S₂S₃ + 2κ₀³S₁²S₂²S₃² − κ₀²(S₁S₂²S₃² + S₂S₁²S₃² + S₃S₁²S₂²)</p>
+<p>代入S_i数值：</p>
+<ul>
+<li>S₁S₂S₃ ≈ 0.0137</li>
+<li>S₁²S₂²S₃² ≈ 1.88 × 10⁻⁴</li>
+<li>S₁S₂²S₃² ≈ 2.60 × 10⁻⁴</li>
+<li>S₂S₁²S₃² ≈ 1.24 × 10⁻³</li>
+<li>S₃S₁²S₂² ≈ 1.49 × 10⁻³</li>
+</ul>
+<p>因此：</p>
+<p>det(M₁) ≈ 0.0137 + 3.76 × 10⁻⁴ κ₀³ − 2.99 × 10⁻³ κ₀²</p>
+<h4>2.4 不等式约束：正定性</h4>
+<p>M₁必须保持正定（所有特征值 &gt; 0）。正定性的充要条件是所有顺序主子式 &gt; 0。</p>
+<p>一阶主子式：S₁ &gt; 0, S₂ &gt; 0, S₃ &gt; 0 ✅</p>
+<p>二阶主子式给出最紧约束：</p>
+<p>S₁S₂ − κ₁₂² &gt; 0</p>
+<p>代入候选1：0.7237 × 0.1508 − (κ₀ × 0.7237 × 0.1508)² &gt; 0</p>
+<p>0.1091(1 − 0.1091κ₀²) &gt; 0</p>
+<p>κ₀ &lt; 1/√0.1091 ≈ 3.03</p>
+<h4>2.5 等式约束来源分析</h4>
+<p>方案B目前仅提供了不等式约束（κ₀ &lt; 3.03），无法独立解出κ₀的精确值。原因在于：方案B需要M₁的某个不变量存在已知的目标值，才能建立等式约束。但目前来自根域层的已知量中，尚无这样的目标值。</p>
+<p>可能的等式约束来源分析如下：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>来源</th>
+<th>是否提供等式约束</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文章1（α⁻¹推导）</td>
+<td>❌</td>
+<td>α⁻¹是根域圈数读数，与M₁的行列式无直接等式关系</td>
+</tr>
+<tr>
+<td>文章2（Sᵢ推导）</td>
+<td>❌</td>
+<td>Sᵢ的估算来自几何自洽性，未涉及M₁的行列式或二阶矩</td>
+</tr>
+<tr>
+<td>公理体系</td>
+<td>❌</td>
+<td>四大公理不直接给出M₁不变量的数值</td>
+</tr>
+<tr>
+<td><strong>方案A（三角函数关系）</strong></td>
+<td>✅</td>
+<td>可能提供κ_ij = κ₀·h(θ_i,θ_j)的等式关系</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>结论</strong>：方案B作为“筛选器”提供了κ₀的上限（κ₀ &lt; 3.03），但精确求解需要方案A的等式约束。</p>
+<hr>
+<h3>第3节：方案B的延伸——特征值微扰分析</h3>
+<h4>3.1 从行列式到特征值</h4>
+<p>第2节利用行列式约束得到了κ₀ &lt; 3.03。本节利用更精细的工具——特征值微扰展开——来获得更紧的上限。这仍然是方案B框架内的深化，而非方案A。</p>
+<h4>3.2 特征值微扰展开</h4>
+<p>M₁可写为M₁ = M₁⁽⁰⁾ + κ₀M₁⁽¹⁾，其中M₁⁽⁰⁾ = diag(S₁,S₂,S₃)，M₁⁽¹⁾的非对角元为S_iS_j，对角元为0。</p>
+<p>一阶微扰修正为0（因为M₁⁽¹⁾的对角元为0）。二阶微扰修正为：</p>
+<p>δ_i⁽²⁾ = ∑_{j≠i} |(M₁⁽¹⁾)_ij|² / (S_i − S_j) · κ₀²</p>
+<p>代入数值：</p>
+<p>(M₁⁽¹⁾)₁₂ = S₁S₂ ≈ 0.1091<br>
+(M₁⁽¹⁾)₁₃ = S₁S₃ ≈ 0.0908<br>
+(M₁⁽¹⁾)₂₃ = S₂S₃ ≈ 0.01894</p>
+<p>δ₁⁽²⁾ = κ₀²(0.1091²/0.5729 + 0.0908²/0.5982) = 0.03455κ₀²</p>
+<p>δ₂⁽²⁾ = κ₀²(0.1091²/(−0.5729) + 0.01894²/0.0253) = −0.00659κ₀²</p>
+<p>δ₃⁽²⁾ = κ₀²(0.0908²/(−0.5982) + 0.01894²/(−0.0253)) = −0.02796κ₀²</p>
+<p>验证∑δ_i = (0.03455 − 0.00659 − 0.02796)κ₀² = 0 ✅</p>
+<h4>3.3 特征值正定性约束</h4>
+<p>特征值为：</p>
+<p>λ₁ ≈ 0.7237 + 0.03455κ₀²<br>
+λ₂ ≈ 0.1508 − 0.00659κ₀²<br>
+λ₃ ≈ 0.1255 − 0.02796κ₀²</p>
+<p>正定性要求所有λ_i &gt; 0。最紧的约束来自λ₃：</p>
+<p>0.1255 − 0.02796κ₀² &gt; 0</p>
+<p>κ₀² &lt; 0.1255/0.02796 ≈ 4.49</p>
+<p>κ₀ &lt; 2.12</p>
+<h4>3.4 方案B的最终输出</h4>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>约束来源</th>
+<th>约束类型</th>
+<th>κ₀上限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>行列式正定性（第2节）</td>
+<td>不等式</td>
+<td>3.03</td>
+</tr>
+<tr>
+<td>特征值正定性（第3节）</td>
+<td>不等式</td>
+<td>2.12</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>特征值微扰分析给出了更紧的上限（κ₀ &lt; 2.12），但仍是不等式约束。方案B的全部潜力已用尽。</p>
+<hr>
+<h3>第4节：方案A的真正执行——三角函数等式约束</h3>
+<h4>4.1 方案A的任务定义</h4>
+<p>方案A的核心任务是：建立κ_ij与通道夹角θ_i之间的三角函数等式关系：</p>
+<p>κ_ij = κ₀ · h(θ_i, θ_j)</p>
+<p>其中h是某个三角函数组合，h(x,y) = h(y,x)（对称性）。一旦h的形式确定，代入已知的θ_i数值，即可固定κ₁₂:κ₂₃:κ₃₁的比例关系。再结合中介层反馈或α⁻¹的精确值，就能解出κ₀。</p>
+<h4>4.2 三角函数候选形式</h4>
+<p>以下列出三种候选h函数：</p>
+<p><strong>候选h1：正弦乘积</strong></p>
+<p>h₁(θ_i, θ_j) = sinθ_i sinθ_j</p>
+<p>物理直觉：通道间的干涉强度正比于各自投影振幅的正弦值。</p>
+<p><strong>候选h2：角度差正弦</strong></p>
+<p>h₂(θ_i, θ_j) = sin|θ_i − θ_j|</p>
+<p>物理直觉：干涉强度正比于通道间夹角差的正弦。</p>
+<p><strong>候选h3：余弦组合</strong></p>
+<p>h₃(θ_i, θ_j) = cosθ_i cosθ_j − cos(θ_i+θ_j)</p>
+<p>物理直觉：球面三角关系中的干涉项。</p>
+<h4>4.3 比例关系计算</h4>
+<p>代入θ_i数值：θ₁ ≈ 1.2870, θ₂ ≈ 0.2680, θ₃ ≈ 0.2230。</p>
+<p><strong>候选h1（正弦乘积）</strong>：</p>
+<p>sinθ₁ ≈ sin(1.2870) ≈ 0.9600<br>
+sinθ₂ ≈ sin(0.2680) ≈ 0.2650<br>
+sinθ₃ ≈ sin(0.2230) ≈ 0.2210</p>
+<p>κ₁₂ : κ₂₃ : κ₃₁ = sinθ₁sinθ₂ : sinθ₂sinθ₃ : sinθ₃sinθ₁</p>
+<p>= (0.9600×0.2650) : (0.2650×0.2210) : (0.2210×0.9600)</p>
+<p>= 0.2544 : 0.05857 : 0.2122</p>
+<p>归一化（和=0.5252）：</p>
+<p>κ₁₂ : κ₂₃ : κ₃₁ ≈ 0.484 : 0.112 : 0.404</p>
+<p><strong>候选h2（角度差正弦）</strong>：</p>
+<p>|θ₁−θ₂| = 1.0190, sin(1.0190) ≈ 0.8510<br>
+|θ₂−θ₃| = 0.0450, sin(0.0450) ≈ 0.04498<br>
+|θ₃−θ₁| = 1.0640, sin(1.0640) ≈ 0.8720</p>
+<p>κ₁₂ : κ₂₃ : κ₃₁ = 0.8510 : 0.04498 : 0.8720</p>
+<p>归一化（和=1.768）：</p>
+<p>κ₁₂ : κ₂₃ : κ₃₁ ≈ 0.481 : 0.026 : 0.493</p>
+<p><strong>候选h3（余弦组合）</strong>：</p>
+<p>cosθ₁ ≈ cos(1.2870) ≈ 0.2790<br>
+cosθ₂ ≈ cos(0.2680) ≈ 0.9640<br>
+cosθ₃ ≈ cos(0.2230) ≈ 0.9750</p>
+<p>cos(θ₁+θ₂) = cos(1.5550) ≈ 0.0108<br>
+cos(θ₂+θ₃) = cos(0.4910) ≈ 0.8820<br>
+cos(θ₃+θ₁) = cos(1.5100) ≈ 0.0628</p>
+<p>h₃(θ₁,θ₂) = 0.2790×0.9640 − 0.0108 = 0.2582<br>
+h₃(θ₂,θ₃) = 0.9640×0.9750 − 0.8820 = 0.0579<br>
+h₃(θ₃,θ₁) = 0.9750×0.2790 − 0.0628 = 0.2092</p>
+<p>κ₁₂ : κ₂₃ : κ₃₁ = 0.2582 : 0.0579 : 0.2092</p>
+<p>归一化（和=0.5253）：</p>
+<p>κ₁₂ : κ₂₃ : κ₃₁ ≈ 0.492 : 0.110 : 0.398</p>
+<h4>4.4 与候选1（S_iS_j）的比例对比</h4>
+<p>候选1（双线性耦合κ_ij = κ₀S_iS_j）的比例为：</p>
+<p>S₁S₂ : S₂S₃ : S₃S₁ = 0.1091 : 0.01894 : 0.0908</p>
+<p>归一化（和=0.2188）：</p>
+<p>κ₁₂ : κ₂₃ : κ₃₁ ≈ 0.499 : 0.086 : 0.415</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>候选</th>
+<th>κ₁₂</th>
+<th>κ₂₃</th>
+<th>κ₃₁</th>
+<th>特征</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>候选1（S_iS_j）</td>
+<td>0.499</td>
+<td>0.086</td>
+<td>0.415</td>
+<td>基准</td>
+</tr>
+<tr>
+<td>h1（正弦乘积）</td>
+<td>0.484</td>
+<td>0.112</td>
+<td>0.404</td>
+<td>接近候选1</td>
+</tr>
+<tr>
+<td>h2（角度差正弦）</td>
+<td>0.481</td>
+<td>0.026</td>
+<td>0.493</td>
+<td>κ₂₃极小</td>
+</tr>
+<tr>
+<td>h3（余弦组合）</td>
+<td>0.492</td>
+<td>0.110</td>
+<td>0.398</td>
+<td>接近候选1</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>分析</strong>：</p>
+<ul>
+<li>候选h1和h3的比例分布与候选1（S_iS_j）非常接近，三者都预测κ₁₂ ≈ 0.50, κ₃₁ ≈ 0.40, κ₂₃ ≈ 0.10</li>
+<li>候选h2预测κ₂₃极小（0.026），与候选1的0.086差异较大，可作为判别依据</li>
+<li>候选h1和h3的相似性表明：在小角度近似下（θ₂, θ₃ &lt;&lt; 1），正弦乘积和余弦组合趋于一致</li>
+</ul>
+<h4>4.5 方案A的阶段性结论</h4>
+<ol>
+<li><strong>候选h1和h3与候选1（S_iS_j）自洽</strong>，三者给出相似的κ_ij比例分布</li>
+<li><strong>候选h2（角度差正弦）可被排除</strong>，因其预测κ₂₃过小（0.026），与候选1的0.086差异显著</li>
+<li>候选h1和h3之间目前无法区分，需要中介层的反馈约束来判别</li>
+</ol>
+<p><strong>方案A的输出</strong>：κ₁₂ : κ₂₃ : κ₃₁ ≈ 0.50 : 0.10 : 0.40（候选h1或h3）。κ₀的精确值仍需中介层反馈才能最终确定。</p>
+<hr>
+<h3>第5节：阶段性结论与下一步</h3>
+<h4>5.1 本文的完整输出</h4>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>方案</th>
+<th>输出</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>方案B（行列式）</td>
+<td>κ₀ &lt; 3.03</td>
+<td>不等式</td>
+</tr>
+<tr>
+<td>方案B延伸（特征值）</td>
+<td>κ₀ &lt; 2.12</td>
+<td>不等式</td>
+</tr>
+<tr>
+<td>方案A（三角函数）</td>
+<td>κ₁₂:κ₂₃:κ₃₁ ≈ 0.50:0.10:0.40</td>
+<td>比例等式</td>
+</tr>
+<tr>
+<td>方案C</td>
+<td>待执行</td>
+<td>交叉验证</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h4>5.2 下一步方向</h4>
+<p>要获得κ₀的精确值，需要引入额外的等式约束。可能的来源包括：</p>
+<ol>
+<li><strong>中介层的反馈约束</strong>：M₈的自洽性条件vᵀM₈v = 4πα²/M_M₈²·(1+ε_geom)可能在κ₀定标后提供交叉验证</li>
+<li><strong>自然性原则（方案C）</strong>：若κ₀ ~ 10⁻²量级，则与已有文档的预期一致，可作为辅助判据</li>
+</ol>
+<hr>
+<h3>第6节：完成标准</h3>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 任务定位：P0-1启动，方法选择（方案B优先）</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 方案B：M₁不变量约束方程建立，提供κ₀ &lt; 3.03</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 方案B延伸：特征值微扰分析完成，提供κ₀ &lt; 2.12</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 方案A真正执行：三角函数候选h1/h2/h3列出，比例关系计算完成</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 候选h2排除，候选h1/h3与候选1自洽</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 方案A输出：κ₁₂:κ₂₃:κ₃₁ ≈ 0.50:0.10:0.40</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Incomplete task"> κ₀精确值求解（需中介层反馈或方案C）</li>
+</ul>
+<hr>
+<p><strong>文章10（P0-1）二次修订版完稿。结论：方案B提供不等式筛选（κ₀ &lt; 2.12），方案A提供比例关系（0.50:0.10:0.40），κ₀的精确值需中介层反馈。</strong></p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
