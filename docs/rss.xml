@@ -1,5 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Mon, 13 Jul 2026 03:18:51 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>数理落地工程四二：2自洽性条件的主项提取</title><link>https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-si-er-%EF%BC%9A2-zi-qia-xing-tiao-jian-de-zhu-xiang-ti-qu.html</link><description>## 文章11第2节：自洽性条件的主项提取
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Mon, 13 Jul 2026 04:57:06 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>数理落地工程四二：κ₀的量级估算</title><link>https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-si-er-%EF%BC%9A%CE%BA%E2%82%80-de-liang-ji-gu-suan.html</link><description>## 文章11第3节：κ₀的量级估算
+
+### 3.1 ε_geom的预期量级
+
+基于第3节起草前的分析，ε_geom的预期量级来自三个独立约束：
+
+| 约束来源 | 量级范围 | 依据 |
+|---------|---------|------|
+| 与κ_nd的同源性 | 10⁻³~10⁻² | 相同物理根源（名额排他性干涉） |
+| G的测量精度 | &lt; 10⁻⁵~10⁻² | 实验精度允许范围 |
+| 微扰展开收敛性 | &lt; 10⁻¹ | 一阶项占主导的条件 |
+
+综合取ε_geom ~ 10⁻³作为基准估算值。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-si-er-%EF%BC%9A%CE%BA%E2%82%80-de-liang-ji-gu-suan.html</guid><pubDate>Mon, 13 Jul 2026 04:56:37 +0000</pubDate></item><item><title>数理落地工程四二：2自洽性条件的主项提取</title><link>https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-si-er-%EF%BC%9A2-zi-qia-xing-tiao-jian-de-zhu-xiang-ti-qu.html</link><description>## 文章11第2节：自洽性条件的主项提取
 
 ### 2.1 自洽性条件的起点
 
