@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var a=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',a)}else{a()}})();</script><script>(function(){var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 文章6（修订版）：数值结构逆向分析——方法论与数学工具储备
+
+## 修订说明
+
+本文原始版本（2026-07-13）的任务是“通过逆向工程，找出最可能产生$\alpha^{-1}=4\pi^3+\pi^2+\pi$的拓扑不变量类型，为后续的正向计算提供靶标”。">
+<meta property="og:title" content="数理落地工程三十七：数值结构逆向分析——方法论与数学工具储备">
+<meta property="og:description" content="# 文章6（修订版）：数值结构逆向分析——方法论与数学工具储备
+
+## 修订说明
+
+本文原始版本（2026-07-13）的任务是“通过逆向工程，找出最可能产生$\alpha^{-1}=4\pi^3+\pi^2+\pi$的拓扑不变量类型，为后续的正向计算提供靶标”。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-san-shi-qi-%EF%BC%9A-shu-zhi-jie-gou-ni-xiang-fen-xi-%E2%80%94%E2%80%94-fang-fa-lun-yu-shu-xue-gong-ju-chu-bei.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>数理落地工程三十七：数值结构逆向分析——方法论与数学工具储备</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">数理落地工程三十七：数值结构逆向分析——方法论与数学工具储备</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/36" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>文章6（修订版）：数值结构逆向分析——方法论与数学工具储备</h1>
+<h2>修订说明</h2>
+<p>本文原始版本（2026-07-13）的任务是“通过逆向工程，找出最可能产生$\alpha^{-1}=4\pi^3+\pi^2+\pi$的拓扑不变量类型，为后续的正向计算提供靶标”。该任务已被文章8判定为层级串位——$\alpha^{-1}$是根域层（层级1）的纯拓扑读数，不应在中介层或表象层的数学框架中寻找其溯源。</p>
+<p>本文现修改定位为**“数学工具储备文档”**。正文中的数值结构分析方法和候选扫描框架本身是有效的数学工具，可作为未来中介层（$M_8$）几何研究（如$\chi_g$计算、$\varepsilon_{\text{geom}}$量级估计）的方法论参考。但本文不再指向“为$\alpha^{-1}$提供拓扑溯源”这一目标。</p>
+<p><strong>保留内容</strong>：第2节（数值结构分析）、第3节（候选扫描框架）。<br>
+<strong>废弃内容</strong>：原第4节“优选路径与正向计算建议”中指向$\alpha^{-1}$溯源的结论，原第5节完成标准中“计算结果与$\alpha^{-1}$匹配验证”的目标。<br>
+<strong>修改内容</strong>：标题、各级标题、结论部分已重写。</p>
+<hr>
+<h2>第1节：问题定位</h2>
+<h3>1.1 背景</h3>
+<p>M₄框架的核心预言之一是：</p>
+<p>$$\alpha^{-1} = 4\pi^3 + \pi^2 + \pi \approx 137.036$$</p>
+<p>该关系在文章1中已从根域层（3T1S）的圈数读数推导得出，是根域层的纯拓扑产物。本文不试图为该关系提供进一步的溯源或验证，而是将其作为一个已知的数值结构，分析其数学形式可能对应的几何或拓扑来源类型。这一分析方法本身可作为未来中介层（$M_8$）几何研究的工具储备。</p>
+<h3>1.2 分析逻辑</h3>
+<ol>
+<li>从数值出发：$4\pi^3 + \pi^2 + \pi \approx 137.036$</li>
+<li>分析这个数值的数学结构：它是$\pi$的多项式，系数为小整数</li>
+<li>列举数学中常见的$\pi$多项式结构（Chern数、Euler示性数、体积比等）</li>
+<li>逐一匹配，筛选出最可能的结构类型</li>
+<li>将筛选结果作为方法论储备，供后续研究参考</li>
+</ol>
+<hr>
+<h2>第2节：数值的数学结构分析</h2>
+<h3>2.1 精确表达式</h3>
+<p>$$\alpha^{-1} = 4\pi^3 + \pi^2 + \pi$$</p>
+<p>这个表达式有以下特征：</p>
+<ul>
+<li>
+<strong>$\pi$的多项式</strong>：不是超越函数的数值结果，而是$\pi$的代数组合</li>
+<li>
+<strong>系数为小整数</strong>：$4, 1, 1$，均为$O(1)$量级</li>
+<li>
+<strong>最高次为3次</strong>：$\pi^3$项占主导（约$124.0$），$\pi^2$项次之（约$9.87$），$\pi$项最小（约$3.14$）</li>
+<li>
+<strong>三项之和约137.036</strong>：与精细结构常数的实验值吻合至约$3.4 \times 10^{-8}$（34 ppb）</li>
+</ul>
+<h3>2.2 数值分解</h3>
+<p>$$4\pi^3 \approx 124.025$$
+$$\pi^2 \approx 9.870$$
+$$\pi \approx 3.142$$
+$$4\pi^3 + \pi^2 + \pi \approx 137.036$$</p>
+<h3>2.3 可能的结构来源</h3>
+<p>在微分几何和拓扑学中，$\pi$的多项式通常出现在以下场景：</p>
+<ol>
+<li>
+<strong>Chern-Weil理论中的特征类</strong>：Chern类、Pontryagin类、Euler类的积分表达式包含$1/(2\pi)^k$因子，积分后得到整数（Chern数），但未归一化的曲率多项式积分会携带$\pi$的幂次</li>
+<li>
+<strong>Gauss-Bonnet-Chern定理</strong>：Euler示性数表示为曲率多项式的积分，包含$\pi$的幂次</li>
+<li>
+<strong>球体体积公式</strong>：$n$维球体的体积包含$\pi^{n/2}$因子</li>
+<li>
+<strong>流形紧化中的体积比</strong>：两个不同维度几何量的比值可能产生$\pi$的多项式</li>
+</ol>
+<hr>
+<h2>第3节：候选数学结构扫描</h2>
+<h3>3.1 候选A：Chern数与曲率积分</h3>
+<p>在Chern-Weil理论中，第$k$个Chern类$c_k$被定义为归一化的曲率多项式：</p>
+<p>$$c_k = \left[\frac{1}{(2\pi i)^k} \operatorname{Tr}(F^k)\right]$$</p>
+<p>其中$F$是曲率形式。$c_k$在闭流形上的积分（Chern数）是严格的整数，不包含$\pi$：</p>
+<p>$$\int_M c_k \in \mathbb{Z}$$</p>
+<p>然而，如果我们考察<strong>未归一化的曲率多项式积分</strong>$\int_M \operatorname{Tr}(F^k)$，其结果将携带$(2\pi i)^k$因子：</p>
+<p>$$\int_M \operatorname{Tr}(F^k) = (2\pi i)^k \times (\text{整数})$$</p>
+<p>对于8维流形，第4Chern类$c_4$的积分（Chern数）是整数，但未归一化的曲率积分$\int \operatorname{Tr}(F^4)$包含$(2\pi)^4$因子。</p>
+<p><strong>结论</strong>：未归一化的曲率积分是$\pi$多项式的可能来源，但需要与其他几何量（如体积）组合才能匹配$\pi^3 + \pi^2 + \pi$的具体形式。</p>
+<h3>3.2 候选B：Euler示性数</h3>
+<p>对于$2n$维紧致定向流形，Gauss-Bonnet-Chern定理将Euler示性数$\chi(M)$表示为曲率多项式的积分：</p>
+<p>$$\chi(M) = \int_M \frac{1}{(2\pi)^n} \operatorname{Pf}(\Omega)$$</p>
+<p>其中$\operatorname{Pf}(\Omega)$是曲率形式的Pfaffian。</p>
+<p>对于8维流形（$n=4$）：</p>
+<p>$$\chi(M_8) = \int_{M_8} \frac{1}{(2\pi)^4} \cdot (\text{曲率多项式})$$</p>
+<p>积分结果$\chi(M_8)$是整数。</p>
+<p><strong>结论</strong>：Euler示性数单独作为$\pi$多项式的来源可能性较低，但可能与其它几何量组合。</p>
+<h3>3.3 候选C：球体体积比</h3>
+<p>$n$维球体的体积公式为：</p>
+<p>$$V_n(R) = \frac{\pi^{n/2}}{\Gamma(n/2 + 1)} R^n$$</p>
+<p>对于奇数维和偶数维，体积公式表现出不同的$\pi$幂次结构。</p>
+<p>考虑$S^7$（7维球面）的体积：</p>
+<p>$$V(S^7) = \frac{\pi^{4}}{3!} = \frac{\pi^4}{6} \approx 16.2$$</p>
+<p>这些都不直接等于$4\pi^3 + \pi^2 + \pi$。</p>
+<p>但考虑不同维度球体体积的比值，可能产生$\pi$的多项式。例如：</p>
+<p>$$\frac{V(S^5)}{V(S^3)} = \frac{\pi^{5/2}/\Gamma(7/2)}{\pi^{3/2}/\Gamma(5/2)} = \frac{2\pi}{5}$$</p>
+<p>这个结果是$\pi$的有理倍数，但不是$\pi$的多项式。</p>
+<p>此外，若流形具有乘积结构（如$S^3 \times S^3 \times \Sigma_2$），其体积可能自然分解为低维球体体积的乘积，从而产生$\pi^3$等低次幂项。</p>
+<p><strong>结论</strong>：球体体积比通常产生$\pi$的有理倍数，但乘积结构的流形可能产生$\pi$的多项式。</p>
+<h3>3.4 候选D：特征类积分与几何量的组合</h3>
+<p>考虑以下可能性：$\alpha^{-1}$是未归一化曲率积分（产生$\pi$的正幂次）与流形体积（也产生$\pi$的正幂次）的比值，通过幂次抵消留下$\pi^3 + \pi^2 + \pi$形式的多项式。</p>
+<p>对于8维流形$M_8$，假设：</p>
+<ul>
+<li>未归一化曲率积分：$\int_{M_8} \operatorname{Tr}(F^4) \propto (2\pi)^4 \cdot (\text{整数})$</li>
+<li>
+$M_8$的体积：$\operatorname{Vol}(M_8) \propto \pi^4 R^8$（假设为球体）</li>
+</ul>
+<p>如果$\alpha^{-1}$是这两者的某种组合，可能出现$\pi$的幂次抵消，留下$\pi^3 + \pi^2 + \pi$形式的多项式。</p>
+<p><strong>结论</strong>：特征类积分与几何量的组合是数学上最可能产生此类$\pi$多项式结构的路径。这一结论可作为未来中介层（$M_8$）几何研究的参考，但不指向$\alpha^{-1}$的溯源。</p>
+<hr>
+<h2>第4节：方法论储备总结</h2>
+<h3>4.1 可用工具清单</h3>
+<p>基于上述扫描，以下数学工具可供未来中介层（$M_8$）几何研究（如$\chi_g$计算、$\varepsilon_{\text{geom}}$量级估计）参考：</p>
+<ol>
+<li>
+<strong>未归一化曲率积分公式</strong>：$\int \operatorname{Tr}(R^4) = (2\pi)^4 (2c_2^2 - 4c_4)$（适用于CY4）</li>
+<li>
+<strong>Euler示性数与Chern数的关系</strong>：$\chi = \int c_4$</li>
+<li>
+<strong>球体体积公式</strong>：$V_n(R) = \pi^{n/2}R^n / \Gamma(n/2+1)$</li>
+<li>
+<strong>乘积流形体积分解</strong>：$V(M \times N) = V(M) \cdot V(N)$</li>
+</ol>
+<h3>4.2 适用范围说明</h3>
+<p>上述工具适用于中介层（层级2）和表象层（层级3）的数学描述，不适用于根域层（层级1）。根域层的量（如$\alpha^{-1}$）不可被这些工具审判。</p>
+<hr>
+<h2>第5节：完成标准</h2>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 数值结构分析完成</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 四种候选数学结构扫描完成</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 方法论储备清单整理完成</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 适用范围说明已标注</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 原始版本中指向$\alpha^{-1}$溯源的结论已移除</li>
+</ul>
+<hr>
+<p><strong>文章6修订版完稿。</strong></p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
