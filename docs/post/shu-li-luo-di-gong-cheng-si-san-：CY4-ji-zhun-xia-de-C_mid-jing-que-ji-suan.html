@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var a=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',a)}else{a()}})();</script><script>(function(){var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="## 文章12第3节（修订版）：CY4基准下的C_mid精确计算
+
+### 3.1 任务定位
+
+第3节是“三管齐下”策略中的主基准计算环节。">
+<meta property="og:title" content="数理落地工程四三：CY4基准下的C_mid精确计算">
+<meta property="og:description" content="## 文章12第3节（修订版）：CY4基准下的C_mid精确计算
+
+### 3.1 任务定位
+
+第3节是“三管齐下”策略中的主基准计算环节。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-si-san-%EF%BC%9ACY4-ji-zhun-xia-de-C_mid-jing-que-ji-suan.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>数理落地工程四三：CY4基准下的C_mid精确计算</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">数理落地工程四三：CY4基准下的C_mid精确计算</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/48" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h2>文章12第3节（修订版）：CY4基准下的C_mid精确计算</h2>
+<h3>3.1 任务定位</h3>
+<p>第3节是“三管齐下”策略中的主基准计算环节。目标是：</p>
+<ol>
+<li>建立从CY4全局拓扑数据到局部极化率张量χ_g⁽³⁾的局域化映射</li>
+<li>利用文章7储备的拓扑数据，计算C_mid的数值范围</li>
+<li>识别微扰收敛性对几何参数的约束，阐明压制机制的必要性</li>
+<li>为第5节的κ₀精确求解提供输入</li>
+</ol>
+<h3>3.2 从全局拓扑到局部张量：局域化映射</h3>
+<p>文章7提供的CY4拓扑数据是全局不变量，描述整个8维流形的整体性质。我需要的是χ_g在根域3个方向上的局部张量(χ_g⁽³⁾)_ij，这是一个3×3矩阵。</p>
+<p>局域化映射的核心思想是：全局拓扑不变量可以通过根域通道的权重分布分配到局部方向上。根域的3个时序通道作为M₈的3个特殊方向，承载了总曲率荷的一部分，分配比例由通道权重S_i决定。</p>
+<p>χ_g的局部张量(χ_g⁽³⁾)_ij的构造分为两步：</p>
+<p><strong>第一步：对角元（各向同性部分）</strong></p>
+<p>对角元(χ_g⁽³⁾)_ii描述通道i自身的极化响应。假设极化响应的强度正比于通道的权重S_i：</p>
+<p>(χ_g⁽³⁾)_ii = λ · S_i</p>
+<p>其中λ是全局归一化因子，由CY4的总曲率荷决定。</p>
+<p><strong>第二步：非对角元（耦合部分）</strong></p>
+<p>非对角元(χ_g⁽³⁾)_ij (i≠j)描述通道i和j之间的交叉极化。根据文章10的比例关系κ₁₂:κ₂₃:κ₃₁ ≈ 0.50:0.10:0.40，交叉极化的强度应与耦合强度成比例：</p>
+<p>(χ_g⁽³⁾)_ij = μ · κ_ij / κ₀ = μ · S_iS_j</p>
+<p>其中μ是另一个归一化因子。</p>
+<p><strong>完整形式：</strong></p>
+<p>χ_g⁽³⁾ = λ · diag(S₁, S₂, S₃) + μ · (S_iS_j矩阵的非对角部分)</p>
+<p>其中(S_iS_j矩阵)为：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>i\j</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>S₁²</td>
+<td>S₁S₂</td>
+<td>S₁S₃</td>
+</tr>
+<tr>
+<td>2</td>
+<td>S₁S₂</td>
+<td>S₂²</td>
+<td>S₂S₃</td>
+</tr>
+<tr>
+<td>3</td>
+<td>S₁S₃</td>
+<td>S₂S₃</td>
+<td>S₃²</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>3.3 归一化因子与几何因子的剥离</h3>
+<p>全局归一化因子λ和μ由CY4的总曲率荷决定。文章7的无量纲比值ℛ = 495360π⁴ ≈ 4.85×10⁷提供了关键参照。ℛ是曲率积分与体积的比值，代表了CY4的“曲率密度”。</p>
+<p>ℛ中包含了(2π)⁴ = 16π⁴的因子，这是Chern-Weil理论中的人为约定。剥离掉这个约定因子后，得到纯粹的几何因子：</p>
+<p>ℛ / (2π)⁴ = 495360π⁴ / 16π⁴ = 30960</p>
+<p>这个值30960是纯粹的几何形状因子（与π无关），代表了CY4的曲率密度在自然几何单位下的量级。</p>
+<p>因此，裸几何参数λ_bare和μ_bare的量级应为：</p>
+<p>λ_bare, μ_bare ~ O(10⁴)</p>
+<h3>3.4 代数展开与数值计算</h3>
+<p>将χ_g⁽³⁾代入C_mid的提取公式：</p>
+<p>C_mid κ₀² = [Σ_i Σ_j S_i S_j (χ_g⁽³⁾)_ij] / 0.5623</p>
+<p>展开求和：</p>
+<p>Σ_i Σ_j S_i S_j (χ_g⁽³⁾)_ij = Σ_i S_i² (χ_g⁽³⁾)<em>ii + 2 Σ</em>{i&lt;j} S_i S_j (χ_g⁽³⁾)_ij</p>
+<p>代入χ_g⁽³⁾的表达式：</p>
+<p>对角部分贡献：</p>
+<p>Σ_i S_i² · λS_i = λ Σ_i S_i³</p>
+<p>非对角部分贡献：</p>
+<p>2 Σ_{i&lt;j} S_i S_j · μ S_i S_j = 2μ Σ_{i&lt;j} (S_i S_j)²</p>
+<p>计算数值：</p>
+<p>S₁³ = 0.7237³ ≈ 0.3790<br>
+S₂³ = 0.1508³ ≈ 0.003429<br>
+S₃³ = 0.1255³ ≈ 0.001977</p>
+<p>Σ S_i³ ≈ 0.3844</p>
+<p>(S₁S₂)² = (0.1091)² ≈ 0.01190<br>
+(S₁S₃)² = (0.0908)² ≈ 0.008245<br>
+(S₂S₃)² = (0.01894)² ≈ 0.0003587</p>
+<p>Σ (S_iS_j)² ≈ 0.02050</p>
+<p>因此：</p>
+<p>Σ_i Σ_j S_i S_j (χ_g⁽³⁾)_ij = 0.3844 λ + 2 × 0.02050 μ = 0.3844 λ + 0.04100 μ</p>
+<p>代入C_mid公式：</p>
+<p>C_mid κ₀² = (0.3844 λ + 0.04100 μ) / 0.5623</p>
+<p>C_mid = (0.3844 λ + 0.04100 μ) / (0.5623 κ₀²)</p>
+<h3>3.5 微扰收敛性对几何参数的约束</h3>
+<p>根据文章11，微扰展开要求二阶项远小于或至多可比于一阶项：</p>
+<p>|C_mid κ₀²| ≲ |0.2348 κ₀|</p>
+<p>即：</p>
+<p>C_mid ≲ 0.2348 / κ₀</p>
+<p>代入κ₀ ~ 4.3×10⁻³：</p>
+<p>C_mid ≲ 0.2348 / 4.3×10⁻³ ≈ 54.6</p>
+<p>因此C_mid必须满足C_mid ≲ O(10²)。</p>
+<p>然而，若直接取裸几何参数λ_bare ~ 30960，代入C_mid表达式：</p>
+<p>C_mid ≈ (0.3844 × 30960) / (0.5623 × 1.85×10⁻⁵) ≈ 1.14×10⁹</p>
+<p>这远超O(10²)的上限，将完全破坏微扰展开。</p>
+<p><strong>因此，CY4的物理实现必须包含一个内在的压制机制</strong>，使得有效极化率参数被压制到：</p>
+<p>λ_eff, μ_eff ~ O(1) ~ O(10)</p>
+<p>压制机制的物理来源包括：</p>
+<p><strong>因素1：体积压制。</strong> χ_g的有效值正比于曲率积分除以体积V₈。在弦论自然单位下，V₈可以非常大（V₈ &gt;&gt; 1）。当V₈ ~ 10³~10⁴时，λ_eff被压制到O(1)~O(10)。</p>
+<p><strong>因素2：拓扑消去。</strong> χ_g的某些分量可能通过Euler示性数的符号交替被部分抵消，进一步压制有效值。</p>
+<p>压制机制的存在不是人为设定的，而是微扰展开收敛性的必要条件——它给出了一个物理判据：只有那些天然具备压制机制的几何形态才能与根域层的微扰框架自洽。</p>
+<h3>3.6 C_mid的量级估算</h3>
+<p>在压制机制存在的前提下（λ_eff, μ_eff ~ 1 ~ 10）：</p>
+<p>C_mid = (0.3844 λ_eff + 0.04100 μ_eff) / (0.5623 κ₀²)</p>
+<p>代入κ₀ ~ 4.3×10⁻³，κ₀² ≈ 1.85×10⁻⁵：</p>
+<p>C_mid ≈ (0.3844 × 1 + 0.04100 × 1) / (0.5623 × 1.85×10⁻⁵) ≈ 4.09×10⁴</p>
+<p>这个值仍然很大，因为分母中有κ₀²因子。但注意：C_mid本身不是直接的可观测量，它与κ₀²的乘积C_midκ₀²才是ε_geom的二阶项。</p>
+<p>C_midκ₀² ≈ 4.09×10⁴ × 1.85×10⁻⁵ ≈ 0.757</p>
+<p>这个值约为一阶项0.2348κ₀ ≈ 1.01×10⁻³的750倍，仍然太大！</p>
+<p>这说明λ_eff和μ_eff需要被压制得更强——到O(10⁻²)~O(10⁻¹)量级，才能使二阶项与一阶项可比或更小。</p>
+<p><strong>更精确的约束：</strong></p>
+<p>要求C_midκ₀² ≲ 0.2348κ₀，即C_mid ≲ 54.6，代入C_mid表达式：</p>
+<p>(0.3844 λ_eff + 0.04100 μ_eff) / (0.5623 × 1.85×10⁻⁵) ≲ 54.6</p>
+<p>0.3844 λ_eff + 0.04100 μ_eff ≲ 54.6 × 0.5623 × 1.85×10⁻⁵ ≈ 5.68×10⁻⁴</p>
+<p>因此：</p>
+<p>λ_eff, μ_eff ≲ 10⁻³</p>
+<p>这意味着有效极化率参数需要被压制到裸值的10⁻⁷<del>10⁻⁸量级。这要求体积压制因子V₈ ~ 10⁷</del>10⁸，在弦论中是合理的大体积场景。</p>
+<h3>3.7 阶段性结论</h3>
+<ol>
+<li><strong>裸几何参数</strong>：λ_bare, μ_bare ~ O(10⁴)，由CY4的曲率密度决定</li>
+<li><strong>压制机制</strong>：需要体积压制因子V₈ ~ 10⁷~10⁸，使λ_eff, μ_eff ≲ 10⁻³</li>
+<li><strong>C_mid量级</strong>：C_mid ~ O(10¹)<del>O(10²)，二阶项C_midκ₀² ~ 10⁻⁴</del>10⁻³，与一阶项可比或略小</li>
+<li><strong>微扰收敛性</strong>：在压制机制存在的前提下，微扰展开收敛</li>
+</ol>
+<p>第3节的精确数值需要CY4曲率张量在根域方向上的投影计算，但量级框架已建立。第4节的Spin(7)对照将检验这一量级是否具有形态鲁棒性。</p>
+<hr>
+<p>第3节修订版完。</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+
+
+</html>
