@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var a=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',a)}else{a()}})();</script><script>(function(){var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return m.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')});t=t.replace(/\$([^\n$]+?)\$/g,function(m){return m.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 文章7（二次修订版）：CY4拓扑数据汇编——数学工具储备
+
+## 修订说明
+
+本文原始版本（2026-07-13）的任务是“选择具体的8维流形模型，启动正向计算，验证  $\alpha^{-1} = 4\pi^3 + \pi^2 + \pi$ 是否能够从拓扑计算中自然涌现”。">
+<meta property="og:title" content="数理落地工程三十八：CY4拓扑数据汇编——数学工具储备">
+<meta property="og:description" content="# 文章7（二次修订版）：CY4拓扑数据汇编——数学工具储备
+
+## 修订说明
+
+本文原始版本（2026-07-13）的任务是“选择具体的8维流形模型，启动正向计算，验证  $\alpha^{-1} = 4\pi^3 + \pi^2 + \pi$ 是否能够从拓扑计算中自然涌现”。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-san-shi-ba-%EF%BC%9ACY4-tuo-pu-shu-ju-hui-bian-%E2%80%94%E2%80%94-shu-xue-gong-ju-chu-bei.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>数理落地工程三十八：CY4拓扑数据汇编——数学工具储备</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">数理落地工程三十八：CY4拓扑数据汇编——数学工具储备</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/37" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>文章7（二次修订版）：CY4拓扑数据汇编——数学工具储备</h1>
+<h2>修订说明</h2>
+<p>本文原始版本（2026-07-13）的任务是“选择具体的8维流形模型，启动正向计算，验证  $\alpha^{-1} = 4\pi^3 + \pi^2 + \pi$ 是否能够从拓扑计算中自然涌现”。该任务已被文章8判定为层级串位——  $\alpha^{-1}$ 是根域层（层级1）的纯拓扑读数，不应在中介层或表象层的数学框架中寻找其验证。</p>
+<p>本文现修改定位为**“CY4拓扑数据储备文档”**。正文中的CY4模型选择、Chern数计算、曲率积分推导、无量纲比值计算均为扎实的数学工作，可作为未来中介层（ $M_8$ ）几何研究（如$\chi_g$计算、 $\varepsilon_{\text{geom}}$ 量级估计）的参考底本。但本文不再指向“验证 $\alpha^{-1}$ ” 这一目标。</p>
+<p><strong>保留内容</strong>：第2节（流形选择）、第3节（计算框架）、第4节（ $\mathbb{P}^5$ 六次超曲面拓扑数据）、第5节（曲率积分计算）、第6节（无量纲比值计算）。<br>
+<strong>废弃内容</strong>：原第1节“目标”中指向$\alpha^{-1}$验证的表述，原第8节“模稳定与修正路径”中试图通过模稳定匹配 $\alpha^{-1}$ 的结论，原第9节“完成标准”中“与 $\alpha^{-1}$ 匹配验证”的目标。<br>
+<strong>修改内容</strong>：标题、各级标题、结论部分已重写。二次修订中修正了$c_3$的值（ $40H^3 \to -70H^3$）和 $\mathcal{R}$ 的计算（ $123840\pi^4 \to 495360\pi^4$ ）。</p>
+<hr>
+<h2>第1节：背景与数据定位</h2>
+<h3>1.1 背景</h3>
+<p>M₄框架的四大本源公理和三级层级结构（文章8）确立了以下分工：</p>
+<ul>
+<li>
+<strong>根域层（层级1）</strong>： $\alpha^{-1} = 4\pi^3 + \pi^2 + \pi$ 在此层内闭环，不依赖中介层或表象层。</li>
+<li>
+<strong>中介层（层级2）</strong>： $M_8$承载$\chi_g$ 和$G$的翻译，其几何形态是开放问题。</li>
+<li>
+<strong>表象层（层级3）</strong>：现有物理的“基本常数”均需沿层级逆向还原。</li>
+</ul>
+<p>本文提供CY4（Calabi-Yau 4-fold）的拓扑数据汇编，作为中介层$M_8$几何研究的候选工具之一。CY4是$M_8$几何形态的可能选项（非唯一选项），其拓扑数据可为$\chi_g$计算和 $\varepsilon_{\text{geom}}$ 量级估计提供参考。</p>
+<h3>1.2 数据汇编的逻辑链条</h3>
+<ol>
+<li>选择具体的CY4模型： $\mathbb{P}^5$ 中的六次超曲面</li>
+<li>提取拓扑数据：Chern类、Euler数、$\int c_2^2$</li>
+<li>计算未归一化曲率积分 $\int \operatorname{Tr}(R^4)$
+</li>
+<li>计算无量纲比值 $\mathcal{R}$
+</li>
+<li>将上述数据汇编为数学工具储备</li>
+</ol>
+<hr>
+<h2>第2节：流形选择</h2>
+<h3>2.1 选择标准</h3>
+<p>$M_8$作为中介层结构，需要满足以下条件：</p>
+<ol>
+<li><strong>实8维</strong>：与中介层的8维投影映射自由度匹配</li>
+<li><strong>具有丰富的拓扑结构</strong>：能够产生非平凡的曲率积分</li>
+<li><strong>数学工具成熟</strong>：便于计算和参考</li>
+</ol>
+<h3>2.2 首选模型：$\mathbb{P}^5$ 中的六次超曲面</h3>
+<p><strong>理由</strong>：</p>
+<ul>
+<li>该流形是复4维（实8维），是代数几何中标准构造</li>
+<li>其Chern类有封闭表达式，拓扑数据完全已知</li>
+<li>在弦论/F理论中有广泛应用，计算结果可交叉验证</li>
+</ul>
+<p><strong>局限性</strong>：</p>
+<ul>
+<li>该模型的Euler数较大（$\chi = 2610$），可能导致曲率积分量级偏高</li>
+<li>对于中介层$M_8$而言，CY4仅是候选之一，非唯一选项</li>
+</ul>
+<h3>2.3 备选模型</h3>
+<p>中介层$M_8$的几何形态是开放问题，其他候选包括：</p>
+<ul>
+<li>Spin(7)流形（例外和乐群，可能提供不同的曲率结构）</li>
+<li>
+$T^8$ 的变形（最简单，但可能不足以承载 $\chi_g$）</li>
+<li>其他满足中介层自洽性的8维流形</li>
+</ul>
+<hr>
+<h2>第3节：计算框架</h2>
+<h3>3.1 CY4的拓扑数据</h3>
+<p>对于Calabi-Yau 4-fold $M_8$，其Chern类满足以下约束：</p>
+<ul>
+<li>
+$c_1 = 0$（Calabi-Yau条件）</li>
+<li>
+$c_2$、$c_3$、$c_4$ 非零</li>
+<li>Euler示性数：$\chi(M_8) = \int_{M_8} c_4$</li>
+<li>其他Chern数：$\int c_2^2$、$\int c_4$ 等</li>
+</ul>
+<h3>3.2 未归一化曲率积分的Chern类表达</h3>
+<p>根据Chern-Weil理论，定义归一化曲率形式 $\Omega = \frac{i}{2\pi} R$ ，则Chern类$c_k$与幂和 $p_k = \operatorname{Tr}(\Omega^k)$ 的关系由牛顿恒等式给出。</p>
+<p>对于Calabi-Yau流形， $c_1 = 0$（即$p_1 = \operatorname{Tr}(\Omega) = 0$）。代入后得到：</p>
+<p>$$p_4 = \operatorname{Tr}(\Omega^4) = 2c_2^2 - 4c_4$$</p>
+<p>还原为未归一化的曲率积分：</p>
+<p>$$\int_{M_8} \operatorname{Tr}(R^4) = (2\pi)^4 \int_{M_8} (2c_2^2 - 4c_4)$$</p>
+<p>这是CY4模型的核心计算公式。</p>
+<h3>3.3 体积归一化</h3>
+<p>$M_8$的特征体积$V_8$由Kähler类的积分决定。对于Calabi-Yau 4-fold，体积可以表示为：</p>
+<p>$$V_8 = \frac{1}{4!} \int_{M_8} J^4$$</p>
+<p>其中$J$是Kähler形式。体积的量纲为$[L]^8$。</p>
+<h3>3.4 无量纲比值</h3>
+<p>无量纲比值$\mathcal{R}$定义为：</p>
+<p>$$\mathcal{R} = \frac{|\int_{M_8} \operatorname{Tr}(R^4)|}{V_8 / R^8}$$</p>
+<p>其中$R$是特征长度尺度，用于将$V_8$无量纲化。</p>
+<hr>
+<h2>第4节：$\mathbb{P}^5$六次超曲面的拓扑数据</h2>
+<h3>4.1 模型描述</h3>
+<p>选择$\mathbb{P}^5$ 中的六次超曲面（Degree-6 hypersurface in  $\mathbb{P}^5$ ）作为CY4的具体模型。该流形由 $\mathbb{P}^5$ 中一个次数为6的齐次多项式方程的零点集定义：</p>
+<p>$$X = { f(z_0, z_1, \ldots, z_5) = 0 } \subset \mathbb{P}^5$$</p>
+<h3>4.2 拓扑数据</h3>
+<p>全Chern类：</p>
+<p>$$c(TX) = \frac{(1+H)^6}{1+6H}$$</p>
+<p>展开后：</p>
+<ul>
+<li>$c_1 = 0$</li>
+<li>$c_2 = 15 H^2$</li>
+<li>$c_3 = -70 H^3$</li>
+<li>$c_4 = 435 H^4$</li>
+</ul>
+<p>积分（ $\int_X H^4 = 6$ ）：</p>
+<ul>
+<li>$\int c_4 = 435 \times 6 = 2610$</li>
+<li>$\int c_2^2 = 225 \times 6 = 1350$</li>
+</ul>
+<hr>
+<h2>第5节：曲率积分与比值计算</h2>
+<h3>5.1 曲率积分</h3>
+<p>代入核心公式：</p>
+<p>$$\int_{M_8} \operatorname{Tr}(R^4) = (2\pi)^4 \times (2 \times 1350 - 4 \times 2610)$$</p>
+<p>$$= (2\pi)^4 \times (-7740)$$</p>
+<p>取绝对值：</p>
+<p>$$|\int_{M_8} \operatorname{Tr}(R^4)| = 7740 \times (2\pi)^4$$</p>
+<h3>5.2 无量纲比值</h3>
+<p>特征体积（标准Kähler模$t$下）：</p>
+<p>$$V_8 = \frac{t^4}{4}$$</p>
+<p>无量纲化后 $V_8/R^8 = 1/4$，因此：</p>
+<p>$$\mathcal{R} = \frac{7740 \times (2\pi)^4}{1/4} = 7740 \times 16\pi^4 \times 4 = 495360 \times \pi^4 \approx 4.85 \times 10^7$$</p>
+<hr>
+<h2>第6节：数据汇编总结</h2>
+<h3>6.1 数据清单</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>物理量</th>
+<th>符号</th>
+<th>数值</th>
+<th>适用模型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Euler示性数</td>
+<td>$\int c_4$</td>
+<td>2610</td>
+<td>$\mathbb{P}^5[6]$</td>
+</tr>
+<tr>
+<td>第二Chern类平方</td>
+<td>$\int c_2^2$</td>
+<td>1350</td>
+<td>$\mathbb{P}^5[6]$</td>
+</tr>
+<tr>
+<td>第三Chern类</td>
+<td>$c_3$</td>
+<td>$-70 H^3$</td>
+<td>$\mathbb{P}^5[6]$</td>
+</tr>
+<tr>
+<td>曲率积分</td>
+<td>$</td>
+<td>\int \operatorname{Tr}(R^4)</td>
+<td>$</td>
+</tr>
+<tr>
+<td>无量纲比值</td>
+<td>$\mathcal{R}$</td>
+<td>$495360 \times \pi^4 \approx 4.85 \times 10^7$</td>
+<td>
+$\mathbb{P}^5[6]$，$V_8/R^8=1/4$</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>6.2 适用范围说明</h3>
+<p>上述数据适用于中介层（层级2）中$M_8$几何形态为CY4时的参考。若$M_8$的几何形态最终确定为非CY4（如Spin(7)或$T^8$变形），则需另行计算对应的拓扑数据。</p>
+<hr>
+<h2>第7节：完成标准</h2>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> CY4模型选择完成：$\mathbb{P}^5$中的六次超曲面</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 拓扑数据提取完成：$\int c_4 = 2610$，$\int c_2^2 = 1350$</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 曲率积分计算完成：$|\int \operatorname{Tr}(R^4)| = 7740 \times (2\pi)^4$</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 无量纲比值计算完成：$\mathcal{R} = 495360 \times \pi^4$</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 数据汇编与适用范围说明完成</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> 原始版本中指向$\alpha^{-1}$验证的结论已移除</li>
+</ul>
+<hr>
+<p><strong>文章7二次修订版完稿。</strong></p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
