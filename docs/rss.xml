@@ -1,5 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Mon, 13 Jul 2026 15:27:45 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>数理落地工程四六：物理因子的显式确定与 χg​绝对归一化（P2-1）</title><link>https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-si-liu-%EF%BC%9A-wu-li-yin-zi-de-xian-shi-que-ding-yu-%20%CF%87g%E2%80%8B-jue-dui-gui-yi-hua-%EF%BC%88P2-1%EF%BC%89.html</link><description>&lt;html&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Mon, 13 Jul 2026 15:45:32 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>数理落地工程四六：$\chi_g$ 的无量纲定标与根域-中介层自洽性</title><link>https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-si-liu-%EF%BC%9A%24-chi_g%24%20-de-wu-liang-gang-ding-biao-yu-gen-yu---zhong-jie-ceng-zi-qia-xing.html</link><description>## 文章15第2节（最终定稿版）：$\chi_g$ 的无量纲定标与根域-中介层自洽性
+
+### 2.1 任务定位
+
+P1阶段（文章13-14）完成了 $\chi_g$ 张量的几何定标，在自然单位制下得到了以下无量纲数值：
+
+$$
+\chi_g = \frac{5760}{t^4}, \quad \lambda_{\text{eff}} = \frac{2880}{t^4}, \quad \mu_{\text{eff}} = -\frac{1740}{t^4}
+$$
+
+这些数值是在以下约定下得到的：
+- $V_8 = t^4/4$，以特征长度 $l_0$ 的 8 次方为单位，数值无量纲
+- $A:B = 3:(-1)$，来自 $X_8$ 示性类（Atiyah-Singer 指标定理，纯数学工具）
+- $\zeta \approx 0.5$，通道总覆盖率的物理估计
+- **整体归一化因子 $\mathcal{N}$ 暂取为 $1$**
+
+第2节的目标是：**明确当前定标的边界与前提**——确认 $\chi_g$ 的无量纲数值与根域层 $\kappa_0$ 定标之间的自洽性，明确收敛性结论对 $\mathcal{N}=1$ 约定的依赖关系，并给出从无量纲形式到带量纲形式的转换公式框架，留待 P2-2 阶段引入实验锚点后填充。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-si-liu-%EF%BC%9A%24-chi_g%24%20-de-wu-liang-gang-ding-biao-yu-gen-yu---zhong-jie-ceng-zi-qia-xing.html</guid><pubDate>Mon, 13 Jul 2026 15:45:01 +0000</pubDate></item><item><title>数理落地工程四六：物理因子的显式确定与 χg​绝对归一化（P2-1）</title><link>https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-si-liu-%EF%BC%9A-wu-li-yin-zi-de-xian-shi-que-ding-yu-%20%CF%87g%E2%80%8B-jue-dui-gui-yi-hua-%EF%BC%88P2-1%EF%BC%89.html</link><description>&lt;html&gt;
 &lt;body&gt;
 &lt;!--StartFragment--&gt;&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;好的，以下是修正后的文章15第1节最终定稿版。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-si-liu-%EF%BC%9A-wu-li-yin-zi-de-xian-shi-que-ding-yu-%20%CF%87g%E2%80%8B-jue-dui-gui-yi-hua-%EF%BC%88P2-1%EF%BC%89.html</guid><pubDate>Mon, 13 Jul 2026 13:41:13 +0000</pubDate></item><item><title>数理落地科后阶段研细致化计划列表</title><link>https://shijianwei1969.github.io/post/shu-li-luo-di-ke-hou-jie-duan-yan-xi-zhi-hua-ji-hua-lie-biao.html</link><description>&lt;html&gt;
 &lt;body&gt;
