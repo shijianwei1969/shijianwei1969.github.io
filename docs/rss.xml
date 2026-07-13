@@ -1,5 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Mon, 13 Jul 2026 03:17:15 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>数理落地工程四二：κ₀量级估算与自洽性检验（P0-2）</title><link>https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-si-er-%EF%BC%9A%CE%BA%E2%82%80-liang-ji-gu-suan-yu-zi-qia-xing-jian-yan-%EF%BC%88P0-2%EF%BC%89.html</link><description>## 文章11：κ₀量级估算与自洽性检验（P0-2）
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Mon, 13 Jul 2026 03:18:51 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>数理落地工程四二：2自洽性条件的主项提取</title><link>https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-si-er-%EF%BC%9A2-zi-qia-xing-tiao-jian-de-zhu-xiang-ti-qu.html</link><description>## 文章11第2节：自洽性条件的主项提取
+
+### 2.1 自洽性条件的起点
+
+M₈中介层的自洽性条件（文章8 §2）为：
+
+$$v^T M_8 v = \frac{4\pi\alpha^2}{M_{M_8}^2} \cdot (1 + \varepsilon_{\text{geom}})$$
+
+其中v = (√S₁, √S₂, √S₃)是根域通道耦合截面矢量，M₈ = M₁^(1/2) · (I+χ_g) · M₁^(1/2)是中介层映射矩阵。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-si-er-%EF%BC%9A2-zi-qia-xing-tiao-jian-de-zhu-xiang-ti-qu.html</guid><pubDate>Mon, 13 Jul 2026 03:18:24 +0000</pubDate></item><item><title>数理落地工程四二：κ₀量级估算与自洽性检验（P0-2）</title><link>https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-si-er-%EF%BC%9A%CE%BA%E2%82%80-liang-ji-gu-suan-yu-zi-qia-xing-jian-yan-%EF%BC%88P0-2%EF%BC%89.html</link><description>## 文章11：κ₀量级估算与自洽性检验（P0-2）
 
 ### 第1节：任务定位与前置条件
 
