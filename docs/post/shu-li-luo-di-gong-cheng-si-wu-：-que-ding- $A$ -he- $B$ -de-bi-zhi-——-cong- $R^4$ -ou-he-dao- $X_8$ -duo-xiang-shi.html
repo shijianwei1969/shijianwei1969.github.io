@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="## 文章14第2节：确定 $A$ 和 $B$ 的比值——从 $R^4$ 耦合到 $X_8$ 多项式
+
+### 2.1 任务定位
+
+第2节的目标是确定 $\chi_g$ 微观定义中系数 $A$ 和 $B$ 的比值：
+
+$$
+\chi_g = \frac{1}{V_8} \int_{M_8} [A \cdot c_2^2 + B \cdot c_4]
+$$
+
+$A:B$ 的比值不能仅由拓扑数据决定，它依赖于弦论/M理论中高阶导数修正的物理结构。">
+<meta property="og:title" content="数理落地工程四五：确定 $A$ 和 $B$ 的比值——从 $R^4$ 耦合到 $X_8$ 多项式">
+<meta property="og:description" content="## 文章14第2节：确定 $A$ 和 $B$ 的比值——从 $R^4$ 耦合到 $X_8$ 多项式
+
+### 2.1 任务定位
+
+第2节的目标是确定 $\chi_g$ 微观定义中系数 $A$ 和 $B$ 的比值：
+
+$$
+\chi_g = \frac{1}{V_8} \int_{M_8} [A \cdot c_2^2 + B \cdot c_4]
+$$
+
+$A:B$ 的比值不能仅由拓扑数据决定，它依赖于弦论/M理论中高阶导数修正的物理结构。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-si-wu-%EF%BC%9A-que-ding-%20%24A%24%20-he-%20%24B%24%20-de-bi-zhi-%E2%80%94%E2%80%94-cong-%20%24R%5E4%24%20-ou-he-dao-%20%24X_8%24%20-duo-xiang-shi.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>数理落地工程四五：确定 $A$ 和 $B$ 的比值——从 $R^4$ 耦合到 $X_8$ 多项式</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">数理落地工程四五：确定 $A$ 和 $B$ 的比值——从 $R^4$ 耦合到 $X_8$ 多项式</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/57" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h2>文章14第2节：确定 $A$ 和 $B$ 的比值——从 $R^4$ 耦合到 $X_8$ 多项式</h2>
+<h3>2.1 任务定位</h3>
+<p>第2节的目标是确定 $\chi_g$ 微观定义中系数 $A$ 和 $B$ 的比值：</p>
+<p>$$
+\chi_g = \frac{1}{V_8} \int_{M_8} [A \cdot c_2^2 + B \cdot c_4]
+$$</p>
+<p>$A:B$ 的比值不能仅由拓扑数据决定，它依赖于弦论/M理论中高阶导数修正的物理结构。具体而言，$\chi_g$ 描述的是曲率对度规微扰的二阶响应，而这种响应在有效作用量中对应于高阶曲率修正项。</p>
+<h3>2.2 M-theory/F-theory 框架下的 $R^4$ 耦合</h3>
+<p><strong>物理框架的选择。</strong> 我们的基准模型是 $\mathbb{P}^5$ 的六次超曲面，这是一个 Calabi-Yau 4-fold（复4维，实8维）。CY4 紧化的自然物理框架是：</p>
+<ul>
+<li><strong>M-theory 紧化到3维</strong>：11维 → 3维外部时空 + 8维内禀CY4</li>
+<li><strong>F-theory 紧化到4维</strong>：等价于 IIB 弦论在3维底空间上的轴子-膨胀子纤维化，通过 M/F 对偶与上述 M-theory 紧化关联</li>
+</ul>
+<p>在这两个框架中，高阶曲率修正的核心结构由 <strong>$X_8$ 多项式</strong> 控制。</p>
+<p><strong>M-theory 有效作用量中的曲率修正。</strong> 在 M-theory 的11维有效作用量中，$l_p^6$ 阶（$l_p$ 为11维 Planck 长度）的曲率修正包含两项（Green, Schwarz &amp; Witten, 1987; Duff, Liu &amp; Minasian, 1995; Tseytlin, 1997）：</p>
+<p>$$
+S_M \supset T_2 \int C_3 \wedge X_8 + \frac{1}{2\kappa_{11}^2} \int d^{11}x \sqrt{-g} ; l_p^6 \cdot \mathcal{L}_{R^4}
+$$</p>
+<p>其中第一项是拓扑耦合（$C_3$ 为3阶规范势，$T_2$ 为 M2-brane 张力），第二项是动力学高阶导数修正。两者都涉及同一个 $X_8$ 多项式。</p>
+<p><strong>$X_8$ 多项式的定义。</strong> $X_8$ 是 Pontryagin 类的特定多项式，起源于反常消除理论中的指标密度（Alvarez-Gaumé &amp; Witten, 1984）：</p>
+<p>$$
+X_8 = \frac{1}{(4\pi)^4} \cdot \frac{1}{5760} \left( 7 p_1^2 - 4 p_2 \right)
+$$</p>
+<p>其中 $p_1, p_2$ 是实切丛的 Pontryagin 类。</p>
+<h3>2.3 Pontryagin 类与 Chern 类的换算</h3>
+<p>对于 Calabi-Yau 4-fold 的复切丛 $T_M$，其底层的实切丛的 Pontryagin 类可通过 $T_M \oplus \overline{T_M}$ 的 Chern 类来计算。</p>
+<p>总 Chern 类：</p>
+<p>$$
+c(T_M \oplus \overline{T_M}) = c(T_M) \cdot c(\overline{T_M})
+$$</p>
+<p>对 CY4，$c_1 = 0$（Calabi-Yau 条件），$c_3$ 对 Pontryagin 类无贡献，展开得：</p>
+<p>$$
+c(T_M \oplus \overline{T_M}) = (1 + c_2 + c_4)(1 + c_2 + c_4) = 1 + 2c_2 + (c_2^2 + 2c_4) + \cdots
+$$</p>
+<p>由 Pontryagin 类的定义 $p_k = (-1)^k c_{2k}(T_M \oplus \overline{T_M})$：</p>
+<p>$$
+p_1 = -2c_2
+$$</p>
+<p>$$
+p_2 = c_2^2 + 2c_4
+$$</p>
+<blockquote>
+<p><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji> <strong>注意</strong>：$p_2 = c_2^2 + 2c_4$（<strong>不是</strong> $2c_4 - c_2^2$）。这是复共轭丛直和展开中 $c_4$ 级项的正确系数。</p>
+</blockquote>
+<h3>2.4 $X_8$ 用 Chern 类的显式表达</h3>
+<p>将 $p_1$ 和 $p_2$ 代入 $X_8$：</p>
+<p>$$
+7p_1^2 = 7 \times (-2c_2)^2 = 7 \times 4c_2^2 = 28c_2^2
+$$</p>
+<p>$$
+4p_2 = 4 \times (c_2^2 + 2c_4) = 4c_2^2 + 8c_4
+$$</p>
+<p>$$
+7p_1^2 - 4p_2 = 28c_2^2 - 4c_2^2 - 8c_4 = 24c_2^2 - 8c_4 = 8(3c_2^2 - c_4)
+$$</p>
+<p>因此：</p>
+<p>$$
+X_8 = \frac{1}{(4\pi)^4} \cdot \frac{8}{5760} (3c_2^2 - c_4) = \frac{1}{(4\pi)^4 \cdot 720} (3c_2^2 - c_4)
+$$</p>
+<p>$X_8$ 是 $c_2^2$ 和 $c_4$ 的线性组合，其系数比为：</p>
+<p>$$
+\boxed{A : B = 3 : (-1)}
+$$</p>
+<h3>2.5 $\chi_g$ 与 $X_8$ 的对应</h3>
+<p>$\chi_g$ 作为几何极化率，描述曲率对度规微扰的二阶响应。在 M-theory/F-theory 有效作用量中，$X_8$ 正是控制曲率高阶修正的核心拓扑量。因此，$\chi_g$ 的被积函数应与 $X_8$ 成比例：</p>
+<p>$$
+A \cdot c_2^2 + B \cdot c_4 \propto 3c_2^2 - c_4
+$$</p>
+<p>由此确定：</p>
+<p>$$
+A = 3, \quad B = -1 \quad \text{（在适当归一化下）}
+$$</p>
+<h3>2.6 数值验证</h3>
+<p>利用 $\mathbb{P}^5$ 六次超曲面的拓扑数据进行自洽性检验：</p>
+<p><strong>检验一：$X_8$ 积分的正定性</strong></p>
+<p>$$
+\int_{M_8} (3c_2^2 - c_4) = 3 \times 1350 - 2610 = 4050 - 2610 = 1440 &gt; 0 \quad ✅
+$$</p>
+<p><strong>检验二：与 $\text{Tr}(R^4)$ 的符号对比</strong></p>
+<p>$$
+\int_{M_8} \text{Tr}(R^4) = 32\pi^4 \times 1350 - 64\pi^4 \times 2610 = -123840\pi^4 &lt; 0
+$$</p>
+<p>$X_8$ 积分为正（$+1440$），$\text{Tr}(R^4)$ 积分为负（$-123840\pi^4$），两者符号相反。这说明 $\chi_g$ <strong>不是</strong>简单地正比于 $\text{Tr}(R^4)$，而是正比于 $X_8$——一个由 $c_2^2$ 和 $c_4$ 特定组合构成的拓扑不变量。物理上，$X_8 &gt; 0$ 保证了极化率张量的正定性，与系统稳定性要求一致。</p>
+<p><strong>检验三：与 Euler 示性数的关系</strong></p>
+<p>$$
+\frac{\int (3c_2^2 - c_4)}{\int c_4} = \frac{1440}{2610} = \frac{16}{29} \approx 0.552
+$$</p>
+<p>这个比值是一个纯几何常数，记录了CY4的曲率结构中"极化响应"与"总拓扑荷"的比例关系。</p>
+<h3>2.7 整体归一化与物理因子的分离</h3>
+<p>比值 $A:B = 3:(-1)$ 确定后，还需要确定绝对归一化。$X_8$ 的完整表达式为：</p>
+<p>$$
+X_8 = \frac{1}{(4\pi)^4 \cdot 720} (3c_2^2 - c_4)
+$$</p>
+<p>其中前置因子 $\frac{1}{(4\pi)^4 \cdot 720}$ 来自 Chern-Weil 理论的标准化约定。而 $\chi_g$ 的绝对大小还依赖于：</p>
+<ul>
+<li>弦耦合常数 $g_s$ 的幂次</li>
+<li>
+$\alpha'$（或 $l_p$）的幂次</li>
+<li>紧化方案的具体细节（M-theory vs F-theory）</li>
+</ul>
+<p>这些物理因子将在 P2 阶段与可观测量对接时最终确定。在当前 P1 阶段，我们只需要比值和拓扑结构，因此取<strong>简化归一化</strong>：</p>
+<p>$$
+A = 3, \quad B = -1
+$$</p>
+<p>在此归一化下，$\chi_g$ 的被积函数为：</p>
+<p>$$
+\mathcal{I}(\mathcal{R}) = 3c_2^2 - c_4
+$$</p>
+<p>其积分值为 $\int_{M_8} \mathcal{I}(\mathcal{R}) = 1440$。后续计算 $\lambda_{\text{eff}}$ 和 $\mu_{\text{eff}}$ 时，整体归一化因子将被吸收到有效参数中。</p>
+<h3>2.8 第2节结论</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">项目</th>
+<th align="left">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">物理框架</td>
+<td align="left">M-theory/F-theory 紧化到 3/4 维</td>
+</tr>
+<tr>
+<td align="left">核心拓扑量</td>
+<td align="left">$X_8 = \frac{1}{(4\pi)^4 \cdot 720}(3c_2^2 - c_4)$</td>
+</tr>
+<tr>
+<td align="left">Pontryagin → Chern</td>
+<td align="left">$p_1 = -2c_2,\ p_2 = c_2^2 + 2c_4$</td>
+</tr>
+<tr>
+<td align="left">系数比</td>
+<td align="left">$A : B = 3 : (-1)$</td>
+</tr>
+<tr>
+<td align="left">简化归一化</td>
+<td align="left">$A = 3,\ B = -1$</td>
+</tr>
+<tr>
+<td align="left">拓扑积分</td>
+<td align="left">
+$\int (3c_2^2 - c_4) = 1440 &amp;gt; 0$ ✅</td>
+</tr>
+<tr>
+<td align="left">符号自洽性</td>
+<td align="left">
+$X_8 &amp;gt; 0$，$\text{Tr}(R^4) &lt; 0$，两者独立 ✅</td>
+</tr>
+<tr>
+<td align="left">与 Euler 数比值</td>
+<td align="left">$1440/2610 = 16/29 \approx 0.552$</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<p><em>第2节完。第3节将利用 $A=3, B=-1$ 计算 $\lambda_{\text{eff}}$ 和 $\mu_{\text{eff}}$ 的具体数值。</em></p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
