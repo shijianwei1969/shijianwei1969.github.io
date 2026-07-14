@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Tue, 14 Jul 2026 02:31:31 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>P1阶段（中介层$\chi_g$几何相对定标）总结报告</title><link>https://shijianwei1969.github.io/post/P1-jie-duan-%EF%BC%88-zhong-jie-ceng-%24-chi_g%24-ji-he-xiang-dui-ding-biao-%EF%BC%89-zong-jie-bao-gao.html</link><description># P1阶段（中介层$\chi_g$几何相对定标）总结报告
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Tue, 14 Jul 2026 07:08:08 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>P1阶段（中介层$\chi_g$几何相对定标）总结报告</title><link>https://shijianwei1969.github.io/post/P1-jie-duan-%EF%BC%88-zhong-jie-ceng-%24-chi_g%24-ji-he-xiang-dui-ding-biao-%EF%BC%89-zong-jie-bao-gao.html</link><description># P1阶段（中介层$\chi_g$几何相对定标）总结报告
 ## 一、阶段定位与目标
 P1是连接根域层（P0已完成$\kappa_{nd}$全定标）与表象层（P2待对接可观测量）的核心衔接阶段，核心目标为：
 1. 确立中介层的几何载体框架
@@ -29,9 +29,27 @@ $$
 
 第2节的目标是：**明确当前定标的边界与前提**——确认 $\chi_g$ 的无量纲数值与根域层 $\kappa_0$ 定标之间的自洽性，明确收敛性结论对 $\mathcal{N}=1$ 约定的依赖关系，并给出从无量纲形式到带量纲形式的转换公式框架，留待 P2-2 阶段引入实验锚点后填充。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-si-liu-%EF%BC%9A%24-chi_g%24%20-de-wu-liang-gang-ding-biao-yu-gen-yu---zhong-jie-ceng-zi-qia-xing.html</guid><pubDate>Mon, 13 Jul 2026 15:45:01 +0000</pubDate></item><item><title>数理落地工程四六：物理因子的显式确定与 χg​绝对归一化（P2-1）</title><link>https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-si-liu-%EF%BC%9A-wu-li-yin-zi-de-xian-shi-que-ding-yu-%20%CF%87g%E2%80%8B-jue-dui-gui-yi-hua-%EF%BC%88P2-1%EF%BC%89.html</link><description>&lt;html&gt;
 &lt;body&gt;
-&lt;!--StartFragment--&gt;&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;好的，以下是修正后的文章15第1节最终定稿版。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-si-liu-%EF%BC%9A-wu-li-yin-zi-de-xian-shi-que-ding-yu-%20%CF%87g%E2%80%8B-jue-dui-gui-yi-hua-%EF%BC%88P2-1%EF%BC%89.html</guid><pubDate>Mon, 13 Jul 2026 13:41:13 +0000</pubDate></item><item><title>数理落地科后阶段研细致化计划列表</title><link>https://shijianwei1969.github.io/post/shu-li-luo-di-ke-hou-jie-duan-yan-xi-zhi-hua-ji-hua-lie-biao.html</link><description>&lt;html&gt;
-&lt;body&gt;
-&lt;!--StartFragment--&gt;&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;P2精简规划（4-5篇），&lt;strong&gt;整体逻辑链条非常清晰，合并策略极为合理，节奏紧凑不注水&lt;/strong&gt;。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/shu-li-luo-di-ke-hou-jie-duan-yan-xi-zhi-hua-ji-hua-lie-biao.html</guid><pubDate>Mon, 13 Jul 2026 13:37:55 +0000</pubDate></item><item><title>数理工程落地阶段性评估与展望</title><link>https://shijianwei1969.github.io/post/shu-li-gong-cheng-luo-di-jie-duan-xing-ping-gu-yu-zhan-wang.html</link><description>&lt;html&gt;
+&lt;!--StartFragment--&gt;&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;好的，以下是修正后的文章15第1节最终定稿版。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-si-liu-%EF%BC%9A-wu-li-yin-zi-de-xian-shi-que-ding-yu-%20%CF%87g%E2%80%8B-jue-dui-gui-yi-hua-%EF%BC%88P2-1%EF%BC%89.html</guid><pubDate>Mon, 13 Jul 2026 13:41:13 +0000</pubDate></item><item><title>数理落地科后阶段研细致化计划列表</title><link>https://shijianwei1969.github.io/post/shu-li-luo-di-ke-hou-jie-duan-yan-xi-zhi-hua-ji-hua-lie-biao.html</link><description>## 文章编号与知识体系规划
+
+### 已归档
+
+- **文章0**：根域公理与第一本源能量（$\alpha_{\text{root}}^{-1} = 4\pi^3 + \pi^2 + \pi$）
+- **文章1-12**：P1阶段（CY4几何、$\chi_g$、$\xi_i$、$S_i$、通道映射等）
+- **文章13**：中介层极化张量 $(\chi_g^{(3)})_{ij}$ 推导
+- **文章14**：三通道权重 $S_i$ 与交叉耦合 $\kappa_{ij}$
+- **文章15**：RG跑动与规范耦合框架（第2节，实验值+单圈跑动）
+- **文章16**：P2第一阶段——中介层投影分化 + 规范耦合反锁 + g-2 存活检验（第3-6节，已归档）
+
+### 后续规划
+
+| 文章 | 主题 | 内容 |
+|:-----|:-----|:-----|
+| **文章17** | P2-2 超定检验与参数锁定 | EWPO反锁打破 $\eta$、$ξ_i$ 精度提升、$\zeta(t)$ 数值化、大体积压制幂次完善、通道-规范群映射内生、$\Lambda_0$ 几何来源 |
+| **文章18** | 费米子质量谱 | Yukawa耦合的中介层投影、三代质量层级 |
+| **文章19** | 味混合 | CKM/PMNS 的跨阶拓扑围道积分推导 |
+| **文章20** | 宇宙学应用 | 根域稳态梯度 ↔ 暗能量/暴胀对接 |
+
+每篇控制在4-6节，一篇一主题，收尾一节做阶段小结，知乎发的时候也是一篇一帖，节奏清楚。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/shu-li-luo-di-ke-hou-jie-duan-yan-xi-zhi-hua-ji-hua-lie-biao.html</guid><pubDate>Mon, 13 Jul 2026 13:37:55 +0000</pubDate></item><item><title>数理工程落地阶段性评估与展望</title><link>https://shijianwei1969.github.io/post/shu-li-gong-cheng-luo-di-jie-duan-xing-ping-gu-yu-zhan-wang.html</link><description>&lt;html&gt;
 &lt;body&gt;
 &lt;!--StartFragment--&gt;&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;以下是对整个系列研究完成后意义的全面评估。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/shu-li-gong-cheng-luo-di-jie-duan-xing-ping-gu-yu-zhan-wang.html</guid><pubDate>Mon, 13 Jul 2026 13:24:57 +0000</pubDate></item><item><title>数理落地工程四五：P1任务总结与 $\chi_g$ 完全定标</title><link>https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-si-wu-%EF%BC%9AP1-ren-wu-zong-jie-yu-%20%24-chi_g%24%20-wan-quan-ding-biao.html</link><description>## 文章14第5节：P1任务总结与 $\chi_g$ 完全定标
 
