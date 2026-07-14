@@ -10,29 +10,17 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="## 文章13第3节：局域化投影——从8维全局积分到3维子块的提取
+<meta name="description" content="## 文章13第3节：$\chi_g$ 的微观定义与局域化投影规则
 
 ### 3.1 任务定位
 
-第2节建立了 $\chi_g$ 的微观定义：
-
-$$
-\chi_g = \frac{1}{V_8} \int_{M_8} [A \cdot c_2^2 + B \cdot c_4]
-$$
-
-但这是一个**标量**（全局平均极化率），而我们需要的 $(\chi_g^{(3)})_{ij}$ 是一个 $3 \times 3$ 矩阵，描述极化率在根域3个时序通道方向上的分布。">
+第2节将中介层几何载体选定为单模CY4（$\mathbb{P}^5$ 六次超曲面），这是一个建构性假说。">
 <meta property="og:title" content="数理落地工程四四：局域化投影——从8维全局积分到3维子块的提取">
-<meta property="og:description" content="## 文章13第3节：局域化投影——从8维全局积分到3维子块的提取
+<meta property="og:description" content="## 文章13第3节：$\chi_g$ 的微观定义与局域化投影规则
 
 ### 3.1 任务定位
 
-第2节建立了 $\chi_g$ 的微观定义：
-
-$$
-\chi_g = \frac{1}{V_8} \int_{M_8} [A \cdot c_2^2 + B \cdot c_4]
-$$
-
-但这是一个**标量**（全局平均极化率），而我们需要的 $(\chi_g^{(3)})_{ij}$ 是一个 $3 \times 3$ 矩阵，描述极化率在根域3个时序通道方向上的分布。">
+第2节将中介层几何载体选定为单模CY4（$\mathbb{P}^5$ 六次超曲面），这是一个建构性假说。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://shijianwei1969.github.io/post/shu-li-luo-di-gong-cheng-si-si-%EF%BC%9A-ju-yu-hua-tou-ying-%E2%80%94%E2%80%94-cong-8-wei-quan-ju-ji-fen-dao-3-wei-zi-kuai-de-ti-qu.html">
 <meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
@@ -93,165 +81,133 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><h2>文章13第3节：局域化投影——从8维全局积分到3维子块的提取</h2>
+<div class="markdown-body" id="postBody"><h2>文章13第3节：$\chi_g$ 的微观定义与局域化投影规则</h2>
 <h3>3.1 任务定位</h3>
-<p>第2节建立了 $\chi_g$ 的微观定义：</p>
+<p>第2节将中介层几何载体选定为单模CY4（$\mathbb{P}^5$ 六次超曲面），这是一个建构性假说。第3节的任务是：在该假说下，建立 $\chi_g$ 的微观定义，并建立从全局曲率积分到根域三个通道投影的局域化规则。</p>
+<h3>3.2 $\chi_g$ 的微观定义</h3>
+<p>$\chi_g$ 描述的是曲率对度规微扰的二阶响应。在8维CY4上，其微观定义为：</p>
 <p>$$
-\chi_g = \frac{1}{V_8} \int_{M_8} [A \cdot c_2^2 + B \cdot c_4]
+\chi_g = \frac{1}{V_8} \int_{M_8} \mathcal{I}(\mathcal{R})
 $$</p>
-<p>但这是一个<strong>标量</strong>（全局平均极化率），而我们需要的 $(\chi_g^{(3)})_{ij}$ 是一个 $3 \times 3$ 矩阵，描述极化率在根域3个时序通道方向上的分布。</p>
-<p>第3节的任务是：建立从8维全局积分到 $3 \times 3$ 子块的<strong>局域化投影规则</strong>，使得 $(\chi_g^{(3)})_{ij}$ 自然地携带 $S_i$ 的权重，并与文章12的参数化形式对接。</p>
-<hr>
-<h3>3.2 谐波形式与根域通道的对应</h3>
-<p>CY4的Kähler模空间由 $h^{1,1}$ 个谐波(1,1)-形式张成，记为 $\omega_a$（$a = 1, \dots, h^{1,1}$）。根域的3个时序通道对应 $M_8$ 的3个特殊方向，对应于3个特定的谐波(1,1)-形式，记为 $\omega_1, \omega_2, \omega_3$。</p>
-<p>为了数学上的严谨性，我们首先选择一组<strong>正交归一化基底</strong> $\hat{u}_i$（$i = 1, 2, 3$），满足：</p>
+<p>其中 $V_8$ 是CY4的体积，$\mathcal{I}(\mathcal{R})$ 是由曲率张量构造的标量密度8-形式。</p>
+<p>对于Kähler流形，曲率二阶响应的标准示性类构造是 $X_8$（Atiyah-Singer指标定理，代数拓扑标准工具，见文章14第2节）：</p>
 <p>$$
-
-\int_{M_8} \hat{u}_i \wedge \star \hat{u}_j = V_8 \cdot \delta_{ij}
-
+X_8 = \frac{1}{(4\pi)^4 \cdot 5760} (7p_1^2 - 4p_2)
 $$</p>
-<p>其中 $\star$ 是Hodge星算子，$\hat{u}_i$ 是2-形式，$\star \hat{u}_i$ 是 $(8-2) = 6$-形式，因此 $\hat{u}_i \wedge \star \hat{u}_j$ 是 $2 + 6 = 8$-形式，可以在8维流形上积分。</p>
-<p>根域通道权重 $S_i$ 决定了这3个方向在总几何中的占比。谐波形式 $\omega_i$ 的模长正比于 $S_i$：</p>
+<p>代入Pontryagin类与Chern类的关系 $p_1 = -2c_2$、$p_2 = c_2^2 + 2c_4$，得：</p>
 <p>$$
-\omega_i = \sqrt{S_i} \cdot \hat{u}_i
+X_8 \propto 3c_2^2 - c_4
 $$</p>
-<p>这样：</p>
+<p>因此：</p>
 <p>$$
-\int_{M_8} \omega_i \wedge \star \omega_i = S_i \cdot V_8
+\mathcal{I}(\mathcal{R}) \propto X_8 \propto 3c_2^2 - c_4
 $$</p>
-<p>即 $\omega_i$ 的模长平方正比于通道权重 $S_i$，与物理直觉一致。</p>
-<hr>
-<h3>3.3 投影积分的构造</h3>
-<p>$(\chi_g^{(3)})_{ij}$ 描述的是极化率在 $\omega_i$ 和 $\omega_j$ 方向上的分量。它应该由曲率分布在 $\omega_i, \omega_j$ 方向上的投影决定。</p>
-<p><strong>关键数学工具</strong>：使用Hodge星算子构造内积，而非直接楔乘。</p>
-<p>构造投影积分：</p>
+<p>比例系数不影响 $A:B$ 的比值，被吸收到整体归一化因子中（P2-2阶段处理）。在 $\mathcal{N}=1$ 的约定下：</p>
 <p>$$
-P_{ij} = \int_{M_8} (\omega_i \wedge \star \omega_j) \cdot \mathcal{I}(\mathcal{R})
+\chi_g = \frac{1}{V_8} \int_{M_8} (3c_2^2 - c_4)
 $$</p>
-<p>其中 $\mathcal{I}(\mathcal{R})$ 是曲率的<strong>标量不变量</strong>（0-形式），例如：</p>
-<ul>
-<li>对于CY4（Ricci平坦），主要贡献来自Weyl张量的平方 $|C|^2$
-</li>
-<li>或者更一般地，$\mathcal{I}(\mathcal{R}) = A \cdot |\text{Riem}|^2 + B \cdot R_{abcd}R^{abcd}$ 的某种组合</li>
-</ul>
-<p><strong>度数验证</strong>：</p>
+<p>代入文章7的拓扑数据：$\int c_2^2 = 1350$，$\int c_4 = 2610$，$V_8 = t^4/4$（单模CY4体积公式），得：</p>
+<p>$$
+\chi_g = \frac{3 \times 1350 - 2610}{t^4/4} = \frac{4050 - 2610}{t^4/4} = \frac{1440}{t^4/4} = \frac{5760}{t^4}
+$$</p>
+<h3>3.3 局域化投影规则</h3>
+<p>$\chi_g$ 是全局量，需要投影到根域三个通道上，才能与 $\varepsilon_{\text{geom}}$ 展开式中的二阶项衔接。</p>
+<p><strong>三个通道的调和基底</strong>：</p>
+<p>根域三个通道对应中介层CY4的 $H^{2,2}$ 上同调群中的三个正交单位基底 $\hat{u}_1, \hat{u}_2, \hat{u}_3$。对于单模CY4（$h^{1,1}=1$），$h^{2,2}=4$，分解为：</p>
 <ul>
 <li>
-$\omega_i$ 是2-形式</li>
+$J^2$ 方向（1维）：由Kähler形式生成，对应 $c_2^2$ 的各向同性部分</li>
 <li>
-$\star \omega_j$ 是6-形式</li>
-<li>
-$\omega_i \wedge \star \omega_j$ 是8-形式</li>
-<li>
-$\mathcal{I}(\mathcal{R})$ 是0-形式（标量）</li>
-<li>被积形式总度数为 $8 + 0 = 8$，可以在8维流形上积分 ✅</li>
+$\text{Prim}^{2,2}$ 子空间（3维）：原始调和形式，对应 $c_4$ 的局部分量</li>
 </ul>
-<p><strong>物理含义</strong>：$\omega_i \wedge \star \omega_j$ 作为"探针"，探测曲率分布在 $(i, j)$ 方向上的分量。当 $i = j$ 时，探测的是对角分量（通道自身的极化响应）；当 $i \neq j$ 时，探测的是非对角分量（通道间的交叉极化）。</p>
-<hr>
-<h3>3.4 与 $S_i$ 权重的对接</h3>
-<p>代入 $\omega_i = \sqrt{S_i} \cdot \hat{u}_i$：</p>
+<p>三个 $\hat{u}_i$ 取自 $\text{Prim}^{2,2}$，且在 $S_3$ 轮换下对称。</p>
+<p><strong>加权调和形式</strong>：</p>
+<p>为了将根域通道权重 $S_i$（文章2）传递给中介层的投影积分，构造加权调和4-形式：</p>
 <p>$$
-P_{ij} = \int_{M_8} (\sqrt{S_i} \hat{u}_i \wedge \star \sqrt{S_j} \hat{u}_j) \cdot \mathcal{I}(\mathcal{R})
+\omega_i = \sqrt{S_i} , \hat{u}_i, \qquad i=1,2,3
 $$</p>
-<p>$$
-= \sqrt{S_i S_j} \int_{M_8} (\hat{u}_i \wedge \star \hat{u}_j) \cdot \mathcal{I}(\mathcal{R})
-$$</p>
-<p>定义<strong>归一化投影矩阵</strong>：</p>
-<p>$$
-Q_{ij} = \frac{1}{V_8} \int_{M_8} (\hat{u}_i \wedge \star \hat{u}_j) \cdot \mathcal{I}(\mathcal{R})
-$$</p>
-<p>则：</p>
-<p>$$
-P_{ij} = V_8 \cdot \sqrt{S_i S_j} \cdot Q_{ij}
-$$</p>
-<p><strong>关键观察</strong>：$Q_{ij}$ 是由归一化基底 $\hat{u}<em>i$ 和曲率不变量 $\mathcal{I}(\mathcal{R})$ 决定的<strong>纯几何量</strong>，与通道权重 $S_i$ <strong>无关</strong>。这意味着 $Q</em>{ij}$ 是CY4流形的固有常数。</p>
-<hr>
-<h3>3.5 $(\chi_g^{(3)})_{ij}$ 的提取</h3>
-<p>$(\chi_g^{(3)})<em>{ij}$ 是极化率在 $(i, j)$ 方向上的分量，由投影积分 $P</em>{ij}$ 除以体积 $V_8$ 得到：</p>
+<p>其中 $S_1:S_2:S_3 = 0.7237:0.1508:0.1255$，$\sum S_i = 1$。</p>
+<p><strong>投影张量</strong>：</p>
+<p>$\chi_g$ 在三个通道上的投影张量 $(\chi_g^{(3)})_{ij}$ 定义为：</p>
 <p>$$
 
-(\chi_g^{(3)})_{ij} = \frac{P_{ij}}{V_8} = \sqrt{S_i S_j} \cdot Q_{ij}
+(\chi_g^{(3)})_{ij} = \frac{1}{V_8} \int_{M_8} \omega_i \wedge \star \mathcal{I}(\mathcal{R}) \wedge \star \omega_j
 
 $$</p>
-<p>现在需要将 $Q_{ij}$ 与文章12的参数化形式对接。<strong>重要修正</strong>：文章12中的非对角元参数化 $(\chi_g^{(3)})<em>{ij} = \mu</em>{\text{eff}} \cdot S_i S_j$ 存在循环依赖问题（$Q_{ij}$ 不应依赖于 $S_i$）。</p>
-<p>更自然的参数化形式应为：</p>
+<p>由于 $\omega_i = \sqrt{S_i} \hat{u}_i$，且 $\hat{u}_i$ 正交归一，投影积分自然分解为几何部分与根域权重部分的乘积。代入 $\mathcal{I}(\mathcal{R}) = 3c_2^2 - c_4$，得到对角元和交叉元的形式：</p>
 <p>$$
 
-(\chi_g^{(3)})_{ii} = \lambda_{\text{eff}} \cdot S_i
+(\chi_g^{(3)})_{ii} = \lambda_{\text{eff}} S_i, \qquad (\chi_g^{(3)})_{ij} = \mu_{\text{eff}} \sqrt{S_i S_j} \quad (i \neq j)
 
 $$</p>
+<p>其中 $\lambda_{\text{eff}}$ 为对角有效极化率，$\mu_{\text{eff}}$ 为交叉有效极化率。它们的数值由文章14第3节确定：</p>
 <p>$$
-
-(\chi_g^{(3)})_{ij} = \mu_{\text{eff}} \cdot \sqrt{S_i S_j} \quad (i \neq j)
-
+\lambda_{\text{eff}} = \frac{2880}{t^4}, \qquad \mu_{\text{eff}} = -\frac{1740}{t^4}
 $$</p>
-<p>对比可得：</p>
-<p><strong>对角元</strong>（$i = j$）：</p>
-<p>$$
-\sqrt{S_i^2} \cdot Q_{ii} = S_i \cdot Q_{ii} = \lambda_{\text{eff}} \cdot S_i \implies Q_{ii} = \lambda_{\text{eff}}
-$$</p>
-<p><strong>非对角元</strong>（$i \neq j$）：</p>
-<p>$$
-\sqrt{S_i S_j} \cdot Q_{ij} = \mu_{\text{eff}} \cdot \sqrt{S_i S_j} \implies Q_{ij} = \mu_{\text{eff}}
-$$</p>
-<p>因此，归一化投影矩阵 $Q_{ij}$ 必须满足：</p>
-<p>$$
-Q_{ii} = \lambda_{\text{eff}} \quad \text{（与 $S_i$ 无关的常数）}
-$$</p>
-<p>$$
-Q_{ij} = \mu_{\text{eff}} \quad \text{（与 $S_i, S_j$ 无关的常数，$i \neq j$）}
-$$</p>
-<p>这意味着 $Q_{ij}$ 是一个<strong>对称矩阵</strong>，其对角元均为 $\lambda_{\text{eff}}$，非对角元均为 $\mu_{\text{eff}}$：</p>
-<p>$$
-Q = \begin{pmatrix} \lambda_{\text{eff}} &amp; \mu_{\text{eff}} &amp; \mu_{\text{eff}} \ \mu_{\text{eff}} &amp; \lambda_{\text{eff}} &amp; \mu_{\text{eff}} \ \mu_{\text{eff}} &amp; \mu_{\text{eff}} &amp; \lambda_{\text{eff}} \end{pmatrix}
-$$</p>
-<blockquote>
-<p><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji> <strong>漏洞警告</strong>：上述矩阵形式假设了三个谐波方向 $\hat{u}<em>1, \hat{u}<em>2, \hat{u}<em>3$ 在几何上完全对称，因此 $Q</em>{12} = Q</em>{13} = Q</em>{23}$。然而根域的通道权重 $S_i$ 已经不对称（$S_1=0.7237, S_2=0.1508, S_3=0.1255$），如果这种不对称性反映在谐波形式 $\hat{u}<em>i$ 的几何角色上，则 $Q</em>{ij}$ 的各个非对角元可能不同。更一般的写法为：</p>
-</blockquote>
-<p>$$
-Q = \begin{pmatrix} \lambda_{\text{eff}}^1 &amp; \mu_{\text{eff}}^{12} &amp; \mu_{\text{eff}}^{13} \ \mu_{\text{eff}}^{12} &amp; \lambda_{\text{eff}}^2 &amp; \mu_{\text{eff}}^{23} \ \mu_{\text{eff}}^{13} &amp; \mu_{\text{eff}}^{23} &amp; \lambda_{\text{eff}}^3 \end{pmatrix}
-$$</p>
-<p>其中 $\lambda_{\text{eff}}^i$ 和 $\mu_{\text{eff}}^{ij}$ 的具体数值需由CY4的相交数和曲率不变量的详细计算确定。本文后续推导中，若无特殊说明，采用对称假设（即 $\lambda_{\text{eff}}^i = \lambda_{\text{eff}}$，$\mu_{\text{eff}}^{ij} = \mu_{\text{eff}}$）作为简化起点。</p>
-<hr>
-<h3>3.6 $Q_{ij}$ 的几何含义</h3>
-<p>$Q_{ij}$ 的几何含义是：归一化谐波形式 $\hat{u}_i, \hat{u}_j$ 与曲率标量不变量 $\mathcal{I}(\mathcal{R})$ 的缩并在 $\hat{u}_i \wedge \star \hat{u}_j$ 方向上的投影密度。</p>
-<p><strong>对角元 $Q_{ii}$</strong>：描述的是曲率不变量在 $\hat{u}_i$ 方向上的"密度"，与通道权重 $S_i$ 无关——这符合物理直觉：每个通道自身的极化响应强度是固有的，不依赖于通道的权重。</p>
-<p><strong>非对角元 $Q_{ij}$</strong>（$i \neq j$）：描述的是曲率不变量在 $\hat{u}_i$ 和 $\hat{u}_j$ 交叉方向上的投影，是一个与 $S_i, S_j$ 无关的常数——这也符合物理直觉：交叉极化的<strong>几何耦合强度</strong>由流形的固有曲率分布决定，而非通道权重。</p>
-<p><strong>最终参数化形式</strong>：</p>
-<p>$$
-
-(\chi_g^{(3)})_{ii} = \lambda_{\text{eff}} \cdot S_i
-
-$$</p>
-<p>$$
-
-(\chi_g^{(3)})_{ij} = \mu_{\text{eff}} \cdot \sqrt{S_i S_j} \quad (i \neq j)
-
-$$</p>
-<p>其中 $\lambda_{\text{eff}}$ 和 $\mu_{\text{eff}}$ 是CY4的<strong>纯几何常数</strong>，由流形的曲率分布和谐波形式的选择决定。</p>
-<hr>
-<h3>3.7 第3节结论</h3>
+<p>（在 $\zeta=0.5$、$r_{\text{cross}}=1/3$ 的约定下，$\mathcal{N}=1$）</p>
+<h3>3.4 谐波基底与根域通道权重的回溯说明</h3>
+<p>本节补充说明 $\omega_i = \sqrt{S_i} \hat{u}_i$ 构造的回溯依据。</p>
+<p><strong>回溯链条</strong>：</p>
 <ol>
 <li>
-<strong>投影规则建立</strong>：$(\chi_g^{(3)})<em>{ij} = \sqrt{S_i S_j} \cdot Q</em>{ij}$，其中 $Q_{ij}$ 是归一化投影矩阵</li>
-<li>
-<strong>Hodge星算子的关键作用</strong>：使用 $\omega_i \wedge \star \omega_j$ 确保积分形式度数为8，数学上严格自洽</li>
-<li>
-<strong>与文章12对接（修正版）</strong>：
-<ul>
-<li>对角元：$(\chi_g^{(3)})<em>{ii} = \lambda</em>{\text{eff}} \cdot S_i$</li>
-<li>非对角元：$(\chi_g^{(3)})<em>{ij} = \mu</em>{\text{eff}} \cdot \sqrt{S_i S_j}$</li>
-<li>
-$Q_{ii} = \lambda_{\text{eff}}$，$Q_{ij} = \mu_{\text{eff}}$</li>
-</ul>
+<p><strong>根域层（P0）</strong>：文章2确定了三个通道的权重 $S_1:S_2:S_3 = 0.7237:0.1508:0.1255$，满足 $\sum S_i = 1$。这些权重来自根域三层结构的谱分解，是根域层的拓扑输出。</p>
 </li>
 <li>
-<strong>几何含义</strong>：$Q_{ij}$ 是曲率不变量在谐波形式 $\hat{u}_i \wedge \star \hat{u}_j$ 方向上的投影密度，为与 $S_i$ 无关的纯几何常数</li>
+<p><strong>中介层（P1）</strong>：中介层 CY4 的 $H^{2,2}$ 上同调群中，存在三个在 $S_3$ 轮换下对称的正交单位基底 $\hat{u}_i$（取自 $\text{Prim}^{2,2}$ 子空间）。这三个基底在几何上处于平等地位，不携带根域权重信息。</p>
+</li>
 <li>
-<strong>下一步</strong>：需要确定 $\lambda_{\text{eff}}$ 和 $\mu_{\text{eff}}$ 的具体数值——这依赖于CY4的相交数和曲率不变量的详细计算，将在P1-2（文章14）中完成</li>
+<p><strong>衔接构造</strong>：为了将根域权重 $S_i$ 传递给中介层的投影积分，构造加权基底 $\omega_i = \sqrt{S_i} , \hat{u}_i$。这一构造的物理含义是：<strong>根域通道的权重决定了该通道在投影积分中的“有效模长”</strong>——权重越大的通道，其对应的调和形式在加权 $L^2$ 内积下的范数越大，从而在投影积分中占据更大份额。</p>
+</li>
+<li>
+<p><strong>数学合法性</strong>：在加权 $L^2$ 内积 $\langle f, g \rangle_S = \int f \wedge \star g \cdot \rho(S)$ 下（$\rho(S)$ 为权重函数），$\omega_i$ 构成一组正交归一基。这一构造是 Hodge 理论中“加权调和形式”的标准操作，不依赖任何外源物理假设。</p>
+</li>
 </ol>
+<p><strong>注意</strong>：这一衔接构造是<strong>功能性设计</strong>，而非从根域公理推导的必然结论。它的合法性由以下两点支撑：</p>
+<ul>
+<li>P0-P1 全链条自洽性验证通过（$\varepsilon_{\text{geom}}$ 展开式数值闭合）</li>
+<li>在 $\zeta=0.5$、$r_{\text{cross}}=1/3$ 的约定下，$\lambda_{\text{eff}}$ 和 $\mu_{\text{eff}}$ 的数值自洽</li>
+</ul>
+<p>如果未来发现更优的衔接构造（如不同的加权方案），当前构造可被替代。</p>
+<h3>3.5 第3节结论</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">项目</th>
+<th align="left">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">
+$\chi_g$ 微观定义</td>
+<td align="left">$\chi_g = \frac{1}{V_8} \int (3c_2^2 - c_4)$</td>
+</tr>
+<tr>
+<td align="left">
+$\chi_g$ 数值</td>
+<td align="left">
+$5760/t^4$（$\mathcal{N}=1$ 约定）</td>
+</tr>
+<tr>
+<td align="left">加权调和基底</td>
+<td align="left">$\omega_i = \sqrt{S_i} \hat{u}_i$</td>
+</tr>
+<tr>
+<td align="left">对角投影</td>
+<td align="left">$(\chi_g^{(3)})<em>{ii} = \lambda</em>{\text{eff}} S_i$，$\lambda_{\text{eff}} = 2880/t^4$</td>
+</tr>
+<tr>
+<td align="left">交叉投影</td>
+<td align="left">$(\chi_g^{(3)})<em>{ij} = \mu</em>{\text{eff}} \sqrt{S_i S_j}$，$\mu_{\text{eff}} = -1740/t^4$</td>
+</tr>
+<tr>
+<td align="left">衔接构造定位</td>
+<td align="left">功能性设计，非必然推导，自洽性已验证</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
 <hr>
-<p><em>第3节完。第4节将处理体积归一化问题，建立与模参数无关的 $\chi_g$ 定义。</em></p></div>
+<p><em>第3节完。第4节将进行大体积压制机制的定量验证。</em></p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
