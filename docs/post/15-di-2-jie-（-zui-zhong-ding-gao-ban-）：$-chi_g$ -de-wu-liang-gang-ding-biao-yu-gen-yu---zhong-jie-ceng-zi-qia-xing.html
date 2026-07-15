@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="## 文章15第2节（最终定稿版）：$\chi_g$ 的无量纲定标与根域-中介层自洽性
+
+### 2.1 任务定位
+
+P1阶段（文章13-14）完成了 $\chi_g$ 张量的几何定标，在自然单位制下得到了以下无量纲数值：
+
+$$
+\chi_g = \frac{5760}{t^4}, \quad \lambda_{\text{eff}} = \frac{2880}{t^4}, \quad \mu_{\text{eff}} = -\frac{1740}{t^4}
+$$
+
+这些数值是在以下约定下得到的：
+- $V_8 = t^4/4$，以特征长度 $l_0$ 的 8 次方为单位，数值无量纲
+- $A:B = 3:(-1)$，来自 $X_8$ 示性类（Atiyah-Singer 指标定理，纯数学工具）
+- $\zeta \approx 0.5$，通道总覆盖率的物理估计
+- **整体归一化因子 $\mathcal{N}$ 暂取为 $1$**
+
+第2节的目标是：**明确当前定标的边界与前提**——确认 $\chi_g$ 的无量纲数值与根域层 $\kappa_0$ 定标之间的自洽性，明确收敛性结论对 $\mathcal{N}=1$ 约定的依赖关系，并给出从无量纲形式到带量纲形式的转换公式框架，留待 P2-2 阶段引入实验锚点后填充。">
+<meta property="og:title" content="15第2节（最终定稿版）：$\chi_g$ 的无量纲定标与根域-中介层自洽性">
+<meta property="og:description" content="## 文章15第2节（最终定稿版）：$\chi_g$ 的无量纲定标与根域-中介层自洽性
+
+### 2.1 任务定位
+
+P1阶段（文章13-14）完成了 $\chi_g$ 张量的几何定标，在自然单位制下得到了以下无量纲数值：
+
+$$
+\chi_g = \frac{5760}{t^4}, \quad \lambda_{\text{eff}} = \frac{2880}{t^4}, \quad \mu_{\text{eff}} = -\frac{1740}{t^4}
+$$
+
+这些数值是在以下约定下得到的：
+- $V_8 = t^4/4$，以特征长度 $l_0$ 的 8 次方为单位，数值无量纲
+- $A:B = 3:(-1)$，来自 $X_8$ 示性类（Atiyah-Singer 指标定理，纯数学工具）
+- $\zeta \approx 0.5$，通道总覆盖率的物理估计
+- **整体归一化因子 $\mathcal{N}$ 暂取为 $1$**
+
+第2节的目标是：**明确当前定标的边界与前提**——确认 $\chi_g$ 的无量纲数值与根域层 $\kappa_0$ 定标之间的自洽性，明确收敛性结论对 $\mathcal{N}=1$ 约定的依赖关系，并给出从无量纲形式到带量纲形式的转换公式框架，留待 P2-2 阶段引入实验锚点后填充。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/15-di-2-jie-%EF%BC%88-zui-zhong-ding-gao-ban-%EF%BC%89%EF%BC%9A%24-chi_g%24%20-de-wu-liang-gang-ding-biao-yu-gen-yu---zhong-jie-ceng-zi-qia-xing.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>15第2节（最终定稿版）：$\chi_g$ 的无量纲定标与根域-中介层自洽性</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">15第2节（最终定稿版）：$\chi_g$ 的无量纲定标与根域-中介层自洽性</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/67" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h2>文章15第2节（最终定稿版）：$\chi_g$ 的无量纲定标与根域-中介层自洽性</h2>
+<h3>2.1 任务定位</h3>
+<p>P1阶段（文章13-14）完成了 $\chi_g$ 张量的几何定标，在自然单位制下得到了以下无量纲数值：</p>
+<p>$$
+\chi_g = \frac{5760}{t^4}, \quad \lambda_{\text{eff}} = \frac{2880}{t^4}, \quad \mu_{\text{eff}} = -\frac{1740}{t^4}
+$$</p>
+<p>这些数值是在以下约定下得到的：</p>
+<ul>
+<li>
+$V_8 = t^4/4$，以特征长度 $l_0$ 的 8 次方为单位，数值无量纲</li>
+<li>
+$A:B = 3:(-1)$，来自 $X_8$ 示性类（Atiyah-Singer 指标定理，纯数学工具）</li>
+<li>
+$\zeta \approx 0.5$，通道总覆盖率的物理估计</li>
+<li><strong>整体归一化因子 $\mathcal{N}$ 暂取为 $1$</strong></li>
+</ul>
+<p>第2节的目标是：<strong>明确当前定标的边界与前提</strong>——确认 $\chi_g$ 的无量纲数值与根域层 $\kappa_0$ 定标之间的自洽性，明确收敛性结论对 $\mathcal{N}=1$ 约定的依赖关系，并给出从无量纲形式到带量纲形式的转换公式框架，留待 P2-2 阶段引入实验锚点后填充。</p>
+<p><strong>关于任务收缩的说明</strong>：P2-1 原计划完成 $\chi_g$ 的绝对归一化，但本体系当前所有参数均为无量纲数，缺少独立于体系本身的带量纲锚点。真正的绝对归一化必须在对接实验可观测量（如耦合常数）后才能完成，因此将其推迟到 P2-2 阶段。这是主动的规划调整，而非被动降级。</p>
+<h3>2.2 根域-中介层衔接链条回顾</h3>
+<p>$\chi_g$ 与根域层的衔接通过 $\varepsilon_{\text{geom}}$ 展开式实现（文章11-12）：</p>
+<p>$$
+\varepsilon_{\text{geom}} = 0.2348 \kappa_0 + C_{\text{mid}} \kappa_0^2
+$$</p>
+<p>其中二阶项系数 $C_{\text{mid}}$ 包含 $\chi_g$ 的贡献（文章14第3节）：</p>
+<p>$$
+C_{\text{mid}} \kappa_0^2 = \frac{\sum_i \sum_j S_i S_j (\chi_g^{(3)})_{ij}}{v^T M_1^0 v}
+$$</p>
+<p>代入 $\lambda_{\text{eff}} = \zeta \cdot \chi_g$、$\mu_{\text{eff}} = -\frac{29}{48} \lambda_{\text{eff}}$ 及 $S_i$ 的数值，得到：</p>
+<p>$$
+C_{\text{mid}} \kappa_0^2 = \frac{1560.6}{t^4}
+$$</p>
+<p><strong>该数值为 $\mathcal{N}=1$、$\zeta=0.5$ 约定下的结果</strong>，并非无前提的普适常数。当 $\mathcal{N}$ 或 $\zeta$ 偏离上述约定时，$C_{\text{mid}}$ 会按比例缩放。</p>
+<p>这个表达式的推导不依赖 $\chi_g$ 的绝对大小——它只依赖于 $\lambda_{\text{eff}}$ 与 $\mu_{\text{eff}}$ 的比值（$-29/48$）和 $S_i$ 的数值，而这些都在 P1 阶段独立确定。</p>
+<h3>2.3 微扰收敛性结论的前提条件</h3>
+<p><strong>关键澄清</strong>：二阶/一阶比值 $R(t) = C_{\text{mid}} \kappa_0^2 / (0.2348 \kappa_0) = 1560.6/t^4$ 是在 $\mathcal{N}=1$、$\zeta=0.5$ 的约定下计算得到的。如果真实的归一化因子 $\mathcal{N} \neq 1$，则 $C_{\text{mid}}$ 会按比例缩放，比值也会相应变化：</p>
+<p>$$
+R(t; \mathcal{N}, \zeta) = \frac{\mathcal{N} \cdot \zeta}{0.5} \cdot \frac{1560.6}{t^4 \cdot 0.2348 \kappa_0} = \frac{\mathcal{N} \cdot \zeta}{0.5} \cdot \frac{1.545 \times 10^6}{t^4}
+$$</p>
+<p>因此，“$t=75$ 时高度收敛（$4.88%$）”这个结论的完整表述应为：<strong>在 $\mathcal{N}=1$、$\zeta=0.5$ 的约定下，$t=75$ 时二阶项为一阶项的 $4.88%$，微扰展开高度收敛。</strong></p>
+<p>如果 $\mathcal{N}$ 或 $\zeta$ 偏离约定值，收敛性条件会相应移动：</p>
+<ul>
+<li>
+$\mathcal{N} \gg 1$ 或 $\zeta \gg 0.5$：需要更大的 $t$ 才能达到同等收敛水平</li>
+<li>
+$\mathcal{N} \ll 1$ 或 $\zeta \ll 0.5$：更小的 $t$ 即可满足收敛性要求</li>
+</ul>
+<p>$\zeta$ 在 $0.3 \sim 0.7$ 范围内变化时，$C_{\text{mid}}$ 会同步缩放，二阶/一阶比值在 $t=75$ 时的浮动范围为 $2.9% \sim 6.8%$。这一不确定性边界应在后续工作中通过 $\zeta$ 的内生确定来收窄。</p>
+<h3>2.4 当前定标的边界</h3>
+<p>P1阶段完成的定标有以下边界：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">项目</th>
+<th align="left">状态</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">
+$\chi_g$ 的无量纲数值</td>
+<td align="left">✅ 已确定</td>
+<td align="left">
+$\chi_g = 5760/t^4$，在 $\mathcal{N}=1$ 约定下</td>
+</tr>
+<tr>
+<td align="left">
+$\lambda_{\text{eff}}, \mu_{\text{eff}}$ 的无量纲数值</td>
+<td align="left">✅ 已确定</td>
+<td align="left">分别为 $2880/t^4$ 和 $-1740/t^4$
+</td>
+</tr>
+<tr>
+<td align="left">
+$A:B$ 比值</td>
+<td align="left">✅ 已确定</td>
+<td align="left">
+$3:(-1)$，来自 $X_8$ 示性类</td>
+</tr>
+<tr>
+<td align="left">
+$\zeta$ 的数值</td>
+<td align="left"><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji> 唯象估计</td>
+<td align="left">
+$\zeta \approx 0.5$，范围 $0.3 \sim 0.7$，待 P2-2 内生确定</td>
+</tr>
+<tr>
+<td align="left">整体归一化因子 $\mathcal{N}$
+</td>
+<td align="left">❌ 未确定</td>
+<td align="left">当前取 $\mathcal{N}=1$，实际应包含物理常数</td>
+</tr>
+<tr>
+<td align="left">量纲锚点</td>
+<td align="left">❌ 未引入</td>
+<td align="left">当前所有量为无量纲，待 P2-2 接入</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>核心认识</strong>：P1阶段完成了 $\chi_g$ 的<strong>相对定标</strong>（形状、比值、$t$ 依赖），但<strong>绝对归一化</strong>（量纲、整体大小）尚未完成。这类似于确定了函数的形式 $f(x) = C/x^4$，但常数 $C$ 的数值仍待物理锚点锁定。</p>
+<h3>2.5 量纲锚点的来源与转换公式框架</h3>
+<p>$\chi_g$ 的绝对归一化需要一个独立于 $\chi_g$ 体系本身的带量纲锚点。在本体系中，这个锚点的唯一合理来源是 <strong>P2-2 阶段对接标准模型可观测量</strong>。</p>
+<p>在 P2-2 阶段，$\chi_g$ 将被嵌入到有效场论中，与杨-米尔斯耦合常数、Higgs 势能等可观测量对接。届时，实验测得的耦合常数数值将为 $\chi_g$ 的绝对大小提供直接的量纲锚点。</p>
+<p><strong>为何不能使用 $\alpha^{-1}$ 作为锚点</strong>：$\alpha^{-1} \approx 137.036$ 是根域层的纯拓扑输出预言（文章0系列），而非实验输入。将其用作定标锚点会颠倒因果，动摇根域层作为第一性预言的公理地位。因此，$\alpha^{-1}$ 不可作为 $\chi_g$ 的定标锚点。</p>
+<p><strong>转换公式框架</strong>：</p>
+<p>设 $\chi_g^{\text{dim}}$ 为带量纲的物理极化率，$\chi_g^{\text{dimless}}$ 为当前无量纲约定下的数值。二者关系为：</p>
+<p>$$
+\chi_g^{\text{dim}} = \mathcal{N} \cdot \chi_g^{\text{dimless}}
+$$</p>
+<p>其中 $\mathcal{N}$ 是归一化因子，包含所有尚未确定的物理常数。$\mathcal{N}$ 的一般形式为：</p>
+<p>$$
+
+\mathcal{N} = \mathcal{N}_0 \cdot (l_0)^{\Delta} \cdot g_{\text{eff}}^{\alpha} \cdot (\Lambda^{-2})^{\beta} \cdot \ldots
+
+$$</p>
+<p>其中 $\mathcal{N}<em>0$ 是数值因子，$l_0$ 是特征长度尺度，$g</em>{\text{eff}}$ 是有效耦合常数，$\Lambda^{-2}$ 是特征尺度参数，$\Delta, \alpha, \beta$ 是待定的幂次。<strong>这些符号在此处仅作为与弦论文献对照的桥梁出现，不预设它们对应弦论的 $g_s$ 或 $\alpha'$。其具体物理含义将在 P2-2 阶段根据对接的可观测量重新定义。</strong></p>
+<p>在 P1 阶段，我们取 $\mathcal{N} = 1$ 的约定。P2-2 阶段将通过以下步骤确定 $\mathcal{N}$ 的实际值：</p>
+<ol>
+<li>将 $\chi_g^{\text{dim}}$ 嵌入有效场论中的规范动能项</li>
+<li>将理论预测的耦合常数与实验值（如 $\alpha(M_Z)$）比较</li>
+<li>反推 $\mathcal{N}$ 的数值</li>
+</ol>
+<p>这个反推过程是<strong>可逆的</strong>——一旦 $\mathcal{N}$ 被确定，$\chi_g$ 的绝对大小也就确定了。</p>
+<blockquote>
+<p><strong>可证伪性前瞻</strong>：为避免 $\mathcal{N}$ 退化为纯拟合参数，P2-2 阶段应使用至少两个独立的实验可观测量（如 $\alpha(M_Z)$ 和 $m_H$）交叉验证 $\mathcal{N}$ 的一致性。只有当两个独立路径给出相同的 $\mathcal{N}$ 值时，$\chi_g$ 的绝对归一化才算真正完成，且具备可证伪性。</p>
+</blockquote>
+<h3>2.6 第2节结论</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">项目</th>
+<th align="left">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">
+$\chi_g$ 的无量纲数值</td>
+<td align="left">
+$5760/t^4$（在 $\mathcal{N}=1$ 约定下）</td>
+</tr>
+<tr>
+<td align="left">微扰收敛性（$\mathcal{N}=1, \zeta=0.5$）</td>
+<td align="left">✅ $t=75$ 时二阶/一阶 $=4.88%$，高度收敛</td>
+</tr>
+<tr>
+<td align="left">收敛性对 $\mathcal{N}$ 的依赖</td>
+<td align="left">$R(t;\mathcal{N},\zeta) = \frac{\mathcal{N}\zeta}{0.5} \cdot 1.545 \times 10^6 / t^4$</td>
+</tr>
+<tr>
+<td align="left">收敛性对 $\zeta$ 的依赖</td>
+<td align="left">
+$\zeta \in [0.3,0.7]$ 时 $R(75) \in [2.9%, 6.8%]$
+</td>
+</tr>
+<tr>
+<td align="left">绝对归一化状态</td>
+<td align="left">❌ 未完成，待 P2-2 引入量纲锚点</td>
+</tr>
+<tr>
+<td align="left">量纲锚点候选</td>
+<td align="left">仅限 P2-2 可观测量对接（$\alpha^{-1}$ 不可用）</td>
+</tr>
+<tr>
+<td align="left">转换公式</td>
+<td align="left">
+$\chi_g^{\text{dim}} = \mathcal{N} \cdot \chi_g^{\text{dimless}}$，$\mathcal{N}$ 待 P2-2 确定</td>
+</tr>
+<tr>
+<td align="left">P1 阶段交付物</td>
+<td align="left">
+$\chi_g$ 的形状、比值、$t$ 依赖关系均已锁定</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<p><em>第2节完。第3节将梳理 P2 阶段剩余待办事项，为后续工作制定路线图。</em></p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
