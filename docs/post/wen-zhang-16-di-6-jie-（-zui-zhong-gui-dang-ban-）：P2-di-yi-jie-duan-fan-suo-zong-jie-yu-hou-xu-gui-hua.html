@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="## 文章16第6节（最终归档版）：P2第一阶段反锁总结与后续规划
+
+### 6.1 第一阶段反锁成果总览
+
+经过第3节至第5节的工作，P2第一阶段反锁完成了从理论框架搭建到数值约束的全流程。">
+<meta property="og:title" content="文章16第6节（最终归档版）：P2第一阶段反锁总结与后续规划">
+<meta property="og:description" content="## 文章16第6节（最终归档版）：P2第一阶段反锁总结与后续规划
+
+### 6.1 第一阶段反锁成果总览
+
+经过第3节至第5节的工作，P2第一阶段反锁完成了从理论框架搭建到数值约束的全流程。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/wen-zhang-16-di-6-jie-%EF%BC%88-zui-zhong-gui-dang-ban-%EF%BC%89%EF%BC%9AP2-di-yi-jie-duan-fan-suo-zong-jie-yu-hou-xu-gui-hua.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>文章16第6节（最终归档版）：P2第一阶段反锁总结与后续规划</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">文章16第6节（最终归档版）：P2第一阶段反锁总结与后续规划</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/73" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h2>文章16第6节（最终归档版）：P2第一阶段反锁总结与后续规划</h2>
+<h3>6.1 第一阶段反锁成果总览</h3>
+<p>经过第3节至第5节的工作，P2第一阶段反锁完成了从理论框架搭建到数值约束的全流程。以下按逻辑顺序汇总全部成果。</p>
+<h4>6.1.1 反锁流程回顾</h4>
+<pre class="notranslate"><code class="notranslate">第3节：中介层投影分化框架
+    ↓ 输出：Ξ₁ : Ξ₂ : Ξ₃ ≈ 1 : (-0.386) : (-0.409)
+    ↓ 输出：k₁ = 1970, k₂ = -760, k₃ = -805
+    
+第4节：规范耦合反锁
+    ↓ 第一步：比值方程 Δ₁₂/Δ₂₃ = 182/3 ≈ 60.67（纯几何预言）
+    ↓ 输出：Λ_UV ≈ 4.3 × 10¹⁶ GeV
+    ↓ 第二步：差值绝对值方程 → ζ(t) 关联曲线
+    ↓ 第三步：先验范围筛选 → t ∈ [60, 90]
+    
+第5节：μ子/电子 g-2 存活检验
+    ↓ 输出：Δa_μ ∼ 10⁻⁴⁵（远低于上限 127×10⁻¹¹）
+    ↓ 输出：Δa_e ∼ 10⁻⁵⁰（远低于上限 10⁻¹²）
+    ↓ 结论：与低能精密测量完全兼容
+</code></pre>
+<h4>6.1.2 参数约束结果汇总</h4>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">物理含义</th>
+<th align="left">约束来源</th>
+<th align="left">最终允许区间</th>
+<th align="left">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">$t$</td>
+<td align="left">Kähler模</td>
+<td align="left">比值方程 + 先验范围 $[50,100]$
+</td>
+<td align="left">$60 \sim 90$</td>
+<td align="left">已约束</td>
+</tr>
+<tr>
+<td align="left">$\zeta$</td>
+<td align="left">通道覆盖率</td>
+<td align="left">差值绝对值方程 + 文献先验 $[0.3,0.7]$
+</td>
+<td align="left">
+$0.3 \sim 0.7$（关联曲线保留 $\eta$ 自由度）</td>
+<td align="left">部分约束</td>
+</tr>
+<tr>
+<td align="left">$\Lambda_{\text{UV}}$</td>
+<td align="left">中介层阈值能标</td>
+<td align="left">比值方程（纯几何预言）</td>
+<td align="left">
+$\approx 4.3 \times 10^{16}$ GeV</td>
+<td align="left">已确定</td>
+</tr>
+<tr>
+<td align="left">$\eta$</td>
+<td align="left">整体归一化因子</td>
+<td align="left">未被打破</td>
+<td align="left">待定（保留至P2后期）</td>
+<td align="left">待定</td>
+</tr>
+<tr>
+<td align="left">$\Lambda_0$</td>
+<td align="left">
+$t=1$ 时中介层特征能标</td>
+<td align="left">$\Lambda_0 = \Lambda_{\text{UV}} \cdot t^{1/2}$</td>
+<td align="left">
+$\sim (3.0 \sim 4.3) \times 10^{17}$ GeV</td>
+<td align="left">已推算</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h4>6.1.3 核心预言</h4>
+<p>本阶段产出了三个可检验的核心预言：</p>
+<p><strong>预言一：中介层阈值能标</strong></p>
+<p>$$
+\boxed{\Lambda_{\text{UV}} \approx 4.3 \times 10^{16}\ \text{GeV}}
+$$</p>
+<p>由比值方程 $\Delta_{12}/\Delta_{23} = 182/3$ 直接导出，与 $t$、$\zeta$、$\eta$ 均无关。该能标与传统大统一理论的交汇能标一致，本体系自然解释了GUT能标的起源。</p>
+<p><strong>预言二：纯阈值修正的规范耦合差值比</strong></p>
+<p>$$
+\boxed{\frac{\Delta_{12}^{\text{thres}}}{\Delta_{23}^{\text{thres}}} = \frac{182}{3} \approx 60.67}
+$$</p>
+<p>扣除RG跑动贡献后，中介层极化带来的纯阈值修正部分满足该比值，为P1阶段几何系数的直接推论，可通过未来更高精度的规范耦合测量检验。</p>
+<p><strong>预言三：中介层新物理在低能的完全退耦</strong></p>
+<p>$$
+\boxed{\Delta a_\mu^{\text{mid}} \sim 10^{-45},\quad \Delta a_e^{\text{mid}} \sim 10^{-50}}
+$$</p>
+<p>本体系的所有新物理效应集中在 $10^{16}$ GeV 以上能标，低能表象下完全退耦，与所有现有精密测量实验天然兼容。</p>
+<h3>6.2 与标准模型的关系</h3>
+<p>本阶段工作严格贯彻了“兼容而非推翻”的基本原则：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">标准模型成果</th>
+<th align="left">本体系处理方式</th>
+<th align="left">关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">规范群结构 SU(3)×SU(2)×U(1)</td>
+<td align="left">直接兼容，作为表象层有效描述</td>
+<td align="left">兼容</td>
+</tr>
+<tr>
+<td align="left">
+$\beta$ 函数系数 $b_i$
+</td>
+<td align="left">直接使用，作为已知输入</td>
+<td align="left">兼容</td>
+</tr>
+<tr>
+<td align="left">RG跑动公式</td>
+<td align="left">直接使用，作为表象层规律</td>
+<td align="left">兼容</td>
+</tr>
+<tr>
+<td align="left">规范耦合 $M_Z$ 能标实验值</td>
+<td align="left">作为反锁输入</td>
+<td align="left">兼容</td>
+</tr>
+<tr>
+<td align="left">
+$\mu$ 子/电子 $g-2$ 实验值</td>
+<td align="left">作为存活检验标准</td>
+<td align="left">兼容</td>
+</tr>
+<tr>
+<td align="left">耦合常数由实验测定</td>
+<td align="left">本体系进一步给出几何起源</td>
+<td align="left">超越</td>
+</tr>
+<tr>
+<td align="left">GUT能标的起源</td>
+<td align="left">本体系自然解释（$\Lambda_{\text{UV}}$ 预言）</td>
+<td align="left">超越</td>
+</tr>
+<tr>
+<td align="left">层级问题</td>
+<td align="left">本体系通过大体积压制自然解决</td>
+<td align="left">超越</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>6.3 剩余问题与后续规划</h3>
+<h4>6.3.1 第一阶段未解决的问题</h4>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">问题</th>
+<th align="left">原因</th>
+<th align="left">解决方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">
+$\eta$ 整体归一化自由度未锁定</td>
+<td align="left">
+$\mu$ 子 $g-2$ 灵敏度不够</td>
+<td align="left">P2后期引入更多可观测量超定检验</td>
+</tr>
+<tr>
+<td align="left">
+$\zeta(t)$ 关联曲线未缩至唯一点</td>
+<td align="left">仅有两个独立差值方程</td>
+<td align="left">引入第三独立约束（如 $W$ 质量、$Z$ 宽度）</td>
+</tr>
+<tr>
+<td align="left">
+$\xi_i$ 系数精度有待提高</td>
+<td align="left">比值方程对 $\Delta_{23}$ 的纯阈值部分敏感</td>
+<td align="left">P2后期进行高阶修正计算</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h4>6.3.2 第二阶段（P2-2）规划</h4>
+<p>P2-2阶段将引入更多可观测量，构建超定检验体系，锁定 $\eta$ 并检验框架的自洽性：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">可观测量</th>
+<th align="left">与本体系的关联</th>
+<th align="left">预计约束能力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">
+$W$ 玻色子质量 $m_W$
+</td>
+<td align="left">受 $\chi_g$ 对电弱参数的修正影响</td>
+<td align="left">中等</td>
+</tr>
+<tr>
+<td align="left">
+$Z$ 玻色子宽度 $\Gamma_Z$
+</td>
+<td align="left">受 $\chi_g$ 对电弱耦合的修正影响</td>
+<td align="left">中等</td>
+</tr>
+<tr>
+<td align="left">Higgs耦合强度 $\kappa_V$、$\kappa_f$</td>
+<td align="left">受大体积压制机制影响</td>
+<td align="left">较弱</td>
+</tr>
+<tr>
+<td align="left">电弱精确观测（EWPO）</td>
+<td align="left">综合约束电弱参数空间，为打破 $\eta$ 的核心候选约束</td>
+<td align="left">较强</td>
+</tr>
+<tr>
+<td align="left">轻子 flavor 普适性检验</td>
+<td align="left">受 $\chi_g$ 在不同代轻子上的投影差异影响</td>
+<td align="left">弱</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h4>6.3.3 长期目标</h4>
+<ol>
+<li>
+<strong>完成全部参数反锁</strong>：通过超定检验锁定 $\eta$，将 $t$ 和 $\zeta$ 的允许区间缩至唯一点</li>
+<li>
+<strong>扩展至费米子质量谱</strong>：将中介层投影分化框架推广至Yukawa耦合，解释三代费米子质量层级</li>
+<li>
+<strong>宇宙学应用</strong>：将根域稳态梯度与暗能量、暴胀等宇宙学观测对接</li>
+</ol>
+<h3>6.4 P2第一阶段结论</h3>
+<p>P2第一阶段完成了以下工作：</p>
+<ol>
+<li>
+<strong>建立了中介层投影分化框架</strong>（第3节）：从根域基点 $\alpha_{\text{root}}^{-1} = 137.036$ 出发，通过 $\chi_g$ 极化效应和三通道权重 $S_i$，导出三个UV边界条件的比例关系</li>
+<li>
+<strong>完成了规范耦合反锁</strong>（第4节）：通过比值方程 $\Delta_{12}/\Delta_{23} = 182/3$ 预言 $\Lambda_{\text{UV}} \approx 4.3 \times 10^{16}$ GeV，通过差值绝对值方程得到 $\zeta(t)$ 关联曲线，结合先验范围将 $t$ 约束至 $60 \sim 90$
+</li>
+<li>
+<strong>通过了低能精密测量存活检验</strong>（第5节）：$\mu$ 子 $g-2$ 和电子 $g-2$ 检验均以巨大安全裕度通过，确认本体系与现有实验无冲突</li>
+<li>
+<strong>产出了三个核心预言</strong>：$\Lambda_{\text{UV}}$ 能标、纯阈值修正差值比、低能完全退耦</li>
+</ol>
+<p>本体系已通过第一轮定量检验，核心框架站得住。剩余的整体归一化自由度将在P2后期通过更多可观测量锁定。</p>
+<hr>
+<p><em>第6节完。P2第一阶段全部工作至此归档。</em></p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
+
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
