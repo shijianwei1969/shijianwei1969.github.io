@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="## 文章16第3节（最终归档版）：中介层极化效应作为阈值修正
+
+### 3.1 任务定位
+
+第2节展示了标准模型三个规范耦合在 $M_Z$ 能标的实验值及其单圈RG跑动外推结果——三条曲线无法精确交汇于同一点，这是标准模型无争议的内部硬伤。">
+<meta property="og:title" content="文章16第3节（最终归档版）：中介层极化效应作为阈值修正">
+<meta property="og:description" content="## 文章16第3节（最终归档版）：中介层极化效应作为阈值修正
+
+### 3.1 任务定位
+
+第2节展示了标准模型三个规范耦合在 $M_Z$ 能标的实验值及其单圈RG跑动外推结果——三条曲线无法精确交汇于同一点，这是标准模型无争议的内部硬伤。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/wen-zhang-16-di-3-jie-%EF%BC%88-zui-zhong-gui-dang-ban-%EF%BC%89%EF%BC%9A-zhong-jie-ceng-ji-hua-xiao-ying-zuo-wei-yu-zhi-xiu-zheng.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>文章16第3节（最终归档版）：中介层极化效应作为阈值修正</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">文章16第3节（最终归档版）：中介层极化效应作为阈值修正</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/70" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h2>文章16第3节（最终归档版）：中介层极化效应作为阈值修正</h2>
+<h3>3.1 任务定位</h3>
+<p>第2节展示了标准模型三个规范耦合在 $M_Z$ 能标的实验值及其单圈RG跑动外推结果——三条曲线无法精确交汇于同一点，这是标准模型无争议的内部硬伤。</p>
+<p>本节的任务是：建立本体系对这一问题的解释框架——根域层输出的统一耦合基点 $\alpha_{\text{root}}^{-1}$，经由中介层 $\chi_g$ 的极化效应，通过三通道投影权重 $S_i$ 和交叉耦合 $\kappa_{ij}$ 结构，分化为三个不同的UV边界条件 $\alpha_i^{-1}(\Lambda_{\text{UV}})$，从而在RG跑动到 $M_Z$ 时自然呈现为三个不同的实验值。</p>
+<blockquote>
+<p><strong>核心论点</strong>：标准模型作为低能有效理论，未包含中介层的阈值修正效应，因此呈现出“耦合不统一”的表象。本体系补上这个环节后，三个耦合本就是从同一个基点分化而来，不存在“不统一”的问题——它们本就同源。</p>
+</blockquote>
+<h3>3.2 核心逻辑链条</h3>
+<p>本体系的三级架构给出了一个完整的生成链条：</p>
+<pre class="notranslate"><code class="notranslate">根域层（一）
+    ↓
+α_root^{-1} = 4π³ + π² + π ≈ 137.036
+（唯一本源，纯拓扑内禀量，不对应任何表象层相互作用）
+    ↓
+中介层（二）
+    ↓
+χ_g 的极化效应 × 三通道投影权重 S_i × 交叉耦合 κ_ij
+    ↓
+三个不同的 UV 边界条件：
+    α₁^{-1}(Λ_UV), α₂^{-1}(Λ_UV), α₃^{-1}(Λ_UV)
+    ↓
+表象层（三）
+    ↓
+标准 RG 跑动（仅借流程）
+    ↓
+α₁^{-1}(M_Z), α₂^{-1}(M_Z), α₃^{-1}(M_Z)
+（与实验值比对）
+</code></pre>
+<p><strong>关键点</strong>：三个规范耦合共享同一个根域基点，差异完全来自中介层的投影分化。这不是“三个不同的常数需要统一”，而是“同一个常数被投影成了三个不同的表象”。统一是天然的，不需要额外机制。</p>
+<h3>3.3 映射公式的建立</h3>
+<h4>3.3.1 根域基点</h4>
+<p>根域层输出的统一耦合基点（文章0）：</p>
+<p>$$
+\alpha_{\text{root}}^{-1} = 4\pi^3 + \pi^2 + \pi \approx 137.036
+$$</p>
+<p>这是根域时空的纯拓扑内禀量，不对应表象层任何一个特定的规范相互作用。它是三个规范耦合共同的“祖先”。</p>
+<blockquote>
+<p><strong>能标属性说明</strong>：$\alpha_{\text{root}}^{-1} \approx 137.036$ 的数值与表象层零能标精细结构常数接近，这是投影匹配的结果，其本身属于根域内禀拓扑量，不对应表象层的任何能标。两者数值接近是“同一本源经投影后在表象层的呈现”，而非根域量等于表象量。</p>
+</blockquote>
+<h4>3.3.1b 归一化约定</h4>
+<p>本节所有 $\alpha_i^{-1}$ 均使用原生形式（不加 $5/3$ 因子），与 $\alpha_{\text{root}}^{-1}$ 的约定一致。三个规范耦合在 $M_Z$ 能标的原生实验值为：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">规范群</th>
+<th align="left">原生 $\alpha_i^{-1}(M_Z)$
+</th>
+<th align="left">对应 $g_i$
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">$U(1)_Y$</td>
+<td align="left">$\approx 98.3$</td>
+<td align="left">$g_1 \approx 0.357$</td>
+</tr>
+<tr>
+<td align="left">$SU(2)_L$</td>
+<td align="left">$\approx 29.6$</td>
+<td align="left">$g_2 \approx 0.652$</td>
+</tr>
+<tr>
+<td align="left">$SU(3)_c$</td>
+<td align="left">$\approx 8.5$</td>
+<td align="left">$g_3 \approx 1.221$</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h4>3.3.2 中介层投影分化</h4>
+<p>中介层 $\chi_g$ 的极化效应在三个通道上的投影张量为（文章13第3节、文章14第3节）：</p>
+<p>$$
+
+(\chi_g^{(3)})_{ii} = \lambda_{\text{eff}} S_i, \qquad (\chi_g^{(3)})_{ij} = \mu_{\text{eff}} \sqrt{S_i S_j} \quad (i \neq j)
+
+$$</p>
+<p>其中：</p>
+<ul>
+<li>
+$\lambda_{\text{eff}} = 2880/t^4$（对角有效极化率）</li>
+<li>
+$\mu_{\text{eff}} = -1740/t^4$（交叉有效极化率，$\mu_{\text{eff}}/\lambda_{\text{eff}} = -29/48$）</li>
+<li>
+$S_1 = 0.7237,\ S_2 = 0.1508,\ S_3 = 0.1255$（根域三通道权重）</li>
+<li>
+$t$ 为 Kähler 模，控制 $\chi_g$ 的整体量级</li>
+</ul>
+<blockquote>
+<p><strong>通道-规范群映射规则</strong>：三通道按权重降序 $S_1 &amp;gt; S_2 &amp;gt; S_3$ 分别对应规范群 $U(1)_Y$、$SU(2)_L$、$SU(3)_c$。映射依据为各规范群在中介层上的拓扑嵌入复杂度：$U(1)_Y$ 作为阿贝尔群仅1个生成元，投影权重最大（几何阻力最小）；$SU(3)_c$ 有8个生成元，嵌入复杂度最高，投影权重最小。详细的映射推导将在P2后期文章中展开。</p>
+</blockquote>
+<p>每个通道感受到的总有效极化强度 $\Xi_i$ 定义为该通道的对角极化响应与来自另外两个通道的交叉极化耦合贡献之和：</p>
+<p>$$
+
+\Xi_i = (\chi_g^{(3)})_{ii} + \sum_{j \neq i} (\chi_g^{(3)})_{ij} = \lambda_{\text{eff}} S_i + \mu_{\text{eff}} \sum_{j \neq i} \sqrt{S_i S_j}
+
+$$</p>
+<p>交叉项强度由根域非对角耦合 $\kappa_{ij}$ 结构与中介层交叉极化率 $\mu_{\text{eff}}$ 共同决定，$\mu_{\text{eff}}/\lambda_{\text{eff}} = -29/48$ 的比例已在P1阶段确定。</p>
+<h4>3.3.3 阈值修正公式</h4>
+<p>UV边界条件 $\alpha_i^{-1}(\Lambda_{\text{UV}})$ 由根域基点加上中介层极化修正得到：</p>
+<p>$$
+\alpha_i^{-1}(\Lambda_{\text{UV}}) = \alpha_{\text{root}}^{-1} + \eta \cdot \Xi_i
+$$</p>
+<p>其中 $\eta$ 是整体归一化因子，对应绝对归一化系数 $\mathcal{N}$ 与耦合强度的比例关系。$\eta$ 的量纲为 $[\text{能量}]^{-4}$（因为 $\Xi_i \propto 1/t^4$ 无量纲，$\alpha_i^{-1}$ 无量纲，$\eta$ 需抵消 $\Xi_i$ 中的 $t^4$ 因子），因此 $\eta \propto 1/\Lambda_{\text{UV}}^4$。$\eta$ 的具体数值由中介层特征能标 $\Lambda_{\text{UV}}$ 与 $t$、$l_0$ 的关系决定，将在第4节的联合反锁中确定。</p>
+<h4>3.3.4 三个修正量的比例关系</h4>
+<p>代入 $S_i$ 数值和 $\mu_{\text{eff}}/\lambda_{\text{eff}} = -29/48$，计算 $\Xi_i$ 的相对比例。</p>
+<p>先计算各通道的 $\sqrt{S_i}$：</p>
+<p>$$
+\sqrt{S_1} = \sqrt{0.7237} \approx 0.8507, \quad
+\sqrt{S_2} = \sqrt{0.1508} \approx 0.3884, \quad
+\sqrt{S_3} = \sqrt{0.1255} \approx 0.3543
+$$</p>
+<p>计算 $\Xi_i$ 的表达式（提取公因子 $\lambda_{\text{eff}}$）：</p>
+<p>$$
+\Xi_i = \lambda_{\text{eff}} \left[ S_i + \frac{\mu_{\text{eff}}}{\lambda_{\text{eff}}} \sum_{j \neq i} \sqrt{S_i S_j} \right] = \lambda_{\text{eff}} \left[ S_i - \frac{29}{48} \sum_{j \neq i} \sqrt{S_i S_j} \right]
+$$</p>
+<p>对 $i=1$：</p>
+<p>$$
+\begin{aligned}
+\Xi_1 &amp;= \lambda_{\text{eff}} \left[ 0.7237 - \frac{29}{48} (0.8507 \times 0.3884 + 0.8507 \times 0.3543) \right] \\
+&amp;= \lambda_{\text{eff}} \left[ 0.7237 - \frac{29}{48} (0.3304 + 0.3014) \right] \\
+&amp;= \lambda_{\text{eff}} \left[ 0.7237 - \frac{29}{48} \times 0.6318 \right] \\
+&amp;= \lambda_{\text{eff}} \left[ 0.7237 - 0.3817 \right] = 0.3420 , \lambda_{\text{eff}}
+\end{aligned}
+$$</p>
+<p>对 $i=2$：</p>
+<p>$$
+\begin{aligned}
+\Xi_2 &amp;= \lambda_{\text{eff}} \left[ 0.1508 - \frac{29}{48} (0.3884 \times 0.8507 + 0.3884 \times 0.3543) \right] \\
+&amp;= \lambda_{\text{eff}} \left[ 0.1508 - \frac{29}{48} (0.3304 + 0.1376) \right] \\
+&amp;= \lambda_{\text{eff}} \left[ 0.1508 - \frac{29}{48} \times 0.4680 \right] \\
+&amp;= \lambda_{\text{eff}} \left[ 0.1508 - 0.2828 \right] = -0.1320 , \lambda_{\text{eff}}
+\end{aligned}
+$$</p>
+<p>对 $i=3$：</p>
+<p>$$
+\begin{aligned}
+\Xi_3 &amp;= \lambda_{\text{eff}} \left[ 0.1255 - \frac{29}{48} (0.3543 \times 0.8507 + 0.3543 \times 0.3884) \right] \\
+&amp;= \lambda_{\text{eff}} \left[ 0.1255 - \frac{29}{48} (0.3014 + 0.1376) \right] \\
+&amp;= \lambda_{\text{eff}} \left[ 0.1255 - \frac{29}{48} \times 0.4390 \right] \\
+&amp;= \lambda_{\text{eff}} \left[ 0.1255 - 0.2653 \right] = -0.1398 , \lambda_{\text{eff}}
+\end{aligned}
+$$</p>
+<p><strong>三个修正量的比例关系</strong>：</p>
+<p>$$
+\Xi_1 : \Xi_2 : \Xi_3 \approx 0.3420 : (-0.1320) : (-0.1398)
+$$</p>
+<p>归一化到 $\Xi_1$：</p>
+<p>$$
+\Xi_1 : \Xi_2 : \Xi_3 \approx 1 : (-0.386) : (-0.409)
+$$</p>
+<p><strong>解读</strong>：</p>
+<ul>
+<li>通道1（$S_1 = 0.7237$）接收到的总极化强度为正，意味着 $\alpha_1^{-1}(\Lambda_{\text{UV}}) &amp;gt; \alpha_{\text{root}}^{-1}$
+</li>
+<li>通道2和通道3接收到的总极化强度为负，意味着 $\alpha_2^{-1}(\Lambda_{\text{UV}}), \alpha_3^{-1}(\Lambda_{\text{UV}}) &amp;lt; \alpha_{\text{root}}^{-1}$
+</li>
+<li>三个修正量的绝对值比例约为 $1 : 0.39 : 0.41$
+</li>
+</ul>
+<p><strong>UV边界相对排序</strong>：由于 $\Xi_2 &amp;gt; \Xi_3$（$-0.1320 &gt; -0.1398$），因此 $\alpha_2^{-1}(\Lambda_{\text{UV}}) &amp;gt; \alpha_3^{-1}(\Lambda_{\text{UV}})$。结合 $\Xi_1 &amp;gt; 0$ 的结论，UV边界条件的完整排序为：</p>
+<p>$$
+\alpha_1^{-1}(\Lambda_{\text{UV}}) &gt; \alpha_2^{-1}(\Lambda_{\text{UV}}) &gt; \alpha_3^{-1}(\Lambda_{\text{UV}})
+$$</p>
+<p>这一排序与实验所需的低能排序 $\alpha_1^{-1}(M_Z) &amp;gt; \alpha_2^{-1}(M_Z) &amp;gt; \alpha_3^{-1}(M_Z)$ <strong>完全匹配</strong>，说明中介层投影分化给出的UV边界条件方向正确。</p>
+<h3>3.4 与实验值的预期对应</h3>
+<p>在 $M_Z$ 能标，三个规范耦合的原生实验值关系为：</p>
+<p>$$
+\alpha_1^{-1}(M_Z) \approx 98.3 &gt; \alpha_2^{-1}(M_Z) \approx 29.6 &gt; \alpha_3^{-1}(M_Z) \approx 8.5
+$$</p>
+<p>从UV到 $M_Z$ 的RG跑动中，$\alpha_i^{-1}$ 的变化由 $\beta$ 函数系数 $b_i$ 控制（标准模型粒子含量，无超对称）：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">规范群</th>
+<th align="left">$b_i$</th>
+<th align="left">物理含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">$U(1)_Y$</td>
+<td align="left">$b_1 = 41/10$</td>
+<td align="left">屏蔽效应：能标降低时耦合变弱，$\alpha_1^{-1}$ 增大</td>
+</tr>
+<tr>
+<td align="left">$SU(2)_L$</td>
+<td align="left">$b_2 = -19/6$</td>
+<td align="left">反屏蔽效应：能标降低时耦合变强，$\alpha_2^{-1}$ 减小</td>
+</tr>
+<tr>
+<td align="left">$SU(3)_c$</td>
+<td align="left">$b_3 = -7$</td>
+<td align="left">反屏蔽效应（最强）：能标降低时耦合变强，$\alpha_3^{-1}$ 减小幅度最大</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<blockquote>
+<p><strong>注</strong>：$b_1 = 41/10$ 为原生 $U(1)<em>Y$ 的单圈系数，与第2节中GUT归一化的 $b_1 = 41/6$ 差一个因子 $5/3$。本节统一使用原生归一化，与 $\alpha</em>{\text{root}}^{-1}$ 的约定一致。</p>
+</blockquote>
+<p>RG跑动公式（仅借数学形式，不认同其背后的物理解说）：</p>
+<p>$$
+\alpha_i^{-1}(M_Z) = \alpha_i^{-1}(\Lambda_{\text{UV}}) - \frac{b_i}{2\pi} \ln\left(\frac{M_Z}{\Lambda_{\text{UV}}}\right)
+$$</p>
+<p>由于 $M_Z &amp;lt; \Lambda_{\text{UV}}$，$\ln(M_Z/\Lambda_{\text{UV}}) &lt; 0$，因此 $-b_i \ln(M_Z/\Lambda_{\text{UV}})$ 的符号由 $b_i$ 决定：</p>
+<ul>
+<li>对 $b_1 &amp;gt; 0$：$-b_1 \ln(M_Z/\Lambda_{\text{UV}}) &gt; 0$，$\alpha_1^{-1}$ 从UV到 $M_Z$ <strong>增大</strong>
+</li>
+<li>对 $b_2, b_3 &amp;lt; 0$：$-b_{2,3} \ln(M_Z/\Lambda_{\text{UV}}) &lt; 0$，$\alpha_2^{-1}, \alpha_3^{-1}$ 从UV到 $M_Z$ <strong>减小</strong>
+</li>
+</ul>
+<p><strong>本体系的预测与实验的匹配</strong>：</p>
+<p>根据3.3节的UV边界排序 $\alpha_1^{-1}(\Lambda_{\text{UV}}) &amp;gt; \alpha_2^{-1}(\Lambda_{\text{UV}}) &amp;gt; \alpha_3^{-1}(\Lambda_{\text{UV}})$，结合RG跑动方向：</p>
+<ol>
+<li>
+$\alpha_1^{-1}$ 在UV已最大，跑动到 $M_Z$ 时进一步增大，维持最大值（$\approx 98.3$）</li>
+<li>
+$\alpha_2^{-1}$ 在UV居中，跑动到 $M_Z$ 时减小，维持中间值（$\approx 29.6$）</li>
+<li>
+$\alpha_3^{-1}$ 在UV已最小，跑动到 $M_Z$ 时减小幅度最大，维持最小值（$\approx 8.5$）</li>
+</ol>
+<p><strong>结论</strong>：本体系预测的UV边界排序与RG跑动方向共同作用，自然得到与实验值一致的 $M_Z$ 能标排序。具体的数值吻合程度取决于 $t$、$\zeta$ 和 $\Lambda_{\text{UV}}$ 的取值，将由第4节的联合反锁确定。</p>
+<h3>3.5 待确定的参数</h3>
+<p>本节建立的映射框架涉及三个待定参数：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">物理含义</th>
+<th align="left">P1阶段状态</th>
+<th align="left">P2阶段处理方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">$t$</td>
+<td align="left">Kähler模，控制 $\chi_g$ 量级</td>
+<td align="left">推荐值 $t=75$，范围 $[50,100]$
+</td>
+<td align="left">由联合反锁确定精确值</td>
+</tr>
+<tr>
+<td align="left">$\zeta$</td>
+<td align="left">通道覆盖率，控制 $\lambda_{\text{eff}}/\chi_g$
+</td>
+<td align="left">文献值 $\approx 0.5$，范围 $[0.3,0.7]$
+</td>
+<td align="left">由联合反锁确定精确值</td>
+</tr>
+<tr>
+<td align="left">$\Lambda_{\text{UV}}$</td>
+<td align="left">中介层特征能标</td>
+<td align="left">未定标</td>
+<td align="left">与 $t$ 通过根域特征长度 $l_0$ 关联，非独立参数</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>参数自由度说明</strong>：$\Lambda_{\text{UV}}$ 与 Kähler 模 $t$ 通过根域特征长度 $l_0$ 一一关联（$\Lambda_{\text{UV}} \propto 1/l_0 \cdot f(t)$），并非独立自由参数。因此联合反锁的独立参数仍为 $t$ 和 $\zeta$ 两个，方程组闭合可解。</p>
+<p>第4节将使用规范耦合统一 + Higgs质量 $m_H = 125.07$ GeV 两个可观测量，联合反锁 $t$ 和 $\zeta$，并检验解是否落在预设区间内。</p>
+<h3>3.6 第3节结论</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">项目</th>
+<th align="left">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">根域基点</td>
+<td align="left">
+$\alpha_{\text{root}}^{-1} = 4\pi^3 + \pi^2 + \pi \approx 137.036$（原生形式，根域内禀拓扑量）</td>
+</tr>
+<tr>
+<td align="left">投影分化机制</td>
+<td align="left">
+$\chi_g$ 极化效应 × 三通道权重 $S_i$ × 交叉耦合 $\kappa_{ij}$
+</td>
+</tr>
+<tr>
+<td align="left">通道-规范群映射</td>
+<td align="left">
+$S_1 \to U(1)_Y$，$S_2 \to SU(2)_L$，$S_3 \to SU(3)_c$（按拓扑嵌入复杂度降序）</td>
+</tr>
+<tr>
+<td align="left">阈值修正公式</td>
+<td align="left">
+$\alpha_i^{-1}(\Lambda_{\text{UV}}) = \alpha_{\text{root}}^{-1} + \eta \cdot \Xi_i$，$\eta \propto 1/\Lambda_{\text{UV}}^4$</td>
+</tr>
+<tr>
+<td align="left">三个修正量比例</td>
+<td align="left">$\Xi_1 : \Xi_2 : \Xi_3 \approx 1 : (-0.386) : (-0.409)$</td>
+</tr>
+<tr>
+<td align="left">UV边界完整排序</td>
+<td align="left">$\alpha_1^{-1}(\Lambda_{\text{UV}}) &amp;gt; \alpha_2^{-1}(\Lambda_{\text{UV}}) &amp;gt; \alpha_3^{-1}(\Lambda_{\text{UV}})$</td>
+</tr>
+<tr>
+<td align="left">RG跑动方向</td>
+<td align="left">
+$b_1&amp;gt;0$：$\alpha_1^{-1}$ 随能标降低增大；$b_2,b_3&lt;0$：$\alpha_2^{-1},\alpha_3^{-1}$ 随能标降低减小</td>
+</tr>
+<tr>
+<td align="left">与实验排序匹配</td>
+<td align="left">✅ UV排序 + RG跑动方向共同作用，自然得到与实验一致的 $M_Z$ 排序</td>
+</tr>
+<tr>
+<td align="left">待定参数</td>
+<td align="left">
+$t$、$\zeta$（独立）；$\Lambda_{\text{UV}}$（与 $t$ 关联，非独立）</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<p><em>第3节完。第4节将建立联合反锁方程组，使用规范耦合统一 + Higgs质量两个可观测量反锁 $t$ 和 $\zeta$。</em></p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
+
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
