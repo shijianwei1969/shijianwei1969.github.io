@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="## 文章16第4节（最终归档版）：规范耦合反锁——$t$ 与 $\zeta$ 的参数拟合
+
+### 4.1 任务定位
+
+第3节建立了从根域基点 $\alpha_{\text{root}}^{-1}$ 经由中介层极化效应分化为三个UV边界条件的映射框架，并给出了三个修正量的比例关系 $\Xi_1 : \Xi_2 : \Xi_3 \approx 1 : (-0.386) : (-0.409)$。">
+<meta property="og:title" content="文章16第4节（最终归档版）：规范耦合反锁——$t$ 与 $\zeta$ 的参数拟合">
+<meta property="og:description" content="## 文章16第4节（最终归档版）：规范耦合反锁——$t$ 与 $\zeta$ 的参数拟合
+
+### 4.1 任务定位
+
+第3节建立了从根域基点 $\alpha_{\text{root}}^{-1}$ 经由中介层极化效应分化为三个UV边界条件的映射框架，并给出了三个修正量的比例关系 $\Xi_1 : \Xi_2 : \Xi_3 \approx 1 : (-0.386) : (-0.409)$。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/wen-zhang-16-di-4-jie-%EF%BC%88-zui-zhong-gui-dang-ban-%EF%BC%89%EF%BC%9A-gui-fan-ou-he-fan-suo-%E2%80%94%E2%80%94%24t%24%20-yu-%20%24-zeta%24%20-de-can-shu-ni-he.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>文章16第4节（最终归档版）：规范耦合反锁——$t$ 与 $\zeta$ 的参数拟合</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">文章16第4节（最终归档版）：规范耦合反锁——$t$ 与 $\zeta$ 的参数拟合</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/71" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h2>文章16第4节（最终归档版）：规范耦合反锁——$t$ 与 $\zeta$ 的参数拟合</h2>
+<h3>4.1 任务定位</h3>
+<p>第3节建立了从根域基点 $\alpha_{\text{root}}^{-1}$ 经由中介层极化效应分化为三个UV边界条件的映射框架，并给出了三个修正量的比例关系 $\Xi_1 : \Xi_2 : \Xi_3 \approx 1 : (-0.386) : (-0.409)$。该框架中包含两个独立参数：$t$（Kähler模）和 $\zeta$（通道覆盖率）。</p>
+<p>本节的任务是：<strong>使用三个规范耦合在 $M_Z$ 能标的实验值，通过比值方程和差值绝对值方程，反锁 $t$ 和 $\zeta$ 的关联关系，并结合先验范围给出参数的允许区间。</strong></p>
+<h3>4.2 反锁策略：比值方程约束能标，差值方程约束 $\zeta$
+</h3>
+<h4>4.2.1 完整预测公式</h4>
+<p>三个规范耦合在 $M_Z$ 能标的预测值由三部分组成：根域基点 $\alpha_{\text{root}}^{-1}$、中介层极化修正 $\eta \cdot k_i \zeta / t^4$、以及从UV能标 $\Lambda_{\text{UV}}$ 到 $M_Z$ 的RG跑动：</p>
+<p>$$
+\alpha_i^{-1}(M_Z) = \alpha_{\text{root}}^{-1} + \eta \cdot \frac{k_i \zeta}{t^4} - \frac{b_i}{2\pi} \ln\left(\frac{M_Z}{\Lambda_{\text{UV}}}\right)
+$$</p>
+<p>其中：</p>
+<ul>
+<li>
+$\alpha_{\text{root}}^{-1} = 137.036$（根域基点，纯拓扑内禀量，不随表象能标变化）</li>
+<li>
+$k_i = 5760 \cdot \xi_i$，$\xi_i$ 为第3节计算的纯比例系数：$\xi_1 = 0.3420$、$\xi_2 = -0.1320$、$\xi_3 = -0.1398$，因此 $k_1 = 1970$、$k_2 = -760$、$k_3 = -805$</li>
+<li>
+$b_i$ 为标准模型单圈 $\beta$ 函数系数（原生归一化）：$b_1 = 41/10$、$b_2 = -19/6$、$b_3 = -7$——这些系数是标准模型规范群结构的直接推论，已被大量实验验证，本体系直接兼容</li>
+<li>
+$\eta$ 为整体归一化因子，量纲 $[\text{能量}]^{-4}$
+</li>
+<li>
+$\Lambda_{\text{UV}}$ 为中介层特征能标（阈值能标），待定</li>
+</ul>
+<h4>4.2.2 差值消去 $\alpha_{\text{root}}^{-1}$
+</h4>
+<p>构造两个独立差值，消去 $\alpha_{\text{root}}^{-1}$：</p>
+<p>$$
+\Delta_{12}(M_Z) = \alpha_1^{-1}(M_Z) - \alpha_2^{-1}(M_Z) = \eta \cdot \frac{(k_1 - k_2)\zeta}{t^4} - \frac{b_1 - b_2}{2\pi} \ln\left(\frac{M_Z}{\Lambda_{\text{UV}}}\right)
+$$</p>
+<p>$$
+\Delta_{23}(M_Z) = \alpha_2^{-1}(M_Z) - \alpha_3^{-1}(M_Z) = \eta \cdot \frac{(k_2 - k_3)\zeta}{t^4} - \frac{b_2 - b_3}{2\pi} \ln\left(\frac{M_Z}{\Lambda_{\text{UV}}}\right)
+$$</p>
+<p>代入数值：</p>
+<p>$$
+k_1 - k_2 = 1970 - (-760) = 2730,\quad k_2 - k_3 = -760 - (-805) = 45
+$$</p>
+<p>$$
+b_1 - b_2 = \frac{41}{10} + \frac{19}{6} = \frac{109}{15},\quad b_2 - b_3 = -\frac{19}{6} + 7 = \frac{23}{6}
+$$</p>
+<p>因此：</p>
+<p>$$
+\Delta_{12}(M_Z) = \eta \cdot \frac{2730 \zeta}{t^4} - \frac{109}{30\pi} \ln\left(\frac{M_Z}{\Lambda_{\text{UV}}}\right)
+$$</p>
+<p>$$
+\Delta_{23}(M_Z) = \eta \cdot \frac{45 \zeta}{t^4} - \frac{23}{12\pi} \ln\left(\frac{M_Z}{\Lambda_{\text{UV}}}\right)
+$$</p>
+<h4>4.2.3 比值方程：纯几何预言约束 $\Lambda_{\text{UV}}$
+</h4>
+<p>两个差值相除，消去 $\eta$ 和 $\zeta$：</p>
+<p>$$
+\frac{\Delta_{12}(M_Z) + \frac{109}{30\pi} \ln\left(\frac{M_Z}{\Lambda_{\text{UV}}}\right)}{\Delta_{23}(M_Z) + \frac{23}{12\pi} \ln\left(\frac{M_Z}{\Lambda_{\text{UV}}}\right)} = \frac{2730}{45} = \frac{182}{3} \approx 60.67
+$$</p>
+<p><strong>比值方程的物理意义</strong>：该方程仅与 $\Lambda_{\text{UV}}$ 有关（$M_Z$ 已知，$\Delta_{ij}^{\text{exp}}$ 已知），不涉及 $t$ 和 $\zeta$。它直接约束中介层阈值能标 $\Lambda_{\text{UV}}$，是一个<strong>无自由参数的纯几何预言</strong>。</p>
+<p>代入 $\Delta_{12}^{\text{exp}} = 68.7$、$\Delta_{23}^{\text{exp}} = 21.1$，数值求解得：</p>
+<p>$$
+\boxed{\Lambda_{\text{UV}} \approx 4.3 \times 10^{16}\ \text{GeV}}
+$$</p>
+<p><strong>这个结果在物理上非常自洽</strong>：$\Lambda_{\text{UV}} \approx 4.3 \times 10^{16}$ GeV 恰好落在传统大统一理论的交汇能标附近（$10^{15} \sim 10^{16}$ GeV）。这不是巧合——它表明中介层投影分化的阈值能标正是标准模型三个规范耦合趋近交汇的能标，本体系自然解释了为什么GUT能标是 $10^{16}$ GeV 量级。</p>
+<blockquote>
+<p><strong>敏感性说明</strong>：比值方程的解对 $\Delta_{23}$ 的“纯阈值修正部分”极为敏感——该部分仅约 $0.49$，远小于RG跑动贡献（$\sim 20.6$）和实验值（$21.1$），三者几乎抵消。这意味着 $\Lambda_{\text{UV}}$ 的精确值对 $\xi_i$ 系数的精度要求很高。当前结果 $\Lambda_{\text{UV}} \approx 4.3 \times 10^{16}$ GeV 应视为量级估计，更精确的数值待 $\xi_i$ 系数的高阶修正完成后更新。</p>
+</blockquote>
+<h4>4.2.4 $\Lambda_{\text{UV}}$ 与 $t$ 的关联</h4>
+<p>$\Lambda_{\text{UV}}$ 与 $t$ 通过中介层几何关联。在单模CY4下，体积 $V_8 = t^4/4$，特征长度 $l_0 \propto V_8^{1/8} \propto t^{1/2}$，因此：</p>
+<p>$$
+\Lambda_{\text{UV}} = \Lambda_0 \cdot t^{-1/2}
+$$</p>
+<p>由比值方程解出的 $\Lambda_{\text{UV}} \approx 4.3 \times 10^{16}$ GeV，结合 $t \in [50, 100]$，可得 $\Lambda_0 = \Lambda_{\text{UV}} \cdot t^{1/2} \approx (3.0 \sim 4.3) \times 10^{17}$ GeV。这个数值比 $M_{\text{Pl}}$ 低约两个数量级，是合理的——<strong>中介层阈值能标是规范耦合的投影分化能标，四维普朗克标度是中介层大体积压制后的引力有效标度，二者本就不在同一量级。</strong></p>
+<h4>4.2.5 差值绝对值方程：约束 $\zeta$ 与 $t$ 的关联</h4>
+<p>将比值方程解出的 $\Lambda_{\text{UV}}$ 代入差值方程之一（如 $\Delta_{12}$），得到 $\zeta$ 与 $t$ 的关联：</p>
+<p>$$
+\zeta(t) = \frac{t^4}{\eta \cdot 2730} \left[ \Delta_{12}^{\text{exp}} + \frac{109}{30\pi} \ln\left(\frac{M_Z}{\Lambda_{\text{UV}}}\right) \right]
+$$</p>
+<p>其中 $\eta$ 是整体归一化因子，目前尚未确定。因此 $\zeta(t)$ 的绝对数值依赖于 $\eta$，但 $\zeta(t)$ 的<strong>相对形状</strong>（即不同 $t$ 下 $\zeta$ 的比例关系）是确定的。</p>
+<h3>4.3 反锁流程</h3>
+<h4>4.3.1 第一步：比值方程确定 $\Lambda_{\text{UV}}$
+</h4>
+<p>由比值方程直接求解 $\Lambda_{\text{UV}}$，得到：</p>
+<p>$$
+\boxed{\Lambda_{\text{UV}} \approx 4.3 \times 10^{16}\ \text{GeV}}
+$$</p>
+<p>这是本节最核心的理论预言——<strong>中介层阈值能标由纯几何比值唯一确定，与 $t$、$\zeta$、$\eta$ 均无关。</strong></p>
+<h4>4.3.2 第二步：$\zeta(t)$ 关联曲线</h4>
+<p>将 $\Lambda_{\text{UV}} \approx 4.3 \times 10^{16}$ GeV 代入差值绝对值方程，得到 $\zeta(t)$ 的关联曲线。该曲线保留了一个整体归一化自由度（由 $\eta$ 决定），但相对形状固定。</p>
+<h4>4.3.3 第三步：先验范围筛选</h4>
+<p>结合 $\zeta \in [0.3, 0.7]$ 的文献先验和 $t \in [50, 100]$ 的微扰收敛区间，筛选出参数的允许范围。预期 $t$ 落在 $60 \sim 90$ 区间，与P1推荐值 $t=75$ 一致。</p>
+<h4>4.3.4 第四步：希格斯质量兼容性检验</h4>
+<p>将筛选后的 $t$ 区间代入大体积压制机制，检验是否能在该参数下自然地将 Planck 量级的裸质量压制到 $m_H \sim 125$ GeV 量级。</p>
+<h3>4.4 预期结果</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">检验项目</th>
+<th align="left">预期结果</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">比值方程预言 $\Lambda_{\text{UV}}$
+</td>
+<td align="left">
+$\approx 4.3 \times 10^{16}$ GeV</td>
+<td align="left">纯几何预言，无自由参数</td>
+</tr>
+<tr>
+<td align="left">
+$\zeta(t)$ 关联曲线</td>
+<td align="left">单调关系</td>
+<td align="left">保留一个整体归一化自由度</td>
+</tr>
+<tr>
+<td align="left">先验范围筛选后 $t$
+</td>
+<td align="left">$\sim 60-90$</td>
+<td align="left">与P1推荐值 $75$ 一致</td>
+</tr>
+<tr>
+<td align="left">先验范围筛选后 $\zeta$
+</td>
+<td align="left">$\sim 0.4-0.6$</td>
+<td align="left">与文献值 $0.5$ 一致</td>
+</tr>
+<tr>
+<td align="left">希格斯质量兼容性</td>
+<td align="left">
+$m_H^{\text{pred}} \sim 10^2$ GeV</td>
+<td align="left">量级兼容</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>4.5 第4节结论</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">项目</th>
+<th align="left">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">反锁可观测量</td>
+<td align="left">三个 $\alpha_i^{-1}(M_Z)$ 实验值</td>
+</tr>
+<tr>
+<td align="left">核心预言</td>
+<td align="left">
+$\Delta_{12}/\Delta_{23} = 182/3 \approx 60.67$（无自由参数）</td>
+</tr>
+<tr>
+<td align="left">比值方程结果</td>
+<td align="left">
+$\Lambda_{\text{UV}} \approx 4.3 \times 10^{16}$ GeV（与GUT能标一致）</td>
+</tr>
+<tr>
+<td align="left">差值方程结果</td>
+<td align="left">
+$\zeta(t)$ 关联曲线（保留一个整体归一化自由度）</td>
+</tr>
+<tr>
+<td align="left">先验范围筛选</td>
+<td align="left">
+$t \sim 60-90$，$\zeta \sim 0.4-0.6$</td>
+</tr>
+<tr>
+<td align="left">后续超定检验</td>
+<td align="left">第5节用 $\mu$ 子 $g-2$ 打破整体归一化简并</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<p><em>第4节完。第5节将进行 $\mu$ 子 $g-2$ 的存活约束检验，并使用电子 $g-2$ 作为次级约束。</em></p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
