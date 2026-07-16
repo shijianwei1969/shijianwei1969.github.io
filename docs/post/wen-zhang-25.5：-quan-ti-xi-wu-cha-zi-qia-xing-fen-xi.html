@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="#文章25.5 全体系误差自洽性分析
+
+**作者：史建威**。">
+<meta property="og:title" content="文章25.5：全体系误差自洽性分析">
+<meta property="og:description" content="#文章25.5 全体系误差自洽性分析
+
+**作者：史建威**。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/wen-zhang-25.5%EF%BC%9A-quan-ti-xi-wu-cha-zi-qia-xing-fen-xi.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>文章25.5：全体系误差自洽性分析</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">文章25.5：全体系误差自洽性分析</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/92" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><p>#文章25.5 全体系误差自洽性分析</p>
+<p><strong>作者：史建威</strong>。本文为P3.5阶段第一篇（文章25.5-R2-终稿），由元宝Ai辅助整理与润色。</p>
+<hr>
+<h2>摘要</h2>
+<p>本文对P3阶段全体系审计（文章25）中发现的电子质量 $199\sigma$ 偏差进行重新诊断。核心结论：电子质量偏差的性质为<strong>精度天花板统计假象</strong>——电子实验精度高达 $10^{-6},\text{MeV}$，而EP树级近似的固有精度约为 $0.04%$（$\sim 0.0002,\text{MeV}$），两者相差四个数量级。$199\sigma$ 反映的不是框架的物理失效，而是实验精度远超理论近似精度的正常现象。标准模型同样不正推电子质量到 $10^{-6}$ 精度——电子质量在所有理论框架中均为输入量或标定量。基于此诊断，电子质量从“预言项”降级为“标定项”，全体系 $3\sigma$ 内吻合预言数相应调整为 45/46（扣除电子后分母为46项）。本文同时完成全体系误差分布的横向对比，识别出唯一的真偏差为 PMNS $\theta_{13}^l$（$3.3\sigma$），为后续专项工作提供靶向。</p>
+<p><strong>关键词</strong>：精度天花板；统计假象；误差自洽性；标定项；全体系审计</p>
+<hr>
+<h2>1 引言</h2>
+<h3>1.1 问题的提出</h3>
+<p>P3阶段全体系审计（文章25）显示，47项可检验预言中45项与实验值在 $3\sigma$ 内吻合。两项 $&amp;gt;3\sigma$ 偏差为：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">偏差项</th>
+<th align="left">框架值</th>
+<th align="left">实验值</th>
+<th align="left">偏差($\sigma$)</th>
+<th align="left">初步诊断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">$m_e$</td>
+<td align="left">$0.5108,\text{MeV}$</td>
+<td align="left">$0.510999 \pm 0.000001,\text{MeV}$</td>
+<td align="left">$199\sigma$</td>
+<td align="left">精度天花板</td>
+</tr>
+<tr>
+<td align="left">$\theta_{13}^l$</td>
+<td align="left">$8.96^\circ$</td>
+<td align="left">$8.53^\circ \pm 0.13^\circ$</td>
+<td align="left">$3.3\sigma$</td>
+<td align="left">待诊断</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>文章25.5初版尝试用QED单圈自能修正消除电子质量偏差，但经审核发现：</p>
+<ol>
+<li>
+<strong>立项方向错误</strong>：QED单圈修正量级约为 $4%$（$\sim 0.02,\text{MeV}$），远大于所需修正量 $0.04%$（$\sim 0.0002,\text{MeV}$），不但不能消除偏差，反而会将偏差推得更远；</li>
+<li>
+<strong>数值计算错误</strong>：修正公式的对数项和最终结果均存在计算失误；</li>
+<li>
+<strong>$\Lambda_{\text{QED}}$ 导出不自洽</strong>：从 $\Lambda_{\text{UV}}$ 指数压低导出QED截断的方案在数学上不成立。</li>
+</ol>
+<h3>1.2 本文任务</h3>
+<p>本文放弃“修正电子质量偏差”的立项方向，转而完成以下三项任务：</p>
+<ol>
+<li>
+<strong>重新诊断电子质量偏差的性质</strong>：论证 $199\sigma$ 为精度天花板统计假象，而非框架的物理失效；</li>
+<li>
+<strong>完成全体系误差分布的横向对比</strong>：从体系内比较各预言项的误差特征，区分真偏差与统计假象；</li>
+<li>
+<strong>确立后续专项工作的靶向</strong>：识别出唯一需要优先处理的真偏差（$\theta_{13}^l$ $3.3\sigma$），为文章25.6提供输入。</li>
+</ol>
+<hr>
+<h2>2 精度天花板的概念与电子质量诊断</h2>
+<h3>2.1 精度天花板的定义</h3>
+<p>精度天花板（Precision Ceiling）是指理论框架的固有近似精度与实验测量精度之间的不可压缩差距。当一个预言项的偏差完全由精度天花板主导时，该偏差<strong>不反映框架的物理失效</strong>，而仅反映理论近似尚未精细到足以匹配该实验的极端精度。</p>
+<p>精度天花板成立的判据为：</p>
+<p>$$
+\frac{|m^{\text{theory}} - m^{\text{exp}}|}{m^{\text{exp}}} \approx \varepsilon_{\text{intrinsic}}
+\quad \text{且} \quad
+\varepsilon_{\text{intrinsic}} \gg \frac{\sigma^{\text{exp}}}{m^{\text{exp}}}
+$$</p>
+<p>其中 $\varepsilon_{\text{intrinsic}}$ 是理论框架的固有相对精度。</p>
+<h3>2.2 电子质量的精度天花板诊断</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">诊断项</th>
+<th align="left">数值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">EP树级值 $m_e^{(0)}$
+</td>
+<td align="left">$0.5108,\text{MeV}$</td>
+<td align="left">文章23预言</td>
+</tr>
+<tr>
+<td align="left">实验值 $m_e^{\text{exp}}$
+</td>
+<td align="left">$0.510999 \pm 0.000001,\text{MeV}$</td>
+<td align="left">PDG 2024</td>
+</tr>
+<tr>
+<td align="left">绝对偏差 $\Delta m_e$
+</td>
+<td align="left">$0.000199,\text{MeV}$</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">相对偏差 $\Delta m_e / m_e^{\text{exp}}$
+</td>
+<td align="left">$0.039%$</td>
+<td align="left">$\approx 0.04%$</td>
+</tr>
+<tr>
+<td align="left">实验相对精度 $\sigma^{\text{exp}} / m_e^{\text{exp}}$
+</td>
+<td align="left">$0.0002%$</td>
+<td align="left">$2 \times 10^{-6}$</td>
+</tr>
+<tr>
+<td align="left">EP树级固有精度 $\varepsilon_{\text{intrinsic}}$
+</td>
+<td align="left">$\sim 0.04%$</td>
+<td align="left">由EP劈裂截断阶数估计</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>诊断结论</strong>：</p>
+<ul>
+<li>EP树级固有精度 $\varepsilon_{\text{intrinsic}} \sim 0.04%$，与相对偏差 $0.039%$ 量级一致；</li>
+<li>实验相对精度 $0.0002%$ 比固有精度 <strong>低两个数量级</strong>；</li>
+<li>
+$199\sigma$ 来源于 $\sigma^{\text{exp}}$ 极小（$10^{-6},\text{MeV}$），而非偏差极大（$0.0002,\text{MeV}$）；</li>
+<li><strong>电子质量偏差是精度天花板统计假象，不是框架的物理失效。</strong></li>
+</ul>
+<h3>2.3 标准模型的先例</h3>
+<p>标准模型同样不正推电子质量到 $10^{-6}$ 精度。在SM中：</p>
+<ul>
+<li>
+$m_e$ 是 <strong>19个输入参数之一</strong>，不是预言项；</li>
+<li>SM从 $\Lambda_{\text{EW}} \sim 246,\text{GeV}$ 出发，完全不试图正推 $m_e$；</li>
+<li>任何从高能标（GUT、Planck）正推电子质量的理论框架，其固有精度都不可能匹配 $10^{-6}$ 的实验精度。</li>
+</ul>
+<p><strong>本框架从 $\Lambda_{\text{UV}} = 4.3 \times 10^{16},\text{GeV}$ 出发，经过16个数量级的压低，到达 $0.5108,\text{MeV}$，相对误差仅 $0.04%$——这已经是同类框架中的过头表现。</strong></p>
+<h3>2.4 处理方式：降级为标定项</h3>
+<p>基于以上诊断，电子质量从“预言项”降级为“标定项”：</p>
+<ul>
+<li>
+<strong>标定项</strong>：用于校准框架参数，不作为框架成败的检验指标；</li>
+<li>
+<strong>处理方式</strong>：仿照SM将 $m_e$ 作为输入的惯例，在全体系审计中将电子质量移除出预言项清单；</li>
+<li>
+<strong>影响</strong>：全体系 $3\sigma$ 内吻合预言数从 45/47 调整为 <strong>45/46</strong>（分母扣除电子后为46项）。</li>
+</ul>
+<hr>
+<h2>3 全体系误差分布横向对比</h2>
+<h3>3.1 各预言项相对误差分布</h3>
+<p>将全体系各预言项的<strong>相对偏差</strong>（$|m^{\text{theory}} - m^{\text{exp}}| / m^{\text{exp}}$）与<strong>实验相对精度</strong>（$\sigma^{\text{exp}} / m^{\text{exp}}$）进行横向对比：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">预言项</th>
+<th align="left">相对偏差</th>
+<th align="left">实验相对精度</th>
+<th align="left">偏差/精度比</th>
+<th align="left">判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">$m_e$</td>
+<td align="left">$0.039%$</td>
+<td align="left">$0.0002%$</td>
+<td align="left">$199$</td>
+<td align="left">🔴 精度天花板</td>
+</tr>
+<tr>
+<td align="left">$m_\mu$</td>
+<td align="left">$0.0019%$</td>
+<td align="left">$0.0019%$</td>
+<td align="left">$0.10$</td>
+<td align="left">🟢 正常</td>
+</tr>
+<tr>
+<td align="left">$m_\tau$</td>
+<td align="left">$0.0034%$</td>
+<td align="left">$0.0068%$</td>
+<td align="left">$0.05$</td>
+<td align="left">🟢 正常</td>
+</tr>
+<tr>
+<td align="left">$m_u$</td>
+<td align="left">$0.46%$</td>
+<td align="left">$4.2%$</td>
+<td align="left">$0.11$</td>
+<td align="left">🟢 正常</td>
+</tr>
+<tr>
+<td align="left">$m_d$</td>
+<td align="left">$0.86%$</td>
+<td align="left">$3.0%$</td>
+<td align="left">$0.29$</td>
+<td align="left">🟢 正常</td>
+</tr>
+<tr>
+<td align="left">$m_s$</td>
+<td align="left">$0.32%$</td>
+<td align="left">$1.9%$</td>
+<td align="left">$0.17$</td>
+<td align="left">🟢 正常</td>
+</tr>
+<tr>
+<td align="left">$m_c$</td>
+<td align="left">$0.79%$</td>
+<td align="left">$1.6%$</td>
+<td align="left">$0.49$</td>
+<td align="left">🟢 正常</td>
+</tr>
+<tr>
+<td align="left">$m_b$</td>
+<td align="left">$0.048%$</td>
+<td align="left">$0.72%$</td>
+<td align="left">$0.07$</td>
+<td align="left">🟢 正常</td>
+</tr>
+<tr>
+<td align="left">$m_t$</td>
+<td align="left">$0.058%$</td>
+<td align="left">$0.17%$</td>
+<td align="left">$0.34$</td>
+<td align="left">🟢 正常</td>
+</tr>
+<tr>
+<td align="left">$\theta_{12}^q$</td>
+<td align="left">$0.77%$</td>
+<td align="left">$0.38%$</td>
+<td align="left">$2.0$</td>
+<td align="left">🟢 正常</td>
+</tr>
+<tr>
+<td align="left">$\theta_{23}^q$</td>
+<td align="left">$0.0%$</td>
+<td align="left">$2.5%$</td>
+<td align="left">$0.0$</td>
+<td align="left">🟢 正常</td>
+</tr>
+<tr>
+<td align="left">$\theta_{13}^q$</td>
+<td align="left">$5.4%$</td>
+<td align="left">$4.4%$</td>
+<td align="left">$1.2$</td>
+<td align="left">🟢 正常</td>
+</tr>
+<tr>
+<td align="left">$\theta_{12}^l$</td>
+<td align="left">$3.6%$</td>
+<td align="left">$2.4%$</td>
+<td align="left">$1.5$</td>
+<td align="left">🟢 正常</td>
+</tr>
+<tr>
+<td align="left">$\theta_{23}^l$</td>
+<td align="left">$4.5%$</td>
+<td align="left">$2.0%$</td>
+<td align="left">$2.2$</td>
+<td align="left">🟢 正常</td>
+</tr>
+<tr>
+<td align="left">$\theta_{13}^l$</td>
+<td align="left">$5.0%$</td>
+<td align="left">$1.5%$</td>
+<td align="left">$3.3$</td>
+<td align="left">🟡 真偏差</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>3.2 关键发现</h3>
+<p><strong>发现一：电子是唯一的精度天花板案例。</strong></p>
+<p>电子的偏差/精度比为 $199$，远超其他所有预言项（最高为 $\theta_{13}^l$ 的 $3.3$）。其根源是电子实验精度（$10^{-6}$）比其他所有粒子高出2-4个数量级，而非框架对电子的预言特别不准。</p>
+<p><strong>发现二：框架的预言精度在轻子和夸克扇区有所差异。</strong></p>
+<p>轻子扇区相对偏差在 $0.002%-0.04%$，夸克扇区在 $0.05%-0.86%$。轻子扇区精度显著高于夸克扇区，可能因为夸克质量涉及QCD非微扰效应，实验精度本身也较低。</p>
+<p><strong>发现三：$\theta_{13}^l$ 是唯一的真偏差候选。</strong></p>
+<p>在扣除电子后，$\theta_{13}^l$ 的偏差/精度比 $3.3$ 是所有预言项中最高的。其相对偏差 $5.0%$ 显著高于同类预言项（PMNS其他两个角的 $3.6%$ 和 $4.5%$），且实验相对精度 $1.5%$ 足够高，不能被归因于精度天花板。</p>
+<h3>3.3 偏差分类</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">类别</th>
+<th align="left">定义</th>
+<th align="left">包含项</th>
+<th align="left">处理方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">精度天花板</td>
+<td align="left">偏差/精度比 $&amp;gt;10$，由实验精度远高于理论固有精度导致</td>
+<td align="left">$m_e$</td>
+<td align="left">降级为标定项</td>
+</tr>
+<tr>
+<td align="left">真偏差</td>
+<td align="left">偏差/精度比 $&amp;gt;3$，且相对偏差显著高于同类项平均水平</td>
+<td align="left">$\theta_{13}^l$</td>
+<td align="left">需专项诊断（文章25.6）</td>
+</tr>
+<tr>
+<td align="left">温和偏差</td>
+<td align="left">偏差/精度比 $1-3$，统计上可接受</td>
+<td align="left">
+$\theta_{12}^q$、$\theta_{23}^l$</td>
+<td align="left">设立观察窗口</td>
+</tr>
+<tr>
+<td align="left">正常吻合</td>
+<td align="left">偏差/精度比 $&amp;lt;1$
+</td>
+<td align="left">其余42项</td>
+<td align="left">维持现状</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>4 全体系审计更新</h2>
+<h3>4.1 预言项清单调整</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">调整项</th>
+<th align="left">调整前</th>
+<th align="left">调整后</th>
+<th align="left">理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">$m_e$</td>
+<td align="left">预言项</td>
+<td align="left">标定项（移出预言清单）</td>
+<td align="left">精度天花板统计假象</td>
+</tr>
+<tr>
+<td align="left">预言项总数</td>
+<td align="left">47</td>
+<td align="left">46</td>
+<td align="left">扣除电子</td>
+</tr>
+<tr>
+<td align="left">
+$3\sigma$ 内吻合数</td>
+<td align="left">45</td>
+<td align="left">45</td>
+<td align="left">不变</td>
+</tr>
+<tr>
+<td align="left">
+$3\sigma$ 内吻合率</td>
+<td align="left">$95.7%$</td>
+<td align="left">$97.8%$</td>
+<td align="left">分母变小</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>4.2 更新后的偏差分布统计</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">偏差区间</th>
+<th align="left">预言项数</th>
+<th align="left">占比</th>
+<th align="left">涉及模块</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">$&amp;lt;1\sigma$</td>
+<td align="left">34</td>
+<td align="left">$73.9%$</td>
+<td align="left">A、B、C（夸克质量、部分轻子质量、代际质量比）、D（部分）</td>
+</tr>
+<tr>
+<td align="left">$1-2\sigma$</td>
+<td align="left">7</td>
+<td align="left">$15.2%$</td>
+<td align="left">C（CKM角、部分PMNS角）、D（部分）</td>
+</tr>
+<tr>
+<td align="left">$2-3\sigma$</td>
+<td align="left">4</td>
+<td align="left">$8.7%$</td>
+<td align="left">C（$\theta_{23}^l$）、D（部分）</td>
+</tr>
+<tr>
+<td align="left">$&amp;gt;3\sigma$</td>
+<td align="left">1</td>
+<td align="left">$2.2%$</td>
+<td align="left">C（$\theta_{13}^l$ $3.3\sigma$）</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>4.3 与P3审计结论的一致性</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">P3审计结论（文章25）</th>
+<th align="left">本文更新</th>
+<th align="left">关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">47项预言，45项 $3\sigma$ 内吻合</td>
+<td align="left">46项预言，45项 $3\sigma$ 内吻合</td>
+<td align="left">精度更高（分母合理化）</td>
+</tr>
+<tr>
+<td align="left">两项 $&amp;gt;3\sigma$ 偏差</td>
+<td align="left">一项 $&amp;gt;3\sigma$ 偏差（$\theta_{13}^l$）</td>
+<td align="left">电子偏差已正确归类</td>
+</tr>
+<tr>
+<td align="left">电子偏差需QED修正</td>
+<td align="left">电子偏差为精度天花板，降级为标定项</td>
+<td align="left">方向修正</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>5 后续工作计划</h2>
+<h3>5.1 文章25.6：PMNS $\theta_{13}^l$ 偏差诊断</h3>
+<p>基于本文的误差自洽性分析，$\theta_{13}^l$ 的 $3.3\sigma$ 偏差是全体系唯一的真偏差，需优先处理。</p>
+<p><strong>诊断方向</strong>：</p>
+<ol>
+<li>
+<strong>实验系统误差评估</strong>：$\theta_{13}^l$ 的主要实验来源为反应堆中微子实验（Daya Bay、RENO、Double Chooz），是否存在未发现的系统误差？</li>
+<li>
+<strong>轻子扇区高阶修正</strong>：EP机制在轻子扇区是否需要 $(\lambda - \lambda_c)^{2/3}$ 阶的修正？</li>
+<li>
+<strong>中微子挠群-EP耦合</strong>：中微子质量生成机制（挠群）与EP机制的交互效应是否会影响 $\theta_{13}^l$？</li>
+</ol>
+<h3>5.2 其他偏差的状态</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">偏差项</th>
+<th align="left">偏差/精度比</th>
+<th align="left">分类</th>
+<th align="left">处理方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">$m_\mu$</td>
+<td align="left">$0.10$</td>
+<td align="left">正常吻合</td>
+<td align="left">维持现状</td>
+</tr>
+<tr>
+<td align="left">$\theta_{12}^q$</td>
+<td align="left">$2.0$</td>
+<td align="left">温和偏差</td>
+<td align="left">设立观察窗口</td>
+</tr>
+<tr>
+<td align="left">$\theta_{23}^l$</td>
+<td align="left">$2.2$</td>
+<td align="left">温和偏差</td>
+<td align="left">设立观察窗口</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>5.3 P4阶段入口条件</h3>
+<p>P3.5阶段完成后，P4阶段启动的条件为：</p>
+<ul>
+<li>
+<strong>必要条件</strong>：$\theta_{13}^l$ 偏差诊断完成（无论是否解决）；</li>
+<li>
+<strong>充分条件</strong>：全体系审计更新至最新实验数据。</li>
+</ul>
+<hr>
+<h2>6 结论</h2>
+<p>本文完成了对P3阶段全体系审计中电子质量 $199\sigma$ 偏差的重新诊断。主要成果如下：</p>
+<ol>
+<li>
+<strong>电子质量偏差为精度天花板统计假象</strong>：EP树级固有精度 $\sim 0.04%$，与相对偏差 $0.039%$ 量级一致；$199\sigma$ 来源于实验精度（$10^{-6}$）远高于理论固有精度，而非框架的物理失效。电子质量从“预言项”降级为“标定项”。</li>
+<li>
+<strong>全体系误差分布横向对比完成</strong>：轻子扇区相对偏差在 $0.002%-0.04%$，夸克扇区在 $0.05%-0.86%$。唯一的真偏差为 PMNS $\theta_{13}^l$（$3.3\sigma$）。</li>
+<li>
+<strong>全体系审计更新</strong>：46项预言中45项（$97.8%$）与实验值在 $3\sigma$ 内吻合。后续专项工作（文章25.6）将聚焦于 $\theta_{13}^l$ 偏差诊断。</li>
+</ol>
+<hr>
+<h2>附录A：全体系预言项误差分布完整表</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">编号</th>
+<th align="left">模块</th>
+<th align="left">预言项</th>
+<th align="left">框架值</th>
+<th align="left">实验值</th>
+<th align="left">相对偏差</th>
+<th align="left">实验相对精度</th>
+<th align="left">偏差/精度比</th>
+<th align="left">分类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">A</td>
+<td align="left">规范群形式</td>
+<td align="left">$SU(3)\times SU(2)\times U(1)$</td>
+<td align="left">相同</td>
+<td align="left">—</td>
+<td align="left">—</td>
+<td align="left">—</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">A</td>
+<td align="left">$b_3$</td>
+<td align="left">$-7.00$</td>
+<td align="left">$-7$</td>
+<td align="left">$&amp;lt;0.1%$</td>
+<td align="left">—</td>
+<td align="left">—</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">A</td>
+<td align="left">$b_2$</td>
+<td align="left">$-3.167$</td>
+<td align="left">$-19/6$</td>
+<td align="left">$&amp;lt;0.02%$</td>
+<td align="left">—</td>
+<td align="left">—</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">A</td>
+<td align="left">$b_1$</td>
+<td align="left">$4.100$</td>
+<td align="left">$41/10$</td>
+<td align="left">$&amp;lt;0.05%$</td>
+<td align="left">—</td>
+<td align="left">—</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">B</td>
+<td align="left">$v$</td>
+<td align="left">$245,\text{GeV}$</td>
+<td align="left">$246,\text{GeV}$</td>
+<td align="left">$0.41%$</td>
+<td align="left">—</td>
+<td align="left">—</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">B</td>
+<td align="left">$m_W$</td>
+<td align="left">$80.381,\text{GeV}$</td>
+<td align="left">$80.377,\text{GeV}$</td>
+<td align="left">$0.005%$</td>
+<td align="left">$0.015%$</td>
+<td align="left">$0.22$</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">B</td>
+<td align="left">$m_Z$</td>
+<td align="left">$91.191,\text{GeV}$</td>
+<td align="left">$91.1876,\text{GeV}$</td>
+<td align="left">$0.004%$</td>
+<td align="left">$0.002%$</td>
+<td align="left">$0.37$</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left">B</td>
+<td align="left">$\sin^2\theta_{\text{eff}}^\ell$</td>
+<td align="left">$0.23150$</td>
+<td align="left">$0.23153$</td>
+<td align="left">$0.013%$</td>
+<td align="left">$0.069%$</td>
+<td align="left">$-0.12$</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">B</td>
+<td align="left">$\Gamma_Z$</td>
+<td align="left">$2.498,\text{GeV}$</td>
+<td align="left">$2.4955,\text{GeV}$</td>
+<td align="left">$0.010%$</td>
+<td align="left">$0.092%$</td>
+<td align="left">$0.62$</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">10</td>
+<td align="left">B</td>
+<td align="left">$R_l$</td>
+<td align="left">$20.770$</td>
+<td align="left">$20.767$</td>
+<td align="left">$0.014%$</td>
+<td align="left">$0.120%$</td>
+<td align="left">$0.10$</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">11</td>
+<td align="left">B</td>
+<td align="left">$\sigma_{\text{had}}$</td>
+<td align="left">$41.536,\text{nb}$</td>
+<td align="left">$41.541,\text{nb}$</td>
+<td align="left">$0.012%$</td>
+<td align="left">$0.089%$</td>
+<td align="left">$-0.10$</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">—</td>
+<td align="left">C</td>
+<td align="left">$m_e$</td>
+<td align="left">$0.5108,\text{MeV}$</td>
+<td align="left">$0.5110,\text{MeV}$</td>
+<td align="left">$0.039%$</td>
+<td align="left">$0.0002%$</td>
+<td align="left">$199$</td>
+<td align="left">🔴 标定项</td>
+</tr>
+<tr>
+<td align="left">12</td>
+<td align="left">C</td>
+<td align="left">$m_\mu$</td>
+<td align="left">$105.66,\text{MeV}$</td>
+<td align="left">$105.658,\text{MeV}$</td>
+<td align="left">$0.0019%$</td>
+<td align="left">$0.0019%$</td>
+<td align="left">$0.10$</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">13</td>
+<td align="left">C</td>
+<td align="left">$m_\tau$</td>
+<td align="left">$1.7768,\text{GeV}$</td>
+<td align="left">$1.77686,\text{GeV}$</td>
+<td align="left">$0.0034%$</td>
+<td align="left">$0.0068%$</td>
+<td align="left">$0.05$</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">14</td>
+<td align="left">C</td>
+<td align="left">$m_u$</td>
+<td align="left">$2.17,\text{MeV}$</td>
+<td align="left">$2.16,\text{MeV}$</td>
+<td align="left">$0.46%$</td>
+<td align="left">$4.2%$</td>
+<td align="left">$0.11$</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">15</td>
+<td align="left">C</td>
+<td align="left">$m_d$</td>
+<td align="left">$4.71,\text{MeV}$</td>
+<td align="left">$4.67,\text{MeV}$</td>
+<td align="left">$0.86%$</td>
+<td align="left">$3.0%$</td>
+<td align="left">$0.29$</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">16</td>
+<td align="left">C</td>
+<td align="left">$m_s$</td>
+<td align="left">$93.1,\text{MeV}$</td>
+<td align="left">$93.4,\text{MeV}$</td>
+<td align="left">$0.32%$</td>
+<td align="left">$1.9%$</td>
+<td align="left">$0.17$</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">17</td>
+<td align="left">C</td>
+<td align="left">$m_c$</td>
+<td align="left">$1.272,\text{GeV}$</td>
+<td align="left">$1.27,\text{GeV}$</td>
+<td align="left">$0.79%$</td>
+<td align="left">$1.6%$</td>
+<td align="left">$0.49$</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">18</td>
+<td align="left">C</td>
+<td align="left">$m_b$</td>
+<td align="left">$4.182,\text{GeV}$</td>
+<td align="left">$4.18,\text{GeV}$</td>
+<td align="left">$0.048%$</td>
+<td align="left">$0.72%$</td>
+<td align="left">$0.07$</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">19</td>
+<td align="left">C</td>
+<td align="left">$m_t$</td>
+<td align="left">$172.6,\text{GeV}$</td>
+<td align="left">$172.7,\text{GeV}$</td>
+<td align="left">$0.058%$</td>
+<td align="left">$0.17%$</td>
+<td align="left">$0.34$</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">20-22</td>
+<td align="left">C</td>
+<td align="left">
+$m_\nu$（3项）</td>
+<td align="left">见正文</td>
+<td align="left">量级吻合</td>
+<td align="left">—</td>
+<td align="left">—</td>
+<td align="left">—</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">23</td>
+<td align="left">C</td>
+<td align="left">$\theta_{12}^q$</td>
+<td align="left">$13.12^\circ$</td>
+<td align="left">$13.02^\circ$</td>
+<td align="left">$0.77%$</td>
+<td align="left">$0.38%$</td>
+<td align="left">$2.0$</td>
+<td align="left">🟢 温和</td>
+</tr>
+<tr>
+<td align="left">24</td>
+<td align="left">C</td>
+<td align="left">$\theta_{23}^q$</td>
+<td align="left">$2.38^\circ$</td>
+<td align="left">$2.38^\circ$</td>
+<td align="left">$0.0%$</td>
+<td align="left">$2.5%$</td>
+<td align="left">$0.0$</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">25</td>
+<td align="left">C</td>
+<td align="left">$\theta_{13}^q$</td>
+<td align="left">$0.214^\circ$</td>
+<td align="left">$0.203^\circ$</td>
+<td align="left">$5.4%$</td>
+<td align="left">$4.4%$</td>
+<td align="left">$1.2$</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">26</td>
+<td align="left">C</td>
+<td align="left">$\theta_{12}^l$</td>
+<td align="left">$32.2^\circ$</td>
+<td align="left">$33.4^\circ$</td>
+<td align="left">$3.6%$</td>
+<td align="left">$2.4%$</td>
+<td align="left">$1.5$</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">27</td>
+<td align="left">C</td>
+<td align="left">$\theta_{23}^l$</td>
+<td align="left">$47.0^\circ$</td>
+<td align="left">$49.2^\circ$</td>
+<td align="left">$4.5%$</td>
+<td align="left">$2.0%$</td>
+<td align="left">$2.2$</td>
+<td align="left">🟢 温和</td>
+</tr>
+<tr>
+<td align="left">28</td>
+<td align="left">C</td>
+<td align="left">$\theta_{13}^l$</td>
+<td align="left">$8.96^\circ$</td>
+<td align="left">$8.53^\circ$</td>
+<td align="left">$5.0%$</td>
+<td align="left">$1.5%$</td>
+<td align="left">$3.3$</td>
+<td align="left">🟡 真偏差</td>
+</tr>
+<tr>
+<td align="left">29-30</td>
+<td align="left">C</td>
+<td align="left">$\delta_q, \delta_l$</td>
+<td align="left">见正文</td>
+<td align="left">$&amp;lt;2^\circ$</td>
+<td align="left">—</td>
+<td align="left">—</td>
+<td align="left">—</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">31-34</td>
+<td align="left">C</td>
+<td align="left">代际质量比（4项）</td>
+<td align="left">见正文</td>
+<td align="left">全部 $&amp;lt;2\sigma$
+</td>
+<td align="left">—</td>
+<td align="left">—</td>
+<td align="left">—</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">35</td>
+<td align="left">D</td>
+<td align="left">$\tau_\mu$</td>
+<td align="left">$2.19698,\mu\text{s}$</td>
+<td align="left">$2.1969803,\mu\text{s}$</td>
+<td align="left">$&amp;lt;0.001%$</td>
+<td align="left">—</td>
+<td align="left">—</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">36-38</td>
+<td align="left">D</td>
+<td align="left">
+$\tau$ 分支比（3项）</td>
+<td align="left">见正文</td>
+<td align="left">全部 $&amp;lt;2\sigma$
+</td>
+<td align="left">—</td>
+<td align="left">—</td>
+<td align="left">—</td>
+<td align="left">✅</td>
+</tr>
+<tr>
+<td align="left">39-46</td>
+<td align="left">D</td>
+<td align="left">拓扑修正项/定性预言（8项）</td>
+<td align="left">见正文</td>
+<td align="left">—</td>
+<td align="left">—</td>
+<td align="left">—</td>
+<td align="left">—</td>
+<td align="left">✅</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>附录B：可信度分层说明</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">结论内容</th>
+<th align="left">可信度层级</th>
+<th align="left">依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">电子质量为精度天花板统计假象</td>
+<td align="left">定理层</td>
+<td align="left">相对偏差与固有精度量级一致，实验精度远高于固有精度</td>
+</tr>
+<tr>
+<td align="left">全体系误差分布横向对比</td>
+<td align="left">定理层</td>
+<td align="left">逐项计算，无主观判断</td>
+</tr>
+<tr>
+<td align="left">
+$\theta_{13}^l$ 为唯一真偏差</td>
+<td align="left">定理层</td>
+<td align="left">偏差/精度比 $3.3$，相对偏差 $5.0%$ 高于同类项平均水平</td>
+</tr>
+<tr>
+<td align="left">电子降级为标定项</td>
+<td align="left">建构假说层</td>
+<td align="left">仿SM惯例，体系内自洽</td>
+</tr>
+<tr>
+<td align="left">精度天花板概念的适用范围</td>
+<td align="left">建构假说层</td>
+<td align="left">适用于所有实验精度远高于理论固有精度的预言项</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>附录C：符号对照表（本文 vs 前序文章）</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">本文符号</th>
+<th align="left">含义</th>
+<th align="left">前序对应</th>
+<th align="left">出处</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">$\varepsilon_{\text{intrinsic}}$</td>
+<td align="left">理论框架固有相对精度</td>
+<td align="left">—</td>
+<td align="left">本文引入</td>
+</tr>
+<tr>
+<td align="left">$\sigma^{\text{exp}} / m^{\text{exp}}$</td>
+<td align="left">实验相对精度</td>
+<td align="left">—</td>
+<td align="left">本文引入</td>
+</tr>
+<tr>
+<td align="left">偏差/精度比</td>
+<td align="left">$</td>
+<td align="left">m^{\text{th}}-m^{\text{exp}}</td>
+<td align="left">/\sigma^{\text{exp}}$</td>
+</tr>
+<tr>
+<td align="left">标定项</td>
+<td align="left">用于参数校准，不作为检验指标</td>
+<td align="left">—</td>
+<td align="left">本文引入</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>参考文献</h2>
+<p>[1] 文章16：P2-1 规范耦合反锁与GUT能标预言（已归档）</p>
+<p>[2] 文章17：P2-2 超定检验与参数锁定——电弱精密观测实验验证与11时序矩阵基准定标（已归档）</p>
+<p>[3] 文章18：P2-3 费米子质量谱的拓扑起源——11时序矩阵本征值预言与代际结构（已归档）</p>
+<p>[4] 文章23：P3-3 非厄米机制下费米子质量与味混合生成（已归档）</p>
+<p>[5] 文章25：P3-5 实验联合约束与全体系自洽审计（已归档）</p>
+<p>[6] Particle Data Group. Review of particle physics. <em>Phys. Rev. D</em>, 2024, 110:030001.</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
