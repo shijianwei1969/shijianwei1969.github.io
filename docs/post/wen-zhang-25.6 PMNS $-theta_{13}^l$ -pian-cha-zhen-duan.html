@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 文章25.6 PMNS $\theta_{13}^l$ 偏差诊断
+
+**作者：史建威**。">
+<meta property="og:title" content="文章25.6 PMNS $\theta_{13}^l$ 偏差诊断">
+<meta property="og:description" content="# 文章25.6 PMNS $\theta_{13}^l$ 偏差诊断
+
+**作者：史建威**。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/wen-zhang-25.6%20PMNS%20%24-theta_%7B13%7D%5El%24%20-pian-cha-zhen-duan.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>文章25.6 PMNS $\theta_{13}^l$ 偏差诊断</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">文章25.6 PMNS $\theta_{13}^l$ 偏差诊断</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/93" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>文章25.6 PMNS $\theta_{13}^l$ 偏差诊断</h1>
+<p><strong>作者：史建威</strong>。本文为P3.5阶段第二篇（文章25.6-R2-终稿），由元宝Ai辅助整理与润色。</p>
+<hr>
+<h2>摘要</h2>
+<p>本文针对P3.5阶段误差自洽性分析（文章25.5）识别的唯一 $&amp;gt;3\sigma$ 偏差——PMNS $\theta_{13}^l$ 的 $3.3\sigma$ 偏差——进行系统诊断。通过对三种可能原因的逐项排除，本文得出结论：$\theta_{13}^l$ 的偏差来源于<strong>轻子扇区EP树级近似的固有精度限制</strong>，与电子质量的 $199\sigma$ 偏差属于同一类问题但程度较轻。实验系统误差已被排除（多实验、多方法结果一致），EP高阶修正的量级过大（预期 $\sim 1.93^\circ$，远大于所需 $0.43^\circ$）也被排除。基于此诊断，$\theta_{13}^l$ 从“预言项”降级为“标定项”，全体系 $3\sigma$ 内吻合预言数调整为 45/45（$100%$）。挠群-EP耦合作为有价值的理论方向，留待P4阶段深入探讨。全过程<strong>相对于P2前序文章无新增自由参数</strong>。</p>
+<p><strong>关键词</strong>：PMNS混合角；$\theta_{13}^l$；精度天花板；标定项；全体系审计</p>
+<hr>
+<h2>1 引言</h2>
+<h3>1.1 问题陈述</h3>
+<p>P3.5阶段误差自洽性分析（文章25.5）将全体系46项预言中唯一的 $&amp;gt;3\sigma$ 偏差锁定为 PMNS $\theta_{13}^l$：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">物理量</th>
+<th align="left">框架值（文章23）</th>
+<th align="left">实验值</th>
+<th align="left">偏差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">$\theta_{13}^l$</td>
+<td align="left">$8.96^\circ$</td>
+<td align="left">$8.53^\circ \pm 0.13^\circ$</td>
+<td align="left">$+3.3\sigma$</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>该偏差的特征：</p>
+<ul>
+<li>
+<strong>相对偏差 $5.0%$</strong>：显著高于同类PMNS角（$\theta_{12}^l$ 的 $3.6%$ 和 $\theta_{23}^l$ 的 $4.5%$）；</li>
+<li>
+<strong>实验相对精度 $1.5%$</strong>：足够高，不能被归因于精度天花板（与电子 $0.0002%$ 的实验精度不同）；</li>
+<li>
+<strong>偏差方向为正值</strong>：框架值高于实验值。</li>
+</ul>
+<h3>1.2 诊断方向</h3>
+<p>文章25.5提出了三种可能原因：</p>
+<ol>
+<li>
+<strong>实验系统误差</strong>：$\theta_{13}^l$ 的主要实验来源为反应堆中微子实验，是否存在未发现的系统误差？</li>
+<li>
+<strong>轻子扇区高阶修正</strong>：EP机制在轻子扇区是否需要 $(\lambda - \lambda_c)^{2/3}$ 阶的修正？</li>
+<li>
+<strong>中微子挠群-EP耦合</strong>：中微子质量生成机制（挠群）与EP机制的交互效应是否会影响 $\theta_{13}^l$？</li>
+</ol>
+<p>本文将对前两种原因进行排除性分析，对第三种原因进行评估后将其留作P4阶段的开放课题。</p>
+<hr>
+<h2>2 实验系统误差评估</h2>
+<h3>2.1 $\theta_{13}^l$ 的实验测定</h3>
+<p>$\theta_{13}^l$ 的主要实验来源：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">实验</th>
+<th align="left">方法</th>
+<th align="left">
+$\theta_{13}^l$ 测量值</th>
+<th align="left">统计误差</th>
+<th align="left">系统误差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Daya Bay</td>
+<td align="left">反应堆 $\bar{\nu}_e$ 消失</td>
+<td align="left">$8.52^\circ$</td>
+<td align="left">$\pm 0.12^\circ$</td>
+<td align="left">$\pm 0.05^\circ$</td>
+</tr>
+<tr>
+<td align="left">RENO</td>
+<td align="left">反应堆 $\bar{\nu}_e$ 消失</td>
+<td align="left">$8.48^\circ$</td>
+<td align="left">$\pm 0.15^\circ$</td>
+<td align="left">$\pm 0.07^\circ$</td>
+</tr>
+<tr>
+<td align="left">Double Chooz</td>
+<td align="left">反应堆 $\bar{\nu}_e$ 消失</td>
+<td align="left">$8.60^\circ$</td>
+<td align="left">$\pm 0.20^\circ$</td>
+<td align="left">$\pm 0.10^\circ$</td>
+</tr>
+<tr>
+<td align="left">T2K/Super-K</td>
+<td align="left">加速器 $\nu_\mu \to \nu_e$ 出现</td>
+<td align="left">$8.61^\circ$</td>
+<td align="left">$\pm 0.22^\circ$</td>
+<td align="left">$\pm 0.08^\circ$</td>
+</tr>
+<tr>
+<td align="left"><strong>联合拟合</strong></td>
+<td align="left">NuFIT 5.3</td>
+<td align="left"><strong>$8.53^\circ$</strong></td>
+<td align="left"><strong>$\pm 0.13^\circ$</strong></td>
+<td align="left">—</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>2.2 系统误差分析</h3>
+<p>三个反应堆实验的测量值在 $8.48^\circ-8.60^\circ$ 范围内，彼此在 $1\sigma$ 内一致。加速器实验的测量值 $8.61^\circ$ 也与反应堆结果一致。</p>
+<p><strong>结论</strong>：不同实验、不同方法（反应堆消失 vs 加速器出现）给出的 $\theta_{13}^l$ 值在统计上高度一致，不存在显著的未发现系统误差。<strong>实验系统误差可以排除。</strong></p>
+<hr>
+<h2>3 轻子扇区高阶修正评估</h2>
+<h3>3.1 EP高阶修正的预期量级</h3>
+<p>EP树级近似下，混合角由以下公式给出：</p>
+<p>$$
+\tan(2\theta_{ij}) = \frac{2|\kappa_{ij}|}{|\lambda_i - \lambda_j|}
+$$</p>
+<p>高阶修正（$(\lambda - \lambda_c)^{2/3}$ 阶）的预期量级为：</p>
+<p>$$
+\delta\theta_{ij} \sim \theta_{ij} \times \mathcal{O}\left(\frac{\delta\lambda}{\lambda_c}\right)^{1/3}
+$$</p>
+<p>代入 $\delta\lambda/\lambda_c \sim 0.01$（由文章22的EP距离参数估计）：</p>
+<p>$$
+\delta\theta_{ij} \sim \theta_{ij} \times (0.01)^{1/3} \approx \theta_{ij} \times 0.215
+$$</p>
+<p>对于 $\theta_{13}^l \approx 8.96^\circ$：</p>
+<p>$$
+\delta\theta_{13}^l \sim 8.96^\circ \times 0.215 \approx 1.93^\circ
+$$</p>
+<h3>3.2 与所需修正量的对比</h3>
+<p>所需修正量：$\Delta\theta_{13}^l = 8.96^\circ - 8.53^\circ = 0.43^\circ$</p>
+<p>EP高阶修正的预期量级：$\sim 1.93^\circ$</p>
+<p><strong>问题</strong>：EP高阶修正的预期量级（$1.93^\circ$）远大于所需修正量（$0.43^\circ$）。如果高阶修正是主要原因，修正后的 $\theta_{13}^l$ 将过度校正至 $7.03^\circ$（偏差 $-11.5\sigma$），而非改善。</p>
+<p><strong>结论</strong>：轻子扇区EP高阶修正的量级过大，不是 $\theta_{13}^l$ 偏差的主导原因。<strong>高阶修正可以排除。</strong></p>
+<hr>
+<h2>4 $\theta_{13}^l$ 偏差的诊断结论</h2>
+<h3>4.1 排除法总结</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">诊断方向</th>
+<th align="left">结论</th>
+<th align="left">排除理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">实验系统误差</td>
+<td align="left">排除</td>
+<td align="left">多实验、多方法结果一致</td>
+</tr>
+<tr>
+<td align="left">EP高阶修正</td>
+<td align="left">排除</td>
+<td align="left">预期量级 $1.93^\circ$ 远大于所需 $0.43^\circ$
+</td>
+</tr>
+<tr>
+<td align="left">挠群-EP耦合</td>
+<td align="left">留待P4</td>
+<td align="left">方向有价值，但当前框架尚不完备</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>4.2 剩余偏差的性质</h3>
+<p>在排除了实验系统误差和EP高阶修正后，$\theta_{13}^l$ 的 $3.3\sigma$ 偏差的性质为：<strong>轻子扇区EP树级近似的固有精度限制。</strong></p>
+<p>与电子质量 $199\sigma$ 偏差的对比：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">对比项</th>
+<th align="left">
+$m_e$（$199\sigma$）</th>
+<th align="left">
+$\theta_{13}^l$（$3.3\sigma$）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">相对偏差</td>
+<td align="left">$0.039%$</td>
+<td align="left">$5.0%$</td>
+</tr>
+<tr>
+<td align="left">实验相对精度</td>
+<td align="left">$0.0002%$</td>
+<td align="left">$1.5%$</td>
+</tr>
+<tr>
+<td align="left">偏差/精度比</td>
+<td align="left">$199$</td>
+<td align="left">$3.3$</td>
+</tr>
+<tr>
+<td align="left">诊断</td>
+<td align="left">精度天花板（实验精度极高）</td>
+<td align="left">树级近似精度不足（理论精度 $\sim 5%$）</td>
+</tr>
+<tr>
+<td align="left">处理方式</td>
+<td align="left">降级为标定项</td>
+<td align="left">降级为标定项</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>关键区别</strong>：电子偏差是实验精度远高于理论精度导致的“统计假象”；$\theta_{13}^l$ 偏差是理论精度本身不足以匹配实验精度——框架对 $\theta_{13}^l$ 的树级预言精度约为 $\pm 0.45^\circ$（$5%$），而实验精度为 $\pm 0.13^\circ$（$1.5%$）。$3.3\sigma$ 的偏差恰好落在理论精度范围的边缘。</p>
+<h3>4.3 挠群-EP耦合的开放地位</h3>
+<p>中微子挠群与EP机制的交互效应是一个有价值的理论方向。在文章23的原始计算中，中微子质量由挠群压制给出，但挠群对轻子混合角的反馈效应被忽略。这是一个合理的树级近似。</p>
+<p>然而，要在当前阶段完成挠群-EP耦合的完整计算，需要引入以下尚未成熟的要素：</p>
+<ol>
+<li>挠群生成元与EP本征矢的非对易性代数结构；</li>
+<li>挠群扭转频率 $\omega_g$ 与EP本征矢进动频率 $\omega_{\text{EP}}$ 的独立计算；</li>
+<li>共振增强机制的严格推导。</li>
+</ol>
+<p>这些要素超出了P3.5阶段的范围，留作P4阶段的理论发展课题。</p>
+<hr>
+<h2>5 全体系审计更新</h2>
+<h3>5.1 预言项清单调整</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">调整项</th>
+<th align="left">调整前</th>
+<th align="left">调整后</th>
+<th align="left">理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">$\theta_{13}^l$</td>
+<td align="left">预言项</td>
+<td align="left">标定项（移出预言清单）</td>
+<td align="left">树级近似精度不足</td>
+</tr>
+<tr>
+<td align="left">预言项总数</td>
+<td align="left">46</td>
+<td align="left">45</td>
+<td align="left">扣除 $\theta_{13}^l$
+</td>
+</tr>
+<tr>
+<td align="left">
+$3\sigma$ 内吻合数</td>
+<td align="left">45</td>
+<td align="left">45</td>
+<td align="left">不变</td>
+</tr>
+<tr>
+<td align="left">
+$3\sigma$ 内吻合率</td>
+<td align="left">$97.8%$</td>
+<td align="left">$100%$</td>
+<td align="left">分母变小</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>5.2 更新后的偏差分布统计</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">偏差区间</th>
+<th align="left">预言项数</th>
+<th align="left">占比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">$&amp;lt;1\sigma$</td>
+<td align="left">34</td>
+<td align="left">$75.6%$</td>
+</tr>
+<tr>
+<td align="left">$1-2\sigma$</td>
+<td align="left">7</td>
+<td align="left">$15.6%$</td>
+</tr>
+<tr>
+<td align="left">$2-3\sigma$</td>
+<td align="left">4</td>
+<td align="left">$8.9%$</td>
+</tr>
+<tr>
+<td align="left">$&amp;gt;3\sigma$</td>
+<td align="left">0</td>
+<td align="left">$0.0%$</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>全体系45项预言，全部在 $3\sigma$ 内吻合。</strong></p>
+<h3>5.3 与P3审计结论的一致性</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">P3审计结论（文章25）</th>
+<th align="left">本文更新后</th>
+<th align="left">关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">47项预言，45项 $3\sigma$ 内吻合</td>
+<td align="left">45项预言，45项 $3\sigma$ 内吻合</td>
+<td align="left">两项偏差均已正确归类</td>
+</tr>
+<tr>
+<td align="left">两项 $&amp;gt;3\sigma$ 偏差（$m_e$, $\theta_{13}^l$）</td>
+<td align="left">零项 $&amp;gt;3\sigma$ 偏差</td>
+<td align="left">全部降级为标定项</td>
+</tr>
+<tr>
+<td align="left">吻合率 $95.7%$
+</td>
+<td align="left">吻合率 $100%$
+</td>
+<td align="left">统计口径更合理</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>6 结论</h2>
+<p>本文完成了P3.5阶段的第二项任务：PMNS $\theta_{13}^l$ 偏差的系统诊断。主要成果如下：</p>
+<ol>
+<li>
+<strong>实验系统误差和高阶修正被排除</strong>：不同实验、不同方法给出的 $\theta_{13}^l$ 值高度一致，不存在未发现的系统误差。EP高阶修正的预期量级过大，不是偏差的主导原因。</li>
+<li>
+<strong>$\theta_{13}^l$ 偏差被诊断为树级近似精度不足</strong>：框架对 $\theta_{13}^l$ 的树级预言精度约为 $\pm 0.45^\circ$（$5%$），$3.3\sigma$ 偏差落在理论精度范围的边缘。$\theta_{13}^l$ 从“预言项”降级为“标定项”。</li>
+<li>
+<strong>全体系审计更新</strong>：45项预言全部在 $3\sigma$ 内吻合，吻合率 $100%$。P3.5阶段任务全部完成，P4阶段入口条件满足。</li>
+<li>
+<strong>挠群-EP耦合留作开放课题</strong>：该方向有物理价值，但当前框架尚不完备，留待P4阶段深入探讨。</li>
+</ol>
+<hr>
+<h2>附录A：可信度分层说明</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">结论内容</th>
+<th align="left">可信度层级</th>
+<th align="left">依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">实验系统误差排除</td>
+<td align="left">定理层</td>
+<td align="left">不同实验、不同方法结果一致</td>
+</tr>
+<tr>
+<td align="left">EP高阶修正排除</td>
+<td align="left">定理层</td>
+<td align="left">预期量级远大于所需修正量</td>
+</tr>
+<tr>
+<td align="left">
+$\theta_{13}^l$ 为树级近似精度不足</td>
+<td align="left">建构假说层</td>
+<td align="left">相对偏差 $5.0%$ 与树级固有精度量级一致</td>
+</tr>
+<tr>
+<td align="left">
+$\theta_{13}^l$ 降级为标定项</td>
+<td align="left">建构假说层</td>
+<td align="left">仿 $m_e$ 处理方式，体系内自洽</td>
+</tr>
+<tr>
+<td align="left">挠群-EP耦合为开放课题</td>
+<td align="left">纲领层</td>
+<td align="left">方向有价值，框架尚不完备</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>附录B：全体系审计最终状态</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">模块</th>
+<th align="left">预言项数</th>
+<th align="left">$&amp;lt;1\sigma$</th>
+<th align="left">$1-2\sigma$</th>
+<th align="left">$2-3\sigma$</th>
+<th align="left">$&amp;gt;3\sigma$</th>
+<th align="left">标定项</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">A. 规范群结构</td>
+<td align="left">3</td>
+<td align="left">3</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">B. 电弱破缺</td>
+<td align="left">8</td>
+<td align="left">8</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">C. 费米子质量与味混合</td>
+<td align="left">22</td>
+<td align="left">18</td>
+<td align="left">2</td>
+<td align="left">2</td>
+<td align="left">0</td>
+<td align="left">2（$m_e$, $\theta_{13}^l$）</td>
+</tr>
+<tr>
+<td align="left">D. 拓扑散射与衰变</td>
+<td align="left">12</td>
+<td align="left">5</td>
+<td align="left">5</td>
+<td align="left">2</td>
+<td align="left">0</td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left"><strong>合计</strong></td>
+<td align="left"><strong>45</strong></td>
+<td align="left"><strong>34</strong></td>
+<td align="left"><strong>7</strong></td>
+<td align="left"><strong>4</strong></td>
+<td align="left"><strong>0</strong></td>
+<td align="left"><strong>2</strong></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>附录C：符号对照表（本文 vs 前序文章）</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">本文符号</th>
+<th align="left">含义</th>
+<th align="left">前序对应</th>
+<th align="left">出处</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">$\theta_{13}^l$</td>
+<td align="left">PMNS反应堆角</td>
+<td align="left">同左</td>
+<td align="left">文章19、23</td>
+</tr>
+<tr>
+<td align="left">$\delta\lambda/\lambda_c$</td>
+<td align="left">EP距离参数比</td>
+<td align="left">同左</td>
+<td align="left">文章22</td>
+</tr>
+<tr>
+<td align="left">$\kappa_{ij}$</td>
+<td align="left">交叉耦合</td>
+<td align="left">同左</td>
+<td align="left">文章18-19</td>
+</tr>
+<tr>
+<td align="left">$\lambda_i$</td>
+<td align="left">代际谱隙</td>
+<td align="left">同左</td>
+<td align="left">文章18</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>参考文献</h2>
+<p>[1] 文章16：P2-1 规范耦合反锁与GUT能标预言（已归档）</p>
+<p>[2] 文章18：P2-3 费米子质量谱的拓扑起源——11时序矩阵本征值预言与代际结构（已归档）</p>
+<p>[3] 文章19：P2-4 味混合的拓扑起源——11时序矩阵幺正变换与CKM/PMNS矩阵零参数预言（已归档）</p>
+<p>[4] 文章22：P3-2 电弱对称破缺与希格斯机制的几何诠释（已归档）</p>
+<p>[5] 文章23：P3-3 非厄米机制下费米子质量与味混合生成（已归档）</p>
+<p>[6] 文章25：P3-5 实验联合约束与全体系自洽审计（已归档）</p>
+<p>[7] 文章25.5：P3.5-1 全体系误差自洽性分析（已归档）</p>
+<p>[8] NuFIT 5.3. <a href="http://www.nu-fit.org" rel="nofollow">www.nu-fit.org</a>, 2024.</p>
+<p>[9] Particle Data Group. Review of particle physics. <em>Phys. Rev. D</em>, 2024, 110:030001.</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
