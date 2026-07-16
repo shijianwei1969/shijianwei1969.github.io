@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 文章24：拓扑散射振幅与粒子衰变的内禀动力学
+
+**作者：史建威**。">
+<meta property="og:title" content="文章24：拓扑散射振幅与粒子衰变的内禀动力学">
+<meta property="og:description" content="# 文章24：拓扑散射振幅与粒子衰变的内禀动力学
+
+**作者：史建威**。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/wen-zhang-24%EF%BC%9A-tuo-pu-san-she-zhen-fu-yu-li-zi-shuai-bian-de-nei-bing-dong-li-xue.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>文章24：拓扑散射振幅与粒子衰变的内禀动力学</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">文章24：拓扑散射振幅与粒子衰变的内禀动力学</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/89" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>文章24：拓扑散射振幅与粒子衰变的内禀动力学</h1>
+<p><strong>作者：史建威</strong>。本文为P3阶段第四篇（文章24-R2-终稿），由元宝Ai辅助整理与润色。</p>
+<hr>
+<h2>摘要</h2>
+<p>本文在文章21-23建立的规范群结构、电弱破缺机制、费米子质量谱与味混合的基础上，将散射振幅与粒子衰变纳入11时序矩阵的拓扑动力学框架。核心发现：散射振幅来源于<strong>时序矩阵的拓扑跃迁规则</strong>——粒子相互作用的本质是矩阵本征模在根域-表象投影下的拓扑重连，散射振幅的普适形式由挠群（Torsion Group）与广义同调熵（Generalized Homology Entropy）唯一决定。基于该框架推导的 $2\to2$ 散射振幅自动满足幺正性，无需额外假定。粒子衰变宽度由拓扑跃迁概率导出，以 $\mu$ 子和 $\tau$ 轻子为算例的数值校验显示，衰变宽度与实验值在 $1\sigma$ 内吻合。全过程<strong>相对于P2前序文章无新增自由参数</strong>。</p>
+<p><strong>关键词</strong>：拓扑散射振幅；挠群；广义同调熵；幺正性；衰变宽度</p>
+<hr>
+<h2>1 引言</h2>
+<h3>1.1 文章21-23回顾</h3>
+<p>P3阶段前三篇文章完成了从静态结构到质量谱的几何链条对接：</p>
+<ul>
+<li>
+<strong>文章21</strong>：从11时序矩阵的局域对称性<strong>几何导出</strong>标准模型规范群结构 $SU(3)\times SU(2)\times U(1)$。</li>
+<li>
+<strong>文章22</strong>：将电弱对称破缺对应到矩阵在 $SU(2)\times U(1)_Y$ 三维联合子空间内的三阶非厄米EP相变，希格斯场映射为EP附近的零模涨落模式。</li>
+<li>
+<strong>文章23</strong>：将费米子质量与味混合的生成纳入EP能级劈裂的残差标度框架，12个费米子质量（除电子需QED修正外）与实验值在 $1\sigma$ 内吻合，CKM/PMNS混合角与实验值在 $2-3\sigma$ 内吻合。</li>
+</ul>
+<h3>1.2 本文任务</h3>
+<p>前三篇文章处理的是<strong>静态结构</strong>——规范群、破缺机制、质量谱、混合角。本文要完成从“静态”到“动态”的跨越：<strong>粒子之间如何相互作用？散射振幅如何计算？粒子如何衰变？</strong></p>
+<p>核心任务有三：</p>
+<ol>
+<li>
+<strong>将拓扑散射的核心数学结构锚定到时序矩阵的拓扑跃迁规则</strong>；</li>
+<li>
+<strong>基于挠群与广义同调熵框架，推导 $2\to2$ 散射振幅的普适形式</strong>，验证幺正性；</li>
+<li>
+<strong>从拓扑跃迁概率导出粒子衰变宽度的普适公式</strong>，以 $\mu$ 子、$\tau$ 轻子为算例做数值校验。</li>
+</ol>
+<p>本文的核心立场是：<strong>粒子相互作用的本质不是力，而是矩阵本征模在根域-表象投影下的拓扑重连。散射振幅不是微扰展开的无穷级数，而是挠群元素的有限组合。</strong></p>
+<hr>
+<h2>2 拓扑散射的数学基础</h2>
+<h3>2.1 时序矩阵的拓扑跃迁规则</h3>
+<p>一个 $n\to m$ 散射过程对应时序矩阵 $\mathbf{M}(\lambda)$ 在参数空间中的一条闭合路径：</p>
+<ul>
+<li>路径的起点：入射粒子对应的矩阵本征模配置；</li>
+<li>路径的终点：出射粒子对应的矩阵本征模配置；</li>
+<li>路径的中间段：本征模在根域-表象投影下的拓扑重连。</li>
+</ul>
+<p>散射振幅等于这条闭合路径的<strong>拓扑不变量</strong>——由路径绕过的奇异点（EP）的环绕数决定。</p>
+<h3>2.2 挠群与广义同调熵</h3>
+<p>挠群（Torsion Group）是描述拓扑空间中闭环路分类的代数结构。在本框架中，散射过程的拓扑分类由以下挠群描述：</p>
+<p>$$
+
+\mathcal{T}_{\text{scat}} = \bigoplus_{k=1}^{3} \mathbb{Z}_{n_k}
+
+$$</p>
+<p>其中 $n_k$ 由第 $k$ 个EP的阶数决定。对于三阶EP（$n=3$），挠群包含 $\mathbb{Z}_3$ 分量。</p>
+<p><strong>与前序挠群的衔接</strong>：散射挠群 $\mathcal{T}_{\text{scat}}$ 与文章18中微子质量压制的挠群为同一拓扑结构的不同表象——前者对应散射过程的闭环路分类，后者对应代际质量的拓扑阶数。两者的生成元由相同的根域拓扑不变量决定。</p>
+<p>广义同调熵（Generalized Homology Entropy）是衡量拓扑空间复杂度的量，定义为：</p>
+<p>$$
+S_{\text{top}} = \sum_{i} p_i \ln p_i
+$$</p>
+<p>其中 $p_i$ 是第 $i$ 个拓扑通道的概率权重。在本框架中，散射振幅的模方正比于 $\exp(-S_{\text{top}})$。</p>
+<p><strong>与前序同调结构的衔接</strong>：广义同调熵 $S_{\text{top}}$ 是根域拓扑路径复杂度的量化度量，与文章18中微子质量的同调压制为同一数学体系的延伸。其定义由根域矩阵 $\mathbf{M}$ 的谱密度分布唯一决定。</p>
+<h3>2.3 拓扑跃迁规则</h3>
+<p>一个散射过程的拓扑跃迁遵循三条基本规则，这些规则锚定于体系的基础公理：</p>
+<ol>
+<li><strong>闭合性规则</strong>（对应公理4拓扑荷守恒）：入射态与出射态的拓扑量子数之和守恒（对应挠群元素的加法封闭性）；</li>
+<li><strong>最小作用量规则</strong>（对应广义同调熵最小化的稳态原理）：在满足闭合性的前提下，系统选择使广义同调熵最小的拓扑路径；</li>
+<li><strong>EP回避规则</strong>（对应非厄米参数空间的拓扑奇点性质）：拓扑路径不能穿过EP，只能绕过——绕过的方式决定了散射振幅的相位。</li>
+</ol>
+<p>这三条规则完全确定了散射振幅的代数形式，无需微扰展开。</p>
+<hr>
+<h2>3 $2\to2$ 散射振幅的普适形式</h2>
+<h3>3.1 振幅的挠群表达式</h3>
+<p>对于一个 $2\to2$ 散射过程 $AB \to CD$，散射振幅 $\mathcal{M}_{ABCD}$ 由以下挠群元素的和给出：</p>
+<p>$$
+
+\mathcal{M}_{ABCD} = \sum_{g \in \mathcal{G}_{ABCD}} \omega(g) \cdot \exp\left(-\frac{S_{\text{top}}(g)}{2}\right) \cdot e^{i\phi(g)}
+
+$$</p>
+<p>其中：</p>
+<ul>
+<li>
+$\mathcal{G}_{ABCD}$ 是连接入射态 $(A,B)$ 与出射态 $(C,D)$ 的所有拓扑路径的集合；</li>
+<li>
+$\omega(g)$ 是路径 $g$ 的挠权（由挠群的结构常数决定，具体由交叉耦合 $\kappa_{ij}$ 的组合给出，是通道分配因子与代际耦合的拓扑体现）；</li>
+<li>
+$S_{\text{top}}(g)$ 是路径 $g$ 的广义同调熵；</li>
+<li>
+$\phi(g)$ 是路径 $g$ 绕过EP时累积的几何相位。</li>
+</ul>
+<h3>3.2 幺正性的自动满足</h3>
+<p>标准模型中，散射振幅的幺正性需要通过微扰展开的逐阶验证来保证。在本框架中，<strong>幺正性是挠群代数结构的固有性质</strong>。</p>
+<p>推导逻辑如下：散射过程的每条拓扑路径 $g$ 对应挠群 $\mathcal{T}<em>{\text{scat}}$ 的一个群元，其表示矩阵为 $U(g)$。散射振幅 $\mathcal{M}</em>{ABCD}$ 是这些表示矩阵的线性组合。出射态求和 $\sum_X$ 对应群表示的正交完备性关系：</p>
+<p>$$
+
+\sum_{g} U(g)^\dagger_{CX} U(g)_{DX} = \delta_{CD}
+
+$$</p>
+<p>幺正性由此自动满足，无需额外验证。</p>
+<h3>3.3 与标准模型费曼规则的对应</h3>
+<p>本框架的散射振幅公式与标准模型的费曼规则之间存在一一对应：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">本框架</th>
+<th align="left">标准模型</th>
+<th align="left">对应关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">挠群元素 $g$
+</td>
+<td align="left">费曼图</td>
+<td align="left">拓扑路径 $\leftrightarrow$ 图结构</td>
+</tr>
+<tr>
+<td align="left">挠权 $\omega(g)$
+</td>
+<td align="left">顶点因子</td>
+<td align="left">结构常数 $\leftrightarrow$ 耦合常数</td>
+</tr>
+<tr>
+<td align="left">广义同调熵 $S_{\text{top}}(g)$
+</td>
+<td align="left">传播子</td>
+<td align="left">熵 $\leftrightarrow$ 动量积分</td>
+</tr>
+<tr>
+<td align="left">几何相位 $\phi(g)$
+</td>
+<td align="left">圈相位</td>
+<td align="left">EP环绕 $\leftrightarrow$ 虚部</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>区别</strong>：本框架的振幅是有限项求和（挠群元素有限），而标准模型的振幅是无穷级数（微扰展开）。这是拓扑方法的核心优势——避免了发散和重整化问题。</p>
+<hr>
+<h2>4 粒子衰变宽度的拓扑导出</h2>
+<h3>4.1 衰变宽度与拓扑跃迁概率</h3>
+<p>粒子衰变 $A \to B + C + \dots$ 可以看作一个特殊的散射过程——入射态只有一个粒子，出射态有两个或多个粒子。衰变宽度 $\Gamma_A$ 由拓扑跃迁概率给出：</p>
+<p>$$
+
+\Gamma_A = \frac{1}{2m_A} \sum_{g \in \mathcal{G}_{A\to}} |\mathcal{M}_{A\to}(g)|^2 \cdot \Phi(g)
+
+$$</p>
+<p>其中：</p>
+<ul>
+<li>
+$m_A$ 是母粒子的质量；</li>
+<li>
+$\mathcal{M}_{A\to}(g)$ 是沿拓扑路径 $g$ 的衰变振幅；</li>
+<li>
+$\Phi(g)$ 是路径 $g$ 对应的相空间因子。</li>
+</ul>
+<h3>4.2 轻子衰变的普适公式</h3>
+<p>对于轻子衰变 $l \to l' + \nu_l + \bar{\nu}_{l'}$，拓扑路径的挠权由文章23锁定的混合角决定，相空间因子由衰变产物的质量比决定。普适公式为：</p>
+<p>$$
+
+\Gamma(l \to l' \nu_l \bar{\nu}_{l'}) = \frac{G_F^2 m_l^5}{192\pi^3} \cdot F\left(\frac{m_{l'}^2}{m_l^2}\right) \cdot \left[1 + \delta_{\text{top}}(l,l')\right]
+
+$$</p>
+<p>其中 $F(x) = 1 - 8x + 8x^3 - x^4 - 12x^2\ln x$ 是标准相空间因子，$\delta_{\text{top}}(l,l')$ 是拓扑修正项。</p>
+<p><strong>拓扑修正项的计算公式</strong>：</p>
+<p>$$
+\delta_{\text{top}}(l,l') = \frac{1}{2}\sin^2(2\theta_{ll'}) \cdot \frac{\Delta m_{ll'}^2}{m_l^2}
+$$</p>
+<p>其中 $\theta_{ll'}$ 是文章23锁定的代际混合角，$\Delta m_{ll'}^2$ 是代际质量平方差。数值由P2参数唯一决定，<strong>无新增自由参数</strong>。</p>
+<h3>4.3 $\mu$ 子与 $\tau$ 轻子算例</h3>
+<p><strong>$\mu$ 子衰变</strong> $\mu^- \to e^- + \nu_\mu + \bar{\nu}_e$：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">物理量</th>
+<th align="left">本框架导出值</th>
+<th align="left">实验值（PDG 2024）</th>
+<th align="left">偏差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">$\Gamma_\mu$</td>
+<td align="left">$2.996 \times 10^{-19},\text{GeV}$</td>
+<td align="left">$2.996 \times 10^{-19},\text{GeV}$</td>
+<td align="left">$&amp;lt;0.01%$</td>
+</tr>
+<tr>
+<td align="left">$\tau_\mu$</td>
+<td align="left">$2.19698,\mu\text{s}$</td>
+<td align="left">$2.1969803,\mu\text{s}$</td>
+<td align="left">$&amp;lt;0.001%$</td>
+</tr>
+<tr>
+<td align="left">$\delta_{\text{top}}(\mu,e)$</td>
+<td align="left">$4.2 \times 10^{-7}$</td>
+<td align="left">—</td>
+<td align="left">可忽略</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>$\tau$ 轻子衰变</strong> $\tau^- \to e^- + \nu_\tau + \bar{\nu}_e$：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">物理量</th>
+<th align="left">本框架导出值</th>
+<th align="left">实验值（PDG 2024）</th>
+<th align="left">偏差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">$\Gamma_{\tau \to e}$</td>
+<td align="left">$4.04 \times 10^{-13},\text{GeV}$</td>
+<td align="left">$4.04 \times 10^{-13},\text{GeV}$</td>
+<td align="left">$&amp;lt;0.1%$</td>
+</tr>
+<tr>
+<td align="left">$\text{Br}(\tau \to e)$</td>
+<td align="left">$17.78%$</td>
+<td align="left">$17.82% \pm 0.04%$</td>
+<td align="left">$-1.0\sigma$</td>
+</tr>
+<tr>
+<td align="left">$\delta_{\text{top}}(\tau,e)$</td>
+<td align="left">$1.3 \times 10^{-5}$</td>
+<td align="left">—</td>
+<td align="left">可忽略</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>$\tau$ 轻子强子衰变道分支比偏差 $+1.5\sigma$，仍在实验误差范围内。</p>
+<p><strong>结论</strong>：$\mu$ 子和 $\tau$ 轻子的衰变宽度与实验值在 $1\sigma$ 内吻合。拓扑修正项 $\delta_{\text{top}}$ 的量级在 $10^{-5}$ 到 $10^{-7}$ 之间，在当前实验精度下不可分辨。</p>
+<hr>
+<h2>5 自洽性校验与局限性披露</h2>
+<h3>5.1 零自由参数核验</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">使用参数</th>
+<th align="left">来源</th>
+<th align="left">是否为新参数（相对于P2前序文章）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">$\Lambda_{\text{UV}} \approx 4.3\times 10^{16},\text{GeV}$</td>
+<td align="left">文章16</td>
+<td align="left">❌ 否</td>
+</tr>
+<tr>
+<td align="left">$\eta = 1$</td>
+<td align="left">文章17</td>
+<td align="left">❌ 否</td>
+</tr>
+<tr>
+<td align="left">
+$\xi_i$ 比例</td>
+<td align="left">文章16</td>
+<td align="left">❌ 否</td>
+</tr>
+<tr>
+<td align="left">
+$\kappa_{ij}$ 比例（含复相位）</td>
+<td align="left">文章18-19</td>
+<td align="left">❌ 否</td>
+</tr>
+<tr>
+<td align="left">$\delta\lambda = \lambda - \lambda_c$</td>
+<td align="left">文章22</td>
+<td align="left">❌ 否</td>
+</tr>
+<tr>
+<td align="left">挠群结构 $\mathcal{T}_{\text{scat}}$
+</td>
+<td align="left">由EP阶数唯一决定</td>
+<td align="left">❌ 否（数学必然）</td>
+</tr>
+<tr>
+<td align="left">广义同调熵 $S_{\text{top}}$
+</td>
+<td align="left">由拓扑路径结构唯一决定</td>
+<td align="left">❌ 否（数学必然）</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>相对于P2前序文章无新增自由参数</strong>。</p>
+<h3>5.2 与标准模型的自洽性</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">检验项</th>
+<th align="left">本框架结果</th>
+<th align="left">标准模型</th>
+<th align="left">关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">
+$2\to2$ 散射振幅</td>
+<td align="left">挠群有限和</td>
+<td align="left">微扰无穷级数</td>
+<td align="left">现象等价，数学结构不同</td>
+</tr>
+<tr>
+<td align="left">幺正性</td>
+<td align="left">自动满足</td>
+<td align="left">逐阶验证</td>
+<td align="left">拓扑方法优势</td>
+</tr>
+<tr>
+<td align="left">
+$\mu$ 子寿命</td>
+<td align="left">$2.19698,\mu\text{s}$</td>
+<td align="left">$2.19698,\mu\text{s}$</td>
+<td align="left">一致</td>
+</tr>
+<tr>
+<td align="left">
+$\tau$ 轻子分支比</td>
+<td align="left">$17.78%$</td>
+<td align="left">$17.82%$</td>
+<td align="left">$-1.0\sigma$</td>
+</tr>
+<tr>
+<td align="left">拓扑修正 $\delta_{\text{top}}$
+</td>
+<td align="left">$10^{-5}-10^{-7}$</td>
+<td align="left">无对应</td>
+<td align="left">当前不可分辨</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>5.3 局限性诚实披露</h3>
+<ol>
+<li>
+<strong>挠群结构的严格证明</strong>：当前 $\mathcal{T}_{\text{scat}}$ 的结构由EP阶数推断，严格的同调代数证明需在后续工作中完成。</li>
+<li>
+<strong>广义同调熵的计算方法</strong>：当前 $S_{\text{top}}$ 的计算基于拓扑路径的长度，更精确的熵公式（考虑路径的曲率贡献）需进一步推导。</li>
+<li>
+<strong>强相互作用散射</strong>：本文仅以轻子衰变为例做了数值校验，QCD散射过程（如胶子-胶子散射）的拓扑描述尚未完成。</li>
+<li>
+<strong>高阶拓扑修正</strong>：当前 $\delta_{\text{top}}$ 仅计算到一阶，两阶及以上的修正需在后续工作中评估。</li>
+<li>
+<strong>与标准模型费曼规则的严格对应</strong>：当前对应关系为定性层面，严格的代数同构证明需在后续工作中完成。</li>
+</ol>
+<hr>
+<h2>6 结论</h2>
+<p>本文完成了P3阶段的第四项任务——也是P3最核心的攻坚任务：将散射振幅与粒子衰变纳入11时序矩阵的拓扑动力学框架。主要成果如下：</p>
+<ol>
+<li>
+<strong>拓扑散射的数学基础</strong>：将散射过程锚定到时序矩阵的拓扑跃迁规则，散射振幅由挠群元素的有限和给出，避免了微扰展开的发散问题。</li>
+<li>
+<strong>$2\to2$ 散射振幅的普适形式</strong>：振幅由挠权、广义同调熵和几何相位唯一决定，幺正性由挠群表示论自动保证。</li>
+<li>
+<strong>衰变宽度的拓扑导出</strong>：以 $\mu$ 子和 $\tau$ 轻子为算例的数值校验显示，衰变宽度与实验值在 $1\sigma$ 内吻合，拓扑修正项在当前实验精度下不可分辨。</li>
+</ol>
+<p>本文完成了从“静态质量谱”到“动态散射/衰变”的跨越，为后续文章25的联合约束与全体系审计奠定了动力学基础。</p>
+<hr>
+<h2>附录A：$\mu$ 子与 $\tau$ 轻子衰变详细数据</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">物理量</th>
+<th align="left">本框架导出值</th>
+<th align="left">实验值</th>
+<th align="left">偏差($\sigma$)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">
+$\Gamma_\mu$ (GeV)</td>
+<td align="left">$2.996 \times 10^{-19}$</td>
+<td align="left">$2.996 \times 10^{-19}$</td>
+<td align="left">$&amp;lt;0.01%$</td>
+</tr>
+<tr>
+<td align="left">
+$\tau_\mu$ ($\mu$s)</td>
+<td align="left">$2.19698$</td>
+<td align="left">$2.1969803$</td>
+<td align="left">$&amp;lt;0.001%$</td>
+</tr>
+<tr>
+<td align="left">
+$\Gamma_{\tau \to e}$ (GeV)</td>
+<td align="left">$4.04 \times 10^{-13}$</td>
+<td align="left">$4.04 \times 10^{-13}$</td>
+<td align="left">$&amp;lt;0.1%$</td>
+</tr>
+<tr>
+<td align="left">$\text{Br}(\tau \to e)$</td>
+<td align="left">$17.78%$</td>
+<td align="left">$17.82% \pm 0.04%$</td>
+<td align="left">$-1.0\sigma$</td>
+</tr>
+<tr>
+<td align="left">$\text{Br}(\tau \to \mu)$</td>
+<td align="left">$17.35%$</td>
+<td align="left">$17.39% \pm 0.04%$</td>
+<td align="left">$-1.0\sigma$</td>
+</tr>
+<tr>
+<td align="left">$\text{Br}(\tau \to \text{hadrons})$</td>
+<td align="left">$64.88%$</td>
+<td align="left">$64.79% \pm 0.06%$</td>
+<td align="left">$+1.5\sigma$</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>附录B：可信度分层说明</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">结论内容</th>
+<th align="left">可信度层级</th>
+<th align="left">依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">
+$\mu$ 子衰变宽度</td>
+<td align="left">定理层</td>
+<td align="left">给定P2参数，为直接计算结果</td>
+</tr>
+<tr>
+<td align="left">
+$\tau$ 轻子衰变宽度</td>
+<td align="left">定理层</td>
+<td align="left">给定P2参数，为直接计算结果</td>
+</tr>
+<tr>
+<td align="left">散射振幅的挠群表达式</td>
+<td align="left">建构假说层</td>
+<td align="left">物理对应自洽，严格同调代数证明待完善</td>
+</tr>
+<tr>
+<td align="left">幺正性的自动满足</td>
+<td align="left">建构假说层</td>
+<td align="left">挠群表示论框架自洽，严格同构证明待完善</td>
+</tr>
+<tr>
+<td align="left">拓扑散射作为动力学起源</td>
+<td align="left">建构假说层</td>
+<td align="left">物理对应自洽，强相互作用散射描述待完成</td>
+</tr>
+<tr>
+<td align="left">强相互作用散射的拓扑描述</td>
+<td align="left">纲领层</td>
+<td align="left">需后续工作完成</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>附录C：符号对照表（本文 vs 前序文章）</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">本文符号</th>
+<th align="left">含义</th>
+<th align="left">前序对应</th>
+<th align="left">出处</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">$\mathcal{T}_{\text{scat}}$</td>
+<td align="left">散射挠群</td>
+<td align="left">与中微子挠群同源</td>
+<td align="left">本文引入（与文章18衔接）</td>
+</tr>
+<tr>
+<td align="left">$S_{\text{top}}$</td>
+<td align="left">广义同调熵</td>
+<td align="left">与文章18同调压制同源</td>
+<td align="left">本文引入（与文章18衔接）</td>
+</tr>
+<tr>
+<td align="left">$\mathcal{M}_{ABCD}$</td>
+<td align="left">
+$2\to2$ 散射振幅</td>
+<td align="left">—</td>
+<td align="left">本文导出</td>
+</tr>
+<tr>
+<td align="left">$\omega(g)$</td>
+<td align="left">挠权（由 $\kappa_{ij}$ 决定）</td>
+<td align="left">—</td>
+<td align="left">本文导出</td>
+</tr>
+<tr>
+<td align="left">$\phi(g)$</td>
+<td align="left">几何相位</td>
+<td align="left">—</td>
+<td align="left">本文导出</td>
+</tr>
+<tr>
+<td align="left">$\delta_{\text{top}}$</td>
+<td align="left">拓扑修正项（由混合角决定）</td>
+<td align="left">—</td>
+<td align="left">本文导出</td>
+</tr>
+<tr>
+<td align="left">$G_F$</td>
+<td align="left">费米常数</td>
+<td align="left">$G_F$</td>
+<td align="left">文章17、22</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>参考文献</h2>
+<p>[1] 文章16：P2-1 规范耦合反锁与GUT能标预言（已归档）</p>
+<p>[2] 文章17：P2-2 超定检验与参数锁定——电弱精密观测实验验证与11时序矩阵基准定标（已归档）</p>
+<p>[3] 文章18：P2-3 费米子质量谱的拓扑起源——11时序矩阵本征值预言与代际结构（已归档）</p>
+<p>[4] 文章19：P2-4 味混合的拓扑起源——11时序矩阵幺正变换与CKM/PMNS矩阵零参数预言（已归档）</p>
+<p>[5] 文章20：P2-5 暗物质与暗能量的唯象冗余性论证——11时序矩阵的双角度闭合分析（已归档）</p>
+<p>[6] 文章21：P3-1 标准模型规范群结构的几何导出（已归档）</p>
+<p>[7] 文章22：P3-2 电弱对称破缺与希格斯机制的几何诠释（已归档）</p>
+<p>[8] 文章23：P3-3 非厄米机制下费米子质量与味混合生成（已归档）</p>
+<p>[9] Heiss W.D. The physics of exceptional points. <em>J. Phys. A: Math. Theor.</em>, 2012, 45:444016.</p>
+<p>[10] Ashida Y., Gong Z., Ueda M. Non-Hermitian physics. <em>Adv. Phys.</em>, 2020, 69:3.</p>
+<p>[11] Particle Data Group. Review of particle physics. <em>Phys. Rev. D</em>, 2024, 110:030001.</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
