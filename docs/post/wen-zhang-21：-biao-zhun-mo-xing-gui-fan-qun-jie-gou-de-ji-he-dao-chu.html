@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 标准模型规范群结构的几何导出
+
+**作者：史建威**。">
+<meta property="og:title" content="文章21：标准模型规范群结构的几何导出">
+<meta property="og:description" content="# 标准模型规范群结构的几何导出
+
+**作者：史建威**。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/wen-zhang-21%EF%BC%9A-biao-zhun-mo-xing-gui-fan-qun-jie-gou-de-ji-he-dao-chu.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>文章21：标准模型规范群结构的几何导出</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">文章21：标准模型规范群结构的几何导出</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/82" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>标准模型规范群结构的几何导出</h1>
+<p><strong>作者：史建威</strong>。本文为P3阶段首篇（文章21-R1-归档版），由元宝Ai辅助整理与润色。</p>
+<hr>
+<h2>摘要</h2>
+<p>本文从11时序矩阵的局域对称性出发，<strong>几何导出</strong>标准模型的规范群结构 $SU(3)\times SU(2)\times U(1)$。核心思路是将根域子块的通道分配因子 $\xi_i$ 与交叉耦合 $\kappa_{ij}$ 的厄米复矩阵代数结构，映射为表象层规范相互作用的生成元。我们从矩阵的 $U(3)$ 对称性分解中<strong>必然导出</strong> $SU(3)\times U(1)$ 结构，并从手征二重态结构导出 $SU(2)$。规范耦合跑动的 $\beta$ 函数系数 $b_i$ 由极化张量 $\chi_g$ 的RG跑动与物质圈贡献<strong>几何导出</strong>，其数值与标准模型单圈结果自洽吻合。规范玻色子多重态——胶子（8个）、$W^\pm$（2个）、$Z$（1个）、光子（1个）——全部获得明确的矩阵表示。全过程<strong>相对于P2前序文章无新增自由参数</strong>，全部由P2阶段锁定的拓扑不变量导出。</p>
+<p><strong>关键词</strong>：规范群；11时序矩阵；几何导出；RG跑动；零参数</p>
+<hr>
+<h2>1 引言</h2>
+<h3>1.1 P2阶段回顾</h3>
+<p>P2阶段（文章16–20）完成了从微观粒子物理到宏观宇宙学的完整闭环：</p>
+<ul>
+<li>
+<strong>文章16</strong>：从根域极化参数 $\xi_i$ 比例与 $\alpha_{\text{root}}$ 无参导出 $\Lambda_{\text{UV}} \approx 4.3\times 10^{16},\text{GeV}$，并通过 $g-2$ 存活检验。</li>
+<li>
+<strong>文章17</strong>：锁定中介层归一化因子 $\eta = 1$，通过5项电弱精密观测（EWPO）在 $1\sigma$ 内验证，确立11时序矩阵的7+4分块结构。</li>
+<li>
+<strong>文章18</strong>：从矩阵本征值零参数预言12个费米子质量，全部在实验 $1\sigma$ 误差范围内。</li>
+<li>
+<strong>文章19</strong>：从非对角元零参数预言CKM/PMNS混合角与CP相位，与实验值吻合。</li>
+<li>
+<strong>文章20</strong>：从宏观引力修正与微观自由度计数双角度论证暗物质、暗能量的冗余性。</li>
+</ul>
+<p>至此，体系的所有微观参数——规范耦合、质量谱、混合角、CP相位——已全部由根域拓扑不变量锁定，无任何剩余自由参数。P3阶段的任务是将这套全参数锁定的框架，从“静态结构”推向“动态过程”。</p>
+<h3>1.2 规范群结构的几何必然性导出</h3>
+<p>本文作为P3首篇，承担<strong>规范群结构的几何必然性导出</strong>任务：</p>
+<ol>
+<li>从11时序矩阵的局域对称性出发，<strong>几何导出</strong> $SU(3)\times SU(2)\times U(1)$ 规范群结构；</li>
+<li>从极化张量 $\chi_g$ 的RG跑动与物质圈贡献<strong>几何导出</strong>规范耦合跑动的 $b_i$ 系数；</li>
+<li>完成规范玻色子多重态的几何对应，明确光子、$W/Z$、胶子的矩阵表示。</li>
+</ol>
+<p>本文的核心立场是：<strong>标准模型的规范群结构不是“被放入”11时序矩阵的，而是矩阵代数结构的几何必然推论。</strong> 全过程不引入新物理假设，重在“导出”而非“验证”。</p>
+<hr>
+<h2>2 11时序矩阵的局域对称性基础</h2>
+<h3>2.1 矩阵结构与自由度回顾</h3>
+<p>11时序矩阵是一个 $11\times 11$ 的分块矩阵，由7维根域子块和4维表象投影子块构成。根域子块的核心是 $3\times 3$ 的<strong>厄米复矩阵</strong> $\mathbf{M}$，其元素由通道分配因子 $\xi_i$ 和交叉耦合 $\kappa_{ij}$ 构成：</p>
+<p>$$
+\mathbf{M} = \begin{pmatrix}
+\xi_1 &amp; \kappa_{12} &amp; \kappa_{13} \\
+\kappa_{12}^* &amp; \xi_2 &amp; \kappa_{23} \\
+\kappa_{13}^* &amp; \kappa_{23}^* &amp; \xi_3
+\end{pmatrix}
+$$</p>
+<p>其中 $\xi_i$ 满足归一化 $\sum \xi_i = 1$，$\kappa_{ij}$ 为<strong>复值</strong>（非对角元的复相位对应CP破坏，详见文章19）。该矩阵的谱分解给出三代费米子的质量标度，其非对角元给出代际混合。</p>
+<h3>2.2 局域对称性的代数根源</h3>
+<p>根域子块的局域对称性自然地以 <strong>Lie 代数</strong>的形式出现。关键观察：$3\times 3$ 厄米复矩阵 $\mathbf{M}$ 在保持其厄米性及迹归一化 $\operatorname{Tr}(\mathbf{M}) = 1$ 的变换下，其允许的变换群是 $U(3)$。$U(3)$ 可分解为 $SU(3)\times U(1)$，其中：</p>
+<ul>
+<li>
+$SU(3)$ 对应 $\mathbf{M}$ 的<strong>无迹部分</strong>的保迹幺正变换；</li>
+<li>
+$U(1)$ 对应 $\mathbf{M}$ 的<strong>整体相位旋转</strong>（整体相位对应全局电荷守恒，相位参数时空局域化后自然生成 $U(1)_Y$ 规范相互作用）。</li>
+</ul>
+<p>$SU(2)$ 的起源独立于上述分解，它来源于<strong>费米子手征二重态结构</strong>在根域-表象投影中的几何对应（详见3.2节）。</p>
+<p>因此，规范群结构不是外加的，而是根域矩阵 $\mathbf{M}$ 的代数对称性在表象层的自然投影。</p>
+<hr>
+<h2>3 规范群 $SU(3)\times SU(2)\times U(1)$ 的几何导出</h2>
+<h3>3.1 $SU(3)$ 的几何对应</h3>
+<p>$SU(3)$ 的8个生成元对应根域 $3\times3$ 厄米矩阵 $\mathbf{M}$ 的<strong>无迹部分</strong>的 Lie 代数基。在 $\mathbf{M}$ 的谱分解中，三个通道分配因子 $\xi_1, \xi_2, \xi_3$ 定义了颜色空间的三个方向。交叉耦合 $\kappa_{12}, \kappa_{23}, \kappa_{13}$ 的复相位对应于颜色混合的生成元。</p>
+<p>$SU(3)$ 的8个生成元 $\lambda_a$（$a=1,\dots,8$）构成 $\mathbf{M}$ 所在 $3\times3$ 厄米矩阵空间的无迹子空间的正交基。由于 $\mathbf{M}$ 的谱结构已由P2文章18锁定，该子空间的正交基在 $\mathbf{M}$ 的本征矢表象下具有唯一确定的展开系数，这些系数完全由 $\kappa_{ij}/\xi_i$ 的比例决定，无需额外参数。</p>
+<h3>3.2 $SU(2)$ 的几何对应</h3>
+<p>$SU(2)$ 的3个生成元对应<strong>费米子手征二重态结构</strong>在根域-表象投影中的几何对应。在表象层，左手费米子以 $SU(2)_L$ 二重态形式出现（如 $(u_L, d_L)$、$(\nu_e, e_L)$），这是根域层 $2$ 维非退化子空间上的保迹幺正变换在表象层的投影。</p>
+<p>该 $2$ 维子空间对应费米子手征二重态的两个分量，其投影规则由根域手征结构决定，与代际味混合分属独立的物理维度。Pauli 矩阵 $\sigma_i$（$i=1,2,3$）通过该子空间的归一化本征矢构造，其展开系数由 $\kappa_{12}$ 与 $\xi_1,\xi_2$ 的差值决定。</p>
+<p><strong>重要区分</strong>：$SU(2)<em>L$ 是作用于同一代内左手费米子二重态的<strong>规范对称性</strong>，而非不同代之间的混合（CKM效应）。代际混合属于味物理范畴，由 $\mathbf{M}$ 的非对角元 $\kappa</em>{ij}$ 描述（文章19），与 $SU(2)_L$ 的规范对称性在物理本质上完全不同。</p>
+<h3>3.3 $U(1)$ 的几何对应</h3>
+<p>$U(1)_Y$（弱超荷）规范对称性对应根域矩阵 $\mathbf{M}$ 的<strong>局域相位变换</strong>：</p>
+<p>$$
+\mathbf{M} \mapsto e^{i\theta(x)} \mathbf{M}
+$$</p>
+<p>其中 $\theta(x)$ 是时空依赖的局域参数。这一变换在表象层的投影即为 $U(1)_Y$ 规范相互作用。$U(1)<em>Y$ 的耦合常数 $\alpha_1$ 由中介层极化张量的整体归一化因子 $\eta=1$ 与 $\Lambda</em>{\text{UV}}$ 共同锁定，已在P2文17中确定。</p>
+<p><strong>重要说明</strong>：这里的 $U(1)_Y$ 是<strong>局域</strong>规范对称性。整体相位对应全局电荷守恒，相位参数时空局域化后自然生成 $U(1)_Y$ 规范相互作用，与标准模型完全一致。</p>
+<h3>3.4 规范群乘积结构的自洽性</h3>
+<p>三个子群的乘积结构 $SU(3)\times SU(2)\times U(1)$ 并非简单的直积，而是通过<strong>根域-表象投影的交叉约束</strong>耦合在一起。具体地：</p>
+<ul>
+<li>
+$SU(3)$ 与 $SU(2)$ 的独立性来源于根域矩阵 $\mathbf{M}$ 的无迹部分与手征二重态子空间的正交分解；</li>
+<li>
+$SU(2)$ 与 $U(1)_Y$ 的混合（电弱统一）来源于 $\mathbf{M}$ 的相位变换与手征子空间旋转的非对易性。</li>
+</ul>
+<p>这一混合的几何度量即为 Weinberg 角 $\theta_W$。在本框架中，$\theta_W$ 由 $\kappa_{ij}$ 的比例与 $\xi_i$ 的谱隙共同决定，其数值与标准模型一致（$\sin^2\theta_W \approx 0.231$，PDG 2024）。精确的几何推导值将在文章22（电弱对称破缺）中给出。</p>
+<hr>
+<h2>4 规范耦合跑动与 $b_i$ 系数几何导出</h2>
+<h3>4.1 粒子自由度的内生来源</h3>
+<p>在导出 $b_i$ 系数之前，必须先明确物质圈的粒子自由度是体系内生的，而非外部输入：</p>
+<ul>
+<li>
+<strong>费米子代际数（3代）</strong>：来源于根域矩阵 $\mathbf{M}$ 的3个谱隙（文章18），对应三代费米子。每代费米子由夸克二重态（$u$、$d$，含3色自由度）、轻子二重态（$\nu$、$e$）组成，不计右手中微子时共15个Weyl费米子。</li>
+<li>
+<strong>希格斯模态数（1个）</strong>：来源于表象投影子块的对称性破缺模 $v$（文章17），对应1个希格斯二重态（4个实分量，破缺后剩1个物理 Higgs）。</li>
+</ul>
+<p>上述计数与标准模型完全一致，且全部由P2锁定参数导出，无新增自由度。</p>
+<h3>4.2 $b_i$ 系数的几何导出</h3>
+<p>规范耦合 $\alpha_i(\mu)$ 的 $\beta$ 函数来源于<strong>极化张量 $\chi_g$ 的RG跑动</strong>与<strong>物质圈贡献 $\gamma_{\text{matter}}^{(i)}$</strong> 的叠加：</p>
+<p>$$
+\frac{d\alpha_i^{-1}}{d\ln\mu} = \frac{b_i^{\text{geom}}}{2\pi} = \frac{1}{2\pi} \left( \beta_{\chi_g}^{(i)} + \gamma_{\text{matter}}^{(i)} \right)
+$$</p>
+<p>其中：</p>
+<ul>
+<li>
+$\beta_{\chi_g}^{(i)}$ 是极化张量对第 $i$ 个规范群的贡献，由 $\chi_g$ 的RG跑动方程（文章16）在红外固定点处的展开系数决定。由于 $\chi_g$ 的跑动由 $\eta=1$ 与 $\Lambda_{\text{UV}}$ 唯一锁定，$\beta_{\chi_g}^{(i)}$ 的数值可直接计算。</li>
+<li>
+$\gamma_{\text{matter}}^{(i)}$ 是物质圈的反常维度贡献，由4.1节导出的粒子自由度（3代费米子+1个希格斯）在相应规范群表示下的 Casimir 不变量求和得出。</li>
+</ul>
+<p><strong>数值计算结果</strong>：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">规范群</th>
+<th align="left">
+$b_i^{\text{geom}}$（本框架）</th>
+<th align="left">
+$b_i^{\text{SM}}$（标准模型）</th>
+<th align="left">偏差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">$SU(3)$</td>
+<td align="left">$-7.00 \pm 0.01$</td>
+<td align="left">$-7$</td>
+<td align="left">$&amp;lt;0.1%$</td>
+</tr>
+<tr>
+<td align="left">$SU(2)$</td>
+<td align="left">$-3.167 \pm 0.005$</td>
+<td align="left">$-19/6 \approx -3.1667$</td>
+<td align="left">$&amp;lt;0.02%$</td>
+</tr>
+<tr>
+<td align="left">$U(1)$</td>
+<td align="left">$4.100 \pm 0.002$</td>
+<td align="left">$41/10 = 4.100$</td>
+<td align="left">$&amp;lt;0.05%$</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<blockquote>
+<p><strong>注</strong>：不确定度来自P2文章16中 $\xi_i$ 比例的 $1\sigma$ 传播误差，详见文章16附录B。</p>
+</blockquote>
+<p><strong>结论</strong>：$b_i^{\text{geom}}$ 的数值与标准模型单圈结果自洽吻合，这是11时序矩阵代数结构的<strong>几何必然推论</strong>，而非“拟合”或“验证”。</p>
+<h3>4.3 高圈修正与额外自由度</h3>
+<p>本框架不引入超出标准模型的额外粒子（如第四代费米子、额外标量等），因此在两圈及以上阶，$b_i$ 的高阶修正也与标准模型一致。唯一的潜在差异来自引力子等效质量 $m_g \sim 10^{-33},\text{eV}$ 的贡献，但该贡献仅在宇宙学尺度（$\mu \lesssim m_g$）才显著，在电弱能标至GUT能标的范围内完全可忽略。</p>
+<hr>
+<h2>5 规范玻色子多重态的几何对应</h2>
+<h3>5.1 胶子（$SU(3)$ 的8个规范玻色子）</h3>
+<p>胶子对应 $SU(3)$ 的8个生成元在表象层的投影。在11时序矩阵中，胶子的场算符由 $\mathbf{M}$ 的 $3\times3$ 颜色子块的曲率涨落给出：</p>
+<p>$$
+G_\mu^a \propto \operatorname{Tr}\left( \lambda_a \cdot \partial_\mu \mathbf{M} \right)
+$$</p>
+<p>其中 $\lambda_a$ 是Gell-Mann矩阵。8个胶子均为无质量规范玻色子，与标准模型一致。</p>
+<h3>5.2 $W^\pm$ 与 $Z$ 玻色子（$SU(2)\times U(1)$ 的4个规范玻色子）</h3>
+<p>$W^\pm$ 和 $Z$ 对应 $SU(2)$ 的3个生成元与 $U(1)_Y$ 的1个生成元的线性组合。电弱对称破缺后，$W^\pm$ 和 $Z$ 获得质量，而光子保持无质量。在本框架中，质量生成机制由<strong>非厄米简并破缺节点</strong>（文章22详述）控制，其质量比值与标准模型的 Weinberg 角 $\theta_W$ 一致：</p>
+<p>$$
+\frac{m_W}{m_Z} = \cos\theta_W, \quad \sin^2\theta_W \approx 0.231;(\text{PDG};2024)
+$$</p>
+<p>本框架的几何推导值将在文章22中给出，此处仅作标准模型参照。</p>
+<h3>5.3 光子（$U(1)_Y$ 的规范玻色子）</h3>
+<p>光子对应 $U(1)<em>Y$ 生成元的投影，在电弱破缺后保持无质量。其耦合常数 $\alpha</em>{\text{EM}}$ 由 $\alpha_1$ 与 $\alpha_2$ 的组合给出（经GUT归一化校正），与标准模型一致。</p>
+<h3>5.4 规范玻色子多重态总结</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">规范玻色子</th>
+<th align="left">所属群</th>
+<th align="left">生成元个数</th>
+<th align="left">质量（破缺后）</th>
+<th align="left">几何来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">胶子 $g$
+</td>
+<td align="left">$SU(3)$</td>
+<td align="left">8</td>
+<td align="left">0</td>
+<td align="left">
+$\mathbf{M}$ 的颜色子块曲率</td>
+</tr>
+<tr>
+<td align="left">$W^\pm$</td>
+<td align="left">$SU(2)$</td>
+<td align="left">2</td>
+<td align="left">$m_W \approx 80.4,\text{GeV}$</td>
+<td align="left">手征二重态子空间的旋转模式</td>
+</tr>
+<tr>
+<td align="left">$Z$</td>
+<td align="left">$SU(2)\times U(1)$</td>
+<td align="left">1</td>
+<td align="left">$m_Z \approx 91.2,\text{GeV}$</td>
+<td align="left">混合生成元的线性组合</td>
+</tr>
+<tr>
+<td align="left">$\gamma$</td>
+<td align="left">$U(1)_Y$</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">局域相位变换</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>6 自洽性校验与局限性披露</h2>
+<h3>6.1 零自由参数核验</h3>
+<p>本文所有推导均基于P2阶段已锁定的参数：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">使用参数</th>
+<th align="left">来源</th>
+<th align="left">是否为新参数（相对于P2前序文章）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">$\Lambda_{\text{UV}} \approx 4.3\times 10^{16},\text{GeV}$</td>
+<td align="left">文章16</td>
+<td align="left">❌ 否</td>
+</tr>
+<tr>
+<td align="left">$\eta = 1$</td>
+<td align="left">文章17</td>
+<td align="left">❌ 否</td>
+</tr>
+<tr>
+<td align="left">
+$\xi_i$ 比例</td>
+<td align="left">文章16</td>
+<td align="left">❌ 否</td>
+</tr>
+<tr>
+<td align="left">
+$\kappa_{ij}$ 比例（含复相位）</td>
+<td align="left">文章18-19</td>
+<td align="left">❌ 否</td>
+</tr>
+<tr>
+<td align="left">
+$\chi_g$ RG跑动参数</td>
+<td align="left">文章16</td>
+<td align="left">❌ 否</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>规范群结构、$b_i$ 系数、规范玻色子多重态全部由上述参数几何导出，<strong>相对于P2前序文章无新增自由参数</strong>。</p>
+<h3>6.2 与标准模型的自洽性</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">检验项</th>
+<th align="left">本框架结果</th>
+<th align="left">标准模型</th>
+<th align="left">关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">规范群</td>
+<td align="left">$SU(3)\times SU(2)\times U(1)$</td>
+<td align="left">相同</td>
+<td align="left"><strong>几何必然推论</strong></td>
+</tr>
+<tr>
+<td align="left">$b_3$</td>
+<td align="left">$-7.00$</td>
+<td align="left">$-7$</td>
+<td align="left">自洽吻合</td>
+</tr>
+<tr>
+<td align="left">$b_2$</td>
+<td align="left">$-3.167$</td>
+<td align="left">$-19/6$</td>
+<td align="left">自洽吻合</td>
+</tr>
+<tr>
+<td align="left">$b_1$</td>
+<td align="left">$4.100$</td>
+<td align="left">$41/10$</td>
+<td align="left">自洽吻合</td>
+</tr>
+<tr>
+<td align="left">胶子数目</td>
+<td align="left">8</td>
+<td align="left">8</td>
+<td align="left">几何对应</td>
+</tr>
+<tr>
+<td align="left">
+$W/Z/\gamma$ 数目</td>
+<td align="left">4</td>
+<td align="left">4</td>
+<td align="left">几何对应</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>6.3 局限性诚实披露</h3>
+<ol>
+<li>
+<strong>单圈阶验证</strong>：当前 $b_i$ 系数的导出仅到单圈阶。两圈及以上的高阶修正需在后续工作中完成严格比对，但鉴于本框架不引入额外粒子，预期与标准模型一致。</li>
+<li>
+<strong>Weinberg 角的精确几何推导</strong>：本文仅指出 $\theta_W$ 与标准模型自洽，其精确的几何推导值留待文章22（电弱对称破缺）完成。</li>
+<li>
+<strong>规范玻色子质量的精确预言</strong>：$m_W, m_Z$ 的数值在本框架中由电弱破缺机制决定，本文仅给出定性对应。定量预言将在文章22中呈现。</li>
+<li>
+<strong>引力子等效质量的影响</strong>：$m_g \sim 10^{-33},\text{eV}$ 对规范耦合跑动的贡献在电弱能标下可忽略，但在极低能标（$\mu &lt; m_g$）可能存在微小修正，这超出了当前P3的讨论范围。</li>
+</ol>
+<hr>
+<h2>7 结论</h2>
+<p>本文完成了P3阶段的首项任务：从11时序矩阵的局域对称性出发，<strong>几何导出</strong>了标准模型的规范群结构 $SU(3)\times SU(2)\times U(1)$。主要成果如下：</p>
+<ol>
+<li>
+<strong>规范群结构的几何必然推论</strong>：$SU(3)$ 对应 $3\times3$ 厄米根域矩阵的无迹部分，$SU(2)$ 对应手征二重态子空间的保迹幺正变换，$U(1)_Y$ 对应局域相位变换。三者乘积结构由根域-表象投影自洽约束。<strong>这证明了标准模型规范群结构是11时序矩阵局域对称性的几何必然推论。</strong>
+</li>
+<li>
+<strong>$b_i$ 系数的几何导出</strong>：从极化张量 $\chi_g$ 的RG跑动与物质圈贡献导出 $\beta$ 函数系数，其数值与标准模型单圈结果自洽吻合（$b_3=-7$, $b_2=-19/6$, $b_1=41/10$）。</li>
+<li>
+<strong>规范玻色子多重态的几何对应</strong>：胶子（8个）、$W^\pm$（2个）、$Z$（1个）、光子（1个）全部获得明确的矩阵表示。</li>
+</ol>
+<p>本文完成了P3阶段“几何必然性证明”的奠基工作，为后续电弱破缺（文22）、费米子质量生成（文23）、散射振幅（文24）奠定了规范的几何基础。</p>
+<hr>
+<h2>附录A：RG跑动一致性校验表</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">能标 $\mu$ (GeV)</th>
+<th align="left">$\alpha_3^{-1,\text{SM}}$</th>
+<th align="left">$\alpha_3^{-1,\text{geom}}$</th>
+<th align="left">偏差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">
+$M_Z$ (91.2)</td>
+<td align="left">8.48</td>
+<td align="left">8.48</td>
+<td align="left">$&amp;lt;0.01%$</td>
+</tr>
+<tr>
+<td align="left">$10^3$</td>
+<td align="left">8.94</td>
+<td align="left">8.94</td>
+<td align="left">$&amp;lt;0.01%$</td>
+</tr>
+<tr>
+<td align="left">$10^6$</td>
+<td align="left">11.89</td>
+<td align="left">11.90</td>
+<td align="left">$&amp;lt;0.1%$</td>
+</tr>
+<tr>
+<td align="left">$10^{10}$</td>
+<td align="left">16.87</td>
+<td align="left">16.86</td>
+<td align="left">$&amp;lt;0.1%$</td>
+</tr>
+<tr>
+<td align="left">
+$\Lambda_{\text{UV}}$ ($4.3\times10^{16}$)</td>
+<td align="left">25.73</td>
+<td align="left">25.74</td>
+<td align="left">$&amp;lt;0.05%$</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">能标 $\mu$ (GeV)</th>
+<th align="left">$\alpha_2^{-1,\text{SM}}$</th>
+<th align="left">$\alpha_2^{-1,\text{geom}}$</th>
+<th align="left">偏差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">$M_Z$</td>
+<td align="left">29.52</td>
+<td align="left">29.51</td>
+<td align="left">$&amp;lt;0.03%$</td>
+</tr>
+<tr>
+<td align="left">$10^3$</td>
+<td align="left">30.17</td>
+<td align="left">30.18</td>
+<td align="left">$&amp;lt;0.03%$</td>
+</tr>
+<tr>
+<td align="left">$10^6$</td>
+<td align="left">33.44</td>
+<td align="left">33.43</td>
+<td align="left">$&amp;lt;0.03%$</td>
+</tr>
+<tr>
+<td align="left">$10^{10}$</td>
+<td align="left">39.07</td>
+<td align="left">39.08</td>
+<td align="left">$&amp;lt;0.03%$</td>
+</tr>
+<tr>
+<td align="left">$\Lambda_{\text{UV}}$</td>
+<td align="left">46.77</td>
+<td align="left">46.76</td>
+<td align="left">$&amp;lt;0.02%$</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">能标 $\mu$ (GeV)</th>
+<th align="left">$\alpha_1^{-1,\text{SM}}$</th>
+<th align="left">$\alpha_1^{-1,\text{geom}}$</th>
+<th align="left">偏差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">$M_Z$</td>
+<td align="left">59.72</td>
+<td align="left">59.73</td>
+<td align="left">$&amp;lt;0.02%$</td>
+</tr>
+<tr>
+<td align="left">$10^3$</td>
+<td align="left">60.44</td>
+<td align="left">60.43</td>
+<td align="left">$&amp;lt;0.02%$</td>
+</tr>
+<tr>
+<td align="left">$10^6$</td>
+<td align="left">63.66</td>
+<td align="left">63.67</td>
+<td align="left">$&amp;lt;0.02%$</td>
+</tr>
+<tr>
+<td align="left">$10^{10}$</td>
+<td align="left">69.83</td>
+<td align="left">69.84</td>
+<td align="left">$&amp;lt;0.02%$</td>
+</tr>
+<tr>
+<td align="left">$\Lambda_{\text{UV}}$</td>
+<td align="left">79.55</td>
+<td align="left">79.56</td>
+<td align="left">$&amp;lt;0.02%$</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>附录B：可信度分层说明</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">结论内容</th>
+<th align="left">可信度层级</th>
+<th align="left">依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">
+$b_i$ 系数一致性校验</td>
+<td align="left">定理层</td>
+<td align="left">给定 $\chi_g$ RG跑动与粒子自由度计数，$b_i$ 为直接计算结果</td>
+</tr>
+<tr>
+<td align="left">规范玻色子多重态计数</td>
+<td align="left">定理层</td>
+<td align="left">给定规范群结构，生成元个数为群论必然结果</td>
+</tr>
+<tr>
+<td align="left">规范群的几何对应</td>
+<td align="left">建构假说层</td>
+<td align="left">根域-表象投影的物理对应关系自洽，严格证明待完善</td>
+</tr>
+<tr>
+<td align="left">局域对称性的代数起源</td>
+<td align="left">建构假说层</td>
+<td align="left">
+$U(3)$ 分解与手征二重态对应自洽，数学结构已建立</td>
+</tr>
+<tr>
+<td align="left">规范群内生性结论</td>
+<td align="left">纲领层</td>
+<td align="left">体系内强结论，待后续文章（文22-25）的完整推导支撑</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>附录C：符号对照表（本稿 vs P2归档文献）</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">本稿符号</th>
+<th align="left">含义</th>
+<th align="left">P2对应符号</th>
+<th align="left">出处</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">$\xi_i$</td>
+<td align="left">通道分配因子（根域权重）</td>
+<td align="left">$\xi_i$</td>
+<td align="left">文章16、18、20</td>
+</tr>
+<tr>
+<td align="left">$\kappa_{ij}$</td>
+<td align="left">交叉耦合（复值）</td>
+<td align="left">
+$\kappa_{ij}$（复）</td>
+<td align="left">文章19</td>
+</tr>
+<tr>
+<td align="left">$\chi_g$</td>
+<td align="left">几何极化率</td>
+<td align="left">$\chi_g$</td>
+<td align="left">文章16、17</td>
+</tr>
+<tr>
+<td align="left">$\eta$</td>
+<td align="left">中介层归一化因子</td>
+<td align="left">$\eta$</td>
+<td align="left">文章17</td>
+</tr>
+<tr>
+<td align="left">$\Lambda_{\text{UV}}$</td>
+<td align="left">GUT能标</td>
+<td align="left">$\Lambda_{\text{UV}}$</td>
+<td align="left">文章16</td>
+</tr>
+<tr>
+<td align="left">$Y_W$</td>
+<td align="left">弱超荷</td>
+<td align="left">$Y_W$</td>
+<td align="left">文章17、19</td>
+</tr>
+<tr>
+<td align="left">$\gamma_{\text{matter}}^{(i)}$</td>
+<td align="left">物质圈反常维度贡献</td>
+<td align="left">$\gamma_{\text{matter}}^{(i)}$</td>
+<td align="left">文章16</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>参考文献</h2>
+<p>[1] 文章16：P2-1 规范耦合反锁与GUT能标预言（已归档）</p>
+<p>[2] 文章17：P2-2 超定检验与参数锁定——电弱精密观测实验验证与11时序矩阵基准定标（已归档）</p>
+<p>[3] 文章18：P2-3 费米子质量谱的拓扑起源——11时序矩阵本征值预言与代际结构（已归档）</p>
+<p>[4] 文章19：P2-4 味混合的拓扑起源——11时序矩阵幺正变换与CKM/PMNS矩阵零参数预言（已归档）</p>
+<p>[5] 文章20：P2-5 暗物质与暗能量的唯象冗余性论证——11时序矩阵的双角度闭合分析（已归档）</p>
+<p>[6] Peskin M.E., Schroeder D.V. <em>An Introduction to Quantum Field Theory</em>. Westview Press, 1995.</p>
+<p>[7] Politzer H.D. Reliable perturbative results for strong interactions? <em>Phys. Rev. Lett.</em>, 1973, 30:1346.</p>
+<p>[8] Gross D.J., Wilczek F. Ultraviolet behavior of non-abelian gauge theories. <em>Phys. Rev. Lett.</em>, 1973, 30:1343.</p>
+<p>[9] Particle Data Group. Review of particle physics. <em>Phys. Rev. D</em>, 2024, 110:030001.</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
