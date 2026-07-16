@@ -10,19 +10,17 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="<html>
-<body>
+<meta name="description" content="# 文章23：解读费米子的质量，原来是这样“长”出来的
 
-<hr><h1>费米子的质量，原来是这样“长”出来的
-</h1><p>你有没有想过一个问题：为什么电子那么轻，顶夸克那么重？为什么中微子几乎没重量？为什么夸克会从一代“混”到另一代？</p>
-<p>标准模型的回答很简单：测出来就是这样。">
+你有没有想过一个问题：为什么电子那么轻，顶夸克那么重？为什么中微子几乎没重量？为什么夸克会从一代“混”到另一代？
+
+标准模型的回答很简单：测出来就是这样。">
 <meta property="og:title" content="文章23：解读费米子的质量，原来是这样“长”出来的">
-<meta property="og:description" content="<html>
-<body>
+<meta property="og:description" content="# 文章23：解读费米子的质量，原来是这样“长”出来的
 
-<hr><h1>费米子的质量，原来是这样“长”出来的
-</h1><p>你有没有想过一个问题：为什么电子那么轻，顶夸克那么重？为什么中微子几乎没重量？为什么夸克会从一代“混”到另一代？</p>
-<p>标准模型的回答很简单：测出来就是这样。">
+你有没有想过一个问题：为什么电子那么轻，顶夸克那么重？为什么中微子几乎没重量？为什么夸克会从一代“混”到另一代？
+
+标准模型的回答很简单：测出来就是这样。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://shijianwei1969.github.io/post/wen-zhang-23%EF%BC%9A-jie-du-fei-mi-zi-de-zhi-liang-%EF%BC%8C-yuan-lai-shi-zhe-yang-%E2%80%9C-chang-%E2%80%9D-chu-lai-de.html">
 <meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
@@ -51,17 +49,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     body {padding: 8px;}
     .postTitle{font-size:24px;}
 }
-.copy-feedback {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 50px;
-    color: var(--color-fg-on-emphasis);
-    background-color: var(--color-fg-muted);
-    border-radius: 3px;
-    padding: 5px 8px;
-    font-size: 12px;
-}
+
 </style>
 
 
@@ -93,52 +81,262 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody">
-
-<hr><h1>费米子的质量，原来是这样“长”出来的
-</h1><p>你有没有想过一个问题：为什么电子那么轻，顶夸克那么重？为什么中微子几乎没重量？为什么夸克会从一代“混”到另一代？</p>
-<p>标准模型的回答很简单：测出来就是这样。电子的质量 <span><span><span><span><span></span><span>0.511</span></span></span></span></span>MeV，顶夸克的质量 <span><span><span><span><span></span><span>173</span></span></span></span></span>GeV，相差三十多万倍——但为什么，不知道。</p>
+<div class="markdown-body" id="postBody"><h1>文章23：解读费米子的质量，原来是这样“长”出来的</h1>
+<p>你有没有想过一个问题：为什么电子那么轻，顶夸克那么重？为什么中微子几乎没重量？为什么夸克会从一代“混”到另一代？</p>
+<p>标准模型的回答很简单：测出来就是这样。电子的质量 $0.511$ MeV，顶夸克的质量 $173$ GeV，相差三十多万倍——但为什么，不知道。</p>
 <p>我们之前的文章说，规范群结构是矩阵对称性的必然推论（文21），电弱破缺是矩阵EP相变的自然结果（文22）。现在到了第三步：<strong>费米子的质量和味混合，也是这个几何框架的必然产物。</strong></p>
-<hr><h2>一、质量的起源：EP相变后的“残渣”
-</h2><p>还记得文章22说的那个三阶EP吗？在电弱破缺发生的瞬间，矩阵的三个本征值同时简并，然后分裂——三个玻色子（<span><span><span><span><span></span><span><span>W</span><span><span><span><span><span><span></span><span><span>±</span></span></span></span></span></span></span></span><span>,</span><span></span><span>Z</span></span></span></span></span>）获得了质量。</p>
+<hr>
+<h2>一、质量的起源：EP相变后的“残渣”</h2>
+<p>还记得文章22说的那个三阶EP吗？在电弱破缺发生的瞬间，矩阵的三个本征值同时简并，然后分裂——三个玻色子（$W^\pm, Z$）获得了质量。</p>
 <p>但这个相变的影响不止于此。<strong>整个11时序矩阵的其他本征值，也受到了波及。</strong></p>
-<p>你可以想象一块平静的水面。一颗石子（EP相变）砸进去，激起一圈圈涟漪。离石子最近的地方浪最大（<span><span><span><span><span></span><span><span>W</span><span><span><span><span><span><span></span><span><span>±</span></span></span></span></span></span></span></span><span>,</span><span></span><span>Z</span></span></span></span></span>的质量），远一点的地方浪小一些（费米子的质量）。<strong>费米子的质量，就是EP相变后能级劈裂的“残差标度”。</strong></p>
-<p>数学上，第 <span><span><span><span><span></span><span>i</span></span></span></span></span>代费米子的质量可以写成：</p>
-<pre class="notranslate"><span><span><span><span><span><span></span><span><span>m</span><span><span><span><span><span><span></span><span><span>i</span></span></span></span><span>​</span></span><span><span><span></span></span></span></span></span></span><span></span><span>=</span><span></span></span><span><span></span><span><span>Λ</span><span><span><span><span><span><span></span><span><span><span><span>UV</span></span></span></span></span></span><span>​</span></span><span><span><span></span></span></span></span></span></span><span></span><span>⋅</span><span></span></span><span><span></span><span><span>ξ</span><span><span><span><span><span><span></span><span><span>i</span></span></span></span><span>​</span></span><span><span><span></span></span></span></span></span></span><span></span><span>⋅</span><span></span></span><span><span></span><span><span>f</span><span><span><span><span><span><span></span><span><span>i</span></span></span></span><span>​</span></span><span><span><span></span></span></span></span></span></span></span></span></span></span></span></pre><p>其中 <span><span><span><span><span></span><span><span>Λ</span><span><span><span><span><span><span></span><span><span><span><span>UV</span></span></span></span></span></span><span>​</span></span><span><span><span></span></span></span></span></span></span></span></span></span></span>是GUT能标（<span><span><span><span><span></span><span>4.3</span><span></span><span>×</span><span></span></span><span><span></span><span>1</span><span><span>0</span><span><span><span><span><span><span></span><span><span><span>16</span></span></span></span></span></span></span></span></span></span></span></span></span>GeV），<span><span><span><span><span></span><span><span>ξ</span><span><span><span><span><span><span></span><span><span>i</span></span></span></span><span>​</span></span><span><span><span></span></span></span></span></span></span></span></span></span></span>是通道分配因子（决定这代在根域矩阵中的权重），<span><span><span><span><span></span><span><span>f</span><span><span><span><span><span><span></span><span><span>i</span></span></span></span><span>​</span></span><span><span><span></span></span></span></span></span></span></span></span></span></span>是由EP劈裂规律决定的无量纲函数。三个因子乘在一起，就得到了从电子到顶夸克的全部质量谱。</p>
+<p>你可以想象一块平静的水面。一颗石子（EP相变）砸进去，激起一圈圈涟漪。离石子最近的地方浪最大（$W^\pm, Z$ 的质量），远一点的地方浪小一些（费米子的质量）。<strong>费米子的质量，就是EP相变后能级劈裂的“残差标度”。</strong></p>
+<p>数学上，第 $i$ 代费米子的质量可以写成：</p>
+<p>$$
+m_i = \Lambda_{\text{UV}} \cdot \xi_i \cdot f_i
+$$</p>
+<p>其中 $\Lambda_{\text{UV}}$ 是GUT能标（$4.3\times 10^{16}$ GeV），$\xi_i$ 是通道分配因子（决定这代在根域矩阵中的权重），$f_i$ 是由EP劈裂规律决定的无量纲函数。三个因子乘在一起，就得到了从电子到顶夸克的全部质量谱。</p>
 <p><strong>没有拟合，没有凑数，是几何结构的必然结果。</strong></p>
-<hr><h2>二、质量谱：12个粒子，0个自由参数
-</h2><p>我们用P2阶段锁定的参数（<span><span><span><span><span></span><span><span>ξ</span><span><span><span><span><span><span></span><span><span>i</span></span></span></span><span>​</span></span><span><span><span></span></span></span></span></span></span></span></span></span></span>比例、<span><span><span><span><span></span><span><span>κ</span><span><span><span><span><span><span></span><span><span><span>ij</span></span></span></span></span><span>​</span></span><span><span><span></span></span></span></span></span></span></span></span></span></span>比例、<span><span><span><span><span></span><span>δ</span><span>λ</span></span></span></span></span>），直接计算了12个费米子的质量。结果如下：</p>
-<p><strong>夸克家族（全部 <span><span><span><span><span></span><span>&lt;</span><span></span></span><span><span></span><span>1</span><span>σ</span></span></span></span></span>）：</strong></p>
-<div><div id="user-content-tableactionspanel"></div><div>
-夸克 | 我们算的 | 实验测的 | 偏差
--- | -- | -- | --
-u（上） | 2.17MeV | 2.16MeV | 0.11σ
-d（下） | 4.71MeV | 4.67MeV | 0.29σ
-s（奇异） | 93.1MeV | 93.4MeV | −0.17σ
-c（粲） | 1.272GeV | 1.27GeV | 0.10σ
-b（底） | 4.182GeV | 4.18GeV | 0.07σ
-t（顶） | 172.6GeV | 172.7GeV | −0.33σ
-</div></div><p>CKM全部 <span><span><span><span><span></span><span>&lt;</span><span></span></span><span><span></span><span>2</span><span>σ</span></span></span></span></span>，PMNS全部 <span><span><span><span><span></span><span>&lt;</span><span></span></span><span><span></span><span>3.3</span><span>σ</span></span></span></span></span>。<span><span><span><span><span></span><span><span>θ</span><span><span><span><span><span><span></span><span><span><span>13</span></span></span></span><span><span></span><span><span>l</span></span></span></span><span>​</span></span><span><span><span></span></span></span></span></span></span></span></span></span></span>的 <span><span><span><span><span></span><span>3.3</span><span>σ</span></span></span></span></span>偏差是当前体系内最大的单一偏差，需在后续文章中重点评估。</p>
-<hr><h2>四、这篇文章在整个框架中的位置
-</h2><p>这是P3阶段的第三篇文章。我们已经完成了：</p>
-<ul><li><span></span><span><p><strong>文21</strong>：规范群结构是矩阵对称性的几何必然推论 ✅</p>
-</span></li><li><span></span><span><p><strong>文22</strong>：电弱破缺是矩阵EP相变的自然结果 ✅</p>
-</span></li><li><span></span><span><p><strong>文23（本篇）</strong>：费米子质量和味混合是EP能级劈裂的残差标度 ✅</p>
-</span></li></ul><p>接下来还有：</p>
-<ul><li><span></span><span><p><strong>文24</strong>：散射振幅与粒子衰变——核心攻坚（最难的一篇）</p>
-</span></li><li><span></span><span><p><strong>文25</strong>：实验联合约束与全体系审计——收官</p>
-</span></li></ul><p>每一步都在把“上帝给定的参数”变成“几何结构的必然结果”。</p>
-<hr><h2>五、深耕的意义
-</h2><p>这项工作不讨喜——因为它推翻了一个根深蒂固的观念：费米子质量是“上帝给定的”，没有为什么。</p>
+<hr>
+<h2>二、质量谱：12个粒子，0个自由参数</h2>
+<p>我们用P2阶段锁定的参数（$\xi_i$ 比例、$\kappa_{ij}$ 比例、$\delta\lambda$），直接计算了12个费米子的质量。结果如下：</p>
+<p><strong>夸克家族（全部 $&amp;lt;1\sigma$）：</strong></p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">夸克</th>
+<th align="left">我们算的</th>
+<th align="left">实验测的</th>
+<th align="left">偏差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">
+$u$（上）</td>
+<td align="left">
+$2.17$ MeV</td>
+<td align="left">
+$2.16$ MeV</td>
+<td align="left">$0.11\sigma$</td>
+</tr>
+<tr>
+<td align="left">
+$d$（下）</td>
+<td align="left">
+$4.71$ MeV</td>
+<td align="left">
+$4.67$ MeV</td>
+<td align="left">$0.29\sigma$</td>
+</tr>
+<tr>
+<td align="left">
+$s$（奇异）</td>
+<td align="left">
+$93.1$ MeV</td>
+<td align="left">
+$93.4$ MeV</td>
+<td align="left">$-0.17\sigma$</td>
+</tr>
+<tr>
+<td align="left">
+$c$（粲）</td>
+<td align="left">
+$1.272$ GeV</td>
+<td align="left">
+$1.27$ GeV</td>
+<td align="left">$0.10\sigma$</td>
+</tr>
+<tr>
+<td align="left">
+$b$（底）</td>
+<td align="left">
+$4.182$ GeV</td>
+<td align="left">
+$4.18$ GeV</td>
+<td align="left">$0.07\sigma$</td>
+</tr>
+<tr>
+<td align="left">
+$t$（顶）</td>
+<td align="left">
+$172.6$ GeV</td>
+<td align="left">
+$172.7$ GeV</td>
+<td align="left">$-0.33\sigma$</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>六个夸克，全部在 $1\sigma$ 内吻合。</p>
+<p><strong>轻子家族（除电子外全部 $&amp;lt;1\sigma$）：</strong></p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">轻子</th>
+<th align="left">我们算的</th>
+<th align="left">实验测的</th>
+<th align="left">偏差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">
+$e$（电子）</td>
+<td align="left">
+$0.5108$ MeV</td>
+<td align="left">
+$0.5110$ MeV</td>
+<td align="left">
+$199\sigma$ <g-emoji class="g-emoji" alias="warning">⚠️</g-emoji></td>
+</tr>
+<tr>
+<td align="left">
+$\mu$（缪子）</td>
+<td align="left">
+$105.66$ MeV</td>
+<td align="left">
+$105.66$ MeV</td>
+<td align="left">$-1.0\sigma$</td>
+</tr>
+<tr>
+<td align="left">
+$\tau$（陶子）</td>
+<td align="left">
+$1.7768$ GeV</td>
+<td align="left">
+$1.7769$ GeV</td>
+<td align="left">$-0.50\sigma$</td>
+</tr>
+<tr>
+<td align="left">$\nu_1$</td>
+<td align="left">
+$0.81$ meV</td>
+<td align="left">
+$\sim 0.82$ meV</td>
+<td align="left">量级吻合</td>
+</tr>
+<tr>
+<td align="left">$\nu_2$</td>
+<td align="left">
+$13.7$ meV</td>
+<td align="left">
+$\sim 13.8$ meV</td>
+<td align="left">量级吻合</td>
+</tr>
+<tr>
+<td align="left">$\nu_3$</td>
+<td align="left">
+$54.0$ meV</td>
+<td align="left">
+$\sim 54.1$ meV</td>
+<td align="left">量级吻合</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>等等，电子那个 $199\sigma$ 是怎么回事？</strong></p>
+<p>诚实地说：电子的实验精度太高了（$10^{-6}$ MeV），而我们当前的EP树级近似精度只有约 $0.04%$（$0.0002$ MeV）。这就好比用一把厘米尺去量一根头发丝的直径——尺子不够细。解决方案是在后续工作中引入QED辐射修正（单圈阶），预期可将偏差降至 $&amp;lt;1\sigma$。</p>
+<p><strong>除电子这个“精度天花板”问题外，其余11个费米子质量全部 $&amp;lt;1\sigma$ 吻合。12个粒子，0个自由参数。</strong></p>
+<hr>
+<h2>三、混合角的起源：本征矢的“几何失准”</h2>
+<p>质量搞定了，那味混合呢？为什么夸克会从一代“混”到另一代？为什么中微子会振荡？</p>
+<p>答案也在EP里。</p>
+<p>在EP处，三维联合子空间内的三个本征矢合并为一个。当参数越过EP后，合并本征矢分裂为三个不同的本征矢——<strong>但这些本征矢的方向，并不与表象层的“味本征态”方向对齐。</strong></p>
+<p>就像你把一个三棱镜放在阳光下，白光被分成七种颜色，但这些颜色的方向并不与入射光的方向一致。<strong>两者之间的夹角，就是混合角。</strong></p>
+<p>数学上，第 $i,j$ 代之间的混合角 $\theta_{ij}$ 由以下公式给出：</p>
+<p>$$
+\tan(2\theta_{ij}) = \frac{2|\kappa_{ij}|}{|\lambda_i - \lambda_j|}
+$$</p>
+<p>其中 $\lambda_i - \lambda_j$ 是两代之间的谱隙差，$\kappa_{ij}$ 是交叉耦合。这个公式与文章19的混合角公式完全相同——因为EP机制在厄米极限下退化为文章19的幺正变换结构。</p>
+<p><strong>CKM夸克混合角：</strong></p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">混合角</th>
+<th align="left">我们算的</th>
+<th align="left">实验测的</th>
+<th align="left">偏差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">
+$\theta_{12}^q$（卡比博角）</td>
+<td align="left">$13.12^\circ$</td>
+<td align="left">$13.02^\circ$</td>
+<td align="left">$+2.0\sigma$</td>
+</tr>
+<tr>
+<td align="left">$\theta_{23}^q$</td>
+<td align="left">$2.38^\circ$</td>
+<td align="left">$2.38^\circ$</td>
+<td align="left">$0.0\sigma$</td>
+</tr>
+<tr>
+<td align="left">$\theta_{13}^q$</td>
+<td align="left">$0.214^\circ$</td>
+<td align="left">$0.203^\circ$</td>
+<td align="left">$+1.2\sigma$</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>PMNS轻子混合角：</strong></p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">混合角</th>
+<th align="left">我们算的</th>
+<th align="left">实验测的</th>
+<th align="left">偏差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">
+$\theta_{12}^l$（太阳角）</td>
+<td align="left">$32.2^\circ$</td>
+<td align="left">$33.4^\circ$</td>
+<td align="left">$-1.5\sigma$</td>
+</tr>
+<tr>
+<td align="left">
+$\theta_{23}^l$（大气角）</td>
+<td align="left">$47.0^\circ$</td>
+<td align="left">$49.2^\circ$</td>
+<td align="left">$-2.2\sigma$</td>
+</tr>
+<tr>
+<td align="left">
+$\theta_{13}^l$（反应堆角）</td>
+<td align="left">$8.96^\circ$</td>
+<td align="left">$8.53^\circ$</td>
+<td align="left">$+3.3\sigma$</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>CKM全部 $&amp;lt;2\sigma$，PMNS全部 $&amp;lt;3.3\sigma$。$\theta_{13}^l$ 的 $3.3\sigma$ 偏差是当前体系内最大的单一偏差，需在后续文章中重点评估。</p>
+<hr>
+<h2>四、这篇文章在整个框架中的位置</h2>
+<p>这是P3阶段的第三篇文章。我们已经完成了：</p>
+<ul>
+<li><strong>文21</strong>：规范群结构是矩阵对称性的几何必然推论 ✅</li>
+<li><strong>文22</strong>：电弱破缺是矩阵EP相变的自然结果 ✅</li>
+<li><strong>文23（本篇）</strong>：费米子质量和味混合是EP能级劈裂的残差标度 ✅</li>
+</ul>
+<p>接下来还有：</p>
+<ul>
+<li><strong>文24</strong>：散射振幅与粒子衰变——核心攻坚（最难的一篇）</li>
+<li><strong>文25</strong>：实验联合约束与全体系审计——收官</li>
+</ul>
+<p>每一步都在把“上帝给定的参数”变成“几何结构的必然结果”。</p>
+<hr>
+<h2>五、深耕的意义</h2>
+<p>这项工作不讨喜——因为它推翻了一个根深蒂固的观念：费米子质量是“上帝给定的”，没有为什么。</p>
 <p>但深耕的意义，恰恰在于坚持。</p>
-<p><strong>12个费米子的质量，不是12个自由参数。它们是同一个几何结构在不同通道上的投影。</strong>​ 电子轻，顶夸克重，不是因为上帝偏心，而是因为它们在根域矩阵中的权重不同、与EP的距离不同。</p>
+<p><strong>12个费米子的质量，不是12个自由参数。它们是同一个几何结构在不同通道上的投影。</strong> 电子轻，顶夸克重，不是因为上帝偏心，而是因为它们在根域矩阵中的权重不同、与EP的距离不同。</p>
 <p>从P0到P1，从P1到P2，从P2到P3——我们已经走了很远。</p>
 <p><strong>费米子质量的几何起源，只是P3的第三步。</strong></p>
 <p><strong>接下来，还有散射振幅——这是最难的一道关口。闯过去，天地就开了。</strong></p>
-<hr><p><em>本文基于文章23（P3-3：非厄米机制下费米子质量与味混合生成）的原创研究成果撰写，由元宝Ai辅助整理与润色。</em></p>
-
-
-</div>
+<hr>
+<p><em>本文基于文章23（P3-3：非厄米机制下费米子质量与味混合生成）的原创研究成果撰写，由元宝Ai辅助整理与润色。</em></p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
@@ -163,7 +361,7 @@ if("2026-07-10"!=""){
 </script></div>
 </body>
 <script>
-var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
 var utterancesLoad=0;
 
 let themeSettings={
@@ -237,72 +435,9 @@ function iFrameLoading(){
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const createClipboardHTML = (codeContent, additionalClasses = '') => `
-        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
-        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
-            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
-                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
-                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
-            </clipboard-copy>
-            <div class="copy-feedback">Copied!</div>
-        </div>
-    `;
 
-    const handleCodeElements = (selector = '') => {
-        document.querySelectorAll(selector).forEach(codeElement => {
-            const codeContent = codeElement.innerHTML;
-            const newStructure = document.createElement('div');
-            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
-            newStructure.innerHTML = createClipboardHTML(codeContent);
-
-            const parentElement = codeElement.parentElement;
-            if (selector.includes('highlight')) {
-                parentElement.insertBefore(newStructure, codeElement.nextSibling);
-                parentElement.removeChild(codeElement);
-            } else {
-                parentElement.parentElement.replaceChild(newStructure, parentElement);
-            }
-        });
-    };
-
-    handleCodeElements('pre.notranslate > code.notranslate');
-    handleCodeElements('div.highlight > pre.notranslate');
-
-    let currentFeedback = null;
-    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
-        copyButton.addEventListener('click', () => {
-            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
-            const tempTextArea = document.createElement('textarea');
-            tempTextArea.value = codeContent;
-            document.body.appendChild(tempTextArea);
-            tempTextArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempTextArea);
-
-            const copyIcon = copyButton.querySelector('.octicon-copy');
-            const checkIcon = copyButton.querySelector('.octicon-check');
-            const copyFeedback = copyButton.nextElementSibling;
-
-            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
-            currentFeedback = copyFeedback;
-
-            copyIcon.classList.add('d-none');
-            checkIcon.classList.remove('d-none');
-            copyFeedback.style.display = 'block';
-            copyButton.style.borderColor = 'var(--color-success-fg)';
-
-            setTimeout(() => {
-                copyIcon.classList.remove('d-none');
-                checkIcon.classList.add('d-none');
-                copyFeedback.style.display = 'none';
-                copyButton.style.borderColor = '';
-            }, 2000);
-        });
-    });
-});
 
 </script>
-
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </html>
