@@ -1,5 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Thu, 16 Jul 2026 11:43:43 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>文章25.6 PMNS $\theta_{13}^l$ 偏差诊断</title><link>https://shijianwei1969.github.io/post/wen-zhang-25.6%20PMNS%20%24-theta_%7B13%7D%5El%24%20-pian-cha-zhen-duan.html</link><description># 文章25.6 PMNS $\theta_{13}^l$ 偏差诊断
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Thu, 16 Jul 2026 12:02:12 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>总结与计划</title><link>https://shijianwei1969.github.io/post/zong-jie-yu-ji-hua.html</link><description># 本理论与粒子物理标准模型的兼容性评估
+
+**评估范围**：文章16-26（P2-P4阶段全部归档成果）
+**评估基准**：粒子物理标准模型（SM）的实验验证体系 + 未解决的开放问题
+**评估方法**：逐模块比对，按兼容程度分为四级——完全兼容、部分兼容、待验证、不兼容
+
+---
+
+## 一、规范群结构
+
+| SM要素 | 本理论处理 | 兼容程度 | 依据 |
+|:-------|:-----------|:---------|:-----|
+| $SU(3)\times SU(2)\times U(1)$ 规范群 | 从11时序矩阵局域对称性几何导出（文21） | ✅ 完全兼容 | 群结构、生成元计数、$b_i$ 系数全部吻合 |
+| 规范玻色子多重态 | 矩阵本征模的EP劈裂产物（文22） | ✅ 完全兼容 | $W^\pm, Z, \gamma, g$ 的质量和耦合与SM一致 |
+| 耦合常数跑动 | 从 $\Lambda_{\text{UV}}$ RG跑动锁定（文16） | ✅ 完全兼容 | $b_i$ 系数与SM一致，GUT能标处统一 |
+
+**小结**：规范群结构是本理论最强的模块。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/zong-jie-yu-ji-hua.html</guid><pubDate>Thu, 16 Jul 2026 12:01:42 +0000</pubDate></item><item><title>文章25.6 PMNS $\theta_{13}^l$ 偏差诊断</title><link>https://shijianwei1969.github.io/post/wen-zhang-25.6%20PMNS%20%24-theta_%7B13%7D%5El%24%20-pian-cha-zhen-duan.html</link><description># 文章25.6 PMNS $\theta_{13}^l$ 偏差诊断
 
 **作者：史建威**。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/wen-zhang-25.6%20PMNS%20%24-theta_%7B13%7D%5El%24%20-pian-cha-zhen-duan.html</guid><pubDate>Thu, 16 Jul 2026 11:43:16 +0000</pubDate></item><item><title>文章25.5：全体系误差自洽性分析</title><link>https://shijianwei1969.github.io/post/wen-zhang-25.5%EF%BC%9A-quan-ti-xi-wu-cha-zi-qia-xing-fen-xi.html</link><description>#文章25.5 全体系误差自洽性分析
 
