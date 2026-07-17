@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 文章30 弱相互作用的拓扑描述——宇称不守恒与中微子振荡的几何起源
+
+**作者：史建威**。">
+<meta property="og:title" content="文章30 弱相互作用的拓扑描述——宇称不守恒与中微子振荡的几何起源">
+<meta property="og:description" content="# 文章30 弱相互作用的拓扑描述——宇称不守恒与中微子振荡的几何起源
+
+**作者：史建威**。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/wen-zhang-30%20-ruo-xiang-hu-zuo-yong-de-tuo-pu-miao-shu-%E2%80%94%E2%80%94-yu-cheng-bu-shou-heng-yu-zhong-wei-zi-zhen-dang-de-ji-he-qi-yuan.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>文章30 弱相互作用的拓扑描述——宇称不守恒与中微子振荡的几何起源</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">文章30 弱相互作用的拓扑描述——宇称不守恒与中微子振荡的几何起源</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/99" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>文章30 弱相互作用的拓扑描述——宇称不守恒与中微子振荡的几何起源</h1>
+<p><strong>作者：史建威</strong>。本文为P4阶段第五篇（Article-30），基于本体论四大公理与11时序矩阵框架，将弱相互作用的散射、宇称不守恒和中微子振荡重构为拓扑过程，替代标准模型中以 $W^\pm$、$Z$ 玻色子交换为核心的描述。</p>
+<hr>
+<h2>摘要</h2>
+<p>标准模型中，弱相互作用由 $SU(2)_L$ 规范群描述，通过 $W^\pm$ 和 $Z$ 玻色子传递，具有最大宇称不守恒和代际混合（CKM/PMNS）两大特征。该框架虽在实验上高度成功，但宇称不守恒的起源、中微子质量的微小量级、代际混合的几何意义等问题仍缺乏深层理解。</p>
+<p>本文提出一个替代方案：<strong>弱相互作用是根域侧拓扑手性在表象域的投影，而非规范玻色子的交换。</strong> 核心主张如下：</p>
+<ol>
+<li>
+<strong>宇称不守恒 = 根域手性破缺</strong>：弱相互作用的最大宇称不守恒不是 $SU(2)_L$ 群结构的偶然选择，而是根域侧11维拓扑结构在投影到表象域时，手性自由度被自发破缺的必然结果；</li>
+<li>
+<strong>$W^\pm$、$Z$ 玻色子 = 拓扑手性流的集体模</strong>：与胶子类似，$W^\pm$、$Z$ 不是基本粒子，而是根域手性拓扑流在表象域的集体激发——类比声子；</li>
+<li>
+<strong>中微子振荡 = 根域拓扑路径的干涉</strong>：中微子振荡不是质量本征态与味本征态之间的量子力学拍频，而是中微子在根域侧沿不同拓扑路径传播后的干涉效应——振荡频率对应路径的拓扑相位差；</li>
+<li>
+<strong>代际混合（CKM/PMNS） = 挠群 $\mathbb{Z}_3$ 的表示矩阵</strong>：文章24已建立的 $\mathbb{Z}_3$ 挠群结构，其不可约表示矩阵元自然给出CKM/PMNS矩阵的领头阶形式，代际混合是拓扑的必然，而非自由参数。</li>
+</ol>
+<p><strong>核心结论</strong>：弱相互作用不需要 $W^\pm$、$Z$ 作为实在粒子。它们是根域手性拓扑流的表象近似。宇称不守恒是根域拓扑的固有手性，中微子振荡是拓扑路径干涉，代际混合是挠群表示论的必然。</p>
+<hr>
+<h2>1 引言：弱相互作用的成就与未解之谜</h2>
+<h3>1.1 标准模型中的弱相互作用</h3>
+<p>弱相互作用是标准模型中最为独特的相互作用：</p>
+<ul>
+<li>
+<strong>规范群</strong>：$SU(2)_L$，仅作用于左手费米子；</li>
+<li>
+<strong>规范玻色子</strong>：$W^\pm$（带电流）和 $Z$（中性流）；</li>
+<li>
+<strong>最大宇称不守恒</strong>：只有左手费米子参与弱相互作用，右手费米子完全旁观；</li>
+<li>
+<strong>代际混合</strong>：夸克和轻子的弱相互作用本征态与质量本征态不一致，由CKM和PMNS矩阵描述；</li>
+<li>
+<strong>中微子质量</strong>：中微子具有微小但非零的质量，且不同代的中微子之间发生振荡。</li>
+</ul>
+<h3>1.2 未解之谜</h3>
+<p>尽管电弱理论（Glashow-Weinberg-Salam）在实验上极为成功，以下问题仍缺乏深层理解：</p>
+<ol>
+<li>
+<strong>宇称不守恒的起源</strong>：为什么弱相互作用选择左手？为什么右手完全不参与？这只是一个“实验事实”，还是有什么更深的原因？</li>
+<li>
+<strong>中微子质量的微小量级</strong>：中微子质量（$\sim 0.1,\text{eV}$）比其他费米子小十几个量级——这是为什么？</li>
+<li>
+<strong>代际混合的几何意义</strong>：CKM/PMNS矩阵的角度和相位，是自由参数还是有拓扑起源？</li>
+<li>
+<strong>$W^\pm$、$Z$ 的本体地位</strong>：它们与胶子一样，从未被直接观测到（只能通过衰变产物推断），同样是规范依赖的——它们是真的粒子，还是计算工具？</li>
+</ol>
+<h3>1.3 本文路径</h3>
+<p>本文延续文章26（强相互作用挠群描述）和文章29（辫子群拓扑编织）的思路，将弱相互作用重构为<strong>根域手性拓扑的投影</strong>。这一路径与文章22（电弱EP相变）完全自洽——电弱EP相变描述了 $SU(2)_L \times U(1)<em>Y \to U(1)</em>{\text{EM}}$ 的对称破缺过程，本文则描述破缺后弱相互作用的散射、振荡和混合现象的拓扑本质。</p>
+<hr>
+<h2>2 宇称不守恒的拓扑起源</h2>
+<h3>2.1 根域手性破缺</h3>
+<p>在11时序矩阵框架中，根域侧11维拓扑结构具有固有的手性自由度。这种手性不是外加的，而是根域格点排列的<strong>必然几何性质</strong>——类似于晶体中左旋和右旋螺旋结构的区别。</p>
+<p>当根域拓扑投影到表象域时，手性自由度经历一次自发破缺：</p>
+<ul>
+<li>
+<strong>左手投影</strong>：保留了根域手性的“正像”，对应 $SU(2)_L$ 的活跃表示；</li>
+<li>
+<strong>右手投影</strong>：经历了手性反转，对应 $SU(2)_R$ 的惰性表示——在低能标下被拓扑压制，表现为“不参与弱相互作用”。</li>
+</ul>
+<p><strong>宇称不守恒不是 $SU(2)_L$ 群结构的偶然选择，而是根域拓扑手性在投影过程中被自发破缺的必然结果。</strong></p>
+<h3>2.2 手性投影的数学形式</h3>
+<p>根域手性自由度 $\chi_{\text{root}}$ 投影到表象域时，分裂为两个通道：</p>
+<p>$$
+\chi_{\text{root}} \longrightarrow
+\begin{cases}
+\chi_L = +\chi_{\text{root}} &amp; \text{（左手通道，活跃）} \\
+\chi_R = -\chi_{\text{root}} &amp; \text{（右手通道，压制）}
+\end{cases}
+$$</p>
+<p>右手通道的压制因子由根域到表象域的投影系数决定：</p>
+<p>$$
+\epsilon_R \sim \exp\left(-\frac{\Delta S_{\text{top}}}{2}\right)
+$$</p>
+<p>其中 $\Delta S_{\text{top}}$ 是手性反转路径的拓扑作用量差。在低能标下，$\epsilon_R \ll 1$，右手费米子几乎不参与弱相互作用——这正是观测到的最大宇称不守恒。</p>
+<p><strong>预言</strong>：在极高能标（接近GUT能标）下，$\epsilon_R$ 可能变得可观测——即右手弱相互作用的微弱信号。这对应标准模型中“右手 $W$ 玻色子”或 $Z'$ 玻色子的预言，但此处不是新粒子，而是根域手性投影的能标依赖。</p>
+<h3>2.3 与标准模型的衔接</h3>
+<p>标准模型中，宇称不守恒被编码为 $V-A$ 流结构：</p>
+<p>$$
+J^\mu_{\text{weak}} = \bar{\psi} \gamma^\mu (1 - \gamma^5) \psi
+$$</p>
+<p>在本框架中，$(1 - \gamma^5)$ 算符不是基本输入，而是<strong>根域手性投影在表象域的线性化近似</strong>——它“恰好”选择了左手分量，因为右手分量被拓扑压制。压制因子的精确数值待P5阶段根冠映射完成后确定。</p>
+<hr>
+<h2>3 $W^\pm$、$Z$ 玻色子的本体地位</h2>
+<h3>3.1 与胶子的类比</h3>
+<p>文章29已将胶子降级为“拓扑编织的集体模”。$W^\pm$、$Z$ 玻色子在本框架中具有完全相同的本体地位：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">对比项</th>
+<th align="left">胶子（文章29）</th>
+<th align="left">
+$W^\pm$、$Z$（本文）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>标准模型身份</strong></td>
+<td align="left">
+$SU(3)_c$ 规范玻色子</td>
+<td align="left">
+$SU(2)_L \times U(1)_Y$ 规范玻色子</td>
+</tr>
+<tr>
+<td align="left"><strong>本体论身份</strong></td>
+<td align="left">色通量管拓扑编织的集体模</td>
+<td align="left">根域手性拓扑流的集体模</td>
+</tr>
+<tr>
+<td align="left"><strong>类比</strong></td>
+<td align="left">声子（晶格振动的集体模）</td>
+<td align="left">声子（晶格振动的集体模）</td>
+</tr>
+<tr>
+<td align="left"><strong>“粒子性”来源</strong></td>
+<td align="left">编织操作的线性化近似</td>
+<td align="left">手性流投影的线性化近似</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>3.2 手性拓扑流</h3>
+<p>弱相互作用的“玻色子交换”在本框架中对应<strong>根域手性拓扑流的重新分布</strong>：</p>
+<ul>
+<li>
+$W^\pm$ 交换 = 手性拓扑流在两个费米子之间的<strong>手性翻转传递</strong>（如 $\nu_e \to e^-$ 过程中，电子中微子的手性拓扑流转化为电子的手性拓扑流）；</li>
+<li>
+$Z$ 交换 = 手性拓扑流的<strong>中性重新分配</strong>（如 $\nu_\mu \to \nu_\mu$ 弹性散射中，手性拓扑流保持不变但相位调整）。</li>
+</ul>
+<p><strong>没有粒子在“飞”</strong>——只有手性拓扑流在根域侧的拓扑路径中重新分布，表象层观测者将其解读为“$W^\pm$ 或 $Z$ 玻色子的交换”。</p>
+<h3>3.3 $W^\pm$、$Z$ 质量的拓扑起源</h3>
+<p>标准模型中，$W^\pm$、$Z$ 通过希格斯机制获得质量。在本框架中（与文章22一致），希格斯机制是电弱EP相变的表象表现，$W^\pm$、$Z$ 的质量对应<strong>手性拓扑流在相变后获得的等效惯性</strong>：</p>
+<ul>
+<li>
+$m_W$、$m_Z$ 不是“粒子质量”，而是手性拓扑流在EP相变后的<strong>拓扑刚度</strong>；</li>
+<li>
+$m_W/m_Z$ 的比例（$\cos\theta_W$）由相变前后手性通道的投影系数比决定。</li>
+</ul>
+<p><strong>这解释了为什么 $W^\pm$、$Z$ 质量与希格斯真空期望值 $v$ 成正比</strong>——$v$ 是EP相变的序参量，拓扑刚度正比于序参量的大小。</p>
+<hr>
+<h2>4 中微子振荡的拓扑路径干涉</h2>
+<h3>4.1 标准模型的中微子振荡</h3>
+<p>标准模型中，中微子振荡源于中微子质量本征态（$\nu_1, \nu_2, \nu_3$）与味本征态（$\nu_e, \nu_\mu, \nu_\tau$）的不一致，由PMNS矩阵描述。振荡概率为：</p>
+<p>$$
+P(\nu_\alpha \to \nu_\beta) = \sum_{i,j} U_{\alpha i} U_{\beta i}^* U_{\alpha j}^* U_{\beta j} \exp\left(-i\frac{\Delta m_{ij}^2 L}{2E}\right)
+$$</p>
+<h3>4.2 拓扑路径干涉解释</h3>
+<p>在本框架中，中微子振荡不是质量本征态之间的量子力学拍频，而是<strong>中微子在根域侧沿不同拓扑路径传播后的干涉效应</strong>：</p>
+<ol>
+<li>
+<strong>中微子的根域路径</strong>：中微子在根域侧的投影可以沿多条拓扑路径传播，每条路径对应不同的根域缠绕模式；</li>
+<li>
+<strong>路径相位差</strong>：不同路径的拓扑相位不同，相位差正比于路径的拓扑作用量差 $\Delta S_{\text{top}}$；</li>
+<li>
+<strong>干涉</strong>：中微子到达探测器时，不同路径的投影叠加，产生干涉条纹——表象层观测者将其解读为“振荡”。</li>
+</ol>
+<p><strong>振荡频率的拓扑意义</strong>：</p>
+<p>$$
+\Delta m_{ij}^2 \longleftrightarrow \Delta S_{\text{top}, ij}
+$$</p>
+<p>中微子质量平方差不是“质量差”，而是<strong>不同拓扑路径之间的作用量差</strong>。中微子质量的微小量级（$\sim 0.1,\text{eV}$）对应根域拓扑路径之间极其微小的作用量差——这正是根域到表象域投影的放大倍率的自然结果。</p>
+<h3>4.3 中微子质量微小量级的解释</h3>
+<p>为什么中微子质量比其他费米子小十几个量级？在本框架中：</p>
+<ul>
+<li>
+<strong>带电费米子（电子、夸克等）</strong>：它们的质量来自电弱EP相变后，手性拓扑流与希格斯零模的直接耦合——耦合强度为 $O(1)$ 量级；</li>
+<li>
+<strong>中微子</strong>：中微子是唯一只参与弱相互作用的费米子。它们的质量来自<strong>不同手性拓扑路径之间的微小作用量差</strong>——这个差值被根域到表象域的投影放大倍率（$\sim 10^{60}$ 倍）极度压缩，因此在表象层表现为极小质量。</li>
+</ul>
+<p><strong>中微子质量的微小量级不是偶然的，而是根域拓扑路径作用量差的自然结果。</strong> 这解释了为什么中微子质量比其他费米子小十几个量级——它们不是同一种东西。</p>
+<h3>4.4 PMNS矩阵的拓扑起源</h3>
+<p>PMNS矩阵的混合角在本框架中对应<strong>不同拓扑路径之间的夹角</strong>——即根域侧各缠绕模式之间的相对取向。这些夹角不是自由参数，而是由根域拓扑结构的对称性决定的。</p>
+<p>文章24已建立的 $\mathbb{Z}_3$ 挠群结构，其不可约表示矩阵元自然给出PMNS矩阵的领头阶形式。三个混合角对应 $\mathbb{Z}_3$ 的三个生成元的相对相位：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">PMNS混合角</th>
+<th align="left">拓扑对应</th>
+<th align="left">领头阶数值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">
+$\theta_{12}$（太阳）</td>
+<td align="left">
+$\mathbb{Z}_3$ 第一生成元的相位差</td>
+<td align="left">$\sim 34^\circ$</td>
+</tr>
+<tr>
+<td align="left">
+$\theta_{23}$（大气）</td>
+<td align="left">
+$\mathbb{Z}_3$ 第二生成元的相位差</td>
+<td align="left">$\sim 42^\circ$</td>
+</tr>
+<tr>
+<td align="left">
+$\theta_{13}$（反应堆）</td>
+<td align="left">
+$\mathbb{Z}_3$ 第三生成元的相位差</td>
+<td align="left">$\sim 8.6^\circ$</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>说明</strong>：当前仅给出定性对应，精确数值需待P5阶段根冠映射完成后确定。</p>
+<hr>
+<h2>5 代际混合的拓扑起源</h2>
+<h3>5.1 挠群 $\mathbb{Z}_3$ 与三代费米子</h3>
+<p>文章24已建立：轻子扇区的代际混合由 $\mathbb{Z}_3$ 挠群描述。本文将该结论推广到夸克扇区：</p>
+<ul>
+<li>
+<strong>三代费米子</strong> = $\mathbb{Z}_3$ 的三个不可约表示；</li>
+<li>
+<strong>代际混合</strong> = $\mathbb{Z}_3$ 表示之间的变换矩阵；</li>
+<li>
+<strong>CKM/PMNS矩阵</strong> = $\mathbb{Z}_3$ 挠群在特定基下的表示矩阵。</li>
+</ul>
+<h3>5.2 CKM矩阵的拓扑对应</h3>
+<p>CKM矩阵描述了夸克扇区的代际混合。在本框架中：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">CKM参数</th>
+<th align="left">拓扑对应</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">
+$\theta_{12}$（Cabibbo角）</td>
+<td align="left">
+$\mathbb{Z}_3$ 第一生成元的旋转角</td>
+<td align="left">$\sim 13^\circ$</td>
+</tr>
+<tr>
+<td align="left">$\theta_{23}$</td>
+<td align="left">
+$\mathbb{Z}_3$ 第二生成元的旋转角</td>
+<td align="left">$\sim 2.4^\circ$</td>
+</tr>
+<tr>
+<td align="left">$\theta_{13}$</td>
+<td align="left">
+$\mathbb{Z}_3$ 第三生成元的旋转角</td>
+<td align="left">$\sim 0.2^\circ$</td>
+</tr>
+<tr>
+<td align="left">$\delta_{\text{CP}}$</td>
+<td align="left">拓扑路径的不可积相位</td>
+<td align="left">待定</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>说明</strong>：当前仅给出定性对应。精确数值和CP相位的拓扑起源需P5阶段完成。</p>
+<h3>5.3 代际混合不是自由参数</h3>
+<p>标准模型中，CKM/PMNS矩阵的角度和相位是自由参数（共4个：3个角+1个CP相）。在本框架中：</p>
+<ul>
+<li>
+<strong>混合角</strong> = $\mathbb{Z}_3$ 挠群表示矩阵的几何参数——由根域拓扑结构唯一决定，非自由；</li>
+<li>
+<strong>CP相位</strong> = 拓扑路径的不可积相位——由根域拓扑的手性破缺方向决定，非自由。</li>
+</ul>
+<p><strong>代际混合是拓扑的必然，而非自由参数。</strong> 这正是“零参数承诺”在味物理中的体现。</p>
+<hr>
+<h2>6 与标准模型的对比</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">项目</th>
+<th align="left">标准模型（电弱理论）</th>
+<th align="left">拓扑描述（本体论）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>基本实体</strong></td>
+<td align="left">费米子 + $W^\pm$、$Z$ + 希格斯</td>
+<td align="left">费米子（拓扑缺陷）+ 根域手性拓扑流</td>
+</tr>
+<tr>
+<td align="left"><strong>相互作用媒介</strong></td>
+<td align="left">
+$W^\pm$、$Z$ 玻色子交换</td>
+<td align="left">手性拓扑流的重新分布</td>
+</tr>
+<tr>
+<td align="left"><strong>宇称不守恒</strong></td>
+<td align="left">
+$V-A$ 流结构（输入）</td>
+<td align="left">根域手性破缺的必然结果</td>
+</tr>
+<tr>
+<td align="left"><strong>$W^\pm$、$Z$ 质量</strong></td>
+<td align="left">希格斯机制（真空期望值）</td>
+<td align="left">手性拓扑流的拓扑刚度（EP相变后）</td>
+</tr>
+<tr>
+<td align="left"><strong>中微子振荡</strong></td>
+<td align="left">质量本征态干涉（$\Delta m^2$）</td>
+<td align="left">拓扑路径干涉（$\Delta S_{\text{top}}$）</td>
+</tr>
+<tr>
+<td align="left"><strong>中微子质量微小量级</strong></td>
+<td align="left">无解释（自由参数）</td>
+<td align="left">拓扑路径作用量差的自然结果</td>
+</tr>
+<tr>
+<td align="left"><strong>代际混合（CKM/PMNS）</strong></td>
+<td align="left">自由参数（4个）</td>
+<td align="left">
+$\mathbb{Z}_3$ 挠群表示矩阵（非自由）</td>
+</tr>
+<tr>
+<td align="left"><strong>$W^\pm$、$Z$ 的本体地位</strong></td>
+<td align="left">实在的规范玻色子</td>
+<td align="left">手性拓扑流的集体模（类似声子）</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>7 诚实披露与遗留问题</h2>
+<ol>
+<li>
+<strong>精确数值对应</strong>：当前仅给出定性对应（混合角、振荡频率、$m_W/m_Z$ 比例等），精确数值需P5阶段根冠映射完成后确定；</li>
+<li>
+<strong>CP相位的拓扑起源</strong>：CP破坏的拓扑机制当前仅定性提及，尚未建立完整的拓扑模型；</li>
+<li>
+<strong>中微子质量顺序</strong>：正常顺序还是反转顺序？本框架当前无法区分，需进一步分析拓扑路径的能级结构；</li>
+<li>
+<strong>无中微子双贝塔衰变</strong>：中微子是否为马约拉纳粒子？本框架当前未处理；</li>
+<li>
+<strong>轻子普适性检验</strong>：标准模型中轻子普适性（$\mu/e$ 比例等）是精确成立的，本框架需要验证是否保持；</li>
+<li>
+<strong>与文章22的精确衔接</strong>：本文的“手性拓扑流”与文章22的“EP相变零模”之间的精确数学关系需进一步建立；</li>
+<li>
+<strong>与文章24的挠群序列衔接</strong>：本文的 $\mathbb{Z}_3$ 挠群与文章24的 $\mathbb{Z}_3$ 挠群在数学上一致，但需验证CKM/PMNS矩阵的精确数值是否由同一组挠群参数决定。</li>
+</ol>
+<hr>
+<h2>8 结论</h2>
+<p>本文提出了弱相互作用的拓扑描述，替代标准模型中以 $W^\pm$、$Z$ 玻色子交换为核心的电弱理论。核心主张：</p>
+<ol>
+<li>
+<strong>宇称不守恒是根域手性破缺的必然结果</strong>——不是 $SU(2)_L$ 群结构的偶然选择；</li>
+<li>
+<strong>$W^\pm$、$Z$ 是手性拓扑流的集体模</strong>——类似于胶子是拓扑编织的集体模，不是基本粒子；</li>
+<li>
+<strong>中微子振荡是拓扑路径干涉</strong>——振荡频率对应拓扑路径的作用量差，中微子质量的微小量级是根域投影放大倍率的自然结果；</li>
+<li>
+<strong>代际混合是 $\mathbb{Z}_3$ 挠群表示论的必然</strong>——CKM/PMNS矩阵的角度和相位不是自由参数，而是拓扑结构的几何参数。</li>
+</ol>
+<p><strong>弱相互作用不需要 $W^\pm$、$Z$ 作为实在粒子。</strong> 它们是根域手性拓扑流在表象域的集体激发——一个极其成功的近似（电弱理论的实验精度证明了这一点），但终究是近似，不是本体。</p>
+<hr>
+<h2>附录A：与P4阶段其他文章的衔接</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">文章</th>
+<th align="left">内容</th>
+<th align="left">与本文衔接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">文章22</td>
+<td align="left">电弱EP相变</td>
+<td align="left">本文的“手性拓扑流”是EP相变后弱扇区的动力学表现</td>
+</tr>
+<tr>
+<td align="left">文章24</td>
+<td align="left">拓扑散射振幅（轻子）</td>
+<td align="left">本文的 $\mathbb{Z}_3$ 挠群与文章24完全一致，代际混合的拓扑起源共用同一套挠群结构</td>
+</tr>
+<tr>
+<td align="left">文章26</td>
+<td align="left">强相互作用挠群描述</td>
+<td align="left">强作用（$\mathbb{Z}_3\times\mathbb{Z}_3$）与弱作用（$\mathbb{Z}_3$）的挠群结构同源但不同构，反映 $SU(3)$ 与 $SU(2)$ 的差异</td>
+</tr>
+<tr>
+<td align="left">文章29</td>
+<td align="left">强作用辫子群描述</td>
+<td align="left">强作用（拓扑编织）与弱作用（手性拓扑流）共用“集体模替代粒子”的本体论策略</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>附录B：可信度分层</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">结论内容</th>
+<th align="left">可信度层级</th>
+<th align="left">依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">宇称不守恒 = 根域手性破缺</td>
+<td align="left">建构假说层</td>
+<td align="left">定性机制清晰，定量压制因子待P5</td>
+</tr>
+<tr>
+<td align="left">
+$W^\pm$、$Z$ = 手性拓扑流的集体模</td>
+<td align="left">建构假说层</td>
+<td align="left">与文章29的胶子降级同构，逻辑自洽</td>
+</tr>
+<tr>
+<td align="left">中微子振荡 = 拓扑路径干涉</td>
+<td align="left">建构假说层</td>
+<td align="left">定性机制清晰，精确 $\Delta m^2$ 数值待算</td>
+</tr>
+<tr>
+<td align="left">代际混合 = $\mathbb{Z}_3$ 挠群表示矩阵</td>
+<td align="left">建构假说层</td>
+<td align="left">与文章24的挠群序列一致，精确混合角待P5</td>
+</tr>
+<tr>
+<td align="left">中微子质量微小量级的解释</td>
+<td align="left">建构假说层</td>
+<td align="left">逻辑自洽，定量验证待完成</td>
+</tr>
+<tr>
+<td align="left">CP相位的拓扑起源</td>
+<td align="left">纲领层</td>
+<td align="left">当前仅定性提及，完整模型待建立</td>
+</tr>
+<tr>
+<td align="left">精确混合角数值</td>
+<td align="left">待P5</td>
+<td align="left">需根冠映射完成后确定</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>附录C：符号对照表</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">符号</th>
+<th align="left">含义</th>
+<th align="left">前序对应</th>
+<th align="left">出处</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">$\chi_{\text{root}}$</td>
+<td align="left">根域手性自由度</td>
+<td align="left">—</td>
+<td align="left">本文引入</td>
+</tr>
+<tr>
+<td align="left">$\chi_L, \chi_R$</td>
+<td align="left">左右手投影</td>
+<td align="left">—</td>
+<td align="left">本文引入</td>
+</tr>
+<tr>
+<td align="left">$\epsilon_R$</td>
+<td align="left">右手通道压制因子</td>
+<td align="left">—</td>
+<td align="left">本文引入</td>
+</tr>
+<tr>
+<td align="left">$\Delta S_{\text{top}}$</td>
+<td align="left">拓扑路径作用量差</td>
+<td align="left">文章24</td>
+<td align="left">本文推广到中微子振荡</td>
+</tr>
+<tr>
+<td align="left">$\mathbb{Z}_3$</td>
+<td align="left">代际混合挠群</td>
+<td align="left">文章24</td>
+<td align="left">本文推广到夸克扇区</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>参考文献</h2>
+<p>[1] 文章16：P2-1 规范耦合反锁与GUT能标预言（已归档）</p>
+<p>[2] 文章21：P3-1 标准模型规范群结构的几何导出（已归档）</p>
+<p>[3] 文章22：P3-2 电弱对称破缺与希格斯机制的几何诠释（已归档）</p>
+<p>[4] 文章24：P3-4 拓扑散射振幅与粒子衰变的内禀动力学（已归档）</p>
+<p>[5] 文章25：P3-5 实验联合约束与全体系自洽审计（已归档）</p>
+<p>[6] 文章26：P4-1 强相互作用散射的挠群描述（已归档）</p>
+<p>[7] 文章27：P4-2 局部宇宙种子的冷却相变史（已归档）</p>
+<p>[8] 文章28：P4-3 旋转拖把布条=星系旋臂平坦化——同构分析（已归档）</p>
+<p>[9] 文章29：P4-4 强相互作用散射的拓扑描述——辫子群与色通量管的几何重构（已归档）</p>
+<p>[10] Particle Data Group. Review of particle physics. <em>Phys. Rev. D</em>, 2024, 110:030001.</p>
+<hr>
+<p><strong>归档时间：2026-07-17</strong></p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
