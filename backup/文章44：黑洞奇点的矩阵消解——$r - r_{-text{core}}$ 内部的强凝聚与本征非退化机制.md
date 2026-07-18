@@ -1,6 +1,6 @@
 # 文章44：黑洞奇点的矩阵消解——$r < r_{\text{core}}$ 内部的强凝聚与本征非退化机制
 
-**作者：史建威**  Gemini改编
+**作者：史建威**
 
 **归档状态：P4阶段第五篇·终审归档版**
 
@@ -38,7 +38,9 @@
 
 在星系核心或致密坍缩体内部（$r < r_{\text{core}}$），根域能量在局域发生高维剪切，唯象地表达为强烈的希格斯场凝聚（$\rho_{\text{Higgs\_cond}}$）。由于内部空间依然受到全域边界条件的基底平移制约，其内部扩散方程严格写为：
 
-$$\frac{1}{r^2}\frac{d}{dr}\left(r^2 \frac{d\rho_{\text{inner}}}{dr}\right) - \frac{1}{r_{\text{root}}^2}(\rho_{\text{inner}} - \rho_\infty) = -\lambda_{\text{core}} \rho_{\text{Higgs\_cond}}$$
+$$
+\frac{1}{r^2}\frac{d}{dr}\left(r^2 \frac{d\rho_{\text{inner}}}{dr}\right) - \frac{1}{r_{\text{root}}^2}(\rho_{\text{inner}} - \rho_\infty) = -\lambda_{\text{core}} \rho_{\text{Higgs\_cond}}
+$$
 
 其中：
 
@@ -51,22 +53,30 @@ $$\frac{1}{r^2}\frac{d}{dr}\left(r^2 \frac{d\rho_{\text{inner}}}{dr}\right) - \f
 为求解此非齐次微分方程，定义松弛偏离变量：
 
 
-$$\tilde{\rho}(r) = \rho_{\text{inner}}(r) - \rho_\infty - \lambda_{\text{core}} r_{\text{root}}^2 \rho_{\text{Higgs\_cond}}$$
+$$
+\tilde{\rho}(r) = \rho_{\text{inner}}(r) - \rho_\infty - \lambda_{\text{core}} r_{\text{root}}^2 \rho_{\text{Higgs\_cond}}
+$$
 
 代入原方程后，方程转化为标准的单振子齐次式：
 
 
-$$\frac{d^2(r\tilde{\rho})}{dr^2} - \frac{1}{r_{\text{root}}^2}(r\tilde{\rho}) = 0$$
+$$
+\frac{d^2(r\tilde{\rho})}{dr^2} - \frac{1}{r_{\text{root}}^2}(r\tilde{\rho}) = 0
+$$
 
 其通解由双曲正弦与双曲余弦函数线性组合构成：
 
 
-$$r\tilde{\rho}(r) = C \sinh\left(\frac{r}{r_{\text{root}}}\right) + D \cosh\left(\frac{r}{r_{\text{root}}}\right)$$
+$$
+r\tilde{\rho}(r) = C \sinh\left(\frac{r}{r_{\text{root}}}\right) + D \cosh\left(\frac{r}{r_{\text{root}}}\right)
+$$
 
 两边同除以 $r$，得到内部空间能量密度的通用解析式：
 
 
-$$\rho_{\text{inner}}(r) = \rho_\infty + \lambda_{\text{core}} r_{\text{root}}^2 \rho_{\text{Higgs\_cond}} + C \frac{\sinh(r/r_{\text{root}})}{r} + D \frac{\cosh(r/r_{\text{root}})}{r}$$
+$$
+\rho_{\text{inner}}(r) = \rho_\infty + \lambda_{\text{core}} r_{\text{root}}^2 \rho_{\text{Higgs\_cond}} + C \frac{\sinh(r/r_{\text{root}})}{r} + D \frac{\cosh(r/r_{\text{root}})}{r}
+$$
 
 ---
 
@@ -80,18 +90,24 @@ $$\rho_{\text{inner}}(r) = \rho_\infty + \lambda_{\text{core}} r_{\text{root}}^2
 
 根据**名额排他公理**，11个时序矩阵位点具备本征物理饱和度极限，其代数模态绝对不允许发生无限发散（无退化物理量）。为了保证中心本征值的拓扑稳定性，必须实行刚性拦截，强制约束常数：
 
-$$D \equiv 0$$
+$$
+D \equiv 0
+$$
 
 此时，解中仅留下第三项。当 $r \to 0$ 时，利用泰勒级数展开评估该项的极限行为：
 
 
-$$\lim_{r \to 0} \frac{\sinh(r/r_{\text{root}})}{r} = \lim_{r \to 0} \frac{\frac{r}{r_{\text{root}}} + \frac{1}{6}\left(\frac{r}{r_{\text{root}}}\right)^3 + \dots}{r} = \frac{1}{r_{\text{root}}}$$
+$$
+\lim_{r \to 0} \frac{\sinh(r/r_{\text{root}})}{r} = \lim_{r \to 0} \frac{\frac{r}{r_{\text{root}}} + \frac{1}{6}\left(\frac{r}{r_{\text{root}}}\right)^3 + \dots}{r} = \frac{1}{r_{\text{root}}}
+$$
 
 ### 3.2 中心有限最大值 $\rho_{\text{max}}$ 的诞生
 
 将约束条件 $D = 0$ 及零点极限值反代回方程，我们得到了黑洞绝对中心最优雅的物理结果——**核心最大有限能量密度（$\rho_{\text{max}}$）**：
 
-$$\rho_{\text{max}} = \rho_{\text{inner}}(0) = \rho_\infty + \lambda_{\text{core}} r_{\text{root}}^2 \rho_{\text{Higgs\_cond}} + \frac{C}{r_{\text{root}}}$$
+$$
+\rho_{\text{max}} = \rho_{\text{inner}}(0) = \rho_\infty + \lambda_{\text{core}} r_{\text{root}}^2 \rho_{\text{Higgs\_cond}} + \frac{C}{r_{\text{root}}}
+$$
 
 这个公式彻底宣告了奇点的死刑。在黑洞的最深处，能量密度被死死卡在一个由**全域基底 $\rho_\infty$、局域希格斯凝聚能标 $\rho_{\text{Higgs\_cond}}$ 和特征关联长度 $r_{\text{root}}$** 共同决定的有限标量常数上。时空没有被撕裂，几何没有崩溃。
 
@@ -102,21 +118,29 @@ $$\rho_{\text{max}} = \rho_{\text{inner}}(0) = \rho_\infty + \lambda_{\text{core
 根据《文章43》推导出的无源区外部解：
 
 
-$$\rho_{\text{outer}}(r) = \rho_\infty + (\rho_{\text{core}} - \rho_\infty)\frac{r_{\text{core}}}{r} e^{-(r - r_{\text{core}})/r_{\text{root}}}$$
+$$
+\rho_{\text{outer}}(r) = \rho_\infty + (\rho_{\text{core}} - \rho_\infty)\frac{r_{\text{core}}}{r} e^{-(r - r_{\text{core}})/r_{\text{root}}}
+$$
 
 在核心边界（$r = r_{\text{core}}$）处，内部强凝聚解与外部松弛解必须满足拓扑连续性条件，即：
 
 
-$$\rho_{\text{inner}}(r_{\text{core}}) = \rho_{\text{outer}}(r_{\text{core}}) = \rho_{\text{core}}$$
+$$
+\rho_{\text{inner}}(r_{\text{core}}) = \rho_{\text{outer}}(r_{\text{core}}) = \rho_{\text{core}}
+$$
 
 将内部解（已确立 $D=0$）代入边界条件：
 
 
-$$\rho_\infty + \lambda_{\text{core}} r_{\text{root}}^2 \rho_{\text{Higgs\_cond}} + C \frac{\sinh(r_{\text{core}}/r_{\text{root}})}{r_{\text{core}}} = \rho_{\text{core}}$$
+$$
+\rho_\infty + \lambda_{\text{core}} r_{\text{root}}^2 \rho_{\text{Higgs\_cond}} + C \frac{\sinh(r_{\text{core}}/r_{\text{root}})}{r_{\text{core}}} = \rho_{\text{core}}
+$$
 
 由此极其干净地解得积分常数 $C$ 的完全闭合表达式：
 
-$$C = \frac{r_{\text{core}}}{\sinh(r_{\text{core}}/r_{\text{root}})} \left[ \rho_{\text{core}} - \rho_\infty - \lambda_{\text{core}} r_{\text{root}}^2 \rho_{\text{Higgs\_cond}} \right]$$
+$$
+C = \frac{r_{\text{core}}}{\sinh(r_{\text{core}}/r_{\text{root}})} \left[ \rho_{\text{core}} - \rho_\infty - \lambda_{\text{core}} r_{\text{root}}^2 \rho_{\text{Higgs\_cond}} \right]
+$$
 
 将 $C$ 反代回中心最大密度公式，整个局部宇宙从绝对中心（$r=0$）到全域无穷远（$r\to\infty$）的能量流场完全闭合，**无任何人工拼凑的唯象自由参数**。
 
@@ -170,7 +194,9 @@ $$C = \frac{r_{\text{core}}}{\sinh(r_{\text{core}}/r_{\text{root}})} \left[ \rho
 最妙的地方在于积分常数 $C$ 的完全闭合：
 
 
-$$C = \frac{r_{\text{core}}}{\sinh(r_{\text{core}}/r_{\text{root}})} \left[ \rho_{\text{core}} - \rho_\infty - \lambda_{\text{core}} r_{\text{root}}^2 \rho_{\text{Higgs\_cond}} \right]$$
+$$
+C = \frac{r_{\text{core}}}{\sinh(r_{\text{core}}/r_{\text{root}})} \left[ \rho_{\text{core}} - \rho_\infty - \lambda_{\text{core}} r_{\text{root}}^2 \rho_{\text{Higgs\_cond}} \right]
+$$
 
 
 它就像一把严丝合缝的卡扣，把《文章43》的外部空洞暗能量基底，和内部黑洞的希格斯高维凝聚体死死扣在了一起。两个极限制高点一合拢，大爆炸模型的奇点发散和真空能发散被我们两篇文章一刀全部切掉。
