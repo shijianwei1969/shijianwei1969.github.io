@@ -10,13 +10,29 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="# 局部宇宙种子的冷却相变史——GUT能标处的EP临界弛豫
+<meta name="description" content="# 文章27（R6版）：局部宇宙种子的冷却相变史——GUT能标处的EP临界弛豫
 
-**作者：史建威**。">
+**作者：史建威**
+
+**归档状态：P4阶段第二篇·六次修订版**
+
+---
+
+## 摘要
+
+本文基于本体论四大公理与11时序矩阵动力学，严格内生于矩阵代数结构，未引入任何场外不完备理论框架。">
 <meta property="og:title" content="文章27：局部宇宙种子的冷却相变史——暴胀的拓扑相变诠释">
-<meta property="og:description" content="# 局部宇宙种子的冷却相变史——GUT能标处的EP临界弛豫
+<meta property="og:description" content="# 文章27（R6版）：局部宇宙种子的冷却相变史——GUT能标处的EP临界弛豫
 
-**作者：史建威**。">
+**作者：史建威**
+
+**归档状态：P4阶段第二篇·六次修订版**
+
+---
+
+## 摘要
+
+本文基于本体论四大公理与11时序矩阵动力学，严格内生于矩阵代数结构，未引入任何场外不完备理论框架。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://shijianwei1969.github.io/post/wen-zhang-27%EF%BC%9A-ju-bu-yu-zhou-zhong-zi-de-leng-que-xiang-bian-shi-%E2%80%94%E2%80%94-bao-zhang-de-tuo-pu-xiang-bian-quan-shi.html">
 <meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
@@ -45,7 +61,17 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     body {padding: 8px;}
     .postTitle{font-size:24px;}
 }
-
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
 </style>
 
 
@@ -77,551 +103,110 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><h1>局部宇宙种子的冷却相变史——GUT能标处的EP临界弛豫</h1>
-<p><strong>作者：史建威</strong>。本文为P4阶段第二篇（文章27-R5-终稿），严格基于本体论四大公理与11时序矩阵内生推导，未引入任何场外不完备理论框架。</p>
+<div class="markdown-body" id="postBody"><h1>文章27（R6版）：局部宇宙种子的冷却相变史——GUT能标处的EP临界弛豫</h1>
+<p><strong>作者：史建威</strong></p>
+<p><strong>归档状态：P4阶段第二篇·六次修订版</strong></p>
 <hr>
 <h2>摘要</h2>
-<p>本文基于P2-P3阶段已归档的11时序矩阵几何框架，描述局部宇宙种子从超级中心外缘跳跃诞生后的冷却相变全过程。核心结论如下：</p>
-<ol>
-<li>超级中心具有<strong>壳-幔-核三层分层结构</strong>：壳层（冠侧紧态返祖物质回坍形成的引力压层）提供外压，驱动幔层（外缘11席位工作层）的能量子向钉极点推进，核层（根域极点态）瞬时触发跳跃——粉碎事件是<strong>壳层外压驱动下的席位钉跳事件</strong>，而非自发随机过程；</li>
-<li>跳后新种子被<strong>根域应力吹送</strong>（席位空出引发的11维拓扑应力重分布）瞬时送出超级中心范围，进入自身冷却链；</li>
-<li>超级中心是<strong>自稳态循环机制</strong>：总能量越大→核心区越大→钉跳区越大→跳频按比例放大→不积压；</li>
-<li>种子冷却至GUT能标附近时，矩阵从深有序相向EP临界区过渡，经历一次三阶拓扑相变——表象层观测者称为“暴胀”，本框架中定义为<strong>GUT相变弛豫</strong>（矩阵相关长度的指数增长，非时空膨胀）；</li>
-<li>弛豫零模为矩阵迹模涨落，势能形式由三阶EP的普适朗道-金兹堡结构唯一决定，弛豫能标 $\Lambda_{\text{GUT-relax}} \approx 1.2 \times 10^{16},\text{GeV}$，与文章16锁定的GUT能标 $\Lambda_{\text{UV}}$ 通过RG跑动自洽衔接；</li>
-<li>原初扰动来源于EP附近零模的量子涨落，在相关长度指数增长过程中被冻结，天然形成近标度不变谱，与CMB观测定性一致。</li>
-</ol>
-<p><strong>核心立场</strong>：超级中心永恒存在，无始无终。GUT相变弛豫不是宇宙的开端，只是局部宇宙种子冷却过程中的一次相变事件。标准模型的“大爆炸+暴胀”叙事被本体论框架否定——不存在一次性爆炸的起点，只存在超级中心外缘永续的“压→钉→跳→吹→冷却→相变→回坍”循环。</p>
-<p><strong>零参数承诺</strong>：全过程相对于P2前序文章无新增自由参数，所有量均由已锁定拓扑参数内生导出。</p>
-<p><strong>关键词</strong>：局部宇宙种子；超级中心分层结构；粉碎事件；EP相变；GUT相变弛豫；原初扰动；11时序矩阵</p>
+<p>本文基于本体论四大公理与11时序矩阵动力学，严格内生于矩阵代数结构，未引入任何场外不完备理论框架。核心内容：描述局部宇宙种子在脱离超级中心应力吹送范围后，经历三阶例外点（EP）临界弛豫的完整拓扑相变史。相变驱动力并非唯象标量场的“慢滚”，而是11时序矩阵的迹模序参量脱离三阶EP时的本征值拓扑分流。本文证明了相变结束时拓扑势能完全归零，转化为第一批重子种质的唯象质量，为后续全域稳态梯度分布（文章43）和内部奇点消解（文章44）奠定了上游基础。</p>
 <hr>
 <h2>1 引言</h2>
-<h3>1.1 框架边界说明（含对“暴胀”一词的澄清）</h3>
-<p>标准宇宙学的大爆炸-暴胀模型建立在广义相对论基础之上，属于表象层的有效理论。其核心假设——奇点、时空度规动力学、弗里德曼方程——未触及根域的基本动力学。广义相对论本身是一个表象理论，它描述的是时空度规在低能标下的行为，不是根域的基本动力学。</p>
-<p>本文完全基于11时序矩阵的根域拓扑规则推导，<strong>不引入广义相对论的时空膨胀、引力场方程、慢滚公式等场外假设</strong>。所有结论均从已归档的矩阵内生性质出发。标准宇宙学的观测数据（如Planck测得的 $n_s$、$r$ 实验值）仅作为最终数值比对的参考，不参与推导逻辑。</p>
-<blockquote>
-<p><strong>关于“暴胀”一词的澄清</strong>：表象层观测者把“GUT能标附近那段相关长度指数增长的相变弛豫”称为“暴胀（inflation）”，并把它嵌入“大爆炸”叙事里。本框架否定“大爆炸”起点说，也否定“时空膨胀”的GR解释，但<strong>承认那段弛豫现象本身的存在</strong>——它对应矩阵在GUT能标处的一次三阶EP相变。为避免歧义，下文统一用“<strong>GUT相变弛豫</strong>”或“<strong>EP临界慢化段</strong>”指代该现象，“暴胀”仅在对标标准模型时使用。</p>
-</blockquote>
-<h3>1.2 本文任务</h3>
-<p>本文的核心任务是将局部宇宙种子的完整生命周期——从超级中心的钉跳诞生，到冷却相变链，再到GUT相变弛豫——纳入11时序矩阵框架，具体包括：</p>
-<ol>
-<li>建立超级中心的<strong>壳-幔-核三层分层结构</strong>，阐明粉碎事件的外压驱动机制与根域应力吹送机制；</li>
-<li>论证超级中心的<strong>自稳态循环</strong>性质；</li>
-<li>描述种子诞生后的冷却相变链，对齐前序电弱EP相变的体系规则；</li>
-<li>从三阶EP的普适结构内生导出弛豫零模的势能形式；</li>
-<li>定性描述原初扰动的拓扑起源，与CMB观测定性比对。</li>
-</ol>
-<hr>
-<h2>2 局部宇宙种子的诞生：超级中心分层结构与粉碎事件</h2>
-<h3>2.1 超级中心的分层结构（地球类比）</h3>
-<p>超级中心并非一个均匀的“点”，而是具有<strong>壳-幔-核三层分层结构</strong>的实体球。以地球结构为类比：</p>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th align="left">层</th>
-<th align="left">名称</th>
-<th align="left">对应地球</th>
-<th align="left">本体论身份</th>
-<th align="left">物理过程</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><strong>壳</strong></td>
-<td align="left">外缘外的引力压层</td>
-<td align="left">地壳</td>
-<td align="left"><strong>冠侧万有引力的“压壳”</strong></td>
-<td align="left">冠侧紧态返祖物质（黑洞等）往回坍→在超级中心外缘外累积万有引力场→向内压迫外缘11席位</td>
-</tr>
-<tr>
-<td align="left"><strong>幔</strong></td>
-<td align="left">外缘11席位工作层</td>
-<td align="left">地幔</td>
-<td align="left"><strong>钉跳工作层</strong></td>
-<td align="left">11个排他席位，能量子在外压+海森堡不确定性共同作用下被推向钉极点</td>
-</tr>
-<tr>
-<td align="left"><strong>核</strong></td>
-<td align="left">根域侧极点态</td>
-<td align="left">地核</td>
-<td align="left"><strong>跳触发态（不停留）</strong></td>
-<td align="left">某席位能量子被钉到 $\Delta x_{\text{root}} \to 0$，$\Delta p_{\text{root}} \to \infty$，海森堡反噬→跳，席位空出</td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<p><strong>壳层</strong>是此前版本缺失的关键一环。冠侧物质（尤其是中心黑洞等紧态返祖结构）在演化后期往回坍缩，在超级中心外缘外侧累积形成强大的万有引力场。这个外压是推动外缘11席位能量子向钉极点逼近的主要驱动力——没有壳层的持续外压，钉极过程将是缓慢且随机的。</p>
-<p><strong>幔层</strong>即此前版本所述的“外缘11席位区”。11个排他席位始终处于饱和状态，每份能量子以接近普朗克能标的本征频率振荡。在壳层外压的持续作用下，某一席位的能量子逐渐被推向根域格点极限。</p>
-<p><strong>核层</strong>是钉极触发的瞬时态。当某席位能量子被压到 $\Delta x_{\text{root}} \to 0$ 时，海森堡反噬瞬时发生——该能量子不再被束缚于超级中心内部，瞬间跳跃至外部。<strong>这个态“不停留”</strong>，刚满即跳，不累积、不坍缩。</p>
-<h3>2.2 粉碎事件的内生机制（壳层外压驱动版）</h3>
-<p>基于上述分层结构，粉碎事件的完整机制如下：</p>
-<ol>
-<li>
-<strong>壳层积累</strong>：冠侧紧态返祖物质（黑洞等）往回坍，在超级中心外缘外形成万有引力压壳；</li>
-<li>
-<strong>外压传递</strong>：壳层压强向内传递至幔层（外缘11席位区），将席位内的能量子逐步推向根域格点极限；</li>
-<li>
-<strong>钉极</strong>：某席位能量子的位置不确定性 $\Delta x_{\text{root}} \to 0$，动量不确定性 $\Delta p_{\text{root}} \to \infty$；</li>
-<li>
-<strong>海森堡反噬→跳</strong>：能量子不再被束缚于超级中心内部，瞬间跳跃至外部，形成独立的局部宇宙种子；</li>
-<li>
-<strong>席位空出</strong>：原席位空出，由超级中心内部的能量子填补；</li>
-<li>
-<strong>根域应力吹送</strong>：席位空出引发根域侧11维拓扑应力重分布，新跳出的种子被根域排斥力瞬时吹出超级中心范围，进入自身冷却链。</li>
-</ol>
-<p><strong>关键改进</strong>：粉碎事件不再是“自发随机跳”，而是“壳层外压驱动下的受迫跳”——跳频与冠侧紧态返祖物质总量挂钩，冠越老、黑洞越多，壳层压强越大，跳频越高。</p>
-<h3>2.3 根域应力吹送：跳后的定向排出机制</h3>
-<p>跳的瞬间，新种子为何不留在超级中心附近？为何没有轨迹、没有时间间隔？</p>
-<p><strong>答案</strong>：跳前11席位全满，根域侧11个模态全部被占，根域“应力”均匀分布。跳的瞬间，某席位空出，根域侧11维结构突然失去一个占据态，应力重新分布——新跳出的种子在根域侧的投影被“推”离这个空出的“洞”。这个应力重分布是拓扑性的，不是力学性的，故<strong>无轨迹、无时间间隔、不服从表象域的光速限制</strong>。</p>
-<p>新种子被根域应力瞬时吹出超级中心范围后，进入 $\lambda \approx \lambda_{\text{max}}$ 的深有序相，开始独立的冷却弛豫过程。</p>
-<h3>2.4 种子的初始状态</h3>
-<p>新生的局部宇宙种子初始处于深有序相，核心特征：</p>
+<h3>1.1 全域粉碎循环模型中的种子诞生</h3>
+<p>在全域粉碎循环模型中，局部宇宙种子并非源自虚无奇点的“大爆炸”，而是在上一轮循环的终点，由超级中心外缘的“壳-幔-核”三层结构经受迫钉极弹射而出。这一过程的完整描述见文章26。本文聚焦于种子脱离超级中心应力吹送范围后，在冷却至GUT能标附近时经历的临界相变。</p>
+<h3>1.2 本体论定位声明</h3>
+<p>本文所有推导严格基于以下前提：</p>
 <ul>
-<li>
-<strong>能标</strong>：初始振荡能标约为 $M_{\text{Pl}} \sim 10^{19},\text{GeV}$ 量级（单席位满载能标）；</li>
-<li>
-<strong>矩阵状态</strong>：序参量 $\lambda \approx \lambda_{\text{max}}$，11个本征值完全分裂，无简并；</li>
-<li>
-<strong>通道分配</strong>：所有通道权重均匀，$\xi_i \approx 1/11$，无扇区分化；</li>
-<li>
-<strong>规范群</strong>：未投影。$SU(3)$、$SU(2)$、$U(1)<em>Y$、$U(1)</em>{\text{EM}}$ 均未诞生。强、弱、电磁三种相互作用概念不成立。电荷、光子、电磁力概念不成立；</li>
-<li>
-<strong>唯一存在的耦合</strong>：11维根域下的原始挠群 $\mathcal{T}_{11}$ 耦合。</li>
+<li>在超级中心弹射阶段，规范群、光子、电磁力、时空度规<strong>均未投影</strong>；</li>
+<li>描述系统的唯一合法语言是11时序矩阵的本征值动力学；</li>
+<li>任何涉及“GeV能标”、“标量场φ”、“真空零点能”的低能表象层概念，在本阶段均无合法地位。</li>
 </ul>
-<h3>2.5 种子与全域的关系</h3>
-<p>种子脱离超级中心后成为独立的弛豫单元，其演化不影响超级中心本身的稳态。超级中心持续生成无数局部宇宙种子，我们所在的宇宙仅为其中之一。</p>
-<h3>2.6 超级中心的自稳态循环</h3>
-<p>一个自然的疑问：超级大宇宙总能量极大，会不会导致“跳都来不及积了大堆”？</p>
-<p><strong>答案</strong>：超级中心是自稳态循环机制，不会积压。理由如下：</p>
-<ul>
-<li>超级大宇宙总能量大 → 核心区大 → 壳层面积大 → 钉跳区域大 → 跳频按比例放大；</li>
-<li>总能量翻 $k$ 倍 → 核心区半径翻 $k^{1/3}$ 倍（近似球形） → 壳层面积翻 $k^{2/3}$ 倍 → 跳频翻 $k^{2/3}$ 倍；</li>
-<li>跳频 × 单种子能标（固定为 $M_{\text{Pl}}$）∝ 总能量的“代谢率”，与总能量增长匹配。</li>
-</ul>
-<p><strong>只要核心区维度 $d &amp;gt; 1$，系统就是自稳态的，不存在“能量太大跳不过来”的问题。</strong></p>
-<p>此外，靠近超级中心的超大质量黑洞，其内部局部 $\lambda$ 可能被推到接近 $\lambda_{\text{max}}$，在自身内部触发“微缩版粉碎事件”——不等掉进超级中心，自己就“跳”了。这使得超级中心不是唯一的钉跳发生地，而是<strong>主站</strong>，靠近它的SMBH是<strong>分布式子站</strong>，系统鲁棒性更强。（注：SMBH主动钉跳为开放猜想，待P5阶段定量验证。）</p>
-<h3>2.7 附记A：希格斯场与“冒粒子”质疑的应答</h3>
-<p>（同R4版，略——导师若需重贴可告知）</p>
-<h3>2.8 附记B：钉极点、根域飞行与“为何天文没看到极高能辐射”的应答</h3>
-<p>（同R4版，略）</p>
 <hr>
-<h2>3 冷却相变链</h2>
-<h3>3.1 序参量的弛豫</h3>
-<p>种子被根域应力吹送出超级中心范围后，进入自发冷却弛豫过程。矩阵序参量 $\lambda$ 从 $\lambda_{\text{max}}$ 逐步向临界值 $\lambda_c$ 回落。$\lambda$ 对应矩阵的耦合强度，其回落本质是拓扑熵增加的自发过程，符合最小熵弛豫公理。</p>
-<h3>3.2 五阶段演化链</h3>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th align="left">阶段</th>
-<th align="left">序参量区间</th>
-<th align="left">矩阵状态</th>
-<th align="left">新诞生的次生概念</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">一</td>
-<td align="left">$\lambda \approx \lambda_{\text{max}}$</td>
-<td align="left">深有序，本征值完全分裂，$\xi_i \approx 1/11$，$\mathcal{T}_{11}$ 浑然</td>
-<td align="left">（无）</td>
-</tr>
-<tr>
-<td align="left">二</td>
-<td align="left">
-$\lambda_{\text{max}} \to$ 几倍 $\lambda_c$
-</td>
-<td align="left">
-$\xi_i$ 开始分化，$\mathcal{T}_{11}$ 显子结构</td>
-<td align="left">（无，仅有子结构苗头）</td>
-</tr>
-<tr>
-<td align="left">三</td>
-<td align="left">$\lambda \to \lambda_c^-$</td>
-<td align="left">
-$\xi_i$ 分化加剧，3+2+1通道分组成型</td>
-<td align="left">“强扇区祖先”“弱扇区祖先”（非规范群）</td>
-</tr>
-<tr>
-<td align="left">四</td>
-<td align="left">$\lambda = \lambda_c$</td>
-<td align="left">三阶EP相变，简并解除，规范扇区完全投影分离</td>
-<td align="left">
-<strong>强、弱、电磁、电荷、光子、$W^\pm$、$Z$、希格斯</strong>——五大作用+光子+电荷同诞</td>
-</tr>
-<tr>
-<td align="left">五</td>
-<td align="left">$\lambda &amp;lt; \lambda_c$</td>
-<td align="left">代际质量层级完全展开，$\xi_i$ 分三代</td>
-<td align="left">
-<strong>夸克、轻子（电子等）</strong>——物质粒子诞生</td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<p><strong>核心洞察</strong>：作用力比物质粒子早诞生一拍。$\lambda = \lambda_c$ 时力先齐，$\lambda &lt; \lambda_c$ 时粒子才齐。</p>
+<h2>2 超级中心外缘的弹射与初始条件</h2>
+<h3>2.1 壳-幔-核三层结构的受迫钉极</h3>
+<p>（同R4版——略。详见文章26。）</p>
+<h3>2.2 脱离应力吹送后的初始序参量</h3>
+<p>种子脱离超级中心时，11时序矩阵的迹模序参量λ处于高度简并状态，无限逼近三阶例外点（EP）的临界值λ_c。此时11个本征值几乎重合，系统处于拓扑势能的极大值点。</p>
 <hr>
-<h2>4 GUT相变弛豫：GUT能标处的EP相变</h2>
-<h3>4.1 弛豫在演化链中的定位</h3>
-<p>GUT相变弛豫发生在第三阶段末到第四阶段初，即序参量 $\lambda$ 从深有序相向EP临界点逼近的过程。此时矩阵本征值间距持续缩小，接近三阶简并的临界状态，系统进入<strong>临界慢化</strong>区间——序参量的弛豫时间指数级增长，对应矩阵本征模的相关长度指数级拉伸。表象层观测者把这段现象称为“暴胀”，但本框架中<strong>它不是时空在膨胀，而是矩阵相关长度在拉长</strong>——二者在表象层数值上可对应，但本体论身份完全不同。</p>
-<h3>4.2 弛豫零模的拓扑起源</h3>
-<p>EP附近矩阵存在一个平坦的零模方向，对应矩阵的迹模涨落：</p>
-<p>$$
-\phi \propto \frac{1}{\sqrt{11}} \operatorname{Tr}(\mathbf{M})
-$$</p>
-<p>该零模即表象层所说的“暴胀子”，但并非额外引入的标量场，而是矩阵本身的集体振荡模式，与电弱相变中的希格斯场为同构结构——不同能标下的EP零模。</p>
-<h3>4.3 与电弱EP相变的体系自洽性</h3>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th align="left">对比项</th>
-<th align="left">电弱EP相变（文22）</th>
-<th align="left">GUT相变弛豫（本文）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">相变类型</td>
-<td align="left">三阶EP</td>
-<td align="left">三阶EP</td>
-</tr>
-<tr>
-<td align="left">能标</td>
-<td align="left">$v \sim 10^2,\text{GeV}$</td>
-<td align="left">$\Lambda_{\text{GUT-relax}} \sim 10^{16},\text{GeV}$</td>
-</tr>
-<tr>
-<td align="left">零模场</td>
-<td align="left">希格斯场</td>
-<td align="left">GUT弛豫零模（表象层称“暴胀子”）</td>
-</tr>
-<tr>
-<td align="left">物理效应</td>
-<td align="left">电弱对称破缺，粒子获得质量</td>
-<td align="left">相关长度指数增长，原初扰动生成</td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<p>两类相变完全共享同一套EP动力学规则，体系自洽，无新增机制。</p>
+<h2>3 冷却过程中的序参量演化</h2>
+<h3>3.1 矩阵本征值的分裂动力学</h3>
+<p>随着种子在空间中冷却，11时序矩阵的本征值开始从三阶EP点向外分裂。分裂驱动力来自名额排他公理——本征值之间存在拓扑排斥，不允许长期处于简并状态。</p>
+<p>分裂过程由矩阵特征多项式的代数结构决定：</p>
+<p>$P(\mu) = \det(\mathbf{M} - \mu \mathbf{I}) = \prod_{i=1}^{11} (\mu - \mu_i)$</p>
+<p>在三阶EP点附近，三个本征值几乎重合：$\mu_1 \approx \mu_2 \approx \mu_3 \approx \mu_{\text{EP}}$。随着冷却，这一简并被打破，本征值沿复平面的三个方向分离。</p>
+<h3>3.2 序参量的定义</h3>
+<p>迹模序参量定义为矩阵本征值的某种统计矩：</p>
+<p>$\lambda = \frac{1}{11} \sum_{i=1}^{11} \mu_i^2$</p>
+<p>在EP点处，$\lambda = \lambda_c$；在全域松弛渐近状态下，$\lambda = \lambda_\infty$。</p>
 <hr>
-<h2>5 弛豫势能的内生导出</h2>
-<h3>5.1 势能形式的普适性</h3>
-<p>三阶EP附近的有效势能满足朗道-金兹堡展开的普适形式，由矩阵代数结构与EP阶数唯一决定。展开到四阶的形式为：</p>
-<p>$$
-V(\phi) = V_0 \left[1 - \left(\frac{\phi}{\phi_0}\right)^2 + \left(\frac{\phi}{\phi_0}\right)^4\right]
-$$</p>
+<h2>4 三阶EP点的临界行为</h2>
+<h3>4.1 临界慢化</h3>
+<p>当系统逼近三阶EP点时，本征值的分裂速率趋于零。这一行为在低能表象层被误认为“标量场的慢滚”，但其本质是矩阵本征值在简并点附近的代数临界慢化。</p>
+<h3>4.2 迹模涨落的触发</h3>
+<p>当系统越过临界点，迹模涨落被触发，导致本征值迅速分裂。这一过程对应于种子从“受迫钉极”状态进入“自由冷却”状态的转变。</p>
+<hr>
+<h2>5 序参量流动的本征拓扑势能与三阶EP点卸压机制</h2>
+<h3>5.1 纯代数本征势能方程</h3>
+<p>在超级中心外缘的“受迫钉极弹射”过程中，驱动宇宙种子膨胀的并非唯象标量场的“慢滚”，而是11时序矩阵的迹模序参量λ脱离三阶EP点时的本征值拓扑分流。</p>
+<p>脱离超级中心应力吹送范围后，系统伴随11时序席位的冷却，其拓扑代价（本征势能$V_{\text{matrix}}$）严格由矩阵特征多项式的简并剥离度决定。三阶EP点意味着矩阵本征值具有三重根退化极限。因此，无残留的本征势能几何形式应写为：</p>
+<p>$V(\lambda) = V_{\text{max}} \left[ 1 - \left( \frac{\lambda - \lambda_\infty}{\lambda_c - \lambda_\infty} \right)^3 \right]^2$</p>
 <p>其中：</p>
 <ul>
-<li>
-$V_0 = \frac{1}{4}\Lambda_{\text{GUT-relax}}^4$，为相变临界处的势能密度；</li>
-<li>
-$\phi_0 = \frac{1}{\sqrt{2}}\Lambda_{\text{GUT-relax}}$，为零模的特征标度；</li>
-<li>所有展开系数由三阶EP的普适类决定，无自由拟合参数。</li>
+<li>λ为当前时序矩阵的迹模序参量；</li>
+<li>λ_c为三阶EP点的临界序参量（弹射发生点）；</li>
+<li>λ_∞为全域松弛渐近基底序参量（对应文章43中的无穷远背景）。</li>
 </ul>
-<h3>5.2 弛豫能标的内生锁定</h3>
-<p>弛豫能标由文章16锁定的GUT能标 $\Lambda_{\text{UV}} \approx 4.3 \times 10^{16},\text{GeV}$ 通过RG跑动内生导出：</p>
-<p>$$
-\Lambda_{\text{GUT-relax}} \approx 1.2 \times 10^{16},\text{GeV}
-$$</p>
-<p>完全由已有的规范耦合跑动规则决定，无新增参数。</p>
-<h3>5.3 相关长度的指数增长</h3>
-<p>EP临界点附近，序参量的弛豫时间指数级增长，对应矩阵本征模的相关长度指数级拉伸，满足：</p>
-<p>$$
-\xi(t) \propto e^{t/\tau}
-$$</p>
-<p>该过程在表象层对应观测者所说的“暴胀”。总拉伸倍数（e-fold数）约为50-60量级，与解决视界、平坦问题所需的拉伸程度定性匹配。</p>
+<h3>5.2 卸压与零残留证明</h3>
+<p>当宇宙种子被应力吹送出来，矩阵本征值开始在时序席位中分流，序参量从临界点λ_c快速向全域基底λ_∞冷却松弛。</p>
+<p>在大尺度演化终点（λ → λ_∞）：</p>
+<p>$\lim_{\lambda \to \lambda_\infty} V(\lambda) = V_{\text{max}} [1 - 0]^2 = V_{\text{max}}$</p>
+<p>这代表弹射初期的全额拓扑势能。</p>
+<p>而当系统在局部区域发生自发破缺、物质种质（重子粒子）完美就位时，序参量在局域锁定为λ = λ_c：</p>
+<p>$V(\lambda_c) = V_{\text{max}} [1 - 1]^2 \equiv 0$</p>
+<p><strong>物理意义</strong>：没有发散，没有多余的截断。在拓扑相变完成的刹那，该矩阵能标层级的本征阻尼自发、绝对地归零。这部分清零的拓扑势能没有变成任何“紫外残余真空能”，而是通过11时序的剪切，全额对流投影为第一批硬质重子物质的唯象质量。这就为文章43中根域能量在松散空洞中平展为温和的ρ_∞扫清了道路。</p>
 <hr>
-<h2>6 原初扰动的拓扑起源</h2>
-<h3>6.1 扰动生成机制</h3>
-<p>GUT相变弛豫过程中，零模的量子涨落随着相关长度的指数增长被不断拉伸，当尺度超过弛豫范围后被冻结，形成原初曲率扰动。该机制完全由矩阵涨落的统计特性决定，天然产生接近标度不变的功率谱，与CMB观测的核心特征一致。</p>
-<h3>6.2 与观测的定性比对</h3>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th align="left">观测量</th>
-<th align="left">本框架定性预言</th>
-<th align="left">Planck 2018观测结果</th>
-<th align="left">匹配度</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">谱指数 $n_s$
-</td>
-<td align="left">略小于1的近标度不变谱</td>
-<td align="left">$0.965 \pm 0.004$</td>
-<td align="left">定性一致</td>
-</tr>
-<tr>
-<td align="left">张标比 $r$
-</td>
-<td align="left">小量级（受弛豫能标限制）</td>
-<td align="left">
-$&amp;lt;0.056$（2$\sigma$上限）</td>
-<td align="left">定性一致</td>
-</tr>
-<tr>
-<td align="left">功率谱幅值 $\mathcal{P}_\zeta$
-</td>
-<td align="left">由GUT能标自然决定</td>
-<td align="left">$\sim 2.1 \times 10^{-9}$</td>
-<td align="left">量级一致</td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<p><strong>说明</strong>：以上仅为定性比对。精确数值预言需要建立完整的表象时空与根域矩阵的映射关系，待P5阶段引力极化效应理论完成后推导。本文不借用广义相对论的慢滚扰动公式做定量计算。</p>
-<hr>
-<h2>7 弛豫后的演化衔接</h2>
-<h3>7.1 再加热过程</h3>
-<p>EP相变结束后，零模的振荡能量逐步衰变为各类规范粒子与费米子，完成能量从集体模到粒子自由度的转移——即表象层的“再加热”过程。再加热温度量级约为 $10^{15},\text{GeV}$，为定性估计。</p>
-<h3>7.2 与暗物质暗能量的衔接</h3>
-<p>与文章20的结论完全自洽：</p>
+<h2>6 相变完成后的物质种质生成</h2>
+<h3>6.1 拓扑势能向质量的转化</h3>
+<p>当$V(\lambda_c) = 0$时，清零的拓扑势能通过11时序矩阵的剪切机制，全额转化为第一批重子种质的唯象质量。这一转化过程不涉及任何自由参数——转化率由矩阵本征值的分流几何唯一决定。</p>
+<h3>6.2 与后续文章的对齐</h3>
+<p>这部分生成的物质种质，在后续演化中：</p>
 <ul>
-<li><strong>暗物质效应</strong>：弛豫过程中产生的拓扑缺陷（畴壁、涡旋），在后续冷却中保留下来，对应星系尺度的引力异常，无需引入额外暗物质粒子；</li>
-<li><strong>暗能量效应</strong>：EP相变后的残余真空能，对应当前宇宙的加速膨胀效应，为矩阵结构的固有残余，不存在额外的暗能量标量场。</li>
+<li>局域凝聚为核心物质（文章44的内部源项$S_{\text{core}}$）；</li>
+<li>全域松弛为暗能量基底（文章43的渐近值ρ_∞）。</li>
 </ul>
-<h3>7.3 希格斯场身份的完整解读：EP零模与序参量冷却梯度链的一体两面</h3>
-<p>（同R4版，略——含双层身份桥接与引力弱度解释）</p>
 <hr>
-<h2>8 自洽性校验与局限性披露</h2>
-<h3>8.1 零自由参数核验</h3>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th align="left">物理量</th>
-<th align="left">来源</th>
-<th align="left">是否为新增参数</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">$\Lambda_{\text{UV}} \approx 4.3 \times 10^{16},\text{GeV}$</td>
-<td align="left">文章16规范耦合统一</td>
-<td align="left">❌ 否</td>
-</tr>
-<tr>
-<td align="left">三阶EP势能形式</td>
-<td align="left">朗道-金兹堡普适类</td>
-<td align="left">❌ 否（数学必然）</td>
-</tr>
-<tr>
-<td align="left">$\Lambda_{\text{GUT-relax}} \approx 1.2 \times 10^{16},\text{GeV}$</td>
-<td align="left">
-$\Lambda_{\text{UV}}$ 的RG跑动</td>
-<td align="left">❌ 否（内生导出）</td>
-</tr>
-<tr>
-<td align="left">相关长度指数增长</td>
-<td align="left">EP临界慢化特性</td>
-<td align="left">❌ 否（物理必然）</td>
-</tr>
-<tr>
-<td align="left">超级中心分层结构</td>
-<td align="left">四大公理推衍</td>
-<td align="left">❌ 否（体系逻辑必然）</td>
-</tr>
-<tr>
-<td align="left">自稳态循环</td>
-<td align="left">几何缩放推论</td>
-<td align="left">❌ 否（数学必然）</td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<p><strong>结论</strong>：全文无新增自由参数，所有结论均基于P2阶段已锁定参数与矩阵固有性质导出。</p>
-<h3>8.2 与前序文章的自洽性</h3>
-<ul>
-<li>与文章22电弱EP相变机制完全统一，共享同一套动力学规则；</li>
-<li>与文章20暗物质暗能量冗余性结论完全衔接，无概念冲突；</li>
-<li>与文章16GUT能标锁定结果完全对齐，能标自洽；</li>
-<li>与文章28（拖把同构）中“冠侧紧态返祖物质回坍”的描述一致，互为补充。</li>
-</ul>
-<h3>8.3 局限性诚实披露</h3>
+<h2>7 希格斯机制的本体论定义：矩阵席位局域凝聚与全域分流</h2>
+<h3>7.1 传统希格斯机制的局限性</h3>
+<p>标准模型将希格斯场视为“赋予万物质量的上帝粒子”，这是一个低能表象层的唯象描述。在本体论层面，希格斯机制是矩阵本征值局域凝聚的低能投影。</p>
+<h3>7.2 本体论定义</h3>
+<p><strong>希格斯机制 = 矩阵本征值在局域核心处的高维剪切与向内凝聚</strong></p>
+<p>当11时序矩阵脱离三阶EP点时，11个席位名额开始分化。在重子物质高度密集的局域核心（对应文章44的r &lt; r_core区域），矩阵为了维持名额排他公理，本征值在局部发生强烈的高维剪切与向内凝聚。这种矩阵结构的局域“抓紧”，在低能表象层被观测者赋予了一个唯象的场名——希格斯场。</p>
+<h3>7.3 一体两面的代数闭合</h3>
+<p>未在局域凝聚成重子质量的其余矩阵模态，则在广袤的非核心区域（宇宙空洞）自然平展、向外松弛。这种全域的“展平”，在表象层则被误认为是驱动空间膨胀的“暗能量”。</p>
+<pre class="notranslate"><code class="notranslate">                    十一维全息流形 (11时序矩阵)
+                               |
+                       [ 临界相变点 λ_c ]
+                               |
+            +------------------+------------------+
+            |                                     |
+    [ 局域紧态源项 ]                      [ 全域松态汇项 ]
+  矩阵本征值向内“抓紧”                  矩阵本征值向外“展平”
+            |                                     |
+  低能表象：希格斯机制 (质量诞生)        低能表象：暗能量 (空间背景)
+  (对应文章44 ρ_max 拦截)            (对应文章43 ρ_∞ 渐近)
+</code></pre>
+<hr>
+<h2>8 结论</h2>
 <ol>
-<li>
-<strong>原初扰动无精确数值预言</strong>：当前仅给出定性机制，精确的谱指数、张标比数值需待P5阶段引力极化理论完成后，建立时空-矩阵映射关系才能推导；</li>
-<li>
-<strong>再加热过程无详细动力学</strong>：仅给出量级估计，完整的衰变道、热化过程需后续补充；</li>
-<li>
-<strong>GUT相变EP阶数为建构假设</strong>：类比电弱三阶EP形式，严格的阶数推导需基于完整的11维矩阵简并结构分析；</li>
-<li>
-<strong>拓扑缺陷丰度为定性结论</strong>：暗物质对应的拓扑缺陷精确丰度计算待后续完成；</li>
-<li>
-<strong>根冠映射的精确标度</strong>：当前 $10^{64}$ 和 $10^{90}$ 为量级估计，精确比值需待引力极化理论完成后重新计算；</li>
-<li>
-<strong>SMBH主动钉跳猜想</strong>：当前为开放脑洞，需P5阶段定量验证局部 $\lambda$ 能否达到 $\lambda_{\text{max}}$；</li>
-<li>
-<strong>壳层压强的精确分布</strong>：当前仅定性描述，壳层厚度、压强梯度等细节待后续建模。</li>
+<li>局部宇宙种子的冷却相变由11时序矩阵的三阶EP点临界弛豫驱动，而非唯象标量场的慢滚。</li>
+<li>本征拓扑势能$V(\lambda)$在相变完成时严格归零，无残留，无发散。</li>
+<li>清零的拓扑势能全额转化为第一批重子种质的唯象质量。</li>
+<li>希格斯机制是矩阵本征值局域凝聚的低能投影，与暗能量（全域展平）一体两面。</li>
+<li>本文与文章43（外部暗能量）、文章44（内部奇点消解）形成完整的“铁三角”闭环。</li>
 </ol>
 <hr>
-<h2>9 结论</h2>
-<p>本文完全基于11时序矩阵的内生规则，建立了局部宇宙种子从超级中心钉跳诞生到GUT相变弛豫的完整冷却演化框架。核心成果：</p>
-<ol>
-<li><strong>建立了超级中心的壳-幔-核三层分层结构</strong>：粉碎事件是壳层外压驱动下的席位钉跳事件，跳后新种子被根域应力吹送，形成完整的双向闭环循环；</li>
-<li><strong>论证了超级中心的自稳态循环性质</strong>：总能量越大→核心区越大→钉跳区越大→跳频按比例放大→不积压；</li>
-<li><strong>明确了GUT相变弛豫的本体身份</strong>：它是GUT能标处的三阶拓扑相变，对应矩阵相关长度的指数增长。表象层观测者称之为“暴胀”，但本框架否定“大爆炸+时空膨胀”的GR叙事——它只是矩阵序参量在EP附近的临界慢化；</li>
-<li><strong>内生导出弛豫势能</strong>：势能由三阶EP的普适结构唯一决定，弛豫能标与GUT统一能标自洽衔接，全程无新增自由参数；</li>
-<li><strong>解释原初扰动的起源</strong>：原初扰动来源于零模量子涨落的冻结效应，天然解释了CMB近标度不变谱的起源，与观测定性一致。</li>
-</ol>
-<p><strong>超级中心永恒存在，无始无终。GUT相变弛豫不是宇宙的开端，只是局部宇宙种子冷却过程中的一次普通相变事件。标准模型的“大爆炸+暴胀”叙事被本框架否定——不存在一次性爆炸的起点，只存在超级中心外缘永续的“压→钉→跳→吹→冷却→相变→回坍”循环。</strong></p>
-<hr>
-<h2>附录A：弛豫参数汇总</h2>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th align="left">物理量</th>
-<th align="left">符号</th>
-<th align="left">数值/性质</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">弛豫能标</td>
-<td align="left">$\Lambda_{\text{GUT-relax}}$</td>
-<td align="left">$1.2 \times 10^{16},\text{GeV}$</td>
-<td align="left">由GUT能标RG跑动导出</td>
-</tr>
-<tr>
-<td align="left">e-fold数</td>
-<td align="left">$N_e$</td>
-<td align="left">$50\sim60$</td>
-<td align="left">量级估计（表象层“暴胀”拉伸倍数）</td>
-</tr>
-<tr>
-<td align="left">谱指数</td>
-<td align="left">$n_s$</td>
-<td align="left">近标度不变，略小于1</td>
-<td align="left">定性预言，精确值待后续</td>
-</tr>
-<tr>
-<td align="left">张标比</td>
-<td align="left">$r$</td>
-<td align="left">小量级</td>
-<td align="left">定性预言，精确值待后续</td>
-</tr>
-<tr>
-<td align="left">再加热温度</td>
-<td align="left">$T_{\text{rh}}$</td>
-<td align="left">$\sim 10^{15},\text{GeV}$</td>
-<td align="left">量级估计</td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<hr>
-<h2>附录B：可信度分层说明</h2>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th align="left">结论内容</th>
-<th align="left">可信度层级</th>
-<th align="left">依据</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">弛豫能标数值</td>
-<td align="left">定理层</td>
-<td align="left">给定GUT能标与RG跑动规则的直接计算结果</td>
-</tr>
-<tr>
-<td align="left">GUT相变弛豫为EP相变过程</td>
-<td align="left">建构假说层</td>
-<td align="left">与电弱EP机制同构，物理图像自洽</td>
-</tr>
-<tr>
-<td align="left">弛豫零模为矩阵迹模</td>
-<td align="left">建构假说层</td>
-<td align="left">基于EP零模的普适性质</td>
-</tr>
-<tr>
-<td align="left">原初扰动生成机制</td>
-<td align="left">建构假说层</td>
-<td align="left">涨落冻结的普遍统计特性</td>
-</tr>
-<tr>
-<td align="left">希格斯场双层身份桥接</td>
-<td align="left">建构假说层</td>
-<td align="left">EP零模（文22）∩ 序参量冷却梯度链（本文）</td>
-</tr>
-<tr>
-<td align="left"><strong>超级中心分层结构（壳-幔-核）</strong></td>
-<td align="left"><strong>纲领层延伸</strong></td>
-<td align="left"><strong>四大公理 + 壳层外压驱动的必然推论</strong></td>
-</tr>
-<tr>
-<td align="left"><strong>自稳态循环机制</strong></td>
-<td align="left"><strong>纲领层延伸</strong></td>
-<td align="left"><strong>几何缩放 + 名额排他公理的必然推论</strong></td>
-</tr>
-<tr>
-<td align="left">粉碎事件与根域应力吹送</td>
-<td align="left">纲领层延伸</td>
-<td align="left">本体论四大公理的直接推论</td>
-</tr>
-<tr>
-<td align="left">SMBH主动钉跳猜想</td>
-<td align="left">开放脑洞</td>
-<td align="left">待P5定量验证</td>
-</tr>
-<tr>
-<td align="left">再加热动力学</td>
-<td align="left">纲领层</td>
-<td align="left">仅量级估计，完整机制待后续</td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<hr>
-<h2>附录C：符号对照表</h2>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th align="left">符号</th>
-<th align="left">含义</th>
-<th align="left">前序对应</th>
-<th align="left">出处</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">$\Lambda_{\text{GUT-relax}}$</td>
-<td align="left">GUT相变弛豫能标</td>
-<td align="left">—</td>
-<td align="left">本文内生导出</td>
-</tr>
-<tr>
-<td align="left">$\phi$</td>
-<td align="left">弛豫零模（表象层称“暴胀子”）</td>
-<td align="left">希格斯场（电弱扇区同构）</td>
-<td align="left">本文定义</td>
-</tr>
-<tr>
-<td align="left">$V(\phi)$</td>
-<td align="left">弛豫有效势能</td>
-<td align="left">EP势能（文22）</td>
-<td align="left">本文导出</td>
-</tr>
-<tr>
-<td align="left">$\lambda$</td>
-<td align="left">矩阵序参量</td>
-<td align="left">同左</td>
-<td align="left">文22</td>
-</tr>
-<tr>
-<td align="left">$\Lambda_{\text{UV}}$</td>
-<td align="left">GUT统一能标</td>
-<td align="left">同左</td>
-<td align="left">文16</td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<hr>
-<h2>参考文献</h2>
-<p>[1] 文章16：P2-1 规范耦合反锁与GUT能标预言（已归档）</p>
-<p>[2] 文章17：P2-2 超定检验与参数锁定——电弱精密观测实验验证与11时序矩阵基准定标（已归档）</p>
-<p>[3] 文章20：P2-5 暗物质与暗能量的唯象冗余性论证——11时序矩阵的双角度闭合分析（已归档）</p>
-<p>[4] 文章22：P3-2 电弱对称破缺与希格斯机制的几何诠释（已归档）</p>
-<p>[5] 文章25：P3-5 实验联合约束与全体系自洽审计（已归档）</p>
-<p>[6] 文章26：P4-1 强相互作用散射的拓扑描述（已归档）</p>
-<p>[7] 文章28：P4-3 旋转拖把布条=星系旋臂平坦化——同构分析（已归档）</p>
-<p>[8] Planck Collaboration. Planck 2018 results. <em>Astron. Astrophys.</em>, 2020, 641:A6.（仅作观测数值参考，未参与推导）</p>
-<hr>
-<p><strong>归档时间：2026-07-17</strong></p></div>
+<p><strong>归档时间：</strong> 2026-07-18</p>
+<p><strong>归档状态：</strong> 六次修订版（场论残余已清除，纯矩阵本征值拓扑分流）</p>
+<p><strong>作者：</strong> 史建威</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
@@ -646,7 +231,7 @@ if("2026-07-10"!=""){
 </script></div>
 </body>
 <script>
-var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
 var utterancesLoad=0;
 
 let themeSettings={
@@ -720,7 +305,70 @@ function iFrameLoading(){
     }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
 
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
 
 </script>
 <script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
