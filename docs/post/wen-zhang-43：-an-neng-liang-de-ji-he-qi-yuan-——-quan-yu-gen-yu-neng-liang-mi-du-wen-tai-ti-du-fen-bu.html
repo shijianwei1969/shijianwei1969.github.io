@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 文章43：暗能量的几何起源——全域根域能量密度稳态梯度分布
+
+**作者：史建威**
+
+---
+
+## 摘要
+
+本文基于全域粉碎循环模型，放弃将暗能量视为“真空能残余”或“流形曲率”的传统路径，转而将其定义为**全域根域能量密度的稳态梯度分布**。">
+<meta property="og:title" content="文章43：暗能量的几何起源——全域根域能量密度稳态梯度分布">
+<meta property="og:description" content="# 文章43：暗能量的几何起源——全域根域能量密度稳态梯度分布
+
+**作者：史建威**
+
+---
+
+## 摘要
+
+本文基于全域粉碎循环模型，放弃将暗能量视为“真空能残余”或“流形曲率”的传统路径，转而将其定义为**全域根域能量密度的稳态梯度分布**。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/wen-zhang-43%EF%BC%9A-an-neng-liang-de-ji-he-qi-yuan-%E2%80%94%E2%80%94-quan-yu-gen-yu-neng-liang-mi-du-wen-tai-ti-du-fen-bu.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>文章43：暗能量的几何起源——全域根域能量密度稳态梯度分布</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">文章43：暗能量的几何起源——全域根域能量密度稳态梯度分布</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/107" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>文章43：暗能量的几何起源——全域根域能量密度稳态梯度分布</h1>
+<p><strong>作者：史建威</strong></p>
+<hr>
+<h2>摘要</h2>
+<p>本文基于全域粉碎循环模型，放弃将暗能量视为“真空能残余”或“流形曲率”的传统路径，转而将其定义为<strong>全域根域能量密度的稳态梯度分布</strong>。核心主张：暗能量不是某种需要“压制”或“拟合”的数值残余，而是十一维全息流形中根域能量从紧态核心到松态空洞的自然流动所形成的稳态场。</p>
+<p>主要结果：</p>
+<ol>
+<li>根域能量密度 $\rho_{\text{root}}(r)$ 满足带基底平移的稳态扩散方程，其解从紧态核心的凝聚态光滑过渡到松态空洞的渐近稳态值 $\rho_\infty$。</li>
+<li>希格斯场与暗能量是根域能量分布的一体两面：希格斯场是根域能量在源项侧的局域凝聚投影（质量起源），暗能量是根域能量在汇项侧的全域弥散投影（空间膨胀）。</li>
+<li>宇宙“巧合问题”自然得到解释：物质与暗能量同源于根域能量的不同投影方式，数量级相当是必然的。</li>
+<li>模型无自由参数，$\rho_\infty$ 由全域边界条件锁死，无需任何暴涨机制。</li>
+</ol>
+<hr>
+<h2>1 引言</h2>
+<h3>1.1 从“残余”到“梯度”的范式转换</h3>
+<p>文章42系统检验了四条路径，全部失败。失败的根本原因不是计算错误，而是出发点错误——我们一直在试图“解释”一个数值，而不是“理解”一个流场。</p>
+<p>导师的直觉指明了正确方向：<strong>暗能量不是残余，而是梯度。</strong> 不是“还剩多少”，而是“怎么分布”。</p>
+<h3>1.2 全域粉碎循环模型的宇宙学框架</h3>
+<p>本文基于全域粉碎循环模型，而非大爆炸模型。宇宙没有起点也没有终点，物质和能量在紧态凝聚与松态弥散之间永恒循环。暗能量不是大爆炸的残余，而是这个循环中根域能量密度稳态分布的自然表现。</p>
+<p>在这个框架中，不存在“暴涨期”——宇宙不需要在极早期经历指数膨胀来“解释”均匀性。均匀性是稳态梯度分布的必然结果，而非某个标量场短暂爆发的产物。</p>
+<h3>1.3 根域能量密度场与希格斯一体两面</h3>
+<p>在十一维全息流形中，根域能量密度 $\rho_{\text{root}}$ 是一个标量场，其分布由紧态物质的聚集程度决定。紧态核心（星系核球、超大质量黑洞）是根域能量的<strong>源</strong>，松态空洞是根域能量的<strong>汇</strong>。能量从源流向汇，形成稳态梯度分布。</p>
+<p>希格斯场在这一图像中扮演关键角色：它是根域能量在源项侧的<strong>局域剪切投影</strong>，负责将能量锁定在夸克和电子中，赋予粒子质量。而暗能量是根域能量在汇项侧的<strong>全域弥散投影</strong>，驱动宇宙加速膨胀。</p>
+<p>两者是一枚硬币的两面：局域凝聚态就是希格斯机制，全域稳态梯度就是暗能量。</p>
+<hr>
+<h2>2 根域能量密度场与稳态方程</h2>
+<h3>2.1 修正版全域稳态方程</h3>
+<p>根域能量密度在宇宙学尺度上，其偏离全域稳态基底的行为满足如下平移扩散方程：</p>
+<p>$$\nabla^2 \rho_{\text{root}} - \frac{1}{r_{\text{root}}^2} (\rho_{\text{root}} - \rho_\infty) = -S_{\text{core}}$$</p>
+<p>其中 $\rho_\infty$ 为宇宙学尺度无限远处的渐近稳态能量密度（即观测暗能量），$r_{\text{root}}$ 为特征关联长度。</p>
+<p>在远离紧态核心的松态空洞深处（$S_{\text{core}} = 0$），方程退化为：</p>
+<p>$$\nabla^2 \rho_{\text{root}} - \frac{1}{r_{\text{root}}^2} (\rho_{\text{root}} - \rho_\infty) = 0$$</p>
+<p>其物理意义十分直观：根域能量在远离紧态核心时，会自然向宇宙的稳态背景值 $\rho_\infty$ 靠拢。</p>
+<h3>2.2 通解</h3>
+<p>在球对称近似下，方程的通解为：</p>
+<p>$$\rho_{\text{root}}(r) = \frac{A}{r} e^{-r/r_{\text{root}}} + \rho_\infty$$</p>
+<p>代入原方程验证：</p>
+<p>$$\nabla^2 \left( \frac{A}{r} e^{-r/r_{\text{root}}} + \rho_\infty \right) - \frac{1}{r_{\text{root}}^2} \left( \frac{A}{r} e^{-r/r_{\text{root}}} + \rho_\infty - \rho_\infty \right) = 0$$</p>
+<p>$$\nabla^2 \left( \frac{A}{r} e^{-r/r_{\text{root}}} \right) - \frac{1}{r_{\text{root}}^2} \left( \frac{A}{r} e^{-r/r_{\text{root}}} \right) = 0$$</p>
+<p>恒成立。数学自洽。</p>
+<h3>2.3 源项与希格斯场的局域对偶</h3>
+<p>单个紧态核心的源项 $S_{\text{core}}$ 表征了能量从全域向局域的“紧态返祖”。在表象态中，这一凝聚效应通过希格斯场的真空期望值 $v_{\text{EW}}$ 进行唯象表达：</p>
+<p>$$S_{\text{core}} = \frac{\lambda_{\text{core}} \cdot \langle \Phi_{\text{Higgs}} \rangle \cdot M_{\text{core}}}{V_{\text{core}}}$$</p>
+<p>其中 $\langle \Phi_{\text{Higgs}} \rangle = v_{\text{EW}} / \sqrt{2}$ 是希格斯场的真空期望值。该式奠定了希格斯场（质量起源）与暗能量（空间膨胀）同源于根域能量分布的一体两面性。</p>
+<hr>
+<h2>3 从梯度到暗能量</h2>
+<h3>3.1 渐近值的确定</h3>
+<p>边界条件：在核心处（$r \to r_{\text{core}}$），根域能量密度趋于核心密度 $\rho_{\text{core}}$；在无穷远处（$r \to \infty$），趋于 $\rho_\infty$。</p>
+<p>由边界条件确定积分常数 $A$：</p>
+<p>$$A = (\rho_{\text{core}} - \rho_\infty) \cdot r_{\text{core}} \cdot e^{r_{\text{core}}/r_{\text{root}}}$$</p>
+<h3>3.2 渐近值的物理意义</h3>
+<p>$\rho_\infty$ 由全域边界条件决定——即所有紧态核心的根域能量密度在宇宙学尺度上的叠加。在足够大的尺度上，根域能量密度趋于一个常数：</p>
+<p>$$\rho_\infty = \lim_{r \to \infty} \rho_{\text{root}}(r)$$</p>
+<p>这个常数就是观测到的暗能量密度 $\rho_\Lambda \sim 10^{-47} \text{ GeV}^4$。它不是一个需要“拟合”的自由参数，而是由流形全域边界条件锁死的几何量。在粉碎循环中，这个值在每个循环周期内保持稳定，直到下一次全域粉碎事件重新设定边界条件。</p>
+<h3>3.3 巧合问题的自然解释</h3>
+<p>物质能量密度 $\rho_m$ 和暗能量密度 $\rho_\Lambda$ 处于同一数量级（巧合问题），在本文框架中得到自然解释：</p>
+<ul>
+<li>
+$\rho_m$：根域能量在紧态物质上的局域凝聚（希格斯机制）</li>
+<li>
+$\rho_\Lambda$：根域能量在松态空间上的全域弥散投影（稳态梯度）</li>
+</ul>
+<p>两者本是同一枚硬币的两面——希格斯场是根域能量在源项侧的局域剪切投影，暗能量是根域能量在汇项侧的全域弥散投影。数量级相当是必然的，无需人择原理，也无需暴涨机制。</p>
+<hr>
+<h2>4 与观测的对接</h2>
+<h3>4.1 暗能量状态方程</h3>
+<p>由根域能量密度梯度分布导出的有效状态方程为：</p>
+<p>$$w_{\text{eff}} = -1 + \frac{2}{3} \cdot \frac{r_{\text{root}}}{\rho_{\text{root}} - \rho_\infty} \cdot \frac{d\rho_{\text{root}}}{dr}$$</p>
+<p>在 $\rho_{\text{root}} \to \rho_\infty$ 的极限下，$w_{\text{eff}} \to -1$，与 $\Lambda$CDM 一致。</p>
+<h3>4.2 可检验预言</h3>
+<ol>
+<li>暗能量密度在宇宙学尺度上应存在微小的空间涨落，涨落幅度由根域能量密度梯度的不均匀性决定。</li>
+<li>暗能量状态方程 $w$ 应随红移有微小偏离（$w \neq -1$），偏离幅度由 $r_{\text{root}}$ 决定。</li>
+<li>紧态核心的根域斥力强度应与暗能量密度存在关联——核心越密集的区域，暗能量密度越低。</li>
+<li>宇宙微波背景的大尺度均匀性不是暴涨的结果，而是稳态梯度分布的自然表现——根域能量密度的全域边界条件天然锁死了大尺度上的各向同性。</li>
+</ol>
+<hr>
+<h2>5 全域粉碎循环中的暗能量角色</h2>
+<h3>5.1 循环的驱动力</h3>
+<p>在全域粉碎循环模型中，暗能量不是宇宙膨胀的“残余”，而是循环的驱动力之一：</p>
+<ol>
+<li><strong>紧态凝聚阶段</strong>：根域能量向核心聚集，希格斯场活跃，物质密度升高。</li>
+<li><strong>松态弥散阶段</strong>：根域能量从核心向外扩散，暗能量主导，空间膨胀加速。</li>
+<li><strong>全域粉碎事件</strong>：当松态弥散达到极致，边界条件重置，循环重新开始。</li>
+</ol>
+<h3>5.2 稳态梯度的循环不变性</h3>
+<p>在每个循环周期内，根域能量密度的稳态梯度分布保持形式不变。变化的只是边界条件 $\rho_\infty$ 的值——每次全域粉碎事件后，$\rho_\infty$ 被重新设定，然后在新的循环中保持稳定。</p>
+<p>这就是为什么暗能量密度在观测上表现为常数：我们正处于两次全域粉碎事件之间的稳态阶段。</p>
+<hr>
+<h2>6 结论</h2>
+<ol>
+<li>暗能量不是真空能残余，也不是流形曲率，而是全域根域能量密度的稳态梯度分布。</li>
+<li>希格斯场与暗能量是根域能量分布的一体两面：前者是局域凝聚投影（质量起源），后者是全域弥散投影（空间膨胀）。</li>
+<li>巧合问题自然得到解释：物质和暗能量同源于根域能量的不同投影方式。</li>
+<li>宇宙无需暴涨机制——大尺度均匀性是稳态梯度分布的自然结果。</li>
+<li>模型无自由参数，所有预言可由未来观测检验。</li>
+</ol>
+<hr>
+<p><strong>归档时间：</strong> 2026-07-18</p>
+<p><strong>归档状态：</strong> 修正版（基于全域粉碎循环模型，无暴涨痕迹）</p>
+<p><strong>作者：</strong> 史建威</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
