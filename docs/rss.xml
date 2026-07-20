@@ -1,5 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Mon, 20 Jul 2026 09:07:47 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>第53章 P7.6任务成果：从非厄米相干流失到爱因斯坦引力涌现</title><link>https://shijianwei1969.github.io/post/di-53-zhang-%20P7.6-ren-wu-cheng-guo-%EF%BC%9A-cong-fei-e-mi-xiang-gan-liu-shi-dao-ai-yin-si-tan-yin-li-yong-xian.html</link><description># 第53章 从非厄米相干流失到爱因斯坦引力涌现
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Mon, 20 Jul 2026 09:20:49 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>文章54：P7.7任务成果：从有限维本征度规到连续流形上的爱因斯坦场方程涌现</title><link>https://shijianwei1969.github.io/post/wen-zhang-54%EF%BC%9AP7.7-ren-wu-cheng-guo-%EF%BC%9A-cong-you-xian-wei-ben-zheng-du-gui-dao-lian-xu-liu-xing-shang-de-ai-yin-si-tan-chang-fang-cheng-yong-xian.html</link><description># 第54章 从有限维本征度规到连续流形上的爱因斯坦场方程涌现
+
+## 54.1 引言
+
+在经典广义相对论中，爱因斯坦场方程
+
+$$
+G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G T_{\mu\nu}
+$$
+
+被视为描述时空几何与物质分布相互作用的终极定律。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/wen-zhang-54%EF%BC%9AP7.7-ren-wu-cheng-guo-%EF%BC%9A-cong-you-xian-wei-ben-zheng-du-gui-dao-lian-xu-liu-xing-shang-de-ai-yin-si-tan-chang-fang-cheng-yong-xian.html</guid><pubDate>Mon, 20 Jul 2026 09:20:20 +0000</pubDate></item><item><title>第53章 P7.6任务成果：从非厄米相干流失到爱因斯坦引力涌现</title><link>https://shijianwei1969.github.io/post/di-53-zhang-%20P7.6-ren-wu-cheng-guo-%EF%BC%9A-cong-fei-e-mi-xiang-gan-liu-shi-dao-ai-yin-si-tan-yin-li-yong-xian.html</link><description># 第53章 从非厄米相干流失到爱因斯坦引力涌现
 
 ## 53.1 引言
 

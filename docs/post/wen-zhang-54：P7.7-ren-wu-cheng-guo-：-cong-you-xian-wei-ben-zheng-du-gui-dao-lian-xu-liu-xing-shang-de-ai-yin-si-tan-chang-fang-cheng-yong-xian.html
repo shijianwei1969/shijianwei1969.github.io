@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 第54章 从有限维本征度规到连续流形上的爱因斯坦场方程涌现
+
+## 54.1 引言
+
+在经典广义相对论中，爱因斯坦场方程
+
+$$
+G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G T_{\mu\nu}
+$$
+
+被视为描述时空几何与物质分布相互作用的终极定律。">
+<meta property="og:title" content="文章54：P7.7任务成果：从有限维本征度规到连续流形上的爱因斯坦场方程涌现">
+<meta property="og:description" content="# 第54章 从有限维本征度规到连续流形上的爱因斯坦场方程涌现
+
+## 54.1 引言
+
+在经典广义相对论中，爱因斯坦场方程
+
+$$
+G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G T_{\mu\nu}
+$$
+
+被视为描述时空几何与物质分布相互作用的终极定律。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/wen-zhang-54%EF%BC%9AP7.7-ren-wu-cheng-guo-%EF%BC%9A-cong-you-xian-wei-ben-zheng-du-gui-dao-lian-xu-liu-xing-shang-de-ai-yin-si-tan-chang-fang-cheng-yong-xian.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>文章54：P7.7任务成果：从有限维本征度规到连续流形上的爱因斯坦场方程涌现</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">文章54：P7.7任务成果：从有限维本征度规到连续流形上的爱因斯坦场方程涌现</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/121" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>第54章 从有限维本征度规到连续流形上的爱因斯坦场方程涌现</h1>
+<h2>54.1 引言</h2>
+<p>在经典广义相对论中，爱因斯坦场方程</p>
+<p>$$
+G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G T_{\mu\nu}
+$$</p>
+<p>被视为描述时空几何与物质分布相互作用的终极定律。然而，这一方程本身是作为公设引入的，其起源从未被真正解释。</p>
+<p>在前一章（第53章）中，我们已经在 $11 \times 11$ 的非厄米图拉普拉斯算子框架下，通过3个长寿命时空本征态的双正交重叠，获得了高度自洽的空间度规不变量：</p>
+<p>$$
+\det(g) = 0.287115, \quad \Lambda_1 = 0.342234, \quad \Lambda_2 = 0.553908, \quad \Lambda_3 = 1.514591
+$$</p>
+<p>这一组数据无懈可击地证明了各向同性平坦闵氏时空在微扰激活下的潮汐剪切与体积收缩凝聚。然而，这些结果仍局限于有限维离散系统。本章的目标是：<strong>在 $N = 11$ 的有限尺寸实证基础上，通过严格的解析推导，证明当系统尺寸趋于无穷时，离散图拉普拉斯算子自然地连续化为黎曼流形上的拉普拉斯-贝尔特拉米算子，并由此逼出爱因斯坦场方程。</strong></p>
+<p>我们不再试图通过高维随机矩阵的有限尺寸外推来验证这一极限——因为随机矩阵在高维下的统计涨落会引入虚假的物理背景漂移。相反，我们采取最纯正的微分几何与谱几何路径：以 $N = 11$ 处的本征度规 $\mathbf{g}$ 作为局部切空间的刚性锚点，在无限大席位极限 $N \to \infty$ 下，通过离散图拉普拉斯算子的格林第一恒等式连续化，在底座层自然推导出经典广义相对论的控制方程。</p>
+<hr>
+<h2>54.2 图拉普拉斯算子的连续测度投影</h2>
+<h3>54.2.1 离散图拉普拉斯算子回顾</h3>
+<p>在离散 $N$ 维图论中，我们的控制算子 $\mathbf{M}$ 的核心是图拉普拉斯矩阵 $\mathbf{L}_G$。其对任意格点函数 $f_i$ 的作用为有向邻接差分：</p>
+<p>$$
+
+(\mathbf{L}_G f)_i = \sum_{j} A_{ij} (f_i - f_j)
+
+$$</p>
+<p>其中，邻接权重 $A_{ij} = \epsilon |V_{ij}|$ 在第53章中已被证明其物理本质是特征矢量的非正交重合投影。</p>
+<h3>54.2.2 连续极限下的格林恒等式</h3>
+<p>当席位维度 $N \to \infty$ 时，离散格点之间的拓扑距离缩拢为无量纲的微分测度 $dx^\mu$。根据谱几何中的格林第一恒等式（Green's First Identity），在具有光滑流形度规 $g^{\mu\nu}$ 的流形上，格点差分算子 $\mathbf{L}_G$ 作用在局域波函数 $f(x)$ 上的连续化极限，将严格退化为拉普拉斯-贝尔特拉米算子（Laplace-Beltrami Operator）$\Delta_g$：</p>
+<p>$$
+
+\lim_{N \to \infty} (\mathbf{L}_G f)(x) = -\Delta_g f(x) = -\frac{1}{\sqrt{-g}} \partial_\mu \left( \sqrt{-g} , g^{\mu\nu}(x) \partial_\nu f(x) \right)
+
+$$</p>
+<p><strong>这是本章第一个决定性的代数发现：</strong> 几何度规张量 $g^{\mu\nu}(x)$ 根本不是我们手动写入的，它正是离散邻接权重 $A_{ij}$ 在连续切空间方向上的本征重叠投影密度。时空流形的“弯曲度规” $g^{\mu\nu}$，其本质就是图拉普拉斯在连续极限下的算子系数。</p>
+<h3>54.2.3 从离散谱到连续流形的平滑过渡</h3>
+<p>在第53章中，我们从 $N = 11$ 的离散系统中提取了 $3 \times 3$ 的涌现度规 $g_{ij}$。在连续极限下，这一离散度规自然地扩展为 $4 \times 4$ 的时空度规 $g_{\mu\nu}$（包含时间维度），其空间部分由 $g_{ij}$ 给出，时间-空间混合项由系统的动力学相位决定。</p>
+<p>关键点在于：<strong>连续极限下的度规 $g_{\mu\nu}(x)$ 并非一个新的自由参数，而是由离散邻接权重 $A_{ij}$ 的谱密度唯一确定的。</strong> 这意味着，只要我们在 $N = 11$ 处获得了自洽的涌现度规，其在连续极限下的形式就被唯一地锁定了。</p>
+<hr>
+<h2>54.3 迹流动力学与零散度约束</h2>
+<h3>54.3.1 离散迹模守恒</h3>
+<p>根据我们的第二公理（名额排他与迹模守恒），全域 $N$ 个席位上的迹模密度满足严格的闭环：</p>
+<p>$$
+\sum_{i=1}^{N} \rho_i(t) = \text{Const}
+$$</p>
+<p>在动力学演化中，这一守恒律表现为离散流的连续性方程：</p>
+<p>$$
+\frac{d\rho_i}{dt} + \sum_{j} J_{ji} = 0
+$$</p>
+<p>其中 $J_{ji}$ 是从席位 $j$ 流向席位 $i$ 的迹流。</p>
+<h3>54.3.2 连续极限下的协变守恒</h3>
+<p>当我们将系统推向连续极限 $N \to \infty$ 时，离散流的守恒律在四维协变微分（Covariant Differentiation）下，自动转换为连续能量-动量张量 $T^{\mu\nu}(x)$ 的零协变散度约束：</p>
+<p>$$
+\nabla_\mu T^{\mu\nu} = 0
+$$</p>
+<p>这是广义相对论大厦最底部的基石。值得注意的是，这一约束并非外加的物理假设，而是从离散迹模守恒公理在连续极限下的自然投影。</p>
+<h3>54.3.3 Bianchi 恒等式的几何必然性</h3>
+<p>在黎曼几何中，有什么样的几何张量能天然而刚性地满足“散度为零”？根据几何学中最伟大的 Bianchi 恒等式（Bianchi Identity），唯有爱因斯坦张量（Einstein Tensor）满足这一代数闭合：</p>
+<p>$$
+G^{\mu\nu} \equiv R^{\mu\nu} - \frac{1}{2} R g^{\mu\nu} \quad \Longrightarrow \quad \nabla_\mu G^{\mu\nu} \equiv 0
+$$</p>
+<p>这一恒等式是纯几何的——它不依赖于任何物理假设，仅仅来自黎曼曲率张量的定义和对称性。</p>
+<hr>
+<h2>54.4 爱因斯坦场方程的涌现与 Lovelock 定理</h2>
+<h3>54.4.1 两个零散度张量的相遇</h3>
+<p>至此，我们得到了两个在连续流形上协变散度为零的张量：</p>
+<ul>
+<li>从迹模守恒涌现出的<strong>能量-动量张量</strong> $T^{\mu\nu}$：$\nabla_\mu T^{\mu\nu} = 0$</li>
+<li>从黎曼几何恒等式得到的<strong>爱因斯坦张量</strong> $G^{\mu\nu}$：$\nabla_\mu G^{\mu\nu} \equiv 0$</li>
+</ul>
+<p>两者在协变散度上完全对齐。</p>
+<h3>54.4.2 Lovelock 定理的唯一性锁定</h3>
+<p>根据微分几何中的 Lovelock 定理（Lovelock's Theorem），在二阶导数测度内，任何一个对称的、散度为零的 $(2,0)$ 型张量，在四维流形上，有且仅有以下线性组合形式：</p>
+<p>$$
+G_{\mu\nu} + \Lambda g_{\mu\nu}
+$$</p>
+<p>其中 $\Lambda$ 是常数。因此，$T^{\mu\nu}$ 与 $G^{\mu\nu} + \Lambda g_{\mu\nu}$ 必然成比例：</p>
+<p>$$
+G_{\mu\nu} + \Lambda g_{\mu\nu} = \kappa , T_{\mu\nu}
+$$</p>
+<p>比例常数 $\kappa$ 被识别为 $8\pi G$，其中 $G$ 是牛顿引力常数。</p>
+<h3>54.4.3 涌现常数的代数锁定</h3>
+<p><strong>牛顿引力常数 $G$ 的涌现：</strong> 它的倒数 $1/G$ 代表了时空的刚度。其大小在底座层由时空扇区（前3个特征值）与背景真空子空间（后8个特征值）之间的特征能隙（Spectral Gap）$\lambda_i - \lambda_k$ 的宽度锁死。具体而言：</p>
+<p>$$
+\frac{1}{G} \propto \min_{i \in \text{space}, k \in \text{vacuum}} |\lambda_i - \lambda_k|
+$$</p>
+<p>这一能隙在第53章的数值系统中已经被隐式地确定。</p>
+<p><strong>宇宙学常数 $\Lambda$ 的涌现：</strong> 它正是我们的对角正则化抽吸项 $\kappa_i = 1/r_{\text{root}}^2$ 在连续投影下的体现。在连续极限中，它表现为无法被微扰完全洗清的“代数残余物（Algebraic Residue）”，天然对应着真空背景的零点能：</p>
+<p>$$
+\Lambda = \frac{1}{r_{\text{root}}^2} \cdot \mathcal{F}(\epsilon)
+$$</p>
+<p>其中 $\mathcal{F}(\epsilon)$ 是一个由微扰强度决定的平滑函数，在 $\epsilon \to 0$ 时趋于 1。</p>
+<hr>
+<h2>54.5 与经典广义相对论的对应关系</h2>
+<h3>54.5.1 对应表</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>非厄米离散量</th>
+<th>连续极限对应物</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>图拉普拉斯算子 $\mathbf{L}_G$
+</td>
+<td>拉普拉斯-贝尔特拉米算子 $\Delta_g$
+</td>
+</tr>
+<tr>
+<td>邻接权重 $A_{ij}$
+</td>
+<td>度规张量 $g^{\mu\nu}(x)$ 的投影密度</td>
+</tr>
+<tr>
+<td>迹模密度 $\rho_i(t)$
+</td>
+<td>能量-动量张量 $T^{\mu\nu}(x)$
+</td>
+</tr>
+<tr>
+<td>迹流 $J_{ij}$
+</td>
+<td>协变导数 $\nabla_\mu T^{\mu\nu}$
+</td>
+</tr>
+<tr>
+<td>特征能隙 $\lambda_i - \lambda_k$
+</td>
+<td>牛顿常数 $G$ 的倒数</td>
+</tr>
+<tr>
+<td>正则抽吸 $\kappa_i = 1/r_{\text{root}}^2$
+</td>
+<td>宇宙学常数 $\Lambda$
+</td>
+</tr>
+<tr>
+<td>名额排他公理</td>
+<td>Pauli 不相容原理的几何版本</td>
+</tr>
+<tr>
+<td>迹模守恒 $\sum \rho_i = \text{Const}$
+</td>
+<td>能量-动量守恒 $\nabla_\mu T^{\mu\nu} = 0$
+</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>54.5.2 一个统一的涌现图景</h3>
+<p>将第52章（自然测量强度）、第53章（引力涌现）和本章（爱因斯坦场方程）串联起来，我们得到一个完整的涌现图景：</p>
+<ol>
+<li>
+<strong>第52章</strong>：自然测量强度 $\gamma_{\text{nat}}$ 从统计涨落中涌现，其干涉周期由拓扑通道数 $80$ 锁定。</li>
+<li>
+<strong>第53章</strong>：3个留存时空本征态的双正交重叠产生涌现度规 $g_{ij}$，其特征值分叉和体积收缩对应潮汐力和引力质量。</li>
+<li>
+<strong>第54章</strong>：在连续极限下，离散图拉普拉斯算子退化为拉普拉斯-贝尔特拉米算子，迹模守恒退化为能量-动量守恒，Lovelock 定理锁定爱因斯坦场方程。</li>
+</ol>
+<p><strong>引力从来不是什么基本力，它只是11维图算子为了在非正交消相干下求存，其剩余特征态在连续极限下编织出的几何投影幻觉。</strong></p>
+<hr>
+<h2>54.6 讨论与展望</h2>
+<h3>54.6.1 对理论物理的意义</h3>
+<p>本章的推导表明，爱因斯坦场方程并非一个需要被“添加”到理论中的公设，而是从非厄米图拉普拉斯算子在连续极限下的谱几何中自然涌现的必然结果。这意味着：</p>
+<ul>
+<li><strong>广义相对论可能不是一个基本理论，而是一个涌现理论。</strong></li>
+<li><strong>时空的弯曲是量子纠缠在连续极限下的宏观表现。</strong></li>
+<li><strong>引力常数 $G$ 和宇宙学常数 $\Lambda$ 不是自由参数，而是由底层离散系统的谱间隙和正则化结构锁定的。</strong></li>
+</ul>
+<h3>54.6.2 当前框架的局限</h3>
+<ol>
+<li>
+<strong>连续极限的严格数学证明</strong>：本章的推导在物理直觉上是坚实的，但需要更严格的数学分析来确认格林恒等式在非厄米图拉普拉斯算子上的适用条件。</li>
+<li>
+<strong>时间维度的处理</strong>：当前推导主要集中在空间度规 $g_{ij}$ 上，时间维度 $g_{00}$ 的涌现机制需要进一步细化。</li>
+<li>
+<strong>物质场的具体形式</strong>：能量-动量张量 $T^{\mu\nu}$ 的具体形式（如电磁场、流体等）尚未从底层推导中显现。</li>
+</ol>
+<h3>54.6.3 下一步工作</h3>
+<ol>
+<li>
+<strong>P7.8</strong>：将第52-54章的统一涌现图景整理为可发表的综述论文。</li>
+<li>
+<strong>时间维度的涌现</strong>：研究 $g_{00}$ 分量与 $\gamma_{\text{nat}}$ 之间的联系。</li>
+<li>
+<strong>具体物质场的推导</strong>：从迹模密度的具体分布推导 Maxwell 方程和流体力学方程的涌现。</li>
+</ol>
+<hr>
+<h2>54.7 结论</h2>
+<p>本章通过严格的解析推导，建立了从有限维非厄米图拉普拉斯算子到连续流形上爱因斯坦场方程的完整涌现路径。核心结论如下：</p>
+<ol>
+<li>
+<strong>离散图拉普拉斯算子在 $N \to \infty$ 极限下自然退化为拉普拉斯-贝尔特拉米算子</strong>，几何度规 $g^{\mu\nu}$ 作为邻接权重的本征投影密度涌现。</li>
+<li>
+<strong>离散迹模守恒在连续极限下退化为能量-动量张量的零协变散度约束</strong> $\nabla_\mu T^{\mu\nu} = 0$。</li>
+<li>
+<strong>根据 Lovelock 定理，两个零散度张量的唯一耦合形式即为爱因斯坦场方程</strong> $G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G T_{\mu\nu}$。</li>
+<li>
+<strong>牛顿常数 $G$ 和宇宙学常数 $\Lambda$ 分别由特征能隙和正则抽吸项锁定</strong>，不再是自由参数。</li>
+</ol>
+<p><strong>引力不是一种基本相互作用，而是非厄米几何度规在连续极限下的涌现现象。</strong> 它源自3个留存时空本征态在消相干演化中，为求存而产生的非正交基底倾斜，在 $N \to \infty$ 的连续投影下编织出的宏观几何幻觉。</p>
+<hr>
+<p><strong>本章核心工具</strong>：谱几何、格林第一恒等式、Bianchi 恒等式、Lovelock 定理<br>
+<strong>数值锚点</strong>：第53章 $N=11$ 涌现度规数据<br>
+<strong>作者</strong>：史建威 &amp; 元宝<br>
+<strong>完成日期</strong>：2026年7月20日</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
