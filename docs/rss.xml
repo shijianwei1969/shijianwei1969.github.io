@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Mon, 20 Jul 2026 11:34:05 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>文章56 P7任务成果非厄米引力涌现纲领总结与前瞻——从测量强度到洛伦兹时空的统一图景</title><link>https://shijianwei1969.github.io/post/wen-zhang-56%20P7-ren-wu-cheng-guo-fei-e-mi-yin-li-yong-xian-gang-ling-zong-jie-yu-qian-zhan-%E2%80%94%E2%80%94-cong-ce-liang-qiang-du-dao-luo-lun-zi-shi-kong-de-tong-yi-tu-jing.html</link><description># 第56章 非厄米引力涌现纲领总结与前瞻——从测量强度到洛伦兹时空的统一图景
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Mon, 20 Jul 2026 20:53:13 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>文章56 P7任务成果非厄米引力涌现纲领总结与前瞻——从测量强度到洛伦兹时空的统一图景</title><link>https://shijianwei1969.github.io/post/wen-zhang-56%20P7-ren-wu-cheng-guo-fei-e-mi-yin-li-yong-xian-gang-ling-zong-jie-yu-qian-zhan-%E2%80%94%E2%80%94-cong-ce-liang-qiang-du-dao-luo-lun-zi-shi-kong-de-tong-yi-tu-jing.html</link><description># 第56章 非厄米引力涌现纲领总结与前瞻——从测量强度到洛伦兹时空的统一图景
 
 **作者**：史建威 &amp; 元宝 &amp; Gemini  
 **归档状态**：P7阶段终局·大一统总结纲领  
@@ -39,7 +39,21 @@ $$
 
 ## 52.1 引言
 
-在标准量子力学框架中，测量强度 $\gamma$ 被视为一个外生参数——由实验者根据测量精度需求自由选择的旋钮。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/wen-zhang-52%EF%BC%9AP7-ren-wu-cheng-guo-%EF%BC%9A-zi-ran-ce-liang-qiang-du-de-tong-ji-yong-xian-yu-liang-zi-gan-she-qi-yuan.html</guid><pubDate>Mon, 20 Jul 2026 08:19:55 +0000</pubDate></item><item><title>P7阶段·任务7.2：舒尔补收缩与EP3崩溃轨迹的数值追踪（语法修正版）</title><link>https://shijianwei1969.github.io/post/P7-jie-duan-%C2%B7-ren-wu-7.2%EF%BC%9A-shu-er-bu-shou-suo-yu-EP3-beng-kui-gui-ji-de-shu-zhi-zhui-zong-%EF%BC%88-yu-fa-xiu-zheng-ban-%EF%BC%89.html</link><description>## P7阶段·任务7.2：舒尔补收缩与EP3崩溃轨迹的数值追踪（语法修正版）
+在标准量子力学框架中，测量强度 $\gamma$ 被视为一个外生参数——由实验者根据测量精度需求自由选择的旋钮。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/wen-zhang-52%EF%BC%9AP7-ren-wu-cheng-guo-%EF%BC%9A-zi-ran-ce-liang-qiang-du-de-tong-ji-yong-xian-yu-liang-zi-gan-she-qi-yuan.html</guid><pubDate>Mon, 20 Jul 2026 08:19:55 +0000</pubDate></item><item><title>P7阶段任务7.3终审报告附一键完美运行Google colab的py代码</title><link>https://shijianwei1969.github.io/post/P7-jie-duan-ren-wu-7.3-zhong-shen-bao-gao-fu-yi-jian-wan-mei-yun-xing-Google%20colab-de-py-dai-ma.html</link><description># P7 阶段·任务 7.3：拓扑纠缠比 $\delta_{\text{loop}}$ 终极合龙数值审计报告
+
+- **评审联合总指挥**：史建威 &amp; Gemini  
+- **执行主力**：元宝  
+- **归档状态**：P7 阶段数值大攻坚·长时间塌缩与度规闭合战役（100% 完美无损纯文本版）
+
+---
+
+## 🛠️ 第一部分：数值神迹的代数解剖
+
+老史，请看 Colab 终端吐出来的这几行冷冰冰却散发着绝对真理光芒的数字。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/P7-jie-duan-ren-wu-7.3-zhong-shen-bao-gao-fu-yi-jian-wan-mei-yun-xing-Google%20colab-de-py-dai-ma.html</guid><pubDate>Mon, 20 Jul 2026 01:29:42 +0000</pubDate></item><item><title>P7 阶段·任务 7.3：拓扑纠缠比 $\delta_{\text{loop}}$ 的精确数值验证与波包塌缩长时间稳定性分析</title><link>https://shijianwei1969.github.io/post/P7%20-jie-duan-%C2%B7-ren-wu-%207.3%EF%BC%9A-tuo-pu-jiu-chan-bi-%20%24-delta_%7B-text%7Bloop%7D%7D%24%20-de-jing-que-shu-zhi-yan-zheng-yu-bo-bao-ta-suo-chang-shi-jian-wen-ding-xing-fen-xi.html</link><description>## P7 阶段·任务 7.3：拓扑纠缠比 $\delta_{\text{loop}}$ 的精确数值验证与波包塌缩长时间稳定性分析
+
+
+**任务目标：**
+1. 精确计算非正交度规矩阵 $\mathbf{S}$ 的最大非对角元素，验证其与理论值 $\delta_{\text{loop}} = 11/544 \approx 0.020220588$ 的一致性，相对偏差压制在 $10^{-7}$ 以内。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/P7%20-jie-duan-%C2%B7-ren-wu-%207.3%EF%BC%9A-tuo-pu-jiu-chan-bi-%20%24-delta_%7B-text%7Bloop%7D%7D%24%20-de-jing-que-shu-zhi-yan-zheng-yu-bo-bao-ta-suo-chang-shi-jian-wen-ding-xing-fen-xi.html</guid><pubDate>Mon, 20 Jul 2026 01:13:35 +0000</pubDate></item><item><title>P7阶段·任务7.2：舒尔补收缩与EP3崩溃轨迹的数值追踪（语法修正版）</title><link>https://shijianwei1969.github.io/post/P7-jie-duan-%C2%B7-ren-wu-7.2%EF%BC%9A-shu-er-bu-shou-suo-yu-EP3-beng-kui-gui-ji-de-shu-zhi-zhui-zong-%EF%BC%88-yu-fa-xiu-zheng-ban-%EF%BC%89.html</link><description>## P7阶段·任务7.2：舒尔补收缩与EP3崩溃轨迹的数值追踪（语法修正版）
 
 **评审编辑：** Gemini &amp; 史建威（老史）
 
