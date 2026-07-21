@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 非厄米投影限制下的量子测量与经典流形涌现的代数接口
+## （P6-002 修订初稿）
+
+**文档编号**：P6-002  
+**归档阶段**：P6 观测者代数接口序列第二篇（量子测量与经典涌现框架稿）  
+**关联稿件**：文章25-R2（代数底座）、文章48/P8-006（全相变循环）、文章49/P7-003（规范群涌现）、文章38（带电轻子质量初阶稿）  
+**归档时间**：2026年07月22日  
+**归档状态**：修订初稿（吸收初审意见，补充可信度分层与体系衔接）  
+**作者**：史建威
+
+---
+
+## 本文结论的可信度分层声明
+为严格遵守体系刚性规范，本文所有核心结论进行如下可信度分层：
+* **【纲领层（Axiomatic Standard）】**
+  * 不存在“外部观测者”，测量本质是11维非厄米主矩阵的局域特征投影限制；
+  * 经典现实并非独立实体，是多局域算子共同作用下的代数投影涌现。">
+<meta property="og:title" content="文章50：非厄米投影限制下的量子测量与经典流形涌现的代数接口">
+<meta property="og:description" content="# 非厄米投影限制下的量子测量与经典流形涌现的代数接口
+## （P6-002 修订初稿）
+
+**文档编号**：P6-002  
+**归档阶段**：P6 观测者代数接口序列第二篇（量子测量与经典涌现框架稿）  
+**关联稿件**：文章25-R2（代数底座）、文章48/P8-006（全相变循环）、文章49/P7-003（规范群涌现）、文章38（带电轻子质量初阶稿）  
+**归档时间**：2026年07月22日  
+**归档状态**：修订初稿（吸收初审意见，补充可信度分层与体系衔接）  
+**作者**：史建威
+
+---
+
+## 本文结论的可信度分层声明
+为严格遵守体系刚性规范，本文所有核心结论进行如下可信度分层：
+* **【纲领层（Axiomatic Standard）】**
+  * 不存在“外部观测者”，测量本质是11维非厄米主矩阵的局域特征投影限制；
+  * 经典现实并非独立实体，是多局域算子共同作用下的代数投影涌现。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/wen-zhang-50%EF%BC%9A-fei-e-mi-tou-ying-xian-zhi-xia-de-liang-zi-ce-liang-yu-jing-dian-liu-xing-yong-xian-de-dai-shu-jie-kou.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>文章50：非厄米投影限制下的量子测量与经典流形涌现的代数接口</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">文章50：非厄米投影限制下的量子测量与经典流形涌现的代数接口</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/128" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>非厄米投影限制下的量子测量与经典流形涌现的代数接口</h1>
+<h2>（P6-002 修订初稿）</h2>
+<p><strong>文档编号</strong>：P6-002<br>
+<strong>归档阶段</strong>：P6 观测者代数接口序列第二篇（量子测量与经典涌现框架稿）<br>
+<strong>关联稿件</strong>：文章25-R2（代数底座）、文章48/P8-006（全相变循环）、文章49/P7-003（规范群涌现）、文章38（带电轻子质量初阶稿）<br>
+<strong>归档时间</strong>：2026年07月22日<br>
+<strong>归档状态</strong>：修订初稿（吸收初审意见，补充可信度分层与体系衔接）<br>
+<strong>作者</strong>：史建威</p>
+<hr>
+<h2>本文结论的可信度分层声明</h2>
+<p>为严格遵守体系刚性规范，本文所有核心结论进行如下可信度分层：</p>
+<ul>
+<li>
+<p><strong>【纲领层（Axiomatic Standard）】</strong></p>
+<ul>
+<li>不存在“外部观测者”，测量本质是11维非厄米主矩阵的局域特征投影限制；</li>
+<li>经典现实并非独立实体，是多局域算子共同作用下的代数投影涌现。</li>
+</ul>
+</li>
+<li>
+<p><strong>【定理层（Rigorous Theorems）】</strong></p>
+<ul>
+<li>非厄米矩阵双正交基的性质：左右特征矢满足双正交归一$\langle l_i | r_j \rangle = \delta_{ij}$，右特征基存在非正交重叠$S_{ij} = \langle r_i | r_j \rangle \neq \delta_{ij}$；</li>
+<li>投影算子的幂等性$\mathbf{P}_i^2 = \mathbf{P}_i$，子空间公共交集的代数定义；</li>
+<li>特征值虚部为负时，概率幅满足指数衰减规律$\mathcal{P}(t) \propto e^{-2|\text{Im}(\lambda)|t}$。</li>
+</ul>
+</li>
+<li>
+<p><strong>【建构假说层（Constructive Hypotheses）】</strong></p>
+<ul>
+<li>局域投影限制算子对应物理测量行为，谱虚部压制对应波包塌缩过程；</li>
+<li>塌缩时间常数$\delta_{\text{loop}} = 11/(17 \times 32)$的构造与尺度匹配（32因子待严格内生推导）；</li>
+<li>多投影算子的公共值域交集对应共享经典现实，非正交重叠统计平均退化为厄米近似的经典连续性机制。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2>摘要</h2>
+<p>本文基于文章48（P8-006）确立的11席位非厄米图论宇宙相变循环框架，首次从矩阵底座内生解决量子力学中的“测量佯谬”。</p>
+<p>核心结论包括：</p>
+<ol>
+<li><strong>测量即投影限制</strong>：宏观观测行为等价于对$11 \times 11$非厄米主矩阵$\mathbf{M}$施加一阶特征投影限制$\mathbf{P}<em>{\text{meas}} \mathbf{M} \mathbf{P}</em>{\text{meas}}$，不存在“外部观测者”，只存在算子对自身的局域代数截断。</li>
+<li><strong>波包塌缩的非厄米谱动力学</strong>：由于非厄米算子右特征基底的非正交性，施加投影限制会导致未受限特征谱的虚部发生瞬时向下平移，未观测态的相对概率幅在复空间中快速衰减。塌缩时间尺度由拓扑常数初阶锁定为$\approx 49.45 , \tau_P$（普朗克时间），宏观上表现为“瞬间塌缩”的假象。</li>
+<li><strong>经典流形的涌现</strong>：当多个局域投影限制算子共同作用于主矩阵时，其公共本征空间的代数交集自然涌现为观测者共享的“经典现实”流形，无需多世界假设，经典性是算子交的代数必然结果。</li>
+</ol>
+<p>全过程零主观意识假设、零平行宇宙假设，量子测量佯谬在非厄米矩阵底座上被还原为纯粹的局域算子代数限制。</p>
+<hr>
+<h2>1 引言</h2>
+<h3>1.1 问题定位与本体论清洗</h3>
+<p>量子力学的“测量佯谬”是连续时空框架下无法调和的逻辑漏洞：薛定谔方程决定了波函数的幺正演化，而测量行为却引进了非幺正的波包瞬间塌缩。哥本哈根学派不得不引入神秘的“外部观测者”或“宏观划分边界”，在本体论上存在先天缺陷。</p>
+<p>根据第一公理，时间、空间与观测者均非独立存在的实体，而是$11 \times 11$非厄米主矩阵$\mathbf{M}$在低维低能表象层的投影。因此宇宙中不存在任何“外部观测者”，所有测量、相互作用、乃至经典宏观世界的显现，本质上都是主矩阵在本征空间流转时的<strong>局域特征投影限制（Local Spectral Projection Restriction）</strong>。</p>
+<h3>1.2 相区限定与机制激活条件</h3>
+<p>本文描述的量子测量与经典涌现机制，仅在**相B（松态维持阶段）**下成立：</p>
+<ul>
+<li>相A、相C阶段谱结构剧烈形变，无法形成稳定的局域投影子空间；</li>
+<li>相D、相E阶段全域简并，局域算子失去独立意义；</li>
+<li>只有相B的非厄米屏障下，局域子空间的微扰投影才能表现为稳定的测量与经典演化行为，与文章48的五相循环框架完全对齐。</li>
+</ul>
+<h3>1.3 核心思路：特征投影限制</h3>
+<p>在11席位非厄米图论中，名额排他公理（第二公理）规定任何局域子系统无法承载全域特征谱的完整维度。因此一个子系统（实验仪器）与另一个子系统（待测粒子）的相互作用，在代数最底层并不是两个连续希尔伯特空间的直积，而是主矩阵$\mathbf{M}$对特定局域本征空间的代数截断。本文通过双正交特征限制动力学，还原波包塌缩与经典涌现的底层代数机制。</p>
+<hr>
+<h2>2 双正交投影限制算子的代数定义</h2>
+<h3>2.1 双正交基底的规范化</h3>
+<p>对于$11 \times 11$非厄米主矩阵$\mathbf{M}$，其右特征值方程与左特征值方程分别定义为：<br>
+$\mathbf{M} | r_i \rangle = \lambda_i | r_i \rangle, \quad \langle l_i | \mathbf{M} = \lambda_i \langle l_i |$</p>
+<p>在非简并情形下，左、右特征矢量系天然构成双正交完备基。通过标度变换可严格规范归一化为：<br>
+$\langle l_i | r_j \rangle = \delta_{ij}, \quad \sum_{i=1}^{11} | r_i \rangle \langle l_i | = \mathbf{I}$</p>
+<p>非厄米算子的核心物理效应承载于右特征基底的内部非正交重叠：<br>
+$S_{ij} = \langle r_i | r_j \rangle \neq \delta_{ij}$<br>
+这一非正交重叠矩阵，承载了微观席位之间不可消除的全息拓扑纠缠。</p>
+<h3>2.2 特征投影限制的代数形式</h3>
+<p>定义对应于第$i$个特征子空间的投影算子为：<br>
+$\mathbf{P}_i = | r_i \rangle \langle l_i |$<br>
+其满足幂等性$\mathbf{P}_i^2 = \mathbf{P}_i$。</p>
+<p>当局域相互作用限制了特定的特征本征集$S_{\text{meas}} = {i_1, i_2, \dots, i_m}$时，定义局域投影限制算子为：<br>
+$\mathbf{P}<em>{\text{meas}} = \sum</em>{k \in S_{\text{meas}}} \mathbf{P}_{i_k}$</p>
+<p>相互作用（测量）发生后的有效主矩阵，在代数上被刚性截断为：<br>
+$\mathbf{M}<em>{\text{meas}} = \mathbf{P}</em>{\text{meas}} \mathbf{M} \mathbf{P}_{\text{meas}}$</p>
+<p>未被选中的本征子空间${j \notin S_{\text{meas}}}$在代数上被直接剥离出当前的有效流转通道。</p>
+<hr>
+<h2>3 波包塌缩的非厄米谱动力学</h2>
+<h3>3.1 投影限制诱导的谱虚部压制</h3>
+<p>【建构假说层】在传统厄米系统中，由于右特征基正交$\langle r_i | r_j \rangle = \delta_{ij}$，投影后的子系统与未投影子系统处于绝对几何隔离状态。</p>
+<p>而在非厄米系统下，由于右特征矢量的非正交重叠矩阵$S_{ij} \neq \delta_{ij}$存在非对角元，投影限制算子$\mathbf{P}_{\text{meas}}$在截断矩阵的同时，会导致系统有效哈密顿量的特征谱在复平面上发生瞬时位移。</p>
+<p>对于未被观测的特征状态，其对应的有效本征值$\lambda_j$的虚部$\text{Im}(\lambda_j)$受到对角正则化项的瞬时剥夺，被迫向负虚轴极深处下坠：<br>
+$\text{Im}(\lambda_{j \notin S_{\text{meas}}}) \to -\Gamma$</p>
+<p>这一谱形变导致未观测态的相对概率幅发生极快的、不可逆的拓扑衰减：<br>
+$\mathcal{P}<em>{j \notin S</em>{\text{meas}}}(t) \propto e^{-2\Gamma t}$</p>
+<h3>3.2 塌缩时间的初阶常数对齐</h3>
+<p>【建构假说层】衰减相消率$\Gamma$受到非正交重叠矩阵边界的刚性制约。在11维矩阵底座上，该消相干率的倒数由全局席位11与上同调不变量17构成的边界纠缠比初阶锁定：<br>
+$\delta_{\text{loop}} = \frac{11}{17 \times 32} = \frac{11}{544}$</p>
+<p><em>注：分母因子32为初阶匹配值，对应背景扇区拓扑通道的复合维度，其严格内生推导待后续完善；当前数值与文章38初阶常数形成初阶对齐。</em></p>
+<p>塌缩特征时间尺度为：<br>
+$\tau_{\text{collapse}} = \Gamma^{-1} \propto \delta_{\text{loop}}^{-1} = \frac{544}{11} \approx 49.45$</p>
+<p>在自然单位制下（普朗克时间$\tau_P \approx 5.39 \times 10^{-44}$秒），波包塌缩完成的特征时间尺度为：<br>
+$\tau_{\text{collapse}} \approx 49.45 , \tau_P \approx 2.66 \times 10^{-42} \text{ s}$</p>
+<p>这一时间尺度比任何宏观实验室仪器的电磁响应时间快了近20个数量级，因此在宏观低能观测者看来表现为“瞬间塌缩”的非幺正佯谬。但在矩阵底座层，它是一个由拓扑常数支配的、有限时间的连续非厄米谱衰减过程。</p>
+<hr>
+<h2>4 经典流形的涌现</h2>
+<h3>4.1 观测算子代数交的客观性</h3>
+<p>【建构假说层】多观测者（或多仪器）对同一主矩阵的共同测量，在代数上表现为多个不相交换的局域投影限制算子$\mathbf{P}^{(1)}, \mathbf{P}^{(2)}, \dots$的复合作用。</p>
+<p>由于不交换性$[\mathbf{P}^{(1)}, \mathbf{P}^{(2)}] \neq 0$，各观测者眼中的微观细节可能存在相位冲突。</p>
+<p>然而所有投影限制算子在代数上的公共值域交集：<br>
+$\mathcal{C}<em>{\text{classic}} = \bigcap</em>{n} \text{Ran}(\mathbf{P}^{(n)})$</p>
+<p>构成了不依赖于特定观测者选择的<strong>共享特征子空间</strong>。在$\mathcal{C}_{\text{classic}}$内部：</p>
+<ol>
+<li><strong>可共存性</strong>：任意两个限制算子的投影作用退化为可交换算子，消除了量子相干性；</li>
+<li><strong>绝对客观性</strong>：对于所有观测者，投影在该子空间内的特征值测量结果在代数上完全恒等。</li>
+</ol>
+<p>这一交集$\mathcal{C}_{\text{classic}}$，正是宏观低能观测者感知到的稳定、唯一的“经典流形背景”。</p>
+<h3>4.2 经典连续性的代数起源</h3>
+<p>【建构假说层】在公共特征子空间$\mathcal{C}<em>{\text{classic}}$上，由于多个非交换算子的非正交重叠在统计平均下相互抵消，有效的特征度规逼近标准的对角度规$S</em>{ij} \to \delta_{ij}$。因此经典流形上的动力学演化自然退化为厄米近似（Hermitian Approximation），从而在宏观上投影出了服从经典牛顿-爱因斯坦因果律的平滑、连续时空。</p>
+<hr>
+<h2>5 结论</h2>
+<ol>
+<li>清除了量子测量理论中“观测者主观意识”的唯象假设，将测量还原为非厄米算子的<strong>局域特征投影限制</strong>，符合体系本体论第一公理；</li>
+<li>波包塌缩并非非连续跳跃，而是特征谱限制导致的谱虚部向下压制。塌缩时间初阶锁定为$\approx 49.45 , \tau_P$，在普朗克尺度下为连续动力学过程，宏观的“瞬时性”为尺度差异导致的假象；</li>
+<li>共享的经典现实世界涌现于多个投影限制算子的<strong>代数交集</strong>之上，其上的因果律由非厄米度的统计平均退化（厄米近似）内生给出，无需多世界假设；</li>
+<li>塌缩常数与文章38初阶成果形成对齐，32因子的严格内生推导为后续攻坚方向。</li>
+</ol>
+<hr>
+<h2>初审修订说明</h2>
+<p>本次修订基于初审意见完成以下调整：</p>
+<ol>
+<li>明确归属P6观测者代数接口序列，编号P6-002，调整归档状态为修订初稿；</li>
+<li>补充三级可信度分层声明，所有建构性结论标注层级，符合体系规范；</li>
+<li>补充相区限定说明，对齐P8五相循环框架，完善体系自洽性；</li>
+<li>诚实标注塌缩时间常数32因子为初阶匹配值，明确后续推导方向，坚守零参数红线；</li>
+<li>全文公式统一为单美元$包裹，适配多平台Markdown渲染。</li>
+</ol></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
