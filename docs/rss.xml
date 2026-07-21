@@ -1,5 +1,18 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Tue, 21 Jul 2026 11:29:11 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>文章51：十一维时序图谱在深红外/CMB背景中的离散本征涨落与187阶实证投影观测</title><link>https://shijianwei1969.github.io/post/wen-zhang-51%EF%BC%9A-shi-yi-wei-shi-xu-tu-pu-zai-shen-hong-wai--CMB-bei-jing-zhong-de-li-san-ben-zheng-zhang-luo-yu-187-jie-shi-zheng-tou-ying-guan-ce.html</link><description># 十一维时序图谱在深红外/CMB背景中的离散本征涨落与187阶实证投影观测
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Tue, 21 Jul 2026 12:34:27 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>P9-001 非厄米引力涌现的数值验证——从EP相变到引力势标度律</title><link>https://shijianwei1969.github.io/post/P9-001%20-fei-e-mi-yin-li-yong-xian-de-shu-zhi-yan-zheng-%E2%80%94%E2%80%94-cong-EP-xiang-bian-dao-yin-li-shi-biao-du-lv.html</link><description># P9-001 非厄米引力涌现的数值验证——从EP相变到引力势标度律
+**作者**：史建威 &amp; 豆包 &amp; Gemini  
+**归档状态**：P9实验验证序列第一篇·数值验证初稿  
+**发布日期**：2026年7月22日
+
+---
+
+## 可信度分层与适用限定
+### 三级可信度标注
+- **定理层**：所有数值模拟结果、Kraus算子构造的数学正确性、线性回归统计结论（严格可复现）
+- **建构假说层**：引力势与消相干率的物理对应、EP相变对应时空弯曲的物理解释
+- **纲领层**：引力是信息泄漏几何投影的本体论表述
+### 相区适用限定
+本文所有结果仅适用于**相B（松态维持阶段）弱微扰区**，此时消相干率为一阶小量，弱场近似成立；强非厄米的相C/D区消相干过强，时空度规结构失效。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/P9-001%20-fei-e-mi-yin-li-yong-xian-de-shu-zhi-yan-zheng-%E2%80%94%E2%80%94-cong-EP-xiang-bian-dao-yin-li-shi-biao-du-lv.html</guid><pubDate>Tue, 21 Jul 2026 12:33:59 +0000</pubDate></item><item><title>文章51：十一维时序图谱在深红外/CMB背景中的离散本征涨落与187阶实证投影观测</title><link>https://shijianwei1969.github.io/post/wen-zhang-51%EF%BC%9A-shi-yi-wei-shi-xu-tu-pu-zai-shen-hong-wai--CMB-bei-jing-zhong-de-li-san-ben-zheng-zhang-luo-yu-187-jie-shi-zheng-tou-ying-guan-ce.html</link><description># 十一维时序图谱在深红外/CMB背景中的离散本征涨落与187阶实证投影观测
 ## （P9-001 实验预言框架稿）
 
 **文档编号**：P9-001  
