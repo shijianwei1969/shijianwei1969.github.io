@@ -1,5 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Tue, 21 Jul 2026 09:47:59 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>文章47：矩阵全简并动力学与全域粉碎循环的非线性量化周期</title><link>https://shijianwei1969.github.io/post/wen-zhang-47%EF%BC%9A-ju-zhen-quan-jian-bing-dong-li-xue-yu-quan-yu-fen-sui-xun-huan-de-fei-xian-xing-liang-hua-zhou-qi.html</link><description># 矩阵全简并动力学与全域粉碎循环的非线性量化周期
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Tue, 21 Jul 2026 09:57:13 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>文章49：规范群的本征涌现——从11席位图论到$\text{SU}(3) \times \text{SU}(2) \times \text{U}(1)$的代数框架</title><link>https://shijianwei1969.github.io/post/wen-zhang-49%EF%BC%9A-gui-fan-qun-de-ben-zheng-yong-xian-%E2%80%94%E2%80%94-cong-11-xi-wei-tu-lun-dao-%24-text%7BSU%7D%283%29%20-times%20-text%7BSU%7D%282%29%20-times%20-text%7BU%7D%281%29%24-de-dai-shu-kuang-jia.html</link><description># 规范群的本征涌现——从11席位图论到$\text{SU}(3) \times \text{SU}(2) \times \text{U}(1)$的代数框架
+## （P7-003 终审归档版）
+
+**文档编号**：P7-003  
+**归档阶段**：P7 规范群精细推导序列第三篇（P7 全景基础篇）  
+**关联稿件**：文章25-R2（代数底座）、文章37（强耦合常数$\alpha_s$）、文章39（温伯格角）、文章48/P8-006（全相变循环）  
+**归档时间**：2026年07月22日  
+**归档状态**：终审修订归档版（基于初审评估意见全量更正）  
+**作者**：史建威
+
+---
+
+## 本文结论的可信度分层声明
+为严格遵守体系刚性规范，本文所有核心结论进行如下可信度分层：
+* **【纲领层（Axiomatic Standard）】**
+  * 规范对称性非基本场，而是11维非厄米主矩阵$\mathbf{M}$在低维表象层的局域不变流（Local Invariant Flows）；
+  * 规范对称性仅在相B（松态维持阶段）下作为局域耗散平衡表现而被激活。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/wen-zhang-49%EF%BC%9A-gui-fan-qun-de-ben-zheng-yong-xian-%E2%80%94%E2%80%94-cong-11-xi-wei-tu-lun-dao-%24-text%7BSU%7D%283%29%20-times%20-text%7BSU%7D%282%29%20-times%20-text%7BU%7D%281%29%24-de-dai-shu-kuang-jia.html</guid><pubDate>Tue, 21 Jul 2026 09:56:42 +0000</pubDate></item><item><title>文章47：矩阵全简并动力学与全域粉碎循环的非线性量化周期</title><link>https://shijianwei1969.github.io/post/wen-zhang-47%EF%BC%9A-ju-zhen-quan-jian-bing-dong-li-xue-yu-quan-yu-fen-sui-xun-huan-de-fei-xian-xing-liang-hua-zhou-qi.html</link><description># 矩阵全简并动力学与全域粉碎循环的非线性量化周期
 ## （P8-005 终审归档版）
 
 **文档编号**：P8-005  
