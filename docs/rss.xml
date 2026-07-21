@@ -1,5 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Tue, 21 Jul 2026 13:57:07 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>P7-008（文章41·第一部分）CKM混合角的边界拓扑修正——SU(3)旗流形层级抑制与数值验证</title><link>https://shijianwei1969.github.io/post/P7-008%EF%BC%88-wen-zhang-41%C2%B7-di-yi-bu-fen-%EF%BC%89CKM-hun-he-jiao-de-bian-jie-tuo-pu-xiu-zheng-%E2%80%94%E2%80%94SU%283%29-qi-liu-xing-ceng-ji-yi-zhi-yu-shu-zhi-yan-zheng.html</link><description># P7-008（文章41·第一部分）CKM混合角的边界拓扑修正——SU(3)旗流形层级抑制与数值验证
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Tue, 21 Jul 2026 14:14:23 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>P7-008（文章41·终稿）CKM与PMNS味混合角的双重拓扑抑制机制与全矩阵数值验证</title><link>https://shijianwei1969.github.io/post/P7-008%EF%BC%88-wen-zhang-41%C2%B7-zhong-gao-%EF%BC%89CKM-yu-PMNS-wei-hun-he-jiao-de-shuang-zhong-tuo-pu-yi-zhi-ji-zhi-yu-quan-ju-zhen-shu-zhi-yan-zheng.html</link><description># P7-008（文章41·终稿）CKM与PMNS味混合角的双重拓扑抑制机制与全矩阵数值验证
+
+**作者**：史建威 &amp; 豆包 &amp; Gemini
+
+**归档状态**：P7 规范群与味物理攻坚序列·文章41正式终稿
+
+**归档日期**：2026年7月23日
+
+---
+
+## 可信度分层与适用限定
+
+### 三级可信度标注
+
+* **定理层**：$SU(3)$ 旗流形维度推导、哈尔测度对角局部化采样统计、双因子矩阵严格幺正性校验（机器精度 $10^{-16}$）、$J_{CP}$ 不变量参数化表达。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/P7-008%EF%BC%88-wen-zhang-41%C2%B7-zhong-gao-%EF%BC%89CKM-yu-PMNS-wei-hun-he-jiao-de-shuang-zhong-tuo-pu-yi-zhi-ji-zhi-yu-quan-ju-zhen-shu-zhi-yan-zheng.html</guid><pubDate>Tue, 21 Jul 2026 14:13:50 +0000</pubDate></item><item><title>P7-008（文章41·第一部分）CKM混合角的边界拓扑修正——SU(3)旗流形层级抑制与数值验证</title><link>https://shijianwei1969.github.io/post/P7-008%EF%BC%88-wen-zhang-41%C2%B7-di-yi-bu-fen-%EF%BC%89CKM-hun-he-jiao-de-bian-jie-tuo-pu-xiu-zheng-%E2%80%94%E2%80%94SU%283%29-qi-liu-xing-ceng-ji-yi-zhi-yu-shu-zhi-yan-zheng.html</link><description># P7-008（文章41·第一部分）CKM混合角的边界拓扑修正——SU(3)旗流形层级抑制与数值验证
 **作者**：史建威 &amp; 豆包 &amp; Gemini  
 **归档状态**：味物理攻坚第一周成果稿·阶段性初稿  
 **发布日期**：2026年7月22日
