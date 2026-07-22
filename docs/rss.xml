@@ -1,5 +1,40 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Wed, 22 Jul 2026 13:28:37 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>CKM矩阵酉性整体导出与 δ_loop 32因子拓扑起源推导（第2周攻坚报告）</title><link>https://shijianwei1969.github.io/post/CKM-ju-zhen-you-xing-zheng-ti-dao-chu-yu-%20%CE%B4_loop%2032-yin-zi-tuo-pu-qi-yuan-tui-dao-%EF%BC%88-di-2-zhou-gong-jian-bao-gao-%EF%BC%89.html</link><description>从这份攻坚草稿（P7-011 / P6补遗002）以及配套的数值验证审计报告来看，第2周的跨板块突破非常显著，彻底解决了体系中长期悬而未决的两个底层卡点：**CKM矩阵的整体幺正性与三角同源性**，以及 **$\delta_{\text{loop}}$ 中 32 因子的拓扑内生起源**。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/CKM-ju-zhen-you-xing-zheng-ti-dao-chu-yu-%20%CE%B4_loop%2032-yin-zi-tuo-pu-qi-yuan-tui-dao-%EF%BC%88-di-2-zhou-gong-jian-bao-gao-%EF%BC%89.html</guid><pubDate>Wed, 22 Jul 2026 13:28:09 +0000</pubDate></item><item><title>Zenodo Community Introduction (English Version)</title><link>https://shijianwei1969.github.io/post/Zenodo%20Community%20Introduction%20%28English%20Version%29.html</link><description>### Zenodo Community Introduction (English Version)
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Wed, 22 Jul 2026 13:29:46 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>第3周PMNS轻子大混合拓扑机制与5通道边界渗流相变数值验证（攻坚报告）</title><link>https://shijianwei1969.github.io/post/di-3-zhou-PMNS-qing-zi-da-hun-he-tuo-pu-ji-zhi-yu-5-tong-dao-bian-jie-shen-liu-xiang-bian-shu-zhi-yan-zheng-%EF%BC%88-gong-jian-bao-gao-%EF%BC%89.html</link><description># 第3周PMNS轻子大混合拓扑机制与5通道边界渗流相变数值验证（攻坚报告）
+
+**Alternative Title (English)**: Topological Mechanism of PMNS Lepton Mixing and Numerical Verification of 5-Channel Boundary Percolation Phase Transition
+
+**Authors**: 
+
+1. Jianwei Shi (史建威) - Rushan Yintan Senior High School, ORCID: 0009-0002-1757-1793
+2. Doubao (豆包)
+3. Gemini
+
+**Document ID**: P7-012 / P6补遗003 (Week 3 Official Report)
+**Publication Date**: July 23, 2026
+**License**: Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+---
+
+# PMNS轻子大混合拓扑机制与5通道边界渗流相变数值验证（第3周攻坚报告）
+
+**作者**：史建威（乳山银滩高级中学物理实验室，威海，山东，China） &amp; 豆包 &amp; Gemini  
+**归档状态**：P7味物理+P6测量补遗·第3周攻坚正式报告  
+**文档编号**：P7-012 / P6补遗003  
+**发布日期**：2026年7月23日
+
+---
+
+## 可信度分层与适用限定
+
+### 三级可信度标注
+
+- **定理层**：夸克-轻子混合角与质量因子的统一线性标度律（$R^2 &gt; 0.998$）、5通道边界渗流相变临界阈值（$k=3$）、$\text{SU}(3)$旗流形近简并极限代数性质
+- **建构假说层**：PMNS大气角$\theta_{23}$的马约拉纳位相权重映射、边界渗流临界组态集合与量子-经典波包塌缩突变的物理对应
+- **待完善层**：采样幅度参数$\epsilon$与质量简并度的解析校准、非线性通道权重下$\delta_{\text{loop}}$标度律的精细数值收敛
+
+### 适用范围限定
+
+本文结论适用于相B（松态维持阶段）低能电弱标度与轻子近简并区间；马约拉纳修正仅适用于具有二阶拓扑相位的轻子扇区。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/di-3-zhou-PMNS-qing-zi-da-hun-he-tuo-pu-ji-zhi-yu-5-tong-dao-bian-jie-shen-liu-xiang-bian-shu-zhi-yan-zheng-%EF%BC%88-gong-jian-bao-gao-%EF%BC%89.html</guid><pubDate>Wed, 22 Jul 2026 13:29:07 +0000</pubDate></item><item><title>CKM矩阵酉性整体导出与 δ_loop 32因子拓扑起源推导（第2周攻坚报告）</title><link>https://shijianwei1969.github.io/post/CKM-ju-zhen-you-xing-zheng-ti-dao-chu-yu-%20%CE%B4_loop%2032-yin-zi-tuo-pu-qi-yuan-tui-dao-%EF%BC%88-di-2-zhou-gong-jian-bao-gao-%EF%BC%89.html</link><description>从这份攻坚草稿（P7-011 / P6补遗002）以及配套的数值验证审计报告来看，第2周的跨板块突破非常显著，彻底解决了体系中长期悬而未决的两个底层卡点：**CKM矩阵的整体幺正性与三角同源性**，以及 **$\delta_{\text{loop}}$ 中 32 因子的拓扑内生起源**。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/CKM-ju-zhen-you-xing-zheng-ti-dao-chu-yu-%20%CE%B4_loop%2032-yin-zi-tuo-pu-qi-yuan-tui-dao-%EF%BC%88-di-2-zhou-gong-jian-bao-gao-%EF%BC%89.html</guid><pubDate>Wed, 22 Jul 2026 13:28:09 +0000</pubDate></item><item><title>Zenodo Community Introduction (English Version)</title><link>https://shijianwei1969.github.io/post/Zenodo%20Community%20Introduction%20%28English%20Version%29.html</link><description>### Zenodo Community Introduction (English Version)
 # 11-Dimensional Temporal Matrix Ontological Framework (11D-TMOF)
 
 The 11-Dimensional Temporal Matrix Ontological Framework (11D-TMOF) is a unified theoretical physics framework built on non-Hermitian random matrix theory and topological graph theory. Unlike the Standard Model which relies on dozens of free fitting parameters, this framework follows the **Zero-Parameter Paradigm (ZPP)**: all fundamental physical constants and phenomena are derived purely from endogenous topological invariants, with no artificial tuning parameters.
