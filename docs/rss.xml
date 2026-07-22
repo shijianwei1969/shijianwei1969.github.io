@@ -1,5 +1,34 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Wed, 22 Jul 2026 00:43:15 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>11时序矩阵体系·学术存档标准备份</title><link>https://shijianwei1969.github.io/post/11-shi-xu-ju-zhen-ti-xi-%C2%B7-xue-shu-cun-dang-biao-zhun-bei-fen.html</link><description># 11时序矩阵体系·学术存档标准备份
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Wed, 22 Jul 2026 11:25:24 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>Zenodo Community Introduction (English Version)</title><link>https://shijianwei1969.github.io/post/Zenodo%20Community%20Introduction%20%28English%20Version%29.html</link><description>### Zenodo Community Introduction (English Version)
+# 11-Dimensional Temporal Matrix Ontological Framework (11D-TMOF)
+
+The 11-Dimensional Temporal Matrix Ontological Framework (11D-TMOF) is a unified theoretical physics framework built on non-Hermitian random matrix theory and topological graph theory. Unlike the Standard Model which relies on dozens of free fitting parameters, this framework follows the **Zero-Parameter Paradigm (ZPP)**: all fundamental physical constants and phenomena are derived purely from endogenous topological invariants, with no artificial tuning parameters.
+
+---
+
+## Core Theoretical Foundation
+The framework is anchored in four first-principle axioms:
+1. **3T1S Dual Spacetime Architecture**: The root domain consists of 3 temporal + 8 spatial vacuum degrees of freedom (11 total seats), which project onto the apparent 3 spatial + 1 temporal low-energy spacetime observed experimentally.
+2. Non-Hermitian evolution of 11 spacetime-vacuum seats as the fundamental dynamic mechanism.
+3. $\text{SU}(3)$ flag manifold as the topological basis for fermion flavor mixing.
+4. All observable physical quantities are projection readings of root-domain topological structures.
+
+---
+
+## Key Verified Results
+- **Flavor Physics**: Unified topological explanation for both CKM (quark) and PMNS (lepton) flavor mixing hierarchies and CP violation. Core parameters deviate from PDG experimental values by &lt;3% on average, with zero free input parameters for topological boundary terms.
+- **Gravitational Emergence**: First-principle derivation of the temporal metric component $g_{00} = 269/272$, establishing a quantitative bridge between microscopic topological loop constants and macroscopic spacetime geometry.
+- **Over-determined Self-Consistency**: 6 cross-domain physical observables are simultaneously matched with zero free parameters. The joint probability of random coincidence is conservatively estimated below $2.4\times10^{-7}$, statistically ruling out the possibility of ad-hoc fitting.
+
+---
+
+## About This Community
+This community hosts the full series of preprints from the 11D-TMOF research project, covering flavor physics, gravitational emergence, quantum measurement, and cosmology. All works are led by **Jianwei Shi** (Rushan Yintan Senior High School, Weihai, China; ORCID: 0009-0002-1757-1793) with AI collaborative support, and are released under the **Creative Commons Attribution 4.0 International (CC BY 4.0)** license.
+
+**Keywords**: theoretical physics, non-Hermitian physics, flavor mixing, quantum gravity, topological spacetime, zero-parameter model, emergent gravity
+
+---
+。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/Zenodo%20Community%20Introduction%20%28English%20Version%29.html</guid><pubDate>Wed, 22 Jul 2026 11:24:51 +0000</pubDate></item><item><title>11时序矩阵体系·学术存档标准备份</title><link>https://shijianwei1969.github.io/post/11-shi-xu-ju-zhen-ti-xi-%C2%B7-xue-shu-cun-dang-biao-zhun-bei-fen.html</link><description># 11时序矩阵体系·学术存档标准备份
 **版本**：V1.0（2026.07.23 最终审定版）
 **用途**：统一术语译法、规范Zenodo存档格式，所有系列成果通用
 
