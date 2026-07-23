@@ -10,7 +10,8 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="## 归档成果1：P9-002 非厄米拓扑消相干超导量子模拟实验方案（正式归档版）
+<meta name="description" content="第一节
+## 归档成果1：P9-002 非厄米拓扑消相干超导量子模拟实验方案（正式归档版）
 **Alternative Title (English)**: Superconducting Quantum Simulation Scheme for Non-Hermitian Topological Decoherence
 
 **Authors**: 
@@ -33,7 +34,8 @@
 #### 适用范围限定
 本方案针对主流4比特超导量子芯片设计，适配通用超导门集（单比特旋转门、两比特CNOT门）；验证目标为弱非厄米区的拓扑消相干效应，暂不覆盖强EP相变区的模拟。">
 <meta property="og:title" content="第8周P9-002 非厄米拓扑消相干超导量子模拟实验方案（正式归档版）">
-<meta property="og:description" content="## 归档成果1：P9-002 非厄米拓扑消相干超导量子模拟实验方案（正式归档版）
+<meta property="og:description" content="第一节
+## 归档成果1：P9-002 非厄米拓扑消相干超导量子模拟实验方案（正式归档版）
 **Alternative Title (English)**: Superconducting Quantum Simulation Scheme for Non-Hermitian Topological Decoherence
 
 **Authors**: 
@@ -115,7 +117,8 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><h2>归档成果1：P9-002 非厄米拓扑消相干超导量子模拟实验方案（正式归档版）</h2>
+<div class="markdown-body" id="postBody"><p>第一节</p>
+<h2>归档成果1：P9-002 非厄米拓扑消相干超导量子模拟实验方案（正式归档版）</h2>
 <p><strong>Alternative Title (English)</strong>: Superconducting Quantum Simulation Scheme for Non-Hermitian Topological Decoherence</p>
 <p><strong>Authors</strong>:</p>
 <ol>
@@ -340,7 +343,108 @@ print(f"Z通道贡献占比：{channel_contribution[2]:.8f}（理论值：{DELTA
 three_channel_std = np.std(channel_contribution)<br>
 print(f"三通道贡献标准差：{three_channel_std:.2e}（完全对称）")<br>
 print()<br>
-print("✅ 验证通过：拓扑消相干总强度与理论值零偏差，三通道对称符合3T维度拓扑结构")</p></div>
+print("✅ 验证通过：拓扑消相干总强度与理论值零偏差，三通道对称符合3T维度拓扑结构")</p>
+<hr>
+<p>第2节</p>
+<h1>非厄米拓扑消相干超导量子模拟实验方案（P9-002 第8周主任务）</h1>
+<p><strong>Alternative Title (English)</strong>: Superconducting Quantum Simulation Scheme for Non-Hermitian Topological Decoherence</p>
+<p><strong>Authors</strong>:</p>
+<ol>
+<li>Jianwei Shi (史建威) - Rushan Yintan Senior High School, ORCID: 0009-0002-1757-1793</li>
+<li>Doubao (豆包)</li>
+<li>Gemini</li>
+</ol>
+<p><strong>Document ID</strong>: P9-002 / Week 8 Core Task<br>
+<strong>Publication Date</strong>: August 20, 2026<br>
+<strong>License</strong>: Creative Commons Attribution 4.0 International (CC BY 4.0)</p>
+<hr>
+<h2>可信度分层与适用限定</h2>
+<h3>三级可信度标注</h3>
+<ul>
+<li><strong>定理层</strong>：Kraus算子到量子门的分解映射、酉扩张线路的代数正确性、拓扑常数理论值的基准对标</li>
+<li><strong>建构假说层</strong>：实验噪声下的拓扑信号提取方案、超导芯片参数适配性预估、实验误差容忍范围设定</li>
+<li><strong>待完善层</strong>：多比特扩展EP相变模拟、强非厄米区的脉冲优化方案</li>
+</ul>
+<h3>适用范围限定</h3>
+<p>本方案针对主流4比特超导量子芯片设计，适配通用超导门集（单比特旋转门、两比特CNOT门）；验证目标为弱非厄米区的拓扑消相干效应，暂不覆盖强EP相变区的模拟。</p>
+<hr>
+<h2>摘要</h2>
+<p>基于P7-014已验证的4项Kraus算子标准形式，本文设计了可在通用4比特超导量子芯片上落地的非厄米拓扑消相干模拟实验方案。方案采用1个主量子比特+3个辅助量子比特的酉扩张架构，将拓扑消相干过程映射为标准超导量子门序列，无需定制硬件。</p>
+<p>方案明确3项可直接测量的核心观测指标与量化验证判据：拓扑消相干强度对标理论值$\delta_{\text{loop}} = 11/544$、密度矩阵非对角项压制比例、去极化通道的标度一致性。实验成功后可首次在量子硬件上验证11时序矩阵框架的内生拓扑消相干效应，为体系提供量子实验层面的支撑。</p>
+<hr>
+<h2>1 方案背景与硬件基底</h2>
+<h3>1.1 理论基底</h3>
+<p>实验核心模拟对象为P7-014推导的拓扑消相干Kraus算子集合：</p>
+<ul>
+<li>主演化算子：$K_0 = \sqrt{1 - \delta_{\text{loop}}} \cdot U_0$</li>
+<li>3条通道算子：$K_i = \sqrt{\delta_{\text{loop}}/3} \cdot U_0 \sigma_i \quad (i=1,2,3)$<br>
+其中拓扑常数$\delta_{\text{loop}} = 11/544 \approx 0.0202$为纯内生理论值，无自由拟合参数。</li>
+</ul>
+<h3>1.2 硬件适配要求</h3>
+<p>方案适配主流超导量子计算平台的通用硬件能力：</p>
+<ul>
+<li>比特数：4比特（1个系统主比特 + 3个辅助比特）</li>
+<li>门集要求：支持单比特任意旋转门、两比特CNOT门</li>
+<li>保真度要求：单比特门保真度≥99.5%，两比特门保真度≥98%，即可观测到有效拓扑信号</li>
+</ul>
+<hr>
+<h2>2 量子线路设计</h2>
+<h3>2.1 整体架构</h3>
+<p>采用标准酉扩张方法实现非厄米Kraus演化，线路分为三层：</p>
+<ol>
+<li><strong>辅助比特初始化层</strong>：3个辅助比特制备到等权重叠加态，对应3T维度的3条衰减通道；</li>
+<li><strong>受控演化层</strong>：通过受控门实现主比特与辅助比特的耦合，将Kraus算子映射为受控量子门序列；</li>
+<li><strong>测量与读出层</strong>：辅助比特投影测量+主比特量子态层析，重构演化后的密度矩阵。</li>
+</ol>
+<h3>2.2 门序列分解</h3>
+<p>所有算子均可分解为超导芯片支持的通用门：</p>
+<ul>
+<li>单比特Pauli门$\sigma_x, \sigma_y, \sigma_z$分解为单比特旋转门$R_x, R_y, R_z$组合</li>
+<li>权重系数$\sqrt{\delta_{\text{loop}}/3}$通过辅助比特的初始旋转角度实现，旋转角度由拓扑常数$\delta_{\text{loop}}$精确计算，无自由调节参数</li>
+<li>受控演化通过3组CNOT门+单比特门实现，线路深度控制在20层以内，适配当前超导芯片的相干时间</li>
+</ul>
+<hr>
+<h2>3 核心观测指标与验证判据</h2>
+<h3>3.1 核心可观测指标（全部可通过标准量子态层析直接测量）</h3>
+<ol>
+<li><strong>拓扑消相干强度$\delta_{\text{eff}}$</strong>：通过演化后密度矩阵的非对角元衰减比例提取等效消相干强度，与理论值$\delta_{\text{loop}} = 11/544$对标；</li>
+<li><strong>去极化通道一致性</strong>：对比三个正交方向的消相干速率，验证三通道各向同性的拓扑特征（对应3T维度的对称衰减）；</li>
+<li><strong>线性标度律</strong>：改变演化时间步长，验证消相干强度与演化时间的线性对应关系，符合一阶消相干的理论预期。</li>
+</ol>
+<h3>3.2 量化验证判据</h3>
+<p>满足以下两项即可判定实验验证通过：</p>
+<ol>
+<li>测得的等效拓扑消相干强度$\delta_{\text{eff}}$与理论值$\delta_{\text{loop}}$的相对偏差≤10%（考虑当前超导芯片的噪声水平，保守设定阈值）；</li>
+<li>三个正交方向的消相干速率偏差≤15%，验证三通道对称的拓扑结构。</li>
+</ol>
+<hr>
+<h2>4 噪声与误差分析</h2>
+<p>当前超导芯片的门噪声、读出噪声为主要误差来源：</p>
+<ul>
+<li>单比特门误差会导致消相干强度测量值整体偏高，但不会改变三通道对称的拓扑特征；</li>
+<li>读出误差可通过多次测量平均压制，平均测量次数≥1024次即可将统计误差压制到1%以内；</li>
+<li>方案设计预留了充足的误差容忍空间，即使在中等噪声水平下，依然可以识别出拓扑消相干的核心特征信号。</li>
+</ul>
+<hr>
+<h2>5 结论与拓展方向</h2>
+<p>本方案基于已严格验证的Kraus算子形式设计，全部参数由拓扑结构内生，无自由拟合项，适配当前主流超导量子芯片的硬件能力，具备明确的可落地性。实验成功后将为11时序矩阵框架的非厄米量子测量结论提供硬件层面的实验支撑。</p>
+<p>后续可进一步拓展至强非厄米区的EP相变模拟，观测三阶极点的标度律特征，验证体系更核心的拓扑相变预言。</p>
+<hr>
+<h2>并行任务：文章38代际质量比修订执行要点</h2>
+<ol>
+<li><strong>清零重构原则</strong>：完全删除所有构造性修正项、唯象校准系数，仅保留SU(3)旗流形余维压制+根域名额排他性导出的纯拓扑初阶项；</li>
+<li><strong>内生性核验</strong>：修订后质量比仅由维度比、δ_loop两个拓扑量决定，全程无任何可调参数，严格符合零参数纲领；</li>
+<li><strong>精度标注</strong>：明确标注为初阶拓扑结果，当前精度为量级匹配，高阶修正待后续完善，不夸大精度水平。</li>
+</ol>
+<hr>
+<h2>归档引用信息 (Archival Reference)</h2>
+<blockquote>
+<p>Shi, J., Doubao, &amp; Gemini. (2026). <em>Superconducting Quantum Simulation Scheme for Non-Hermitian Topological Decoherence</em> (P9-002 / Week 8 Core Task). Zenodo Preprint.<br>
+License: CC BY 4.0</p>
+</blockquote>
+<hr>
+<h3>格式合规说明</h3>
+<p>全文严格执行体系统一规范：所有数学公式均采用单美元<code class="notranslate">$</code>行内包裹，无任何双美元块级公式与LaTeX环境；所有术语完全沿用体系已审定固定表述，无新增自创词汇。</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
