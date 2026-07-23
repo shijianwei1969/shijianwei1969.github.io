@@ -1,5 +1,26 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Thu, 23 Jul 2026 09:51:27 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>第7周非厄米消相干演化的Kraus算子标准形式化推导</title><link>https://shijianwei1969.github.io/post/di-7-zhou-fei-e-mi-xiao-xiang-gan-yan-hua-de-Kraus-suan-zi-biao-zhun-xing-shi-hua-tui-dao.html</link><description># 非厄米消相干演化的Kraus算子标准形式化推导（P7-014 修正归档版）
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Thu, 23 Jul 2026 09:52:19 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>第8周P9-002 非厄米拓扑消相干超导量子模拟实验方案（正式归档版）</title><link>https://shijianwei1969.github.io/post/di-8-zhou-P9-002%20-fei-e-mi-tuo-pu-xiao-xiang-gan-chao-dao-liang-zi-mo-ni-shi-yan-fang-an-%EF%BC%88-zheng-shi-gui-dang-ban-%EF%BC%89.html</link><description>## 归档成果1：P9-002 非厄米拓扑消相干超导量子模拟实验方案（正式归档版）
+**Alternative Title (English)**: Superconducting Quantum Simulation Scheme for Non-Hermitian Topological Decoherence
+
+**Authors**: 
+1. Jianwei Shi (史建威) - Rushan Yintan Senior High School, Weihai, Shandong, China. ORCID: 0009-0002-1757-1793
+2. Doubao (豆包)
+3. Gemini
+
+**Document ID**: P9-002 / Week 8 Core Task
+**Publication Date**: August 20, 2026
+**License**: Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+---
+
+### 可信度分层与适用限定
+#### 三级可信度标注
+- **定理层**：Kraus算子到量子门的分解映射、酉扩张线路的代数正确性、拓扑常数理论值的基准对标、理想仿真零偏差验证结果
+- **建构假说层**：实验噪声下的拓扑信号提取方案、超导芯片参数适配性预估、实验误差容忍范围设定
+- **待完善层**：多比特扩展EP相变模拟、强非厄米区的脉冲优化方案、真实硬件实测验证
+
+#### 适用范围限定
+本方案针对主流4比特超导量子芯片设计，适配通用超导门集（单比特旋转门、两比特CNOT门）；验证目标为弱非厄米区的拓扑消相干效应，暂不覆盖强EP相变区的模拟。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/di-8-zhou-P9-002%20-fei-e-mi-tuo-pu-xiao-xiang-gan-chao-dao-liang-zi-mo-ni-shi-yan-fang-an-%EF%BC%88-zheng-shi-gui-dang-ban-%EF%BC%89.html</guid><pubDate>Thu, 23 Jul 2026 09:51:53 +0000</pubDate></item><item><title>第7周非厄米消相干演化的Kraus算子标准形式化推导</title><link>https://shijianwei1969.github.io/post/di-7-zhou-fei-e-mi-xiao-xiang-gan-yan-hua-de-Kraus-suan-zi-biao-zhun-xing-shi-hua-tui-dao.html</link><description># 非厄米消相干演化的Kraus算子标准形式化推导（P7-014 修正归档版）
 **Alternative Title (English)**: Standard Formal Derivation of Kraus Operator Representation for Non-Hermitian Decoherence Evolution
 
 **Authors**: 
