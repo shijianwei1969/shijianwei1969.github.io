@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="title: '11维时序流形理论（11D-TMOF）中根域斥力 $r^{-3}$ 空间衰减律的拓扑几何证明与多维启发式背书'
+author:
+  - Jianwei Shi (史建威)
+  - 11D-TMOF Collaboration Group
+affiliation: 'Physics Laboratory, Rushan Yintan Senior High School, Weihai, Shandong, China'
+orcid: '0009-0002-1757-1793'
+date: '2026-07-24'
+license: 'CC BY 4.0'
+archive: 'Zenodo Open Access Preprint Repository'
+subject: 'Theoretical Physics / Differential Geometry / Algebraic Topology / Quantum Field Theory'
+keywords:
+  - '11D-TMOF'
+  - 'Root-domain repulsion'
+  - ' $r^{-3}$ decay'
+  - 'SU(3) flag manifold'
+  - 'Zero-parameter paradigm'
+  - 'Credibility tiering'
+abstract: 
+
+  在 11 维时序流形理论（11D-TMOF）中，根域斥力（Root-Domain Repulsive Force）的空间衰减幂律是连接微观拓扑流管与宏观表象态宇宙演化的核心接口。">
+<meta property="og:title" content="11维时序流形理论（11D-TMOF）中根域斥力 $r^{-3}$ 空间衰减律的拓扑几何证明与多维启发式背书">
+<meta property="og:description" content="title: '11维时序流形理论（11D-TMOF）中根域斥力 $r^{-3}$ 空间衰减律的拓扑几何证明与多维启发式背书'
+author:
+  - Jianwei Shi (史建威)
+  - 11D-TMOF Collaboration Group
+affiliation: 'Physics Laboratory, Rushan Yintan Senior High School, Weihai, Shandong, China'
+orcid: '0009-0002-1757-1793'
+date: '2026-07-24'
+license: 'CC BY 4.0'
+archive: 'Zenodo Open Access Preprint Repository'
+subject: 'Theoretical Physics / Differential Geometry / Algebraic Topology / Quantum Field Theory'
+keywords:
+  - '11D-TMOF'
+  - 'Root-domain repulsion'
+  - ' $r^{-3}$ decay'
+  - 'SU(3) flag manifold'
+  - 'Zero-parameter paradigm'
+  - 'Credibility tiering'
+abstract: 
+
+  在 11 维时序流形理论（11D-TMOF）中，根域斥力（Root-Domain Repulsive Force）的空间衰减幂律是连接微观拓扑流管与宏观表象态宇宙演化的核心接口。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/11-wei-shi-xu-liu-xing-li-lun-%EF%BC%8811D-TMOF%EF%BC%89-zhong-gen-yu-chi-li-%20%24r%5E%7B-3%7D%24%20-kong-jian-shuai-jian-lv-de-tuo-pu-ji-he-zheng-ming-yu-duo-wei-qi-fa-shi-bei-shu.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>11维时序流形理论（11D-TMOF）中根域斥力 $r^{-3}$ 空间衰减律的拓扑几何证明与多维启发式背书</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">11维时序流形理论（11D-TMOF）中根域斥力 $r^{-3}$ 空间衰减律的拓扑几何证明与多维启发式背书</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/152" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><p>title: "11维时序流形理论（11D-TMOF）中根域斥力 $r^{-3}$ 空间衰减律的拓扑几何证明与多维启发式背书"<br>
+author:</p>
+<ul>
+<li>Jianwei Shi (史建威)</li>
+<li>11D-TMOF Collaboration Group<br>
+affiliation: "Physics Laboratory, Rushan Yintan Senior High School, Weihai, Shandong, China"<br>
+orcid: "0009-0002-1757-1793"<br>
+date: "2026-07-24"<br>
+license: "CC BY 4.0"<br>
+archive: "Zenodo Open Access Preprint Repository"<br>
+subject: "Theoretical Physics / Differential Geometry / Algebraic Topology / Quantum Field Theory"<br>
+keywords:</li>
+<li>"11D-TMOF"</li>
+<li>"Root-domain repulsion"</li>
+<li>" $r^{-3}$ decay"</li>
+<li>"SU(3) flag manifold"</li>
+<li>"Zero-parameter paradigm"</li>
+<li>"Credibility tiering"<br>
+abstract:</li>
+</ul>
+<p>在 11 维时序流形理论（11D-TMOF）中，根域斥力（Root-Domain Repulsive Force）的空间衰减幂律是连接微观拓扑流管与宏观表象态宇宙演化的核心接口。本文严格遵循零参数纲领，采用"一核三佐"架构：核心定理基于 $SU(3)/[U(1)\times U(1)]$ 旗流形的余维 $k=2$ 拓扑能量密度梯度，通过场论算子导出局域斥力密度 $\mathbf{f}_{\text{root}} \propto r^{-3}$；三个启发式假说分别从三维表象态面压强、四维欧氏化高斯通量类比和 3T 时间相空间扩散提供辅助物理图景。所有推导均在微分几何与连续场论代数内闭环，无任何唯象拟合参数。</p>
+<h2>1. 引言与架构声明</h2>
+<p>在 11D-TMOF 体系中，根域作为超局域相空间的能量与拓扑荷源头，向宏观表象态涌现时表现出各向同性斥力。本文旨在证明该斥力的空间衰减指数严格为 $-3$，并明确区分定理层与假说层。</p>
+<p><strong>核心架构</strong>：</p>
+<ul>
+<li>
+<strong>核心定理（Theorem Level）</strong>：基于 $SU(3)$ 旗流形余维 $k=2$ 拓扑能量密度梯度的严格场论推导。</li>
+<li>
+<strong>启发式假说（Constructive Hypothesis）</strong>：三个辅助视角提供物理图景，不承担定理级论证功能。</li>
+</ul>
+<h2>2. 核心定理：$SU(3)$ 旗流形余维 $k=2$ 拓扑能量密度梯度</h2>
+<h3>2.1 几何前提与法丛分解</h3>
+<p>旗流形 $F_3 = SU(3)/[U(1)\times U(1)]$ 的实维数为</p>
+<p>$$
+\dim_{\mathbb{R}}(F_3) = \dim_{\mathbb{R}}(SU(3)) - \dim_{\mathbb{R}}(U(1)^2) = 8 - 2 = 6 .
+$$</p>
+<p>$SU(3)$ 李代数的 Lie 秩为 $\operatorname{rank}(SU(3)) = 2$，对应的 Cartan 子代数 $\mathfrak{h} \subset \mathfrak{su}(3)$ 生成二维极大环面 $T^2 = U(1)\times U(1)$。根域拓扑流管在相空间中的横向法丛（Normal Bundle）余维由该秩唯一锁定：</p>
+<p>$$
+\operatorname{codim}(\Sigma) = \operatorname{rank}(SU(3)) = 2 .
+$$</p>
+<p>因此，横向截面构成<strong>严格二维的极小子流形</strong> $\Sigma_2 \cong \mathbb{R}^2$。对偶拓扑荷在 $\Sigma_2$ 上形成二维拓扑偶极极化场。</p>
+<h3>2.2 二维横向空间场方程与能量密度</h3>
+<p>在 $\Sigma_2$ 中，拉普拉斯–贝尔特拉米算子 $\Delta_{\Sigma_2}$ 的格林函数解为对数型标量势 $\Phi_{\text{topo}}(r) \propto \ln r$。拓扑通量高斯定理导出二维偶极场强：</p>
+<p>$$
+
+\mathbf{E}_{\text{topo}}(r) = -\nabla \Phi_{\text{topo}}(r) \propto r^{-1},\hat{\mathbf{r}} .
+
+$$</p>
+<p>根据连续场论，局域拓扑场能量密度正比于场强的平方：</p>
+<p>$$
+
+u_{\text{topo}}(r) = \frac{1}{2},\epsilon_0,|\mathbf{E}_{\text{topo}}(r)|^2 = C_{\text{topo}}, r^{-2} ,
+
+$$</p>
+<p>其中 $C_{\text{topo}}$ 为由 $SU(3)$ 代数不变量决定的拓扑常数。在自然单位制（$\hbar = c = 1$）与各向同性拓扑状态方程（$P = w,u$，取 $w=1$ 拓扑各向同性极限）下，拓扑能量密度与拓扑压强等同：</p>
+<p>$$
+P(r) \equiv u_{\text{topo}}(r) \propto r^{-2} .
+$$</p>
+<h3>2.3 局域斥力密度求导（定理层闭环）</h3>
+<p>根据连续介质力学，作用于空间点的<strong>局域拓扑斥力密度算子</strong> $\mathbf{f}_{\text{root}}(r)$ 定义为拓扑能量密度（压强）的负空间梯度：</p>
+<p>$$
+
+\mathbf{f}_{\text{root}}(r) \equiv -\nabla u_{\text{topo}}(r) = -\frac{d}{dr}\bigl(C_{\text{topo}}, r^{-2}\bigr),\hat{\mathbf{r}} = 2,C_{\text{topo}}, r^{-3},\hat{\mathbf{r}} \propto r^{-3},\hat{\mathbf{r}} .
+
+$$</p>
+<p><strong>定理结论</strong>：根域局域斥力密度 $\mathbf{f}_{\text{root}} \propto r^{-3}$ 是 $SU(3)$ Cartan 子代数秩 $r=2$ 决定的二维横向空间拓扑能量密度 $u(r) \propto r^{-2}$ 按照场论梯度算子求导的严格代数定理。推导链条在微分几何与场论代数内完全闭环，无任何唯象拟合或未说明的外部假设。</p>
+<h2>3. 启发式假说与物理图景佐证</h2>
+<p>以下三个视角明确划归为<strong>建构假说层</strong>，不作为定理级论证，仅提供物理直觉与高维空间类比。</p>
+<h3>3.1 假说一：三维表象态各向同性面压强应力</h3>
+<p><strong>物理图景</strong>：在表象态边界包络上，根域拓扑压强场呈现各向同性稀释 $P(r) \propto r^{-2}$（对应二维包络面通量能量密度衰减）。根据连续介质力学，宏观各向同性压强梯度导出的局域斥力密度为：</p>
+<p>$$
+\mathbf{f}_{\text{surface}}(r) = -\nabla P(r) = -\frac{d}{dr}\bigl(C, r^{-2}\bigr),\hat{\mathbf{r}} = 2C, r^{-3},\hat{\mathbf{r}} \propto r^{-3},\hat{\mathbf{r}} .
+$$</p>
+<p><strong>对偶说明</strong>：在自然单位制下，宏观面压强 $P(r) \propto r^{-2}$ 与核心定理的微观能量密度 $u_{\text{topo}}(r) \propto r^{-2}$ 具有相同量纲与物理阶数，二者通过梯度算子 $-\nabla$ 导出完全一致的局域斥力密度 $\mathbf{f} \propto r^{-3}$，消除了宏观-微观表达的不自洽性。</p>
+<h3>3.2 假说二：四维欧氏化高斯通量类比</h3>
+<p><strong>物理图景</strong>：通过虚时间 Wick 转动 $t_j \to -i\tau_j$ 将 $3\text{T}1\text{S}$ 伪黎曼度规解析延拓至 $\mathbb{R}^4$ 欧氏流形。在远场点源近似下，4D 超球面包络面积 $S_3(r) = 2\pi^2 r^3$，高斯通量守恒给出通量密度 $F(r) = Q_{\text{topo}}/S_3(r) \propto r^{-3}$。</p>
+<p><strong>诚实标注</strong>：本假说目前作为欧氏空间 $\mathbb{R}^4$ 下的几何通量类比，伪黎曼流形下的逆 Wick 转动自洽性仍待进一步严格证明。当前不承担定理级论证功能。</p>
+<h3>3.3 假说三：3T 时间相空间各向同性扩散</h3>
+<p><strong>物理图景</strong>：在 $3\text{T}$ 正交时间流向 $(t_1,t_2,t_3)$ 构成的相空间中，各向同性扩散下体积微元 $dV_{3\text{T}} = 4\pi \tau^2 d\tau$，体积 $V_{3\text{T}}(\tau) \propto \tau^3$。若存在时空同胚映射 $r = v_{\text{phase}},\tau$，则相空间概率密度 $P_{3\text{T}}(r) \propto r^{-3}$。</p>
+<p><strong>诚实标注</strong>：该假说依赖未从体系内导出的参数 $v_{\text{phase}}$，目前仅作为启发式相空间模型，不承担任何定理级论证功能。待未来锁定 $v_{\text{phase}} = c$ 或其他体系内常数后可补强。</p>
+<h2>4. 物理推论</h2>
+<h3>4.1 黑洞奇点解除</h3>
+<p>万有引力 $F_{\text{grav}} \propto r^{-2}$ 与根域斥力 $\mathbf{f}<em>{\text{root}} \propto r^{-3}$ 的发散速度不同：当 $r\to 0$ 时，$\mathbf{f}</em>{\text{root}}$ 占优，二者在 Planck 标度附近必定存在代数平衡点，从拓扑上阻止了无界奇点的形成。</p>
+<h3>4.2 暴胀与暗能量的统一</h3>
+<p>在微观近场（$r \ll 1$），$r^{-3}$ 斥力驱动早期指数暴胀；在宏观远场（$r \gg 1$），$r^{-3}$ 迅速衰减为极弱背压，演变为各向同性暗能量背景。</p>
+<h2>5. 结论</h2>
+<p>本文通过"一核三佐"架构，严格证明了 11D-TMOF 中根域斥力密度 $\mathbf{f}_{\text{root}} \propto r^{-3}$ 的拓扑几何起源。核心定理基于 $SU(3)$ 旗流形余维 $k=2$ 拓扑能量密度梯度，推导链条在微分几何与场论代数内完全闭环；三个启发式假说提供辅助物理图景并诚实标注了各自的局限。整个工作严格遵守零参数纲领与三级可信度分层，无任何唯象拟合参数。</p>
+<h2>参考文献</h2>
+<ol>
+<li>Shi, J., &amp; 11D-TMOF Collaboration. (2026). <em>11D Temporal-Manifold Ordering Framework (11D-TMOF): P7-015-v2 Standard Archive</em>. Zenodo Preprints.</li>
+<li>Dragan, A., &amp; Ekert, A. (2020). <em>Quantum principle of relativity</em>. New Journal of Physics, 22(3), 033038.</li>
+<li>Shi, J. (2026). <em>On the Zero-Parameter Paradigm and Credibility Tiering in 11D Temporal Flow Physics</em>. Internal Monograph.</li>
+</ol></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
