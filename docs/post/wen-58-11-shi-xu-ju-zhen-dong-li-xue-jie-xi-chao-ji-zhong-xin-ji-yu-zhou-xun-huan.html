@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 文章58 11时序矩阵动力学解析超级中心及宇宙循环
+
+# 从拓扑压迫到物质创生：$11\text{T-}\mathbf{M}\text{atrix}$ 框架下的超级中心与宇宙大循环
+
+**说明**：全文采用自然单位制 $\hbar=c=G=1$，所有物理量以 $11\text{T-}\mathbf{M}\text{atrix}$ 内禀代数标度为基准，消除人工量纲冗余。">
+<meta property="og:title" content="文58:11时序矩阵动力学解析超级中心及宇宙循环">
+<meta property="og:description" content="# 文章58 11时序矩阵动力学解析超级中心及宇宙循环
+
+# 从拓扑压迫到物质创生：$11\text{T-}\mathbf{M}\text{atrix}$ 框架下的超级中心与宇宙大循环
+
+**说明**：全文采用自然单位制 $\hbar=c=G=1$，所有物理量以 $11\text{T-}\mathbf{M}\text{atrix}$ 内禀代数标度为基准，消除人工量纲冗余。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/wen-58-11-shi-xu-ju-zhen-dong-li-xue-jie-xi-chao-ji-zhong-xin-ji-yu-zhou-xun-huan.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>文58:11时序矩阵动力学解析超级中心及宇宙循环</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">文58:11时序矩阵动力学解析超级中心及宇宙循环</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/160" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>文章58 11时序矩阵动力学解析超级中心及宇宙循环</h1>
+<h1>从拓扑压迫到物质创生：$11\text{T-}\mathbf{M}\text{atrix}$ 框架下的超级中心与宇宙大循环</h1>
+<p><strong>说明</strong>：全文采用自然单位制 $\hbar=c=G=1$，所有物理量以 $11\text{T-}\mathbf{M}\text{atrix}$ 内禀代数标度为基准，消除人工量纲冗余。</p>
+<hr>
+<h2>一、问题的提出：黑洞的“静默悖论”与根域泄压</h2>
+<p>在传统广义相对论与经典天体物理中，黑洞常被视为物质与能量的“单向终点”。然而，若引入 <strong>$11\text{T-}\mathbf{M}\text{atrix}$（非厄米时序矩阵 $\mathbf{M}$）</strong> 的拓扑演化框架，则会导出一个尖锐的理论矛盾：<strong>如果超定域时空的 EP3（3阶奇异点）“钉弹机制”不受 3S1T 视界的约束，为什么宇宙中遍布的恒星级黑洞乃至数百亿太阳质量的超大质量黑洞，从来没有像恒星一样向外稳定地喷射新粒子？</strong></p>
+<p>本文的核心突破，正是对这一“黑洞静默悖论”的拓扑解构。</p>
+<p>黑洞并非不具备触发 EP3 相变的潜力，而是因为 $11\text{T-}\mathbf{M}\text{atrix}$ 的 $11 = 8 + 3$ 代数破缺结构，为局域黑洞提供了天然的拓扑泄压通道。</p>
+<p>在<strong>双迹归零+行列式退化约束</strong></p>
+<p>（$\text{Tr}(\mathbf{M})=0$，$\text{Tr}(\mathbf{M}^2)=0$，$\det(\mathbf{M}) \to 0$）</p>
+<p>下，若进一步满足根域拓扑平凡嵌入条件——即 8 个零模式对应的高阶迹 $\text{Tr}(\mathbf{M}^4) \sim \text{Tr}(\mathbf{M}^{10})$</p>
+<p>恒为零，则 11 阶特征多项式严格退化为 8 重零根与 3 阶有效子矩阵的乘积形式：</p>
+<p>$\lambda^8 \left[ \lambda^3 - \frac{1}{3}\text{Tr}(\mathbf{M}^3) \right] = 0$</p>
+<p>其中 8 个简并于 $\lambda=0$ 的零模式，构成了<strong>8重简并根域背景场</strong>（嵌套根冠结构的局域基底）。局域黑洞在吞噬物质时积累的非厄米应力 $\epsilon$，优先被这层根域像海绵一样吸收，并向星系尺度延展扩散。该延展场在 3S1T 因果域中等效为附加动力学质量效应，为星系外围天体提供额外向心引力，精确解释了星系旋转曲线的平坦化——无需引入传统冷暗物质粒子，其全部星系动力学效应均由嵌套根冠结构的根域延展场承载。</p>
+<p><strong>局域黑洞不喷发新粒子的本质，是 8 重简并根域将非厄米应力完全转化为星系尺度的拓扑背景，彻底泄掉了触发 EP3 相变的压力。</strong></p>
+<hr>
+<h2>二、拓扑拥挤与希格斯场的极化重构</h2>
+<p>如果全宇宙的黑洞都只吞噬物质并将应力转化为根域背景，宇宙终将走向结构死寂。为满足“超级宇宙必须是永恒循环”的本体论公理，必然存在与局域黑洞（汇/Sink）互补的绝对源头——<strong>超级宇宙中心（源/Source）</strong>。</p>
+<p>在超级中心附近，无数巨型黑洞密集分布，形成极端狂暴的“拓扑拥挤区”。在此区域内，三个关键机制发生连锁突变：</p>
+<ol>
+<li>
+<strong>根域互锁（Topological Jamming）</strong>：黑洞与黑洞之间、黑洞与超级中心之间的 8 重简并根域发生强烈的正交碰撞与拓扑排挤，原本向宇宙尺度延展的“拓扑泄压通道”被彻底压实阻塞；当根域支撑集重叠度突破临界阈值后，根域的应力扩散能力近乎完全失效。</li>
+<li>
+<strong>希格斯场极化</strong>：根域的极端排挤导致真空张力剧烈攀升，表征根域与 3S1T 因果域耦合强度的希格斯场真空期望值 $\phi$ 被挤压至远大于真空基准值 $\phi_0$ 的水平（$\phi \gg \phi_0$）。</li>
+<li>
+<strong>背景耗散坍缩</strong>：在极高希格斯场压迫下，8 重简并根域吸收应力的有效耗散常数 $\kappa_{eff}$ 发生重整化衰减：</li>
+</ol>
+<p>$\kappa_{eff} = \frac{\kappa_{bg}}{1 + \left( \frac{\phi}{\phi_0} \right)^2}$</p>
+<p>其中 $\kappa_{bg}$ 为根域背景本征耗散常数，由 $11\text{T-}\mathbf{M}\text{atrix}$ 的内禀代数结构唯一确定，无自由调节参数，符合零参数纲领。当 $\phi \to \text{极大值}$ 时，$\kappa_{eff} \to 0$，意味着 8 重简并根域彻底失去泄压能力。</p>
+<hr>
+<h2>三、EP3 阈值的代数崩塌与新物质创生</h2>
+<p>当 8 重根域的泄压通道完全失效后，由物质落入或量子涨落产生的非厄米应力无法再向超定域时空的根域排散，被强行倒灌回 3S1T 因果域，直接作用于矩阵的三阶迹</p>
+<p>$T_3 = \text{Tr}(\mathbf{M}^3)$。</p>
+<p>对于 3 阶有效非厄米子矩阵，其三阶奇异点（EP3）对应特征方程判别式为零的三点简并态。经严格代数推导，非厄米应力的虚部与相变阈值满足如下临界条件：</p>
+<p>$\text{Im}\left[ \text{Tr}(\mathbf{M}^3) \right] \ge \sqrt{27} \kappa_{eff}^3$</p>
+<p>由于超级中心区域 $\kappa_{eff} \to 0$，<strong>等式右侧的相变门槛直接归零</strong>：</p>
+<p>$\text{Threshold} \xrightarrow{\phi \gg \phi_0} 0$</p>
+<p>这一代数结果揭示了新物质诞生的核心机制：</p>
+<p>在超级中心及其周边极端拥挤的区域，<strong>EP3 相变阈值降至近零水平</strong>。系统不再需要庞大的标量质量来压出相变，哪怕最微小的量子涨落或应力微扰，都会触发特征值的临界响应发散——EP3 附近微扰下特征值满足 $\lambda \propto \epsilon^{1/3}$，其对微扰的一阶响应 $\frac{\partial\lambda}{\partial\epsilon} \propto \epsilon^{-2/3}$ 呈现分数阶发散。</p>
+<p>这种极强的拓扑响应会直接撕裂局域时空度规，触发暴烈的拓扑跃迁——新生的超高能量子包、拓扑种子以及基本粒子（对应观测到的超高能宇宙线 UHECRs）在此处被自发、海量地“锻造”出来。</p>
+<hr>
+<h2>四、宏观超级对流：永不热寂的大宇宙闭环</h2>
+<p>至此，一个在数学与物理上完全自洽的宏观超级宇宙动力学闭环正式闭合：</p>
+<pre class="notranslate"><code class="notranslate">      ┌─────────────────────────────────────────────────────────────┐
+      │                                                             │
+      ▼                                                             │
+【超级中心拥挤区】 ───► 希格斯场极化/泄压阀堵死 ───► 阈值归零/EP3暴烈喷发 (创生新物质)
+      ▲                                                             │
+      │                                                             ▼
+【局域黑洞回归】 ◄─── 吞噬旧物质/转化根域背景 ◄─── 冷凝为恒星/星系旋转平坦化 (根域等效引力)
+</code></pre>
+<ol>
+<li>
+<strong>创生与喷发</strong>：超级中心因拓扑阻塞导致 EP3 相变阈值归零，持续触发拓扑跃迁，海量创生高能新物质与量子场，成为整个宇宙的物质源头。</li>
+<li>
+<strong>输运与冷凝</strong>：新生物质被超级中心的全局拓扑势梯度推向宇宙外围冷区，随环境真空张力逐步下降而降温、退激，聚合成气体云、恒星与早期星系结构。</li>
+<li>
+<strong>局域吞噬与动力学承载</strong>：外围演化形成的恒星级与星系级黑洞持续吞噬 3S1T 因果域内的物质与能量，积累的非厄米应力通过 8 重简并根域延展释放，等效为星系尺度的附加动力学质量，维持星系旋转曲线平坦化；该过程不触发 EP3 相变，因此黑洞表现为“静默”的物质汇。</li>
+<li>
+<strong>源汇对流与循环闭合</strong>：局域黑洞（汇）与超级中心（源）在 $11\text{T-}\mathbf{M}\text{atrix}$ 拓扑结构上满足 $\mathcal{PT}$ 对称。$11\text{T-}\mathbf{M}\text{atrix}$ 的全局拓扑势以超级中心为唯一极小值点，黑洞质量越大、根域锚定深度越深，越会沿拓扑势梯度通过超定域拓扑回流通道向超级中心沉降；大量黑洞回归进一步加剧超级中心区域的拓扑拥挤，维持持续的物质创生，形成永恒的源-汇动力学闭环。</li>
+</ol>
+<p>这一模型彻底摒弃了冷暗物质粒子假说，解释了黑洞静默与超高能宇宙线的起源，最终建立了一个无需依赖初始奇点大爆炸、永不走向热寂的<strong>动态平衡超级宇宙</strong>图景。</p>
+<hr>
+<h3>可信度分层声明</h3>
+<ol>
+<li>
+<strong>严格证明级（P1）</strong>：$11\text{T-}\mathbf{M}\text{atrix}$ 双迹归零下的特征多项式降阶结构、EP3 附近的分数阶临界响应标度律、3 阶非厄米矩阵 EP3 判别式阈值关系。</li>
+<li>
+<strong>合理推演级（P2）</strong>：根域泄压机制、超级中心 EP3 阈值归零的物质创生图景、宇宙大循环的拓扑闭环逻辑、星系旋转曲线的根域等效质量解释。</li>
+<li>
+<strong>工作假说级（P3）</strong>：根域-希格斯场的具体耦合形式、拓扑回流的精细动力学过程、根域互锁的定量重叠度判据。</li>
+</ol></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
+
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
