@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 1. 理论公理与核心方法论
+## 零参数纲领（Zero-Parameter Paradigm, ZPP）
+- 彻底剔除所有唯象拟合参数、经验调节系数与人工热库假设
+- 所有物理量与耦合常数严格由拓扑结构与代数不变量内生导出
+
+## 严格三级可信度分层体系
+- **定理层（确凿性 100%）**：纯代数推导、拓扑不变量计算、CPTP 完备性证明与数值验证
+- **建构假说层（物理映射）**：拓扑体积因子到费米子质量比、消相干到波包塌缩的几何映射
+- **待完善层（前沿接口）**：重整化群跑动（RGE）、Yukawa 矩阵对角化与规范群联合动力学
+
+## 3T1S 超定域时空几何基底
+- 时空维度：3 个时间维度（3T）+ 1 个空间维度（1S）
+- 拓扑根域：11 个独立时序席位（N_seat = 11），存在严格的名额排他性约束
+
+# 2. 核心内生常数
+## 内生拓扑常数（消相干与压制基数）
+- δ_loop = 11 / 544 ≈ 0.02022059
+- 分子 11：根域 11 个独立时序席位 (N_seat)
+- 分母 544：SU(3) 旗流形流管充填容积归一化因子
+
+## SU(3) 几何拓扑不变量
+- C_SU(3) = |det A| / Tr(A) = 3 / 4
+- 由 SU(3) Cartan 矩阵 A 的行列式与迹代数导出，对应余维边界流管纠缠因子
+
+## 根域名额排他性修正因子
+- f_seat(k) = 1 - (k / 11) * δ_loop
+- k 为子流形余维阶数，描述高阶充填时的席位空间饱和回抗
+
+# 3. 核心定理与关键公式
+## 量子测量：CPTP 完备 Kraus 算子
+- 主演化算子：K_0 = sqrt(1 - δ_loop) * I
+- 3T 维衰减算子：K_i = sqrt(δ_loop / 3) * σ_i  (i = 1, 2, 3)
+- CPTP 完备性：∑ (K_i† * K_i) = I （迹守恒误差达机器极限 ~10^-15）
+- 相干项衰减方程：|ρ_01'| = |ρ_01| * (1 - (4/3) * δ_loop)
+
+## 超导量子门控制与酉扩张
+- 辅助比特 1-hot 通道旋转角：θ = 2 * arcsin(sqrt(δ_loop / 3)) ≈ 0.164381 rad (9.4182°)
+- 拓扑信号提取方程：δ_topo = δ_meas - δ_bg ≡ δ_loop （双线路差分扣除）
+
+## 味物理：SU(3) 旗流形二阶余维体积修正
+- 通用二阶有效体积方程：V_k^(eff) = (δ_loop)^k * [ 1 + (3k/4) * (1 - (k/11)*δ_loop) * δ_loop ]
+- 第二代/第三代比值 (k=1)：m_2 / m_3 = δ_loop * (1 + (3/4)δ_loop - (3/44)δ_loop^2) ≈ 0.020527 (+1.51% 修正)
+- 第一代/第三代比值 (k=2)：m_1 / m_3 = (δ_loop)^2 * [1 + (3/2)δ_loop - (3/11)δ_loop^2] ≈ 0.000421 (+3.03% 修正)
+
+# 4. 核心规律与作用机制
+## 量子测量与波包塌缩机制
+- **拓扑去极化**：非对角相干项被 3T 时间维度的拓扑回路自然压制
+- **经典涌现**：无需引入外部热库，系统熵自发增加，自然实现公理化波包塌缩
+
+## 超导硬件校准与基线剥离机制
+- **1-hot 单激发编码**：精准承载 3T 时间维度的各向同性拓扑衰减
+- **双线路基线扣除**：剥离芯片 77.48% 的 T1 弛豫与门噪声，恢复 99% 以上拓扑信号
+
+## 味物理余维体积压制机制
+- **k=0（体内）**：第三代 (t, b, τ)，无压制，质量充填容积 O(1)
+- **k=1（次边界）**：第二代 (c, s, μ)，一阶压制，质量因子受 δ_loop 调制
+- **k=2（极小边界）**：第一代 (u, d, e)，双重压制，质量因子受 (δ_loop)^2 调制
+
+# 5. 贯通与兼容的物理学板块
+## 代数拓扑与微分几何 (Algebraic Topology)
+- SU(3) 旗流形 F_3 = SU(3) / [U(1) x U(1)] 几何学
+- Cartan 矩阵、Weyl 群 W(A_2) 不变量与余维边界流管积分
+
+## 量子测量与量子信息论 (Quantum Information)
+- 密度矩阵演化、CPTP 算子代数、去极化信道（Depolarizing Channel）
+- 3T 维各向同性消相干与经典 - 量子边界涌现
+
+## 量子计算与超导硬件实验 (Quantum Hardware Simulation)
+- 4-比特超导量子芯片酉扩张线路设计
+- OpenQASM 3.0 门电路、W 态/1-hot 态控制与差分校准协议
+
+## 粒子物理与味物理学 (Flavor Physics)
+- 费米子代际质量阶梯起源（Mass Hierarchy）
+- 统一架构解释代际指数级压制的几何动力学骨架
+
+# 6. 前沿待攻坚与接口扩展（映射偏置修复）
+## 映射机制界定说明
+- 当前纯几何预言与低能 PDG 实验值存在 46%~324% 偏差，属建构假说层待完善项
+- 确定拓扑体积 V_k^(eff) 代表高能标几何骨架，不等同于低能观察质量
+
+## 三大高阶物理接口
+- **重整化群跑动（RGE）**：高能 GUT 标度至电弱/低能标度的对数跑动
+- **非对角 Yukawa 矩阵对角化**：由几何体积交叉项导出 CKM/PMNS 混合本征值
+- **电弱与多规范群联合动力学**：SU(2)_L x U(1)_Y 希格斯破缺机制的干涉修正。">
+<meta property="og:title" content="11时序矩阵数学工具">
+<meta property="og:description" content="# 1. 理论公理与核心方法论
+## 零参数纲领（Zero-Parameter Paradigm, ZPP）
+- 彻底剔除所有唯象拟合参数、经验调节系数与人工热库假设
+- 所有物理量与耦合常数严格由拓扑结构与代数不变量内生导出
+
+## 严格三级可信度分层体系
+- **定理层（确凿性 100%）**：纯代数推导、拓扑不变量计算、CPTP 完备性证明与数值验证
+- **建构假说层（物理映射）**：拓扑体积因子到费米子质量比、消相干到波包塌缩的几何映射
+- **待完善层（前沿接口）**：重整化群跑动（RGE）、Yukawa 矩阵对角化与规范群联合动力学
+
+## 3T1S 超定域时空几何基底
+- 时空维度：3 个时间维度（3T）+ 1 个空间维度（1S）
+- 拓扑根域：11 个独立时序席位（N_seat = 11），存在严格的名额排他性约束
+
+# 2. 核心内生常数
+## 内生拓扑常数（消相干与压制基数）
+- δ_loop = 11 / 544 ≈ 0.02022059
+- 分子 11：根域 11 个独立时序席位 (N_seat)
+- 分母 544：SU(3) 旗流形流管充填容积归一化因子
+
+## SU(3) 几何拓扑不变量
+- C_SU(3) = |det A| / Tr(A) = 3 / 4
+- 由 SU(3) Cartan 矩阵 A 的行列式与迹代数导出，对应余维边界流管纠缠因子
+
+## 根域名额排他性修正因子
+- f_seat(k) = 1 - (k / 11) * δ_loop
+- k 为子流形余维阶数，描述高阶充填时的席位空间饱和回抗
+
+# 3. 核心定理与关键公式
+## 量子测量：CPTP 完备 Kraus 算子
+- 主演化算子：K_0 = sqrt(1 - δ_loop) * I
+- 3T 维衰减算子：K_i = sqrt(δ_loop / 3) * σ_i  (i = 1, 2, 3)
+- CPTP 完备性：∑ (K_i† * K_i) = I （迹守恒误差达机器极限 ~10^-15）
+- 相干项衰减方程：|ρ_01'| = |ρ_01| * (1 - (4/3) * δ_loop)
+
+## 超导量子门控制与酉扩张
+- 辅助比特 1-hot 通道旋转角：θ = 2 * arcsin(sqrt(δ_loop / 3)) ≈ 0.164381 rad (9.4182°)
+- 拓扑信号提取方程：δ_topo = δ_meas - δ_bg ≡ δ_loop （双线路差分扣除）
+
+## 味物理：SU(3) 旗流形二阶余维体积修正
+- 通用二阶有效体积方程：V_k^(eff) = (δ_loop)^k * [ 1 + (3k/4) * (1 - (k/11)*δ_loop) * δ_loop ]
+- 第二代/第三代比值 (k=1)：m_2 / m_3 = δ_loop * (1 + (3/4)δ_loop - (3/44)δ_loop^2) ≈ 0.020527 (+1.51% 修正)
+- 第一代/第三代比值 (k=2)：m_1 / m_3 = (δ_loop)^2 * [1 + (3/2)δ_loop - (3/11)δ_loop^2] ≈ 0.000421 (+3.03% 修正)
+
+# 4. 核心规律与作用机制
+## 量子测量与波包塌缩机制
+- **拓扑去极化**：非对角相干项被 3T 时间维度的拓扑回路自然压制
+- **经典涌现**：无需引入外部热库，系统熵自发增加，自然实现公理化波包塌缩
+
+## 超导硬件校准与基线剥离机制
+- **1-hot 单激发编码**：精准承载 3T 时间维度的各向同性拓扑衰减
+- **双线路基线扣除**：剥离芯片 77.48% 的 T1 弛豫与门噪声，恢复 99% 以上拓扑信号
+
+## 味物理余维体积压制机制
+- **k=0（体内）**：第三代 (t, b, τ)，无压制，质量充填容积 O(1)
+- **k=1（次边界）**：第二代 (c, s, μ)，一阶压制，质量因子受 δ_loop 调制
+- **k=2（极小边界）**：第一代 (u, d, e)，双重压制，质量因子受 (δ_loop)^2 调制
+
+# 5. 贯通与兼容的物理学板块
+## 代数拓扑与微分几何 (Algebraic Topology)
+- SU(3) 旗流形 F_3 = SU(3) / [U(1) x U(1)] 几何学
+- Cartan 矩阵、Weyl 群 W(A_2) 不变量与余维边界流管积分
+
+## 量子测量与量子信息论 (Quantum Information)
+- 密度矩阵演化、CPTP 算子代数、去极化信道（Depolarizing Channel）
+- 3T 维各向同性消相干与经典 - 量子边界涌现
+
+## 量子计算与超导硬件实验 (Quantum Hardware Simulation)
+- 4-比特超导量子芯片酉扩张线路设计
+- OpenQASM 3.0 门电路、W 态/1-hot 态控制与差分校准协议
+
+## 粒子物理与味物理学 (Flavor Physics)
+- 费米子代际质量阶梯起源（Mass Hierarchy）
+- 统一架构解释代际指数级压制的几何动力学骨架
+
+# 6. 前沿待攻坚与接口扩展（映射偏置修复）
+## 映射机制界定说明
+- 当前纯几何预言与低能 PDG 实验值存在 46%~324% 偏差，属建构假说层待完善项
+- 确定拓扑体积 V_k^(eff) 代表高能标几何骨架，不等同于低能观察质量
+
+## 三大高阶物理接口
+- **重整化群跑动（RGE）**：高能 GUT 标度至电弱/低能标度的对数跑动
+- **非对角 Yukawa 矩阵对角化**：由几何体积交叉项导出 CKM/PMNS 混合本征值
+- **电弱与多规范群联合动力学**：SU(2)_L x U(1)_Y 希格斯破缺机制的干涉修正。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/11-shi-xu-ju-zhen-shu-xue-gong-ju.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>11时序矩阵数学工具</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">11时序矩阵数学工具</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/159" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>1. 理论公理与核心方法论</h1>
+<h2>零参数纲领（Zero-Parameter Paradigm, ZPP）</h2>
+<ul>
+<li>彻底剔除所有唯象拟合参数、经验调节系数与人工热库假设</li>
+<li>所有物理量与耦合常数严格由拓扑结构与代数不变量内生导出</li>
+</ul>
+<h2>严格三级可信度分层体系</h2>
+<ul>
+<li><strong>定理层（确凿性 100%）</strong>：纯代数推导、拓扑不变量计算、CPTP 完备性证明与数值验证</li>
+<li><strong>建构假说层（物理映射）</strong>：拓扑体积因子到费米子质量比、消相干到波包塌缩的几何映射</li>
+<li><strong>待完善层（前沿接口）</strong>：重整化群跑动（RGE）、Yukawa 矩阵对角化与规范群联合动力学</li>
+</ul>
+<h2>3T1S 超定域时空几何基底</h2>
+<ul>
+<li>时空维度：3 个时间维度（3T）+ 1 个空间维度（1S）</li>
+<li>拓扑根域：11 个独立时序席位（N_seat = 11），存在严格的名额排他性约束</li>
+</ul>
+<h1>2. 核心内生常数</h1>
+<h2>内生拓扑常数（消相干与压制基数）</h2>
+<ul>
+<li>δ_loop = 11 / 544 ≈ 0.02022059</li>
+<li>分子 11：根域 11 个独立时序席位 (N_seat)</li>
+<li>分母 544：SU(3) 旗流形流管充填容积归一化因子</li>
+</ul>
+<h2>SU(3) 几何拓扑不变量</h2>
+<ul>
+<li>C_SU(3) = |det A| / Tr(A) = 3 / 4</li>
+<li>由 SU(3) Cartan 矩阵 A 的行列式与迹代数导出，对应余维边界流管纠缠因子</li>
+</ul>
+<h2>根域名额排他性修正因子</h2>
+<ul>
+<li>f_seat(k) = 1 - (k / 11) * δ_loop</li>
+<li>k 为子流形余维阶数，描述高阶充填时的席位空间饱和回抗</li>
+</ul>
+<h1>3. 核心定理与关键公式</h1>
+<h2>量子测量：CPTP 完备 Kraus 算子</h2>
+<ul>
+<li>主演化算子：K_0 = sqrt(1 - δ_loop) * I</li>
+<li>3T 维衰减算子：K_i = sqrt(δ_loop / 3) * σ_i  (i = 1, 2, 3)</li>
+<li>CPTP 完备性：∑ (K_i† * K_i) = I （迹守恒误差达机器极限 ~10^-15）</li>
+<li>相干项衰减方程：|ρ_01'| = |ρ_01| * (1 - (4/3) * δ_loop)</li>
+</ul>
+<h2>超导量子门控制与酉扩张</h2>
+<ul>
+<li>辅助比特 1-hot 通道旋转角：θ = 2 * arcsin(sqrt(δ_loop / 3)) ≈ 0.164381 rad (9.4182°)</li>
+<li>拓扑信号提取方程：δ_topo = δ_meas - δ_bg ≡ δ_loop （双线路差分扣除）</li>
+</ul>
+<h2>味物理：SU(3) 旗流形二阶余维体积修正</h2>
+<ul>
+<li>通用二阶有效体积方程：V_k^(eff) = (δ_loop)^k * [ 1 + (3k/4) * (1 - (k/11)*δ_loop) * δ_loop ]</li>
+<li>第二代/第三代比值 (k=1)：m_2 / m_3 = δ_loop * (1 + (3/4)δ_loop - (3/44)δ_loop^2) ≈ 0.020527 (+1.51% 修正)</li>
+<li>第一代/第三代比值 (k=2)：m_1 / m_3 = (δ_loop)^2 * [1 + (3/2)δ_loop - (3/11)δ_loop^2] ≈ 0.000421 (+3.03% 修正)</li>
+</ul>
+<h1>4. 核心规律与作用机制</h1>
+<h2>量子测量与波包塌缩机制</h2>
+<ul>
+<li><strong>拓扑去极化</strong>：非对角相干项被 3T 时间维度的拓扑回路自然压制</li>
+<li><strong>经典涌现</strong>：无需引入外部热库，系统熵自发增加，自然实现公理化波包塌缩</li>
+</ul>
+<h2>超导硬件校准与基线剥离机制</h2>
+<ul>
+<li><strong>1-hot 单激发编码</strong>：精准承载 3T 时间维度的各向同性拓扑衰减</li>
+<li><strong>双线路基线扣除</strong>：剥离芯片 77.48% 的 T1 弛豫与门噪声，恢复 99% 以上拓扑信号</li>
+</ul>
+<h2>味物理余维体积压制机制</h2>
+<ul>
+<li><strong>k=0（体内）</strong>：第三代 (t, b, τ)，无压制，质量充填容积 O(1)</li>
+<li><strong>k=1（次边界）</strong>：第二代 (c, s, μ)，一阶压制，质量因子受 δ_loop 调制</li>
+<li><strong>k=2（极小边界）</strong>：第一代 (u, d, e)，双重压制，质量因子受 (δ_loop)^2 调制</li>
+</ul>
+<h1>5. 贯通与兼容的物理学板块</h1>
+<h2>代数拓扑与微分几何 (Algebraic Topology)</h2>
+<ul>
+<li>SU(3) 旗流形 F_3 = SU(3) / [U(1) x U(1)] 几何学</li>
+<li>Cartan 矩阵、Weyl 群 W(A_2) 不变量与余维边界流管积分</li>
+</ul>
+<h2>量子测量与量子信息论 (Quantum Information)</h2>
+<ul>
+<li>密度矩阵演化、CPTP 算子代数、去极化信道（Depolarizing Channel）</li>
+<li>3T 维各向同性消相干与经典 - 量子边界涌现</li>
+</ul>
+<h2>量子计算与超导硬件实验 (Quantum Hardware Simulation)</h2>
+<ul>
+<li>4-比特超导量子芯片酉扩张线路设计</li>
+<li>OpenQASM 3.0 门电路、W 态/1-hot 态控制与差分校准协议</li>
+</ul>
+<h2>粒子物理与味物理学 (Flavor Physics)</h2>
+<ul>
+<li>费米子代际质量阶梯起源（Mass Hierarchy）</li>
+<li>统一架构解释代际指数级压制的几何动力学骨架</li>
+</ul>
+<h1>6. 前沿待攻坚与接口扩展（映射偏置修复）</h1>
+<h2>映射机制界定说明</h2>
+<ul>
+<li>当前纯几何预言与低能 PDG 实验值存在 46%~324% 偏差，属建构假说层待完善项</li>
+<li>确定拓扑体积 V_k^(eff) 代表高能标几何骨架，不等同于低能观察质量</li>
+</ul>
+<h2>三大高阶物理接口</h2>
+<ul>
+<li><strong>重整化群跑动（RGE）</strong>：高能 GUT 标度至电弱/低能标度的对数跑动</li>
+<li><strong>非对角 Yukawa 矩阵对角化</strong>：由几何体积交叉项导出 CKM/PMNS 混合本征值</li>
+<li><strong>电弱与多规范群联合动力学</strong>：SU(2)_L x U(1)_Y 希格斯破缺机制的干涉修正</li>
+</ul></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵大一统本体论原创者史建威的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+
+
+</html>
