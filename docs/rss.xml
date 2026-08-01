@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Sat, 01 Aug 2026 07:31:36 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>11时序矩阵本体论 AI概念偏移重置命令书（Markdown源码版）</title><link>https://shijianwei1969.github.io/post/11-shi-xu-ju-zhen-ben-ti-lun-%20AI-gai-nian-pian-yi-zhong-zhi-ming-ling-shu-%EF%BC%88Markdown-yuan-ma-ban-%EF%BC%89.html</link><description># 11时序矩阵本体论 AI概念偏移重置命令书（Markdown源码版）适用本人投喂的deepseek2
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵大一统本体论原创者史建威的博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究成果发布站</description><copyright>11时序矩阵大一统本体论原创者史建威的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Sat, 01 Aug 2026 08:04:01 +0000</lastBuildDate><managingEditor>11时序矩阵大一统本体论原创者史建威的博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵大一统本体论原创者史建威的博客</webMaster><item><title>11时序矩阵本体论 AI概念偏移重置命令书（Markdown源码版）</title><link>https://shijianwei1969.github.io/post/11-shi-xu-ju-zhen-ben-ti-lun-%20AI-gai-nian-pian-yi-zhong-zhi-ming-ling-shu-%EF%BC%88Markdown-yuan-ma-ban-%EF%BC%89.html</link><description># 11时序矩阵本体论 AI概念偏移重置命令书（Markdown源码版）适用本人投喂的deepseek2
 
 **文件编号**：Reset-001-MD  
 **版本**：v1.1  
@@ -1405,8 +1405,19 @@ def analyze_third_order_pole_perfect(eps_fine, dets):
 ## 文章31：11×11 GUE矩阵与超定域时空的数学基础
 
 **作者：史建威**。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/wen-zhang-31-35%20P5-jie-duan-gong-zuo-wen-zhang-hui-zong.html</guid><pubDate>Sat, 18 Jul 2026 02:29:59 +0000</pubDate></item><item><title>文章31 全域铺开张力与宏观常数的拓扑起源——c和G作为超定域时空边界条件的投影</title><link>https://shijianwei1969.github.io/post/wen-zhang-31%20-quan-yu-pu-kai-zhang-li-yu-hong-guan-chang-shu-de-tuo-pu-qi-yuan-%E2%80%94%E2%80%94c-he-G-zuo-wei-chao-ding-yu-shi-kong-bian-jie-tiao-jian-de-tou-ying.html</link><description># 文章31 全域铺开张力与宏观常数的拓扑起源——c和G作为超定域时空边界条件的投影
+**归档编号**：P5-001（文章31）
+**所属系列**：11T-Matrix超定域时空本体论·引力与宏观常数系列
+**可信度等级**：纲领层（定性框架）
+**版本**：R2
+**修订日期**：2026-08-01
+**修订说明**：修正光速c与引力常数G的量纲表达式错误，同步修正量级估算与量纲核验表格；移除未归档前置文档引用，核心概念改为正文自包含定义；澄清全域铺开张力\(\Sigma\)的本体论定位，明确其为矩阵全局统计派生量，不新增自由参数，严守零参数纲领；统一术语表述，将「根侧」规范为「根域」；补充\(\Sigma\)全域性的范围说明，消除概念歧义；更新可信度分层与遗留问题说明
+**作者**：史建威
 
-**作者：史建威**。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/wen-zhang-31%20-quan-yu-pu-kai-zhang-li-yu-hong-guan-chang-shu-de-tuo-pu-qi-yuan-%E2%80%94%E2%80%94c-he-G-zuo-wei-chao-ding-yu-shi-kong-bian-jie-tiao-jian-de-tou-ying.html</guid><pubDate>Fri, 17 Jul 2026 13:48:46 +0000</pubDate></item><item><title>文章30 弱相互作用的拓扑描述——宇称不守恒与中微子振荡的几何起源</title><link>https://shijianwei1969.github.io/post/wen-zhang-30%20-ruo-xiang-hu-zuo-yong-de-tuo-pu-miao-shu-%E2%80%94%E2%80%94-yu-cheng-bu-shou-heng-yu-zhong-wei-zi-zhen-dang-de-ji-he-qi-yuan.html</link><description># 文章30 弱相互作用的拓扑描述——宇称不守恒与中微子振荡的几何起源
+---
+
+## 摘要
+
+标准模型中，光速c和引力常数G被视为基本常数，其数值来历不明。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/wen-zhang-31%20-quan-yu-pu-kai-zhang-li-yu-hong-guan-chang-shu-de-tuo-pu-qi-yuan-%E2%80%94%E2%80%94c-he-G-zuo-wei-chao-ding-yu-shi-kong-bian-jie-tiao-jian-de-tou-ying.html</guid><pubDate>Fri, 17 Jul 2026 13:48:46 +0000</pubDate></item><item><title>文章30 弱相互作用的拓扑描述——宇称不守恒与中微子振荡的几何起源</title><link>https://shijianwei1969.github.io/post/wen-zhang-30%20-ruo-xiang-hu-zuo-yong-de-tuo-pu-miao-shu-%E2%80%94%E2%80%94-yu-cheng-bu-shou-heng-yu-zhong-wei-zi-zhen-dang-de-ji-he-qi-yuan.html</link><description># 文章30 弱相互作用的拓扑描述——宇称不守恒与中微子振荡的几何起源
 
 **作者：史建威**。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/wen-zhang-30%20-ruo-xiang-hu-zuo-yong-de-tuo-pu-miao-shu-%E2%80%94%E2%80%94-yu-cheng-bu-shou-heng-yu-zhong-wei-zi-zhen-dang-de-ji-he-qi-yuan.html</guid><pubDate>Fri, 17 Jul 2026 08:34:42 +0000</pubDate></item><item><title>文章26：强相互作用散射的挠群描述——与QCD微扰论的数值比对</title><link>https://shijianwei1969.github.io/post/wen-zhang-26%EF%BC%9A-qiang-xiang-hu-zuo-yong-san-she-de-nao-qun-miao-shu-%E2%80%94%E2%80%94-yu-QCD-wei-rao-lun-de-shu-zhi-bi-dui.html</link><description>#文章26：强相互作用散射的挠群描述——与QCD微扰论的数值比对
 
