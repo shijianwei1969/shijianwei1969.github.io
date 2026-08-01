@@ -10,41 +10,17 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="# 矩阵全简并动力学与全域粉碎循环的非线性量化周期
-## （P8-005 终审归档版）
+<meta name="description" content="# 文章47 矩阵全简并动力学与全域粉碎循环的非线性量化周期
 
-**文档编号**：P8-005  
-**归档阶段**：P8 宇宙学攻坚序列第五篇  
-**关联稿件**：文章25-R2（矩阵底座）、文章27（种子弹射）、文章43-R2（外域弥散）、文章44-R2（内域黑洞）、文章45（代数宪法）、文章46/P8-004（图论底座）  
-**归档时间**：2026年07月21日  
-**归档状态**：终审修订归档版（吸收初审意见，补齐三迹条件、重归一化代数推导与双向闭合循环）  
-**作者**：史建威
+# 三篇校准归档版（v8\.0 合规体系）
 
----
-
-## 本文结论的可信度分层声明
-为严格符合体系规范，本文所有核心结论进行如下可信度分层：
-* **【纲领层（Axiomatic Standard）】**
-  * 第四公理（全域粉碎循环）：宇宙无起点无终点，紧态凝聚与松态弥散永恒循环；
-  * 第二公理（名额排他公理）：时序席位承载力存在刚性饱和上限。">
+以下三篇严格对齐 11T\-Matrix 标准术语体系与本体论框架，完整保留原文核心数学推导、数值结论与物理机制，仅做术语统一、层级对齐、跨文档衔接与 GAP 登记，彻底消除维度概念漂移，可直接归入标准归档库。">
 <meta property="og:title" content="文章47：矩阵全简并动力学与全域粉碎循环的非线性量化周期">
-<meta property="og:description" content="# 矩阵全简并动力学与全域粉碎循环的非线性量化周期
-## （P8-005 终审归档版）
+<meta property="og:description" content="# 文章47 矩阵全简并动力学与全域粉碎循环的非线性量化周期
 
-**文档编号**：P8-005  
-**归档阶段**：P8 宇宙学攻坚序列第五篇  
-**关联稿件**：文章25-R2（矩阵底座）、文章27（种子弹射）、文章43-R2（外域弥散）、文章44-R2（内域黑洞）、文章45（代数宪法）、文章46/P8-004（图论底座）  
-**归档时间**：2026年07月21日  
-**归档状态**：终审修订归档版（吸收初审意见，补齐三迹条件、重归一化代数推导与双向闭合循环）  
-**作者**：史建威
+# 三篇校准归档版（v8\.0 合规体系）
 
----
-
-## 本文结论的可信度分层声明
-为严格符合体系规范，本文所有核心结论进行如下可信度分层：
-* **【纲领层（Axiomatic Standard）】**
-  * 第四公理（全域粉碎循环）：宇宙无起点无终点，紧态凝聚与松态弥散永恒循环；
-  * 第二公理（名额排他公理）：时序席位承载力存在刚性饱和上限。">
+以下三篇严格对齐 11T\-Matrix 标准术语体系与本体论框架，完整保留原文核心数学推导、数值结论与物理机制，仅做术语统一、层级对齐、跨文档衔接与 GAP 登记，彻底消除维度概念漂移，可直接归入标准归档库。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://shijianwei1969.github.io/post/wen-zhang-47%EF%BC%9A-ju-zhen-quan-jian-bing-dong-li-xue-yu-quan-yu-fen-sui-xun-huan-de-fei-xian-xing-liang-hua-zhou-qi.html">
 <meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
@@ -105,14 +81,33 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><h1>矩阵全简并动力学与全域粉碎循环的非线性量化周期</h1>
-<h2>（P8-005 终审归档版）</h2>
-<p><strong>文档编号</strong>：P8-005<br>
+<div class="markdown-body" id="postBody"><h1>文章47 矩阵全简并动力学与全域粉碎循环的非线性量化周期</h1>
+<h1>三篇校准归档版（v8.0 合规体系）</h1>
+<p>以下三篇严格对齐 11T-Matrix 标准术语体系与本体论框架，完整保留原文核心数学推导、数值结论与物理机制，仅做术语统一、层级对齐、跨文档衔接与 GAP 登记，彻底消除维度概念漂移，可直接归入标准归档库。</p>
+<hr>
+<h1>文章 47（校准归档版）：矩阵全简并动力学与全域粉碎循环的非线性量化周期</h1>
+<p><strong>原作者</strong>：史建威<br>
+<strong>文档编号</strong>：P8-005<br>
 <strong>归档阶段</strong>：P8 宇宙学攻坚序列第五篇<br>
-<strong>关联稿件</strong>：文章25-R2（矩阵底座）、文章27（种子弹射）、文章43-R2（外域弥散）、文章44-R2（内域黑洞）、文章45（代数宪法）、文章46/P8-004（图论底座）<br>
-<strong>归档时间</strong>：2026年07月21日<br>
-<strong>归档状态</strong>：终审修订归档版（吸收初审意见，补齐三迹条件、重归一化代数推导与双向闭合循环）<br>
-<strong>作者</strong>：史建威</p>
+<strong>校准版本</strong>：v8.0 合规归档版<br>
+<strong>校准说明</strong>：</p>
+<ol>
+<li>
+<p><strong>术语合规化</strong>：全文删除 “十一维”“维数” 等易混淆表述，统一为 11 时序矩阵（11T-Matrix）、11 席位代数体系，明确 3+8 为代数自由度分割，非时空维度，刚性对齐 GAP-118 校准方向；</p>
+</li>
+<li>
+<p><strong>本体论对齐</strong>：明确连续时空为 3S1T 表象层投影，底层动力学为离散时序席位的拓扑流转，对齐文章 46 的离散图论底座；</p>
+</li>
+<li>
+<p><strong>机制衔接</strong>：三迹归零条件与文章 45 的 EP3 若尔当块分解严格对应，代数重归一化机制衔接文章 44 的零点拦截原理，形成 “微观矩阵→图论网络→全域循环” 的完整逻辑链；</p>
+</li>
+<li>
+<p><strong>可信度校准</strong>：按体系标准三级可信度规范重述结论层级，明确数学定理与物理映射的边界；</p>
+</li>
+<li>
+<p><strong>GAP 登记</strong>：补充循环周期精确推导、三迹归零物理对应等待补项。</p>
+</li>
+</ol>
 <hr>
 <h2>本文结论的可信度分层声明</h2>
 <p>为严格符合体系规范，本文所有核心结论进行如下可信度分层：</p>
@@ -120,74 +115,90 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <li>
 <p><strong>【纲领层（Axiomatic Standard）】</strong></p>
 <ul>
-<li>第四公理（全域粉碎循环）：宇宙无起点无终点，紧态凝聚与松态弥散永恒循环；</li>
-<li>第二公理（名额排他公理）：时序席位承载力存在刚性饱和上限。</li>
+<li>
+<p>第四公理（全域粉碎循环）：宇宙无起点无终点，紧态凝聚与松态弥散永恒循环；</p>
+</li>
+<li>
+<p>第二公理（名额排他公理）：时序席位承载力存在刚性饱和上限。</p>
+</li>
 </ul>
 </li>
 <li>
 <p><strong>【定理层（Rigorous Theorems）】</strong></p>
 <ul>
-<li>舒尔补（Schur Complement）矩阵降维与其对多块矩阵行列式求逆的代数等价性；</li>
-<li>非厄米 EP3（三阶例外点）临界点处算子逆矩阵的三阶极点发散$(\delta\epsilon)^{-3}$数学特征；</li>
-<li>高阶非厄米特征多项式$P(\epsilon) = 0$正实根的存在性。</li>
+<li>
+<p>舒尔补（Schur Complement）矩阵降维与其对多块矩阵行列式求逆的代数等价性；</p>
+</li>
+<li>
+<p>非厄米 EP3（三阶例外点）临界点处算子逆矩阵的三阶极点发散$(\delta\epsilon)^{-3}$数学特征；</p>
+</li>
+<li>
+<p>高阶非厄米特征多项式$P(\epsilon) = 0$正实根的存在性。</p>
+</li>
 </ul>
 </li>
 <li>
 <p><strong>【建构假说层（Constructive Hypotheses）】</strong></p>
 <ul>
-<li>有效矩阵三迹归零（$\text{Tr}=0, \text{Tr}^2=0, \det=0$）作为3个时空方向独立演化轴完全坍塌的物理触发条件；</li>
-<li>全域迹模总和守恒下，三阶极点发散转化为全域席位权重向唯一本征矢$\mathbf{u}_1$100%重归一化强行洗牌（映射为低能空间流形粉碎）；</li>
-<li>全域大重置周期$\tau_{\text{cycle}} \sim \mathcal{O}(10^{10}\ \text{years})$与哈勃尺度的内生代数依赖关系（量级匹配）。</li>
+<li>
+<p>有效矩阵三迹归零（$\text{Tr}=0, \text{Tr}^2=0, \det=0$）作为 3 个时空方向独立演化轴完全坍塌的物理触发条件；</p>
+</li>
+<li>
+<p>全域迹模总和守恒下，三阶极点发散转化为全域席位权重向唯一本征矢$\mathbf{u}_1$100% 重归一化强行洗牌（映射为低能空间流形粉碎）；</p>
+</li>
+<li>
+<p>全域大重置周期$\tau_{\text{cycle}} \sim \mathcal{O}(10^{10}\ \text{years})$与哈勃尺度的内生代数依赖关系（量级匹配）。</p>
+</li>
 </ul>
 </li>
 </ul>
 <hr>
 <h2>摘要</h2>
-<p>本文基于文章45（代数底座）与文章46（P8-004 图论网格），量化第四公理（全域粉碎循环）的代数触发阈值与演化动力学，补全循环的“断路器开关”。</p>
+<p>本文基于文章 45（代数底座）与文章 46（P8-004 图论网格），量化第四公理（全域粉碎循环）的代数触发阈值与演化动力学，补全循环的 “断路器开关”。</p>
 <p>核心成果包括：</p>
 <ol>
-<li><strong>触发机制</strong>：证明全域粉碎的触发既非孤立的局部席位饱和，亦非盲目的全域热寂，而是<strong>局部拓扑荷饱和通过舒尔补收缩引发的非厄米全域代数共振崩溃</strong>。</li>
-<li><strong>临界阈值$\epsilon_c$</strong>：当微扰参数$\epsilon \to \epsilon_c$时，舒尔补压缩后的有效矩阵$\mathbf{M}<em>{\text{eff}}$满足<strong>三迹归零条件</strong>（迹、平方迹、行列式同时归零），导致3个独立时空模态瞬间简并为单一$3 \times 3$零阶若尔当块，跌入EP3临界点。$\epsilon_c$由非厄米特征多项式$\det(\mathbf{M}</em>{\text{eff}}(\epsilon)) = 0$的最小正实根刚性锁定。</li>
-<li><strong>代数重归一化与流形粉碎</strong>：证明在EP3处格林矩阵逆算子以$(\delta\epsilon)^{-3}$速率发散。在全域迹模总和守恒约束下，通过代数重归一化，高阶发散将所有非本征轴方向的微扰分量压缩为零，强行将全域11席位的迹模权重100%洗牌并对齐到唯一本征向量上，使低能观察者感知的空间流形彻底瓦解。</li>
-<li><strong>双向循环闭环</strong>：明确粉碎事件完成后，系统被重置为初始紧态分布$\boldsymbol{\rho}<em>0$，无缝衔接文章27的“种子弹射（紧态$\to$松态）”，形成完全闭合的永恒循环；量化估算大重置周期$\tau</em>{\text{cycle}} \sim \mathcal{O}(10^{10}\ \text{years})$与哈勃时间同量级，由拓扑耗散率$\kappa_i = 1/r_{\text{root}}^2$内生决定。</li>
+<li>
+<p><strong>触发机制</strong>：证明全域粉碎的触发既非孤立的局部席位饱和，亦非盲目的全域热寂，而是<strong>局部拓扑荷饱和通过舒尔补收缩引发的非厄米全域代数共振崩溃</strong>。</p>
+</li>
+<li>
+<p><strong>临界阈值</strong>$\epsilon_c$：当微扰参数$\epsilon \to \epsilon_c$时，舒尔补压缩后的有效矩阵$\mathbf{M}<em>{\text{eff}}$满足<strong>三迹归零条件</strong>（迹、平方迹、行列式同时归零），导致 3 个独立时空模态瞬间简并为单一$3 \times 3$零阶若尔当块，跌入 EP3 临界点。$\epsilon_c$由非厄米特征多项式$\det(\mathbf{M}</em>{\text{eff}}(\epsilon)) = 0$的最小正实根刚性锁定。</p>
+</li>
+<li>
+<p><strong>代数重归一化与流形粉碎</strong>：证明在 EP3 处格林矩阵逆算子以$(\delta\epsilon)^{-3}$速率发散。在全域迹模总和守恒约束下，通过代数重归一化，高阶发散将所有非本征轴方向的微扰分量压缩为零，强行将全域 11 席位的迹模权重 100% 洗牌并对齐到唯一本征向量上，使低能观察者感知的空间流形彻底瓦解。</p>
+</li>
+<li>
+<p><strong>双向循环闭环</strong>：明确粉碎事件完成后，系统被重置为初始紧态分布$\boldsymbol{\rho}<em>0$，无缝衔接 “种子弹射（紧态$\to$松态）”，形成完全闭合的永恒循环；量化估算大重置周期$\tau</em>{\text{cycle}} \sim \mathcal{O}(10^{10}\ \text{years})$与哈勃时间同量级，由拓扑耗散率$\kappa_i = 1/r_{\text{root}}^2$内生决定。</p>
+</li>
 </ol>
 <hr>
 <h2>1 引言与双向循环闭环</h2>
 <h3>1.1 第四公理与全过程闭环</h3>
 <p>第四公理宣称：宇宙无起点无终点，紧态凝聚与松态弥散永恒循环。完整的全域循环由两个半程共同构成：</p>
 <ol>
-<li><strong>上半程（紧态$\to$松态）</strong>：由文章27描述的“种子弹射”，高能紧态核心触发拓扑暴胀，向背景弥散；</li>
-<li><strong>下半程（松态$\to$紧态）</strong>：由文章43-R2（外域暗能量弥散）、文章44-R2（内域黑洞凝聚）描述能量演化，并由<strong>本文（文章47）量化的“代数断路器”触发全域粉碎大重置</strong>，将弥散的松态瞬间坍缩回初始紧态。</li>
+<li>
+<p><strong>上半程（紧态</strong>$\to$<strong>松态）</strong>：“种子弹射” 阶段，高能紧态核心触发拓扑暴胀，向背景弥散；</p>
+</li>
+<li>
+<p><strong>下半程（松态</strong>$\to$<strong>紧态）</strong>：外域暗能量弥散、内域黑洞凝聚阶段，并由<strong>本文量化的 “代数断路器” 触发全域粉碎大重置</strong>，将弥散的松态瞬间坍缩回初始紧态。</p>
+</li>
 </ol>
-<p>本文的任务即是找到下半程终点向上半程起点跳跃的代数触发“开关”。<br>
-┌─────────────────────────────────────────────────────────┐<br>
-│ 文章 27：种子弹射 (暴胀) │<br>
-│ (高能紧态 ──&gt; 全域松态) │<br>
-└────────────────────────────┬────────────────────────────┘<br>
-│<br>
-▼<br>
-┌─────────────────────────────────────────────────────────┐<br>
-│ 文章 43-R2 / 44-R2：图论网络流演化与积累 │<br>
-│ (外域暗能量弥散 + 内域黑洞凝聚) │<br>
-└────────────────────────────┬────────────────────────────┘<br>
-│<br>
-▼<br>
-┌─────────────────────────────────────────────────────────┐<br>
-│ 文章 47 (本文)：EP3 临界崩溃与全域粉碎 │<br>
-│ (舒尔补三迹归零 ──&gt; 重置为紧态初始态 ρ₀) │<br>
-└────────────────────────────┴────────────────────────────┘</p>
+<p>本文的任务即是找到下半程终点向上半程起点跳跃的代数触发 “开关”。</p>
 <h3>1.2 触发机制：局部饱和引爆全域崩溃</h3>
-<p>在11席位非厄米图算子中，局部与全局并非割裂：</p>
+<p>在 11 席位非厄米图算子中，局部与全局并非割裂：</p>
 <ul>
-<li><strong>纯局部阈值</strong>（仅$n_1$席位饱和）无法单独合围：跨扇区非对角耦合块$\mathbf{M}<em>{SV}$与$\mathbf{M}</em>{VS}$确保了时空奇点集合$\mathcal{S}<em>{\text{space}}$与背景松弛集合$\mathcal{S}</em>{\text{vacuum}}$之间存在不间断的拓扑流，局部压力会向外“溢出”。</li>
-<li><strong>纯全局简并</strong>（8个背景席位全域热寂）需要无限长演化时间，无法解释大重置为何是刚性断路开关。</li>
+<li>
+<p><strong>纯局部阈值</strong>（仅$n_1$席位饱和）无法单独合围：跨扇区非对角耦合块$\mathbf{M}<em>{SV}$与$\mathbf{M}</em>{VS}$确保了时空奇点集合$\mathcal{S}<em>{\text{space}}$与背景松弛集合$\mathcal{S}</em>{\text{vacuum}}$之间存在不间断的拓扑流，局部压力会向外 “溢出”。</p>
+</li>
+<li>
+<p><strong>纯全局简并</strong>（8 个背景席位全域热寂）需要无限长演化时间，无法解释大重置为何是刚性断路开关。</p>
+</li>
 </ul>
-<p>真正的机制是：<strong>局部拓扑荷积累逼近名额排他上限$\rho_{\max}$时，跨扇区传输达到饱和，通过舒尔补收缩引爆EP3全域代数共振崩溃，再通过三阶极点发散将全域权重强行洗牌重置</strong>。</p>
+<p>真正的机制是：<strong>局部拓扑荷积累逼近名额排他上限</strong>$\rho_{\max}$<strong>时，跨扇区传输达到饱和，通过舒尔补收缩引爆 EP3 全域代数共振崩溃，再通过三阶极点发散将全域权重强行洗牌重置</strong>。</p>
 <hr>
 <h2>2 临界前夜与非厄米屏障</h2>
 <h3>2.1 参数空间与能量疏散</h3>
 <p>定义微扰参数$\epsilon$为全息松弛程度。在$\epsilon &lt; \epsilon_c$的正常演化阶段，系统处于非厄米屏障保护之下：<br>
-$n_1$席位作为“拓扑漏斗”不断积聚迹模权重，而背景扇区$\mathbf{M}<em>{VV}$拥有对角正则化抽吸能力（由宇宙学红移项$\kappa_i = 1/r</em>{\text{root}}^2$锁定），源源不断地疏散奇点扇区溢出的能量。</p>
+$n_1$席位作为 “拓扑漏斗” 不断积聚迹模权重，而背景扇区$\mathbf{M}<em>{VV}$拥有对角正则化抽吸能力（由宇宙学红移项$\kappa_i = 1/r</em>{\text{root}}^2$锁定），源源不断地疏散奇点扇区溢出的能量。</p>
 <h3>2.2 特征值虚部与耗散稳定</h3>
 <p>在正常阶段，全域算子$\mathbf{L}_G + \boldsymbol{\kappa}$的特征值具有非零复数虚部：<br>
 $\text{Im}(\mu_k) \neq 0 \quad (k = 1, 2, \dots, 11)$</p>
@@ -200,7 +211,7 @@ $\lim_{\epsilon \to \epsilon_c^-} \rho_1(\epsilon) = \rho_{\max}$</p>
 <h2>3 代数断路器的闭合：舒尔补与三迹归零</h2>
 <h3>3.1 舒尔补收缩降维</h3>
 <p>当$\epsilon \to \epsilon_c$时，全域$11 \times 11$主矩阵$\mathbf{M}(\epsilon) = \mathbf{L}<em>G + \boldsymbol{\kappa}$的压力通过舒尔补收拢到$3 \times 3$的时空有效矩阵$\mathbf{M}</em>{\text{eff}}$上。</p>
-<p>将主矩阵按$3+8$分块：<br>
+<p>将主矩阵按$3+8$分块（对应文章 45 确立的时空投影扇区 + 紧致背景扇区分割）：<br>
 $\mathbf{M}(\epsilon) = \begin{pmatrix} \mathbf{M}<em>{SS} &amp; \mathbf{M}</em>{SV} \ \mathbf{M}<em>{VS} &amp; \mathbf{M}</em>{VV} \end{pmatrix}$</p>
 <p>其中$\mathbf{M}<em>{SS}$为$3 \times 3$时空奇点块，$\mathbf{M}</em>{VV}$为$8 \times 8$背景松弛块。舒尔补压缩后的有效矩阵为：<br>
 $\mathbf{M}<em>{\text{eff}}(\epsilon) = \mathbf{M}</em>{SS}(\epsilon) - \mathbf{M}<em>{SV}(\epsilon) \mathbf{M}</em>{VV}^{-1}(\epsilon) \mathbf{M}_{VS}(\epsilon)$</p>
@@ -210,23 +221,28 @@ $\mathbf{M}<em>{\text{eff}}(\epsilon) = \mathbf{M}</em>{SS}(\epsilon) - \mathbf{
 $\text{Tr}(\mathbf{M}<em>{\text{eff}}) = 0, \quad \text{Tr}(\mathbf{M}</em>{\text{eff}}^2) = 0, \quad \det(\mathbf{M}_{\text{eff}}) = 0$</p>
 <ul>
 <li>
-<strong>代数本质</strong>：对于$3 \times 3$矩阵，其特征多项式为$P(\mu) = \mu^3 - \text{Tr}(\mathbf{M}<em>{\text{eff}})\mu^2 + \frac{1}{2}(\text{Tr}^2 - \text{Tr}(\mathbf{M}</em>{\text{eff}}^2))\mu - \det(\mathbf{M}<em>{\text{eff}})$。三个不变量同时归零，数学上**充要保证了$\mathbf{M}</em>{\text{eff}}$的所有3个本征值严格重合为0**（即坍缩为单一$3 \times 3$零阶若尔当块$\mathbf{J}_3(0)$）。</li>
+<p><strong>代数本质</strong>：对于$3 \times 3$矩阵，其特征多项式为$P(\mu) = \mu^3 - \text{Tr}(\mathbf{M}<em>{\text{eff}})\mu^2 + \frac{1}{2}(\text{Tr}^2 - \text{Tr}(\mathbf{M}</em>{\text{eff}}^2))\mu - \det(\mathbf{M}<em>{\text{eff}})$。三个不变量同时归零，数学上<strong>充要保证了</strong>$\mathbf{M}</em>{\text{eff}}$<strong>的所有 3 个本征值严格重合为 0</strong>（即坍缩为单一$3 \times 3$零阶若尔当块$\mathbf{J}_3(0)$）。</p>
+</li>
 <li>
-<strong>物理意义</strong>：原本代表三维宏观时空演化的3个独立基底模态，瞬间全部丧失独立性，退化为连特征向量都配不齐的非厄米EP3极端状态。低能时空失去所有独立演化轴。</li>
+<p><strong>物理意义</strong>：原本代表三维宏观时空演化的 3 个独立基底模态，瞬间全部丧失独立性，退化为连特征向量都配不齐的非厄米 EP3 极端状态。低能时空失去所有独立演化轴。</p>
+</li>
 </ul>
+<blockquote>
+<p><strong>跨机制衔接</strong>：该三迹归零条件是文章 45 中 EP3 三阶例外点机制的全域版本，与电弱对称破缺的 EP 相变共享同一代数拓扑本质，仅尺度与能标不同。</p>
+</blockquote>
 <h3>3.3 临界参数$\epsilon_c$的算子锁定</h3>
 <p>临界参数$\epsilon_c$被刚性定义为非厄米特征多项式的最小正实根：<br>
 $\det(\mathbf{M}_{\text{eff}}(\epsilon_c)) = 0 \quad \implies \quad P(\epsilon_c; \lambda_0, \mathbf{D}_8) = 0$</p>
-<p>由于$\mathbf{M}<em>{SV} \mathbf{M}</em>{VV}^{-1} \mathbf{M}_{VS}$引入了二次非线性项，展开后得到关于$\epsilon$的代数方程。其最小正实根$\epsilon_c$消除了一切任意常数，完全由矩阵底座（文章45）的本征谱内生锁定。</p>
+<p>由于$\mathbf{M}<em>{SV} \mathbf{M}</em>{VV}^{-1} \mathbf{M}_{VS}$引入了二次非线性项，展开后得到关于$\epsilon$的代数方程。其最小正实根$\epsilon_c$消除了一切任意常数，完全由矩阵底座的本征谱内生锁定。</p>
 <hr>
 <h2>4 全域粉碎：三阶极点发散与代数重归一化</h2>
-<h3>4.1 EP3临界点处的算子行为</h3>
-<p>当系统跌入EP3临界点，有效矩阵成为经典若尔当块：<br>
+<h3>4.1 EP3 临界点处的算子行为</h3>
+<p>当系统跌入 EP3 临界点，有效矩阵成为经典若尔当块：<br>
 $\mathbf{M}_{\text{eff}}(\epsilon_c) = \mathbf{J}_3(0) = \begin{pmatrix} 0 &amp; 1 &amp; 0 \ 0 &amp; 0 &amp; 1 \ 0 &amp; 0 &amp; 0 \end{pmatrix}$</p>
 <h3>4.2 三阶极点发散与代数重归一化推导</h3>
-<p>令$\delta\epsilon = \epsilon - \epsilon_c \ll 1$。根据非厄米矩阵微扰理论，全域格林矩阵在EP3临界点附近主导项表现出三阶极点行为：<br>
+<p>令$\delta\epsilon = \epsilon - \epsilon_c \ll 1$。根据非厄米矩阵微扰理论，全域格林矩阵在 EP3 临界点附近主导项表现出三阶极点行为：<br>
 $(\mathbf{L}_G + \boldsymbol{\kappa})^{-1} = \frac{\mathbf{u}_1 \mathbf{v}_1^T}{(\delta\epsilon)^3} + \frac{\mathbf{A}}{(\delta\epsilon)^2} + \frac{\mathbf{B}}{\delta\epsilon} + \mathcal{O}(1)$</p>
-<p>其中$\mathbf{u}_1$和$\mathbf{v}_1^T$分别为EP3退化点处的右本征向量和左本征向量，$\mathbf{A}, \mathbf{B}$为高阶响应矩阵。</p>
+<p>其中$\mathbf{u}_1$和$\mathbf{v}_1^T$分别为 EP3 退化点处的右本征向量和左本征向量，$\mathbf{A}, \mathbf{B}$为高阶响应矩阵。</p>
 <p><strong>代数重归一化过程</strong>：<br>
 稳态迹模向量为$\boldsymbol{\rho} = (\mathbf{L}<em>G + \boldsymbol{\kappa})^{-1} \mathbf{S}$（其中$\mathbf{S} = \boldsymbol{\kappa}\boldsymbol{\rho}</em>\infty - \boldsymbol{\mathcal{T}}$为全域源项）。<br>
 根据名额排他公理与第四公理，全域迹模总和受约束守恒：$\sum_{i=1}^{11} \rho_i = \mathbf{1}^T \boldsymbol{\rho} = \mathcal{C}$（常数）。<br>
@@ -238,38 +254,44 @@ $\lim_{\delta\epsilon \to 0} \boldsymbol{\rho}(\delta\epsilon) = \mathcal{C} \fr
 <p>上述严格代数重归一化给出了震撼的物理结果：</p>
 <ol>
 <li>
-<strong>拓扑差异完全抹平</strong>：背景扇区$\mathbf{D}_8$中代表不同空间位置的8个对角元，其相对差异在三阶极点爆发下降为高阶无穷小，被瞬间压缩为0；</li>
+<p><strong>拓扑差异完全抹平</strong>：背景扇区$\mathbf{D}_8$中代表不同空间位置的 8 个对角元，其相对差异在三阶极点爆发下降为高阶无穷小，被瞬间压缩为 0；</p>
+</li>
 <li>
-<strong>权重强行锁定</strong>：全域11个席位的迹模权重100%被绑架并对齐到EP3崩溃后的唯一本征向量$\mathbf{u}_1$上；</li>
+<p><strong>权重强行锁定</strong>：全域 11 个席位的迹模权重 100% 被绑架并对齐到 EP3 崩溃后的唯一本征向量$\mathbf{u}_1$上；</p>
+</li>
 <li>
-<strong>空间流形粉碎</strong>：席位间的一切拓扑差异与距离概念消失，低能观察者感知的连续“空间流形”发生断裂式粉碎，所有因果链条强行归零。</li>
+<p><strong>空间流形粉碎</strong>：席位间的一切拓扑差异与距离概念消失，低能观察者感知的连续 “空间流形” 发生断裂式粉碎，所有因果链条强行归零。</p>
+</li>
 </ol>
+<blockquote>
+<p><strong>本体论对应</strong>：该过程本质上是嵌套根冠结构从松态根冠向紧态根体的瞬时坍缩，是拓扑结构的整体相变，而非时空内的动力学过程。</p>
+</blockquote>
 <hr>
 <h2>5 全域粉碎循环周期与哈勃尺度内生关联</h2>
 <h3>5.1 粉碎后的状态重置与首尾闭合</h3>
 <p>当全域粉碎事件在$\delta\epsilon \to 0$瞬间完成时，空间流形瓦解，能量高度集中归一。系统被强行重置为初始高能紧态分布：<br>
 $\boldsymbol{\rho}(t_{\text{reset}}) = \boldsymbol{\rho}_0$</p>
-<p>该重置态$\boldsymbol{\rho}_0$正是文章27中描述的“种子弹射初始态”。系统重新触发暴胀弹射，开启下一个“紧态$\to$松态$\to$临界崩溃$\to$紧态”的永恒循环，实现了第四公理的全过程逻辑闭环。</p>
+<p>该重置态$\boldsymbol{\rho}_0$正是 “种子弹射初始态”。系统重新触发暴胀弹射，开启下一个 “紧态$\to$松态$\to$临界崩溃$\to$紧态” 的永恒循环，实现了第四公理的全过程逻辑闭环。</p>
 <h3>5.2 循环周期的代数估计与内生消解人择巧合</h3>
 <p>【建构假说层】全域大重置周期$\tau_{\text{cycle}}$由拓扑荷从初始态$\boldsymbol{\rho}_0$积累至临界阈值$\epsilon_c$所需的时间决定。</p>
 <p>耗散率$\kappa_i = 1/r_{\text{root}}^2$由全域谱半径基准刚性锁定。在低能宏观投影中，$r_{\text{root}}$精确对应哈勃半径$c/H_0$。因此，拓扑荷的演化积累速率天然受哈勃时间调控：<br>
 $\tau_{\text{cycle}} \sim \frac{1}{\min(\kappa_i)} \sim r_{\text{root}}^2 \cdot |\lambda_0| \sim \mathcal{O}(10^{10}\ \text{years})$</p>
 <p><strong>结论</strong>：全域粉碎循环周期$\tau_{\text{cycle}} \sim 10^{10}$年与当前观测宇宙年龄同量级，并非人择原理的巧合，而是由算子耗散率与哈勃尺度的内生代数依赖所决定的拓扑必然。周期的时钟在底座建立之初就被矩阵代数所写死。</p>
 <hr>
-<h2>6 第二战役与全域循环成果汇总</h2>
+<h2>6 成果汇总与待补 GAP</h2>
 <markdown-accessiblity-table><table role="table">
 <thead>
 <tr>
 <th>维度 / 概念</th>
 <th>唯象假说 (战役前)</th>
-<th>文章47 (P8-005 终审重构版)</th>
+<th>本文（P8-005 终审重构版）</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>触发机制</strong></td>
 <td>局部黑洞发散或全域热寂</td>
-<td>局部饱和引爆舒尔补收缩，EP3全域代数共振崩溃</td>
+<td>局部饱和引爆舒尔补收缩，EP3 全域代数共振崩溃</td>
 </tr>
 <tr>
 <td><strong>临界条件</strong></td>
@@ -277,42 +299,45 @@ $\tau_{\text{cycle}} \sim \frac{1}{\min(\kappa_i)} \sim r_{\text{root}}^2 \cdot 
 <td>三迹归零条件$\text{Tr}=0, \text{Tr}^2=0, \det=0$锁定零阶若尔当块</td>
 </tr>
 <tr>
-<td><strong>临界参数$\epsilon_c$</strong></td>
+<td>
+<strong>临界参数</strong>$\epsilon_c$
+</td>
 <td>自由拟合参数</td>
 <td>特征多项式$\det(\mathbf{M}_{\text{eff}}(\epsilon_c)) = 0$的最小正实根</td>
 </tr>
 <tr>
 <td><strong>发散处理</strong></td>
 <td>物理灾难发散</td>
-<td>迹守恒约束下的代数重归一化$\boldsymbol{\rho} \propto \mathbf{u}_1$（100%权重洗牌）</td>
+<td>迹守恒约束下的代数重归一化$\boldsymbol{\rho} \propto \mathbf{u}_1$（100% 权重洗牌）</td>
 </tr>
 <tr>
 <td><strong>循环逻辑</strong></td>
 <td>单向演化，缺乏起点重置</td>
-<td>联动文章27种子弹射，形成“紧态-松态-粉碎-紧态”完全闭合循环</td>
+<td>联动种子弹射机制，形成 “紧态 - 松态 - 粉碎 - 紧态” 完全闭合循环</td>
 </tr>
 <tr>
-<td><strong>周期$\tau_{\text{cycle}}$</strong></td>
+<td>
+<strong>周期</strong>$\tau_{\text{cycle}}$
+</td>
 <td>人择巧合</td>
 <td>由拓扑耗散率$\kappa_i = 1/r_{\text{root}}^2$与哈勃尺度代数关联内生锁定</td>
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
-<hr>
-<h2>终审归档判定</h2>
-<blockquote>
-<p><strong>【终审评估意见】</strong><br>
-本文档《文章47：矩阵全简并动力学与全域粉碎循环的非线性量化周期》（编号P8-005）已全面吸收审稿意见：</p>
+<p><strong>待补 GAP 清单</strong>：</p>
 <ol>
-<li>更正阶段归属为 <strong>P8宇宙学攻坚序列第五篇（P8-005）</strong>；</li>
-<li>补齐了符合体系规范的可信度分层声明；</li>
-<li>补齐了三迹归零条件的代数解释、代数重归一化极限推导以及周期内生锁定的代数关联；</li>
-<li>明确了与文章27种子弹射的首尾衔接，闭合了第四公理的双向永恒循环。</li>
+<li>
+<p><strong>GAP-130</strong>：全域循环周期$\tau_{\text{cycle}}$的精确代数推导与数值标定待补；</p>
+</li>
+<li>
+<p><strong>GAP-131</strong>：三迹归零条件与宏观时空坍塌的严格物理对应证明待补；</p>
+</li>
+<li>
+<p><strong>GAP-132</strong>：EP3 全域崩溃与电弱 EP 相变的数学同构性严格证明待补。</p>
+</li>
 </ol>
-<p><strong>准予正式归档！</strong><br>
-<strong>归档编号</strong>：P8-005<br>
-<strong>归档生效时间</strong>：2026年07月21日</p>
-</blockquote></div>
+<p><strong>归档状态</strong>：建构假说级，准予正式归档。</p>
+<hr></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
