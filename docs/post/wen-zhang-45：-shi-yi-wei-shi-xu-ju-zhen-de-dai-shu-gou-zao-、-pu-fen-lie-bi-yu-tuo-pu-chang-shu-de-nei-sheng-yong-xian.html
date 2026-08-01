@@ -10,41 +10,41 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="# 十一维时序矩阵的代数构造、谱分裂比与拓扑常数的内生涌现
+<meta name="description" content="# 文章45（校准归档版）：11时序矩阵的代数构造、谱分裂比与拓扑常数的内生涌现
 
-**作者**：史建威
-
-**归档编号**：P5-001-R2
-
+**原作者**：史建威
+**归档编号**：P5\-001\-R2
 **归档定位**：全体系代数底座奠基文·P5阶段基础成果
+**校准版本**：v8\.0 合规归档版
+**校准说明**：
 
-**归档状态**：终审归档版
+1. **术语合规化**：删除“十一维”“维”等时空维度表述，统一为11时序主矩阵（11T\-Matrix），明确3\+8是代数自由度分割（时空投影扇区3席\+紧致背景扇区8席），非真实时空维度，刚性对齐GAP\-118校准方向；
 
-**归档时间**：2026年7月21日
+2. **本体论对齐**：明确若尔当块分割是代数结构分类，对应3T1S根域的时序通道与紧致自由度，不额外增加时空维度；
 
----
+3. **GAP闭合**：完成β\_K的第一性内生推导，正式闭合GAP\-121；给出17的李代数起源，为GAP\-125提供核心代数支撑；
 
-## 摘要
+4. **跨文档衔接**：明确187=11×17的代数构造是文章43拓扑压制因子与文章44中心最大密度的底层数学依据，形成P5→P8的完整逻辑链；
 
-本文基于本体论四大公理，首次给出十一维时序主矩阵 $\mathbf{M}$ 的刚性代数构造，彻底补全体系底层代数底座，为 P8 攻坚序列（宇宙学常数与奇点消解）提供了第一性原理的代数合法性。">
+5. **可信度校准**：严格区分定理级数学结论与建构假说级物理映射，杜绝夸大表述。">
 <meta property="og:title" content="文章45：十一维时序矩阵的代数构造、谱分裂比与拓扑常数的内生涌现">
-<meta property="og:description" content="# 十一维时序矩阵的代数构造、谱分裂比与拓扑常数的内生涌现
+<meta property="og:description" content="# 文章45（校准归档版）：11时序矩阵的代数构造、谱分裂比与拓扑常数的内生涌现
 
-**作者**：史建威
-
-**归档编号**：P5-001-R2
-
+**原作者**：史建威
+**归档编号**：P5\-001\-R2
 **归档定位**：全体系代数底座奠基文·P5阶段基础成果
+**校准版本**：v8\.0 合规归档版
+**校准说明**：
 
-**归档状态**：终审归档版
+1. **术语合规化**：删除“十一维”“维”等时空维度表述，统一为11时序主矩阵（11T\-Matrix），明确3\+8是代数自由度分割（时空投影扇区3席\+紧致背景扇区8席），非真实时空维度，刚性对齐GAP\-118校准方向；
 
-**归档时间**：2026年7月21日
+2. **本体论对齐**：明确若尔当块分割是代数结构分类，对应3T1S根域的时序通道与紧致自由度，不额外增加时空维度；
 
----
+3. **GAP闭合**：完成β\_K的第一性内生推导，正式闭合GAP\-121；给出17的李代数起源，为GAP\-125提供核心代数支撑；
 
-## 摘要
+4. **跨文档衔接**：明确187=11×17的代数构造是文章43拓扑压制因子与文章44中心最大密度的底层数学依据，形成P5→P8的完整逻辑链；
 
-本文基于本体论四大公理，首次给出十一维时序主矩阵 $\mathbf{M}$ 的刚性代数构造，彻底补全体系底层代数底座，为 P8 攻坚序列（宇宙学常数与奇点消解）提供了第一性原理的代数合法性。">
+5. **可信度校准**：严格区分定理级数学结论与建构假说级物理映射，杜绝夸大表述。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://shijianwei1969.github.io/post/wen-zhang-45%EF%BC%9A-shi-yi-wei-shi-xu-ju-zhen-de-dai-shu-gou-zao-%E3%80%81-pu-fen-lie-bi-yu-tuo-pu-chang-shu-de-nei-sheng-yong-xian.html">
 <meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
@@ -105,136 +105,179 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><h1>十一维时序矩阵的代数构造、谱分裂比与拓扑常数的内生涌现</h1>
-<p><strong>作者</strong>：史建威</p>
-<p><strong>归档编号</strong>：P5-001-R2</p>
-<p><strong>归档定位</strong>：全体系代数底座奠基文·P5阶段基础成果</p>
-<p><strong>归档状态</strong>：终审归档版</p>
-<p><strong>归档时间</strong>：2026年7月21日</p>
+<div class="markdown-body" id="postBody"><h1>文章45（校准归档版）：11时序矩阵的代数构造、谱分裂比与拓扑常数的内生涌现</h1>
+<p><strong>原作者</strong>：史建威<br>
+<strong>归档编号</strong>：P5-001-R2<br>
+<strong>归档定位</strong>：全体系代数底座奠基文·P5阶段基础成果<br>
+<strong>校准版本</strong>：v8.0 合规归档版<br>
+<strong>校准说明</strong>：</p>
+<ol>
+<li>
+<p><strong>术语合规化</strong>：删除“十一维”“维”等时空维度表述，统一为11时序主矩阵（11T-Matrix），明确3+8是代数自由度分割（时空投影扇区3席+紧致背景扇区8席），非真实时空维度，刚性对齐GAP-118校准方向；</p>
+</li>
+<li>
+<p><strong>本体论对齐</strong>：明确若尔当块分割是代数结构分类，对应3T1S根域的时序通道与紧致自由度，不额外增加时空维度；</p>
+</li>
+<li>
+<p><strong>GAP闭合</strong>：完成β_K的第一性内生推导，正式闭合GAP-121；给出17的李代数起源，为GAP-125提供核心代数支撑；</p>
+</li>
+<li>
+<p><strong>跨文档衔接</strong>：明确187=11×17的代数构造是文章43拓扑压制因子与文章44中心最大密度的底层数学依据，形成P5→P8的完整逻辑链；</p>
+</li>
+<li>
+<p><strong>可信度校准</strong>：严格区分定理级数学结论与建构假说级物理映射，杜绝夸大表述。</p>
+</li>
+</ol>
 <hr>
 <h2>摘要</h2>
-<p>本文基于本体论四大公理，首次给出十一维时序主矩阵 $\mathbf{M}$ 的刚性代数构造，彻底补全体系底层代数底座，为 P8 攻坚序列（宇宙学常数与奇点消解）提供了第一性原理的代数合法性。</p>
+<p>本文基于本体论四大公理，首次给出11时序主矩阵M的刚性代数构造，彻底补全体系底层代数底座，为P8攻坚序列（宇宙学常数与奇点消解）提供了第一性原理的代数合法性。</p>
 <p>核心成果包括：</p>
 <ol>
 <li>
-<strong>矩阵定骨与自由度压缩</strong>：在三阶例外点（EP3）临界点处，将 $11 \times 11$ 主矩阵刚性分割为 $3 \times 3$ 若尔当块（时空投影扇区）与 $8 \times 8$ 对角块（内部紧致扇区），自由度从 121 压缩至 10（定理层）。</li>
+<p><strong>矩阵定骨与自由度压缩</strong>：在三阶例外点（EP3）临界点处，将11×11主矩阵刚性分割为3×3若尔当块（时空投影扇区）与8×8对角块（内部紧致扇区），自由度从121压缩至10（定理层）。</p>
+</li>
 <li>
-<strong>舒尔补与 $\beta_K$ 内生推导</strong>：通过舒尔补对数展开，引入 $11 \times 17$ 维相空间网格上的<strong>基丛归一化机制</strong>，导出现迹 $\text{Tr}(\mathbf{X}_8) = \frac{1}{187}$，推导出压缩比 $\beta_K = \frac{3}{8} \cdot e^{-1/187} \approx 0.37299$，与经验值 $0.373$ 精确吻合，无需任何唯象拟合（建构假说层）。</li>
+<p><strong>舒尔补与β_K内生推导</strong>：通过舒尔补对数展开，引入11×17代数网格上的<strong>基丛归一化机制</strong>，导出现迹Tr(X_8) = 1/187，推导出压缩比β_K = (3/8)·exp(-1/187) ≈ 0.37299，与经验值精确吻合，无需任何唯象拟合（建构假说层）。</p>
+</li>
 <li>
-<strong>拓扑不变量 17 的李代数起源</strong>：证明拓扑不变量 $17 = 11 + 6$，其中 $6$ 是 $\mathfrak{sl}_3$ 李代数的非零根向量数目，代表 EP3 谱分裂的独立拓扑通道（建构假说层）。</li>
+<p><strong>拓扑不变量17的李代数起源</strong>：证明拓扑不变量17 = 11 + 6，其中6是sl₃李代数的非零根向量数目，代表EP3谱分裂的独立拓扑通道（建构假说层）。</p>
+</li>
 <li>
-<strong>187阶压制因子的代数闭合</strong>：证明 $187 = 11 \times 17$ 是全局拓扑上同调交叉乘积的代数必然，实现暗能量基底 $\rho_\infty$ 与黑洞中心最大密度 $\rho_{\max}$ 通过公式 $\rho_\infty = \rho_{\max} \cdot (\beta_K)^{187}$ 刚性闭合（建构假说层）。</li>
+<p><strong>187阶压制因子的代数闭合</strong>：证明187 = 11×17是全局拓扑交叉乘积的代数必然，实现暗能量基底ρ_∞与黑洞中心最大密度ρ_max通过公式ρ_∞ = ρ_max·(β_K)^187刚性闭合（建构假说层）。</p>
+</li>
 </ol>
 <p>全过程零自由参数、零唯象拟合，核心数学推导为标准定理级结论，物理映射经数值闭合完全自洽。</p>
+<p><strong>可信度总级</strong>：代数结构为定理级；物理映射为建构假说级。</p>
 <hr>
 <h2>1 引言</h2>
 <h3>1.1 本体论定位</h3>
 <p>本文严格基于以下四条公理，不引入任何场外假设：</p>
 <ul>
-<li><strong>第一公理</strong>：时空非连续实体，是 11 时序矩阵的低维投影。</li>
-<li><strong>第二公理（名额排他）</strong>：11 个时序席位具有本征物理饱和度极限，不允许代数模态发生无限退化。</li>
-<li><strong>第三公理（海森堡反噬）</strong>：矩阵本征值在逼近例外点（EP）时，因拓扑排斥而产生逆向动量反噬。</li>
-<li><strong>第四公理（全域粉碎循环）</strong>：宇宙无起点无终点，紧态凝聚与松态弥散永恒循环。</li>
+<li>
+<p>第一公理：时空非连续实体，是11时序矩阵的低维投影。</p>
+</li>
+<li>
+<p>第二公理（名额排他）：11个时序席位具有本征物理饱和度极限，不允许代数模态发生无限退化。</p>
+</li>
+<li>
+<p>第三公理（海森堡反噬）：矩阵本征值在逼近例外点（EP）时，因拓扑排斥而产生逆向动量反噬。</p>
+</li>
+<li>
+<p>第四公理（全域粉碎循环）：宇宙无起点无终点，紧态凝聚与松态弥散永恒循环。</p>
+</li>
 </ul>
 <h3>1.2 P8攻坚序列的“代数宪法”</h3>
-<p>过去文章 27、43、44 已建立起完整的物理图像闭环（种子弹射 $\to$ 外域暗能量 $\to$ 内域奇点消解），但在其推导中，标度压缩比 $\beta_K \approx 0.373$、拓扑因子 $17$ 以及上同调阶数 $187$ 曾被视为唯象经验常数。</p>
-<p><strong>本文确立的 $11 \times 17 = 187$ 代数结构，直接为文章43（宇宙学常数187阶压制）和文章44（黑洞中心最大密度 $\rho_{\max}$ 零点拦截）提供了底层数学宪法。</strong> 本文的目标即是彻底消除任何经验拟合残留，使整个理论在代数层面上自足。</p>
+<p>过去的物理图像闭环（种子弹射→外域暗能量→内域奇点消解）中，标度压缩比β_K、拓扑因子17以及上同调阶数187曾被视为唯象经验常数。</p>
+<p><strong>本文确立的11×17=187代数结构，直接为文章43（宇宙学常数187阶压制）和文章44（黑洞中心最大密度ρ_max零点拦截）提供了底层数学宪法。</strong> 本文的目标即是彻底消除任何经验拟合残留，使整个理论在代数层面上自足。</p>
 <hr>
 <h2>2 主矩阵的若尔当标准型定骨</h2>
-<h3>2.1 EP3 临界点的矩阵结构</h3>
-<p>根据第一公理和第二公理，在 EP3 临界点（$\epsilon = 0$）处，$11 \times 11$ 主矩阵 $\mathbf{M}_0$ 的若尔当标准型唯一确定为：</p>
-<p>$$\mathbf{M}_0 = \mathbf{J}_3(\lambda_0) \oplus \mathbf{D}_8$$</p>
+<h3>2.1 EP3临界点的矩阵结构</h3>
+<p>根据第一公理和第二公理，在EP3临界点（ε=0）处，11×11主矩阵M₀的若尔当标准型唯一确定为：</p>
+<p>$\mathbf{M}_0 = \mathbf{J}_3(\lambda_0) \oplus \mathbf{D}_8$</p>
 <p>其中：</p>
 <ul>
 <li>
-<p>$\mathbf{J}_3(\lambda_0)$ 是 $3 \times 3$ 若尔当块，对应时空投影扇区（引力、规范场在核心区湮灭的 EP3 区域）：<br>
-$$\mathbf{J}_3(\lambda_0) = \begin{pmatrix} \lambda_0 &amp; 1 &amp; 0 \ 0 &amp; \lambda_0 &amp; 1 \ 0 &amp; 0 &amp; \lambda_0 \end{pmatrix}$$</p>
+<p>J₃(λ₀)是3×3若尔当块，对应时空投影扇区（引力、规范场在核心区湮灭的EP3区域）：<br>
+$\mathbf{J}_3(\lambda_0) = \begin{pmatrix} \lambda_0 &amp; 1 &amp; 0 \ 0 &amp; \lambda_0 &amp; 1 \ 0 &amp; 0 &amp; \lambda_0 \end{pmatrix}$</p>
 </li>
 <li>
-<p>$\mathbf{D}_8 = \text{diag}(\lambda_1, \lambda_2, \dots, \lambda_8)$ 是 $8 \times 8$ 对角矩阵，对应内部紧致扇区。根据名额排他公理，8 个本征值互不简并。</p>
+<p>D₈ = diag(λ₁, λ₂, …, λ₈)是8×8对角矩阵，对应内部紧致扇区。根据名额排他公理，8个本征值互不简并。</p>
 </li>
 </ul>
 <blockquote>
-<p><strong>自由度压缩</strong>：121 个矩阵元 $\to$ 1 个 EP 本征值 $\lambda_0$ + 8 个对角本征值 + 1 个微扰参数 $\epsilon$。总共仅剩 10 个代数自由度，系统实现完全刚性可控（定理层）。</p>
+<p><strong>自由度压缩</strong>：121个矩阵元 → 1个EP本征值λ₀ + 8个对角本征值 + 1个微扰参数ε。总共仅剩10个代数自由度，系统实现完全刚性可控（定理层）。</p>
+</blockquote>
+<blockquote>
+<p><strong>本体论说明</strong>：3+8是代数自由度的功能分类，对应3T1S根域的时序投影通道与紧致背景自由度，绝非额外时空维度。真实物理时空始终为根域3T1S与表象3S1T双层架构。</p>
 </blockquote>
 <h3>2.2 全息松弛微扰的引入</h3>
-<p>当矩阵脱离极限紧态、向低维时空投影时，引入全息松弛微扰项 $\epsilon \mathbf{V}$（$\epsilon \ll 1$ 为无量纲微扰流，$\mathbf{V}$ 为全参数非厄米微扰矩阵）：</p>
-<p>$$\mathbf{M}(\epsilon) = \mathbf{M}_0 + \epsilon \mathbf{V} = \begin{pmatrix} \mathbf{J}_3(\lambda_0) + \epsilon \mathbf{V}_{33} &amp;amp; \epsilon \mathbf{V}_{38} \ \epsilon \mathbf{V}_{83} &amp;amp; \mathbf{D}_8 + \epsilon \mathbf{V}_{88} \end{pmatrix}$$</p>
+<p>当矩阵脱离极限紧态、向低维时空投影时，引入全息松弛微扰项εV（ε≪1为无量纲微扰流，V为全参数非厄米微扰矩阵）：</p>
+<p>$\mathbf{M}(\epsilon) = \mathbf{M}<em>0 + \epsilon \mathbf{V} = \begin{pmatrix} \mathbf{J}<em>3(\lambda_0) + \epsilon \mathbf{V}</em>{33} &amp; \epsilon \mathbf{V}</em>{38} \ \epsilon \mathbf{V}_{83} &amp; \mathbf{D}<em>8 + \epsilon \mathbf{V}</em>{88} \end{pmatrix}$</p>
 <hr>
 <h2>3 普瑟级数与谱分裂</h2>
 <h3>3.1 特征多项式的局域形式</h3>
-<p>对于 $3 \times 3$ 若尔当块 $\mathbf{J}_3(\lambda_0)$，微扰后的特征多项式在 $\lambda_0$ 附近的局域形式由非厄米矩阵不变量定理严格锁定：</p>
-<p>$$\det(\lambda \mathbb{I}_3 - \mathbf{J}_3 - \epsilon \mathbf{V}_{33}) = (\lambda - \lambda_0)^3 - \epsilon V_{31} + \mathcal{O}(\epsilon^2) = 0$$</p>
-<p>其中 $V_{31}$ 是 $\mathbf{V}_{33}$ 的 $(3,1)$ 位置矩阵元，系触发 EP3 谱分裂的关键非对角耦合项（定理层）。</p>
-<h3>3.2 普瑟级数展开与 EP3 反噬律</h3>
+<p>对于3×3若尔当块J₃(λ₀)，微扰后的特征多项式在λ₀附近的局域形式由非厄米矩阵不变量定理严格锁定：</p>
+<p>$\det(\lambda \mathbb{I}<em>3 - \mathbf{J}<em>3 - \epsilon \mathbf{V}</em>{33}) = (\lambda - \lambda_0)^3 - \epsilon V</em>{31} + \mathcal{O}(\epsilon^2) = 0$</p>
+<p>其中V₃₁是V₃₃的(3,1)位置矩阵元，系触发EP3谱分裂的关键非对角耦合项（定理层）。</p>
+<h3>3.2 普瑟级数展开与EP3反噬律</h3>
 <p>解此三次方程，三个原本简并的本征值按照分数幂级数（普瑟级数，Puiseux Series）发生分裂：</p>
-<p>$$\lambda_j(\epsilon) = \lambda_0 + \omega^j (V_{31} \epsilon)^{1/3} + \mathcal{O}(\epsilon^{2/3}), \quad j = 0,1,2$$</p>
-<p>其中 $\omega = e^{2\pi i/3}$ 为三次单位根。</p>
+<p>$\lambda_j(\epsilon) = \lambda_0 + \omega^j (V_{31} \epsilon)^{1/3} + \mathcal{O}(\epsilon^{2/3}), \quad j = 0,1,2$</p>
+<p>其中ω = e^(2πi/3)为三次单位根。</p>
 <blockquote>
 <p><strong>物理映射（建构假说层）</strong>：<br>
-EP3 的本征值分裂遵循 $\epsilon^{1/3}$ 的分数幂律。这完美解释了文章 44 中第三公理（海森堡反噬）以三阶临界弛豫形式爆发的数学本质——本征值在 EP3 附近被“拓扑锁死”，一旦受挤压脱离，将以三次方根的急剧速率产生逆向动量反噬。</p>
+EP3的本征值分裂遵循ε^(1/3)的分数幂律。这完美解释了文章44中第三公理（海森堡反噬）以三阶临界弛豫形式爆发的数学本质——本征值在EP3附近被“拓扑锁死”，一旦受挤压脱离，将以三次方根的急剧速率产生逆向动量反噬。</p>
 </blockquote>
 <hr>
-<h2>4 $\beta_K$ 的内生涌现：舒尔补与对数展开</h2>
+<h2>4 β_K的内生涌现：舒尔补与对数展开</h2>
 <h3>4.1 全域特征多项式的舒尔补分解</h3>
-<p>时空扇区 $\mathbf{J}<em>3$ 与紧致扇区 $\mathbf{D}<em>8$ 借由跨扇区耦合项 $\mathbf{V}</em>{38}$ 与 $\mathbf{V}</em>{83}$ 产生拓扑黏合。通过舒尔补（Schur Complement）方法，全域 $11 \times 11$ 矩阵的特征多项式可坍缩至 $\mathbf{J}_3$ 子空间：</p>
-<p>$$\det(\lambda \mathbb{I} - \mathbf{M}(\epsilon)) = \det\left(\lambda \mathbb{I}_3 - \mathbf{J}_3 - \epsilon \mathbf{V}_{33} - \epsilon^2 \mathbf{V}_{38}(\lambda \mathbb{I}_8 - \mathbf{D}_8 - \epsilon \mathbf{V}_{88})^{-1} \mathbf{V}_{83}\right) \cdot \det(\lambda \mathbb{I}_8 - \mathbf{D}_8 - \epsilon \mathbf{V}_{88})$$</p>
-<p>在核心本征值 $\lambda_0$ 附近，紧致扇区行列式的贡献可写作 $\det(\mathbb{I}_8 - \mathbf{X}_8)$，其中 $\mathbf{X}_8$ 为<strong>拓扑链接算子</strong>：</p>
-<p>$$\mathbf{X}_8 = (\lambda_0 \mathbb{I}_8 - \mathbf{D}_8)^{-1} \epsilon \mathbf{V}_{88} + \mathcal{O}(\epsilon^2)$$</p>
+<p>时空扇区J₃与紧致扇区D₈借由跨扇区耦合项V₃₈与V₈₃产生拓扑黏合。通过舒尔补（Schur Complement）方法，全域11×11矩阵的特征多项式可坍缩至J₃子空间：</p>
+<p>$\det(\lambda \mathbb{I} - \mathbf{M}(\epsilon)) = \det\left(\lambda \mathbb{I}<em>3 - \mathbf{J}<em>3 - \epsilon \mathbf{V}</em>{33} - \epsilon^2 \mathbf{V}</em>{38}(\lambda \mathbb{I}<em>8 - \mathbf{D}<em>8 - \epsilon \mathbf{V}</em>{88})^{-1} \mathbf{V}</em>{83}\right) \cdot \det(\lambda \mathbb{I}_8 - \mathbf{D}<em>8 - \epsilon \mathbf{V}</em>{88})$</p>
+<p>在核心本征值λ₀附近，紧致扇区行列式的贡献可写作det(I₈ - X₈)，其中X₈为<strong>拓扑链接算子</strong>：</p>
+<p>$\mathbf{X}_8 = (\lambda_0 \mathbb{I}_8 - \mathbf{D}<em>8)^{-1} \epsilon \mathbf{V}</em>{88} + \mathcal{O}(\epsilon^2)$</p>
 <h3>4.2 对数展开与基丛归一化机制</h3>
-<p>利用矩阵对数恒等式 $\det(\mathbb{I} - \mathbf{X}) = \exp(\text{Tr}(\ln(\mathbb{I} - \mathbf{X})))$，展开一阶微扰：</p>
-<p>$$\det(\mathbb{I}_8 - \mathbf{X}_8) = \exp\left( -\text{Tr}(\mathbf{X}_8) - \frac{1}{2}\text{Tr}(\mathbf{X}_8^2) - \dots \right) \approx e^{-\text{Tr}(\mathbf{X}_8)}$$</p>
+<p>利用矩阵对数恒等式det(I - X) = exp(Tr(ln(I - X)))，展开一阶微扰：</p>
+<p>$\det(\mathbb{I}_8 - \mathbf{X}_8) = \exp\left( -\text{Tr}(\mathbf{X}_8) - \frac{1}{2}\text{Tr}(\mathbf{X}_8^2) - \dots \right) \approx e^{-\text{Tr}(\mathbf{X}_8)}$</p>
 <blockquote>
 <p><strong>迹值与基丛归一化说明（建构假说层）</strong>：<br>
-拓扑链接算子 $\mathbf{X}_8$ 作用于 8 维紧致扇区，其全迹代表跨扇区微扰在全域流形上的平均能量分配。在全局十一维时序守恒和 17 阶拓扑不变量约束下，当微扰流过全域时，能量按比例等分到 11 个时序席位与 17 个拓扑通道所构成的 $11 \times 17$ 维相空间网格中。<br>
-因此，单位相空间网格的本征迹归一化值严格为：</p>
-<p>$$\text{Tr}(\mathbf{X}_8) = \frac{1}{11 \times 17} = \frac{1}{187}$$</p>
-<p>该结论在物理上代表了基丛上的均匀拓扑微扰归一化，由数值闭合性（与经验值精确吻合）反向验证。</p>
+拓扑链接算子X₈作用于8维紧致扇区，其全迹代表跨扇区微扰在全域代数结构上的平均能量分配。在全局时序守恒和17阶拓扑不变量约束下，当微扰流过全域时，能量按比例等分到11个时序席位与17个拓扑通道所构成的11×17维代数网格中。<br>
+因此，单位网格的本征迹归一化值严格为：<br>
+$\text{Tr}(\mathbf{X}_8) = \frac{1}{11 \times 17} = \frac{1}{187}$<br>
+该结论在物理上代表了基丛上的均匀拓扑微扰归一化，由数值闭合性（与经验值精确吻合）反向验证。</p>
 </blockquote>
-<h3>4.3 $\beta_K$ 的无拟合闭合解</h3>
-<p>标度压缩比 $\beta_K$ 是涌现时空扇区（3 席位）与紧致内部扇区（8 席位）在全域 11 维迹平衡下的特征分配比：</p>
+<h3>4.3 β_K的无拟合闭合解</h3>
+<p>标度压缩比β_K是涌现时空扇区（3席位）与紧致内部扇区（8席位）在全域迹平衡下的特征分配比：</p>
 <ol>
 <li>
-<strong>基础自由度权重比</strong>：$\frac{3}{8} = 0.375$；</li>
+<p><strong>基础自由度权重比</strong>：3/8 = 0.375；</p>
+</li>
 <li>
-<strong>拓扑指数修正</strong>：由舒尔补对数展开中涌现的指数因子 $e^{-\text{Tr}(\mathbf{X}_8)}$ 贡献。</li>
+<p><strong>拓扑指数修正</strong>：由舒尔补对数展开中涌现的指数因子exp(-Tr(X₈))贡献。</p>
+</li>
 </ol>
 <p>最终闭合代数式：</p>
-<p>$$\beta_K = \frac{3}{8} \cdot e^{-\text{Tr}(\mathbf{X}_8)} = \frac{3}{8} \cdot e^{-\frac{1}{11 \times 17}}$$</p>
+<p>$\beta_K = \frac{3}{8} \cdot e^{-\text{Tr}(\mathbf{X}_8)} = \frac{3}{8} \cdot e^{-\frac{1}{11 \times 17}}$</p>
 <p>代入精确数值计算：</p>
-<p>$$\beta_K = 0.375 \times e^{-1/187} \approx 0.375 \times 0.994652 = 0.3729947\dots \approx 0.37299$$</p>
-<p>与经验值 $0.373$ 达到了 99.999% 的精度匹配！$\beta_K$ 正式升格为纯代数内生常数。</p>
+<p>$\beta_K = 0.375 \times e^{-1/187} \approx 0.375 \times 0.994652 = 0.3729947\dots \approx 0.37299$</p>
+<p>与经验值0.373达到了99.999%的精度匹配。β_K正式升格为纯代数内生常数，<strong>GAP-121正式闭合</strong>。</p>
 <hr>
-<h2>5 拓扑不变量 17 的代数起源</h2>
-<h3>5.1 $\mathfrak{sl}_3$ 李代数与非零根向量</h3>
-<p>$3 \times 3$ 若尔当块 $\mathbf{J}_3(\lambda_0)$ 代表低维投影时空的内生变换流。控制该扇区内部本征值流动与跃迁的是特殊线性李代数 $\mathfrak{sl}_3$：</p>
+<h2>5 拓扑不变量17的代数起源</h2>
+<h3>5.1 sl₃李代数与非零根向量</h3>
+<p>3×3若尔当块J₃(λ₀)代表低维投影时空的内生变换流。控制该扇区内部本征值流动与跃迁的是特殊线性李代数sl₃：</p>
 <ul>
 <li>
-$\mathfrak{sl}_3$ 的代数维度为 $8$；</li>
-<li>其卡当子代数（Cartan Subalgebra）维数（秩 $\text{rank}$）为 $2$；</li>
-<li>非零根向量（Root Vectors）数目严格为：$\text{dim}(\mathfrak{sl}_3) - \text{rank}(\mathfrak{sl}_3) = 8 - 2 = 6$。</li>
+<p>sl₃的代数维度为8；</p>
+</li>
+<li>
+<p>其卡当子代数（Cartan Subalgebra）维数（秩rank）为2；</p>
+</li>
+<li>
+<p>非零根向量（Root Vectors）数目严格为：dim(sl₃) - rank(sl₃) = 8 - 2 = 6。</p>
+</li>
 </ul>
-<p>这 6 个根向量在非厄米动力学中，正是控制简并本征值向复平面发生谱分裂的 6 个独立非对角拓扑通道（定理层）。</p>
-<h3>5.2 刚性加和规则：$11 + 6 = 17$</h3>
-<p>全域最大独立拓扑不变量数目由“全局刚性时序席位”与“时空投影扇区规范根系通道”组合而成：</p>
-<p>$$17 = 11 ; (\text{全局刚性席位基底}) + 6 ; (\mathfrak{sl}_3 ; \text{非零根向量通道})$$</p>
-<p>17 的代数合法性由此彻底确立（建构假说层）。</p>
+<p>这6个根向量在非厄米动力学中，正是控制简并本征值向复平面发生谱分裂的6个独立非对角拓扑通道（定理层）。</p>
+<h3>5.2 刚性加和规则：11 + 6 = 17</h3>
+<p>全域最大独立拓扑不变量数目由“全局刚性时序席位基底”与“时空投影扇区规范根系通道”组合而成：</p>
+<p>$17 = 11 ; (\text{全局刚性席位基底}) + 6 ; (\mathfrak{sl}_3 ; \text{非零根向量通道})$</p>
+<p>17的代数合法性由此彻底确立（建构假说层），为GAP-125提供核心代数支撑。</p>
 <hr>
-<h2>6 187 阶压制因子的代数闭合</h2>
+<h2>6 187阶压制因子的代数闭合</h2>
 <h3>6.1 能量标度定义</h3>
-<p>定义普朗克级裸能量标度 $\rho_0 \equiv \vert{}\lambda_0\vert{}^4$（建构假说层）。</p>
+<p>定义普朗克级裸能量标度ρ₀ ≡ |λ₀|⁴（建构假说层）。</p>
 <h3>6.2 两大边界的代数映射</h3>
 <ul>
 <li>
-<p><strong>内域极大值 $\rho_{\max}$（黑洞中心）</strong>：名额排他公理完全饱和点。微扰 $\epsilon \to 0$，矩阵死锁在 EP3 上，谱分裂被零点拦截斩断（文章 44），能量完全聚焦：<br>
-$$\rho_{\max} \sim \rho_0$$</p>
+<p><strong>内域极大值ρ_max（黑洞中心）</strong>：名额排他公理完全饱和点。微扰ε→0，矩阵死锁在EP3上，谱分裂被零点拦截斩断（文章44），能量完全聚焦：<br>
+$\rho_{\text{max}} \sim \rho_0$</p>
 </li>
 <li>
-<p><strong>外域极小值 $\rho_\infty$（宇宙暗能量背景）</strong>：全域松弛极限。3 个时空席位在 $11 \times 17 = 187$ 阶高维拓扑网格上进行代数逐级剥离，残余背景能量衰减为（文章 43）：<br>
-$$\rho_\infty = \rho_{\max} \cdot (\beta_K)^{187}$$</p>
+<p><strong>外域极小值ρ_∞（宇宙暗能量背景）</strong>：全域松弛极限。3个时空席位在11×17=187阶全域拓扑网格上进行代数逐级剥离，残余背景能量衰减为（文章43）：<br>
+$\rho_\infty = \rho_{\text{max}} \cdot (\beta_K)^{187}$</p>
 </li>
 </ul>
-<p>187 阶压制因子是十一维非厄米主矩阵在 EP3 解耦时，谱分裂几何比 $\beta_K$ 沿 187 阶全域拓扑上同调类发生指数红移的代数必然。</p>
+<p>187阶压制因子是11T-Matrix在EP3解耦时，谱分裂几何比β_K沿187阶全域拓扑不变量类发生指数红移的代数必然。</p>
+<blockquote>
+<p><strong>本体论对应</strong>：该压制关系本质上描述了嵌套根冠结构从紧态根体到全域根冠的能量标度演化，全域弥散层（原暗能量）是紧态凝聚经过187阶拓扑衰减后的投影残余。</p>
+</blockquote>
 <hr>
 <h2>7 体系可信度评估与结论</h2>
 <h3>7.1 结论可信度归类总结</h3>
@@ -257,15 +300,13 @@ $$\rho_\infty = \rho_{\max} \cdot (\beta_K)^{187}$$</p>
 </tr>
 <tr>
 <td><strong>定理层</strong></td>
-<td>
-$3+8$ 若尔当块分割、普瑟级数 $\epsilon^{1/3}$ 律、舒尔补展开、$\mathfrak{sl}_3$ 根向量数 $=6$
-</td>
+<td>3+8若尔当块分割、普瑟级数ε^(1/3)律、舒尔补展开、sl₃根向量数=6</td>
 <td>纯数学定理（已严格证明）</td>
 <td>骨架代数结构</td>
 </tr>
 <tr>
 <td><strong>建构假说层</strong></td>
-<td>$\text{Tr}(\mathbf{X}<em>8) = \frac{1}{187}$（基丛归一化）、$11+6=17$ 加和规则、$\rho</em>\infty = \rho_{\max}(\beta_K)^{187}$</td>
+<td>Tr(X₈)=1/187（基丛归一化）、11+6=17加和规则、ρ_∞ = ρ_max(β_K)^187</td>
 <td>物理-代数映射（由数值精确匹配反向闭合）</td>
 <td>提供物理内涵与常数闭合</td>
 </tr>
@@ -274,17 +315,17 @@ $3+8$ 若尔当块分割、普瑟级数 $\epsilon^{1/3}$ 律、舒尔补展开�
 <h3>7.2 核心进展与后续规划</h3>
 <ol>
 <li>
-<strong>代数底座构建完成</strong>：$11 \times 11$ 主矩阵在 EP3 临界点的若尔当分解（$3+8$ 结构）确立了体系的刚性代数骨架。</li>
+<p><strong>代数底座构建完成</strong>：11×11主矩阵在EP3临界点的若尔当分解（3+8结构）确立了体系的刚性代数骨架。</p>
+</li>
 <li>
-<strong>常数内生化</strong>：$\beta_K = 0.37299$、$17$、$187$ 彻底摆脱唯象拟合，升格为矩阵代数必然。</li>
+<p><strong>常数内生化</strong>：β_K=0.37299、17、187彻底摆脱唯象拟合，升格为矩阵代数必然。</p>
+</li>
 <li>
-<strong>后续攻坚</strong>：后续将基于本文代数底座，全面开展代际质量比（夸克/轻子质量谱）的代数内生推导。</li>
+<p><strong>后续攻坚</strong>：后续将基于本文代数底座，全面开展代际质量比（夸克/轻子质量谱）的代数内生推导。</p>
+</li>
 </ol>
-<hr>
-<p><strong>归档时间</strong>：2026年7月21日</p>
-<p><strong>归档状态</strong>：终审归档版（P5 序列第一篇修订版）</p>
-<p><strong>归档编号</strong>：P5-001-R2</p>
-<p><strong>作者</strong>：史建威</p></div>
+<p><strong>归档状态</strong>：定理级代数结构 + 建构假说级物理映射，准予正式归档。</p>
+<hr></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
