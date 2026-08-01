@@ -81,7 +81,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p><strong>作者：史建威</strong>。本文为P3阶段第五篇（文章25），由元宝Ai辅助整理与润色。</p>
 <hr>
 <h2>摘要</h2>
-<p>本文对P3阶段文章21-24构建的11时序矩阵几何框架进行全体系自洽审计与实验联合约束检验。审计覆盖规范群结构、电弱破缺机制、费米子质量谱与味混合、拓扑散射振幅四大模块，共计47项可检验预言。联合约束结果显示：45项预言与实验值在 $3\sigma$ 内吻合，2项存在 $&amp;gt;3\sigma$ 偏差（电子质量 $199\sigma$ 需QED辐射修正，PMNS $\theta_{13}^l$ 偏差 $3.3\sigma$ 需后续评估）。全体系参数封闭性核验确认：所有预言均由P2阶段锁定的 $\Lambda_{\text{UV}}$、$\eta$、$\xi_i$、$\kappa_{ij}$ 四个核心参数唯一决定，<strong>相对于P2前序文章无新增自由参数</strong>。基于审计结果，给出P3阶段整体结论与后续路线图。</p>
+<p>本文对P3阶段文章21-24构建的11时序矩阵几何框架进行全体系自洽审计与实验联合约束检验。审计覆盖规范群结构、电弱破缺机制、费米子质量谱与味混合、拓扑散射振幅四大模块，共计47项可检验预言。联合约束结果显示：45项预言与实验值在 $3\sigma$ 内吻合，2项存在 $&amp;gt;3\sigma$ 偏差（电子质量 $199\sigma$ 需QED辐射修正，PMNS $\theta_{13}^l$ 偏差 $3.3\sigma$ 需后续评估）。全体系参数封闭性核验确认：所有预言均由P2阶段锁定的 $\Lambda_{\text{UV}}$、$\eta$、$S_i$、$\kappa_{ij}$ 四个核心参数唯一决定，<strong>相对于P2前序文章无新增自由参数</strong>。基于审计结果，给出P3阶段整体结论与后续路线图。</p>
 <p><strong>关键词</strong>：全体系审计；联合约束；零参数预言；自洽性；P3收官</p>
 <hr>
 <h2>1 引言</h2>
@@ -588,10 +588,10 @@ $+3.3\sigma$ 🟡</td>
 <td align="left">中介层归一化因子</td>
 </tr>
 <tr>
-<td align="left">$\xi_1:\xi_2:\xi_3$</td>
+<td align="left">$S_1:S_2:S_3$</td>
 <td align="left">$0.724:0.151:0.126$</td>
 <td align="left">文章16</td>
-<td align="left">通道分配因子比例</td>
+<td align="left">通道投影权重比例</td>
 </tr>
 <tr>
 <td align="left">$\kappa_{12}:\kappa_{23}:\kappa_{13}$</td>
@@ -614,22 +614,22 @@ $+3.3\sigma$ 🟡</td>
 <tbody>
 <tr>
 <td align="left">A. 规范群结构</td>
-<td align="left">$\Lambda_{\text{UV}}, \eta, \xi_i, \kappa_{ij}$</td>
+<td align="left">$\Lambda_{\text{UV}}, \eta, S_i, \kappa_{ij}$</td>
 <td align="left">❌ 否</td>
 </tr>
 <tr>
 <td align="left">B. 电弱破缺</td>
-<td align="left">$\Lambda_{\text{UV}}, \eta, \xi_i, \kappa_{ij}$</td>
+<td align="left">$\Lambda_{\text{UV}}, \eta, S_i, \kappa_{ij}$</td>
 <td align="left">❌ 否（$\lambda_c$ 由稳定点条件唯一确定）</td>
 </tr>
 <tr>
 <td align="left">C. 费米子质量与味混合</td>
-<td align="left">$\Lambda_{\text{UV}}, \eta, \xi_i, \kappa_{ij}$</td>
+<td align="left">$\Lambda_{\text{UV}}, \eta, S_i, \kappa_{ij}$</td>
 <td align="left">❌ 否（$f_i$ 由EP劈裂规律导出）</td>
 </tr>
 <tr>
 <td align="left">D. 拓扑散射与衰变</td>
-<td align="left">$\Lambda_{\text{UV}}, \eta, \xi_i, \kappa_{ij}$</td>
+<td align="left">$\Lambda_{\text{UV}}, \eta, S_i, \kappa_{ij}$</td>
 <td align="left">❌ 否（挠群结构由EP阶数决定）</td>
 </tr>
 </tbody>
@@ -643,7 +643,7 @@ $\Lambda_{\text{UV}}$：主导质量标度（所有质量预言正比于 $\Lambd
 <li>
 $\eta$：影响电弱破缺能标（$v \propto \eta$）；</li>
 <li>
-$\xi_i$：决定代际质量层级（$m_i \propto \xi_i$）；</li>
+$S_i$：决定代际质量层级（$m_i \propto S_i$）；</li>
 <li>
 $\kappa_{ij}$：决定代际混合与CP相位（混合角 $\propto |\kappa_{ij}|/|\lambda_i-\lambda_j|$）。</li>
 </ul>
@@ -741,7 +741,7 @@ $\kappa_{ij}$：决定代际混合与CP相位（混合角 $\propto |\kappa_{ij}|
 <li>
 <strong>全体系预言汇总</strong>：47项可检验预言中，45项（$95.7%$）与实验值在 $3\sigma$ 内吻合。2项 $&amp;gt;3\sigma$ 偏差（电子质量 $199\sigma$ 需QED辐射修正，PMNS $\theta_{13}^l$ 的 $3.3\sigma$ 需后续评估）均有明确诊断。</li>
 <li>
-<strong>参数封闭性确认</strong>：全部预言由P2锁定的 $\Lambda_{\text{UV}}$、$\eta$、$\xi_i$、$\kappa_{ij}$ 四个核心参数唯一决定，<strong>相对于P2前序文章无新增自由参数</strong>。</li>
+<strong>参数封闭性确认</strong>：全部预言由P2锁定的 $\Lambda_{\text{UV}}$、$\eta$、$S_i$、$\kappa_{ij}$ 四个核心参数唯一决定，<strong>相对于P2前序文章无新增自由参数</strong>。</li>
 <li>
 <strong>P3阶段整体结论</strong>：标准模型的规范群结构、电弱破缺机制、费米子质量谱与味混合、散射振幅与衰变宽度，均可从11时序矩阵的代数结构与拓扑性质几何导出。</li>
 </ol>
@@ -1165,8 +1165,8 @@ $\kappa_{ij}$：决定代际混合与CP相位（混合角 $\propto |\kappa_{ij}|
 <td align="left">文章17</td>
 </tr>
 <tr>
-<td align="left">$\xi_i$</td>
-<td align="left">通道分配因子</td>
+<td align="left">$S_i$</td>
+<td align="left">通道投影权重</td>
 <td align="left">同左</td>
 <td align="left">文章16、18</td>
 </tr>
@@ -1198,16 +1198,16 @@ $\kappa_{ij}$：决定代际混合与CP相位（混合角 $\propto |\kappa_{ij}|
 </table></markdown-accessiblity-table>
 <hr>
 <h2>参考文献</h2>
-<p>[1] 文章16：P2-1 规范耦合反锁与GUT能标预言（已归档）</p>
-<p>[2] 文章17：P2-2 超定检验与参数锁定——电弱精密观测实验验证与11时序矩阵基准定标（已归档）</p>
-<p>[3] 文章18：P2-3 费米子质量谱的拓扑起源——11时序矩阵本征值预言与代际结构（已归档）</p>
-<p>[4] 文章19：P2-4 味混合的拓扑起源——11时序矩阵幺正变换与CKM/PMNS矩阵零参数预言（已归档）</p>
-<p>[5] 文章20：P2-5 暗物质与暗能量的唯象冗余性论证——11时序矩阵的双角度闭合分析（已归档）</p>
-<p>[6] 文章21：P3-1 标准模型规范群结构的几何导出（已归档）</p>
-<p>[7] 文章22：P3-2 电弱对称破缺与希格斯机制的几何诠释（已归档）</p>
-<p>[8] 文章23：P3-3 非厄米机制下费米子质量与味混合生成（已归档）</p>
-<p>[9] 文章24：P3-4 拓扑散射振幅与粒子衰变的内禀动力学（已归档）</p>
-<p>[10] Particle Data Group. Review of particle physics. <em>Phys. Rev. D</em>, 2024, 110:030001.</p></div>
+<p>[1] 文章16：P2-1 规范耦合反锁与GUT能标预言（已归档）<br>
+[2] 文章17：P2-2 超定检验与参数锁定——电弱精密观测实验验证与11时序矩阵基准定标（已归档）<br>
+[3] 文章18：P2-3 费米子质量谱的拓扑起源——11时序矩阵本征值预言与代际结构（已归档）<br>
+[4] 文章19：P2-4 味混合的拓扑起源——11时序矩阵幺正变换与CKM/PMNS矩阵零参数预言（已归档）<br>
+[5] 文章20：P2-5 暗物质与暗能量的唯象冗余性论证——11时序矩阵的双角度闭合分析（已归档）<br>
+[6] 文章21：P3-1 标准模型规范群结构的几何导出（已归档）<br>
+[7] 文章22：P3-2 电弱对称破缺与希格斯机制的几何诠释（已归档）<br>
+[8] 文章23：P3-3 非厄米机制下费米子质量与味混合生成（已归档）<br>
+[9] 文章24：P3-4 拓扑散射振幅与粒子衰变的内禀动力学（已归档）<br>
+[10] Particle Data Group. Review of particle physics. <em>Phys. Rev. D</em>, 2024, 110:030001.</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
