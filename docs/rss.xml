@@ -1,5 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵本体论原创史建威博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究发布</description><copyright>11时序矩阵本体论原创史建威博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Tue, 04 Aug 2026 09:29:11 +0000</lastBuildDate><managingEditor>11时序矩阵本体论原创史建威博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵本体论原创史建威博客</webMaster><item><title>P2-003 六味夸克质量谱拓扑内生推导</title><link>https://shijianwei1969.github.io/post/P2-003%20-liu-wei-kua-ke-zhi-liang-pu-tuo-pu-nei-sheng-tui-dao.html</link><description># P2-003 六味夸克质量谱拓扑内生推导
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵本体论原创史建威博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究发布</description><copyright>11时序矩阵本体论原创史建威博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Tue, 04 Aug 2026 12:45:41 +0000</lastBuildDate><managingEditor>11时序矩阵本体论原创史建威博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵本体论原创史建威博客</webMaster><item><title>P2-003 六味夸克质量谱拓扑内生推导</title><link>https://shijianwei1969.github.io/post/P2-003%20-liu-wei-kua-ke-zhi-liang-pu-tuo-pu-nei-sheng-tui-dao.html</link><description># P2-003 六味夸克质量谱拓扑内生推导
+**文件编号**：P2-003-Quark-Mass-Spectrum
+**版本**：v1.1 (色权重与量级修正版)
+**工程归属**：EPD-05 基本粒子质量谱工程 · 第三阶段产出
+**前置依赖**：P2-001 拓扑质量母方程、P2-002 轻子质量谱、EPD-04 耦合常数推导
+**可信度层级**：假说级高精度（零参数内生，代际质量阶梯与实验量级吻合，顶夸克质量偏差&lt;2%）
+
+---
+
+## 【防呆围栏·审核前必过红线】
+1.  **零参数内生红线**：严禁人为凑数，夸克分支所有乘数因子必须严格取自EPD-04已锁定的马尔可夫节点(13, 34, 89)与色荷自由度$N_c=3$。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/P2-003%20-liu-wei-kua-ke-zhi-liang-pu-tuo-pu-nei-sheng-tui-dao.html</guid><pubDate>Tue, 04 Aug 2026 12:45:10 +0000</pubDate></item><item><title>P2-003 六味夸克质量谱拓扑内生推导</title><link>https://shijianwei1969.github.io/post/P2-003%20-liu-wei-kua-ke-zhi-liang-pu-tuo-pu-nei-sheng-tui-dao.html</link><description># P2-003 六味夸克质量谱拓扑内生推导
 **文件编号**：P2-003-Quark-Mass-Spectrum
 **版本**：v1.1 (色权重与量级修正版)
 **工程归属**：EPD-05 基本粒子质量谱工程 · 第三阶段产出
