@@ -457,3 +457,11 @@ NGC1560        27             1.415e+07  0.8179             4.050e+07         1.
 
 ---
 
+<img width="2656" height="2055" alt="Image" src="https://github.com/user-attachments/assets/0bd23062-b5a5-4d1f-8245-72d44d9dd150" />
+
+<img width="2680" height="2055" alt="Image" src="https://github.com/user-attachments/assets/a468da77-314c-4519-ab60-23059a38fcb4" />
+
+<img width="2656" height="2055" alt="Image" src="https://github.com/user-attachments/assets/18ae25e1-972a-4339-85e2-0a0f8f7b7887" />
+
+[P10-002_Batch_Summary.csv](https://github.com/user-attachments/files/30773357/P10-002_Batch_Summary.csv)
+
