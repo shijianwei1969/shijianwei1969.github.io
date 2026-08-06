@@ -1,5 +1,45 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵本体论原创史建威博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究发布</description><copyright>11时序矩阵本体论原创史建威博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Thu, 06 Aug 2026 02:26:46 +0000</lastBuildDate><managingEditor>11时序矩阵本体论原创史建威博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵本体论原创史建威博客</webMaster><item><title>11时序矩阵数理基础与经典代数算子映射关系简表</title><link>https://shijianwei1969.github.io/post/11-shi-xu-ju-zhen-shu-li-ji-chu-yu-jing-dian-dai-shu-suan-zi-ying-she-guan-xi-jian-biao.html</link><description>这份《11时序矩阵数理基础与经典代数算子映射关系简表》旨在明确 3T1S 离散根域算子向 3S1T 连续表象流形算子的退化与映射规则，向数学界与物理学界清晰展示：**11T-Matrix 并非否定经典数学，而是将其作为低密、低能域下的粗粒化有效有效近似（Effective Approximation）加以包含。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/11-shi-xu-ju-zhen-shu-li-ji-chu-yu-jing-dian-dai-shu-suan-zi-ying-she-guan-xi-jian-biao.html</guid><pubDate>Thu, 06 Aug 2026 02:26:11 +0000</pubDate></item><item><title>不止是斥力定律：11T\-Matrix全域大一统本体论，必将统领未来物理与数学</title><link>https://shijianwei1969.github.io/post/bu-zhi-shi-chi-li-ding-lv-%EF%BC%9A11T--Matrix-quan-yu-da-yi-tong-ben-ti-lun-%EF%BC%8C-bi-jiang-tong-ling-wei-lai-wu-li-yu-shu-xue.html</link><description># 不止是斥力定律：11T\-Matrix全域大一统本体论，必将统领未来物理与数学
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵本体论原创史建威博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究发布</description><copyright>11时序矩阵本体论原创史建威博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Thu, 06 Aug 2026 05:48:52 +0000</lastBuildDate><managingEditor>11时序矩阵本体论原创史建威博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵本体论原创史建威博客</webMaster><item><title>P10-002：基于11T-Matrix拓扑斥力模型的近邻LSB星系旋转曲线观测验证报告</title><link>https://shijianwei1969.github.io/post/P10-002%EF%BC%9A-ji-yu-11T-Matrix-tuo-pu-chi-li-mo-xing-de-jin-lin-LSB-xing-xi-xuan-zhuan-qu-xian-guan-ce-yan-zheng-bao-gao.html</link><description># P10-002：基于11T-Matrix拓扑斥力模型的近邻LSB星系旋转曲线观测验证报告
+### Title (题目)
+
+**Observation-Based Verification of Rotation Curves in Neighboring LSB Galaxies via the 11T-Matrix Topological Repulsion Model: A Zero-Dark-Matter Benchmark of Three Typical SPARC Galaxies (P10-002)**
+
+---
+
+### Keywords (关键词)
+
+`11T-Matrix Ontology`; `Universal Repulsion`; `Galaxy Rotation Curves`; `Low Surface Brightness (LSB) Galaxies`; `SPARC Database`; `Cusp-Core Problem`; `Topological Scaling Law`; `Zero Dark Matter`
+
+---
+
+### Abstract (摘要)
+
+**Abstract**: This report presents the first-phase observational verification of the P10 engineering project (P10-002 branch) within the $11\text{T-Matrix}$ ontological framework. Based on the truncated effective density profile $\rho_{\text{eff}}(r) = \rho_0 \frac{r_0^2}{r_0^2 + r^2}$ derived from the Law of Root-Domain Repulsive Decay for Compact States (Law-003), a zero-dark-matter quantitative benchmark was conducted on three representative Low Surface Brightness (LSB) dwarf spiral galaxies (NGC1560, DDO154, and UGC128) from the Spitzer Photometry and Accurate Rotation Curves (SPARC) database.
+
+Empirical fitting results demonstrate that under the two-parameter mode ($\text{DoF}=2$), the coefficients of determination across all three galaxies exceed $R^2 &gt; 0.996$ (reaching up to $R^2 = 0.9993$), with reduced chi-squared values $\chi^2_{\text{red}} &lt; 1.02$, indicating residuals well below observational noise levels. Relative $1\sigma$ uncertainties for all fitted parameters are strictly bounded within $3\%$. The derived characteristic cutoff scales $r_0$ ($1.210 \sim 1.765\text{ kpc}$) exhibit a strict monotonic positive correlation with total baryonic mass $M_b$, yielding a power-law exponent of $\sim 0.34$, which quantitatively confirms the theoretical prediction of the topological volume scaling law ($r_0 \propto M_b^{1/3}$). Under the rigid fixed-scale mode ($\text{DoF}=1$, $r_0 = 4.0\text{ kpc}$), the model consistently explains nearly $80\%$ of the rotational kinetic energy distribution.
+
+By naturally producing a cored central density profile ($\rho_{\text{eff}}(0) = \rho_0$), the $11\text{T-Matrix}$ model resolves the long-standing 'cusp-core problem' of the standard $\Lambda\text{CDM}$ cosmological paradigm from first principles without requiring ad-hoc baryonic feedback mechanisms. These findings prove that topological repulsive stress provides a realistic, self-consistent physical mechanism driving the flat rotation curves of galaxies, offering a predictive alternative to dark matter particle hypotheses.
+
+---
+
+
+——首期 3 个 SPARC 典型星系零暗物质对标完整版
+
+&gt; **文档元数据（Zenodo / 学术预印本归档兼容）**
+&gt;
+&gt; * **文档编号**：EPD-03-P10-002-REP01
+&gt; * **工程归属**：11T-Matrix本体论核心定标工程 · P10观测与数理拟合工程
+&gt; * **版本**：v1.1（补全重子质量标度律、卡方统计与参数误差版）
+&gt; * **修订日期**：2026-08-06
+&gt; * **作者**：史建威（山东威海理论物理 EPD-03 工程组总指挥）
+&gt; * **ORCID**：0009-0002-1757-1793
+&gt; * **可信度等级**：一级（包含真实 SPARC 观测数据与 Python 拟合可重复实证）
+
+---
+
+## 摘要
+
+本报告为 11T-Matrix 本体论框架下 P10 工程（P10-002 分支）的首期观测验证成果。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/P10-002%EF%BC%9A-ji-yu-11T-Matrix-tuo-pu-chi-li-mo-xing-de-jin-lin-LSB-xing-xi-xuan-zhuan-qu-xian-guan-ce-yan-zheng-bao-gao.html</guid><pubDate>Thu, 06 Aug 2026 05:48:20 +0000</pubDate></item><item><title>11时序矩阵数理基础与经典代数算子映射关系简表</title><link>https://shijianwei1969.github.io/post/11-shi-xu-ju-zhen-shu-li-ji-chu-yu-jing-dian-dai-shu-suan-zi-ying-she-guan-xi-jian-biao.html</link><description>这份《11时序矩阵数理基础与经典代数算子映射关系简表》旨在明确 3T1S 离散根域算子向 3S1T 连续表象流形算子的退化与映射规则，向数学界与物理学界清晰展示：**11T-Matrix 并非否定经典数学，而是将其作为低密、低能域下的粗粒化有效有效近似（Effective Approximation）加以包含。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/11-shi-xu-ju-zhen-shu-li-ji-chu-yu-jing-dian-dai-shu-suan-zi-ying-she-guan-xi-jian-biao.html</guid><pubDate>Thu, 06 Aug 2026 02:26:11 +0000</pubDate></item><item><title>不止是斥力定律：11T\-Matrix全域大一统本体论，必将统领未来物理与数学</title><link>https://shijianwei1969.github.io/post/bu-zhi-shi-chi-li-ding-lv-%EF%BC%9A11T--Matrix-quan-yu-da-yi-tong-ben-ti-lun-%EF%BC%8C-bi-jiang-tong-ling-wei-lai-wu-li-yu-shu-xue.html</link><description># 不止是斥力定律：11T\-Matrix全域大一统本体论，必将统领未来物理与数学
 
 **作者**：史建威（山东威海理论物理EPD\-03工程组）
 
