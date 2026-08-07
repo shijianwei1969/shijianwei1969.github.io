@@ -1,5 +1,77 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵本体论原创史建威博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究发布</description><copyright>11时序矩阵本体论原创史建威博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Thu, 06 Aug 2026 12:47:11 +0000</lastBuildDate><managingEditor>11时序矩阵本体论原创史建威博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵本体论原创史建威博客</webMaster><item><title>电子的本质是什么？——能量在双时空构型中的单通道拓扑自组织</title><link>https://shijianwei1969.github.io/post/dian-zi-de-ben-zhi-shi-shen-me-%EF%BC%9F%E2%80%94%E2%80%94-neng-liang-zai-shuang-shi-kong-gou-xing-zhong-de-dan-tong-dao-tuo-pu-zi-zu-zhi.html</link><description># 电子的本质是什么？——能量在双时空构型中的单通道拓扑自组织
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵本体论原创史建威博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究发布</description><copyright>11时序矩阵本体论原创史建威博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Fri, 07 Aug 2026 05:32:28 +0000</lastBuildDate><managingEditor>11时序矩阵本体论原创史建威博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵本体论原创史建威博客</webMaster><item><title>体系中的核心专属名词，按学术分类整理为中英文对照表</title><link>https://shijianwei1969.github.io/post/ti-xi-zhong-de-he-xin-zhuan-shu-ming-ci-%EF%BC%8C-an-xue-shu-fen-lei-zheng-li-wei-zhong-ying-wen-dui-zhao-biao.html</link><description>将 **11时序矩阵本体论（11T-Matrix Ontology / 11TMO）** 体系中的核心专属名词，按学术分类整理为中英文对照表：
+
+---
+
+### 一、 核心体系与公理层 (Core Framework &amp; Axiom Layer)
+
+| 中文术语 | Standard English Term | 简写 / 符号 | 备注 / 物理定性 |
+| --- | --- | --- | --- |
+| **11时序矩阵本体论** | 11-Time-Sequence Matrix Ontology | **11TMO / 11T-Matrix** | 全系理论总称 |
+| **净余能量** | Net Residual Energy | $E_{\text{res}}$ | 第一本源，宇宙唯一实在 |
+| **第一本源公理** | First Origin Axiom | - | 能量自有永有，时空为其构型 |
+| **一体两面公理** | Axiom of Dual-Aspect Monism | - | 双态一元论，本体与效应恒常对偶 |
+| **拓扑凝聚度** | Topological Degree of Condensation | $\mathcal{C}_{\text{topo}}$ | 决定能量表现为粒子还是场 [0,1] |
+
+---
+
+### 二、 双时空与根冠映射构型 (Dual-Spacetime &amp; Mapping Architecture)
+
+| 中文术语 | Standard English Term | 简写 / 符号 | 备注 / 物理定性 |
+| --- | --- | --- | --- |
+| **双时空构型** | Dual-Spacetime Configuration | - | 能量存在的固有维度 |
+| **3T1S 根域时空** | 3T1S Root-Domain Spacetime | **3T1S Root Domain** | 三时序一空间（本体层/超定域） |
+| **3S1T 表象时空 / 冠域** | 3S1T Phenomenal Spacetime / Crown Domain | **3S1T Crown Domain** | 三空间一时序（效应层/观测宏观） |
+| **根冠映射** | Root-Crown Mapping | - | 根域本体向冠域表象的恒常投影 |
+| **超定域性** | Superlocality / Hyperlocality | - | 根域本体自带的非局域关联 |
+| **全域张力背景** | Global Stretch Tension Background | $\Sigma$ | 11时序矩阵本征值全局二阶矩 |
+| **一阶投影读数** | First-Order Projection Reading | $c$ | 表象层信息传播极限（光速） |
+| **二阶投影读数** | Second-Order Projection Reading | $G$ | 表象层等效引力强度（引力常数） |
+| **显性表象 / 隐性表象** | Explicit / Implicit Phenomenon | - | 点状可见（粒子）与背景不可见（场） |
+
+---
+
+### 三、 粒子拓扑自组织与物质相 (Particle Topology &amp; Matter Phases)
+
+| 中文术语 | Standard English Term | 简写 / 符号 | 备注 / 物理定性 |
+| --- | --- | --- | --- |
+| **拓扑自组织** | Topological Self-Organization | - | 能量转化为物质的根本机制 |
+| **拓扑缠绕节点** | Topological Winding Node | - | 基本粒子的本体论物理定义 |
+| **缠绕态 / 辐照态** | Winding State / Irradiation State | - | 高凝聚粒子态 / 低凝聚弥散场态 |
+| **单通道拓扑缠绕** | Single-Channel Topological Winding | $n=1$ | 轻子族（电子、$\mu$、$\tau$） |
+| **双通道拓扑缠绕** | Dual-Channel Topological Winding | $n=2$ | 夸克族（$u, d, s, c, b, t$） |
+| **三通道拓扑缠绕** | Triple-Channel Topological Winding | $n=3$ | 规范玻色子（光子、$W/Z$、胶子） |
+| **多时序非对角缠绕** | Multi-Time-Sequence Off-Diagonal Winding | - | 中微子族混合态 |
+| **拓扑手性** | Topological Chirality | $T_+ / T_-$ | 正物质（顺时序）与反物质（逆时序） |
+| **拓扑完整性** | Topological Integrity | - | 解释粒子不可拆分的几何屏障 |
+| **拓扑自锁 / 解锁** | Topological Self-Locking / Unwinding | - | 粒子稳态形成 / 退相干解离（湮灭） |
+
+---
+
+### 四、 宇宙学与斥力物理 (Cosmology &amp; Universal Repulsion)
+
+| 中文术语 | Standard English Term | 简写 / 符号 | 备注 / 物理定性 |
+| --- | --- | --- | --- |
+| **万有斥力 / 拓扑排斥应力** | Universal Repulsion / Topological Repulsive Stress | - | 根域名额排他性导出的背景应力 |
+| **根域全域拓扑压强** | Root-Domain Global Topological Pressure | $P_{\text{root}}$ | 驱动宇宙扩张与质量平衡的压强 |
+| **名额排他性** | Spatial Slot Exclusivity | - | 局域紧致能量对背景空间的排斥 |
+| **吸积驱动膨胀** | Accretion-Driven Cosmic Expansion | - | 根域吸积净余能量驱动表象扩张 |
+| **不对称双力制衡** | Asymmetric Dual-Force Counterbalance | - | 局域有效引力与背景斥力的平衡 |
+| **特征截断尺度** | Characteristic Cutoff Scale | $r_0$ | 星系根域拓扑斥力作用半径 |
+| **核心有效密度** | Core Effective Density | $\rho_0$ | 消解“尖核危机”的有限中心密度 |
+| **拓扑体积标度律** | Topological Volume Scaling Law | $r_0 \propto M_b^{1/3}$ | 截断尺度与重子质量的 $1/3$ 幂律 |
+
+---
+
+### 五、 工程代号与定标法规 (Engineering Codes &amp; Laws)
+
+| 中文术语 | Standard English Term | 简写 / 编号 | 备注 / 职责 |
+| --- | --- | --- | --- |
+| **EPD 工程组** | Theoretical Physics Project Group | **EPD Project** | 理论物理本体论工程总称 |
+| **宇宙学与吸积工程** | Cosmology &amp; Accretion-Driven Project | **EPD-03** | 宏观星系、暗能量、万有斥力 |
+| **粒子质量谱工程** | Particle Mass Spectrum &amp; Structure Project | **EPD-05** | 微观粒子拓扑、胶球、正反物质 |
+| **P10 观测与拟合工程** | P10 Observational &amp; Mathematical Fitting | **P10 / P10-002** | SPARC 星系旋转曲线零暗物质对标 |
+| **紧致态根域斥力衰减定律** | Law of Root-Domain Repulsive Decay for Compact States | **Law-003** | 导出截断密度与解析质量公式 |。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/ti-xi-zhong-de-he-xin-zhuan-shu-ming-ci-%EF%BC%8C-an-xue-shu-fen-lei-zheng-li-wei-zhong-ying-wen-dui-zhao-biao.html</guid><pubDate>Fri, 07 Aug 2026 05:31:58 +0000</pubDate></item><item><title>电子的本质是什么？——能量在双时空构型中的单通道拓扑自组织</title><link>https://shijianwei1969.github.io/post/dian-zi-de-ben-zhi-shi-shen-me-%EF%BC%9F%E2%80%94%E2%80%94-neng-liang-zai-shuang-shi-kong-gou-xing-zhong-de-dan-tong-dao-tuo-pu-zi-zu-zhi.html</link><description># 电子的本质是什么？——能量在双时空构型中的单通道拓扑自组织
 
 &gt; **文档元数据**
 &gt; * **文档编号**：EPD-05-REP02
