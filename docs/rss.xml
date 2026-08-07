@@ -1,5 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵本体论原创史建威博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究发布</description><copyright>11时序矩阵本体论原创史建威博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Fri, 07 Aug 2026 11:35:16 +0000</lastBuildDate><managingEditor>11时序矩阵本体论原创史建威博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵本体论原创史建威博客</webMaster><item><title>全域张力背景与 c, G 投影读数（定性纲领版）</title><link>https://shijianwei1969.github.io/post/quan-yu-zhang-li-bei-jing-yu-%20c%2C%20G%20-tou-ying-du-shu-%EF%BC%88-ding-xing-gang-ling-ban-%EF%BC%89.html</link><description># 全域张力背景与 c, G 投影读数（定性纲领版）
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵本体论原创史建威博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究发布</description><copyright>11时序矩阵本体论原创史建威博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Fri, 07 Aug 2026 11:50:11 +0000</lastBuildDate><managingEditor>11时序矩阵本体论原创史建威博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵本体论原创史建威博客</webMaster><item><title>EPD-03-BAS02 阶段一成果：全域张力Σ的代数闭环与KΣ精确推导</title><link>https://shijianwei1969.github.io/post/EPD-03-BAS02%20-jie-duan-yi-cheng-guo-%EF%BC%9A-quan-yu-zhang-li-%CE%A3-de-dai-shu-bi-huan-yu-K%CE%A3-jing-que-tui-dao.html</link><description>## 修正后阶段一终稿（全格式合规·三级可信度）
+# EPD-03-BAS02 阶段一成果：全域张力Σ的代数闭环与KΣ精确推导
+&gt; **文档元数据**
+&gt; * **文档编号**：EPD-03-BAS02-S1
+&gt; * **工程归属**：11T-Matrix本体论 · EPD-03根域宇宙学工程 · 基础常数定量攻坚组
+&gt; * **阶段定位**：阶段一产出 · Σ的矩阵谱代数定义与KΣ封闭解推导
+&gt; * **版本**：v1.0 审核修正版
+&gt; * **发布日期**：2026-08-07
+&gt; * **作者**：史建威（山东威海理论物理EPD工程组）
+&gt; * **可信度等级**：三级（阶段性代数推导成果，中间常数闭合，待消去ρ₀与全数值校验后升级）
+&gt; * **边界说明**：本阶段仅完成全域张力Σ的第一性代数定义与无量纲常数KΣ推导；中间变量ρ₀的消去、c与G的最终数值闭合为后续阶段任务。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/EPD-03-BAS02%20-jie-duan-yi-cheng-guo-%EF%BC%9A-quan-yu-zhang-li-%CE%A3-de-dai-shu-bi-huan-yu-K%CE%A3-jing-que-tui-dao.html</guid><pubDate>Fri, 07 Aug 2026 11:49:42 +0000</pubDate></item><item><title>全域张力背景与 c, G 投影读数（定性纲领版）</title><link>https://shijianwei1969.github.io/post/quan-yu-zhang-li-bei-jing-yu-%20c%2C%20G%20-tou-ying-du-shu-%EF%BC%88-ding-xing-gang-ling-ban-%EF%BC%89.html</link><description># 全域张力背景与 c, G 投影读数（定性纲领版）
 &gt; **文档元数据**
 &gt; * **文档编号**：EPD-03-BAS01
 &gt; * **工程归属**：11T-Matrix本体论 · EPD-03根域宇宙学工程 · 基础常数方向
