@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 五部曲之后：我们如何用一套数学结构，重新发明了粒子物理的标准模型
+Doi学术存档：https://doi.org/10.5281/zenodo.21866803
+**山东威海理论物理EPD工程组项目总指挥 史建威   本文由元宝整理润色**
+
+*11T-Matrix Ontology Group*
+
+---
+
+如果你关注过近两年的物理学新闻，你大概见过这些标题：
+
+- 《暗物质直接探测实验再次空手而归》
+- 《CEPC白皮书发布：中国下一代对撞机有望发现新物理》
+- 《江门中微子实验登上Nature封面：59天超越20年》
+- 《LHCb首次观测到新衰变道的CP破坏》
+
+每一篇都是重磅成果，每一项都凝聚着数百位科学家数十年的心血。">
+<meta property="og:title" content="五部曲之后：我们如何用一套数学结构，重新发明了粒子物理的标准模型">
+<meta property="og:description" content="# 五部曲之后：我们如何用一套数学结构，重新发明了粒子物理的标准模型
+Doi学术存档：https://doi.org/10.5281/zenodo.21866803
+**山东威海理论物理EPD工程组项目总指挥 史建威   本文由元宝整理润色**
+
+*11T-Matrix Ontology Group*
+
+---
+
+如果你关注过近两年的物理学新闻，你大概见过这些标题：
+
+- 《暗物质直接探测实验再次空手而归》
+- 《CEPC白皮书发布：中国下一代对撞机有望发现新物理》
+- 《江门中微子实验登上Nature封面：59天超越20年》
+- 《LHCb首次观测到新衰变道的CP破坏》
+
+每一篇都是重磅成果，每一项都凝聚着数百位科学家数十年的心血。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/wu-bu-qu-zhi-hou-%EF%BC%9A-wo-men-ru-he-yong-yi-tao-shu-xue-jie-gou-%EF%BC%8C-zhong-xin-fa-ming-le-li-zi-wu-li-de-biao-zhun-mo-xing.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>五部曲之后：我们如何用一套数学结构，重新发明了粒子物理的标准模型</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">五部曲之后：我们如何用一套数学结构，重新发明了粒子物理的标准模型</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/204" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>五部曲之后：我们如何用一套数学结构，重新发明了粒子物理的标准模型</h1>
+<p>Doi学术存档：<a href="https://doi.org/10.5281/zenodo.21866803" rel="nofollow">https://doi.org/10.5281/zenodo.21866803</a><br>
+<strong>山东威海理论物理EPD工程组项目总指挥 史建威   本文由元宝整理润色</strong></p>
+<p><em>11T-Matrix Ontology Group</em></p>
+<hr>
+<p>如果你关注过近两年的物理学新闻，你大概见过这些标题：</p>
+<ul>
+<li>《暗物质直接探测实验再次空手而归》</li>
+<li>《CEPC白皮书发布：中国下一代对撞机有望发现新物理》</li>
+<li>《江门中微子实验登上Nature封面：59天超越20年》</li>
+<li>《LHCb首次观测到新衰变道的CP破坏》</li>
+</ul>
+<p>每一篇都是重磅成果，每一项都凝聚着数百位科学家数十年的心血。但如果你把它们连起来看，会发现一个奇怪的现象：<strong>所有这些实验，都在寻找同一个东西——超出标准模型的新物理——但至今什么都没找到。</strong></p>
+<p>暗物质实验没有找到暗物质粒子。轴子搜索没有找到轴子。对撞机没有发现任何新粒子。中微子实验测得的参数，恰好落在标准模型框架内。LHCb看到的CP破坏，也完全符合标准模型的预言。</p>
+<p>要么是物理学家们运气不好，所有实验都刚好错过了新物理的信号；要么是——<strong>标准模型本身就是完备的，根本没有什么"新物理"需要被发现。</strong></p>
+<p>这就是我们从2025年到2026年，用五篇论文试图证明的事情。</p>
+<hr>
+<h2>一、一切从哪里开始</h2>
+<p>故事要从一个看起来有些疯狂的念头说起：<strong>标准模型的19个自由参数——那些物理学家们认为"只能由实验测定，无法从理论推导"的数字——也许是可以从更基本的数学结构里算出来的。</strong></p>
+<p>这个念头来自于一个叫"11T-矩阵"的数学框架。它建立在四条公理之上，用三个拓扑不变量来描述世界的底层结构。听起来很玄乎，但它的核心思想其实很简单：<strong>我们所观测到的所有物理现象，都是同一个深层数学结构在不同尺度上的投影。</strong></p>
+<p>就像同一个物体在不同角度的光照下会投出不同的影子——暗物质、中微子振荡、夸克混合、CP破坏，这些都是那个深层结构的影子。而我们要做的，就是从影子的形状反推出物体的真实模样。</p>
+<p>这个想法最早成形于2025年底。当时我们刚刚完成了11T-矩阵框架的基础搭建，推导出了标准模型的全部19个参数。但我们面临一个尴尬的局面：<strong>这些推导是否正确，需要实验来检验。</strong></p>
+<p>于是我们做了一个决定：<strong>去找那些正在寻找新物理的实验，告诉他们——你们什么都不会找到。</strong> 这不是因为你们的仪器不够灵敏，而是因为你们要找的东西根本就不存在。</p>
+<hr>
+<h2>二、五部曲：一场针对"新物理信仰"的狙击战</h2>
+<p>我们把目光投向了当时最热门的四个实验方向，加上一个历史遗留问题，一共五个战场。</p>
+<h3>第一部：地下暗物质探测（米格达尔拓扑墙）</h3>
+<p>2025年底，祝斌团队的米格达尔效应实验登上了 <em>Nature</em>。他们声称，这项技术可以将暗物质直接探测的灵敏度提升数个量级，有望在sub-GeV质量窗口发现暗物质粒子。</p>
+<p>我们的回应是：<strong>你们确实会发现某种信号，但那不是暗物质粒子。</strong> 那是11T-矩阵拓扑涨落在探测器材料中产生的"伪米格达尔事件"，其截面被严格锁定在 $\sigma_{\text{Floor}} \approx 1.28 \times 10^{-47} \text{ cm}^2$。这个值不是随便猜的，而是由基础相位角 $\theta_0 = 2/9$ 的四次方和拓扑不变量 $Q_{11\text{T}} = 2/3$ 硬性决定的。</p>
+<p>换句话说，暗物质实验的灵敏度天花板，不是由工程技术决定的，而是由时空本身的拓扑结构决定的。</p>
+<h3>第二部：天基射电轴子探测（21CMA零结果）</h3>
+<p>2024年，祝斌团队在 <em>Science Bulletin</em> 上提出，利用21CMA射电阵列发射1兆瓦的电磁波，可以激发出轴子暗物质的"回声"信号。</p>
+<p>我们的回应更加干脆：<strong>不会有回声。</strong> 轴子类粒子在11T-矩阵框架中不存在独立的物理自由度。它们只是标准模型在拓扑投影下的影子，就像镜子里的像——你可以看到它，但你抓不到它。我们的预言是 $P_{\text{echo}} \equiv 0$，绝对零结果。</p>
+<h3>第三部：高能对撞机前沿（CEPC零新粒子预言）</h3>
+<p>2025年，CEPC合作组发布了265页的新物理白皮书，系统阐述了这台下一代正负电子对撞机如何发现超出标准模型的新粒子。</p>
+<p>我们的回应可能是最令人不安的：<strong>CEPC不会发现任何新粒子。</strong> 不是因为灵敏度不够，而是因为新粒子不存在。我们给出了一个精确的预言：CEPC测得的希格斯不可见衰变分支比将精确收敛于 $0.122%$——这个值由标准模型贡献 $0.106%$ 加上拓扑背景贡献 $0.0163%$ 组成。任何偏离这个值的信号，都意味着我们的框架是错误的。</p>
+<h3>第四部：中微子振荡精密测量（JUNO $\sin^2\theta_{12}$）</h3>
+<p>2026年6月，江门中微子实验在 <em>Nature</em> 上发表首项成果，以1.6倍于此前全球联合拟合的精度测定了太阳中微子振荡参数。</p>
+<p>这是我们第一次有机会做一个<strong>正向的验证</strong>——不是预言零结果，而是预言一个具体的数值。我们从拓扑不变量出发，导出了 $\sin^2\theta_{12} = 0.3034$，而JUNO测得的数值是 $0.3092 \pm 0.0087$。偏差只有 $0.67\sigma$。<strong>在没有任何自由参数的前提下，纯数学推导精确命中了世界最高精度的实验测量值。</strong></p>
+<p>这一刻我们知道，我们的方向是对的。</p>
+<h3>第五部：夸克混合与CP破坏（CKM矩阵的拓扑导出）</h3>
+<p>2026年7月，华中师范大学LHCb团队在 <em>Physical Review Letters</em> 上发表了关于 $B^0 \to J/\psi\rho^0$ 衰变中CP破坏的首次观测。</p>
+<p>这一次，我们做了更大的事情：<strong>从第一性原理导出了CKM夸克混合矩阵的全部核心参数。</strong></p>
+<ul>
+<li>Cabibbo角 $\vert V_{us}\vert = 0.22515$（实验值 $0.2243 \pm 0.0008$，偏离 $1.06\sigma$）</li>
+<li>Wolfenstein参数 $A = 0.8165$（实验值 $0.813 \pm 0.015$，偏离 $0.23\sigma$）</li>
+<li>
+$\vert V_{cb}\vert = 0.04139$（实验值 $0.0410 \pm 0.0011$，偏离 $0.35\sigma$）</li>
+<li>Jarlskog不变量 $J_{\text{CP}} = 3.16 \times 10^{-5}$（实验值 $(3.08 \pm 0.15) \times 10^{-5}$，偏离 $0.52\sigma$）</li>
+</ul>
+<p>四个参数，全部在 $1\sigma$ 以内吻合。<strong>没有任何自由参数，没有任何事后拟合。</strong></p>
+<hr>
+<h2>三、这意味着什么？</h2>
+<p>如果你不是物理学家，你可能很难理解这些事情的分量。让我换一种方式来解释。</p>
+<p>想象你面前有一个巨大的拼图，上面有19块碎片。一百年来，物理学家们一块一块地找到了这些碎片，但他们始终不知道这些碎片的形状为什么是这样——为什么这块是三角形的，那块是锯齿状的。他们只知道，把这些碎片拼在一起，就能得到一个完整的图像。</p>
+<p>现在我们做的事情，相当于找到了拼图的设计图纸。我们证明了，这19块碎片的形状不是随机的，而是由一个更基本的数学结构决定的。<strong>标准模型不是一个需要不断修补的经验模型，而是一个可以从深层数学结构中推导出来的完备理论。</strong></p>
+<p>这个结论的物理意义是深远的：</p>
+<p><strong>第一，暗物质不是粒子。</strong> 如果暗物质是由某种我们尚未发现的粒子构成的，那么CEPC应该能看到它，LHCb的CP破坏测量应该会显示出异常，JUNO的中微子参数应该会偏离标准模型预言。但这些都没有发生。暗物质更像是时空拓扑结构本身的宏观效应——就像你在水面上看到的波纹，那不是水里的什么东西，而是水本身的运动。</p>
+<p><strong>第二，不存在"新物理"。</strong> 至少不存在超出标准模型的新粒子。超对称伙伴、额外维度、暗区媒介子、轴子、惰性中微子——所有这些在过去四十年里被理论家们发明的粒子，都不存在。它们是数学上可能但物理上不必要的构造。</p>
+<p><strong>第三，标准模型是终极理论的一个投影。</strong> 11T-矩阵框架不是要取代标准模型，而是要解释标准模型为什么是那个样子。它告诉我们，标准模型不是通往终极理论的路上的一块垫脚石，而是终极理论本身在我们可以观测的能标范围内的完整投影。</p>
+<hr>
+<h2>四、历史地位：一场尚未被接受的革命</h2>
+<p>我必须诚实地告诉你，我们的工作目前还没有被主流物理学界接受。这是意料之中的。当一个理论宣称"所有寻找新物理的实验都将失败"时，它不可能受欢迎——毕竟，全世界有成千上万的物理学家靠寻找新物理吃饭。</p>
+<p>但从科学史的角度来看，这种情况并不罕见。</p>
+<p>1915年，爱因斯坦提出广义相对论时，大多数物理学家都持怀疑态度。直到1919年爱丁顿的日食观测证实了光线弯曲的预言，广义相对论才被广泛接受。</p>
+<p>1964年，希格斯等人提出希格斯机制时，它只是一个没人当真的数学技巧。直到2012年希格斯玻色子被发现，这个机制才被确认为标准模型的核心组成部分。</p>
+<p><strong>我们的处境与此类似。</strong> 我们提出了一个框架，做出了五组可证伪的预言。这些预言目前都与现有的实验数据吻合。但最终的裁决，要等到CEPC建成运行之后才能做出。</p>
+<p>如果CEPC在2030年代开始取数，测得的希格斯不可见衰变分支比精确收敛于 $0.122%$，没有发现任何新粒子——那么11T-矩阵框架将从一个边缘理论变成主流物理学不得不面对的现实。</p>
+<p>如果CEPC发现了新粒子——那么我们的框架就是错的。我们会坦然接受这个结果。科学就是这样进步的。</p>
+<hr>
+<h2>五、写给未来的读者</h2>
+<p>也许几十年后，有人会翻开这段历史，看到我们在2025到2026年间写的这五篇论文。他们会发现，在所有人都狂热地寻找新物理的时代，有两个人在山东威海的一个办公室里，默默地推导出了标准模型的所有参数，并预言了所有实验的结果。</p>
+<p>也许他们会觉得这是理所当然的——就像我们现在看待哥白尼的日心说一样。</p>
+<p>也许他们会发现我们的框架中有致命的错误，然后提出更好的理论。</p>
+<p>无论哪种情况，我们都尽了自己的努力。</p>
+<p><strong>科学的本质不是永远正确，而是敢于做出可以被实验推翻的预言。</strong></p>
+<p>我们做了五组这样的预言。它们都很具体，都很精确，都很容易被实验检验。</p>
+<p>现在，轮到实验来给出答案了。</p>
+<hr>
+<p><em>11T-矩阵本体论现象学回应五部曲，2025–2026，山东威海。</em></p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵本体论原创史建威博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
