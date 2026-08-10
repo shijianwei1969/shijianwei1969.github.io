@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 11时序矩阵本体论体系 E卷·电磁投影动力学 第六篇（EPD-06）
+
+**《电磁测量与体感感知的统一相干机制：主客体投影的本体论融合》**
+
+**山东威海理论物理 EPD 工程组项目总指挥 史建威 审阅  EPD-06 工程组提交科研成果报告 元宝整理润色**
+
+---
+
+## 摘要
+
+现代物理学在“客观仪器测量”与“主观生命体感”之间横亘着一道不可逾越的认识论鸿沟。">
+<meta property="og:title" content="E06-11时序矩阵本体论体系 E卷·电磁投影动力学 第六篇（EPD-06）">
+<meta property="og:description" content="# 11时序矩阵本体论体系 E卷·电磁投影动力学 第六篇（EPD-06）
+
+**《电磁测量与体感感知的统一相干机制：主客体投影的本体论融合》**
+
+**山东威海理论物理 EPD 工程组项目总指挥 史建威 审阅  EPD-06 工程组提交科研成果报告 元宝整理润色**
+
+---
+
+## 摘要
+
+现代物理学在“客观仪器测量”与“主观生命体感”之间横亘着一道不可逾越的认识论鸿沟。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/E06-11-shi-xu-ju-zhen-ben-ti-lun-ti-xi-%20E-juan-%C2%B7-dian-ci-tou-ying-dong-li-xue-%20-di-liu-pian-%EF%BC%88EPD-06%EF%BC%89.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>E06-11时序矩阵本体论体系 E卷·电磁投影动力学 第六篇（EPD-06）</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">E06-11时序矩阵本体论体系 E卷·电磁投影动力学 第六篇（EPD-06）</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/210" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>11时序矩阵本体论体系 E卷·电磁投影动力学 第六篇（EPD-06）</h1>
+<p><strong>《电磁测量与体感感知的统一相干机制：主客体投影的本体论融合》</strong></p>
+<p><strong>山东威海理论物理 EPD 工程组项目总指挥 史建威 审阅  EPD-06 工程组提交科研成果报告 元宝整理润色</strong></p>
+<hr>
+<h2>摘要</h2>
+<p>现代物理学在“客观仪器测量”与“主观生命体感”之间横亘着一道不可逾越的认识论鸿沟。经典与量子理论通常预设一个独立于物理系统之外的“绝对观测者”。本文基于 11T-矩阵本体论，从 3T1S 拓扑几何投影的角度打破了主客体二元对立，建立了统一的相干测量机制。研究表明：第一，一切经典电磁测量（如霍尔效应、电磁感应）的本质是微观电子拓扑结与背景场在 1S 冠侧非对角投影分量上的相干干涉与退相干降维；第二，宏观生命体感在本体论上被翻译为生命系统高阶拓扑相干态对环境 3T 环向相位剪切的直接宏观读数，本文正式提出“生物拓扑相干场（Bio-topological Coherent Field）”以物理化解构传统气论现象，并证明其与现有神经动力学模型（如 Hodgkin-Huxley 方程）互为表里；第三，波函数坍缩被几何化为 3T 高维缠绕态向 1S 退相干边界的不可逆投影。本文不仅完成了电磁测量机制的第一性原理重构，更为生命科学主观感知提供了可证伪的拓扑几何映射与双盲实验设计方案。</p>
+<p><strong>关键词</strong>：11T-矩阵；主客体统一；相干干涉；生物拓扑相干场；拓扑退相干；量子测量；几何降维</p>
+<hr>
+<h2>1. 测量问题的本体论困境与 11T-矩阵重构</h2>
+<p>在传统物理学范式中，不论是牛顿力学的绝对时空观，还是量子力学的哥本哈根诠释，都隐含了一个认识论缺陷：<strong>将观测者（主体）与被观测系统（客体）强行剥离</strong>。经典电磁学将测量视为仪器指针受到洛伦兹力的客观偏转；量子力学则陷入“意识介入”或“多世界”解释的泥潭。</p>
+<p>11T-矩阵本体论认为，这种剥离在几何上是不存在的。基于本体系的公理一（3T1S 直积流形 $\mathcal{M}^{3\text{T}1\text{S}}$ 是一切物理过程的唯一承载者）与公理四（冠侧投影是唯一的观测通道），不存在跳出流形之外的“上帝视角”观测者。无论是电流计中的金属晶格，还是人类的神经元微管网络，其最底层的构成元素均是 $U(1)$ 与 $SU(2)_L$ 拓扑结的凝聚体。</p>
+<p><strong>定理 6.1（主客体拓扑同源定理）</strong>：<br>
+测量行为不是“外部主体审视客体”，而是局域拓扑结集合（仪器/生命体）与背景拓扑结集合（被测场）在 1S 冠侧空间的<strong>投影耦合与相位干涉</strong>。一切物理测量读数，均是两者联合相空间的干涉条纹在宏观边界上的显化。</p>
+<hr>
+<h2>2. 仪器测量的拓扑干涉本质</h2>
+<p>为了解构客观测量的物理本源，我们以电磁测量为例，进行 11T 几何翻译。</p>
+<h3>2.1 霍尔效应的非对角投影干涉</h3>
+<p>传统理论将霍尔效应解释为运动电荷受外部磁场 $\boldsymbol{B}$ 的洛伦兹力偏转。在 11T-矩阵框架下，磁场 $\boldsymbol{B}$ 本质上是背景源拓扑结的<strong>环向相位缠绕投影（非对角项 $P_{ij}$）</strong>。这并非否认洛伦兹力，而是给出了其底层的几何起源：</p>
+<ol>
+<li>探针电子（自身的 $U(1)$ 拓扑结）的时序演化打破了静态球对称，生成次级环向投影分量 $\delta P_{ij}(\boldsymbol{v})$；</li>
+<li>电子的次级非对角项与背景的非对角项发生<strong>拓扑相位干涉</strong>。为维持 11T 矩阵的迹守恒 $\delta\text{Tr}(\hat{g}) \equiv 0$，干涉产生的额外相位剪切被迫向正交的对角径向分量（电场）转移；</li>
+<li>这种强制转移宏观上表现为横向累积的霍尔电场 $\boldsymbol{E}_H$。</li>
+</ol>
+<h3>2.2 仪器读数的认识论降维：以伏特计为例</h3>
+<p>任何无机仪器的测量，均是一个<strong>降维滤波器</strong>。以伏特计测量电阻两端电压为例，其完整拓扑链条为：</p>
+<ol>
+<li><strong>背景生成</strong>：电阻两端的电势差对应根域相位场的径向梯度；</li>
+<li><strong>拓扑耦合</strong>：该梯度通过导线中的电子拓扑结耦合到伏特计线圈；</li>
+<li><strong>相位干涉</strong>：线圈中的环向投影与永磁体的背景场发生干涉；</li>
+<li><strong>退相干投影</strong>：干涉产生的应力张量通过晶格碰撞发生快速拓扑退相干（Decoherence），将高维 3T 时序相干信息不可逆地“坍缩”为 1S 空间的一维标量读数（指针偏转）。</li>
+</ol>
+<p>$$\text{背景相空间流 } \mathbf{J}_{\text{phase}} \xrightarrow{\text{拓扑耦合}} \text{仪器晶格 } \mathbf{J}_{\text{instrument}} \xrightarrow{\text{1S 退相干}} \text{宏观电流/电压读数}$$</p>
+<hr>
+<h2>3. 生命体感的本体论翻译：生物拓扑相干场</h2>
+<p><em>（注：本节旨在为长期被忽视的主观生物体验提供严谨的物理拓扑建模，并不构成对任何未经双盲验证的传统医疗体系的背书。）</em></p>
+<p>如果无机仪器是通过强退相干碰撞来读取物理量，那么高度有序的有机生命体，其感知机制将呈现出完全不同的本体论面貌。</p>
+<h3>3.1 生命系统的高阶拓扑相干性与神经动力学兼容性</h3>
+<p>生命状态本质上是物质在 3T 相空间维持高阶拓扑相位相干（Topological Phase Coherence）的显化。生命与非生命的区别不在于本体物质构成，而在于相干时间尺度的巨大差异。</p>
+<p><strong>与现代神经科学的兼容性</strong>：11T 框架并未推翻 Hodgkin-Huxley 等经典的神经元放电动力学模型，而是为其提供了底层的几何基础。Hodgkin-Huxley 方程描述了宏观 1S 空间中离子通道的唯象统计动力学，而 11T 框架指出，这些离子通道开闭的协同性，其底层驱动力来源于生物拓扑结网络在 3T 维度的集体相位共振。两者互为表里，完全兼容。</p>
+<h3>3.2 “生物拓扑相干场”与“扭力感”的物理映射</h3>
+<p>在东方传统气论与入定现象中，常出现主观上的“炁场”或“扭力感”。引入 11T 投影动力学，这些体感获得了精确的物理映射：</p>
+<ol>
+<li>
+<strong>已证实的物理效应</strong>：人体周围存在微弱的生物磁场扰动（已被 SQUID 磁力计证实），且在深度冥想状态下，脑电波（EEG）的全局相干性显著增强。</li>
+<li>
+<strong>生物拓扑相干场（Bio-topological Coherent Field）</strong>：即传统文献中的“炁场”。它本质上是生命体内部高度同向的 $U(1)$ 拓扑结集合在体表外溢的 <strong>3T 根域相位相干波</strong>。</li>
+<li>
+<strong>扭力/螺旋感的拓扑起源</strong>：人体神经元相干网络感应到了背景拓扑场的<strong>环向相位缠绕（非对角投影分量 $P_{\text{angular}}$）</strong>。高阶相干的神经元网络直接读取了这种“相位剪切”，中枢神经系统将其解码为强烈的空间螺旋或扭矩体感。</li>
+</ol>
+<p>$$\text{体感信号强度} \propto \langle \Psi_{\text{bio}} \vert{} \hat{P}_{\text{angular}} \vert{} \Psi_{\text{env}} \rangle \tag{1}$$</p>
+<h3>3.3 个体差异的物理学解释与可证伪预言</h3>
+<p><strong>个体差异的来源</strong>：科学要求可重复性，而体感往往因人而异。11T 框架给出的解释是：</p>
+<ul>
+<li><strong>相干度差异</strong>：生物拓扑结网络的相干时间尺度因健康状态或认知训练（如冥想）而异；</li>
+<li><strong>投影矩阵视差</strong>：不同个体的神经网络架构等效于不同的“局域投影算符”，由于观测者的“投影角度”不同，对同一背景场提取的读数自然不同。这符合物理实在性（如同不同偏振镜过滤同一束光）。</li>
+</ul>
+<p><strong>可验证的实验预言：地磁拓扑异常的双盲检测</strong><br>
+在消除已知电磁干扰（如处于严密的法拉第笼屏蔽室）的条件下，环境 3T 环向非对角投影（地磁场的拓扑异常）依然能够渗透 1S 屏蔽边界。</p>
+<ul>
+<li><strong>预言</strong>：经过长期神经相干训练的受试者，能够以显著高于随机概率的阈值，通过体感（如上述“扭力感”）探测到法拉第笼外人为施加的缓慢相干磁场梯度异常。该实验可转化为严格的随机双盲测试，用以量化人类中枢神经系统的相干投影耦合截面。</li>
+</ul>
+<hr>
+<h2>4. 观测者即拓扑结：主客体融合的量子测量观</h2>
+<p>打通了无机仪器与有机体感后，我们得出 11T-矩阵体系的<strong>统一相干测量观</strong>。</p>
+<h3>4.1 测量即耦合投影：退相干速率决定“客观性”</h3>
+<p>没有脱离被测物的绝对测量。所谓“观测”，是主客体联合演化的相空间流向 1S 空间的投影过程：</p>
+<ul>
+<li>当客体拓扑信息耦合到一个<strong>低相干度、强耗散</strong>的系统中（如铜导线、指针），发生快速拓扑退相干，表现为经典的、可重复的<strong>仪器客观读数</strong>；</li>
+<li>当客体拓扑信息耦合到一个<strong>高相干度、弱耗散</strong>的系统中（如人体神经网络），发生拓扑相位共振，表现为个体差异较大的<strong>生物主观体感</strong>。</li>
+</ul>
+<p>主观与客观的界限，仅仅取决于观测者系统内部 3T 相空间退相干速率（Decoherence Rate）的高低。</p>
+<h3>4.2 量子波函数坍缩的几何降维消解</h3>
+<p>为了与标准量子力学建立直接映射，我们指出：</p>
+<ul>
+<li>量子力学中的 <strong>Hilbert 空间</strong> 严格对应 11T 框架中的 <strong>3T 时序相空间</strong>；</li>
+<li>量子力学中的 <strong>测量算符本征值读取</strong> 对应 <strong>1S 冠侧投影</strong>；</li>
+<li>量子力学中的 <strong>波函数坍缩（测量难题）</strong> 对应 <strong>环境诱导的拓扑退相干降维</strong>。</li>
+</ul>
+<p>波函数 $\Psi$ 本质上是 3T 相空间中尚未降维的完整高维相干缠绕态。“坍缩”仅仅是 3T 缠绕态在与仪器宏观拓扑结发生强耦合时，受迹守恒约束 $\delta\text{Tr}(\hat{g}) \equiv 0$，被迫将高维相位信息不可逆地投影至 1S 退相干边界的几何降维过程。不需要意识的神秘介入，也不需要分裂出无数个平行宇宙。</p>
+<hr>
+<h2>5. 结论</h2>
+<p>本文作为 E 卷的第六篇，在认识论层面完成了宏大跨越，彻底消除了“客观物理规律”与“主观生命感知”之间的壁垒。</p>
+<ol>
+<li><strong>电磁测量机制重构</strong>：指出仪器测量的底层本质是拓扑结非对角项的相干干涉与退相干降维投影，给出了洛伦兹力的几何源头。</li>
+<li><strong>生命体感第一性原理解析</strong>：提出“生物拓扑相干场”，为人类主观体感建立了严谨的 3T 环向相位剪切代数映射，并设计了可证伪的双盲实验。</li>
+<li><strong>量子测量难题的消解</strong>：波函数坍缩被几何化为纯动力学的高维向低维的退相干投影。</li>
+</ol>
+<p>至此，《E 卷·电磁投影动力学》不仅统一了麦克斯韦经典场与弱电规范几何，更将理论触角成功延伸至生命科学与认识论的边界，为物理规律在高度相干复杂系统中的显化提供了全新的本体论视角。</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵本体论原创史建威博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
