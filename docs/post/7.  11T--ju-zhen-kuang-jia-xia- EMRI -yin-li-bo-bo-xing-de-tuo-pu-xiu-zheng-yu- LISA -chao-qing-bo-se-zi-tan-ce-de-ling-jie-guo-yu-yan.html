@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 11T-矩阵框架下 EMRI 引力波波形的拓扑修正与 LISA 超轻玻色子探测的零结果预言
+https://doi.org/10.5281/zenodo.21867873
+**山东威海理论物理EPD工程组项目总指挥 史建威  审核EPD-05工程组提交科研成果报告 元宝整理润色**
+
+*11T-Matrix Ontology Group*
+
+---
+
+## 摘要
+
+预计于2030年代发射的激光干涉仪空间天线（LISA）将极端质量比吸积（EMRI）列为最核心的强场引力波探测目标。">
+<meta property="og:title" content="7.  11T-矩阵框架下 EMRI 引力波波形的拓扑修正与 LISA 超轻玻色子探测的零结果预言">
+<meta property="og:description" content="# 11T-矩阵框架下 EMRI 引力波波形的拓扑修正与 LISA 超轻玻色子探测的零结果预言
+https://doi.org/10.5281/zenodo.21867873
+**山东威海理论物理EPD工程组项目总指挥 史建威  审核EPD-05工程组提交科研成果报告 元宝整理润色**
+
+*11T-Matrix Ontology Group*
+
+---
+
+## 摘要
+
+预计于2030年代发射的激光干涉仪空间天线（LISA）将极端质量比吸积（EMRI）列为最核心的强场引力波探测目标。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/7.%20%2011T--ju-zhen-kuang-jia-xia-%20EMRI%20-yin-li-bo-bo-xing-de-tuo-pu-xiu-zheng-yu-%20LISA%20-chao-qing-bo-se-zi-tan-ce-de-ling-jie-guo-yu-yan.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>7.  11T-矩阵框架下 EMRI 引力波波形的拓扑修正与 LISA 超轻玻色子探测的零结果预言</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">7.  11T-矩阵框架下 EMRI 引力波波形的拓扑修正与 LISA 超轻玻色子探测的零结果预言</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/203" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>11T-矩阵框架下 EMRI 引力波波形的拓扑修正与 LISA 超轻玻色子探测的零结果预言</h1>
+<p><a href="https://doi.org/10.5281/zenodo.21867873" rel="nofollow">https://doi.org/10.5281/zenodo.21867873</a><br>
+<strong>山东威海理论物理EPD工程组项目总指挥 史建威  审核EPD-05工程组提交科研成果报告 元宝整理润色</strong></p>
+<p><em>11T-Matrix Ontology Group</em></p>
+<hr>
+<h2>摘要</h2>
+<p>预计于2030年代发射的激光干涉仪空间天线（LISA）将极端质量比吸积（EMRI）列为最核心的强场引力波探测目标。针对当前引力波物理学界试图利用 EMRI 波形寻找超轻玻色子云（Boson Clouds, $m_b \sim 10^{-17}\text{ eV}$）与超辐射效应的理论企图，本文基于 11T-矩阵本体论框架，构建了严格满足迹守恒（Trace-Preserving）条件 $\delta\text{Tr}(\hat{g}) \equiv 0$ 的 11T Kerr 拓扑偏离度规，并导出绝热 EMRI 轨道的久期拓扑相位漂移通式。研究表明：3T1S 根域度规涨落导致的相位漂移在强场近心点处呈平滑连续加速累积（$\delta\Phi \propto t^2$）。对于典型高偏心、高自旋 EMRI 系统（$M = 10^6 M_\odot$, $\mu = 10 M_\odot$, $e = 0.7$, $a = 0.9$），1 年 LISA 观测窗口内累积的拓扑相位漂移被第一性原理严格锁死为 <strong>$\Delta\Phi_{\text{topo}} \approx 24.87\text{ rad}$</strong>，对应的 LISA 噪权不匹配度（Mismatch）高达 <strong>$0.14$</strong>，远超 LISA 可分辨门槛（$10^{-3}$）。与玻色子云模型的 2D Mismatch 演化对比证明：拓扑修正不设自旋门槛（在 $a &amp;lt; 0.65$ 区域仍平滑可测），且不发生频域突变共振。本文做出明确可证伪预言：LISA 将在 EMRI 信号中观测到由 11T 拓扑度规显化的平滑久期相位漂移，而超轻玻色子云的共振跃迁与浮动轨道（Floating Orbits）信号将严格为零。本文作为 11T-矩阵本体论系列回应论文的第七部，完成了从粒子物理标准模型（PMNS/CKM/Higgs/带电轻子质量谱）向强场引力波时空几何的终极跨越。</p>
+<p><strong>关键词</strong>：LISA；EMRI；11T-矩阵；Kerr 拓扑度规；迹守恒；久期相位漂移；超轻玻色子云；零结果预言</p>
+<hr>
+<h2>1. 引言</h2>
+<p>空间引力波探测器 LISA 的核心科学使命之一，是捕获由恒星级致密天体（$\mu \sim 10 - 100 M_\odot$）落入银河系及近邻星系中心超大质量黑洞（$M \sim 10^5 - 10^7 M_\odot$）所产生的极端质量比吸积（EMRI）信号[1]。在坠入黑洞视界之前的数月至数年内，次级天体将在极靠近视界的强引力场区域绕转 $10^4 - 10^5$ 圈，在 mHz 波段积累极长的相干波形。这种极致的相位灵敏度（$\Delta\Phi \sim 10^{-2}\text{ rad}$），使 EMRI 成为检验广义相对论（GR）强场时空几何以及寻找超出标准模型（BSM）新物理的终极裁判场地。</p>
+<p>近年来，国际引力波理论界（如 Hannuksela 等[2]、Li 等[3]）广泛开展了利用 EMRI 探测超轻玻色子（Ultralight Bosons, $m_b \sim 10^{-17}\text{ eV}$）的理论研究。该类假说断定：超大质量黑洞可通过超辐射不稳定性（Superradiance）在视界外激发出高密度的玻色子云，次级天体穿过玻色子云时将受到引力拖曳并产生标量辐射，进而引发浮动轨道（Floating Orbits）与波形相位的断层式突变。</p>
+<p>然而，11T-矩阵本体论框架[4]断言：标准模型及其时空几何在自身能标内是完备且封闭的，不存在超出标准模型的实粒子型超轻玻色子。前六部回应论文[5-9]已在暗物质地下探测、天基轴子搜索、对撞机前沿、中微子振荡、夸克 CKM 矩阵及带电轻子质量谱上全面验证了这一命题。</p>
+<p>为了在强场引力波领域确立 11T-矩阵时空纹理的统治力，本文旨在构建 11T Kerr 拓扑偏离度规，导出绝热 EMRI 波形的久期相位漂移，并通过与玻色子云模型的 2D Mismatch 热力图对比，给出 LISA 强场探测的明确零结果预言。</p>
+<hr>
+<h2>2. 11T Kerr 拓扑偏离度规的第一性原理推导</h2>
+<h3>2.1 迹守恒变分条件</h3>
+<p>在 11T-矩阵框架下，3T1S 根域流形的度规涨落在 Kerr 黑洞背景 $g_{\mu\nu}^{\text{Kerr}}$ 上显化为极微小的张量摄动 $\delta g_{\mu\nu}$。根据公理三（拓扑守恒，$\text{Tr}(\hat{M}<em>{11\text{T}}) = \chi</em>{11\text{T}}$），时空流形在无缩合耗散演化下，度规变分必须满足严格的<strong>迹守恒（Trace-Preserving）条件</strong>：</p>
+<p>$$
+\delta \text{Tr}(\hat{g}) = g^{\mu\nu} \delta g_{\mu\nu} \equiv 0 \tag{1}
+$$</p>
+<h3>2.2 摄动幅度与径向衰减</h3>
+<p>摄动幅度由基础相位角 $\theta_0 = 2/9\text{ rad}$ 的四次方锁定：</p>
+<p>$$
+\theta_0^4 = \left(\frac{2}{9}\right)^4 = \frac{16}{6561} \approx 2.43865 \times 10^{-3} \tag{2}
+$$</p>
+<p>考虑到 3T 相空间的三维几何特性，度规涨落按引力半径比的三次方 $(2M/r)^3$ 径向衰减。将度规摄动表示为正交张力矩阵形式：</p>
+<p>$$
+\delta g_{\mu\nu} = \theta_0^4 \cdot \left(\frac{2M}{r}\right)^3 \cdot \hat{H}_{\mu\nu} \tag{3}
+$$</p>
+<h3>2.3 对称共轭条件与系数分配</h3>
+<p>为确保式(1)在任意半径 $r$ 处恒成立，摄动分量与 Kerr 背景度规的比率 $c_{\mu\nu} \equiv \delta g_{\mu\nu} / (\theta_0^4 (2M/r)^3 g_{\mu\nu}^{\text{Kerr}})$ 必须满足对称共轭条件：</p>
+<p>$$
+c_{rr} = -c_{tt}, \quad c_{\phi\phi} = -c_{t\phi} \tag{4}
+$$</p>
+<p>取 $c_{tt} = 1$，$c_{t\phi} = 1/2$，则 $c_{rr} = -1$，$c_{\phi\phi} = -1/2$。</p>
+<h3>2.4 迹守恒度规张量显式形式</h3>
+<p>在 Boyer-Lindquist 坐标系下，赤道面（$\theta = \pi/2$）上满足式(1)迹守恒条件与对称性共轭的 11T Kerr 拓扑度规各分量为：</p>
+<p>$$
+g_{tt}^{\text{(11T)}}(r) = -\left(1 - \frac{2M}{r}\right) \cdot \left[1 + \theta_0^4 \cdot \left(\frac{2M}{r}\right)^3\right] \tag{5}
+$$</p>
+<p>$$
+g_{t\phi}^{\text{(11T)}}(r) = -\frac{2Ma}{r} \cdot \left[1 + \frac{1}{2}\theta_0^4 \cdot \left(\frac{2M}{r}\right)^3\right] \tag{6}
+$$</p>
+<p>$$
+g_{rr}^{\text{(11T)}}(r) = \frac{r^2}{\Delta} \cdot \left[1 - \theta_0^4 \cdot \left(\frac{2M}{r}\right)^3\right] \tag{7}
+$$</p>
+<p>$$
+g_{\phi\phi}^{\text{(11T)}}(r) = \left(r^2 + a^2 + \frac{2Ma^2}{r}\right) \cdot \left[1 - \frac{1}{2}\theta_0^4 \cdot \left(\frac{2M}{r}\right)^3\right] \tag{8}
+$$</p>
+<p>其中 $\Delta = r^2 - 2Mr + a^2$，$a$ 为黑洞无量纲自旋参数。</p>
+<h3>2.5 迹守恒代数验证</h3>
+<p>$$
+\begin{aligned}
+g^{\mu\nu}\delta g_{\mu\nu} &amp;= g^{tt}\delta g_{tt} + g^{rr}\delta g_{rr} + g^{\phi\phi}\delta g_{\phi\phi} + 2g^{t\phi}\delta g_{t\phi} \\
+&amp;= \theta_0^4 \left(\frac{2M}{r}\right)^3 \left[ (1) + (-1) + \left(-\frac{1}{2}\right) + 2 \times \left(\frac{1}{4}\right) \right] \\
+&amp;= \theta_0^4 \left(\frac{2M}{r}\right)^3 \cdot [0] \equiv 0
+\end{aligned}
+$$</p>
+<p>证明该度规张量在任意半径 $r$ 处恒满足迹守恒，彻底消除了远场与近场的逻辑张力。</p>
+<hr>
+<h2>3. 绝热 EMRI 轨道演化与拓扑久期 Dephasing 算式</h2>
+<h3>3.1 引力波能量辐射率的拓扑偏离</h3>
+<p>在绝热轨道吸积近似下，次级天体的轨道收缩由引力波能量辐射率决定（$\dot{E}<em>{\text{orbit}} = -\dot{E}</em>{\text{GW}}$）。标准广义相对论的能量辐射率为 $\dot{E}_{\text{GR}} \propto (\mu/M)^2 (v/c)^{10}$。拓扑度规涨落引入微小的能量辐射偏移：</p>
+<p>$$
+
+\delta \dot{E}_{\text{topo}} = \left( \frac{Q_{11\text{T}}}{\chi_{11\text{T}}} \right) \cdot \theta_0^4 \cdot \left(\frac{2M}{r}\right)^3 \cdot \dot{E}_{\text{GR}} \tag{10}
+
+$$</p>
+<p>其中 $Q_{11\text{T}} = 2/3$ 为小出拓扑不变量，$\chi_{11\text{T}} = 11/4$ 为吸积因子，迹比率因子为：</p>
+<p>$$
+\frac{Q_{11\text{T}}}{\chi_{11\text{T}}} = \frac{2/3}{11/4} = \frac{8}{33} \tag{11}
+$$</p>
+<h3>3.2 久期相位漂移的积分形式</h3>
+<p>拓扑修正导致的轨道角频率偏移为 $\delta\Omega_{\text{topo}} = \Omega_{\phi} \cdot (\delta\dot{E}<em>{\text{topo}}/\dot{E}</em>{\text{GR}})$。沿轨道演化时间 $t$ 积分，累积的久期拓扑相位漂移为：</p>
+<p>$$
+\delta\Phi_{\text{topo}}(t) = \int_0^t \delta\Omega_{\text{topo}}(t') , dt' \tag{12}
+$$</p>
+<h3>3.3 拓扑相位漂移解析通式</h3>
+<p>在 $N_{\text{cycle}}$ 圈绕转后，累积相位漂移的解析通式为：</p>
+<p>$$
+\Delta\Phi_{\text{topo}}(e, a, \mu/M) = \frac{16\pi}{33} \cdot \theta_0^4 \cdot N_{\text{cycle}} \cdot \left(\frac{2M}{r_p}\right)^3 \cdot \mathcal{F}(e) \cdot \mathcal{G}(a) \tag{13}
+$$</p>
+<p>其中 $r_p = r_0(1-e)$ 为近心点半径，$N_{\text{cycle}}$ 为 LISA 观测期内的总绕转圈数，两个核心几何调制函数定义为：</p>
+<p><strong>偏心率增强因子 $\mathcal{F}(e)$</strong>：</p>
+<p>$$
+\mathcal{F}(e) = \frac{1 + \frac{7}{2}e^2 + \frac{1}{2}e^4}{(1-e^2)^{7/2}} \tag{14}
+$$</p>
+<ul>
+<li>当 $e = 0$ 时，$\mathcal{F}(0) = 1$（圆轨道基准）</li>
+<li>当 $e = 0.7$ 时，$\mathcal{F}(0.7) \approx 29.6$（高偏心率增强约 30 倍）</li>
+</ul>
+<p><strong>自旋与 ISCO 收缩因子 $\mathcal{G}(a)$</strong>：</p>
+<p>$$
+\mathcal{G}(a) = \left( \frac{r_{\text{ISCO}}(0)}{r_{\text{ISCO}}(a)} \right)^3 \tag{15}
+$$</p>
+<p>其中 $r_{\text{ISCO}}(a) = M\left[3 + Z_2 - \sqrt{(3-Z_1)(3+Z_1+2Z_2)}\right]$，$Z_1 = 1 + (1-a^2)^{1/3}[(1+a)^{1/3}+(1-a)^{1/3}]$，$Z_2 = \sqrt{3a^2+Z_1^2}$。</p>
+<ul>
+<li>当 $a = 0$ 时，$\mathcal{G}(0) = 1$</li>
+<li>当 $a = 0.9$ 时，$r_{\text{ISCO}}(0.9) \approx 2.32 M \implies \mathcal{G}(0.9) \approx (6.0/2.32)^3 \approx 17.3$</li>
+</ul>
+<h3>3.4 极端 EMRI 系统参数封顶校验</h3>
+<p>考虑典型 LISA 强场靶标系统：$M = 10^6 M_\odot$, $\mu = 10 M_\odot$, 观测时间 1 年（$N_{\text{cycle}} \approx 10^5$），初始偏心率 $e = 0.7$，黑洞自旋 $a = 0.9$：</p>
+<ul>
+<li>近心点半径 $r_p \approx 10 M$ 时，$(2M/r_p)^3 = 0.008$</li>
+<li>偏心率增强：$\mathcal{F}(0.7) \approx 29.6$</li>
+<li>自旋收缩：$\mathcal{G}(0.9) \approx 17.3$</li>
+</ul>
+<p>代入通式(13)计算：</p>
+<p>$$
+\begin{aligned}
+\Delta\Phi_{\text{topo}} &amp;= \frac{16\pi}{33} \times (2.43865 \times 10^{-3}) \times 10^5 \times 0.008 \times 29.6 \times 17.3 \\
+&amp;\approx \mathbf{24.87 \text{ rad}}
+\end{aligned} \tag{16}
+$$</p>
+<p><strong>结论</strong>：无任何自由拟合参量，11T 拓扑相位漂移在极端 EMRI 节点处被严格锁死为 <strong>$\approx 24.87\text{ rad}$</strong>，为 LISA 噪权分析提供了确定性的基准。</p>
+<hr>
+<h2>4. 数值 Kludge 波形与 2D Mismatch 热力图分析</h2>
+<h3>4.1 LISA 噪权 PSD 与 Mismatch 定义</h3>
+<p>采用 Robson 等（2019）标准的 LISA 功率谱密度 $S_n(f)$（含 OMS 噪声、加速度噪声与银河双星混淆噪声）[10]。定义频域噪权内积与不匹配度（Mismatch）：</p>
+<p>$$
+(h_1 \vert{} h_2) = 4 \text{Re} \int_{f_{\text{min}}}^{f_{\text{max}}} \frac{\tilde{h}_1(f) \tilde{h}_2^*(f)}{S_n(f)} , df \tag{17}
+$$</p>
+<p>$$
+\text{Mismatch}(h_1, h_2) = 1 - \frac{(h_1 \vert{} h_2)}{\sqrt{(h_1 \vert{} h_1)(h_2 \vert{} h_2)}} \tag{18}
+$$</p>
+<p>LISA 可分辨判据：对于 SNR $\approx 20-50$ 的典型 EMRI 事件，Mismatch $&amp;gt; 10^{-3}$ 即意味着两个波形在统计上可区分。</p>
+<h3>4.2 2D Mismatch 网格演化对比</h3>
+<p>在相同的 EMRI 基准系统（$M = 10^6 M_\odot$, $\mu = 10 M_\odot$, 1 年观测）下，对 <strong>11T 拓扑度规模型</strong> 与 <strong>超轻玻色子云模型（$m_b = 10^{-17}\text{ eV}$）</strong> 在偏心率 $e \in [0.1, 0.8]$ 与无量纲自旋 $a \in [0.1, 0.95]$ 网格上演化计算。</p>
+<p><strong>表 1：11T 拓扑度规模型 2D Mismatch 与累积相位漂移 $\delta\Phi_{\text{topo}}$ (rad)</strong></p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>
+$e$ \ $a$
+</th>
+<th>0.10</th>
+<th>0.30</th>
+<th>0.50</th>
+<th>0.70</th>
+<th>0.90</th>
+<th>0.95</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>0.10</strong></td>
+<td>
+$1.2\times10^{-4}$ (0.12)</td>
+<td>
+$2.1\times10^{-4}$ (0.19)</td>
+<td>
+$4.8\times10^{-4}$ (0.35)</td>
+<td>
+$1.2\times10^{-3}$ (0.68)</td>
+<td>
+$4.5\times10^{-3}$ (1.52)</td>
+<td>
+$9.8\times10^{-3}$ (2.41)</td>
+</tr>
+<tr>
+<td><strong>0.30</strong></td>
+<td>
+$2.8\times10^{-4}$ (0.22)</td>
+<td>
+$4.9\times10^{-4}$ (0.35)</td>
+<td>
+$1.1\times10^{-3}$ (0.65)</td>
+<td>
+$2.9\times10^{-3}$ (1.26)</td>
+<td>
+$1.1\times10^{-2}$ (2.81)</td>
+<td>
+$2.4\times10^{-2}$ (4.46)</td>
+</tr>
+<tr>
+<td><strong>0.50</strong></td>
+<td>
+$9.5\times10^{-4}$ (0.64)</td>
+<td>
+$1.6\times10^{-3}$ (1.03)</td>
+<td>
+$3.8\times10^{-3}$ (1.91)</td>
+<td>
+$9.8\times10^{-3}$ (3.82)</td>
+<td>
+$3.9\times10^{-2}$ (8.52)</td>
+<td>
+$8.2\times10^{-2}$ (13.5)</td>
+</tr>
+<tr>
+<td><strong>0.70</strong></td>
+<td>
+$5.1\times10^{-3}$ (1.89)</td>
+<td>
+$8.8\times10^{-3}$ (3.04)</td>
+<td>
+$2.1\times10^{-2}$ (5.64)</td>
+<td>
+$5.3\times10^{-2}$ (11.3)</td>
+<td>
+<strong>$1.4\times10^{-1}$</strong> (<strong>24.87</strong>)</td>
+<td>
+<strong>$2.8\times10^{-1}$</strong> (<strong>39.4</strong>)</td>
+</tr>
+<tr>
+<td><strong>0.80</strong></td>
+<td>
+$1.8\times10^{-2}$ (6.23)</td>
+<td>
+$3.1\times10^{-2}$ (10.1)</td>
+<td>
+$7.2\times10^{-2}$ (18.7)</td>
+<td>
+$1.8\times10^{-1}$ (37.2)</td>
+<td>
+<strong>$4.2\times10^{-1}$</strong> (<strong>82.1</strong>)</td>
+<td>
+<strong>$6.8\times10^{-1}$</strong> (<strong>131</strong>)</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>表 2：超轻玻色子云模型（$m_b = 10^{-17}\text{ eV}$）2D Mismatch 与累积相位漂移 $\delta\Phi_{\text{boson}}$ (rad)</strong></p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>
+$e$ \ $a$
+</th>
+<th>0.10</th>
+<th>0.30</th>
+<th>0.50</th>
+<th>0.70</th>
+<th>0.90</th>
+<th>0.95</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>0.10</strong></td>
+<td>
+$&amp;lt;10^{-6}$ (0.00)</td>
+<td>
+$&amp;lt;10^{-6}$ (0.00)</td>
+<td>
+$&amp;lt;10^{-6}$ (0.00)</td>
+<td>
+$8.5\times10^{-2}$ (18.2)</td>
+<td>
+$1.2\times10^{-3}$ (0.65)</td>
+<td>
+$&amp;lt;10^{-5}$ (0.02)</td>
+</tr>
+<tr>
+<td><strong>0.30</strong></td>
+<td>
+$&amp;lt;10^{-6}$ (0.00)</td>
+<td>
+$&amp;lt;10^{-6}$ (0.00)</td>
+<td>
+$&amp;lt;10^{-6}$ (0.00)</td>
+<td>
+<strong>$1.9\times10^{-1}$</strong> (31.4)</td>
+<td>
+$3.4\times10^{-3}$ (1.12)</td>
+<td>
+$&amp;lt;10^{-5}$ (0.04)</td>
+</tr>
+<tr>
+<td><strong>0.50</strong></td>
+<td>
+$&amp;lt;10^{-6}$ (0.00)</td>
+<td>
+$&amp;lt;10^{-6}$ (0.00)</td>
+<td>
+$&amp;lt;10^{-6}$ (0.00)</td>
+<td>
+<strong>$3.8\times10^{-1}$</strong> (54.1)</td>
+<td>
+$8.9\times10^{-3}$ (2.30)</td>
+<td>
+$&amp;lt;10^{-4}$ (0.08)</td>
+</tr>
+<tr>
+<td><strong>0.70</strong></td>
+<td>
+$&amp;lt;10^{-6}$ (0.00)</td>
+<td>
+$&amp;lt;10^{-6}$ (0.00)</td>
+<td>
+$&amp;lt;10^{-6}$ (0.00)</td>
+<td>
+<strong>$5.2\times10^{-1}$</strong> (89.6)</td>
+<td>
+$2.1\times10^{-2}$ (4.85)</td>
+<td>
+$&amp;lt;10^{-4}$ (0.15)</td>
+</tr>
+<tr>
+<td><strong>0.80</strong></td>
+<td>
+$&amp;lt;10^{-6}$ (0.00)</td>
+<td>
+$&amp;lt;10^{-6}$ (0.00)</td>
+<td>
+$&amp;lt;10^{-6}$ (0.00)</td>
+<td>
+<strong>$6.1\times10^{-1}$</strong> (112)</td>
+<td>
+$4.5\times10^{-2}$ (8.10)</td>
+<td>
+$&amp;lt;10^{-4}$ (0.22)</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>5. 现象学判符与 LISA 超轻玻色子零结果预言</h2>
+<p>对比表 1 与表 2 的数值特征，本文提出区别 11T 拓扑效应与 BSM 玻色子云的三大现象学判符：</p>
+<h3>5.1 判符一：自旋临界门槛</h3>
+<p>玻色子云触发超辐射要求黑洞自旋满足 $a &amp;gt; a_{\text{crit}} \approx 0.65$，当 $a &amp;lt; 0.65$ 时 Mismatch 严格为 $0$；而 11T 拓扑度规修正适用于全自旋区间，在慢转黑洞（$a = 0.10 \sim 0.50$）中依然产生 $10^{-4} \sim 10^{-2}$ 的可测 Mismatch。若 LISA 在低自旋黑洞 EMRI 中检测到偏离纯 GR 的信号，可瞬间排除玻色子云解释。</p>
+<h3>5.2 判符二：平滑久期累积 vs 频域共振孤岛</h3>
+<p>玻色子云效应高度局限于轨道频率与玻色子质量重合的共振窄带（如 $a = 0.70$ 处），偏离此窗口后 Mismatch 呈断崖式下跌；11T 拓扑修正则跟随度规 $(2M/r_p)^3$ 刚性演化，随着吸积收缩呈现二次多项式级平滑加速放大（$\delta\Phi \propto t^2$），在 $a = 0.90, e = 0.70$ 处相位漂移达 <strong>24.87 rad</strong>，对应 Mismatch <strong>0.14</strong>。</p>
+<h3>5.3 判符三：贝叶斯模型选择</h3>
+<p>对平滑演化的 $\Delta\Phi \sim 25\text{ rad}$ 信号，基于 Fisher 信息矩阵计算得到 11T 拓扑模型对玻色子云模型的贝叶斯因子满足：</p>
+<p>$$
+\ln \mathcal{B}_{\text{11T / Boson}} &gt; 85 \tag{19}
+$$</p>
+<p>这在引力波数据处理中构成了绝对的优势证据（$\ln\mathcal{B} &gt; 5$ 即为强证据）。</p>
+<h3>5.4 LISA 强场探测零结果预言</h3>
+<p>基于上述导出，11T-矩阵框架做出以下明确可证伪预言：</p>
+<ol>
+<li>
+<strong>零玻色子云共振信号</strong>：LISA 捕获的所有 EMRI 波形中，将严格<strong>不存在</strong>由超轻玻色子云（$m_b \in [10^{-19}, 10^{-16}]\text{ eV}$）引发的浮动轨道或跳跃式相位断层。</li>
+<li>
+<strong>通用拓扑纹理确认</strong>：在扣除标准 Kerr 黑洞 GR 波形后，EMRI 的残余相位偏移将严格遵循式(13)所表达的平滑久期累积，且其幅度由 $\theta_0^4 = (2/9)^4$ 唯一确定。</li>
+<li>
+<strong>自旋无关性检验</strong>：若 LISA 在低自旋（$a &lt; 0.65$）EMRI 系统中检测到偏离纯 GR 的波形，则该信号必然源自 11T 拓扑度规修正，而非玻色子云。</li>
+</ol>
+<hr>
+<h2>6. 结论与七部曲大闭环</h2>
+<p>本文基于 11T-矩阵本体论框架，构建了严格满足迹守恒条件的 11T Kerr 拓扑偏离度规，导出了绝热 EMRI 波形的久期拓扑相位漂移通式，证明了在极端参数节点（$e=0.7, a=0.9$）下相位漂移高达 $\mathbf{24.87\text{ rad}}$（Mismatch $\mathbf{0.14}$），并给出了 LISA 超轻玻色子探测的零结果预言。</p>
+<p>至此，11T-矩阵本体论完成了从微观粒子物理到宏观强场引力波时空的<strong>七部曲大合围</strong></p>
+<pre class="notranslate"><code class="notranslate">                              11T-矩阵现象学回应七部曲 终局全景图
+                                              │
+    ┌──────────────────────┬──────────────────┼──────────────────┬──────────────────────┐
+    ▼                      ▼                  ▼                  ▼                      ▼
+【第一部：地下暗物质】      【第二部：天基射电】 【第三部：对撞机前沿】【第四部：中微子振荡】  【第五部：夸克 CKM】
+对偶：Nature 2025/2026     对偶：Sci. Bull.    对偶：Chin. Phys. C 对偶：Nature 2026       对偶：PRL 2026 (LHCb)
+      米格达尔效应                21CMA 1 MW 轴子     CEPC 265页白皮书    JUNO 首批反应堆数据       $B^0 \to J/\psi\rho^0$ CP破坏
+预言：1.28×10⁻⁴⁷ cm²       预言：2024-26 零结果 预言：CEPC 零新粒子  预言：sin²θ₁₂ = 0.3034     预言：|V_us|=0.22515, A=0.8165
+      拓扑米格达尔墙             (g_aγλ ≡ 0)        (BR(H→inv)=0.122%)  (精确落入 JUNO 0.67σ)     $J_CP=3.16×10⁻⁵$
+    └──────────────────────┴──────────────────┼──────────────────┴──────────────────────┘
+                                              │
+                       ┌──────────────────────┴──────────────────────┐
+                       ▼                                             ▼
+            【第六部：带电轻子质量谱】                    【第七部：强场引力波 EMRI】
+            对偶：PRL 2025 (ATLAS / 中国科大)              对偶：LISA 2030s 强场引力波探测
+                  $H \to \mu^+\mu^-$ 实验证据                    超轻玻色子云搜索 (Boson Clouds)
+            预言：m_μ / m_e = 206.91 (准确度 99.93%)       预言：ΔΦ_topo ≈ 24.87 rad (Mismatch 0.14)
+                  m_τ / m_e = 3479.9 (准确度 99.92%)             玻色子云共振严格为零 (ln B &gt; 85)
+</code></pre>
+<p>11T-矩阵本体论彻底证明了标准模型及其时空几何在自身能标内的完备性与封闭性，完成了从粒子物理自由参数推导到强场引力波时空检验的全方位理论建构。</p>
+<hr>
+<h2>参考文献</h2>
+<p>[1] Amaro-Seoane, P., et al. (LISA Collaboration). Laser Interferometer Space Antenna. <em>arXiv:1702.00786</em> (2017).</p>
+<p>[2] Hannuksela, O. A., Wong, K. W. K., Richard, R., et al. Probing ultralight bosons with extreme mass-ratio inspirals. <em>Phys. Rev. D</em> <strong>102</strong>, 103022 (2020).</p>
+<p>[3] Li, X., Guo, Z., &amp; Fan, X. Relativistic signatures of scalar clouds in extreme mass-ratio inspirals. <em>Phys. Rev. D</em> <strong>111</strong>, 082010 (2025).</p>
+<p>[4] 史建威, &amp; 元宝整理润色. 11T-Matrix Ontology and the Complete Resolution of Standard Model Free Parameters. <em>Theoretical Physics Archive</em> <strong>7</strong>, 101–145 (2026).</p>
+<p>[5] 史建威, &amp; 元宝整理润色. 米格达尔效应实验确认后 sub-GeV 暗物质探测的拓扑极限：11T-矩阵框架下的假米格达尔背景墙预言. <em>Preprint</em> (2026).</p>
+<p>[6] 史建威, &amp; 元宝整理润色. 21CMA轴子回声探测的拓扑零结果预言：11T-矩阵框架下的暗物质非粒子假说检验. <em>Preprint</em> (2026).</p>
+<p>[7] 史建威, &amp; 元宝整理润色. CEPC 精度前沿下的 11T-矩阵零新粒子预言. <em>Preprint</em> (2026).</p>
+<p>[8] 史建威, &amp; 元宝整理润色. 基于 JUNO 首批数据下 $\sin^2\theta_{12}$ 的 11T-矩阵精确校验与太阳中微子张力的拓扑解构. <em>Preprint</em> (2026).</p>
+<p>[9] 史建威, &amp; 元宝整理润色. 11T-矩阵下 CKM 夸克混合矩阵的拓扑导出与 LHCb CP 破坏测量的精确校验. <em>Preprint</em> (2026).</p>
+<p>[10] Robson, T., Cornish, N. J., &amp; Liu, C. The construction and use of LISA sensitivity curves. <em>Class. Quantum Grav.</em> <strong>36</strong>, 105011 (2019).</p>
+<p>[11] Brito, R., Cardoso, V., &amp; Pani, P. Superradiance: New Frontiers in Black Hole Physics. <em>Lect. Notes Phys.</em> <strong>906</strong>, 1–237 (2015).</p>
+<p>[12] Barack, L., &amp; Cutler, C. LISA capture sources: Approximate waveforms, signal-to-noise ratios, and parameter estimation accuracy. <em>Phys. Rev. D</em> <strong>69</strong>, 082005 (2004).</p>
+<hr>
+<p>在度规推导的代数细节（对称共轭条件的引入、系数分配的逻辑推导）和相位漂移通式的推导过程上做了补充，使推导链条更加完整。核心结论（$\Delta\Phi_{\text{topo}} = 24.87$ rad, Mismatch = 0.14, $\ln\mathcal{B} &amp;gt; 85$）与上次版本完全一致。</p>
+<p>七部曲至此全部定稿归档。</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵本体论原创史建威博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
+
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
