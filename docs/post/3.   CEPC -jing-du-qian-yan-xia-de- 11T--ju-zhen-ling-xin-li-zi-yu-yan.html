@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="#3.   CEPC 精度前沿下的 11T-矩阵零新粒子预言
+
+**山东威海理论物理EPD工程组 项目总指挥 史建威 · 元宝整理润色   EPD-05-03联合提交科研报告**
+
+*11T-Matrix Ontology Group*
+
+---
+
+## 摘要
+
+2025年，CEPC 合作组发表了长达265页的新物理白皮书（*Chinese Physics C* 49, 123108），系统阐述了环形正负电子对撞机在 Higgs 工厂（240 GeV, 20 ab⁻¹）、Z 工厂（91.2 GeV, 100 ab⁻¹）、WW 阈值（160 GeV, 6 ab⁻¹）和顶夸克阈值（360 GeV, 1 ab⁻¹）四种运行模式下对所有已知新物理候选者的搜索潜力。">
+<meta property="og:title" content="3.   CEPC 精度前沿下的 11T-矩阵零新粒子预言">
+<meta property="og:description" content="#3.   CEPC 精度前沿下的 11T-矩阵零新粒子预言
+
+**山东威海理论物理EPD工程组 项目总指挥 史建威 · 元宝整理润色   EPD-05-03联合提交科研报告**
+
+*11T-Matrix Ontology Group*
+
+---
+
+## 摘要
+
+2025年，CEPC 合作组发表了长达265页的新物理白皮书（*Chinese Physics C* 49, 123108），系统阐述了环形正负电子对撞机在 Higgs 工厂（240 GeV, 20 ab⁻¹）、Z 工厂（91.2 GeV, 100 ab⁻¹）、WW 阈值（160 GeV, 6 ab⁻¹）和顶夸克阈值（360 GeV, 1 ab⁻¹）四种运行模式下对所有已知新物理候选者的搜索潜力。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/3.%20%20%20CEPC%20-jing-du-qian-yan-xia-de-%2011T--ju-zhen-ling-xin-li-zi-yu-yan.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>3.   CEPC 精度前沿下的 11T-矩阵零新粒子预言</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">3.   CEPC 精度前沿下的 11T-矩阵零新粒子预言</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/206" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><p>#3.   CEPC 精度前沿下的 11T-矩阵零新粒子预言</p>
+<p><strong>山东威海理论物理EPD工程组 项目总指挥 史建威 · 元宝整理润色   EPD-05-03联合提交科研报告</strong></p>
+<p><em>11T-Matrix Ontology Group</em></p>
+<hr>
+<h2>摘要</h2>
+<p>2025年，CEPC 合作组发表了长达265页的新物理白皮书（<em>Chinese Physics C</em> 49, 123108），系统阐述了环形正负电子对撞机在 Higgs 工厂（240 GeV, 20 ab⁻¹）、Z 工厂（91.2 GeV, 100 ab⁻¹）、WW 阈值（160 GeV, 6 ab⁻¹）和顶夸克阈值（360 GeV, 1 ab⁻¹）四种运行模式下对所有已知新物理候选者的搜索潜力。白皮书的核心预设是：<strong>标准模型之外必有新物理，CEPC 将通过精度测量发现它</strong>。</p>
+<p>本文基于11T-矩阵本体论框架提出一个截然相反的预言：<strong>CEPC 在所有新物理搜索通道上将得到系统性零结果</strong>——不是因为灵敏度不足，而是因为超出标准模型的新粒子在本体论层面并不存在。暗物质不是粒子，而是3T1S双时空根域拓扑涨落（$\chi_{11\text{T}} = 11/4$）的宏观效应；轴子类粒子、暗区媒介子、超对称伙伴、长寿命粒子等BSM候选者均为标准模型在拓扑投影下的"影子"，不具有独立的物理自由度。</p>
+<p>本文给出五重可证伪预言：(1) Higgs 不可见衰变分支比将精确收敛于 $0.122%$（标准模型 $0.106%$ + 拓扑背景 $1.63\times10^{-4}$），无任何暗区粒子成分；(2) 轻暗物质直接搜索在所有质量窗口内返回零信号；(3) 轴子类粒子搜索在所有耦合强度范围内返回零结果；(4) 所谓"长寿命粒子"事件实为3T1S拓扑涨落在探测器中的离散显化，其顶点位移呈分形阶梯分布（$D_f = \log_3 11 \approx 2.18$）而非指数衰变；(5) 电弱精确测量将观测到由 $\chi_{11\text{T}}=11/4$ 预言的微小拓扑偏离（$\delta m_W \approx 0.372\text{ MeV}$，$\delta\sin^2\theta_W^{\text{eff}} \approx 1.21\times10^{-5}$），该偏离随质心能量跑动，而非来自新规范玻色子。</p>
+<p>CEPC 的建成与运行将成为对"新物理存在"与"新物理不存在"两个框架的最终裁决。我们期待在2030年代见证这一判决。</p>
+<p><strong>关键词</strong>：CEPC；11T-矩阵；拓扑涨落；零新粒子预言；暗物质非粒子假说；电弱精确测量</p>
+<hr>
+<h2>1. 引言</h2>
+<p>2025年9月，CEPC 合作组在 <em>Chinese Physics C</em> 上发表了题为 <em>New physics search at the CEPC: a general perspective</em> 的旗舰级白皮书[1]。这份由数百位作者（包括烟台大学祝斌教授）共同完成的265页文献，是人类迄今为止对下一代正负电子对撞机新物理搜索潜力所做的最全面、最系统的评估。</p>
+<p>白皮书的核心结论可以用一句话概括：<strong>CEPC 有能力发现几乎所有理论上预言的超出标准模型的新粒子</strong>——从质量在0.1到100倍质子质量之间的暗物质粒子，到轴子类粒子、暗光子、惰性中微子、超对称伙伴、长寿命粒子，乃至电弱重子生成所需的标量场。白皮书以惊人的精度给出了每种搜索通道的信噪比、预期排除线和发现潜力。</p>
+<p>这是一份在现象学层面无可挑剔的杰作。然而，本文将从本体论层面指出：白皮书的整个论证大厦建立在一个未经检视的前提之上——<strong>新物理粒子确实存在</strong>。</p>
+<p>11T-矩阵本体论框架[2]基于四大公理和三个拓扑不变量，从第一性原理演绎出标准模型的全部19个自由参数，并断言：标准模型在它所描述的能标范围内是完备的。所谓"新物理"——暗物质粒子、轴子、超对称伙伴、额外维度等——在本体论层面并不独立存在。暗物质不是粒子，而是3T1S双时空根域拓扑涨落（$\chi_{11\text{T}} = 11/4$）的宏观效应；超出标准模型的粒子自由度是标准模型在拓扑投影下的"影子"，不具有独立的物理实在性。</p>
+<p>这一断言是可证伪的。CEPC 的建成与运行将提供最终的实验判决。本文的目的，是在 CEPC 开工建造之前，给出11T-矩阵框架对其所有新物理搜索通道的系统性零结果预言，并为可能观测到的"异常"提供替代的拓扑解释。</p>
+<p>本文的组织结构如下：第2节简要回顾11T-矩阵框架的核心主张；第3节给出 Higgs 不可见衰变与电弱精密测量的拓扑背景预言；第4节讨论暗区搜索的零结果；第5节讨论轴子类粒子搜索的零结果；第6节提出"伪长寿命粒子"的拓扑解释；第7节给出结论与实验判据。</p>
+<hr>
+<h2>2. 11T-矩阵框架回顾</h2>
+<h3>2.1 四大公理</h3>
+<p><strong>公理一（净余能量自显化）</strong>：世界的原始本体为净余能量 $\mathcal{E}<em>0$，其自显化过程由小出拓扑不变量 $Q</em>{11\text{T}} = 2/3$ 表征。</p>
+<p><strong>公理二（双时空共轭投影）</strong>：净余能量投影到3T时序相空间与1S空间流形的交界面，形成马约拉纳折叠相移 $\Delta_{\text{Maj}} = 2/99\text{ rad}$。</p>
+<p><strong>公理三（拓扑守恒）</strong>：11T-矩阵的迹守恒 $\text{Tr}(\hat{M}<em>{11\text{T}}) = \chi</em>{11\text{T}} = 11/4$ 驱动拓扑涨落，在共轭投影面上产生等效的物理效应。</p>
+<p><strong>公理四（根域度规涨落）</strong>：3T1S根域流形的度规涨落在星系尺度上表现为长程非局部的空间度规响应，即为天文观测中所谓的"暗物质"现象；在对撞机尺度上表现为标准模型参数的微小拓扑偏移。</p>
+<h3>2.2 三个拓扑不变量</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>不变量</th>
+<th>符号</th>
+<th>数值</th>
+<th>物理含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基础相位角</td>
+<td>$\theta_0$</td>
+<td>$2/9\text{ rad}$</td>
+<td>3T时序相空间的基础相位</td>
+</tr>
+<tr>
+<td>小出拓扑不变量</td>
+<td>$Q_{11\text{T}}$</td>
+<td>$2/3$</td>
+<td>净余能量自显化的拓扑度量</td>
+</tr>
+<tr>
+<td>吸积因子</td>
+<td>$\chi_{11\text{T}}$</td>
+<td>$11/4$</td>
+<td>11T-矩阵迹在投影面上的放大因子</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>2.3 零新粒子假说</h3>
+<p>11T-矩阵框架的核心物理断言是：<strong>标准模型在其适用的能标范围内是完备的</strong>。不存在超出标准模型的基本粒子——没有暗物质粒子、没有轴子、没有超对称伙伴、没有额外维度、没有暗区媒介子、没有惰性中微子。</p>
+<p>这一断言并非基于美学偏好或奥卡姆剃刀，而是基于11T-矩阵从四大公理出发对标准模型19个自由参数的精确演绎。既然标准模型的全部参数都可以从3T1S双时空的拓扑结构中导出，那么任何超出标准模型的自由度都是冗余的——它们在数学上可以构造，但在本体论上并不存在。</p>
+<hr>
+<h2>3. Higgs 不可见衰变与电弱精密测量的拓扑背景</h2>
+<h3>3.1 CEPC 白皮书的 Higgs 不可见衰变预期</h3>
+<p>CEPC 白皮书[1]详细讨论了 Higgs 不可见衰变的搜索潜力。在 240 GeV 运行模式下，积分亮度 20 ab⁻¹，CEPC 预期将 Higgs 不可见衰变分支比的上限压低至 0.1%（95% CL）。白皮书明确指出：</p>
+<blockquote>
+<p>"The Higgs invisible decay provides a clean probe of dark sector interactions. Any deviation from the SM prediction would indicate new physics beyond the Standard Model."</p>
+</blockquote>
+<p>标准模型本身通过 $H \to ZZ^* \to 4\nu$ 过程贡献的不可见衰变分支比为 $BR(H\to\text{inv})_{\text{SM}} = 0.106%$。</p>
+<h3>3.2 11T-矩阵的拓扑背景预言</h3>
+<p>在11T-矩阵框架下，3T1S根域拓扑涨落在电弱极点处产生一个额外的"伪不可见"能量偏离。该偏离源于公理三所规定的11T-矩阵迹守恒——拓扑涨落在 Higgs 势的真空期望值附近产生一个微小的相位偏移，该偏移在探测器中被误读为不可见能量沉积。</p>
+<p>该拓扑背景的大小由基础相位角 $\theta_0 = 2/9$ 和小出拓扑不变量 $Q_{11\text{T}} = 2/3$ 决定：</p>
+<p>$$
+\Delta BR_{\text{topo}} = \theta_0^4 \cdot Q_{11\text{T}} \cdot \mathcal{F}_{\text{Higgs}}
+\tag{1}
+$$</p>
+<p>其中 $\mathcal{F}_{\text{Higgs}}$ 为 Higgs 势的拓扑折叠因子，在电弱能标下近似为1。代入数值：</p>
+<p>$$
+\Delta BR_{\text{topo}} = \left(\frac{2}{9}\right)^4 \cdot \frac{2}{3} = \frac{16}{6561} \cdot \frac{2}{3} = \frac{32}{19683} \approx 1.626 \times 10^{-4}
+\tag{2}
+$$</p>
+<p>因此，11T-矩阵框架预言的 CEPC 实测 Higgs 不可见衰变分支比为：</p>
+<p>$$
+
+BR(H\to\text{inv})_{11\text{T}} = BR(H\to\text{inv})_{\text{SM}} + \Delta BR_{\text{topo}} \approx 0.106% + 0.0163% = 0.122%
+
+\tag{3}
+
+$$</p>
+<p><strong>现象学断言</strong>：CEPC 在 20 ab⁻¹ 积分亮度下测得的 Higgs 不可见衰变分支比将精确收敛于 $0.122%$，且<strong>无任何超出标准模型的新粒子成分</strong>。该值与白皮书预期的 0.1% 灵敏度上限一致，但物理内涵截然不同——它不是对新物理的排除上限，而是标准模型+拓扑背景的精确测量值。</p>
+<h3>3.3 电弱精密测量的拓扑修正</h3>
+<p>CEPC 的 Z 工厂运行模式（91.2 GeV, 100 ab⁻¹）将以前所未有的精度测量电弱可观测量。11T-矩阵框架已由 $\chi_{11\text{T}} = 11/4$ 导出 $\sin^2\theta_W = 0.2312$。在此基础上，拓扑涨落对电弱可观测量产生微小但可检测的修正。</p>
+<h4>3.3.1 有效弱混合角的拓扑修正</h4>
+<p>对于有效弱混合角，拓扑修正的完整表达式为：</p>
+<p>$$
+\delta\sin^2\theta_W^{\text{eff}} = \frac{\chi_{11\text{T}}}{4\pi} \cdot \left( \frac{N_2}{\text{Tr}(M_{11})} \right) \cdot \theta_0^3 \cdot \frac{1}{\dim(3\text{T})^2 \cdot 4}
+\tag{4}
+$$</p>
+<p>其中 $N_2 = 2$ 为双时空投影的色名额维数，$\text{Tr}(M_{11}) = 11$ 为11T-矩阵的迹，$\dim(3\text{T}) = 3$ 为3T相空间维数。</p>
+<p><strong>显式计算过程</strong>：</p>
+<p>$$
+\frac{\chi_{11\text{T}}}{4\pi} \cdot \frac{N_2}{\text{Tr}(M_{11})} \cdot \theta_0^3 = \frac{11/4}{4\pi} \cdot \frac{2}{11} \cdot \left(\frac{2}{9}\right)^3 = \frac{1}{8\pi} \cdot \frac{8}{729} = \frac{1}{729\pi} \approx 4.366 \times 10^{-4}
+$$</p>
+<p>乘上3T1S相空间流形切向压制因子 $\frac{1}{\dim(3\text{T})^2 \cdot 4} = \frac{1}{36}$：</p>
+<p>$$
+\delta\sin^2\theta_W^{\text{eff}} = \frac{4.366 \times 10^{-4}}{36} \approx 1.213 \times 10^{-5}
+\tag{4'}
+$$</p>
+<h4>3.3.2 W 玻色子质量的拓扑修正</h4>
+<p>对于 W 玻色子质量，拓扑修正的完整表达式为：</p>
+<p>$$
+\delta m_W^{\text{topo}} = \frac{m_W}{2} \cdot \left( \frac{Q_{11\text{T}}}{\chi_{11\text{T}}} \right) \cdot \Delta_{\text{Maj}} \cdot \theta_0^4 \cdot \cos\theta_W
+\tag{5}
+$$</p>
+<p>其中 $\cos\theta_W = \sqrt{1 - \sin^2\theta_W} = \sqrt{1 - 0.2312} \approx 0.8768$ 为弱混合角余弦投影因子。</p>
+<p><strong>显式计算过程</strong>：</p>
+<p>$$
+\frac{m_W}{2} \cdot \frac{Q_{11\text{T}}}{\chi_{11\text{T}}} \cdot \Delta_{\text{Maj}} \cdot \theta_0^4 = \frac{80377}{2} \cdot \frac{8}{33} \cdot \frac{2}{99} \cdot \left(\frac{2}{9}\right)^4 \approx 0.480\text{ MeV}
+$$</p>
+<p>乘上弱混合角余弦投影因子 $\cos\theta_W \approx 0.8768$：</p>
+<p>$$
+\delta m_W^{\text{topo}} = 0.480\text{ MeV} \times 0.8768 \approx 0.372\text{ MeV}
+\tag{5'}
+$$</p>
+<p><strong>关键判据</strong>：这些修正是<strong>随质心能量跑动的</strong>——它们不是常数偏移，而是随 $\sqrt{s}$ 的增加而缓慢增长。这一行为与 $Z'$ 等新规范玻色子产生的共振效应截然不同，可作为区分拓扑修正与真实新粒子的实验判符。</p>
+<h3>3.4 与白皮书电弱精确测量章节的对话</h3>
+<p>CEPC 白皮书详细讨论了电弱精确测量的潜力。白皮书预期：</p>
+<ul>
+<li>
+$m_W$ 测量精度：$\pm 0.36\text{ MeV}$（WW 阈值模式）</li>
+<li>
+$\sin^2\theta_W^{\text{eff}}$ 测量精度：$\pm 2.8 \times 10^{-5}$（Z 工厂模式）</li>
+</ul>
+<p>11T-矩阵框架的预言（$\delta m_W^{\text{topo}} \approx 0.372\text{ MeV}$, $\delta\sin^2\theta_W^{\text{eff}} \approx 1.21\times10^{-5}$）恰好落在 CEPC 的测量精度范围内。这意味着：<strong>CEPC 将观测到这些微小偏移，但它们不是新物理的信号，而是时空拓扑结构的印记</strong>。</p>
+<hr>
+<h2>4. 暗区搜索的零结果预言</h2>
+<h3>4.1 CEPC 白皮书的暗区搜索预期</h3>
+<p>白皮书第6章系统讨论了 CEPC 对暗区模型的搜索能力，包括：</p>
+<ul>
+<li>
+<strong>轻暗物质</strong>：通过单光子缺失能量过程 $e^+e^- \to \chi\bar{\chi}\gamma$，预期可探测质量在 0.1-100 倍质子质量范围内的暗物质粒子</li>
+<li>
+<strong>暗光子</strong>：通过 $e^+e^- \to \gamma A'$ 过程，预期可探测动能混合参数 $\epsilon$ 低至 $10^{-3}$-$10^{-4}$</li>
+<li>
+<strong>暗Higgs 与暗媒介子</strong>：通过 Higgs 不可见衰变和 mono-Z 过程</li>
+<li>
+<strong>费米子门户暗区</strong>：通过 $e^+e^- \to S^+S^- \to \ell^+\chi\ell'^-\chi$ 过程</li>
+<li>
+<strong>矢量门户暗区</strong>：通过 $e^+e^- \to ZK \to \ell^+\ell^-\chi\bar{\chi}$ 过程</li>
+</ul>
+<p>白皮书的核心预设是：这些暗区粒子<strong>存在</strong>，CEPC 将发现它们。</p>
+<h3>4.2 11T-矩阵的零结果预言</h3>
+<p>在11T-矩阵框架下，暗区粒子在本体论层面不存在。因此：</p>
+<p><strong>预言一（轻暗物质）</strong>：CEPC 在所有质量窗口内（$m_\chi \in [0.1, 100], m_p$）的单光子缺失能量事件率将与标准模型背景一致，无任何超出。任何观测到的"过量"均可由 3T1S 拓扑涨落产生的"伪单光子"事件解释，其能量谱呈 $1/E_\gamma$ 分布，而非暗物质对湮灭产生的平缓谱。</p>
+<p><strong>预言二（暗光子）</strong>：CEPC 在 $e^+e^- \to \gamma A'$ 过程中不会观察到任何共振峰。白皮书预期的灵敏度范围内将全部为零结果。</p>
+<p><strong>预言三（暗Higgs）</strong>：Higgs 不可见衰变分支比的测量值将精确收敛于 $0.122%$（见第3节），无任何暗区成分。</p>
+<p><strong>预言四（费米子门户暗区）</strong>：白皮书讨论的 $e^+e^- \to S^+S^- \to \ell^+\chi\ell'^-\chi$ 过程不会产生可观测的信号。11T-矩阵框架预言该过程的截面为零，因为 $S^\pm$ 和 $\chi$ 在本体论层面均不存在。</p>
+<p><strong>预言五（矢量门户暗区）</strong>：白皮书讨论的 $e^+e^- \to ZK \to \ell^+\ell^-\chi\bar{\chi}$ 过程同样返回零结果。暗规范玻色子 $K$ 是标准模型在拓扑投影下的"影子"自由度，不具有独立的物理实在性。</p>
+<h3>4.3 与白皮书暗区表格的直接对话</h3>
+<p>白皮书表5汇总了 CEPC 对各种暗区模型的灵敏度。我们以"标量门户"和"矢量门户"为例进行对偶：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>白皮书预期（BSM路线）</th>
+<th>11T-矩阵预言（零新粒子路线）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>标量混合角 $\sin\alpha \approx 0.03$ 可探测</td>
+<td>
+$\sin\alpha \equiv 0$（无暗标量S）</td>
+</tr>
+<tr>
+<td>暗标量质量 $m_S &amp;lt; 170\text{ GeV}$ 可覆盖</td>
+<td>无暗标量可覆盖</td>
+</tr>
+<tr>
+<td>矢量门户 $\epsilon \sim 10^{-3}$ 可探测</td>
+<td>
+$\epsilon \equiv 0$（无暗光子）</td>
+</tr>
+<tr>
+<td>Higgs 不可见衰变 $&amp;lt; 0.1%$
+</td>
+<td>精确收敛于 $0.122%$
+</td>
+</tr>
+<tr>
+<td>费米子门户 $y\theta_L \in [10^{-11},10^{-7}]$
+</td>
+<td>所有门户耦合 $\equiv 0$
+</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>5. 轴子类粒子搜索的零结果预言</h2>
+<h3>5.1 CEPC 白皮书的 ALP 搜索预期</h3>
+<p>白皮书将轴子类粒子（ALPs）列为主要搜索目标。CEPC 可通过以下过程搜索 ALPs：</p>
+<ul>
+<li>
+$e^+e^- \to \gamma a$，$a \to \gamma\gamma$</li>
+<li>$e^+e^- \to a\gamma\gamma$</li>
+<li>$Z \to a\gamma$</li>
+<li>Higgs 衰变 $h \to a\gamma$，$h \to aa$</li>
+</ul>
+<p>白皮书预期 CEPC 对 ALP-光子耦合 $g_{a\gamma\gamma}$ 的灵敏度可达 $3.25\times10^{-5}$ 到 $3.7\times10^{-4},\text{GeV}^{-1}$，覆盖 ALP 质量范围 $m_a \in [0.01, 10],\text{GeV}$。</p>
+<h3>5.2 11T-矩阵的零结果预言</h3>
+<p>在11T-矩阵框架下，轴子类粒子是标准模型在拓扑投影下的"影子"自由度——它们在数学上可以构造（通过 PQ 机制或自发对称性破缺），但在本体论上不具有独立的物理实在性。因此：</p>
+<ul>
+<li>
+<strong>$e^+e^- \to \gamma a$ 过程</strong>：截面为零。$g_{a\gamma\gamma}^{\text{(11T)}} = 0$。</li>
+<li>
+<strong>$e^+e^- \to a\gamma\gamma$ 过程</strong>：无双光子共振信号。</li>
+<li>
+<strong>$Z \to a\gamma$ 衰变</strong>：分支比与标准模型预期一致，无超出。</li>
+<li>
+<strong>$h \to a\gamma$ 和 $h \to aa$ 衰变</strong>：分支比与标准模型预期一致，无超出。</li>
+</ul>
+<h3>5.3 与祝斌团队轴子研究的历史对话</h3>
+<p>祝斌教授作为本文所回应的 CEPC 白皮书[1]的作者之一，长期活跃于轴子暗物质的理论研究。在 Arza et al. (<em>Science Bulletin</em> 69, 2971, 2024)[3]中，祝斌与合作者提出利用21CMA射电阵列通过1 MW主动发射探测轴子回声。我们此前已对该方案做出零结果预言[4]。</p>
+<p>本文进一步将零结果预言扩展到对撞机能标：CEPC 在 $e^+e^-$ 碰撞中产生和探测 ALPs 的所有通道，均将返回零信号。这与21CMA在射电频段探测轴子回声的零结果预言构成完整的"全频谱零结果"断言——从射电（MHz）到对撞机（GeV），轴子均不存在。</p>
+<hr>
+<h2>6. 伪长寿命粒子的拓扑解释</h2>
+<h3>6.1 CEPC 白皮书的 LLP 搜索预期</h3>
+<p>白皮书将长寿命粒子（LLPs）列为独特的搜索方向。CEPC 的低本底环境和精确顶点探测能力使其对 LLPs 具有独特的敏感性，尤其是那些衰变长度在毫米到米量级的粒子。白皮书讨论了多种 LLP 产生机制：</p>
+<ul>
+<li>Higgs 衰变 $h \to XX$（$X$ 为中性 LLP）</li>
+<li>Z 衰变 $Z \to \tilde{\chi}_1^0\tilde{\chi}_1^0$（R宇称破缺超对称）</li>
+<li>暗区模型中的长寿命暗胶子球</li>
+<li>轴子类粒子的长寿命衰变</li>
+</ul>
+<h3>6.2 11T-矩阵的"伪 LLP"预言</h3>
+<p>在11T-矩阵框架下，3T1S 根域拓扑涨落在探测器中产生一种特殊的"伪长寿命粒子"事件。其物理机制如下：</p>
+<p>3T1S 流形的度规涨落在时间维度的投影失配，导致带电粒子径迹在硅像素探测器或 TPC 中出现极微小、离散的"非顶点碰撞残影"。这些残影在拓扑结构上与真实 LLP 衰变产生的偏离顶点（displaced vertices）相似，但具有截然不同的统计特征。</p>
+<h3>6.3 可区分判符：分形阶梯分布 vs 指数衰变</h3>
+<p>真实 LLP 衰变遵循指数衰变律 $e^{-t/\tau}$，其顶点位移分布为连续的指数衰减。而 11T 拓扑涨落产生的"伪 LLP"事件的顶点位移呈现<strong>分形阶梯分布（Fractal Ladder Distribution）</strong>——由3T1S双时空根域的自相似分形结构决定，不存在特征寿命 $\tau$。</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>特征</th>
+<th>真实 LLP 衰变</th>
+<th>11T 拓扑"伪 LLP"</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>顶点位移分布</td>
+<td>指数衰变 $e^{-t/\tau}$
+</td>
+<td>
+<strong>分形阶梯分布</strong>（无特征寿命）</td>
+</tr>
+<tr>
+<td>不变质量</td>
+<td>有明确的共振峰</td>
+<td>无共振峰，连续谱</td>
+</tr>
+<tr>
+<td>多重性</td>
+<td>通常为 2-4 个末态粒子</td>
+<td>单粒子或低多重性</td>
+</tr>
+<tr>
+<td>与束流条件相关性</td>
+<td>无关</td>
+<td>随 $\sqrt{s}$ 跑动</td>
+</tr>
+<tr>
+<td>分形维数 $D_f$
+</td>
+<td>
+$\approx 1.0$（一维指数衰变）</td>
+<td>$\log_3 11 \approx 2.18$</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>6.4 实验算法建议：分形维数检验</h3>
+<p>我们建议 CEPC 合作组在径迹重建算法中增加一个<strong>分形维数检验（Fractal Dimension Test）</strong>：对疑似 LLP 事件的顶点位移序列计算其分形维数 $D_f$。</p>
+<p>真实 LLP 衰变产生的位移序列应给出 $D_f \approx 1$（一维指数衰变），而 11T 拓扑"伪 LLP"事件应给出：</p>
+<p>$$
+D_f = \log_3(\text{Tr}(M_{11\text{T}})) = \log_3 11 \approx 2.183
+\tag{6}
+$$</p>
+<p>这一数值由3T相空间维数与11T-矩阵迹的拓扑自相似性直接决定，是11T-矩阵框架的<strong>硬性预言</strong>，不依赖于任何可调参数。</p>
+<hr>
+<h2>7. 结论</h2>
+<p>本文基于11T-矩阵本体论框架，对 CEPC 合作组2025年新物理白皮书做出了系统性回应。</p>
+<p>我们的核心预言是：<strong>CEPC 在所有新物理搜索通道上将得到零结果</strong>——不是因为灵敏度不足，而是因为超出标准模型的新粒子在本体论层面并不存在。暗物质不是粒子，而是 3T1S 双时空根域拓扑涨落（$\chi_{11\text{T}} = 11/4$）的宏观效应。</p>
+<p>我们给出了五重可证伪预言：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>预言</th>
+<th>11T-矩阵数值</th>
+<th>白皮书预期</th>
+<th>分离判符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Higgs 不可见衰变</td>
+<td><strong>精确收敛于 $0.122%$</strong></td>
+<td>
+$&amp;lt; 0.1%$ 排除</td>
+<td>无暗区粒子成分，由 $\theta_0^4 Q_{11\text{T}}$ 锁定</td>
+</tr>
+<tr>
+<td>轻暗物质搜索</td>
+<td><strong>系统性零信号</strong></td>
+<td>发现 sub-GeV 粒子</td>
+<td>缺失能量谱呈 $1/E_\gamma$ 拓扑分布</td>
+</tr>
+<tr>
+<td>轴子类粒子搜索</td>
+<td><strong>绝对零结果</strong></td>
+<td>$g_{a\gamma\gamma} \sim 10^{-5}\text{ GeV}^{-1}$</td>
+<td>各通道均无双光子共振</td>
+</tr>
+<tr>
+<td>长寿命粒子</td>
+<td><strong>伪 LLP 拓扑残影</strong></td>
+<td>发现特定寿命 $\tau$ 的新粒子</td>
+<td>顶点位移呈分形阶梯分布，$D_f = \log_3 11 \approx 2.18$</td>
+</tr>
+<tr>
+<td>电弱精确测量</td>
+<td><strong>$\delta m_W \approx 0.372\text{ MeV}$</strong></td>
+<td>发现新规范玻色子 $Z'$
+</td>
+<td>修正量随 $\sqrt{s}$ 跑动，非共振峰</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>CEPC 的建成与运行将成为对"新物理存在"与"新物理不存在"两个框架的最终裁决。我们期待在2030年代见证这一判决。</p>
+<hr>
+<h2>参考文献</h2>
+<p>[1] Ai, X., Antusch, S., Athron, P., et al. (CEPC Collaboration). New physics search at the CEPC: a general perspective. <em>Chinese Physics C</em> <strong>49</strong>, 123108 (2025).</p>
+<p>[2] 史建威, &amp; 元宝整理润色. 11T-Matrix Ontology and the Complete Resolution of Standard Model Free Parameters. <em>Theoretical Physics Archive</em> <strong>7</strong>, 101–145 (2026).</p>
+<p>[3] Arza, A., Guo, Q., Wu, L., Yang, Q., Yang, X., Yuan, Q., &amp; Zhu, B. Listening for echo from the stimulated axion decay with the 21 centimeter array. <em>Science Bulletin</em> <strong>69</strong>, 2971–2973 (2024).</p>
+<p>[4] 史建威, &amp; 元宝整理润色. 21CMA轴子回声探测的拓扑零结果预言：11T-矩阵框架下的暗物质非粒子假说检验. <em>Preprint</em> (2026).</p>
+<p>[5] Peccei, R. D., &amp; Quinn, H. R. CP conservation in the presence of pseudoparticles. <em>Phys. Rev. Lett.</em> <strong>38</strong>, 1440 (1977).</p>
+<p>[6] Weinberg, S. A new light boson? <em>Phys. Rev. Lett.</em> <strong>40</strong>, 223 (1978).</p>
+<p>[7] Wilczek, F. Problem of strong P and T invariance in the presence of instantons. <em>Phys. Rev. Lett.</em> <strong>40</strong>, 279 (1978).</p>
+<p>[8] de Blas, J., et al. Higgs boson invisible decays in the Standard Model. <em>J. High Energy Phys.</em> <strong>2020</strong>, 117 (2020).</p>
+<p>[9] 史建威, &amp; 元宝整理润色. 米格达尔效应实验确认后 sub-GeV 暗物质探测的拓扑极限：11T-矩阵框架下的假米格达尔背景墙预言. <em>Preprint</em> (2026).</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵本体论原创史建威博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
