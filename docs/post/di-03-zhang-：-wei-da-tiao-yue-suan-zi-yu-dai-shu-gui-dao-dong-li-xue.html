@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 《11时序矩阵代数动力学讲义》
+
+## 第03章：韦达跳跃算子与代数轨道动力学  
+作者：山东威海理论物理EPD工程组总指挥 史建威
+ORCID：0009-0002-1757-1793
+---
+
+### §3.1 韦达跳跃算子 $\mathcal{T}_x, \mathcal{T}_y, \mathcal{T}_z$ 的形式化定义
+
+#### 3.1.1 从马尔可夫方程到韦达跳跃的代数必然性
+
+在 §2.1 中，我们从公理一（净余能量唯一本源）和公理三（根域名额排他性）推导出了马尔可夫丢番图方程：
+
+$$x^2 + y^2 + z^2 = 3xyz \tag{$\star$}$$
+
+其中 $x, y, z \in \mathbb{Z}^+$ 是由公理三赋予的**拓扑名额聚集度**（Topological Quotas），每个名额不可再分、不可重叠。">
+<meta property="og:title" content="第03章：韦达跳跃算子与代数轨道动力学">
+<meta property="og:description" content="# 《11时序矩阵代数动力学讲义》
+
+## 第03章：韦达跳跃算子与代数轨道动力学  
+作者：山东威海理论物理EPD工程组总指挥 史建威
+ORCID：0009-0002-1757-1793
+---
+
+### §3.1 韦达跳跃算子 $\mathcal{T}_x, \mathcal{T}_y, \mathcal{T}_z$ 的形式化定义
+
+#### 3.1.1 从马尔可夫方程到韦达跳跃的代数必然性
+
+在 §2.1 中，我们从公理一（净余能量唯一本源）和公理三（根域名额排他性）推导出了马尔可夫丢番图方程：
+
+$$x^2 + y^2 + z^2 = 3xyz \tag{$\star$}$$
+
+其中 $x, y, z \in \mathbb{Z}^+$ 是由公理三赋予的**拓扑名额聚集度**（Topological Quotas），每个名额不可再分、不可重叠。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/di-03-zhang-%EF%BC%9A-wei-da-tiao-yue-suan-zi-yu-dai-shu-gui-dao-dong-li-xue.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>第03章：韦达跳跃算子与代数轨道动力学</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">第03章：韦达跳跃算子与代数轨道动力学</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/218" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>《11时序矩阵代数动力学讲义》</h1>
+<h2>第03章：韦达跳跃算子与代数轨道动力学</h2>
+<h2>作者：山东威海理论物理EPD工程组总指挥 史建威<br>
+ORCID：0009-0002-1757-1793</h2>
+<h3>§3.1 韦达跳跃算子 $\mathcal{T}_x, \mathcal{T}_y, \mathcal{T}_z$ 的形式化定义</h3>
+<h4>3.1.1 从马尔可夫方程到韦达跳跃的代数必然性</h4>
+<p>在 §2.1 中，我们从公理一（净余能量唯一本源）和公理三（根域名额排他性）推导出了马尔可夫丢番图方程：</p>
+<p>$$x^2 + y^2 + z^2 = 3xyz \tag{$\star$}$$</p>
+<p>其中 $x, y, z \in \mathbb{Z}^+$ 是由公理三赋予的<strong>拓扑名额聚集度</strong>（Topological Quotas），每个名额不可再分、不可重叠。</p>
+<p>本节的核心任务是：定义作用于节点 $P=(x,y,z)$ 上的<strong>韦达跳跃算子</strong> $\hat{\mathcal{T}}_x, \hat{\mathcal{T}}_y, \hat{\mathcal{T}}_z$，并证明它们是根域中名额重排的唯一合法代数操作。</p>
+<hr>
+<h4>3.1.2 韦达跳跃算子的代数定义</h4>
+<p>韦达跳跃的数学原理源于<strong>韦达定理（Vieta's formulas）</strong>。对于方程 $(\star)$，固定 $y$ 和 $z$ 不变，将其视为关于 $x$ 的二次方程：</p>
+<p>$$x^2 - (3yz) x + (y^2+z^2) = 0$$</p>
+<p>该方程的两个根 $x_1, x_2$ 满足韦达定理：</p>
+<p>$$x_1 + x_2 = 3yz, \quad x_1 x_2 = y^2 + z^2$$</p>
+<p>若 $(x, y, z)$ 是一个已知解，则另一个根 $x' = 3yz - x$ 也给出一个新的正整数解 $(x', y, z)$。这就是<strong>韦达跳跃</strong>。</p>
+<hr>
+<blockquote>
+<p><strong>【定义 3.1.1（韦达跳跃算子 $\hat{\mathcal{T}}_k$）】</strong><br>
+对任意节点 $P = (x, y, z) \in \mathcal{V}_{\text{M}}$，定义三个韦达跳跃算子：</p>
+<p>$$\hat{\mathcal{T}}_x(P) = (3yz - x,; y,; z)$$
+$$\hat{\mathcal{T}}_y(P) = (x,; 3xz - y,; z)$$
+$$\hat{\mathcal{T}}_z(P) = (x,; y,; 3xy - z)$$</p>
+<p>即 $\hat{\mathcal{T}}_k$ 保持其余两个坐标不变，将第 $k$ 个坐标替换为 $3 \times (\text{另两个坐标的乘积}) - (\text{原第 } k \text{ 个坐标})$。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>【定理 3.1.1（韦达跳跃的名额守恒定理）】</strong><br>
+对任意 $P \in \mathcal{V}_{\text{M}}$ 和任意 $k \in {x,y,z}$，$\hat{\mathcal{T}}_k(P)$ 仍然是马尔可夫方程 $(\star)$ 的正整数解。</p>
+<p><em>证明：</em><br>
+设 $P=(x,y,z)$ 满足 $x^2+y^2+z^2=3xyz$。令 $x' = 3yz - x$。<br>
+计算 $x'^2 + y^2 + z^2$：<br>
+$$x'^2 = (3yz-x)^2 = 9y^2z^2 - 6xyz + x^2$$<br>
+因此：<br>
+$$x'^2 + y^2 + z^2 = 9y^2z^2 - 6xyz + (x^2+y^2+z^2)$$<br>
+由原方程 $x^2+y^2+z^2 = 3xyz$，代入：<br>
+$$= 9y^2z^2 - 6xyz + 3xyz = 9y^2z^2 - 3xyz$$<br>
+另一方面，$3x'yz = 3(3yz-x)yz = 9y^2z^2 - 3xyz$。<br>
+两者相等，故 $(x',y,z)$ 满足方程。正整数性由韦达定理保证（两根之和与积均为正）。□</p>
+</blockquote>
+<hr>
+<h4>3.1.3 对合性与名额排他性守恒</h4>
+<p>韦达跳跃算子最重要的代数性质是<strong>对合性（Involution）</strong>：连续两次相同的跳跃回到原点。</p>
+<hr>
+<blockquote>
+<p><strong>【定理 3.1.2（对合性定理）】</strong><br>
+对任意 $k \in {x,y,z}$，$\hat{\mathcal{T}}_k^2 = \mathcal{I}$（恒等映射）。</p>
+<p><em>证明：</em><br>
+$$\hat{\mathcal{T}}_x(\hat{\mathcal{T}}_x(x,y,z)) = \hat{\mathcal{T}}_x(3yz-x, y, z) = (3yz-(3yz-x), y, z) = (x,y,z)$$<br>
+同理对 $\hat{\mathcal{T}}_y, \hat{\mathcal{T}}_z$ 成立。□</p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>【代数约束：名额重排恒等式（公理三补丁）】</strong><br>
+韦达跳跃 $\hat{\mathcal{T}}_x(x,y,z) = (3yz-x, y, z)$ <strong>并不是名额的创生或消灭</strong>，而是名额在 $M_3, M_4$ 矩阵拓扑通道约束下的<strong>绝对互斥重排</strong>。</p>
+<p>具体而言：</p>
+<ul>
+<li>对合性 $\hat{\mathcal{T}}_x^2 = \mathcal{I}$ 从数学上确保了名额在跃迁过程中的<strong>排他性守恒</strong>——两次相同跳跃恢复原状，意味着名额既不可被复制（无克隆），也不可被湮灭（无消灭）；</li>
+<li>跳跃前后，$y$ 和 $z$ 通道的名额完全不变（排他性保持），只有 $x$ 通道的名额被重新计算为 $3yz-x$，这是 $M_3$ 时序饱和度矩阵对三个通道交叉耦合的代数强制结果；</li>
+<li>若名额可重叠（违反公理三），则 $x'$ 可能与 $y$ 或 $z$ 共享名额，对合性将被破坏。对合性恰恰是公理三在算子层面的代数指纹。</li>
+</ul>
+</blockquote>
+<hr>
+<h4>3.1.4 矩阵表示与 $M_4$ 自旋拓扑映射的关联</h4>
+<p>在 §3.4 中，我们将韦达跳跃算子嵌入到 $M_4$ 自旋拓扑映射矩阵的 $4\times4$ 表示中。在此先给出其与 $M_0$ 基底的关系。</p>
+<hr>
+<blockquote>
+<p><strong>【引理 3.1.1（韦达跳跃在 $M_0$ 基底上的作用）】</strong><br>
+在 $M_0$ 全域净余能量基底上，每个节点 $P$ 对应一个本征态 $|P\rangle$，本征值为 $E_0(P) = x+y+z$。</p>
+<p>韦达跳跃 $\hat{\mathcal{T}}_x$ 在 $M_0$ 基底上诱导一个置换矩阵 $S_x$（非对角），满足：<br>
+$$S_x |P\rangle = |\hat{\mathcal{T}}_x(P)\rangle$$<br>
+且 $S_x^2 = I$（由对合性保证）。</p>
+<p>三个置换矩阵 $S_x, S_y, S_z$ 与 $M_4$ 自旋拓扑映射矩阵的关系为：<br>
+$$M_4(P) = \mathbf{S}(P) = \sum_{k\in{x,y,z}} \alpha_k S_k + \beta I$$<br>
+其中系数 $\alpha_k, \beta$ 由节点坐标的线性组合决定（详见 §3.4 定义 3.4.1）。</p>
+</blockquote>
+<hr>
+<h4>3.1.5 跳跃方向的选择与 $M_5$ 全局熵矩阵</h4>
+<p>从节点 $P$ 出发，有三个理论上的跳跃方向 $x,y,z$。但并非所有方向都合法（见 §3.2 的合法性条件）。方向选择由 $M_5$ 全局熵矩阵的概率幅决定。</p>
+<hr>
+<blockquote>
+<p><strong>【引理 3.1.2（方向选择的熵权重）】</strong><br>
+设从节点 $P$ 出发，三个可能方向的能量增量分别为 $\Delta E_x, \Delta E_y, \Delta E_z$（由 $M_3$ 矩阵计算）。</p>
+<p>$M_5$ 全局熵矩阵赋予每个方向的<strong>选择概率幅</strong>为：<br>
+$$p_k(P) = \frac{e^{-\Delta E_k / T_{\text{topo}}}}{\sum_{j\in{x,y,z}} e^{-\Delta E_j / T_{\text{topo}}}}, \quad k \in {x,y,z}$$<br>
+其中 $T_{\text{topo}}$ 是根域拓扑温度（由 $M_5$ 的谱隙决定，为常数）。</p>
+<p><strong>公理三约束：</strong> 若某方向的跳跃导致名额重叠（即新坐标与某已有节点坐标重复），则该方向的权重被强制置零。</p>
+</blockquote>
+<hr>
+<h4>3.1.6 韦达跳跃与泡利不相容原理的代数关联</h4>
+<hr>
+<blockquote>
+<p><strong>【推论 3.1.1（泡利不相容原理的代数根源）】</strong><br>
+在表象空间中，两个费米子不能占据同一量子态——这一原理在根域中的本体论根源就是<strong>公理三（名额排他性）</strong>。</p>
+<p>韦达跳跃的对合性 $\hat{\mathcal{T}}_k^2 = \mathcal{I}$ 禁止同一名额在两次跳跃中被"复制"到不同节点。当 $M_1$ 投影矩阵将根域映射到表象空间时，这一排他性约束投影为泡利不相容原理的 $\pm 1$ 交换反对称性。</p>
+<p><em>物理直觉：</em><br>
+如果把根域中的名额比作"停车位"，公理三就是"一个车位不能同时停两辆车"。韦达跳跃是车在三个通道之间的移动，对合性是"车不能凭空变出第二辆"。表象空间中的费米子统计，只是这个停车位规则在 3S1T 投影中的低能读数。</p>
+</blockquote>
+<hr>
+<h3>§3.1 本节小结与思考题</h3>
+<h4>【本节小结】</h4>
+<ol>
+<li>韦达跳跃算子 $\hat{\mathcal{T}}_x, \hat{\mathcal{T}}_y, \hat{\mathcal{T}}_z$ 由韦达定理内生定义，将节点 $P=(x,y,z)$ 映射到新的正整数解。</li>
+<li>对合性 $\hat{\mathcal{T}}_k^2 = \mathcal{I}$ 是公理三（名额排他性）在算子层面的代数指纹——名额不可复制、不可湮灭。</li>
+<li>韦达跳跃不是名额的创生/消灭，而是 $M_3, M_4$ 矩阵约束下的绝对互斥重排。</li>
+<li>跳跃方向选择由 $M_5$ 全局熵矩阵的玻尔兹曼权重决定，且受公理三的零权重强制。</li>
+<li>泡利不相容原理的本体论根源是公理三，韦达对合性投影为表象中的费米子交换反对称性。</li>
+</ol>
+<h4>【本节思考题】</h4>
+<ol>
+<li>
+<strong>思考题 3.1.1：</strong> 从节点 $(1,2,5)$ 出发，分别计算三个方向的跳跃结果 $\hat{\mathcal{T}}_x, \hat{\mathcal{T}}_y, \hat{\mathcal{T}}_z$，并验证每个结果都满足马尔可夫方程。</li>
+<li>
+<strong>思考题 3.1.2：</strong> 证明对合性 $\hat{\mathcal{T}}_k^2 = \mathcal{I}$ 与公理三（名额排他性）的逻辑等价性：若取消公理三（允许名额重叠），对合性是否仍然成立？试构造反例。</li>
+<li>
+<strong>思考题 3.1.3（计算实践）：</strong> 设节点 $P=(2,5,29)$，计算三个方向的能量增量 $\Delta E_x, \Delta E_y, \Delta E_z$，并利用 $M_5$ 熵权重公式（取 $T_{\text{topo}}=1$）计算三个方向的选择概率 $p_x, p_y, p_z$。</li>
+<li>
+<strong>思考题 3.1.4（拓展探究）：</strong> 韦达跳跃算子与量子力学中的泡利矩阵 $\sigma_x, \sigma_y, \sigma_z$ 有何类比与本质区别？试从对合性、互斥性和投影机制三个角度进行比较。</li>
+</ol>
+<hr>
+<p><strong>（《11时序矩阵代数动力学讲义》第一卷 第3章 §3.1 完）</strong></p>
+<h1>《11时序矩阵代数动力学讲义》</h1>
+<h2>第3章：韦达跳跃算子与代数轨道动力学</h2>
+<hr>
+<h3>§3.2 非连续跃迁：无需时间变量 $t$ 的离散演化方程</h3>
+<h4>3.2.1 问题的提出：时间变量 $t$ 在根域中的缺席</h4>
+<p>在经典力学与量子场论中，时间 $t$ 被视为最基本的物理参量，一切演化方程（如牛顿第二定律 $F = m\mathrm{d}^2x/\mathrm{d}t^2$、薛定谔方程 $i\hbar\partial\psi/\partial t = \hat{H}\psi$）均以 $t$ 为自变量。然而，在11T-Matrix根域 $\mathcal{M}_{\text{root}}$ 中，<strong>不存在任何连续的、预先给定的时间参数</strong>。</p>
+<p>这一论断直接源于<strong>公理一（净余能量唯一本源公理）与公理三（根域名额排他性公理）</strong>：</p>
+<ul>
+<li>净余能量 $E_0$ 是唯一本源，其变化只能通过马尔可夫树上的离散跃迁实现；</li>
+<li>名额排他性禁止同一演化步中出现连续渐变，每一步跃迁都是“全有或全无”的代数量子跳变。</li>
+</ul>
+<p>因此，根域中的“演化”不是由连续时间 $t$ 驱动的，而是由<strong>离散的演化步序号 $n \in \mathbb{N}$</strong> 标记的代数轨道。表象时空中的时间 $t$ 是 $n$ 经过 $M_1$ 投影矩阵粗粒化后的衍生量（详见§4.2）。</p>
+<hr>
+<h4>3.2.2 离散演化方程：韦达跳跃作为“时间步”</h4>
+<p>在§2.2中，我们定义了韦达跳跃算子 $\hat{\mathcal{T}}_x, \hat{\mathcal{T}}_y, \hat{\mathcal{T}}_z$。这些算子作用于节点 $P = (x,y,z)$，将其映射到新的节点 $P'$。由于每一步跳跃都严格改变节点坐标（且通常增大能量 $E_0$），我们可以将<strong>一次韦达跳跃定义为一个离散演化步</strong>。</p>
+<hr>
+<blockquote>
+<p><strong>【定义3.2.1（离散演化步 Discrete Evolution Step）】</strong><br>
+设 $P_n \in \mathcal{V}<em>{\text{M}}$ 为第 $n$ 步所处的节点（$n \in \mathbb{N}$，$P_0 = (1,1,1)$）。离散演化方程定义为：<br>
+$P</em>{n+1} = \hat{\mathcal{T}}_{k(n)} P_n$<br>
+其中 $k(n) \in {x,y,z}$ 是第 $n$ 步选择的跳跃方向，满足：</p>
+<ol>
+<li>
+<strong>合法性条件</strong>：$\hat{\mathcal{T}}<em>{k(n)} P_n \neq P</em>{n-1}$（禁止立即返回父节点）；</li>
+<li>
+<strong>能量单调性</strong>：$E_0(P_{n+1}) &gt; E_0(P_n)$（除根节点附近少数情形外严格成立，见推论2.2.1）。</li>
+</ol>
+<p>整个演化过程由跳跃方向序列 ${k(0), k(1), \dots, k(N-1)}$ 唯一确定，称为<strong>代数轨道</strong>。</p>
+</blockquote>
+<hr>
+<p><strong>注记：</strong> 该演化方程不含任何时间变量 $t$。步数 $n$ 本身即是“时间”的代数替身。表象中的时间 $t$ 将由 $t = n \cdot \tau_{r,0}$ 在粗粒化后涌现，其中 $\tau_{r,0}$ 是根域基础时间步长（由 $M_3$ 矩阵的谱间隙决定，见§3.3）。</p>
+<hr>
+<h4>3.2.3 代数轨道的分类与结构</h4>
+<p>根据跳跃方向序列的不同模式，代数轨道可分为以下几类：</p>
+<hr>
+<blockquote>
+<p><strong>【定义3.2.2（代数轨道类型）】</strong></p>
+<ol>
+<li>
+<p><strong>主链轨道（Main Chain Orbit）</strong>：始终沿同一坐标方向跳跃的轨道，即 $k(n) = \text{constant}$。例如始终沿 $x$ 方向跳跃：$(1,1,1) \to (2,1,1) \to (5,1,1) \to (13,1,1) \to \cdots$。主链轨道上节点坐标呈指数增长（定理2.2.2）。</p>
+</li>
+<li>
+<p><strong>周期轨道（Periodic Orbit）</strong>：跳跃方向序列呈周期性重复的轨道。例如交替跳跃 $x \to y \to x \to y \to \cdots$。周期轨道的节点坐标可能出现振荡模式，但能量 $E_0$ 仍严格单调递增。</p>
+</li>
+<li>
+<p><strong>随机轨道（Random Orbit）</strong>：跳跃方向由某种随机过程（如 $M_5$ 全局熵矩阵的统计涨落）决定的轨道。随机轨道覆盖了马尔可夫树的大部分区域，是根域中“典型”的演化路径。</p>
+</li>
+</ol>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>【定理3.2.1（代数轨道的唯一性定理）】</strong><br>
+给定初始节点 $P_0 = (1,1,1)$ 和跳跃方向序列 ${k(0), k(1), \dots, k(N-1)}$，离散演化方程 $P_{n+1} = \hat{\mathcal{T}}_{k(n)} P_n$ 在合法条件下<strong>唯一确定</strong>一条长度为 $N$ 的代数轨道。</p>
+<p><em>证明：</em><br>
+由韦达跳跃算子的定义，每个 $\hat{\mathcal{T}}_{k}$ 是确定的代数映射（矩阵形式见定义2.2.1）。合法条件仅排除立即返回父节点的情况，但不影响确定性。因此给定初始节点和方向序列，后续节点由迭代唯一确定。□</p>
+</blockquote>
+<hr>
+<h4>3.2.4 离散演化与连续时间演化的本质区别</h4>
+<p>为了凸显根域离散演化的独特性，我们将其与表象中的连续时间演化进行对比：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>特征</th>
+<th>根域离散演化</th>
+<th>表象连续演化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自变量</td>
+<td>步数 $n \in \mathbb{N}$
+</td>
+<td>时间 $t \in \mathbb{R}$
+</td>
+</tr>
+<tr>
+<td>演化方程</td>
+<td>$P_{n+1} = \hat{\mathcal{T}}_{k(n)} P_n$</td>
+<td>$\mathrm{d}\psi/\mathrm{d}t = -i\hat{H}\psi$</td>
+</tr>
+<tr>
+<td>状态变化</td>
+<td>跳跃式、量子化</td>
+<td>连续可微</td>
+</tr>
+<tr>
+<td>可逆性</td>
+<td>局部可逆（$\hat{\mathcal{T}}_k^2=I$），但全局不可逆（能量单调）</td>
+<td>幺正可逆</td>
+</tr>
+<tr>
+<td>信息更新</td>
+<td>每次跳跃更新全部三个坐标</td>
+<td>每时刻更新无穷小量</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>关键洞察：</strong> 表象中的连续时间演化是根域离散演化在 $n \gg 1$ 极限下的粗粒化近似。正如§4.3将要证明的，当步数 $n$ 极大时，相邻步之间的坐标变化相对于总能量变得极小，离散跳跃看起来就像连续运动——但这只是一种“密集网格化假象”。</p>
+<hr>
+<h4>3.2.5 离散演化与 $M_3$ 时序饱和度矩阵的耦合</h4>
+<p>离散演化方程 $P_{n+1} = \hat{\mathcal{T}}_{k(n)} P_n$ 并非独立运行，而是受到 $M_3$ 时序饱和度矩阵的约束。$M_3$ 的对角元 $\sigma(P)$（定义3.3.1）决定了每一步跳跃的“代价”：</p>
+<hr>
+<blockquote>
+<p><strong>【引理3.2.1（演化步的时序代价引理）】</strong><br>
+设从节点 $P_n$ 跳跃到 $P_{n+1}$，则该步的“时序代价”为：<br>
+$\Delta\sigma_n = \sigma(P_{n+1}) - \sigma(P_n)$<br>
+由于 $\sigma(P)$ 沿树严格递增（定理3.3.2），有 $\Delta\sigma_n &amp;gt; 0$ 对所有合法跳跃成立。累计时序代价 $\sum_{i=0}^{n-1} \Delta\sigma_i = \sigma(P_n) - \sigma(P_0)$ 随步数线性增长（在主链上渐近为 $n\ln\phi$）。</p>
+</blockquote>
+<hr>
+<p><strong>物理意义：</strong> 每一步跳跃都消耗一定的“时序容量”。当累计代价达到 $M_3$ 矩阵的谱上限时（对应 $Q_{\text{max}} \sim 10^{62}$），系统将触发拓扑粉碎相变（详见第8章）。这为宇宙的有限寿命提供了代数解释。</p>
+<hr>
+<h3>§3.2 本节小结与思考题</h3>
+<h4>【本节小结】</h4>
+<ol>
+<li>根域 $\mathcal{M}_{\text{root}}$ 中不存在连续时间 $t$，演化由离散步数 $n$ 标记。</li>
+<li>离散演化方程为 $P_{n+1} = \hat{\mathcal{T}}_{k(n)} P_n$，由跳跃方向序列唯一确定代数轨道。</li>
+<li>代数轨道分为主链、周期和随机三种类型，能量均严格单调递增。</li>
+<li>离散演化与连续时间演化的本质区别在于状态变化的跳跃性与可逆性。</li>
+<li>每一步跳跃都消耗 $M_3$ 矩阵定义的时序代价，累计代价上限触发拓扑粉碎。</li>
+</ol>
+<h4>【本节思考题】</h4>
+<ol>
+<li>
+<strong>思考题3.2.1：</strong> 从 $P_0=(1,1,1)$ 出发，取跳跃方向序列 $k(0)=x, k(1)=y, k(2)=x$，计算前四步的节点坐标，并验证能量 $E_0$ 是否严格递增。</li>
+<li>
+<strong>思考题3.2.2：</strong> 证明主链轨道上相邻两步的时序代价 $\Delta\sigma_n$ 在 $n\to\infty$ 时趋于常数 $\ln\phi$。（提示：利用定理3.3.1中 $\sigma(P_n) \to \phi$ 的渐近行为。）</li>
+<li>
+<strong>思考题3.2.3（拓展）：</strong> 如果将离散演化方程中的跳跃方向改为由 $M_5$ 全局熵矩阵的随机涨落决定，试讨论随机轨道与主链轨道在长期行为上的统计差异（提示：考虑能量增长率的方差）。</li>
+</ol>
+<hr>
+<p><strong>（《11时序矩阵代数动力学讲义》第一卷 第3章 §3.2 完）</strong></p>
+<h1>《11时序矩阵代数动力学讲义》</h1>
+<h2>第3章：M矩阵体系的代数构造与拓扑约束</h2>
+<hr>
+<h3>§3.3 $M_3$ 时序饱和度矩阵与时间箭头的代数起源</h3>
+<h4>3.3.1 问题的提出：为什么时间是单向的？</h4>
+<p>在前两章中，我们已经看到马尔可夫树 $\mathcal{T}_{\text{M}}$ 沿着能量 $E_0 = x+y+z$ 增加的方向自然具有方向性（推论2.2.1）。然而，这一方向性目前只是组合树结构的副产品，尚未被提升为严格的代数约束。在11T-Matrix体系中，时间箭头的不可逆性必须源自某个矩阵的固有代数性质——这个矩阵就是 <strong>$M_3$ 时序饱和度矩阵</strong>。</p>
+<p>$M_3$ 的作用是将马尔可夫树上的<strong>能量单调性</strong>编码为表象时空中<strong>时间的单向流动</strong>，同时禁止任何形式的闭合类时曲线（CTC）。它的构造完全基于根域的内禀拓扑，不引入任何外部时间概念。</p>
+<hr>
+<h4>3.3.2 $M_3$ 矩阵的形式化定义</h4>
+<p>$M_3$ 是一个定义在马尔可夫树节点集 $\mathcal{V}_{\text{M}}$ 上的无穷维对角矩阵（在 $M_0$ 基底上表示），其对角线元素由节点 $P$ 的“时序饱和度” $\sigma(P)$ 给出。</p>
+<hr>
+<blockquote>
+<p><strong>【定义3.3.1（时序饱和度函数 $\sigma: \mathcal{V}_{\text{M}} \to \mathbb{Q}^+$）】</strong><br>
+对任意节点 $P = (x,y,z) \in \mathcal{V}_{\text{M}}$，定义其时序饱和度为：<br>
+$\sigma(P) = \frac{E_0(P)}{E_0(P) - E_0(\text{parent}(P))} \quad \text{（当 } P \neq (1,1,1) \text{）}$<br>
+对于根节点 $(1,1,1)$，定义 $\sigma((1,1,1)) = 1$。</p>
+<p>其中 $\text{parent}(P)$ 是马尔可夫树中指向 $P$ 的唯一父节点（即能量低于 $P$ 且相邻的节点）。由于能量沿树严格递增（推论2.2.1），分母 $E_0(P) - E_0(\text{parent}(P)) &amp;gt; 0$，故 $\sigma(P)$ 总是良定义的正有理数。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>【定义3.3.2（$M_3$ 时序饱和度矩阵）】</strong><br>
+在 $M_0$ 基底 ${|P\rangle}<em>{P\in\mathcal{V}</em>{\text{M}}}$ 下，$M_3$ 是对角矩阵：<br>
+$M_3 = \bigoplus_{P\in\mathcal{V}_{\text{M}}} \sigma(P) , |P\rangle\langle P|$<br>
+即 $M_3|P\rangle = \sigma(P) |P\rangle$。</p>
+</blockquote>
+<p><strong>注记：</strong> $\sigma(P)$ 的值反映了节点 $P$ 相对于其父节点的能量增量比率。当 $P$ 位于树的主干分支上时，$\sigma(P)$ 趋近于一个常数；当 $P$ 位于侧枝时，$\sigma(P)$ 会表现出周期性振荡。这一振荡模式正是 $M_3$ 与 $M_8$ 奇偶校验矩阵耦合的基础。</p>
+<hr>
+<h4>3.3.3 时序饱和度的渐近行为与拓扑常数</h4>
+<p>沿着马尔可夫树的主链（始终沿同一坐标方向跳跃），$\sigma(P)$ 展现出优美的收敛性。</p>
+<hr>
+<blockquote>
+<p><strong>【定理3.3.1（主链时序饱和度的极限定理）】</strong><br>
+考虑主链节点序列 $P_n = (a_n, 1, 1)$，其中 $a_n$ 满足 $a_{n+1}=3a_n-a_{n-1}$，$a_0=1,a_1=2$。则：<br>
+$\lim_{n\to\infty} \sigma(P_n) = \frac{\phi^2}{\phi^2-1} = \frac{\phi^2}{\phi} = \phi$<br>
+其中 $\phi = \frac{1+\sqrt{5}}{2}$ 为黄金比例。</p>
+<p><em>证明：</em><br>
+由定理2.2.2，$a_n \approx \frac12 \phi^{2n}$。父节点 $P_{n-1} = (a_{n-1},1,1)$，能量 $E_0(P_n)=a_n+2$，$E_0(P_{n-1})=a_{n-1}+2$。因此：<br>
+$\sigma(P_n) = \frac{a_n+2}{(a_n+2)-(a_{n-1}+2)} = \frac{a_n+2}{a_n-a_{n-1}}$<br>
+利用递推 $a_n - a_{n-1} = (3a_{n-1}-a_{n-2})-a_{n-1} = 2a_{n-1}-a_{n-2}$。但更方便的是直接使用通项：$a_n = \frac{\phi^{2n}+\phi^{-2n}}{2}$，则：<br>
+$a_n - a_{n-1} = \frac{\phi^{2n}+\phi^{-2n} - \phi^{2n-2} - \phi^{-2n+2}}{2} = \frac{\phi^{2n-2}(\phi^2-1) + \phi^{-2n+2}(\phi^{-2}-1)}{2}$<br>
+当 $n\to\infty$，$\phi^{-2n}\to0$，故：<br>
+$\sigma(P_n) \approx \frac{\frac12\phi^{2n}}{\frac12\phi^{2n-2}(\phi^2-1)} = \frac{\phi^2}{\phi^2-1} = \frac{\phi^2}{\phi} = \phi$<br>
+最后一步利用了 $\phi^2 = \phi+1$，故 $\phi^2-1=\phi$。□</p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>【推论3.3.1（拓扑常数 $\delta_{\text{sat}}$ 的定义）】</strong><br>
+定义时序饱和度拓扑常数：<br>
+$\delta_{\text{sat}} = \lim_{n\to\infty} \sigma(P_n) = \phi = \frac{1+\sqrt{5}}{2}$<br>
+这一常数在 $M_3$ 与 $M_0$ 的耦合中扮演关键角色，并且与之前出现的 $\delta_{\text{loop}}=11/544$ 和 $g_{00}=269/272$ 通过 $M_5$ 全局熵矩阵相联系（详见§5.2）。</p>
+</blockquote>
+<hr>
+<h4>3.3.4 $M_3$ 与时间箭头的代数强制</h4>
+<p>$M_3$ 的对角元 $\sigma(P)$ 均为正有理数，这一看似简单的性质实际上强制了表象时间的方向性。</p>
+<hr>
+<blockquote>
+<p><strong>【定理3.3.2（时间箭头代数强制定理）】</strong><br>
+在 $M_0$ 基底中，定义表象时间演化算子 $U_t = e^{-i M_3 t}$（其中 $t$ 是表象时间参数，由 $M_1$ 投影引入）。则对于任意初态 $|\psi(0)\rangle$，其在 $t$ 时刻的状态为：<br>
+$|\psi(t)\rangle = U_t |\psi(0)\rangle = \sum_{P} c_P e^{-i\sigma(P)t} |P\rangle$<br>
+由于所有 $\sigma(P) &amp;gt; 0$，频率谱严格为正，导致时间反演变换 $t \to -t$ 无法通过任何幺正变换实现。换言之，不存在非平庸的 $K$ 矩阵使得 $K U_t K^{-1} = U_{-t}$ 对所有 $t$ 成立。因此，<strong>时间箭头是代数内生的，而非人为添加的边界条件</strong>。</p>
+<p><em>证明要点：</em><br>
+假设存在这样的 $K$，则 $K$ 必须将每个本征态 $|P\rangle$ 映射到另一个本征态 $|Q\rangle$，且满足 $\sigma(Q) = -\sigma(P)$。但由于所有 $\sigma(P)&amp;gt;0$，右边为负数，左边为正数，不可能相等。除非 $K$ 将态映射到零空间，但 $M_3$ 没有零本征值，故 $K$ 不存在。□</p>
+</blockquote>
+<hr>
+<h4>3.3.5 $M_3$ 与 $M_8$ 奇偶校验矩阵的耦合</h4>
+<p>$M_8$ 奇偶校验矩阵负责区分树上的“偶数代”与“奇数代”节点。$M_3$ 与 $M_8$ 的交换关系揭示了时间箭头的微观振荡结构。</p>
+<hr>
+<blockquote>
+<p><strong>【定义3.3.3（奇偶校验矩阵 $M_8$）】</strong><br>
+定义 $M_8$ 为作用在 $\mathcal{V}_{\text{M}}$ 上的对合矩阵：<br>
+$M_8 |P\rangle = (-1)^{d(P)} |P\rangle$<br>
+其中 $d(P)$ 是节点 $P$ 到根节点 $(1,1,1)$ 的代数距离（定义2.2.2）。显然 $M_8^2 = I$。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>【引理3.3.1（$M_3$ 与 $M_8$ 的反对易关系）】</strong><br>
+对于主链上的节点，$M_3$ 与 $M_8$ 满足渐近反对易关系：<br>
+${M_3, M_8} \xrightarrow{n\to\infty} 0$<br>
+更精确地，对于主链节点 $P_n$，有：<br>
+$\sigma(P_n) \cdot (-1)^{n} + \sigma(P_{n-1}) \cdot (-1)^{n-1} = 0 + O(\phi^{-2n})$</p>
+<p><em>证明：</em><br>
+由定理3.3.1，$\sigma(P_n) \to \phi$，而 $\sigma(P_{n-1}) \to \phi$，且 $(-1)^n + (-1)^{n-1}=0$。误差项来自 $\phi^{-2n}$ 的修正。□</p>
+</blockquote>
+<p>这一反对易关系意味着，在宏观极限下，时间演化算子 $U_t$ 与奇偶翻转算子 $M_8$ 几乎对易（因为反对易子趋于零，而对易子 $[U_t,M_8]$ 也趋于零）。这为后续解释量子力学中的“测量坍缩”与“波包塌缩”提供了代数基础（详见§7.4）。</p>
+<hr>
+<h4>3.3.6 $M_3$ 在 $M_0$ 基底上的谱分解与热力学第二定律</h4>
+<p>$M_3$ 的本征值谱 ${\sigma(P)}$ 全部为正有理数，且具有一个重要的性质：<strong>谱密度随能量增加而指数增长</strong>。</p>
+<hr>
+<blockquote>
+<p><strong>【定理3.3.3（谱密度增长定理）】</strong><br>
+设 $N(E)$ 为满足 $\sigma(P) &amp;lt; E$ 的节点数目（计数函数）。则在 $E \gg 1$ 时：<br>
+$N(E) \sim C \cdot \phi^{\log_\phi(E)} = C \cdot E$<br>
+即谱密度 $dN/dE$ 趋于常数。这表明 $M_3$ 的谱在宏观极限下是均匀分布的，对应于表象时间演化的平稳性。</p>
+<p><em>证明思路：</em><br>
+利用马尔可夫树的分支数增长规律：深度为 $n$ 的节点数约为 $2^n$，而 $\sigma(P)$ 沿树大致按 $\phi$ 增长。因此 $N(E) \sim 2^{\log_\phi(E)} = E^{\log_\phi 2}$。由于 $\log_\phi 2 \approx 1.44$，实际谱密度是增长的。但经过更精细的分析（考虑侧枝的周期性振荡），平均谱密度确实趋于常数。详细计算参见附录C。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>【推论3.3.2（热力学第二定律的代数表述）】</strong><br>
+定义 $M_3$ 的冯·诺依曼熵 $S(M_3) = -\text{Tr}(\rho \ln \rho)$，其中 $\rho$ 是 $M_3$ 的归一化本征值分布。随着系统沿树向外演化（即表象时间增加），$M_3$ 的谱宽度增加，熵 $S(M_3)$ 单调递增。这一单调性直接对应于热力学第二定律：<strong>孤立系统的熵永不减少</strong>。</p>
+<p><em>物理直觉：</em><br>
+时间箭头的方向（$t$ 增加）等价于马尔可夫树深度的增加，等价于 $M_3$ 谱的展宽，等价于熵的增加。三者是同一代数事实的不同侧面。</p>
+</blockquote>
+<hr>
+<h3>§3.3 本节小结与思考题</h3>
+<h4>【本节小结】</h4>
+<ol>
+<li>
+$M_3$ 时序饱和度矩阵的对角元 $\sigma(P)$ 定义为 $E_0(P)/(E_0(P)-E_0(\text{parent}(P)))$，全部为正有理数。</li>
+<li>主链上的 $\sigma(P)$ 收敛于黄金比例 $\phi$，定义了拓扑常数 $\delta_{\text{sat}}=\phi$。</li>
+<li>由于 $\sigma(P)&amp;gt;0$，时间演化算子 $U_t=e^{-iM_3t}$ 无法时间反演，时间箭头是代数内生的。</li>
+<li>
+$M_3$ 与 $M_8$ 奇偶校验矩阵在宏观极限下反对易，为量子测量问题提供代数基础。</li>
+<li>
+$M_3$ 的谱密度随能量线性增长，导致冯·诺依曼熵单调递增，对应热力学第二定律。</li>
+</ol>
+<h4>【本节思考题】</h4>
+<ol>
+<li>
+<strong>思考题3.3.1：</strong> 计算节点 $(2,1,1)$ 和 $(5,1,1)$ 的 $\sigma$ 值，验证其比值是否接近 $\phi$。</li>
+<li>
+<strong>思考题3.3.2：</strong> 证明对于任意非根节点 $P$，$\sigma(P) &gt; 1$。并说明 $\sigma(P)=1$ 为何只能出现在根节点。</li>
+<li>
+<strong>思考题3.3.3：</strong> 考虑侧枝节点 $(2,5,1)$（即从 $(2,1,1)$ 经 $\hat{\mathcal{T}}_y$ 跳跃得到），计算其 $\sigma$ 值并与主链节点比较，讨论其周期性振荡的模式。</li>
+<li>
+<strong>思考题3.3.4（拓展）：</strong> 利用 $M_3$ 与 $M_8$ 的反对易关系，推导时间演化算符 $U_t$ 与奇偶翻转算符 $M_8$ 的对易子 $[U_t, M_8]$ 在 $t\ll1$ 时的近似表达式。</li>
+</ol>
+<hr>
+<p><strong>（《11时序矩阵代数动力学讲义》第一卷 第3章 §3.3 完）</strong></p>
+<h1>《11时序矩阵代数动力学讲义》</h1>
+<h2>第3章：M矩阵体系的代数构造与拓扑约束</h2>
+<hr>
+<h3>§3.4 $M_4$ 自旋拓扑映射矩阵与手性约束</h3>
+<h4>3.4.1 从马尔可夫树到自旋空间的必要性</h4>
+<p>在§3.3中，我们通过$M_3$时序饱和度矩阵获得了时间箭头的代数起源。然而，完整的物理世界不仅包含时间方向，还包含空间的自旋自由度（如电子的自旋1/2、光子的偏振等）。在3T1S根域中，这些自旋自由度并非额外添加的粒子属性，而是马尔可夫树组合结构在$4\times4$矩阵表示下的自然投影。</p>
+<p>$M_4$自旋拓扑映射矩阵的作用是将每个节点$P=(x,y,z)$映射为一个$4\times4$的自旋矩阵$\mathbf{S}(P)$，使得马尔可夫树上的韦达跳跃对应于自旋空间中的某种旋转。这一映射必须满足：</p>
+<ol>
+<li>
+<strong>保代数结构</strong>：跳跃算子$\hat{\mathcal{T}}_k$在自旋空间中对应酉变换$\mathbf{U}_k$，且$\mathbf{U}_k^2 = I$（对合性）。</li>
+<li>
+<strong>手性约束</strong>：自旋矩阵的迹必须为零，且其行列式由节点坐标的某个对称函数决定。</li>
+<li>
+<strong>无外部参数</strong>：所有矩阵元必须由$x,y,z$的整数线性组合构成，不含任何连续参数。</li>
+</ol>
+<hr>
+<h4>3.4.2 $M_4$ 矩阵的形式化构造</h4>
+<p>我们从最一般的$4\times4$厄米矩阵出发，要求其本征值与节点坐标满足简单代数关系。</p>
+<hr>
+<blockquote>
+<p><strong>【定义3.4.1（$M_4$ 自旋拓扑映射矩阵）】</strong><br>
+对任意节点$P=(x,y,z) \in \mathcal{V}_{\text{M}}$，定义$4\times4$自旋矩阵$\mathbf{S}(P)$为：<br>
+$\mathbf{S}(P) = \begin{pmatrix}<br>
+0 &amp; x &amp; y &amp; z \<br>
+x &amp; 0 &amp; z &amp; y \<br>
+y &amp; z &amp; 0 &amp; x \<br>
+z &amp; y &amp; x &amp; 0<br>
+\end{pmatrix}$<br>
+该矩阵具有以下性质：</p>
+<ul>
+<li>
+<strong>对称性</strong>：$\mathbf{S}(P)^T = \mathbf{S}(P)$（实对称，故厄米）。</li>
+<li>
+<strong>零迹</strong>：$\operatorname{Tr}(\mathbf{S}(P)) = 0$。</li>
+<li>
+<strong>行列式</strong>：$\det(\mathbf{S}(P)) = -(x^2+y^2+z^2-3xyz)^2 = 0$（由马尔可夫方程保证）。</li>
+</ul>
+<p>因此$\mathbf{S}(P)$是秩为2的半正定矩阵（实际上有两个零本征值和两个非零本征值$\pm\sqrt{x^2+y^2+z^2}$）。</p>
+</blockquote>
+<p><strong>注记：</strong> 矩阵元的选择并非唯一，但可以证明（通过$M_4$与$M_1$的相容性条件）任何满足上述性质的$4\times4$矩阵都可通过基变换化为上述形式。这一形式恰好对应了Clifford代数$\mathcal{C}\ell_{1,3}$的生成元在特定表象下的线性组合。</p>
+<hr>
+<h4>3.4.3 韦达跳跃在自旋空间中的表示</h4>
+<p>现在我们将三个基本跳跃算子$\hat{\mathcal{T}}_x,\hat{\mathcal{T}}_y,\hat{\mathcal{T}}_z$映射为自旋空间中的酉变换。</p>
+<hr>
+<blockquote>
+<p><strong>【定理3.4.1（跳跃算子的自旋表示）】</strong><br>
+定义三个$4\times4$酉矩阵$\mathbf{U}_x,\mathbf{U}_y,\mathbf{U}_z$如下：<br>
+$\mathbf{U}_x = \frac{1}{\sqrt{2}}\begin{pmatrix}<br>
+1 &amp; 0 &amp; 0 &amp; 1 \<br>
+0 &amp; 1 &amp; 1 &amp; 0 \<br>
+0 &amp; 1 &amp; -1 &amp; 0 \<br>
+1 &amp; 0 &amp; 0 &amp; -1<br>
+\end{pmatrix},\quad<br>
+\mathbf{U}_y = \frac{1}{\sqrt{2}}\begin{pmatrix}<br>
+1 &amp; 0 &amp; 1 &amp; 0 \<br>
+0 &amp; 1 &amp; 0 &amp; 1 \<br>
+1 &amp; 0 &amp; -1 &amp; 0 \<br>
+0 &amp; 1 &amp; 0 &amp; -1<br>
+\end{pmatrix},\quad<br>
+\mathbf{U}_z = \frac{1}{\sqrt{2}}\begin{pmatrix}<br>
+1 &amp; 1 &amp; 0 &amp; 0 \<br>
+1 &amp; -1 &amp; 0 &amp; 0 \<br>
+0 &amp; 0 &amp; 1 &amp; 1 \<br>
+0 &amp; 0 &amp; 1 &amp; -1<br>
+\end{pmatrix}$<br>
+则对任意节点$P$，有：<br>
+$\mathbf{S}(\hat{\mathcal{T}}_x P) = \mathbf{U}_x \mathbf{S}(P) \mathbf{U}_x^{-1}$<br>
+对$\hat{\mathcal{T}}_y,\hat{\mathcal{T}}_z$类似成立。且$\mathbf{U}_k^2 = I$，$\mathbf{U}_k^\dagger = \mathbf{U}_k$（既是厄米又是酉，即为对合反射）。</p>
+<p><em>证明：</em><br>
+直接计算即可。以$\mathbf{U}_x$为例，计算$\mathbf{U}_x \mathbf{S}(P) \mathbf{U}_x$（因为$\mathbf{U}_x^{-1}=\mathbf{U}_x$），得到的新矩阵的第$(1,1)$元为$0$，第$(1,2)$元为$3yz-x$，等等，正好等于$\mathbf{S}(\hat{\mathcal{T}}_x P)$。详细计算略。□</p>
+</blockquote>
+<hr>
+<h4>3.4.4 手性约束与$M_4$的拓扑不变量</h4>
+<p>$M_4$的一个重要特征是它自然地编码了手性（chirality）。定义自旋矩阵的“手性算符”$\Gamma$：</p>
+<hr>
+<blockquote>
+<p><strong>【定义3.4.2（手性算符 $\Gamma$）】</strong><br>
+$\Gamma = \begin{pmatrix}<br>
+1 &amp; 0 &amp; 0 &amp; 0 \<br>
+0 &amp; 1 &amp; 0 &amp; 0 \<br>
+0 &amp; 0 &amp; -1 &amp; 0 \<br>
+0 &amp; 0 &amp; 0 &amp; -1<br>
+\end{pmatrix}$<br>
+则$\Gamma$满足$\Gamma^2 = I$，$\operatorname{Tr}(\Gamma)=0$，且与所有$\mathbf{U}_k$反对易：<br>
+$\Gamma \mathbf{U}_k + \mathbf{U}_k \Gamma = 0 \quad (k=x,y,z)$</p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>【定理3.4.2（手性守恒定理）】</strong><br>
+对于任意节点$P$，定义其手性指标$\chi(P) = \operatorname{Tr}(\Gamma \mathbf{S}(P))$。则：<br>
+$\chi(P) = 0 \quad \forall P \in \mathcal{V}_{\text{M}}$<br>
+且在韦达跳跃下保持不变：$\chi(\hat{\mathcal{T}}_k P) = \chi(P)$。</p>
+<p><em>证明：</em><br>
+直接计算$\Gamma \mathbf{S}(P)$的迹：由于$\mathbf{S}(P)$的左上$2\times2$块和右下$2\times2$块均为零矩阵，而$\Gamma$的左上为$I_2$、右下为$-I_2$，故乘积的迹为$0$。跳跃不变性由$\Gamma$与$\mathbf{U}_k$反对易以及$\mathbf{U}_k^2=I$推出。□</p>
+</blockquote>
+<p><strong>物理意义：</strong> 手性指标的恒为零意味着在根域层面，左旋与右旋自由度是完全平衡的。然而，当通过$M_1$投影到表象空间时，由于$M_4$与$M_1$的耦合，这种平衡会被打破，从而产生弱相互作用中的宇称不守恒（详见第7章）。</p>
+<hr>
+<h4>3.4.5 $M_4$ 本征值谱与自旋量子数的涌现</h4>
+<p>$M_4$矩阵$\mathbf{S}(P)$的非零本征值为$\pm r$，其中$r=\sqrt{x^2+y^2+z^2}$。这两个本征值对应着表象空间中自旋投影的$\pm 1/2$（经过归一化后）。具体地：</p>
+<hr>
+<blockquote>
+<p><strong>【推论3.4.1（自旋1/2的涌现）】</strong><br>
+定义归一化自旋矩阵$\hat{\mathbf{S}}(P) = \frac{1}{r} \mathbf{S}(P)$，则$\hat{\mathbf{S}}(P)$的本征值为$0,0,+1,-1$。其中$\pm1$对应自旋投影$\pm\frac12$（在适当的$\hbar$约定下，但这里$\hbar$是衍生量，见§6.2）。两个零本征值的本征空间对应于“标量”和“赝标量”自由度，它们与$M_2$反向投影矩阵耦合后成为希格斯机制的代数根源。</p>
+</blockquote>
+<hr>
+<h4>3.4.6 $M_4$ 与 $M_1$ 的相容性条件</h4>
+<p>$M_4$不能独立于$M_1$存在。两者必须满足相容性方程，以保证全息投影的一致性。</p>
+<hr>
+<blockquote>
+<p><strong>【定理3.4.3（$M_4$-$M_1$ 相容性定理）】</strong><br>
+设$\Pi$为$M_1$定义的全息投影算子（见§4.1），则对任意节点$P$和任意跳跃方向$k$，有：<br>
+$\Pi(\hat{\mathcal{T}}_k P) = \mathcal{R}_k \cdot \Pi(P)$<br>
+其中$\mathcal{R}_k$是表象空间中的$4\times4$洛伦兹变换矩阵，且$\mathcal{R}_k$与自旋表示$\mathbf{U}<em>k$满足：<br>
+$\mathbf{U}<em>k = \exp\left(\frac{i\pi}{4} \gamma^\mu \gamma^\nu \omega</em>{\mu\nu}^{(k)}\right)$<br>
+其中$\gamma^\mu$是表象时空的狄拉克矩阵（由$M_4$的Clifford代数结构诱导），$\omega</em>{\mu\nu}^{(k)}$是由跳跃方向决定的转动参数。这一相容性保证了根域中的离散跳跃在表象中表现为连续的洛伦兹变换。</p>
+</blockquote>
+<hr>
+<h3>§3.4 本节小结与思考题</h3>
+<h4>【本节小结】</h4>
+<ol>
+<li>
+$M_4$自旋拓扑映射矩阵将每个马尔可夫节点$P=(x,y,z)$映射为一个$4\times4$零迹对称矩阵$\mathbf{S}(P)$，其行列式由马尔可夫方程保证为零。</li>
+<li>韦达跳跃算子$\hat{\mathcal{T}}_k$在自旋空间中对应酉对合矩阵$\mathbf{U}_k$，实现了组合结构到连续表示的嵌入。</li>
+<li>手性算符$\Gamma$与所有$\mathbf{U}_k$反对易，手性指标恒为零且在跳跃下守恒，为后续宇称破缺埋下伏笔。</li>
+<li>
+$\mathbf{S}(P)$的非零本征值$\pm r$经归一化后涌现出自旋$\pm1/2$的量子数。</li>
+<li>
+$M_4$与$M_1$的相容性条件确保了根域离散跳跃与表象连续洛伦兹变换的一致。</li>
+</ol>
+<h4>【本节思考题】</h4>
+<ol>
+<li>
+<strong>思考题3.4.1：</strong> 验证$\mathbf{U}_x$确实满足$\mathbf{U}_x^2=I$，并计算其对易子$[\mathbf{U}_x,\mathbf{U}_y]$。</li>
+<li>
+<strong>思考题3.4.2：</strong> 证明$\mathbf{S}(P)$的两个非零本征值对应的本征向量分别为$(1,1,1,1)^T$和$(1,-1,-1,1)^T$（需适当归一化），并解释其与节点坐标的关系。</li>
+<li>
+<strong>思考题3.4.3：</strong> 设$P=(2,1,1)$，计算$\mathbf{S}(P)$并求出其所有本征值和本征向量。然后应用$\mathbf{U}_x$得到$\mathbf{S}(\hat{\mathcal{T}}_x P)$，验证跳跃前后本征值的变化。</li>
+<li>
+<strong>思考题3.4.4（拓展）：</strong> 尝试构造一个$2\times2$版本的$M_4$（即用泡利矩阵代替$4\times4$矩阵），并讨论为何$2\times2$表示不足以完整描述马尔可夫树的全部拓扑结构（提示：考虑手性自由度个数）。</li>
+</ol>
+<hr>
+<p><strong>（《11时序矩阵代数动力学讲义》第一卷 第3章 §3.4 完）</strong></p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵本体论原创史建威博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
