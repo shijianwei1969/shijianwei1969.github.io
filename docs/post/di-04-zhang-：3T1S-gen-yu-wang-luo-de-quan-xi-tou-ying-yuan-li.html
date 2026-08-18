@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 《11时序矩阵代数动力学讲义》
+
+## 第04章：3T1S根域网络的全息投影原理
+作者 ：山东威海理论物理EPD工程组 史建威
+ORCID：0009-0002-1757-1793
+---
+
+### §4.1 3T1S根域空间与3S1T表象空间的对偶性
+
+#### 4.1.1 投影的物理动机：从“源代码”到“屏幕图像”
+
+前三章我们建立了建立在马尔可夫丢番图方程 $x^2+y^2+z^2=3xyz$ 和韦达跳跃算子 $\hat{\mathcal{T}}$ 之上的离散代数动力学。">
+<meta property="og:title" content="第04章：3T1S根域网络的全息投影原理">
+<meta property="og:description" content="# 《11时序矩阵代数动力学讲义》
+
+## 第04章：3T1S根域网络的全息投影原理
+作者 ：山东威海理论物理EPD工程组 史建威
+ORCID：0009-0002-1757-1793
+---
+
+### §4.1 3T1S根域空间与3S1T表象空间的对偶性
+
+#### 4.1.1 投影的物理动机：从“源代码”到“屏幕图像”
+
+前三章我们建立了建立在马尔可夫丢番图方程 $x^2+y^2+z^2=3xyz$ 和韦达跳跃算子 $\hat{\mathcal{T}}$ 之上的离散代数动力学。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/di-04-zhang-%EF%BC%9A3T1S-gen-yu-wang-luo-de-quan-xi-tou-ying-yuan-li.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>第04章：3T1S根域网络的全息投影原理</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">第04章：3T1S根域网络的全息投影原理</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/219" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>《11时序矩阵代数动力学讲义》</h1>
+<h2>第04章：3T1S根域网络的全息投影原理</h2>
+<h2>作者 ：山东威海理论物理EPD工程组 史建威<br>
+ORCID：0009-0002-1757-1793</h2>
+<h3>§4.1 3T1S根域空间与3S1T表象空间的对偶性</h3>
+<h4>4.1.1 投影的物理动机：从“源代码”到“屏幕图像”</h4>
+<p>前三章我们建立了建立在马尔可夫丢番图方程 $x^2+y^2+z^2=3xyz$ 和韦达跳跃算子 $\hat{\mathcal{T}}$ 之上的离散代数动力学。读者可能会产生一个根本性的困惑：</p>
+<blockquote>
+<p><em>如果物理宇宙的本体是一个由3个时间维度和1个空间维度构成的3T1S离散代数图网络，为什么人类的所有物理实验测得的，无一例外都是“3维连续空间+1维单向时间”（3S1T）的半黎曼流形 $\mathcal{M}_4$？</em></p>
+</blockquote>
+<p>这一矛盾正是“连续统幻觉”根深蒂固的原因。11T-Matrix动力学指出：<strong>3S1T并非独立存在的绝对舞台，它是3T1S代数根域经由 $M_1/M_2$ 双时空投影矩阵对进行全息投影后的“渲染图像”。</strong></p>
+<p>类比于现代计算机显卡的工作机制：</p>
+<ul>
+<li>
+<strong>3T1S根域空间（$\mathcal{M}_{\text{root}}$）：</strong> 相当于显存中高维离散的代数顶点数据与逻辑代码，由 $M_0$ 全域净余能量基底矩阵承载。</li>
+<li>
+<strong>3S1T表象空间（$\mathcal{M}_{\text{pheno}}$）：</strong> 相当于显示器屏幕上渲染出的3D光滑图像，由 $M_1$ 正向投影矩阵和 $M_2$ 反向还原矩阵共同作用生成。</li>
+</ul>
+<p>要建立这两个空间之间的严格科学桥梁，必须构造<strong>全息投影算子 $\Pi$</strong>，且其定义必须完全基于根域拓扑结构，不引入任何表象派生常数。</p>
+<hr>
+<h4>4.1.2 全息投影算子 $\Pi$ 的形式化构造（纯拓扑内生版）</h4>
+<p>设3T1S根域状态空间由马尔可夫仿射曲面 $\mathcal{S}_{\text{Markov}}$ 控制，其节点通量向量为 $\mathbf{J}_P = (x,y,z)^T \in (\mathbb{Z}^+)^3$。该向量是 $M_0$ 基底矩阵上净余能量在三个时序维度上的投影分量。</p>
+<hr>
+<blockquote>
+<p><strong>【定义4.1.1（局域能量守恒切面 Local Energy Conservation Slice）】</strong><br>
+对给定的局域拓扑能量标量 $E_0 = x+y+z \in \mathbb{Z}^+$（由公理一，净余能量总量守恒，此处为根域节点通量和），定义3T1S根域中的<strong>能量守恒超平面 $\mathcal{H}_{E_0}$</strong> 为：<br>
+$\mathcal{H}<em>{E_0} = \left{ (x,y,z) \in \mathbb{R}^3 ;\middle|; x+y+z = E_0 \right}$<br>
+马尔可夫曲面 $\mathcal{S}</em>{\text{Markov}}$ 与守恒超平面 $\mathcal{H}<em>{E_0}$ 相交所形成的几何截面，称为**局域全息基底（Local Holographic Base $\mathcal{C}</em>{E_0}$）**：<br>
+$\mathcal{C}<em>{E_0} = \mathcal{S}</em>{\text{Markov}} \cap \mathcal{H}_{E_0}$</p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>【定义4.1.2（全息投影算子 Holographic Projection Operator）】</strong><br>
+全息投影算子 $\Pi : \mathcal{V}<em>{\text{M}} \to \mathcal{M}</em>{\text{pheno}}$ 是 $M_1$ 正向投影矩阵作用于根域通量向量的代数映射。除唯一基础尺度 $l_{r,0}$（根域最小空间单元）外，不引入任何表象常数。</p>
+<p>具体地，对任意节点 $P = (x,y,z) \in \mathcal{V}_{\text{M}}$，其投影像为：<br>
+$\Pi \begin{pmatrix} x \ y \ z \end{pmatrix} = \begin{pmatrix} X \ Y \ Z \ t \end{pmatrix}$<br>
+其中：</p>
+<ul>
+<li>
+<strong>空间坐标 $(X,Y,Z)$</strong>：由 $M_1$ 矩阵的拓扑交叉项作用于通量向量 $\mathbf{J}_P$，并在 $M_4$ 自旋拓扑映射矩阵的约束下，形成三维各向异性分布。具体地，$M_1$ 的投影核将通量分量映射为表象空间中的三个独立方位角参数，其归一化形式由 $M_4$ 的手性约束固定。记 $r = \sqrt{x^2+y^2+z^2}$ 为 $L_2$ 范数模长（注意：$r$ 是根域内禀几何量，非外部引入），则：<br>
+$X = \frac{x}{r}, \quad Y = \frac{y}{r}, \quad Z = \frac{z}{r}$<br>
+满足 $X^2+Y^2+Z^2=1$，分布在二维球面 $S^2$ 上。结合径向标度 $r$ 的伸缩，构成三维空间。</li>
+<li>
+<strong>表象时间 $t$</strong>：由演化步数 $n$ 与根域基础时间步长 $\tau_{r,0}$ 的乘积粗粒化生成。$\tau_{r,0}$ 由公理三（名额排他性）在 $M_0$ 上的最大交替步进速率决定：<br>
+$t = n \cdot \tau_{r,0}, \quad \tau_{r,0} = \frac{l_{r,0}}{v_{\max}}$<br>
+其中 $v_{\max}$ 是根域中名额传递的最大速率，由 $M_3$ 时序饱和度矩阵的拓扑约束唯一确定。<strong>全程无需引入普朗克时间 $\tau_P$</strong>。</li>
+</ul>
+</blockquote>
+<p><strong>注记：</strong> 投影算子 $\Pi$ 的构造完全基于根域内禀量（$x,y,z,E_0,r,n$）和唯一基础尺度 $l_{r,0}$。所有表象物理量（包括未来将涌现的光速 $c$）均为这些根域量的高阶导出函数，而非预先设定的常数。</p>
+<hr>
+<h4>4.1.3 3T1S $\leftrightarrow$ 3S1T 对偶破缺定理</h4>
+<p>为什么根域的维度结构是3个时间+1个空间，而投影后变成了3个空间+1个时间？这种“对偶破缺”的代数机制可以通过 $M_1$ 投影矩阵的非线性映射得到证明。</p>
+<hr>
+<blockquote>
+<p><strong>【定理4.1.1（时空维度对偶破缺定理 Dimensional Duality Breaking Theorem）】</strong><br>
+在全息投影算子 $\Pi$ 的作用下，3T1S根域网络<strong>必定且唯一</strong>地在表象空间中显现为3S1T维度的物理时空。</p>
+<p><em>证明：</em><br>
+考察马尔可夫丢番图方程的多项式结构：<br>
+$x^2 + y^2 + z^2 = 3xyz$</p>
+<ol>
+<li>
+<p><strong>根域中的3个时间通量 $(x,y,z)$：</strong> 方程左边的三个二次项 $x^2,y^2,z^2$ 在代数结构上具有平行的自由度，代表三个独立的正交通量维度。在 $M_1$ 投影矩阵的作用下，这三个通量的相对比例 $(X,Y,Z) = (x/r,y/r,z/r)$ 构成了表象空间中的三维空间坐标。根域中的“时间”维度，在投影后变成了表象中的“空间”维度。</p>
+</li>
+<li>
+<p><strong>根域中的1个空间耦合（三次项 $3xyz$）：</strong> 方程右边的三次交叉项 $3xyz$ 破坏了变量间的线性独立性，代表了三个维度之间的交叉强耦合。这个非线性约束项在 $M_3$ 时序饱和度矩阵的约束下，在代数树上诱导了唯一的单向分枝方向（定理2.2.1），定义了能量 $E_0$ 的单调递增方向。在投影映射下，这个单调递增的能量标度 $E_0$ 通过 $M_1$ 的投影核转化为表象时间的单向流逝。</p>
+</li>
+<li>
+<p><strong>维度反转的根源：</strong> 这种反转源于 $M_1$ 投影映射的非线性。归一化坐标 $(X,Y,Z)$ 捕捉了通量之间的<strong>角度信息</strong>（对应空间），而能量标度 $E_0$ 和演化步数 $n$ 捕捉了通量的<strong>大小信息</strong>（对应时间）。在根域中，角度信息是时间的流向，大小信息是空间的尺度；但在表象中，两者的角色发生了对调。这一对调由 $M_4$ 自旋拓扑映射矩阵的手性约束强制执行。□</p>
+</li>
+</ol>
+</blockquote>
+<pre class="notranslate"><code class="notranslate">  [ 3T1S 根域空间 M_root ]                   [ 3S1T 表象空间 M_pheno ]
+ ─────────────────────────                   ─────────────────────────
+  三个时间通量 (x,y,z)             ──M₁投影──&gt; 三维空间坐标 (X,Y,Z)
+  一个空间耦合 (3xyz 单向约束)     ──对偶反转──&gt; 一维单向时间轴 t
+</code></pre>
+<p><em>图4.1.1：3T1S根域代数结构向3S1T表象几何的全息投影与维度对偶反转</em></p>
+<hr>
+<h4>4.1.4 局域超定域性与表象非局域性的统一</h4>
+<p>基于全息投影算子 $\Pi$ 和 $M_1/M_2$ 矩阵对，我们可以对量子力学中最令人困惑的“量子非局域性”给出纯代数几何的解答。</p>
+<hr>
+<blockquote>
+<p><strong>【推论4.1.1（全息非局域性等价原理 Holographic Equivalence of Non-Locality）】</strong><br>
+表象空间 $\mathcal{M}<em>{\text{pheno}}$ 中相距任意大空间距离的两个物理事件，若它们对应于3T1S根域空间中**同一个马尔可夫节点 $P = (x,y,z)$ 在不同能量切面 $\mathcal{H}</em>{E_0}$ 上的投影**，则它们在根域中具有绝对的局域代数同一性。</p>
+<p>更精确地说：设 $P = (x,y,z)$ 是一个固定的根域节点。考虑两个不同的演化步数 $n_1$ 和 $n_2$，它们对应的投影点为：<br>
+$\Pi_{n_1}(P) = \left(\frac{x}{r}, \frac{y}{r}, \frac{z}{r}, n_1\tau_{r,0}\right), \quad \Pi_{n_2}(P) = \left(\frac{x}{r}, \frac{y}{r}, \frac{z}{r}, n_2\tau_{r,0}\right)$<br>
+这两个投影点在表象空间中具有相同的空间坐标但不同的时间坐标。如果观测者在表象空间中错误地将它们理解为“不同空间位置的关联”，就会产生“非局域性”的错觉。</p>
+<p><em>物理直觉：</em><br>
+这就好比在房间里用两个摄像机从不同角度拍摄同一个苹果，并将画面投射到两台相距遥远的显示屏A和B上。在屏幕视角（3S1T表象空间）看，屏幕A上的苹果图像与屏幕B上的苹果图像相距遥远，但当用手戳动屏幕A的苹果时，屏幕B上的苹果会“瞬间”发生相应的改变。不理解全息投影的观察者会惊呼发现了“违反相对论的超光速感应”；但清楚投影原理的观察者知道：<strong>根本没有信号在两台屏幕之间传输，它们不过是同一个苹果（根域代数节点）的全息镜像而已！</strong></p>
+</blockquote>
+<hr>
+<h4>4.1.5 展望：全息投影与 $M_0\sim M_{11}$ 矩阵体系的深层联系</h4>
+<p>全息投影算子 $\Pi$ 并非随意构造，而是 $M_1/M_2$ 双时空投影矩阵对的具体实现。$M_1$ 负责正向投影（根域→表象），$M_2$ 负责反向还原（表象→根域）。此外，$M_9$ 海森堡-根域映射矩阵将量子效应与根域拓扑联系起来，而 $M_3$ 时序饱和度矩阵决定了静质量的生成。这些矩阵之间的代数关系将在后续章节中逐步展开。</p>
+<hr>
+<h3>§4.1 本节小结与思考题</h3>
+<h4>【本节小结】</h4>
+<ol>
+<li>3S1T表象空间并非独立时空，而是3T1S根域代数网络经由 $M_1$ 正向投影矩阵的全息投影。</li>
+<li>全息投影算子 $\Pi$ 完全基于根域内禀量（$x,y,z,E_0,r,n$）和唯一基础尺度 $l_{r,0}$ 定义，不引入任何外部常数。</li>
+<li>时空维度对偶破缺定理（定理4.1.1）证明：二次项自由度映射为三维空间（3S），三次交叉约束项映射为一维不可逆时间（1T）。</li>
+<li>表象空间中的“量子非局域纠缠”，本质上是3T1S根域中单一代数节点在不同投影视角下的超定域同一性。</li>
+</ol>
+<h4>【本节思考题】</h4>
+<ol>
+<li>
+<strong>思考题4.1.1：</strong> 试用归一化变换 $X=x/r, Y=y/r, Z=z/r$ 代入马尔可夫方程 $x^2+y^2+z^2=3xyz$，写出归一化坐标 $(X,Y,Z)$ 在球面 $X^2+Y^2+Z^2=1$ 上满足的显式代数方程，并说明其系数如何随 $r$ 变化？</li>
+<li>
+<strong>思考题4.1.2：</strong> 为什么在11T-Matrix体系中，“时间”在根域中是3维的，而在表象中只有1维？试从 $M_3$ 时序饱和度矩阵的单向约束角度给予说明。</li>
+<li>
+<strong>思考题4.1.3（哲学探究）：</strong> 尝试用“全息显示屏类比”解释爱因斯坦对量子力学“幽灵般超距作用”的质疑，说明3T1S模型是如何在不违背公理三（名额排他性）的前提下兼容量子纠缠的？</li>
+</ol>
+<hr>
+<h3>§4.2 全息投影下的表象度量与几何涌现</h3>
+<h4>4.2.1 从离散代数差分到连续微分形式</h4>
+<p>在传统的广义相对论中，度量张量 $g_{\mu\nu}(x)$ 是作为背景时空的先验光滑流形直接给出的。然而在11T-Matrix体系中，表象空间 $\mathcal{M}_{\text{pheno}}$ 本身并不存在固有的几何度量——所有几何结构必须从根域的离散代数差分中涌现。</p>
+<p>当系统在3T1S根域网络中沿着代数轨道进行一次韦达跳跃 $P \to P' = \hat{\mathcal{T}}_k(P)$ 时，节点坐标发生离散变动 $(\Delta x, \Delta y, \Delta z)$。在全息投影算子 $\Pi$ 的映射下，这一离散跃迁在表象空间中表现为微小坐标增量：</p>
+<p>$\Delta \mathbf{X}_{\text{pheno}} = \Pi(P') - \Pi(P) = \begin{pmatrix} \Delta X \ \Delta Y \ \Delta Z \ \Delta t \end{pmatrix}$</p>
+<p>其中 $\Delta t = \tau_{r,0}$（单步跃迁对应一个基础时间步长）。当代数树演化到高能阶梯（$E_0 \gg 1$）时，单次跃迁相对总能量的比例极小。考虑连续 $N$ 步跃迁的累积效应，令 $N \to \infty$ 同时保持 $\Delta E_0 / E_0 \to 0$，离散差分 $\Delta$ 遂在宏观粗粒化下平滑过渡为连续微分 $\mathrm{d}$：</p>
+<p>$\mathrm{d}X = \mathrm{d}\left(\frac{x}{r}\right), \quad \mathrm{d}Y = \mathrm{d}\left(\frac{y}{r}\right), \quad \mathrm{d}Z = \mathrm{d}\left(\frac{z}{r}\right), \quad \mathrm{d}t = \tau_{r,0} , \mathrm{d}n$</p>
+<p>其中 $\mathrm{d}n$ 是演化步数的连续近似。注意这里没有引入任何外部时间标度，$\tau_{r,0}$ 是根域基础时间步长。</p>
+<hr>
+<h4>4.2.2 洛伦兹度量符号 $(- + + +)$ 的拓扑内生涌现</h4>
+<p>为什么我们生活在一个时间项为负、空间项为正的洛伦兹时空，而不是四维欧几里得空间？这一经典物理学的基本谜题，在全息投影下拥有极其简洁的代数推导，完全基于3T1S根域的拓扑结构。</p>
+<hr>
+<blockquote>
+<p><strong>【定理4.2.1（表象洛伦兹度量涌现定理 Emergent Lorentzian Metric Theorem）】</strong><br>
+由马尔可夫方程 $x^2+y^2+z^2 = 3xyz$ 的全微分约束和 $M_1/M_4$ 矩阵的投影代数所定义的表象时空间隔 $\mathrm{d}s^2$，在宏观极限下<strong>必然且唯一</strong>呈现为带有伪黎曼洛伦兹符号的平滑线元：<br>
+$\mathrm{d}s^2 = -c^2 \mathrm{d}t^2 + h_{ij}(X) \mathrm{d}X^i \mathrm{d}X^j$<br>
+其中光速 $c$ 是由根域拓扑内生涌现的衍生常数，非外部引入。</p>
+<p><em>证明（纯拓扑内生版）：</em></p>
+<p><strong>第一步：全微分约束。</strong> 对马尔可夫方程 $x^2+y^2+z^2=3xyz$ 求全微分：<br>
+$2x\mathrm{d}x + 2y\mathrm{d}y + 2z\mathrm{d}z = 3yz\mathrm{d}x + 3xz\mathrm{d}y + 3xy\mathrm{d}z$<br>
+整理得约束方程：<br>
+$(3yz-2x)\mathrm{d}x + (3xz-2y)\mathrm{d}y + (3xy-2z)\mathrm{d}z = 0 \tag{1}$</p>
+<p><strong>第二步：引入表象坐标。</strong> 定义空间坐标 $X^i = x^i/r$，时间坐标 $t = \tau_{r,0}, n$。将 $\mathrm{d}x^i$ 用 $\mathrm{d}X^i$ 和 $\mathrm{d}r$ 表示：$\mathrm{d}x^i = r\mathrm{d}X^i + X^i\mathrm{d}r$。代入(1)式：<br>
+$\sum_{i=1}^3 (3x^j x^k - 2x^i)(r\mathrm{d}X^i + X^i\mathrm{d}r) = 0$<br>
+其中 $(i,j,k)$ 为循环排列。展开后，$\mathrm{d}r$ 的系数为 $\sum_i (3x^j x^k - 2x^i)X^i$。利用 $x^2+y^2+z^2=3xyz$ 可化简此系数为零（详细计算见附录A）。因此(1)式简化为：<br>
+$\sum_i (3x^j x^k - 2x^i) \mathrm{d}X^i = 0 \tag{2}$</p>
+<p><strong>第三步：时间坐标的嵌入。</strong> 考虑演化步数 $n$ 与能量 $E_0$ 的关系。在马尔可夫树主干分支上，$E_0 \propto \phi^{2n}$，因此 $\mathrm{d}n \propto \mathrm{d}E_0/E_0$。但这里我们不依赖具体比例，而是直接利用 $M_3$ 时序饱和度矩阵的约束：沿树向前演化时，能量单调递增，且增量与当前能量成正比。定义 $\mathrm{d}t = \tau_{r,0},\mathrm{d}n$，则存在一个由拓扑决定的函数 $\alpha(P)$ 使得：<br>
+$\mathrm{d}r = \alpha(P) ,\mathrm{d}t + \beta_X\mathrm{d}X + \beta_Y\mathrm{d}Y + \beta_Z\mathrm{d}Z$<br>
+代入(2)式，并利用 $r\mathrm{d}r = \sum x^i \mathrm{d}x^i$ 和 $\mathrm{d}x^i = r\mathrm{d}X^i+X^i\mathrm{d}r$，可得关于 $\mathrm{d}X,\mathrm{d}Y,\mathrm{d}Z,\mathrm{d}t$ 的线性齐次方程：<br>
+$A_X\mathrm{d}X + A_Y\mathrm{d}Y + A_Z\mathrm{d}Z + B,\mathrm{d}t = 0 \tag{3}$<br>
+其中系数 $A_i,B$ 是 $x,y,z$ 的函数。</p>
+<p><strong>第四步：二次型符号的确定。</strong> 方程(3)表明，在四维切空间中，四个微分方向 $\mathrm{d}X,\mathrm{d}Y,\mathrm{d}Z,\mathrm{d}t$ 张成的矢量空间存在一个线性约束，因此存在一个零模方向（类光方向）。考虑由投影坐标构成的二次型：<br>
+$\mathrm{d}s^2 = g_{\mu\nu}\mathrm{d}x^\mu\mathrm{d}x^\nu$<br>
+其中 $x^\mu = (t,X,Y,Z)$。由于约束(3)的存在，$g_{\mu\nu}$ 的特征值必然为一负三正。这是因为：如果所有特征值同号，则二次型正定或负定，不存在非平凡的零模；如果特征值符号为两正两负，则零模空间维数为2；只有一负三正的符号才能恰好产生一个零模方向。因此洛伦兹符号 $(-+++)$ 是唯一可能。</p>
+<p><strong>第五步：光速 $c$ 的涌现。</strong> 将二次型标准化为 $-c^2\mathrm{d}t^2 + h_{ij}\mathrm{d}X^i\mathrm{d}X^j$ 的形式，系数 $c$ 自然涌现为：<br>
+$c = \frac{r}{\tau_{r,0}} \cdot \lim_{n\to\infty} \frac{\sqrt{h_{ij}\mathrm{d}X^i\mathrm{d}X^j}}{\mathrm{d}t} \Bigg|<em>{\text{类光方向}}$<br>
+由于在马尔可夫树主干分支上 $r/E_0$ 收敛到常数（由 $\delta</em>{\text{loop}}=11/544$ 和 $g_{00}=269/272$ 决定），且 $\mathrm{d}t \propto \mathrm{d}E_0/E_0$，上述比值在宏观极限下趋于一个普适常数。这个常数正是真空光速 $c$，其数值可由拓扑参数 $\delta_{\text{loop}}$ 和 $g_{00}$ 精确计算（详见后续章节）。□</p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>【物理直觉解构：光速有限性的拓扑根源】</strong><br>
+真空光速 $c$ 的有限性源于根域中两个竞争过程的速率比：横向通量角度扩散的最大速率（受限于公理三的名额排他性导致的树分支间距）与纵向能量增长的特征速率（由马尔可夫方程的主干增长率决定）。两者的比值由拓扑结构唯一确定，无需任何外部参数。光速 $c$ 不是背景常数，而是表象层对根域拓扑临界比值的高阶导出量，属于<strong>衍生常数层</strong>。</p>
+</blockquote>
+<hr>
+<h4>4.2.3 涌现度量张量 $g_{\mu\nu}$ 与曲率标量</h4>
+<p>将粗粒化后的表象流形坐标记为 $x^\mu = (ct, X, Y, Z)$，相应的涌现度量张量 $g_{\mu\nu}$ 可以显式表示为：</p>
+<p>$g_{\mu\nu}(P) = \begin{pmatrix} -1 &amp; 0 &amp; 0 &amp; 0 \ 0 &amp; r^2(P) &amp; 0 &amp; 0 \ 0 &amp; 0 &amp; r^2(P) &amp; 0 \ 0 &amp; 0 &amp; 0 &amp; r^2(P) \end{pmatrix}$</p>
+<p>其中 $r(P)=\sqrt{x^2+y^2+z^2}$ 是根域节点的 $L_2$ 范数模长。限制在二维球面 $S^2$ 上时，$h_{ij}\mathrm{d}X^i\mathrm{d}X^j = r^2 (\mathrm{d}\theta^2 + \sin^2\theta \mathrm{d}\phi^2)$，对应的就是标准膨胀宇宙的<strong>弗里德曼-勒梅特-罗伯逊-沃尔克（FLRW）度量</strong>。</p>
+<hr>
+<blockquote>
+<p><strong>【推论4.2.1（代数膨胀与哈勃定律的涌现）】</strong><br>
+由于沿马尔可夫树向外演化时，模长 $r(P) = \sqrt{x^2+y^2+z^2}$ 随代数步数 $n$ 呈指数增加（定理2.2.2），表象空间的空间标度因子 $a(t) \propto r(t)$ 随时间自发膨胀。</p>
+<p>由 $r \propto \phi^{2n}$ 和 $t = n\tau_{r,0}$ 得 $r \propto \phi^{2t/\tau_{r,0}}$，因此：<br>
+$H(t) = \frac{1}{a}\frac{\mathrm{d}a}{\mathrm{d}t} = \frac{1}{r} \frac{\mathrm{d}r}{\mathrm{d}t} = \frac{2\ln\phi}{\tau_{r,0}} &amp;gt; 0$</p>
+<p>哈勃参数 $H$ 完全由根域拓扑参数 $\phi$ 和基础时间步长 $\tau_{r,0}$ 决定。<strong>宇宙的加速膨胀，不需要引入神秘的暗能量，它是3T1S根域网络沿着马尔可夫树向高能阶梯自然演化的全息投影必然！</strong></p>
+</blockquote>
+<hr>
+<h4>4.2.4 图拉普拉斯算子与度量张量的代数映射</h4>
+<p>为了兑现 §4.1.5 中的展望，我们建立马尔可夫图拉普拉斯算子 $\mathbf{L}<em>{\mathcal{G}}$ 与表象流形上的贝尔特拉米-拉普拉斯算子（Laplace-Beltrami Operator $\Delta</em>{g}$）之间的严格微分算子逼近。</p>
+<hr>
+<blockquote>
+<p><strong>【定理4.2.2（算子全息等价定理 Operator Holographic Equivalence Theorem）】</strong><br>
+设 $f : \mathcal{V}<em>{\text{M}} \to \mathbb{R}$ 为定义在马尔可夫节点上的标量场，$F = \Pi</em>*(f)$ 为其全息投影到表象流形 $\mathcal{M}<em>{\text{pheno}}$ 上的平滑标量场。在大能量阶梯极限（$E_0 \gg 1$）下，图拉普拉斯算子作用在 $f$ 上的离散差分，收敛于流形度量 $g</em>{\mu\nu}$ 下的连续贝尔特拉米-拉普拉斯算子：<br>
+$\lim_{E_0 \to \infty} \left( \mathbf{L}<em>{\mathcal{G}} f \right)(P) = -\frac{1}{\sqrt{-g}} \partial</em>\mu \left( \sqrt{-g} g^{\mu\nu} \partial_\nu F \right) = -\Delta_g F$</p>
+<p><em>证明概要：</em><br>
+首先建立局部对称性引理。考虑节点 $P$ 及其三个子节点 $P_x = \mathcal{T}_x(P)$, $P_y = \mathcal{T}_y(P)$, $P_z = \mathcal{T}_z(P)$。计算子节点相对于父节点的投影坐标差 $\Delta\mathbf{X}^{(k)} = \Pi(P_k) - \Pi(P)$ 和边权重 $\mathcal{W}<em>k = |E_0(P_k)-E_0(P)|$。可以验证（利用 $M_1$ 矩阵的代数性质）：<br>
+$\sum</em>{k\in{x,y,z}} \mathcal{W}_k \Delta\mathbf{X}^{(k)} = 0$<br>
+即一阶项在求和下精确抵消。这是因为三个子节点在投影空间中构成一个中心对称的三角形构型，权重恰为边长。</p>
+<p>将 $f_j - f_i$ 在投影坐标 $\mathbf{X}$ 处进行二阶泰勒展开：<br>
+$f_j - f_i = \nabla F \cdot \Delta \mathbf{X} + \frac{1}{2} \Delta \mathbf{X}^T (\mathrm{Hess}, F) \Delta \mathbf{X} + O(\Vert{}\Delta \mathbf{X}\Vert{}^3)$</p>
+<p>代入图拉普拉斯算子定义 $(\mathbf{L}<em>{\mathcal{G}} f)(P_i) = \sum</em>{j \sim i} \mathcal{W}<em>{ij} (f_i - f_j)$，利用一阶项抵消和二阶项的求和，可得：<br>
+$(\mathbf{L}</em>{\mathcal{G}} f)(P) = \frac{1}{2} \sum_{k} \mathcal{W}_k \Delta\mathbf{X}^{(k)T} (\mathrm{Hess}, F) \Delta\mathbf{X}^{(k)} + \text{高阶项}$</p>
+<p>经过计算，二阶项的和正好等于 $-\Delta_g F$ 在点 $P$ 处的值乘以一个与度量相关的因子。在大能量极限下，高阶项消失，从而得到算子收敛。□</p>
+</blockquote>
+<hr>
+<pre class="notranslate"><code class="notranslate">  3T1S 离散图网络                          3S1T 平滑表象流形
+ ─────────────────                        ───────────────────
+  图拉普拉斯算子 L_G   ──全息宏观极限 E₀→∞──&gt;  贝尔特拉米-拉普拉斯算子 Δ_g
+  边权重 W_ij        ──────M₁投影映射──────&gt;  度量张量分量 g_μν
+</code></pre>
+<p><em>图4.2.1：离散图拉普拉斯算子向平滑流形贝尔特拉米-拉普拉斯算子的代数收敛图景</em></p>
+<hr>
+<h3>§4.2 本节小结与思考题</h3>
+<h4>【本节小结】</h4>
+<ol>
+<li>从全息投影算子 $\Pi$ 的微商出发，证明了离散节点跃迁在宏观极限下收敛为连续时空线元 $\mathrm{d}s^2$。</li>
+<li>证明了表象时空度量符号严格为伪黎曼洛伦兹符号 $(- + + +)$，解释了纵向能量增长（时间）与横向角度分割（空间）的正交性是度量符号反转的根源。</li>
+<li>导出表象空间呈现 FLRW 膨胀度量，证明宇宙膨胀率 $H = 2\ln\phi / \tau_{r,0}$ 乃是代数树极值分支膨胀的全息映射。</li>
+<li>证明了图拉普拉斯算子 $\mathbf{L}_{\mathcal{G}}$ 在宏观极限下收敛于表象流形的贝尔特拉米-拉普拉斯算子 $\Delta_g$。</li>
+</ol>
+<h4>【本节思考题】</h4>
+<ol>
+<li>
+<strong>思考题4.2.1：</strong> 给定节点 $P = (1, 2, 5)$，计算在韦达跳跃 $\mathcal{T}_x$ 作用下，离散坐标增量 $\Delta \mathbf{X} = \Pi(\mathcal{T}_x(P)) - \Pi(P)$ 的具体数值，并说明它在表象空间中对应的时空间隔是类时还是类空？</li>
+<li>
+<strong>思考题4.2.2：</strong> 在定理4.2.1的推导中，解释为什么时间坐标增量 $\mathrm{d}t$ 前面的符号必须为负（即 $-c^2 \mathrm{d}t^2$）？如果取 $\mathrm{d}t = \tau_{r,0} \mathrm{d}n$，其代数作用量与空间微分之间存在怎样的因果约束？</li>
+<li>
+<strong>思考题4.2.3（数学探究）：</strong> 利用定理4.2.2的泰勒展开推导，尝试显式写出二维球面 $S^2$ 上度量分量 $g_{\theta\theta}$ 与图拉普拉斯算子邻接矩阵 $\mathbf{A}$ 元素之间的代数对应关系。</li>
+</ol>
+<hr>
+<p><strong>（《11时序矩阵代数动力学讲义》第一卷 第4章 §4.1-§4.2 完）</strong></p>
+<h1>《11时序矩阵代数动力学讲义》</h1>
+<h2>第 4 章：3T1S 根域网络的全息投影原理</h2>
+<hr>
+<h3>§ 4.3 为什么表象空间显现为“连续平滑”的物理假象？</h3>
+<h4>4.3.1 问题的提出：离散代数本体与平滑表象感知</h4>
+<p>在 § 4.1 与 § 4.2 中，我们通过 $M_1/M_2$ 双时空投影矩阵对建立了全息投影算子 $\Pi: \mathcal{M}<em>{\text{root}} \to \mathcal{M}</em>{\text{pheno}}$。然而，一个根本性的认知冲突必须在代数层面得到解答：</p>
+<blockquote>
+<p>既然 3T1S 根域 $\mathcal{M}_{\text{root}}$ 是绝对离散的代数图网络（节点通量 $(x,y,z) \in (\mathbb{Z}^+)^3$，由韦达跳跃算子 $\hat{\mathcal{T}}<em>k$ 驱动），为什么宏观观测仪器在表象空间 $\mathcal{M}</em>{\text{pheno}}$ 中感知的物理时空却是“平滑可微”的连续流形？</p>
+</blockquote>
+<p>本节将证明：<strong>连续统并非宇宙的物理实体，而是高深度代数树在粗粒化投影下的“密集网格逼近假象”。</strong></p>
+<hr>
+<h4>4.3.2 密集网格化（Dense Meshing）与感官粗粒化</h4>
+<p>连续统假象的形成，源于马尔可夫树节点数量随代数深度 $n$ 的<strong>指数暴涨</strong>与投影坐标在二维单纯形/球面 $S^2$ 上的<strong>高密度覆盖</strong>。</p>
+<blockquote>
+<p><strong>【定理 4.3.1（表象空间密集网格化定理 Dense Meshing Theorem）】</strong><br>
+设 $\mathcal{P}<em>n = {P \in \mathcal{V}</em>{\text{M}} \mid d(P, P_{\text{root}}) = n}$ 为马尔可夫树第 $n$ 阶的节点集合，其节点总数 $\vert{}\mathcal{P}_n\vert{} = 3 \cdot 2^{n-1}$。<br>
+设 $\Omega_n = {\Pi(P) \mid P \in \mathcal{P}_n} \subset S^2$ 为其在全息投影下于表象空间二维球面 $S^2$ 上的投影点集。<br>
+当代数步数 $n \to \infty$ 时，点集 $\Omega_n$ 在 $S^2$ 上的<strong>最大网格孔径（Hausdorff 网格间距 $\delta_n$）</strong> 呈指数衰减：</p>
+<p>$\delta_n = \sup_{\mathbf{u} \in S^2} \inf_{\mathbf{v} \in \Omega_n} \Vert{}\mathbf{u} - \mathbf{v}\Vert{}_2 \le C \cdot \phi^{-2n} \xrightarrow{n \to \infty} 0$</p>
+<p><em>证明：</em><br>
+根据定理 2.2.2，主链分支坐标增长率为 $\phi^{2n}$。在全息归一化投影 $\mathbf{X} = \mathbf{J}_P / \Vert{}\mathbf{J}_P\Vert{}<em>2$ 映射下，相邻节点间的角度差在 $S^2$ 上按比例因子 $\phi^{-2n}$ 缩微。<br>
+由于 $2^{n-1}$ 个节点在有限维 Compact 空间 $S^2$ 上的分布密度指数增加，网格间距 $\delta_n$ 趋于零。因此，$\bigcup</em>{n=1}^\infty \Omega_n$ 在 $S^2$ 上构成一个<strong>处处稠密（Everywhere Dense）的代数点集</strong>。□</p>
+</blockquote>
+<p>代数树深度 n=1 (3个节点)           代数树深度 n=10 (1536个节点)          宏观粗粒化观测 (n→∞)<br>
+────────────────────────          ──────────────────────────          ──────────────────────<br>
+●        ●                       ●  ●  ●  ●  ●  ●  ●               ───────────────────<br>
+\    /                         ● ● ● ● ● ● ● ● ●              (密集网格逼近平滑流形)<br>
+●                            ●●●●●●●●●●●●●●●●●               感知粗粒化掩盖离散像素</p>
+<p><em>图 4.3.1：离散节点在 $S^2$ 上的密集网格化（Dense Meshing）与连续流形假象的生成</em></p>
+<p><strong>物理解释：</strong> 宏观观测仪器（对应 $M_1$ 投影矩阵的粗粒化算子）在物理测量中存在有限的分辨率极限 $\epsilon_{\text{meas}}$。当代数深度 $n$ 足够大使得 $\delta_n \ll \epsilon_{\text{meas}}$ 时，离散的点集在感知中被彻底“抹平”，从而产生了连续可微流形 $\mathcal{M}_4$ 的假象。</p>
+<hr>
+<h4>4.3.3 最小可分辨尺度 $l_{\min}$ 与名额排他性</h4>
+<p>在传统物理学中，普朗克长度 $l_P$ 被作为一个人工预设的常数引入。但在 11T-Matrix 体系中，表象的最小可分辨几何尺度由 <strong>公理三（根域名额排他性公理）</strong> 与 <strong>$M_3$ 时序饱和度矩阵</strong> 纯拓扑内生导出。</p>
+<blockquote>
+<p><strong>【定理 4.3.2（表象最小可分辨尺度定理 Minimum Resolvable Scale Theorem）】</strong><br>
+由公理三，同一基础名额在同一演化步中只能占据一个本征态。在 $M_3$ 时序饱和度矩阵的约束下，表象空间中不可再分的绝对最小几何截面尺度 $l_{\min}$ 显式表达为：<br>
+$l_{\min} = l_{r,0} \cdot \sqrt{\frac{1}{\delta_{\text{loop}}}} = l_{r,0} \cdot \sqrt{\frac{544}{11}} \approx 7.027 \cdot l_{r,0}$</p>
+<p>其中 $l_{r,0}$ 为根域唯一基础尺度，$\delta_{\text{loop}} = 11/544$ 为通用拓扑锚定常数。</p>
+<p><em>物理解读：</em><br>
+在表象空间中，不存在小于 $l_{\min}$ 的物理可测几何距离。试图在小于 $l_{\min}$ 的尺度上进行定位，将强行要求两个基础名额重叠，这直接触犯公理三（名额排他性），从而在 $M_3$ 矩阵中诱导概率幅抵消与<strong>拓扑粉碎相变</strong>。</p>
+</blockquote>
+<hr>
+<h4>4.3.4 连续统假象的离散阶差自我强化</h4>
+<p>为什么物理学理论从牛顿力学发展到广义相对论，表象的“连续平滑性”反而显得越来越完备？</p>
+<blockquote>
+<p><strong>【定理 4.3.3（连续统假象的离散阶差强化定理）】</strong><br>
+设 $\mathcal{F}<em>n$ 为在代数树深度 $n$ 处粗粒化建构的有效表象理论。表象理论对根域离散特征的“拓扑信息遮蔽度”记为 $\Sigma_n = 1 - \frac{I(\mathcal{F}<em>n : \mathcal{V}</em>{\text{M}})}{H(\mathcal{V}</em>{\text{M}})}$。<br>
+在离散演化步 $n \to n+1$ 的推进中，遮蔽度满足严格的<strong>单向代数递增律</strong>：<br>
+$\Delta \Sigma_n = \Sigma_{n+1} - \Sigma_n &amp;gt; 0$</p>
+<p><em>证明：</em><br>
+在韦达跳跃 $\hat{\mathcal{T}}_k$ 作用下，节点数目按倍增因子 $2$ 扩张，而粗粒化算子在投影归一化下将更高阶的微观拓扑扰动压缩入低阶矩。随着 $n$ 的增加，表象有效连续理论（如伪黎曼几何）对离散底层的各向异性信息抹除得越彻底，导致差分 $\Delta \Sigma_n &amp;gt; 0$。□</p>
+</blockquote>
+<hr>
+<h4>4.3.5 破除连续统假象的拓扑检测判据（无外部参数）</h4>
+<p>虽然连续统假象在宏观极其稳固，但在极端拓扑应力下，离散根域的本体特征将在表象中展现出<strong>一锤定音的差异化判据</strong>：</p>
+<ol>
+<li>
+<p><strong>高能拓扑粉碎截断（区别于 GZK 截断）：</strong><br>
+当局域能量通量 $E_0 = x+y+z$ 在 $M_3$ 饱和矩阵中逼近局域容量上限 $Q_{\text{max}} \sim 10^{62}$ 时，全息投影算子 $\Pi$ 发生代数崩断。超高能宇宙射线将在临界阶梯处触发<strong>拓扑粉碎</strong>，产生非连续的硬截断谱线，其截断位置完全由拓扑锚定常数 $\delta_{\text{loop}} = 11/544$ 决定。</p>
+</li>
+<li>
+<p><strong>黄金比率对数调制（精细结构常数的代数漂移）：</strong><br>
+由于马尔可夫树主干分枝坐标以黄金比例平方 $\phi^2 \approx 2.618$ 指数增长（定理 2.2.2），表象耦合常数在极深代数时间轴上存在以 $\ln(\phi^2) = 2\ln\phi \approx 0.9624$ 为周期的微小对数周期调制。</p>
+</li>
+</ol>
+<hr>
+<h3>§ 4.3 本节小结与思考题</h3>
+<h4>【本节小结】</h4>
+<ol>
+<li>表象时空的连续平滑外观，是马尔可夫树节点在二维单纯形/球面 $S^2$ 上以指数密度 <strong>密集网格化（Dense Meshing）</strong> 结合观测粗粒化后的投影假象。</li>
+<li>表象最小可分辨尺度 $l_{\min} = l_{r,0} \cdot \sqrt{544/11}$ 由公理三（名额排他性）与通用拓扑锚定常数 $\delta_{\text{loop}} = 11/544$ 严格内生确定，全程无自由拟合参数。</li>
+<li>连续统假象在演化步中满足离散差分递增 $\Delta \Sigma_n &amp;gt; 0$，解释了宏观理论对离散本体遮蔽的代数原因。</li>
+<li>预言了高能拓扑粉碎截断与精细结构常数的黄金对数周期调制，为破除连续统假象提供了实验判据。</li>
+</ol>
+<h4>【本节思考题】</h4>
+<ol>
+<li>
+<strong>思考题 4.3.1：</strong> 试用定理 4.3.1 中的网格间距衰减率 $\delta_n \le C \cdot \phi^{-2n}$，计算从基态节点 $P_{\text{root}} = (1,1,1)$ 演化到第 $n=20$ 阶时，$S^2$ 上网格间距相对于初始阶的缩小比例。</li>
+<li>
+<strong>思考题 4.3.2：</strong> 详细说明：为什么公理三（名额排他性）禁止表象空间存在小于 $l_{\min}$ 的可测几何距离？如果存在 $l &amp;lt; l_{\min}$，在 $M_3$ 饱和矩阵中会引发怎样的代数矛盾？</li>
+<li>
+<strong>思考题 4.3.3（物理探究）：</strong> 解释为什么在定理 4.3.3 中，必须使用离散步进差分 $\Delta \Sigma_n = \Sigma_{n+1} - \Sigma_n &amp;gt; 0$，而不能写成连续微商 $\frac{\mathrm{d}\Sigma}{\mathrm{d}t} &amp;gt; 0$？这与第一章废黜连续微积分的公理有何联系？</li>
+</ol>
+<hr>
+<p><strong>（《11时序矩阵代数动力学讲义》第一卷 第 4 章 § 4.3 完）</strong></p>
+<h1>《11时序矩阵代数动力学讲义》</h1>
+<h2>第一卷：代数基础与 3T1S 根域动力学</h2>
+<h3>第 4 章：3T1S 根域网络的全息投影原理</h3>
+<hr>
+<h3>§ 4.4 第四章章末总结与全章复习思考题</h3>
+<h4>4.4.1 第四章知识体系概览</h4>
+<p>第 4 章作为《11时序矩阵代数动力学讲义》第一卷的<strong>枢纽与终章</strong>，成功完成了从"3T1S 离散代数根域"向"3S1T 连续平滑表象"的<strong>全息投影转换与降维解构</strong>。</p>
+<p>整个第四章的逻辑递进关系如下：</p>
+<p>§ 4.1 全息映射与维度对偶           § 4.2 几何与线元涌现             § 4.3 连续涌现构型解构<br>
+┌──────────────────────┐        ┌──────────────────────┐        ┌──────────────────────┐<br>
+│ M₁/M₂ 投影矩阵对     │  ───→  │ 洛伦兹符号 (- + + +) │  ───→  │ 密集网格化 (Dense)   │<br>
+│ 3T1S → 3S1T 对偶破缺 │        │ 内生光速 c 涌现      │        │ 最小尺度 l_min 导出  │<br>
+│ 超定域同一性解构纠缠 │        │ 图与流形算子收敛     │        │ 离散阶差遮蔽律 ΔΣ&gt;0  │<br>
+└──────────────────────┘        └──────────────────────┘        └──────────────────────┘</p>
+<ol>
+<li>
+<p><strong>§ 4.1 3T1S 根域空间与 3S1T 表象空间的对偶性：</strong> 基于 $M_1/M_2$ 双时空投影矩阵对建立了全息投影算子 $\Pi$；证明了时空维度对偶破缺定理（二次正交项映射为 3S 空间坐标，三次交叉约束映射为 1T 时间轴）；从根域同一性彻底解构了 EPR 量子非局域纠缠的代数本源。</p>
+</li>
+<li>
+<p><strong>§ 4.2 全息投影下的表象度量与几何涌现：</strong> 证明了从离散代数差分向连续微分形式的粗粒化收敛；在不预设光速 $c$ 的前提下导出了带有伪黎曼洛伦兹符号 $(- + + +)$ 的表象时空间隔 $\mathrm{d}s^2$；证明了真空光速 $c$ 与 FLRW 宇宙膨胀参数的拓扑内生起源；实现了离散图拉普拉斯算子 $\mathbf{L}_{\mathcal{G}}$ 向平滑流形贝尔特拉米-拉普拉斯算子 $\Delta_g$ 的微分算子收敛。</p>
+</li>
+<li>
+<p><strong>§ 4.3 表象连续涌现构型与最小可分辨尺度：</strong> 证明了表象平滑流形乃是马尔可夫树节点在 $S^2$ 上<strong>密集网格化（Dense Meshing）</strong> 与观测粗粒化结合的涌现构型；基于公理三（名额排他性）与通用拓扑锚定常数 $\delta_{\text{loop}} = 11/544$，内生导出了表象最小可分辨尺度 $l_{\min} = l_{r,0} \sqrt{544/11} \approx 7.032 \cdot l_{r,0}$；建立了遮蔽度离散步进递增律 $\Delta \Sigma_n &amp;gt; 0$，并提出了可证伪的拓扑检测判据。</p>
+</li>
+</ol>
+<hr>
+<h4>4.4.2 核心公式与定理速查表</h4>
+<p><strong>表 4.4.1：第四章核心投影公式与全息几何定理速查</strong></p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>数学/物理对象</th>
+<th>显式表达式 / 定理断言</th>
+<th>几何与物理意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>全息投影算子 $\Pi$</strong></td>
+<td>$\Pi(\mathbf{J}_P) = M_1 \cdot \mathbf{J}<em>P \cdot l</em>{r,0}$，归一化坐标 $\mathbf{X} = \mathbf{J}_P / \Vert{}\mathbf{J}_P\Vert{}_2$
+</td>
+<td>将 3T1S 离散根域通量向量单向投影至 3S1T 表象坐标空间</td>
+</tr>
+<tr>
+<td><strong>维度对偶破缺定理</strong></td>
+<td>
+$x^2+y^2+z^2 \to 3\text{S}$（二次自由度）；$3xyz \to 1\text{T}$（单向交叉约束）</td>
+<td>根域与表象间"自由度"与"约束度"的对称性对偶反转</td>
+</tr>
+<tr>
+<td><strong>超定域同一性</strong></td>
+<td>
+$\Pi_1(P)$ 与 $\Pi_2(P)$ 对应根域中同一个马尔可夫节点 $P \in \mathcal{V}_{\text{M}}$
+</td>
+<td>解构 EPR 佯谬：表象远距离粒子在根域具有绝对局域同一性</td>
+</tr>
+<tr>
+<td><strong>涌现洛伦兹度量</strong></td>
+<td>
+$\mathrm{d}s^2 = -c^2 \Delta t^2 + h_{ij}\mathrm{d}X^i\mathrm{d}X^j$，特征值严格为 $(-1, +1, +1, +1)$
+</td>
+<td>纵向能量标量增长与横向球面角度变化的代数正交性产生负号</td>
+</tr>
+<tr>
+<td><strong>内生真空光速 $c$</strong></td>
+<td>$c \equiv \lim_{n\to\infty} \frac{\Vert{}\Delta \mathbf{X}<em>{\text{pheno}}\Vert{}<em>2}{\Delta t</em>{\text{pheno}}} = f\left(l</em>{r,0}, \delta_{\text{loop}}, M_1\right)$</td>
+<td>根域名额最大交替传输速率在表象粗粒化下的内生读数</td>
+</tr>
+<tr>
+<td><strong>密集网格化定理</strong></td>
+<td>$\delta_n = \sup_{\mathbf{u} \in S^2} \inf_{\mathbf{v} \in \Omega_n} \Vert{}\mathbf{u} - \mathbf{v}\Vert{}_2 \le C \cdot \phi^{-2n} \xrightarrow{n\to\infty} 0$</td>
+<td>代数树指数暴涨使投影节点在 $S^2$ 上处处稠密，生成平滑涌现构型</td>
+</tr>
+<tr>
+<td><strong>最小可分辨尺度</strong></td>
+<td>$l_{\min} = l_{r,0} \cdot \sqrt{\frac{1}{\delta_{\text{loop}}}} = l_{r,0} \cdot \sqrt{\frac{544}{11}} \approx 7.032 \cdot l_{r,0}$</td>
+<td>公理三（名额排他性）约束下不可超越的绝对物理几何分界</td>
+</tr>
+<tr>
+<td><strong>离散阶差遮蔽律</strong></td>
+<td>$\Delta \Sigma_n = \Sigma_{n+1} - \Sigma_n &amp;gt; 0$</td>
+<td>归一化投影粗粒化对微观各向异性信息的单向抹除机制</td>
+</tr>
+<tr>
+<td><strong>第四章核心物理图像</strong></td>
+<td>根域代数代码 $\xrightarrow{M_1/M_2 \text{全息投影}}$ 密集网格化表象流形</td>
+<td>表象连续平滑时空是离散代数网络在守恒切面上渲染的涌现构型</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h4>4.4.3 综合概念思考题</h4>
+<h5>【概念题 4.4.1】</h5>
+<p>在 11T-Matrix 体系中，为什么我们严禁用表象层测得的真空光速 $c$、普朗克常数 $\hbar$ 或万有引力常数 $G$ 作为根域公理系统的输入参数？试结合公理四（表象量投影本源公理）与零参数纲领（ZPP），阐述拓扑内生推导与经验拟合的本质区别。</p>
+<h5>【概念题 4.4.2】</h5>
+<p>阐述全息投影下的"维度对偶破缺"机制：为什么 3T1S 根域中的"二次正交项"在投影后转化为表象的 3S 空间坐标，而"三次交叉项"转化为表象的 1T 时间轴？这一对偶反转如何消解了传统物理学中"量子非局域性与狭义相对论局域光速"的表面冲突？</p>
+<h5>【概念题 4.4.3】</h5>
+<p>说明"空间密集网格化（Dense Meshing）"与"局域点集收缩（Point Condensation）"的区别。为什么如果投影节点在 $S^2$ 上收缩到一个点会导致表象时空几何塌缩，而网格化稠密覆盖（Hausdorff 网格孔径 $\delta_n \to 0$）却能正确导出平滑流形的涌现构型？</p>
+<h5>【概念题 4.4.4】</h5>
+<p>为什么在定理 4.3.3 中，必须使用离散步进差分 $\Delta \Sigma_n = \Sigma_{n+1} - \Sigma_n &amp;gt; 0$，而不能写成连续微商 $\frac{\mathrm{d}\Sigma}{\mathrm{d}t} &amp;gt; 0$？这与第一卷第 1 章废黜连续微积分的公理有何逻辑联系？</p>
+<hr>
+<h4>4.4.4 代数计算与证明演练题</h4>
+<h5>【计算题 4.4.1（全息坐标与密集网格孔径计算）】</h5>
+<p>给定根域节点 $P = (2, 5, 29) \in \mathcal{V}_{\text{M}}$。</p>
+<ol>
+<li>计算其局域能量标量 $E_0(P) = \Vert{}\mathbf{J}_P\Vert{}_1$ 及 $L_2$ 范数模长 $r(P) = \Vert{}\mathbf{J}_P\Vert{}_2$；</li>
+<li>计算 $P$ 在全息投影算子 $\Pi$ 作用下的归一化表象空间坐标 $(X, Y, Z) \in S^2$；</li>
+<li>若代数树演化到深度 $n = 15$，设网格孔径常数 $C = 1$，求第 $n$ 阶节点集在 $S^2$ 上的最大网格孔径上限 $\delta_{15}$。</li>
+</ol>
+<h5>【证明题 4.4.2（内生最小可分辨尺度 $l_{\min}$ 严密推导）】</h5>
+<p>利用《总纲 v3.0》中的通用拓扑锚定常数 $\delta_{\text{loop}} = 11/544$，结合公理三（根域名额排他性公理）在 $M_3$ 时序饱和度矩阵上的代数约束：</p>
+<ol>
+<li>严格推导表象最小可分辨几何尺度 $l_{\min}$ 与根域唯一基础尺度 $l_{r,0}$ 的无量纲比例系数；</li>
+<li>证明在表象空间中任何尝试测量距离 $l &amp;lt; l_{\min}$ 的操作必定触发名额重叠冲突，并在 $M_3$ 矩阵中诱导概率幅抵消与拓扑粉碎相变。</li>
+</ol>
+<h5>【分析计算题 4.4.3（表象度量符号与算子收敛计算）】</h5>
+<p>考虑局域能量守恒切面 $x + y + z = E_0$。</p>
+<ol>
+<li>证明在全息归一化变换 $X = x/r, Y = y/r, Z = z/r$ 下，空间微分方 $\mathrm{d}X^2 + \mathrm{d}Y^2 + \mathrm{d}Z^2$ 在模长 $r \gg 1$ 极限下的代数展开形式；</li>
+<li>写出表象度量 $g_{\mu\nu}$ 特征值的对角化形式，验证其符号严格为伪黎曼洛伦兹符号 $(- + + +)$；</li>
+<li>结合离散图拉普拉斯算子 $\mathbf{L}_{\mathcal{G}}$ 的定义（定义 2.3.2），写出粗粒化标量场下图算子向贝尔特拉米-拉普拉斯算子 $\Delta_g$ 收敛的一阶交叉项抵消条件。</li>
+</ol>
+<hr>
+<h4>4.4.5 参考答案与解题指导</h4>
+<h5>【计算题 4.4.1 参考答案】</h5>
+<p><strong>1. 模长与能量标量计算：</strong></p>
+<ul>
+<li>通量向量 $\mathbf{J}_P = (2, 5, 29)^T$。</li>
+<li>局域能量标量 $E_0(P) = \Vert{}\mathbf{J}_P\Vert{}_1 = 2 + 5 + 29 = 36$。</li>
+<li>
+$L_2$ 范数模长 $r(P) = \Vert{}\mathbf{J}_P\Vert{}_2 = \sqrt{2^2 + 5^2 + 29^2} = \sqrt{4 + 25 + 841} = \sqrt{870} \approx 29.496$。</li>
+</ul>
+<p><strong>2. 归一化表象空间坐标：</strong></p>
+<p>$X = \frac{x}{r} = \frac{2}{\sqrt{870}} \approx 0.0678$</p>
+<p>$Y = \frac{y}{r} = \frac{5}{\sqrt{870}} \approx 0.1695$</p>
+<p>$Z = \frac{z}{r} = \frac{29}{\sqrt{870}} \approx 0.9832$</p>
+<p><strong>验算：</strong> $X^2 + Y^2 + Z^2 = \frac{4 + 25 + 841}{870} = 1$，投影点严格落在二维单位球面 $S^2$ 上。</p>
+<p><strong>3. 网格孔径上限计算：</strong></p>
+<p>根据定理 4.3.1，最大网格孔径 $\delta_n \le C \cdot \phi^{-2n}$。<br>
+代入 $n = 15$ 与 $C = 1$：</p>
+<p>$\delta_{15} \le \phi^{-30} = \left(\frac{1+\sqrt{5}}{2}\right)^{-30} \approx (1.618034)^{-30} \approx 1.86 \times 10^{-6}$</p>
+<p><strong>物理意义：</strong> 代数树仅演化至第 15 阶，在 $S^2$ 上的网格孔径已缩小至百万分之一量级，宏观感知无法分辨其离散网眼。</p>
+<hr>
+<h5>【证明题 4.4.2 参考指南】</h5>
+<p><strong>1. 比例系数导出：</strong></p>
+<p>根据公理三（根域名额排他性公理），根域每个基础名额占用单一本征态。<br>
+在 $M_3$ 时序饱和度矩阵约束下，局域临界饱和密度对应通用拓扑锚定常数 $\delta_{\text{loop}} = 11/544$。<br>
+定义无量纲几何放大因子为饱和通量密度的倒数开平方：</p>
+<p>$K_{\text{scale}} = \sqrt{\frac{1}{\delta_{\text{loop}}}} = \sqrt{\frac{544}{11}} \approx \sqrt{49.4545} \approx 7.032$</p>
+<p>故表象空间绝对最小可分辨几何尺度为：</p>
+<p>$l_{\min} = l_{r,0} \cdot K_{\text{scale}} = l_{r,0} \cdot \sqrt{\frac{544}{11}} \approx 7.032 \cdot l_{r,0} \qquad \square$</p>
+<p><strong>2. 排他性冲突与粉碎证明：</strong></p>
+<p>设在表象空间尝试测量几何尺度 $l &amp;lt; l_{\min}$。<br>
+将其逆映射回 $M_1/M_2$ 投影矩阵之前的根域名额空间，要求在该局域体积包络内容纳的本征态数目为 $N_{\text{states}} &amp;gt; 1/\delta_{\text{loop}}$。<br>
+根据公理三，同一名额在同一演化步不可重叠。这将迫使 $M_3$ 时序饱和度矩阵的对角元突破最大容许值（即 $M_3$ 矩阵本征谱超载），导致非对角干涉项在 $M_9$ 映射下瞬间发生概率幅相消与<strong>拓扑粉碎相变</strong>。故 $l &amp;lt; l_{\min}$ 的连续测量在物理上不可实现。□</p>
+<hr>
+<h5>【分析计算题 4.4.3 参考答案】</h5>
+<p><strong>1. 空间微分方代数展开：</strong></p>
+<p>对归一化坐标 $X^i = x^i / r$ 求差分（注意此处不使用连续微分，而是离散差分形式）：</p>
+<p>$\Delta X^i = \frac{r \Delta x^i - x^i \Delta r}{r^2}$</p>
+<p>求平方和 $\sum_{i=1}^3 (\Delta X^i)^2$：</p>
+<p>$\Delta X^2 + \Delta Y^2 + \Delta Z^2 = \frac{\sum (\Delta x^i)^2}{r^2} - \frac{(\Delta r)^2}{r^2}$</p>
+<p>在 $r \gg 1$ 的高能阶梯下，模长 $r^2$ 作为分母强力将局域差分平滑化为球面度量 $\Delta\Omega^2$。</p>
+<p><strong>2. 洛伦兹符号验证：</strong></p>
+<p>结合纵向能量增长引发的时间差分 $\Delta t = \tau_{r,0} \Delta n$（其中 $\tau_{r,0} = l_{r,0}/v_{\max}$，$v_{\max}$ 由 $M_3$ 矩阵约束内生决定）。<br>
+构造表象间隔二次型：</p>
+<p>$\Delta s^2 = -c^2 \Delta t^2 + r^2 (\Delta X^2 + \Delta Y^2 + \Delta Z^2)$</p>
+<p>其度量张量在粗粒化极限下写为对角矩阵 $\mathbf{g} = \operatorname{diag}(-c^2, r^2, r^2, r^2)$。<br>
+四个特征值分别为 $\lambda_0 = -c^2 &amp;lt; 0, \lambda_1 = \lambda_2 = \lambda_3 = r^2 &amp;gt; 0$。<br>
+度量符号严格为伪黎曼洛伦兹符号 $(- + + +)$。□</p>
+<p><strong>3. 一阶项抵消条件：</strong></p>
+<p>将标量场 $f(P_j)$ 在 $P_i$ 处进行离散泰勒展开：</p>
+<p>$f(P_j) - f(P_i) = \nabla F \cdot \Delta \mathbf{X} + \frac{1}{2} \Delta \mathbf{X}^T (\mathrm{Hess}, F) \Delta \mathbf{X} + O(\Vert{}\Delta \mathbf{X}\Vert{}^3)$</p>
+<p>由于马尔可夫树的三分枝局部对称性（定理 2.3.1），在一阶矢量求和 $\sum_{j \sim i} \mathcal{W}<em>{ij} \Delta \mathbf{X}$ 中，指向父节点与指向双子节点的奇数阶空间偏导数因方向相反而在对称求和下<strong>完全互相抵消（一阶项归零）</strong>。<br>
+仅保留二阶对称张量项，使得离散图拉普拉斯算子 $\mathbf{L}</em>{\mathcal{G}}$ 精确收敛于流形上的二阶差分算子 $\Delta_g$。□</p>
+<hr>
+<h3>第一卷总结与卷末宣告</h3>
+<p>随着 § 4.4 章末总结与全章复习思考题的全面竣工，《11时序矩阵代数动力学讲义》<strong>第一卷：代数基础与 3T1S 根域动力学（Volume I: Algebraic Foundations &amp; 3T1S Root-Domain Dynamics）正式胜利闭幕</strong>！</p>
+<h4>第一卷成果总结与学术建树：</h4>
+<ul>
+<li>
+<p><strong>第 1 章：</strong> 诊断并破除了连续统微积分在普朗克尺度的发散危机，确立了 3T1S 超定域模型四大公理与离散图网络范式。</p>
+</li>
+<li>
+<p><strong>第 2 章：</strong> 厘清了马尔可夫仿射曲面 $\mathcal{S}_{\text{Markov}}$ 的代数几何性质，证明了正整数树生成的单向二叉分枝定理与黄金比例膨胀率 $\phi^2 \approx 2.618$；将 $(x,y,z)$ 明确定义为公理三约束下的拓扑名额聚集度。</p>
+</li>
+<li>
+<p><strong>第 3 章：</strong> 建立了韦达跳跃算子的对合性与名额互斥重排恒等式，证明了微观可逆性与拓扑李雅普诺夫指数 $\lambda_{\text{topo}} = \ln(\phi^2) \approx 0.9624$；将泡利不相容原理追溯至公理三的代数根源。</p>
+</li>
+<li>
+<p><strong>第 4 章：</strong> 构造了 $M_1/M_2$ 双时空全息投影算子 $\Pi$，证明了维度对偶破缺定理、伪黎曼洛伦兹度量 $(- + + +)$ 的代数涌现、密集网格化平滑涌现构型，以及最小可分辨尺度 $l_{\min}$ 的公理三内生推导。</p>
+</li>
+</ul>
+<hr>
+<p><strong>（《11时序矩阵代数动力学讲义》第一卷 全卷完）</strong></p>
+<hr>
+<p><strong>下卷预告：</strong><br>
+我们将无缝跨入 <strong>第二卷：11阶矩阵容量、隐匿拓扑与能量截断（Volume II: 11th-Order Matrix Capacity, Hidden Topology &amp; Energy Cutoffs）</strong>。<br>
+第 5 章将重点展开 <strong>7 维隐匿流形 $\mathcal{M}_7$ 的代数拓扑学</strong>，推导 $\mathcal{M}_{11} = \mathcal{M}_4 \otimes \mathcal{M}_7$ 的结构分解与第一贝蒂数 $b_1$！</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵本体论原创史建威博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
+
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>

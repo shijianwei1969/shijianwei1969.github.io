@@ -1,5 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵本体论原创史建威博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究发布</description><copyright>11时序矩阵本体论原创史建威博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Tue, 18 Aug 2026 10:04:33 +0000</lastBuildDate><managingEditor>11时序矩阵本体论原创史建威博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵本体论原创史建威博客</webMaster><item><title>第03章：韦达跳跃算子与代数轨道动力学</title><link>https://shijianwei1969.github.io/post/di-03-zhang-%EF%BC%9A-wei-da-tiao-yue-suan-zi-yu-dai-shu-gui-dao-dong-li-xue.html</link><description># 《11时序矩阵代数动力学讲义》
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵本体论原创史建威博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究发布</description><copyright>11时序矩阵本体论原创史建威博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Tue, 18 Aug 2026 10:07:26 +0000</lastBuildDate><managingEditor>11时序矩阵本体论原创史建威博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵本体论原创史建威博客</webMaster><item><title>第04章：3T1S根域网络的全息投影原理</title><link>https://shijianwei1969.github.io/post/di-04-zhang-%EF%BC%9A3T1S-gen-yu-wang-luo-de-quan-xi-tou-ying-yuan-li.html</link><description># 《11时序矩阵代数动力学讲义》
+
+## 第04章：3T1S根域网络的全息投影原理
+作者 ：山东威海理论物理EPD工程组 史建威
+ORCID：0009-0002-1757-1793
+---
+
+### §4.1 3T1S根域空间与3S1T表象空间的对偶性
+
+#### 4.1.1 投影的物理动机：从“源代码”到“屏幕图像”
+
+前三章我们建立了建立在马尔可夫丢番图方程 $x^2+y^2+z^2=3xyz$ 和韦达跳跃算子 $\hat{\mathcal{T}}$ 之上的离散代数动力学。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/di-04-zhang-%EF%BC%9A3T1S-gen-yu-wang-luo-de-quan-xi-tou-ying-yuan-li.html</guid><pubDate>Tue, 18 Aug 2026 10:06:52 +0000</pubDate></item><item><title>第03章：韦达跳跃算子与代数轨道动力学</title><link>https://shijianwei1969.github.io/post/di-03-zhang-%EF%BC%9A-wei-da-tiao-yue-suan-zi-yu-dai-shu-gui-dao-dong-li-xue.html</link><description># 《11时序矩阵代数动力学讲义》
 
 ## 第03章：韦达跳跃算子与代数轨道动力学  
 作者：山东威海理论物理EPD工程组总指挥 史建威
