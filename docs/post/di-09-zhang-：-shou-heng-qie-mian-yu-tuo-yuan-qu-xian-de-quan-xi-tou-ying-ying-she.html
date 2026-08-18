@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 《11时序矩阵代数动力学讲义》
+ 
+## 第三卷：全息投影几何与谱分析  
+作者 ：山东威海理论物理EPD工程组 史建威
+ORCID：0009-0002-1757-1793
+### 第09章：守恒切面与椭圆曲线的全息投影映射  
+作者 ：山东威海理论物理EPD工程组 史建威
+
+在 11T-Matrix 的理论架构中，我们面临着一个终极的表象与本体的冲突：根域是绝对离散的马尔可夫图网络，而我们在 3S1T 表象空间中观测到的粒子轨迹、规范场流形乃至时空本身，却呈现出极度平滑的“连续性”。">
+<meta property="og:title" content="第09章：守恒切面与椭圆曲线的全息投影映射">
+<meta property="og:description" content="# 《11时序矩阵代数动力学讲义》
+ 
+## 第三卷：全息投影几何与谱分析  
+作者 ：山东威海理论物理EPD工程组 史建威
+ORCID：0009-0002-1757-1793
+### 第09章：守恒切面与椭圆曲线的全息投影映射  
+作者 ：山东威海理论物理EPD工程组 史建威
+
+在 11T-Matrix 的理论架构中，我们面临着一个终极的表象与本体的冲突：根域是绝对离散的马尔可夫图网络，而我们在 3S1T 表象空间中观测到的粒子轨迹、规范场流形乃至时空本身，却呈现出极度平滑的“连续性”。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/di-09-zhang-%EF%BC%9A-shou-heng-qie-mian-yu-tuo-yuan-qu-xian-de-quan-xi-tou-ying-ying-she.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>第09章：守恒切面与椭圆曲线的全息投影映射</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">第09章：守恒切面与椭圆曲线的全息投影映射</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/224" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>《11时序矩阵代数动力学讲义》</h1>
+<h2>第三卷：全息投影几何与谱分析</h2>
+<p>作者 ：山东威海理论物理EPD工程组 史建威<br>
+ORCID：0009-0002-1757-1793</p>
+<h3>第09章：守恒切面与椭圆曲线的全息投影映射</h3>
+<p>作者 ：山东威海理论物理EPD工程组 史建威</p>
+<p>在 11T-Matrix 的理论架构中，我们面临着一个终极的表象与本体的冲突：根域是绝对离散的马尔可夫图网络，而我们在 3S1T 表象空间中观测到的粒子轨迹、规范场流形乃至时空本身，却呈现出极度平滑的“连续性”。</p>
+<p>根据<strong>公理四（表象量投影本源公理）</strong>，这种连续性并非物理实在，而是全息投影算子 $\Pi$ 作用于底层离散数据后产生的一种几何构型。本章将首次在纯数学上严格证明这一投影机制：我们将展示，离散的三维能量通量如何在一个局域能量守恒切面上，被精确投影为射影几何中平滑的<strong>椭圆曲线（Elliptic Curves）</strong>，而底层的离散“韦达跳跃”，则与椭圆曲线上的“弦切加法群”构成了惊人的绝对同构。</p>
+<hr>
+<h3>§ 9.1 局域能量守恒平面 $x + y + z = E_0$ 的代数引入</h3>
+<p>要从三维离散图网络（3T 通道）向低维表象投影，我们首先必须定义一个“投影屏幕”。这个屏幕并非任意放置，而是由**公理一（净余能量唯一本源且总量守恒）**严格限定的。</p>
+<h4>9.1.1 为什么要切一刀？</h4>
+<p>在前几章中，我们一直在三维的马尔可夫空间 $(x, y, z)$ 中讨论三个时间通道的能量分布。然而，人类的观测仪器（如粒子加速器、望远镜）只能感知到三维空间加一维时间的表象世界。我们无法直接“看到”根域中的三个时间通道——我们只能看到一个“切片”。</p>
+<p>这个切片不是随便切的。根据公理一，在一个封闭的局域系统（例如一个稳定的粒子，或一个封闭的反应区域）中，总净余能量是守恒的。这意味着三个时间通道的能量之和 $x + y + z$ 在一个演化周期内是一个常数。</p>
+<blockquote>
+<p><strong>【定义 9.1.1（局域能量守恒切面）】</strong><br>
+在马尔可夫仿射空间 $\mathbb{A}^3$ 中，设某一局域系统（如一个稳定粒子或封闭反应域）在特定的代数演化周期内，其分配给三个时间通道 $(x,y,z)$ 的总净余能量标量为定值 $E_0 \in \mathbb{Z}^+$。<br>
+此时，定义代数平面 $\mathcal{H}_{E_0}$ 为：<br>
+$$x + y + z = E_0$$<br>
+该平面被称为<strong>局域能量守恒切面</strong>。它是 $M_1/M_2$ 投影矩阵对在执行粗粒化投影时，所依赖的基础代数超平面。</p>
+</blockquote>
+<h4>9.1.2 直观类比：立体树干与横切刀片</h4>
+<p>为了更好地理解“切面”的概念，我们可以借助一个直观的类比：</p>
+<p><strong>想象一棵立体生长的庞大树干（3T 根域）。</strong> 这棵树有三个主要的生长方向（三个时间通道），它们的能量分布构成了一个复杂的三维结构。人类的观测仪器（比如粒子加速器）就像一把锋利的横切刀片。</p>
+<p>这把刀片不能随便乱切。它必须沿着“总能量不变”的角度——也就是 $x + y + z = E_0$ 这个平面——平平地切下去。切下来的横截面上，我们会看到一圈圈的年轮和一些复杂的纹理图案。这个二维的截面图像，就是我们在 3S1T 表象世界中看到的物理现实。</p>
+<p><strong>核心认知转换：</strong></p>
+<ul>
+<li>
+<strong>经典观点：</strong> 粒子在三维空间中做连续运动，轨迹是一条平滑的曲线。</li>
+<li>
+<strong>11T-Matrix 观点：</strong> 所谓的“粒子轨迹”，只是高维根域中能量分布的一个低维切片。我们看到的“连续运动”，是切片上的图案随着 $E_0$ 的缓慢变化而发生的平滑形变。</li>
+</ul>
+<hr>
+<h3>§ 9.2 切面与马尔可夫曲面交线的射影几何证明</h3>
+<h4>9.2.1 当刀片遇到树干：切面与曲面的交线</h4>
+<p>现在，我们把刀片（能量守恒切面 $\mathcal{H}<em>{E_0}$）切向树干（马尔可夫曲面 $\mathcal{S}</em>{\text{Markov}}$）。它们相交的地方，会留下一道印痕。这道印痕的形状，决定了我们在表象世界中看到的几何结构。</p>
+<blockquote>
+<p><strong>【定理 9.2.1（投影交线的三次代数特性）】</strong><br>
+将局域能量守恒平面 $x + y + z = E_0$ 与马尔可夫丢番图方程 $x^2 + y^2 + z^2 = 3xyz$ 联立。通过消去变量 $z = E_0 - x - y$，我们可以在投影切面内得到一条二维代数曲线 $C_{E_0}(x,y)$。</p>
+</blockquote>
+<p><strong>让我们亲手算一算：</strong></p>
+<p>将 $z = E_0 - x - y$ 代入马尔可夫方程：<br>
+$$x^2 + y^2 + (E_0 - x - y)^2 = 3xy(E_0 - x - y)$$</p>
+<p>展开并整理：<br>
+$$x^2 + y^2 + E_0^2 + x^2 + y^2 - 2E_0x - 2E_0y + 2xy = 3E_0xy - 3x^2y - 3xy^2$$</p>
+<p>将所有项移到一边，按最高次项排列：<br>
+$$3x^2y + 3xy^2 + \dots (\text{低次项}) = 0$$</p>
+<p>最高次项是 $x^2y$ 和 $xy^2$，加起来是三次项。因此，这是一条标准的<strong>三次平面代数曲线（Cubic Plane Curve）</strong>。</p>
+<h4>9.2.2 为什么三次曲线如此重要？</h4>
+<p>三次曲线在代数几何中有着特殊的地位。它不像二次曲线（圆、椭圆、抛物线）那样简单，也不像四次及以上曲线那样复杂到难以处理。三次曲线恰好处于一个“黄金平衡点”——它足够复杂，能承载丰富的拓扑结构；又足够简单，可以被系统地分类和研究。</p>
+<p>更重要的是，根据代数曲线的<strong>亏格公式</strong>：<br>
+$$g = \frac{(d-1)(d-2)}{2}$$<br>
+当度数 $d=3$ 时，亏格 $g=1$。这意味着这条曲线在复拓扑分类中，必然对应一个<strong>环面（Torus）</strong>——也就是甜甜圈的表面。这个环面结构不是偶然的，它是三次曲线的代数本性所决定的。</p>
+<p><strong>射影闭合性：</strong><br>
+在纯粹的仿射平面中，这条三次曲线可能是不闭合的——它可能有延伸到无穷远处的“尾巴”。但在 11 阶矩阵的拓扑闭合要求下，我们必须将其置于射影平面 $\mathbb{P}^2(\mathbb{C})$ 中。在射影空间中，这条三次曲线是平滑且闭合的，其亏格 $g=1$ 的环面结构得以完整呈现。</p>
+<p><strong>深层意义：</strong> 这个环面结构，为将离散物理翻译为连续弦论（String Theory 中的闭弦拓扑）提供了第一性原理的代数底座。弦论中描述闭弦运动的“世界面”也是一个环面。但现在我们知道了：这个环面不是基本实在，而是离散代数在能量守恒切面上的投影产物。</p>
+<hr>
+<h3>§ 9.3 极简 Weierstrass 标准型 $Y^2 = X^3 + AX + B$ 的双有理变换</h3>
+<h4>9.3.1 从杂乱到标准：揉面团的艺术</h4>
+<p>上一节我们得到了一条三次曲线 $C_{E_0}(x,y)$，但它的具体形状依赖于 $E_0$ 的值，可能看起来很不规则。为了对不同能量下的曲线进行统一的物理谱分析，我们需要将其化简为一个标准形式。</p>
+<blockquote>
+<p><strong>【定理 9.3.1（表象度规的双有理变换定理）】</strong><br>
+任意非奇异的投影交线 $C_{E_0}(x,y)$，都可以通过一个可逆的<strong>双有理变换（Birational Transformation）</strong> $\Phi$，精确映射为极简 Weierstrass 标准型：<br>
+$$Y^2 = X^3 + A X + B$$</p>
+</blockquote>
+<p><strong>类比帮助理解：揉面团</strong></p>
+<p>想象你面前有一块形状怪异的原始面团（原始三次曲线 $C_{E_0}$）。它可能凹凸不平、扭曲变形。你的任务是把这块面团揉成一个标准的、光滑的形状（Weierstrass 标准型）。</p>
+<p>在揉的过程中，你可以拉伸、压缩、扭转面团——这些操作对应于<strong>双有理变换</strong>。但你绝对不能把面团撕裂（那会改变拓扑结构，即改变亏格）。</p>
+<p><strong>这里有一个极其重要的代数几何约束：</strong> 由于我们的三次曲线是非奇异的（没有自交点或尖点），其亏格被严格锁定为 $g=1$。因此，无论原始方程多么复杂，双有理变换最终<strong>必然且只能</strong>将它揉成一个完美的**“甜甜圈”形状（亏格 $g=1$ 的环面，即 Weierstrass 标准型）**。它绝对不可能退化为球形（亏格 $g=0$），因为那需要撕裂曲线——而这在代数几何上是被禁止的。这个环面的绝对稳定性，在物理上对应着闭弦拓扑的绝对稳定性。</p>
+<p><strong>这个“揉”的过程（双有理变换），就是 $M_1$ 投影矩阵在表象空间中建立连续时空度规（Metric）的渲染过程。</strong> 原始的三次曲线是根域的离散数据，而揉好的标准型是表象的连续几何。</p>
+<h4>9.3.2 零参数红线的坚守</h4>
+<p>这里必须极其严厉地强调一个关键点：</p>
+<blockquote>
+<p><strong>【零参数红线（ZPP）的严格坚守】</strong><br>
+这里的参数 $A$ 和 $B$ 绝非人为手动调节的“物理拟合常数”！通过显式的双有理代数变换可以严格证明：<br>
+$$A = f_A(E_0), \quad B = f_B(E_0)$$<br>
+$A$ 和 $B$ <strong>完全且仅仅</strong>由局域系统的总净余能量 $E_0$ 唯一决定。</p>
+</blockquote>
+<p>换句话说，Weierstrass 标准型中的 $A$ 和 $B$ 不是自由参数——它们是被 $E_0$ 锁死的。不同的 $E_0$ 会产生不同的 $A$ 和 $B$，从而产生不同形状的椭圆曲线。这完全符合零参数纲领：没有一个参数是人为输入的，一切都由代数结构内生决定。</p>
+<hr>
+<h3>§ 9.4 韦达跳跃与椭圆曲线弦切加法群 $E(\mathbb{Q})$ 的同构定理</h3>
+<h4>9.4.1 两个世界的桥梁</h4>
+<p>本章到目前为止，我们做了两件事：</p>
+<ol>
+<li>在根域中，我们有离散的韦达跳跃算子 $\hat{\mathcal{T}}$，它在马尔可夫网络的节点之间跳来跳去。</li>
+<li>在表象中，我们有平滑的椭圆曲线 $Y^2 = X^3 + AX + B$，它是能量守恒切面的投影产物。</li>
+</ol>
+<p>这两者之间有关系吗？如果有，是什么关系？</p>
+<p>答案是：<strong>它们是完全等价的。</strong> 离散的韦达跳跃，在投影之后，正好对应于椭圆曲线上的连续群加法。</p>
+<blockquote>
+<p><strong>【定理 9.4.1（演化动力学的全息同构定理）】</strong><br>
+隐匿空间 $\mathcal{M}<em>7$ 中驱动能量演化的<strong>离散韦达跳跃算子 $\hat{\mathcal{T}}$</strong>，与表象椭圆曲线上产生的<strong>连续弦切加法群 $E(\mathbb{Q})$</strong>，在 $\Pi$ 投影算子下构成绝对的群同构：<br>
+$$\Pi: \hat{\mathcal{T}} \xrightarrow{\cong} \oplus</em>{E(\mathbb{Q})}$$</p>
+</blockquote>
+<h4>9.4.2 同构的直觉：翻山与画线</h4>
+<p>为了理解这个同构，我们先看看椭圆曲线上的弦切加法是怎么回事：</p>
+<p>在椭圆曲线上任意取两点 $P$ 和 $Q$。画一条直线穿过它们，这条直线会与曲线相交于第三个点 $R$。然后，将这个第三点关于 $X$ 轴对称翻转，得到 $R'$。我们定义 $P + Q = R'$。这就是椭圆曲线上的群加法。</p>
+<p>现在，再看看韦达跳跃在做什么：</p>
+<p>当我们固定马尔可夫方程中的两个变量（比如 $y$ 和 $z$），方程就变成了关于 $x$ 的二次方程。韦达跳跃 $\mathcal{T}_x(x,y,z) = (3yz - x, y, z)$ 的本质，就是用二次方程的“另一根”替换当前根。</p>
+<p><strong>同构的核心直觉：</strong></p>
+<ol>
+<li>马尔可夫方程固定 $y$ 和 $z$ 时，关于 $x$ 是一个二次形式。韦达跳跃 $\mathcal{T}_x$ 本质上是对该二次方程两根的代数替换。</li>
+<li>当我们将切面 $x+y+z=E_0$ 变换为 Weierstrass 椭圆曲线后，这种固定其余变量、只对单通道进行“另一根替换”的代数操作，在几何上完全等价于：<strong>作一条平行于坐标轴的直线穿过当前状态点，求该直线与三次曲线的另一个交点，并辅以射影对合翻转。</strong>
+</li>
+<li>因此，根域节点经历一次离散的韦达跃迁，在表象椭圆曲线上，就精确对应着一次连续平滑的群加法滑动。</li>
+</ol>
+<h4>9.4.3 终极物理断言：连续性是投影假象</h4>
+<blockquote>
+<p><strong>【终极物理断言】</strong><br>
+我们在宏观 3S1T 世界中看到的粒子“连续运动轨迹”或“场的平滑波动”，根本不是真实的物理过程！它们只是根域底层节点在执行离散的“韦达群运算”时，被 $M_1/M_2$ 算子渲染出的几何动画。连续性，彻底沦为了离散代数的全息投影假象！</p>
+</blockquote>
+<p><strong>核心认知转换：</strong></p>
+<ul>
+<li><strong>经典观点：</strong> 粒子在时空中做连续的平滑运动，我们可以用微积分来描述它的轨迹。</li>
+<li><strong>11T-Matrix 观点：</strong> 根本不存在“连续运动”。粒子在根域中只是在节点之间做离散的跳跃。我们看到的“平滑轨迹”，是投影算子对这些离散跳跃进行“渲染”后的结果——就像电影是由一帧一帧的静态画面组成的，但我们看起来是连续的一样。</li>
+</ul>
+<hr>
+<h3>§ 9.5 本章习题与思考题</h3>
+<h4>一、 基础概念与范式转换</h4>
+<p><strong>1. 投影切面的代数验证（推导题）</strong></p>
+<p>给定局域能量常数 $E_0 = 8$（对应马尔可夫树第一激发态所在的能量层级）。</p>
+<p>(1) 写出该能量平面上的交线三次方程。<br>
+<em>提示：将 $z = 8 - x - y$ 代入马尔可夫方程，展开并整理。</em></p>
+<p>(2) 证明点 $(x,y) = (1,2)$ 在该曲线上，并利用代数关系求出其对应的 $z$ 值。<br>
+<em>提示：将 $(1,2)$ 代入方程验证左右两边相等。然后用 $z = 8 - x - y$ 求 $z$。</em></p>
+<hr>
+<h4>二、 核心思辨</h4>
+<p><strong>2. 零参数纲领的坚守（概念分析题）</strong></p>
+<p>在经典的弦理论（String Theory）中，弦在靶空间中扫过的世界面（Worldsheet）也常常被描述为椭圆曲线，但其模参数（Moduli）往往需要人工指定。</p>
+<p>请详细论述：为什么 11T-Matrix 中由马尔可夫交线生成的椭圆曲线 Weierstrass 形式，在哲学上比弦理论更加“自洽”且坚守了 ZPP 纲领？</p>
+<p><em>引导性问题：</em></p>
+<ul>
+<li>弦理论中的椭圆曲线模参数是从哪里来的？是理论推导的还是实验测量的？</li>
+<li>11T-Matrix 中的 $A$ 和 $B$ 是由什么决定的？它们需要人为调节吗？</li>
+<li>哪种做法更符合“第一性原理”的要求？</li>
+</ul>
+<hr>
+<h4>三、 深度思考与本体论前瞻</h4>
+<p><strong>3. “连续性假象”的哲学思辨（开放题）</strong></p>
+<p>根据定理 9.4.1 的同构定理，根域的离散跳跃对应于表象的椭圆曲线平滑滑动。请运用你的物理直觉思考：</p>
+<p>(1) 如果宏观连续运动只是一种几何渲染，那么我们在经典物理中定义的“速度 $v = \mathrm{d}s/\mathrm{d}t$”和“加速度”，其代数本质究竟是什么？<br>
+<em>提示：如果运动本质上是离散跳跃，那么“瞬时速度”可能对应着什么？</em></p>
+<p>(2) 当韦达跳跃的频率逼近局部矩阵的信息吞吐极限时，“速度”这一表象概念是否会发生崩塌？这与相对论中的光速极限 $c$ 是否存在深层的代数联系？<br>
+<em>提示：信息吞吐极限 $Q_{\text{max}}$ 是否限制了跳跃频率的上限？如果跳跃频率有上限，那么“速度”是否也有上限？</em></p>
+<hr>
+<p><strong>（《11时序矩阵代数动力学讲义》第三卷 第 9 章 完）</strong></p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵本体论原创史建威博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
