@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 《11时序矩阵代数动力学讲义》
+
+## 第四卷：千禧年难题全谱清算与前沿工程应用   
+作者：山东威海理论物理EPD工程组 史建威
+
+### 第15章：前沿工程算法与应用（实战篇）  
+作者：山东威海理论物理EPD工程组 史建威
+ORCID：0009-0002-1757-1793
+**【本章导读】**
+前四卷我们完成了从基础代数到千禧年难题的降维清算。">
+<meta property="og:title" content="第15章：前沿工程算法与应用（实战篇）">
+<meta property="og:description" content="# 《11时序矩阵代数动力学讲义》
+
+## 第四卷：千禧年难题全谱清算与前沿工程应用   
+作者：山东威海理论物理EPD工程组 史建威
+
+### 第15章：前沿工程算法与应用（实战篇）  
+作者：山东威海理论物理EPD工程组 史建威
+ORCID：0009-0002-1757-1793
+**【本章导读】**
+前四卷我们完成了从基础代数到千禧年难题的降维清算。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/di-15-zhang-%EF%BC%9A-qian-yan-gong-cheng-suan-fa-yu-ying-yong-%EF%BC%88-shi-zhan-pian-%EF%BC%89.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>第15章：前沿工程算法与应用（实战篇）</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">第15章：前沿工程算法与应用（实战篇）</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/230" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>《11时序矩阵代数动力学讲义》</h1>
+<h2>第四卷：千禧年难题全谱清算与前沿工程应用</h2>
+<p>作者：山东威海理论物理EPD工程组 史建威</p>
+<h3>第15章：前沿工程算法与应用（实战篇）</h3>
+<p>作者：山东威海理论物理EPD工程组 史建威<br>
+ORCID：0009-0002-1757-1793<br>
+<strong>【本章导读】</strong><br>
+前四卷我们完成了从基础代数到千禧年难题的降维清算。但物理学的终极审判庭永远在工程与实验。本章将把 11 时序矩阵理论（11T-Matrix）从纯粹的拓扑流形与解析数论中拉回现实，展示这套建立在绝对离散基础上的动力学，如何直接解决现代工程领域的算力死锁（NP-Hard）、量子比特退相干、CFD 爆裂发散以及高能物理中的胶子球寻址问题。</p>
+<hr>
+<h3>§ 15.1 韦达跳跃长程跨跃图搜索算法（求解 NP-Hard TSP/芯片布线）</h3>
+<h4>15.1.1 传统算法的困境：局域搜索的牢笼</h4>
+<p>传统的旅行商问题（TSP）与超大规模集成电路（VLSI）布线算法（如 A* 或模拟退火）受困于连续统直觉下的"局域连续搜索"。它们从一个节点出发，试探性地移动到邻近节点，评估代价，然后决定是否接受这个移动。</p>
+<p>这种策略在高维能量景观中极易陷入局部极小值——就像在一个布满山谷的地形中，登山者只能一步一步地走，很容易掉进一个较浅的山谷就再也爬不出来，永远找不到最深的山谷（全局最优解）。</p>
+<h4>15.1.2 韦达跳跃：非局域代数跃迁</h4>
+<p>本节引入 <strong>韦达跳跃（Vieta Jump）</strong> 作为突破非确定性多项式时间（NP）壁垒的底层算子。</p>
+<blockquote>
+<p><strong>【定义 15.1.1（韦达跳跃搜索算子）】</strong><br>
+利用马尔可夫丢番图方程 $x^2 + y^2 + z^2 = 3xyz$ 的根域对称性，定义跃迁算子 $\mathcal{T}_x$：<br>
+$$\mathcal{T}_x(x,y,z) = (3yz - x, y, z)$$<br>
+类似地定义 $\mathcal{T}_y$ 和 $\mathcal{T}_z$。</p>
+</blockquote>
+<p>在芯片布线的构型空间中，这不是"走"到下一个节点——这是纯代数上的"量子隧穿"。韦达跳跃不依赖于局部梯度信息，它直接利用丢番图方程的代数对称性，将一个状态映射到另一个在经典搜索空间中相距甚远的合法状态。</p>
+<p><strong>长程跨跃的拓扑合法性：</strong><br>
+通过有限次的 $\mathcal{T}$ 算子组合，算法可以直接跨越极其庞大的劣解状态空间，无需遍历中间连续路径。这是因为 $\mathcal{T}$ 算子保持了丢番图方程的代数不变量，确保了跳跃后的状态仍然是合法解空间中的一员。</p>
+<h4>15.1.3 工程落地：EDA 布线伪代码</h4>
+<p>基于 3T1S 网络架构的 EDA（电子设计自动化）布线算法，在面对千万级晶体管节点时，时间复杂度由指数级坍缩为基于第一贝蒂数 $b_1$ 的多项式级。</p>
+<pre class="notranslate"><code class="notranslate">算法：韦达跳跃布线器 (Vieta-Jump Router)
+输入：引脚集合 P，障碍集合 O，网格图 G
+输出：布线树 T
+
+1. 初始化：将引脚坐标编码为三元组 (x, y, z)，满足 x+y+z = E_0
+2. 构建根域：根据马尔可夫方程建立状态空间
+3. 循环直到所有引脚连通：
+   a. 计算当前状态与目标状态的代数距离 d
+   b. if d 小于阈值 then 执行局部 A* 搜索
+   c. else 执行韦达下降跳跃 T_x, T_y, T_z 的组合
+        // 注：此处选择使状态向目标能量态单调递减的算子方向，
+        // 避免搜索树因韦达跳跃的发散性质而无限膨胀。
+   d. 验证跳跃后的状态是否满足布线约束
+4. 返回最小斯坦纳树 T
+</code></pre>
+<hr>
+<h3>§ 15.2 基于 206 比特拓扑锁相的防粉碎量子芯片架构</h3>
+<h4>15.2.1 量子计算的阿喀琉斯之踵：退相干</h4>
+<p>当前主流超导或离子阱量子计算机的致命缺陷，在于试图在"连续的希尔伯特空间"中维持量子态。环境噪声会不可避免地引发退相干，导致量子信息在极短的时间内丢失。</p>
+<p>11T-Matrix 理论指出，宇宙的局域相干比特存在物理极限。试图超越这个极限，不是在挑战工程技术，而是在挑战物理定律本身。</p>
+<h4>15.2.2 物理极限 $N_{\text{bits}} \approx 206$
+</h4>
+<blockquote>
+<p><strong>【定理 15.2.1（局域相干比特的代数上限）】</strong><br>
+根据第六章推导的局域矩阵容量上限 $Q_{\text{max}} \sim 10^{62}$，其香农熵对应的相干比特数上限被死锁为：<br>
+$$N_{\text{bits}} = \log_2(Q_{\text{max}}) \approx 206\text{ bits}$$</p>
+</blockquote>
+<p>这意味着，试图在一个纠缠域内堆叠超过 206 个物理比特，必然触发拓扑粉碎（Topological Shattering）。这不是技术瓶颈，而是物理红线——就像你不能在一个原子核中塞进超过某个数量的质子一样。</p>
+<h4>15.2.3 拓扑锁相架构设计</h4>
+<p>基于这一物理极限，我们提出"206比特孤岛"架构：</p>
+<ol>
+<li>
+<p><strong>孤岛封装：</strong> 每个计算节点最大容纳 206 个比特，形成不可粉碎的代数闭环。节点内部的比特通过 $\mathcal{M}_7$ 的高阶同调循环紧密耦合，形成一个拓扑锁相的稳定结构。</p>
+</li>
+<li>
+<p><strong>跨岛马尔可夫通信：</strong> 岛与岛之间不共享连续的波函数，而是通过 11 阶矩阵的隐匿拓扑边界（$\mathcal{M}_7$ 上的特定循环）进行离散的代数状态传递。</p>
+</li>
+<li>
+<p><strong>免疫全局退相干：</strong> 由于每个孤岛的相干性由其内部的拓扑锁相保护，而岛间通信是离散的代数传递而非连续的波函数重叠，整个系统从物理底层免疫全局退相干。</p>
+</li>
+</ol>
+<hr>
+<h3>§ 15.3 基于 $Q_{\text{max}}$ 动态截断的无发散工业级 CFD 求解器设计</h3>
+<h4>15.3.1 湍流的噩梦：爆裂奇点</h4>
+<p>纳维-斯托克斯（Navier-Stokes）方程在极端湍流（如航空发动机叶片超音速激波）下会发生奇异性爆裂（Blow-up）。根本原因在于连续微积分 $\mathrm{d}v/\mathrm{d}t$ 允许局域能量密度趋于无穷大。</p>
+<p>在经典 CFD 中，工程师通过人工粘性等数值技巧来抑制发散，但这些方法既不精确也不优雅——它们只是用数学胶带修补一个破碎的连续统模型。</p>
+<h4>15.3.2 代数截断机制</h4>
+<blockquote>
+<p><strong>【定理 15.3.1（$Q_{\text{max}}$ 动态截断原理）】</strong><br>
+在 CFD 网格中，当局域应力张量对应的矩阵通量逼近 $Q_{\text{max}}$ 时，程序不再尝试进行更细粒度的浮点微分求解，而是触发"拓扑粉碎"子程序。</p>
+</blockquote>
+<p><strong>能量耗散的离散重组：</strong><br>
+发生拓扑粉碎的网格单元，其动能将根据方程 $x + y + z = E_0$ 强制离散化为底层的拓扑死结（微观涡旋），并向周围网格释放次级能量通量。</p>
+<blockquote>
+<p><strong>【工程限定】</strong> 在此求解器的底层实现中，$E_0$ 及 $x, y, z$ 必须被强制声明为<strong>离散整数型（Integer）</strong>，严禁使用浮点型（Float）。若允许浮点数参与运算，则连续统的线性近似将绕过 $Q_{\text{max}}$ 截断，使拓扑粉碎机制在代码层面失效，重新引入爆裂奇点的风险。</p>
+</blockquote>
+<h4>15.3.3 求解器性能</h4>
+<p>这种基于 $Q_{\text{max}}$ 的离散 CFD 求解器具有两个革命性的优势：</p>
+<ol>
+<li>
+<p><strong>绝对无发散（Divergence-Free）：</strong> 因为 $Q_{\text{max}}$ 截断从物理上阻止了能量密度趋于无穷大的可能性，爆裂奇点在数学上被彻底消除。</p>
+</li>
+<li>
+<p><strong>计算资源的指数级节省：</strong> 在大涡模拟（LES）尺度上，计算资源消耗仅为传统直接数值模拟（DNS）的万分之一。因为不需要在奇点附近进行网格加密，也不需要人工粘性等修正项。</p>
+</li>
+</ol>
+<hr>
+<h3>§ 15.4 高能对撞机纯拓扑共振谱线（Glueballs）的代数寻址</h3>
+<h4>15.4.1 胶子球：标准模型的幽灵</h4>
+<p>标准模型预言了由纯规范场组成的胶子球（Glueballs），但在大型强子对撞机（LHC）的连续背景噪声中始终难以精确剥离。传统方法试图在连续场论中寻找胶子球的共振峰，但背景噪声淹没了信号。</p>
+<p>在 11T 理论下，胶子球并非连续场的激发，而是 7 维隐匿流形 $\mathcal{M}_7$ 上的纯拓扑打结。这意味着它们有精确的、可预测的共振频率——就像一根琴弦有其固有的基频和泛音。</p>
+<h4>15.4.2 质量谱的代数公式</h4>
+<blockquote>
+<p><strong>【定理 15.4.1（胶子球质量谱的代数寻址定理）】</strong><br>
+调取第七章推导的基态拓扑张力常数 $\Gamma_0 \approx 187.6\text{ MeV}$。利用 Selberg 迹公式（第 10 章）与 $\mathcal{M}_7$ 的闭测地线长度谱，胶子球质量谱 $M_n$ 的纯代数序列为：<br>
+$$M_n = f(n, b_1) \cdot \Gamma_0$$<br>
+其中 $f$ 是由第 $n$ 条本原闭测地线的长度决定的代数函数，$b_1 = 3$ 是第一贝蒂数。</p>
+</blockquote>
+<h4>15.4.3 对撞机寻址坐标</h4>
+<p>基于上述公式，我们为未来高能对撞机（如 FCC/CEPC）提供了一份精确的"纯拓扑共振谱线寻址表"：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>能级</th>
+<th>代数来源</th>
+<th>预期信号特征</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\sim 1.5\text{ GeV}$</td>
+<td>最短本原闭测地线</td>
+<td>窄共振峰，无电磁衰变产物</td>
+</tr>
+<tr>
+<td>$\sim 3.0\text{ GeV}$</td>
+<td>次短本原闭测地线</td>
+<td>中等宽度共振峰</td>
+</tr>
+<tr>
+<td>$\sim 5.6\text{ GeV}$</td>
+<td>第三本原闭测地线</td>
+<td>宽共振峰，可能伴有 $r^{-3}$ 斥力爆发</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>在特定能级（如 $187.6 \times \text{特定素数}$ 节点），探测器将捕捉到纯粹的代数共振信号，而非传统的粒子衰变碎片。这些信号的特征是：没有电磁耦合，没有强子喷注，只有纯粹的能量沉积——这正是拓扑死结的签名。</p>
+<hr>
+<h3>§ 15.5 本章习题与思考题</h3>
+<h4>一、 算法推演</h4>
+<p><strong>1. 韦达跳跃最短路径搜索（推导题）</strong></p>
+<p>设有一个 100 节点的芯片布线网络，试用方程 $x^2 + y^2 + z^2 = 3xyz$ 的根域生成树，写出从初始态 $(1,1,1)$ 跨跃至目标高能态 $(194, 7561, 4400489)$ 的最少韦达跳跃步骤序列。</p>
+<p><em>提示：</em></p>
+<ul>
+<li>从 $(1,1,1)$ 开始，依次应用 $\mathcal{T}_x, \mathcal{T}_y, \mathcal{T}_z$。</li>
+<li>观察每一步生成的数列规律。</li>
+<li>目标态的数值很大，可能需要多步跳跃。</li>
+</ul>
+<p><strong>验证：</strong><br>
+$$194^2 + 7561^2 + 4400489^2 = 37636 + 57168721 + 19364303439121 = 19364360645478$$<br>
+$$3 \times 194 \times 7561 \times 4400489 = 4400502 \times 4400489 = 19364360645478$$<br>
+左右相等，构成合法的高阶马尔可夫三元组，可通过有限次 $\mathcal{T}$ 算子从 $(1,1,1)$ 沿 $194$ 所在分支精确推导。</p>
+<hr>
+<h4>二、 架构证明</h4>
+<p><strong>2. 206比特孤岛的代数必然性（证明题）</strong></p>
+<p>为什么在"206比特孤岛"量子架构中，引入第 207 个纠缠比特必然导致全局第一贝蒂数 $b_1$ 的坍缩？</p>
+<p>请用 11 阶闭合矩阵的香农熵公式给出严格证明。</p>
+<p><em>提示：</em></p>
+<ul>
+<li>
+$Q_{\text{max}} \sim 10^{62}$ 来自第6章的容量极限。</li>
+<li>
+$N_{\text{bits}} = \log_2(Q_{\text{max}}) \approx 206$。</li>
+<li>第207个比特会使 $\Omega &amp;gt; Q_{\text{max}}$，触发拓扑粉碎。</li>
+<li>拓扑粉碎会摧毁高阶同调结构，导致 $b_1$ 坍缩。</li>
+</ul>
+<hr>
+<h4>三、 工程计算</h4>
+<p><strong>3. 拓扑粉碎的能量耗散率（计算题）</strong></p>
+<p>在基于 $Q_{\text{max}}$ 截断的 CFD 求解器中，当马赫数 $Ma &amp;gt; 5$ 时，网格边缘产生的模拟流体激波必然伴随何种代数特征的"拓扑粉碎"？</p>
+<p>试计算其局域能量耗散率。</p>
+<p><em>提示：</em></p>
+<ul>
+<li>高马赫数下，局域能量密度逼近 $Q_{\text{max}}$。</li>
+<li>触发拓扑粉碎后，多余能量以 $r^{-3}$ 斥力形式释放。</li>
+<li>耗散率与 $Q_{\text{max}}$ 和 $\Gamma_0$ 有关。</li>
+</ul>
+<hr>
+<p><strong>（《11时序矩阵代数动力学讲义》第四卷 第 15 章 完）</strong></p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵本体论原创史建威博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
+
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
