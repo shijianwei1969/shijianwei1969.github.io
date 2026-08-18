@@ -1,5 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵本体论原创史建威博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究发布</description><copyright>11时序矩阵本体论原创史建威博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Tue, 18 Aug 2026 10:24:13 +0000</lastBuildDate><managingEditor>11时序矩阵本体论原创史建威博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵本体论原创史建威博客</webMaster><item><title>第11章：拓扑配分函数与 L-函数的降维</title><link>https://shijianwei1969.github.io/post/di-11-zhang-%EF%BC%9A-tuo-pu-pei-fen-han-shu-yu-%20L--han-shu-de-jiang-wei.html</link><description># 《11时序矩阵代数动力学讲义》
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵本体论原创史建威博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究发布</description><copyright>11时序矩阵本体论原创史建威博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Tue, 18 Aug 2026 10:25:30 +0000</lastBuildDate><managingEditor>11时序矩阵本体论原创史建威博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵本体论原创史建威博客</webMaster><item><title>第12章：11阶闭合矩阵本征谱与能量均分定理</title><link>https://shijianwei1969.github.io/post/di-12-zhang-%EF%BC%9A11-jie-bi-he-ju-zhen-ben-zheng-pu-yu-neng-liang-jun-fen-ding-li.html</link><description># 《11时序矩阵代数动力学讲义》
+
+## 第三卷：全息投影几何与谱分析
+
+### 第12章：11阶闭合矩阵本征谱与能量均分定理
+作者 ：山东威海理论物理EPD工程组 史建威
+ORCID：0009-0002-1757-1793
+在传统量子力学和场论中，黎曼 Zeta 函数和 L-函数的非平凡零点为何都精准地分布在复平面 $\mathrm{Re}(s) = 1/2$ 的临界线上，一直是一个纯粹的数学玄学。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/di-12-zhang-%EF%BC%9A11-jie-bi-he-ju-zhen-ben-zheng-pu-yu-neng-liang-jun-fen-ding-li.html</guid><pubDate>Tue, 18 Aug 2026 10:24:53 +0000</pubDate></item><item><title>第11章：拓扑配分函数与 L-函数的降维</title><link>https://shijianwei1969.github.io/post/di-11-zhang-%EF%BC%9A-tuo-pu-pei-fen-han-shu-yu-%20L--han-shu-de-jiang-wei.html</link><description># 《11时序矩阵代数动力学讲义》
 
 ## 第三卷：全息投影几何与谱分析
 
