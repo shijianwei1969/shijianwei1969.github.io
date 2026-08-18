@@ -1,5 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵本体论原创史建威博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究发布</description><copyright>11时序矩阵本体论原创史建威博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Tue, 18 Aug 2026 10:21:56 +0000</lastBuildDate><managingEditor>11时序矩阵本体论原创史建威博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵本体论原创史建威博客</webMaster><item><title>第10章：拓扑哈密顿量与 Selberg 迹公式</title><link>https://shijianwei1969.github.io/post/di-10-zhang-%EF%BC%9A-tuo-pu-ha-mi-dun-liang-yu-%20Selberg%20-ji-gong-shi.html</link><description># 《11时序矩阵代数动力学讲义》
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵本体论原创史建威博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究发布</description><copyright>11时序矩阵本体论原创史建威博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Tue, 18 Aug 2026 10:24:13 +0000</lastBuildDate><managingEditor>11时序矩阵本体论原创史建威博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵本体论原创史建威博客</webMaster><item><title>第11章：拓扑配分函数与 L-函数的降维</title><link>https://shijianwei1969.github.io/post/di-11-zhang-%EF%BC%9A-tuo-pu-pei-fen-han-shu-yu-%20L--han-shu-de-jiang-wei.html</link><description># 《11时序矩阵代数动力学讲义》
+
+## 第三卷：全息投影几何与谱分析
+
+### 第11章：拓扑配分函数与 L-函数的降维  
+作者 ：山东威海理论物理EPD工程组 史建威
+ORCID：0009-0002-1757-1793
+在经典统计物理中，配分函数 $Z$ 是连接微观状态与宏观热力学量的桥梁，但它始终依赖于一个外部输入的“绝对温度 $T$”与玻尔兹曼常数 $k_B$。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/di-11-zhang-%EF%BC%9A-tuo-pu-pei-fen-han-shu-yu-%20L--han-shu-de-jiang-wei.html</guid><pubDate>Tue, 18 Aug 2026 10:23:42 +0000</pubDate></item><item><title>第10章：拓扑哈密顿量与 Selberg 迹公式</title><link>https://shijianwei1969.github.io/post/di-10-zhang-%EF%BC%9A-tuo-pu-ha-mi-dun-liang-yu-%20Selberg%20-ji-gong-shi.html</link><description># 《11时序矩阵代数动力学讲义》
 
 ## 第三卷：全息投影几何与谱分析   作者：山东威海理论物理EPD工程组 史建威
 

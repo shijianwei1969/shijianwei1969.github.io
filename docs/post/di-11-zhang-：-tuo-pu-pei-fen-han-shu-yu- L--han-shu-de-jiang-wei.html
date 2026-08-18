@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 《11时序矩阵代数动力学讲义》
+
+## 第三卷：全息投影几何与谱分析
+
+### 第11章：拓扑配分函数与 L-函数的降维  
+作者 ：山东威海理论物理EPD工程组 史建威
+ORCID：0009-0002-1757-1793
+在经典统计物理中，配分函数 $Z$ 是连接微观状态与宏观热力学量的桥梁，但它始终依赖于一个外部输入的“绝对温度 $T$”与玻尔兹曼常数 $k_B$。">
+<meta property="og:title" content="第11章：拓扑配分函数与 L-函数的降维">
+<meta property="og:description" content="# 《11时序矩阵代数动力学讲义》
+
+## 第三卷：全息投影几何与谱分析
+
+### 第11章：拓扑配分函数与 L-函数的降维  
+作者 ：山东威海理论物理EPD工程组 史建威
+ORCID：0009-0002-1757-1793
+在经典统计物理中，配分函数 $Z$ 是连接微观状态与宏观热力学量的桥梁，但它始终依赖于一个外部输入的“绝对温度 $T$”与玻尔兹曼常数 $k_B$。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/di-11-zhang-%EF%BC%9A-tuo-pu-pei-fen-han-shu-yu-%20L--han-shu-de-jiang-wei.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>第11章：拓扑配分函数与 L-函数的降维</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">第11章：拓扑配分函数与 L-函数的降维</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/226" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>《11时序矩阵代数动力学讲义》</h1>
+<h2>第三卷：全息投影几何与谱分析</h2>
+<h3>第11章：拓扑配分函数与 L-函数的降维</h3>
+<p>作者 ：山东威海理论物理EPD工程组 史建威<br>
+ORCID：0009-0002-1757-1793<br>
+在经典统计物理中，配分函数 $Z$ 是连接微观状态与宏观热力学量的桥梁，但它始终依赖于一个外部输入的“绝对温度 $T$”与玻尔兹曼常数 $k_B$。同时，在纯数学的代数几何中，椭圆曲线携带着一个神秘的 Hasse-Weil L-函数，记录着其在有限域上的解的同余信息。</p>
+<p>这两个看似风马牛不相及的概念，在 11T-Matrix 本体论中发生了惊天动地的碰撞。本章将严格证明：标准统计力学中的配分函数，与代数数论中的 L-函数，本质上是同一个算子在不同表象下的投影！更重要的是，通过对 L-函数的分析延拓，我们将直接在代数上看到 §8.4 中提及的“拓扑粉碎相变”的数学奇点。</p>
+<hr>
+<h3>§ 11.1 Hasse-Weil L-函数的拓扑配分函数本质 $Z_{\mathcal{M}<em>7}(s) = \mathrm{Tr}(e^{-s\hat{H}</em>{\text{topo}}})$</h3>
+<h4>11.1.1 两个世界的孤独守望者</h4>
+<p>在经典统计物理中，配分函数 $Z$ 的定义是：<br>
+$$Z = \sum_n e^{-E_n / k_B T}$$</p>
+<p>它清点了系统在所有可能能量状态上的玻尔兹曼权重分布。但它有两个根本性的缺陷：</p>
+<ol>
+<li>它依赖于外部输入的<strong>温度 $T$</strong> ——这是一个宏观经验参数，不是第一性原理的产物。</li>
+<li>它依赖于<strong>玻尔兹曼常数 $k_B$</strong> ——这是一个人为的单位换算因子。</li>
+</ol>
+<p>在纯数学的代数几何中，椭圆曲线 $E$ 携带者一个神秘的伴侣——<strong>Hasse-Weil L-函数 $L(E,s)$</strong>。它通过欧拉乘积展开，编码了椭圆曲线在每一个有限域 $\mathbb{F}_p$ 上的解的数量信息。数学家们早就知道 L-函数很重要，但他们不知道为什么重要——它似乎只是一个纯粹的算术工具。</p>
+<h4>11.1.2 同一枚硬币的两面</h4>
+<p>在 11T-Matrix 体系中，这两个孤独的守望者终于相遇了。</p>
+<blockquote>
+<p><strong>【定理 11.1.1（L-函数与拓扑配分函数的同一性定理）】</strong><br>
+在 11T-Matrix 体系中，椭圆曲线的 Hasse-Weil L-函数 $L(E,s)$，在数学结构上绝对等价于隐匿空间 $\mathcal{M}<em>7$ 上的拓扑配分函数 $Z</em>{\mathcal{M}<em>7}(s)$。<br>
+即：<br>
+$$L(E,s) \cong Z</em>{\mathcal{M}<em>7}(s) = \mathrm{Tr}(e^{-s\hat{H}</em>{\text{topo}}})$$</p>
+</blockquote>
+<p><strong>参数降维解析：</strong><br>
+在这里，$s$ 绝不是经典热力学中的 $\frac{1}{k_B T}$！在 ZPP 纲领下，$s$ 是一个纯粹的<strong>复代数谱参数</strong>。$\hat{H}_{\text{topo}}$ 是我们在第 10 章构造的纯拓扑哈密顿量。迹运算 $\mathrm{Tr}$ 遍历了 $\mathcal{M}_7$ 上所有允许的本原闭测地线（即拓扑打结路径）。</p>
+<h4>11.1.3 拓扑人口普查表</h4>
+<p><strong>红线警示：</strong> 绝对不能把 $s$ 比喻成“物理温度”，也不能引入“热力学涨落”。</p>
+<p><strong>正确的直觉：拓扑人口普查表</strong></p>
+<p>想象你是一位宇宙级的人口普查员，你的任务是清点 $\mathcal{M}_7$ 中所有可能的“拓扑打结方式”（微观状态）。这些打结方式有长有短、有简单有复杂，就像城市里的居民有不同的年龄、职业和收入。</p>
+<p>$Z_{\mathcal{M}_7}(s)$ 就是一张<strong>拓扑人口普查表</strong>。它不关心温度，不关心热量，它只做一件事：<strong>清点每一种打结方式出现的次数，并按某种权重进行汇总。</strong></p>
+<p>$s$ 不是温度，而是我们读取这张普查表时使用的<strong>数学“焦距”或“滤镜”</strong>：</p>
+<ul>
+<li>当 $s$ 很大时，我们只关注最短、最简单的打结（就像普查中只统计高收入人群）。</li>
+<li>当 $s$ 很小时，我们把所有打结方式都纳入统计（就像普查中统计所有人）。</li>
+</ul>
+<p><strong>物理推论：</strong><br>
+L-函数的欧拉乘积展开中的每一个因子，都精确对应着 $\mathcal{M}<em>7$ 图网络中某一特定素数长度的“拓扑死结”的生成概率。宇宙并不是在“计算”L-函数——宇宙的底层图网络在受限于 $Q</em>{\text{max}}$ 的名额排他性时，其自然演化所呈现的代数组合数，<strong>天然就是</strong> L-函数！</p>
+<hr>
+<h3>§ 11.2 零点阶数与基态简并度的严格对应：$\mathrm{ord}_{s=1} L(E,s) = b_1(\mathcal{M}_7)$</h3>
+<h4>11.2.1 BSD 猜想：从数学难题到物理定理</h4>
+<p>千禧年大奖难题之一的“贝赫和斯维纳通-戴尔猜想（BSD 猜想）”指出：椭圆曲线 L-函数在 $s=1$ 处的零点阶数，等于该曲线上有理点构成的阿贝尔群的秩（Rank）。这是一个纯数学的猜想，困扰了世界上最聪明的头脑数十年。</p>
+<p>但在 11T-Matrix 中，这个猜想不再是猜想——它是一个<strong>物理定理</strong>。</p>
+<blockquote>
+<p><strong>【定理 11.2.1（基态简并度的代数锁定定理）】</strong><br>
+根据 BSD 猜想的物理映射，投影椭圆曲线 L-函数在临界点 $s=1$ 处的零点阶数（$\mathrm{ord}_{s=1}$），严格等于隐匿流形 $\mathcal{M}<em>7$ 的第一贝蒂数 $b_1$。<br>
+$$\mathrm{ord}</em>{s=1} L(E,s) = \mathrm{Rank}(E) = b_1(\mathcal{M}_7)$$</p>
+</blockquote>
+<h4>11.2.2 三个世代：不是巧合，是代数必然</h4>
+<p>现在，让我们把第 5 章的结论代入这个公式。</p>
+<p>我们在第 5 章已经通过纯图论证明了 $b_1(\mathcal{M}_7) = 3$（对应 3T 架构中的 3 个时间通道）。将其代入上式，立刻得出：</p>
+<blockquote>
+<p><strong>该局域能量椭圆曲线的 L-函数在 $s=1$ 处的零点阶数必定为 3！</strong></p>
+</blockquote>
+<p>这意味着，该系统的拓扑基态存在一个绝对的 <strong>3 重简并度（3-fold Degeneracy）</strong>。</p>
+<p><strong>红线警示：</strong> 不要把 BSD 猜想说成是一个“尚未证明的数学假设”。在我们的体系中，它是由底层图网络的连通性直接投射出的物理事实。</p>
+<p><strong>正确的直觉：插槽与钥匙</strong></p>
+<p>想象一个拥有 3 个独立插槽的锁。这把锁的结构（$b_1=3$）决定了它只能接受拥有 3 个齿的钥匙。你不能把只有 2 个齿或 4 个齿的钥匙插进去——物理上不允许。</p>
+<p>同样，$\mathcal{M}_7$ 的拓扑结构（$b_1=3$）决定了表象空间中的基态简并度必须是 3。这个“3”不是经验参数，不是巧合，而是代数结构锁死的必然结果。</p>
+<h4>11.2.3 本体论宣告</h4>
+<blockquote>
+<p><strong>【本体论宣告】</strong><br>
+为什么夸克有 3 种颜色？为什么费米子有 3 个世代？标准模型只能将“3”作为一个经验参数输入。但在 11T-Matrix 中，“3”是 BSD 猜想在 $b_1=3$ 的代数流形上给出的唯一合法整数解！</p>
+<p>我们的宇宙，是通过 L-函数的零点阶数，将“三代结构”死死焊在表象物理的基态简并度上的！</p>
+</blockquote>
+<hr>
+<h3>§ 11.3 谱几何视野下的分析延拓解构</h3>
+<h4>11.3.1 数学魔术还是物理真实？</h4>
+<p>在数学中，分析延拓（Analytic Continuation）常被视为一种神奇的“延寿技巧”。最著名的例子是：<br>
+$$1 + 2 + 3 + 4 + \dots = -\frac{1}{12}$$</p>
+<p>这个结果让无数初学者感到困惑：无穷大的正数之和怎么可能等于一个负数？这是数学魔术吗？是符号游戏吗？</p>
+<p>都不是。在 11T-Matrix 的谱几何视野下，分析延拓有着极其残酷的物理真实性。</p>
+<h4>11.3.2 分析延拓 = 拓扑粉碎的数学镜像</h4>
+<blockquote>
+<p><strong>【定理 11.3.1（分析延拓的拓扑截断本源）】</strong><br>
+L-函数在复平面上的分析延拓，其本质是：当微观状态的直接级数求和（对应于 $\Omega \to \infty$）试图突破矩阵绝对容量上限 $Q_{\text{max}}$ 时，代数系统自动触发的<strong>拓扑粉碎与相变截断</strong>。</p>
+<p>极点（Poles）的出现，不是数学上的发散，而是物理上局域节点发生拓扑粉碎相变（释放 $r^{-3}$ 斥力）的精确坐标！</p>
+</blockquote>
+<p><strong>解构无穷大：</strong><br>
+当我们在复平面上对 $Z_{\mathcal{M}<em>7}(s)$ 跨越收敛轴进行延拓时，我们实际上是在模拟能量极度聚集（如黑洞中心）的过程。经典微积分在这里会算出“无穷大能量”，但分析延拓给出了一个有限的复数结果或极点。这证明了：底层马尔可夫网络通过名额排他性（公理三），强行截断了发散。分析延拓方程（如泛函方程），本质上就是代数容量到达 $Q</em>{\text{max}}$ 后的<strong>能量强制反射/排斥方程</strong>。</p>
+<p><strong>红线警示：</strong> 绝不能用“数学魔术”来戏谑分析延拓。必须把它严肃地与第 8 章的“拓扑粉碎相变”结合起来。</p>
+<p><strong>正确的直觉：溢出的水杯</strong></p>
+<p>想象往一个杯子里无限制地倒水。</p>
+<ul>
+<li>
+<strong>常规级数求和</strong>会告诉你：水柱会无限升高（发散到无穷大）。这是经典微积分的视角——它假设杯子是无限深的。</li>
+<li>
+<strong>分析延拓</strong>则考虑了“杯子容量有限（$Q_{\text{max}}$）”这个事实。当水超过杯沿时，多余的水会溢出。溢出的位置，就是数学上的“极点”。</li>
+</ul>
+<p>在这个类比中：</p>
+<ul>
+<li>
+<strong>杯子</strong> = $\mathcal{M}_7$ 的局域节点</li>
+<li>
+<strong>杯子的容量</strong> = $Q_{\text{max}}$
+</li>
+<li>
+<strong>水溢出</strong> = 拓扑粉碎相变</li>
+<li>
+<strong>溢出的水溅射的方向</strong> = $r^{-3}$ 斥力</li>
+</ul>
+<p>分析延拓的泛函对称性，描述的正是“倒入”与“溢出排斥（$r^{-3}$）”之间的动态平衡。</p>
+<hr>
+<h3>§ 11.4 本章习题与思考题</h3>
+<h4>一、 基础概念与范式转换</h4>
+<p><strong>1. BSD 猜想的物理降维（概念分析题）</strong></p>
+<p>已知在标准算术几何中，BSD 猜想联系了曲线的代数秩与分析零点。请论述：11T-Matrix 是如何通过代入 $b_1(\mathcal{M}_7) = 3$，将这一纯数学猜想直接降维为关于“基本粒子为何拥有三个世代”的第一性代数证明的？</p>
+<p><em>引导性问题：</em></p>
+<ul>
+<li>BSD 猜想的原始表述是什么？它涉及哪些数学对象？</li>
+<li>
+$b_1(\mathcal{M}_7) = 3$ 这个结论是从哪里来的？（提示：回顾第 5 章）</li>
+<li>将 $b_1=3$ 代入 BSD 猜想后，我们得到了什么物理结论？</li>
+</ul>
+<hr>
+<h4>二、 核心思辨</h4>
+<p><strong>2. 配分函数中的 ZPP 坚守（逻辑辨析题）</strong></p>
+<p>传统统计力学的配分函数 $Z = \sum e^{-E_n / k_B T}$ 依赖于人为设定的温度 $T$。</p>
+<p>请结合本章 §11.1 的公式 $Z_{\mathcal{M}<em>7}(s) = \mathrm{Tr}(e^{-s\hat{H}</em>{\text{topo}}})$，论述以下问题：</p>
+<p>(1) 将温度 $T$ 替换为复代数参数 $s$ 的本体论必然性是什么？</p>
+<p>(2) 保留 $k_B T$ 会如何破坏零参数纲领（ZPP）对时空离散本源的探索？</p>
+<p><em>提示：</em></p>
+<ul>
+<li>
+$k_B$ 是一个人为的单位换算因子，不是第一性原理的产物。</li>
+<li>
+$T$ 是一个宏观统计参数，在微观离散图网络中没有对应物。</li>
+<li>
+$s$ 是一个纯代数参数，由 $\mathcal{M}_7$ 的拓扑结构内生决定。</li>
+</ul>
+<hr>
+<h4>三、 深度思考与本体论前瞻</h4>
+<p><strong>3. 分析延拓与黑洞边界（深度思考题）</strong></p>
+<p>我们在 §11.3 提出，分析延拓中的极点对应着拓扑粉碎相变。请回想第 8 章中黑洞并非几何奇点，而是“代数饱和核心”的结论。</p>
+<p>如果一个物理学家试图计算黑洞中心附近的能量配分函数，他在数学公式中遇到了“需要进行分析延拓才能计算”的边界。</p>
+<p>请运用物理直觉判断：</p>
+<p>(1) 这个“分析延拓的边界（极点）”在宏观三维表象空间中，大概率对应着黑洞的哪一个可观测物理边界结构？</p>
+<p>(2) 在这个边界上，发生了怎样的微观拓扑破缺与宏观斥力喷发？</p>
+<p><em>提示：</em></p>
+<ul>
+<li>黑洞的事件视界是否可能是这个边界的宏观表现？</li>
+<li>在事件视界附近，是否发生了局域的拓扑粉碎？</li>
+<li>这种拓扑粉碎是否与黑洞的霍金辐射或相对论性喷流有关？</li>
+</ul>
+<hr>
+<p><strong>（《11时序矩阵代数动力学讲义》第三卷 第 11 章 完）</strong></p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵本体论原创史建威博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
