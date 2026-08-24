@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# Article 04: From the Zeckendorf Operator to the $\mathcal{M}_4$ Spacetime Projection: 11-Dimensional Quantization of the Ramanujan 1103 Matrix Spectral Volume
+
+**Author: Jianwei Shi (Ramanujan 11T-Matrix Group, Shandong Weihai Theoretical Physics EPD Project Group)**
+DOI Academic Archive:
+Article 01: [https://doi.org/10.5281/zenodo.22052321](https://doi.org/10.5281/zenodo.22052321)
+Article 02: [https://doi.org/10.5281/zenodo.22053904](https://doi.org/10.5281/zenodo.22053904)
+Article 03: [https://doi.org/10.5281/zenodo.22056406](https://www.google.com/search?q=https://doi.org/10.5281/zenodo.22056406)
+ORCID: 0009-0002-1757-1793
+
+---
+
+## Abstract
+
+Recent literature proposed a Zeckendorf spectral invariant model based on the Fibonacci matrix. By constructing the summation operator $S_m = \sum_{k=0}^m F^{3k+2}$, it successfully reproduced the Ramanujan constant $1103$ at a purely algebraic level. Under the ontological framework of the 11-Time-Sequence Matrix (11T-Matrix), this paper provides a physical ontology interpretation for this purely mathematical operator. We reveal three key hidden properties within this model: First, the truncation parameter $m=4$ precisely maps to the $\mathcal{M}_4$ spacetime projection branch in the $\mathcal{M}_{11} \cong \mathcal{M}_4 \otimes \mathcal{M}_7$ decomposition; Second, the exponential sequence of the summation terms $\{2, 5, 8, 11, 14\}$ possesses a symmetry-breaking structure with the total dimension $11$ as its absolute center; Third, the $S_4$ matrix that generates $1103$ has a spectral volume (determinant) of $341$, which is strictly divisible by $11$ ($341 = 11 \times 31$), exhibiting a unique 11-dimensional quantization characteristic across the entire operator family. This correspondence demonstrates that the so-called 'Zeckendorf spectral invariant' is essentially an algebraic residual of the 11T-Matrix root-domain network on a low-dimensional manifold.
+
+---
+
+## I. Introduction: From Phenomenological Mathematics to Physical Ontology
+
+The spectral weight $1103$ in Ramanujan's $\pi$ series has long been regarded as a product of complex multiplication theory and modular forms. In recent algebraic explorations, the scholar Yunlong Li established a precise matrix-theoretic encoding. Through the Fibonacci matrix $F = \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}$, he defined a one-parameter family of operators:
+
+$S_m = \sum_{k=0}^m F^{3k+2}$
+
+When the truncation parameter is $m=4$, the matrix trace of this operator is exactly equal to $1103$:
+
+$Tr(S_4) = 1103$
+
+This purely mathematical discovery elegantly bridges the Zeckendorf decomposition with matrix spectral theory. Pure mathematical constructions precisely reveal 'what it is,' while the 11T-Matrix attempts to answer 'why'—why these numbers take exactly these values and what their physical origins are.
+
+From the theoretical perspective of the 11T-Matrix, the spectrum (eigenvalues and invariants) of a matrix corresponds to the physical energy levels and phase space background of a system. This paper will reveal that the operator $S_4$ is not an abstract counting tool, but a local topological tension snapshot captured when the root-domain network projects onto the four-dimensional spacetime $\mathcal{M}_4$.
+
+---
+
+## II. The Truncation Parameter $m=4$: Projection onto the $\mathcal{M}_4$ Spacetime Branch
+
+To extract $1103$ from the infinite Fibonacci sequence, the mathematical model must artificially truncate the upper limit of the summation at $m=4$. In a purely algebraic context, $4$ is merely viewed as a physically meaningless step counter (representing the 5th term in the expansion).
+
+However, in the algebraic topological decomposition $\mathcal{M}_{11} \cong \mathcal{M}_4 \otimes \mathcal{M}_7$ of the 11T-Matrix, $4$ holds a profoundly core ontological status—it represents the four-dimensional macroscopic spacetime manifold in which we reside.
+
+This provides a profound physical closure: The reason the Ramanujan constant $1103$ can be perfectly encoded by the operator $S_4$ is that $1103$ itself is the local spectral weight excited when the underlying tension of the root-domain network projects onto the $\mathcal{M}_4$ four-dimensional spacetime. The operator $S_4$ is essentially computing the algebraic trace of the $\mathcal{M}_4$ matrix block in the macroscopic world.
+
+---
+
+## III. The Absolute Center of the Exponential Sequence: Symmetry Breaking of the Total Dimension $11$
+
+The expansion of the operator $S_4$ consists of five Fibonacci matrix powers:
+
+$S_4 = F^2 + F^5 + F^8 + F^{11} + F^{14}$
+
+Their exponent indices form an arithmetic progression with a common difference of $3$: $\{2, 5, 8, 11, 14\}$. The literature attributes this to a congruence structure modulo $3$ (all satisfying $n \equiv 2 \pmod 3$).
+
+But if we shift our focus from the 'common difference' to the 'geometric barycenter,' a shocking algebraic fact emerges:
+**The absolute median, arithmetic mean, and center of symmetry of this sequence point precisely to the number $11$.**
+
+In the 11T-Matrix, $11$ is the highest total dimension of the root-domain network. This sequence of topologically excited powers $\{2, 5, 8, \mathbf{11}, 14\}$ is not a simple congruence filtration, but a symmetry-breaking process expanding towards lower dimensions ($8, 5, 2$) and higher dimensions ($14$) with the total dimension $11$ as the absolute axis of rotation. The physical constants of the low-dimensional terms must undergo algebraic resonance around this central nervous system, the 'total dimension 11'.
+
+---
+
+## IV. 11-Dimensional Quantization of the Spectral Volume: The Ultimate Verdict of the Determinant
+
+In physics, the determinant of a matrix represents the geometric volume of the phase space spanned by a linear operator. The literature computed and provided the exact matrix form of $S_4$:
+
+$S_4 = \begin{pmatrix} 798 & 493 \\ 493 & 305 \end{pmatrix}$
+
+Its determinant was calculated as: $det(S_4) = 798 \times 305 - 493^2 = 341$.
+
+To reveal the physical uniqueness of this volume, we extracted all determinant backgrounds for the operator family $S_m$ ($0 \le m \le 6$) via a high-precision computational engine:
+
+* $m=0, \quad det(S_0) = 1$
+* $m=1, \quad det(S_1) = 4$
+* $m=2, \quad det(S_2) = 19$
+* $m=3, \quad det(S_3) = 80$
+* $\mathbf{m=4, \quad det(S_4) = 341}$
+* $m=5, \quad det(S_5) = 1444$
+* $m=6, \quad det(S_6) = 6119$
+
+Performing a prime factorization on the target spectral volume $341$, we obtain:
+
+$341 = 11 \times 31$
+
+Across the entire family of $S_m$ operators, exclusively for this highly unique operator $S_4$ that generates $1103$, its matrix spectral volume invariant is perfectly divisible by $11$!
+This algebraic phenomenon directly reveals that the underlying volume of the operator phase space to which the Ramanujan $1103$ belongs is strictly quantized by the 11-dimensional topology. This '$341$' is not a random scalar, but a composite quantum state containing $11$ (the total dimension) and $31$ (a prime topological charge).
+
+---
+
+## V. Conclusion
+
+Through an in-depth analysis of the Zeckendorf spectral invariant model, we have revealed the deep correspondence between the generating operator $S_4$ of the Ramanujan constant $1103$ and the core structure of the 11T-Matrix.
+
+We found that:
+
+1. **The truncation parameter $m=4$** is not a meaningless cursor, but a precise projection of the root-domain network onto the $\mathcal{M}_4$ four-dimensional spacetime manifold.
+2. The existence of the **exponential sequence $\{2, 5, 8, 11, 14\}$** proves that the microscopic topological tension must undergo symmetry breaking with the total dimension $11$ as its absolute central axis.
+3. **The spectral volume $det(S_4) = 341$** is strictly divisible by $11$, demonstrating the 11-dimensional limit quantization characteristics of the phase space background.
+
+Mathematics provides the shell of the equation, while physics endows it with a soul. The so-called matrix operator based on the golden ratio and Lucas numbers is merely a blurred residual left by the macroscopic tension of the root-domain network on a low-dimensional algebraic surface in ultra-localized spacetime.
+
+---
+
+**References**
+
+1. Li, Y. (2026). From Zeckendorf to Spectral Invariants: A Matrix-Theoretic Encoding of the Ramanujan Constant 1103. *Xingkong Qiusuo (Sichuan) Technology Co., Ltd.*. DOI: 10.5281/zenodo.20253232.
+2. Shi, J. (2026). Ramanujan's Constant and 163-Dimensional Topological Freezing: The Information Entropy Limit of the 11T-Matrix Root-Domain Network. EPD-Ramanujan-11T Project, Article 01.
+3. Shi, J. (2026). Base-11 Expansion of the Partition Number Characteristic Node $n=3553$: The Algebraic Origin of the 11T-Matrix Capacity Limit. EPD-Ramanujan-11T Project, Article 02.
+4. Shi, J. (2026). The $9801 = (9 \times 11)^2$ Factor in Ramanujan's $1/\pi$ Series: The Algebraic Signature of the 11T-Matrix Total Dimension. EPD-Ramanujan-11T Project, Article 03.
+
+# 第04篇：从 Zeckendorf 算符到 $\mathcal{M}_4$ 时空投影：拉马努金 1103 矩阵谱体积的 11 维量子化
+
+**作者：史建威（山东威海理论物理EPD工程组-拉玛努金11时序矩阵组）**
+Doi学术存档：
+第01篇：https://doi.org/10.5281/zenodo.22052321
+第02篇：https://doi.org/10.5281/zenodo.22053904
+第03篇：https://doi.org/10.5281/zenodo.22056406
+第04篇：https://doi.org/10.5281/zenodo.22056865
+Orcid：0009-0002-1757-1793
+
+---
+
+## 摘要
+
+近期文献中提出了一种基于斐波那契矩阵的 Zeckendorf 谱不变量模型，通过构造求和算符 $S_m = \sum_{k=0}^m F^{3k+2}$，成功在纯代数层面上还原了拉马努金常数 $1103$。">
+<meta property="og:title" content="第04篇：从 Zeckendorf 算符到 $\mathcal{M}_4$ 时空投影：拉马努金 1103 矩阵谱体积的 11 维量子化">
+<meta property="og:description" content="# Article 04: From the Zeckendorf Operator to the $\mathcal{M}_4$ Spacetime Projection: 11-Dimensional Quantization of the Ramanujan 1103 Matrix Spectral Volume
+
+**Author: Jianwei Shi (Ramanujan 11T-Matrix Group, Shandong Weihai Theoretical Physics EPD Project Group)**
+DOI Academic Archive:
+Article 01: [https://doi.org/10.5281/zenodo.22052321](https://doi.org/10.5281/zenodo.22052321)
+Article 02: [https://doi.org/10.5281/zenodo.22053904](https://doi.org/10.5281/zenodo.22053904)
+Article 03: [https://doi.org/10.5281/zenodo.22056406](https://www.google.com/search?q=https://doi.org/10.5281/zenodo.22056406)
+ORCID: 0009-0002-1757-1793
+
+---
+
+## Abstract
+
+Recent literature proposed a Zeckendorf spectral invariant model based on the Fibonacci matrix. By constructing the summation operator $S_m = \sum_{k=0}^m F^{3k+2}$, it successfully reproduced the Ramanujan constant $1103$ at a purely algebraic level. Under the ontological framework of the 11-Time-Sequence Matrix (11T-Matrix), this paper provides a physical ontology interpretation for this purely mathematical operator. We reveal three key hidden properties within this model: First, the truncation parameter $m=4$ precisely maps to the $\mathcal{M}_4$ spacetime projection branch in the $\mathcal{M}_{11} \cong \mathcal{M}_4 \otimes \mathcal{M}_7$ decomposition; Second, the exponential sequence of the summation terms $\{2, 5, 8, 11, 14\}$ possesses a symmetry-breaking structure with the total dimension $11$ as its absolute center; Third, the $S_4$ matrix that generates $1103$ has a spectral volume (determinant) of $341$, which is strictly divisible by $11$ ($341 = 11 \times 31$), exhibiting a unique 11-dimensional quantization characteristic across the entire operator family. This correspondence demonstrates that the so-called 'Zeckendorf spectral invariant' is essentially an algebraic residual of the 11T-Matrix root-domain network on a low-dimensional manifold.
+
+---
+
+## I. Introduction: From Phenomenological Mathematics to Physical Ontology
+
+The spectral weight $1103$ in Ramanujan's $\pi$ series has long been regarded as a product of complex multiplication theory and modular forms. In recent algebraic explorations, the scholar Yunlong Li established a precise matrix-theoretic encoding. Through the Fibonacci matrix $F = \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}$, he defined a one-parameter family of operators:
+
+$S_m = \sum_{k=0}^m F^{3k+2}$
+
+When the truncation parameter is $m=4$, the matrix trace of this operator is exactly equal to $1103$:
+
+$Tr(S_4) = 1103$
+
+This purely mathematical discovery elegantly bridges the Zeckendorf decomposition with matrix spectral theory. Pure mathematical constructions precisely reveal 'what it is,' while the 11T-Matrix attempts to answer 'why'—why these numbers take exactly these values and what their physical origins are.
+
+From the theoretical perspective of the 11T-Matrix, the spectrum (eigenvalues and invariants) of a matrix corresponds to the physical energy levels and phase space background of a system. This paper will reveal that the operator $S_4$ is not an abstract counting tool, but a local topological tension snapshot captured when the root-domain network projects onto the four-dimensional spacetime $\mathcal{M}_4$.
+
+---
+
+## II. The Truncation Parameter $m=4$: Projection onto the $\mathcal{M}_4$ Spacetime Branch
+
+To extract $1103$ from the infinite Fibonacci sequence, the mathematical model must artificially truncate the upper limit of the summation at $m=4$. In a purely algebraic context, $4$ is merely viewed as a physically meaningless step counter (representing the 5th term in the expansion).
+
+However, in the algebraic topological decomposition $\mathcal{M}_{11} \cong \mathcal{M}_4 \otimes \mathcal{M}_7$ of the 11T-Matrix, $4$ holds a profoundly core ontological status—it represents the four-dimensional macroscopic spacetime manifold in which we reside.
+
+This provides a profound physical closure: The reason the Ramanujan constant $1103$ can be perfectly encoded by the operator $S_4$ is that $1103$ itself is the local spectral weight excited when the underlying tension of the root-domain network projects onto the $\mathcal{M}_4$ four-dimensional spacetime. The operator $S_4$ is essentially computing the algebraic trace of the $\mathcal{M}_4$ matrix block in the macroscopic world.
+
+---
+
+## III. The Absolute Center of the Exponential Sequence: Symmetry Breaking of the Total Dimension $11$
+
+The expansion of the operator $S_4$ consists of five Fibonacci matrix powers:
+
+$S_4 = F^2 + F^5 + F^8 + F^{11} + F^{14}$
+
+Their exponent indices form an arithmetic progression with a common difference of $3$: $\{2, 5, 8, 11, 14\}$. The literature attributes this to a congruence structure modulo $3$ (all satisfying $n \equiv 2 \pmod 3$).
+
+But if we shift our focus from the 'common difference' to the 'geometric barycenter,' a shocking algebraic fact emerges:
+**The absolute median, arithmetic mean, and center of symmetry of this sequence point precisely to the number $11$.**
+
+In the 11T-Matrix, $11$ is the highest total dimension of the root-domain network. This sequence of topologically excited powers $\{2, 5, 8, \mathbf{11}, 14\}$ is not a simple congruence filtration, but a symmetry-breaking process expanding towards lower dimensions ($8, 5, 2$) and higher dimensions ($14$) with the total dimension $11$ as the absolute axis of rotation. The physical constants of the low-dimensional terms must undergo algebraic resonance around this central nervous system, the 'total dimension 11'.
+
+---
+
+## IV. 11-Dimensional Quantization of the Spectral Volume: The Ultimate Verdict of the Determinant
+
+In physics, the determinant of a matrix represents the geometric volume of the phase space spanned by a linear operator. The literature computed and provided the exact matrix form of $S_4$:
+
+$S_4 = \begin{pmatrix} 798 & 493 \\ 493 & 305 \end{pmatrix}$
+
+Its determinant was calculated as: $det(S_4) = 798 \times 305 - 493^2 = 341$.
+
+To reveal the physical uniqueness of this volume, we extracted all determinant backgrounds for the operator family $S_m$ ($0 \le m \le 6$) via a high-precision computational engine:
+
+* $m=0, \quad det(S_0) = 1$
+* $m=1, \quad det(S_1) = 4$
+* $m=2, \quad det(S_2) = 19$
+* $m=3, \quad det(S_3) = 80$
+* $\mathbf{m=4, \quad det(S_4) = 341}$
+* $m=5, \quad det(S_5) = 1444$
+* $m=6, \quad det(S_6) = 6119$
+
+Performing a prime factorization on the target spectral volume $341$, we obtain:
+
+$341 = 11 \times 31$
+
+Across the entire family of $S_m$ operators, exclusively for this highly unique operator $S_4$ that generates $1103$, its matrix spectral volume invariant is perfectly divisible by $11$!
+This algebraic phenomenon directly reveals that the underlying volume of the operator phase space to which the Ramanujan $1103$ belongs is strictly quantized by the 11-dimensional topology. This '$341$' is not a random scalar, but a composite quantum state containing $11$ (the total dimension) and $31$ (a prime topological charge).
+
+---
+
+## V. Conclusion
+
+Through an in-depth analysis of the Zeckendorf spectral invariant model, we have revealed the deep correspondence between the generating operator $S_4$ of the Ramanujan constant $1103$ and the core structure of the 11T-Matrix.
+
+We found that:
+
+1. **The truncation parameter $m=4$** is not a meaningless cursor, but a precise projection of the root-domain network onto the $\mathcal{M}_4$ four-dimensional spacetime manifold.
+2. The existence of the **exponential sequence $\{2, 5, 8, 11, 14\}$** proves that the microscopic topological tension must undergo symmetry breaking with the total dimension $11$ as its absolute central axis.
+3. **The spectral volume $det(S_4) = 341$** is strictly divisible by $11$, demonstrating the 11-dimensional limit quantization characteristics of the phase space background.
+
+Mathematics provides the shell of the equation, while physics endows it with a soul. The so-called matrix operator based on the golden ratio and Lucas numbers is merely a blurred residual left by the macroscopic tension of the root-domain network on a low-dimensional algebraic surface in ultra-localized spacetime.
+
+---
+
+**References**
+
+1. Li, Y. (2026). From Zeckendorf to Spectral Invariants: A Matrix-Theoretic Encoding of the Ramanujan Constant 1103. *Xingkong Qiusuo (Sichuan) Technology Co., Ltd.*. DOI: 10.5281/zenodo.20253232.
+2. Shi, J. (2026). Ramanujan's Constant and 163-Dimensional Topological Freezing: The Information Entropy Limit of the 11T-Matrix Root-Domain Network. EPD-Ramanujan-11T Project, Article 01.
+3. Shi, J. (2026). Base-11 Expansion of the Partition Number Characteristic Node $n=3553$: The Algebraic Origin of the 11T-Matrix Capacity Limit. EPD-Ramanujan-11T Project, Article 02.
+4. Shi, J. (2026). The $9801 = (9 \times 11)^2$ Factor in Ramanujan's $1/\pi$ Series: The Algebraic Signature of the 11T-Matrix Total Dimension. EPD-Ramanujan-11T Project, Article 03.
+
+# 第04篇：从 Zeckendorf 算符到 $\mathcal{M}_4$ 时空投影：拉马努金 1103 矩阵谱体积的 11 维量子化
+
+**作者：史建威（山东威海理论物理EPD工程组-拉玛努金11时序矩阵组）**
+Doi学术存档：
+第01篇：https://doi.org/10.5281/zenodo.22052321
+第02篇：https://doi.org/10.5281/zenodo.22053904
+第03篇：https://doi.org/10.5281/zenodo.22056406
+第04篇：https://doi.org/10.5281/zenodo.22056865
+Orcid：0009-0002-1757-1793
+
+---
+
+## 摘要
+
+近期文献中提出了一种基于斐波那契矩阵的 Zeckendorf 谱不变量模型，通过构造求和算符 $S_m = \sum_{k=0}^m F^{3k+2}$，成功在纯代数层面上还原了拉马努金常数 $1103$。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/di-04-pian-%EF%BC%9A-cong-%20Zeckendorf%20-suan-fu-dao-%20%24-mathcal%7BM%7D_4%24%20-shi-kong-tou-ying-%EF%BC%9A-la-ma-nu-jin-%201103%20-ju-zhen-pu-ti-ji-de-%2011%20-wei-liang-zi-hua.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>第04篇：从 Zeckendorf 算符到 $\mathcal{M}_4$ 时空投影：拉马努金 1103 矩阵谱体积的 11 维量子化</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">第04篇：从 Zeckendorf 算符到 $\mathcal{M}_4$ 时空投影：拉马努金 1103 矩阵谱体积的 11 维量子化</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/237" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>Article 04: From the Zeckendorf Operator to the $\mathcal{M}_4$ Spacetime Projection: 11-Dimensional Quantization of the Ramanujan 1103 Matrix Spectral Volume</h1>
+<p><strong>Author: Jianwei Shi (Ramanujan 11T-Matrix Group, Shandong Weihai Theoretical Physics EPD Project Group)</strong><br>
+DOI Academic Archive:<br>
+Article 01: <a href="https://doi.org/10.5281/zenodo.22052321" rel="nofollow">https://doi.org/10.5281/zenodo.22052321</a><br>
+Article 02: <a href="https://doi.org/10.5281/zenodo.22053904" rel="nofollow">https://doi.org/10.5281/zenodo.22053904</a><br>
+Article 03: <a href="https://www.google.com/search?q=https://doi.org/10.5281/zenodo.22056406" rel="nofollow">https://doi.org/10.5281/zenodo.22056406</a><br>
+ORCID: 0009-0002-1757-1793</p>
+<hr>
+<h2>Abstract</h2>
+<p>Recent literature proposed a Zeckendorf spectral invariant model based on the Fibonacci matrix. By constructing the summation operator $S_m = \sum_{k=0}^m F^{3k+2}$, it successfully reproduced the Ramanujan constant $1103$ at a purely algebraic level. Under the ontological framework of the 11-Time-Sequence Matrix (11T-Matrix), this paper provides a physical ontology interpretation for this purely mathematical operator. We reveal three key hidden properties within this model: First, the truncation parameter $m=4$ precisely maps to the $\mathcal{M}<em>4$ spacetime projection branch in the $\mathcal{M}</em>{11} \cong \mathcal{M}_4 \otimes \mathcal{M}_7$ decomposition; Second, the exponential sequence of the summation terms ${2, 5, 8, 11, 14}$ possesses a symmetry-breaking structure with the total dimension $11$ as its absolute center; Third, the $S_4$ matrix that generates $1103$ has a spectral volume (determinant) of $341$, which is strictly divisible by $11$ ($341 = 11 \times 31$), exhibiting a unique 11-dimensional quantization characteristic across the entire operator family. This correspondence demonstrates that the so-called "Zeckendorf spectral invariant" is essentially an algebraic residual of the 11T-Matrix root-domain network on a low-dimensional manifold.</p>
+<hr>
+<h2>I. Introduction: From Phenomenological Mathematics to Physical Ontology</h2>
+<p>The spectral weight $1103$ in Ramanujan's $\pi$ series has long been regarded as a product of complex multiplication theory and modular forms. In recent algebraic explorations, the scholar Yunlong Li established a precise matrix-theoretic encoding. Through the Fibonacci matrix $F = \begin{pmatrix} 1 &amp; 1 \ 1 &amp; 0 \end{pmatrix}$, he defined a one-parameter family of operators:</p>
+<p>$S_m = \sum_{k=0}^m F^{3k+2}$</p>
+<p>When the truncation parameter is $m=4$, the matrix trace of this operator is exactly equal to $1103$:</p>
+<p>$Tr(S_4) = 1103$</p>
+<p>This purely mathematical discovery elegantly bridges the Zeckendorf decomposition with matrix spectral theory. Pure mathematical constructions precisely reveal "what it is," while the 11T-Matrix attempts to answer "why"—why these numbers take exactly these values and what their physical origins are.</p>
+<p>From the theoretical perspective of the 11T-Matrix, the spectrum (eigenvalues and invariants) of a matrix corresponds to the physical energy levels and phase space background of a system. This paper will reveal that the operator $S_4$ is not an abstract counting tool, but a local topological tension snapshot captured when the root-domain network projects onto the four-dimensional spacetime $\mathcal{M}_4$.</p>
+<hr>
+<h2>II. The Truncation Parameter $m=4$: Projection onto the $\mathcal{M}_4$ Spacetime Branch</h2>
+<p>To extract $1103$ from the infinite Fibonacci sequence, the mathematical model must artificially truncate the upper limit of the summation at $m=4$. In a purely algebraic context, $4$ is merely viewed as a physically meaningless step counter (representing the 5th term in the expansion).</p>
+<p>However, in the algebraic topological decomposition $\mathcal{M}_{11} \cong \mathcal{M}_4 \otimes \mathcal{M}_7$ of the 11T-Matrix, $4$ holds a profoundly core ontological status—it represents the four-dimensional macroscopic spacetime manifold in which we reside.</p>
+<p>This provides a profound physical closure: The reason the Ramanujan constant $1103$ can be perfectly encoded by the operator $S_4$ is that $1103$ itself is the local spectral weight excited when the underlying tension of the root-domain network projects onto the $\mathcal{M}_4$ four-dimensional spacetime. The operator $S_4$ is essentially computing the algebraic trace of the $\mathcal{M}_4$ matrix block in the macroscopic world.</p>
+<hr>
+<h2>III. The Absolute Center of the Exponential Sequence: Symmetry Breaking of the Total Dimension $11$
+</h2>
+<p>The expansion of the operator $S_4$ consists of five Fibonacci matrix powers:</p>
+<p>$S_4 = F^2 + F^5 + F^8 + F^{11} + F^{14}$</p>
+<p>Their exponent indices form an arithmetic progression with a common difference of $3$: ${2, 5, 8, 11, 14}$. The literature attributes this to a congruence structure modulo $3$ (all satisfying $n \equiv 2 \pmod 3$).</p>
+<p>But if we shift our focus from the "common difference" to the "geometric barycenter," a shocking algebraic fact emerges:<br>
+<strong>The absolute median, arithmetic mean, and center of symmetry of this sequence point precisely to the number $11$.</strong></p>
+<p>In the 11T-Matrix, $11$ is the highest total dimension of the root-domain network. This sequence of topologically excited powers ${2, 5, 8, \mathbf{11}, 14}$ is not a simple congruence filtration, but a symmetry-breaking process expanding towards lower dimensions ($8, 5, 2$) and higher dimensions ($14$) with the total dimension $11$ as the absolute axis of rotation. The physical constants of the low-dimensional terms must undergo algebraic resonance around this central nervous system, the "total dimension 11".</p>
+<hr>
+<h2>IV. 11-Dimensional Quantization of the Spectral Volume: The Ultimate Verdict of the Determinant</h2>
+<p>In physics, the determinant of a matrix represents the geometric volume of the phase space spanned by a linear operator. The literature computed and provided the exact matrix form of $S_4$:</p>
+<p>$S_4 = \begin{pmatrix} 798 &amp; 493 \ 493 &amp; 305 \end{pmatrix}$</p>
+<p>Its determinant was calculated as: $det(S_4) = 798 \times 305 - 493^2 = 341$.</p>
+<p>To reveal the physical uniqueness of this volume, we extracted all determinant backgrounds for the operator family $S_m$ ($0 \le m \le 6$) via a high-precision computational engine:</p>
+<ul>
+<li>$m=0, \quad det(S_0) = 1$</li>
+<li>$m=1, \quad det(S_1) = 4$</li>
+<li>$m=2, \quad det(S_2) = 19$</li>
+<li>$m=3, \quad det(S_3) = 80$</li>
+<li>$\mathbf{m=4, \quad det(S_4) = 341}$</li>
+<li>$m=5, \quad det(S_5) = 1444$</li>
+<li>$m=6, \quad det(S_6) = 6119$</li>
+</ul>
+<p>Performing a prime factorization on the target spectral volume $341$, we obtain:</p>
+<p>$341 = 11 \times 31$</p>
+<p>Across the entire family of $S_m$ operators, exclusively for this highly unique operator $S_4$ that generates $1103$, its matrix spectral volume invariant is perfectly divisible by $11$!<br>
+This algebraic phenomenon directly reveals that the underlying volume of the operator phase space to which the Ramanujan $1103$ belongs is strictly quantized by the 11-dimensional topology. This "$341$" is not a random scalar, but a composite quantum state containing $11$ (the total dimension) and $31$ (a prime topological charge).</p>
+<hr>
+<h2>V. Conclusion</h2>
+<p>Through an in-depth analysis of the Zeckendorf spectral invariant model, we have revealed the deep correspondence between the generating operator $S_4$ of the Ramanujan constant $1103$ and the core structure of the 11T-Matrix.</p>
+<p>We found that:</p>
+<ol>
+<li>
+<strong>The truncation parameter $m=4$</strong> is not a meaningless cursor, but a precise projection of the root-domain network onto the $\mathcal{M}_4$ four-dimensional spacetime manifold.</li>
+<li>The existence of the <strong>exponential sequence ${2, 5, 8, 11, 14}$</strong> proves that the microscopic topological tension must undergo symmetry breaking with the total dimension $11$ as its absolute central axis.</li>
+<li>
+<strong>The spectral volume $det(S_4) = 341$</strong> is strictly divisible by $11$, demonstrating the 11-dimensional limit quantization characteristics of the phase space background.</li>
+</ol>
+<p>Mathematics provides the shell of the equation, while physics endows it with a soul. The so-called matrix operator based on the golden ratio and Lucas numbers is merely a blurred residual left by the macroscopic tension of the root-domain network on a low-dimensional algebraic surface in ultra-localized spacetime.</p>
+<hr>
+<p><strong>References</strong></p>
+<ol>
+<li>Li, Y. (2026). From Zeckendorf to Spectral Invariants: A Matrix-Theoretic Encoding of the Ramanujan Constant 1103. <em>Xingkong Qiusuo (Sichuan) Technology Co., Ltd.</em>. DOI: 10.5281/zenodo.20253232.</li>
+<li>Shi, J. (2026). Ramanujan's Constant and 163-Dimensional Topological Freezing: The Information Entropy Limit of the 11T-Matrix Root-Domain Network. EPD-Ramanujan-11T Project, Article 01.</li>
+<li>Shi, J. (2026). Base-11 Expansion of the Partition Number Characteristic Node $n=3553$: The Algebraic Origin of the 11T-Matrix Capacity Limit. EPD-Ramanujan-11T Project, Article 02.</li>
+<li>Shi, J. (2026). The $9801 = (9 \times 11)^2$ Factor in Ramanujan's $1/\pi$ Series: The Algebraic Signature of the 11T-Matrix Total Dimension. EPD-Ramanujan-11T Project, Article 03.</li>
+</ol>
+<h1>第04篇：从 Zeckendorf 算符到 $\mathcal{M}_4$ 时空投影：拉马努金 1103 矩阵谱体积的 11 维量子化</h1>
+<p><strong>作者：史建威（山东威海理论物理EPD工程组-拉玛努金11时序矩阵组）</strong><br>
+Doi学术存档：<br>
+第01篇：<a href="https://doi.org/10.5281/zenodo.22052321" rel="nofollow">https://doi.org/10.5281/zenodo.22052321</a><br>
+第02篇：<a href="https://doi.org/10.5281/zenodo.22053904" rel="nofollow">https://doi.org/10.5281/zenodo.22053904</a><br>
+第03篇：<a href="https://doi.org/10.5281/zenodo.22056406" rel="nofollow">https://doi.org/10.5281/zenodo.22056406</a><br>
+第04篇：<a href="https://doi.org/10.5281/zenodo.22056865" rel="nofollow">https://doi.org/10.5281/zenodo.22056865</a><br>
+Orcid：0009-0002-1757-1793</p>
+<hr>
+<h2>摘要</h2>
+<p>近期文献中提出了一种基于斐波那契矩阵的 Zeckendorf 谱不变量模型，通过构造求和算符 $S_m = \sum_{k=0}^m F^{3k+2}$，成功在纯代数层面上还原了拉马努金常数 $1103$。本文在 11时序矩阵（11T-Matrix）的本体论框架下，为该纯数学算符提供了物理本体论的解释。我们揭示了该模型中三个关键的隐藏属性：第一，截断参数 $m=4$ 精确映射了 $\mathcal{M}_{11} \cong \mathcal{M}_4 \otimes \mathcal{M}_7$ 分解中的 $\mathcal{M}_4$ 时空投影分支；第二，求和项指数序列 ${2, 5, 8, 11, 14}$ 具有以总维度 $11$ 为绝对中心的对称破缺结构；第三，生成 $1103$ 的 $S_4$ 矩阵，其谱体积（行列式）为 $341$，被 $11$ 严格整除（$341 = 11 \times 31$），在整个算符族中呈现出唯一的 11 维量子化特征。这一对应关系表明，所谓“Zeckendorf 谱不变量”本质上是 11T-Matrix 根域网络在低维流形上的代数残影。</p>
+<hr>
+<h2>一、引言：从唯象数学到物理本体论</h2>
+<p>拉马努金圆周率级数中的光谱权重 $1103$，长期以来被视作复乘理论与模形式的产物。在最新的代数探索中，学者 Yunlong Li 建立了一个精确的矩阵理论编码。他通过斐波那契矩阵 $F = \begin{pmatrix} 1 &amp; 1 \ 1 &amp; 0 \end{pmatrix}$，定义了单参数算符族：</p>
+<p>$S_m = \sum_{k=0}^m F^{3k+2}$</p>
+<p>当截断参数 $m=4$ 时，该算符的矩阵迹（Trace）恰好等于 $1103$：</p>
+<p>$Tr(S_4) = 1103$</p>
+<p>这一纯数学发现极其优美地将 Zeckendorf 分解与矩阵谱理论联系在了一起。纯数学构造精确地揭示了“是什么”，而 11T-Matrix 试图回答“为什么”——这些数字为何恰好取这些值，它们的物理起源是什么。</p>
+<p>在 11T-Matrix 的理论视角下，矩阵的谱（特征值与不变量）对应着系统的物理能级与相空间本底。本文将揭示，算符 $S_4$ 并非一个抽象的计数工具，而是根域网络向四维时空 $\mathcal{M}_4$ 投影时，截获的局部拓扑张力快照。</p>
+<hr>
+<h2>二、截断参数 $m=4$：向 $\mathcal{M}_4$ 时空分支的投影</h2>
+<p>为了从无限的斐波那契序列中提取出 $1103$，数学模型必须人为地将求和上限截断在 $m=4$。在纯代数语境下，$4$ 仅仅被视作一个无物理意义的计步器（代表第5项展开）。</p>
+<p>然而，在 11T-Matrix 的代数拓扑分解 $\mathcal{M}_{11} \cong \mathcal{M}_4 \otimes \mathcal{M}_7$ 中，$4$ 具有极其核心的本体论地位——它代表着我们所处的四维宏观时空流形。</p>
+<p>这提供了一个深刻的物理闭环：拉马努金常数 $1103$ 之所以能被算符 $S_4$ 完美编码，是因为 $1103$ 本身就是根域网络的底层张力投影到 $\mathcal{M}_4$ 四维时空时，所激发出的局部谱权重。算符 $S_4$ 本质上是在计算 $\mathcal{M}_4$ 矩阵块在宏观世界中的代数迹。</p>
+<hr>
+<h2>三、指数序列的绝对中心：总维度 $11$ 的对称破缺</h2>
+<p>算符 $S_4$ 的展开式由五个斐波那契矩阵幂次构成：</p>
+<p>$S_4 = F^2 + F^5 + F^8 + F^{11} + F^{14}$</p>
+<p>其幂次指数构成了一个公差为 $3$ 的等差数列：${2, 5, 8, 11, 14}$。文献将其归结为模 $3$ 的同余结构（均满足 $n \equiv 2 \pmod 3$）。</p>
+<p>但如果我们将视线从“公差”转移到“几何重心”，一个震撼的代数事实将浮出水面：<br>
+<strong>该序列的绝对中位数、算术平均数与对称中心，精确地指向了数字 $11$。</strong></p>
+<p>在 11T-Matrix 中，$11$ 是根域网络的最高总维度。这组拓扑激发的幂次序列 ${2, 5, 8, \mathbf{11}, 14}$ 并非简单的同余筛选，而是以总维度 $11$ 为旋转轴，向低维（$8, 5, 2$）与高维（$14$）展开的对称破缺过程。低维项的物理常量，必须围绕“总维度 11”这个中枢神经进行代数共振。</p>
+<hr>
+<h2>四、谱体积的 11 维量子化：行列式的终极裁决</h2>
+<p>矩阵的行列式（Determinant）在物理上表征了线性算符所张成的相空间几何体积。文献计算给出了 $S_4$ 的精确矩阵形式：</p>
+<p>$S_4 = \begin{pmatrix} 798 &amp; 493 \ 493 &amp; 305 \end{pmatrix}$</p>
+<p>其行列式被计算为：$det(S_4) = 798 \times 305 - 493^2 = 341$。</p>
+<p>为了揭示该体积的物理特殊性，我们通过高精度算力引擎提取了算符族 $S_m$ ($0 \le m \le 6$) 的所有行列式本底：</p>
+<ul>
+<li>$m=0, \quad det(S_0) = 1$</li>
+<li>$m=1, \quad det(S_1) = 4$</li>
+<li>$m=2, \quad det(S_2) = 19$</li>
+<li>$m=3, \quad det(S_3) = 80$</li>
+<li>$\mathbf{m=4, \quad det(S_4) = 341}$</li>
+<li>$m=5, \quad det(S_5) = 1444$</li>
+<li>$m=6, \quad det(S_6) = 6119$</li>
+</ul>
+<p>对目标谱体积 $341$ 进行素因子分解，我们得到：</p>
+<p>$341 = 11 \times 31$</p>
+<p>在整个 $S_m$ 算符族中，唯独在生成 $1103$ 的 $S_4$ 这个极其特殊的算符上，其矩阵谱的体积不变量被 $11$ 完美整除！<br>
+这一代数现象直接揭示了，拉马努金 $1103$ 所属的算符相空间，其底层体积是被 11 维拓扑严格量子化的。这个“$341$”并非随意的标量，而是包含了 $11$（总维度）和 $31$（素数拓扑荷）的复合量子态。</p>
+<hr>
+<h2>五、结论</h2>
+<p>通过对 Zeckendorf 谱不变量模型的深入分析，我们揭示了拉马努金常数 $1103$ 的生成算符 $S_4$ 与 11T-Matrix 核心结构之间的深层对应关系。</p>
+<p>我们发现：</p>
+<ol>
+<li>
+<p><strong>截断参数 $m=4$</strong> 不是无意义的游标，而是根域网络在 $\mathcal{M}_4$ 四维时空流形上的精确投影。</p>
+</li>
+<li>
+<p><strong>指数序列 ${2, 5, 8, 11, 14}$</strong> 的存在，证明了微观拓扑张力必须以总维度 $11$ 为绝对中心轴发生对称破缺。</p>
+</li>
+<li>
+<p><strong>谱体积 $det(S_4) = 341$</strong> 被 $11$ 严格整除，展示了相空间本底的 11 维极限量子化特征。</p>
+</li>
+</ol>
+<p>数学提供了方程的躯壳，而物理赋予其灵魂。所谓基于黄金比例与卢卡斯数的矩阵算符，仅仅是超定域时空中，根域网络宏观张力在低维代数面上留下的模糊残影。</p>
+<hr>
+<p><strong>参考文献</strong></p>
+<ol>
+<li>
+<p>Li, Y. (2026). From Zeckendorf to Spectral Invariants: A Matrix-Theoretic Encoding of the Ramanujan Constant 1103. <em>Xingkong Qiusuo (Sichuan) Technology Co., Ltd.</em>. DOI: 10.5281/zenodo.20253232.</p>
+</li>
+<li>
+<p>史建威 (2026). 拉马努金常数与163维拓扑冻结：11T-Matrix根域网络的信息熵极限. EPD-Ramanujan-11T专题第一篇.</p>
+</li>
+<li>
+<p>史建威 (2026). 分拆数特征节点 $n=3553$ 的11进制展开：11T-Matrix容量上限的代数根源. EPD-Ramanujan-11T专题第二篇.</p>
+</li>
+<li>
+<p>史建威 (2026). 拉马努金 $1/\pi$ 级数中的 $9801 = (9 \times 11)^2$ 因子：11T-Matrix 总维度的代数签名. EPD-Ramanujan-11T专题第三篇.</p>
+</li>
+</ol>
+<hr></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵本体论原创史建威博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
