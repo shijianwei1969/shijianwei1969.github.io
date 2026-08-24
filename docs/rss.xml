@@ -1,5 +1,22 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵本体论原创史建威博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究发布</description><copyright>11时序矩阵本体论原创史建威博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Mon, 24 Aug 2026 22:40:00 +0000</lastBuildDate><managingEditor>11时序矩阵本体论原创史建威博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵本体论原创史建威博客</webMaster><item><title>第02篇：分拆数特征节点n=3553的11进制展开：11T-Matrix容量上限的代数根源</title><link>https://shijianwei1969.github.io/post/di-02-pian-%EF%BC%9A-fen-chai-shu-te-zheng-jie-dian-n%3D3553-de-11-jin-zhi-zhan-kai-%EF%BC%9A11T-Matrix-rong-liang-shang-xian-de-dai-shu-gen-yuan.html</link><description># 第02篇：分拆数特征节点n=3553的11进制展开：11T-Matrix容量上限的代数根源
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵本体论原创史建威博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究发布</description><copyright>11时序矩阵本体论原创史建威博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Mon, 24 Aug 2026 22:40:42 +0000</lastBuildDate><managingEditor>11时序矩阵本体论原创史建威博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵本体论原创史建威博客</webMaster><item><title>第03篇：拉马努金 $1/\pi$ 级数中的 $9801 = (9 \times 11)^2$ 因子：11T-Matrix 总维度的代数签名</title><link>https://shijianwei1969.github.io/post/di-03-pian-%EF%BC%9A-la-ma-nu-jin-%20%241--pi%24%20-ji-shu-zhong-de-%20%249801%20%3D%20%289%20-times%2011%29%5E2%24%20-yin-zi-%EF%BC%9A11T-Matrix%20-zong-wei-du-de-dai-shu-qian-ming.html</link><description># 第03篇：拉马努金 $1/\pi$ 级数中的 $9801 = (9 \times 11)^2$ 因子：11T-Matrix 总维度的代数签名
+
+**作者：史建威（山东威海理论物理EPD工程组-拉玛努金11时序矩阵组）**
+Doi学术存档：
+第01篇：https://doi.org/10.5281/zenodo.22052321  
+第02篇：https://doi.org/10.5281/zenodo.22053904
+第03篇：https://doi.org/10.5281/zenodo.22056406
+Orcid：0009-0002-1757-1793
+
+---
+
+## 摘要
+
+拉马努金在1914年发表了一个计算 $1/\pi$ 的著名级数：
+
+$\frac{1}{\pi} = \frac{2\sqrt{2}}{9801} \sum_{k=0}^{\infty} \frac{(4k)!\,(1103+26390k)}{(k!)^4 \, 396^{4k}}$
+
+该级数的分母 $9801 = 99^2 = (9 \times 11)^2$。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/di-03-pian-%EF%BC%9A-la-ma-nu-jin-%20%241--pi%24%20-ji-shu-zhong-de-%20%249801%20%3D%20%289%20-times%2011%29%5E2%24%20-yin-zi-%EF%BC%9A11T-Matrix%20-zong-wei-du-de-dai-shu-qian-ming.html</guid><pubDate>Mon, 24 Aug 2026 22:40:14 +0000</pubDate></item><item><title>第02篇：分拆数特征节点n=3553的11进制展开：11T-Matrix容量上限的代数根源</title><link>https://shijianwei1969.github.io/post/di-02-pian-%EF%BC%9A-fen-chai-shu-te-zheng-jie-dian-n%3D3553-de-11-jin-zhi-zhan-kai-%EF%BC%9A11T-Matrix-rong-liang-shang-xian-de-dai-shu-gen-yuan.html</link><description># 第02篇：分拆数特征节点n=3553的11进制展开：11T-Matrix容量上限的代数根源
 
 **作者：史建威（山东威海理论物理EPD工程组-拉玛努金11时序矩阵组）**
 Doi学术存档：
