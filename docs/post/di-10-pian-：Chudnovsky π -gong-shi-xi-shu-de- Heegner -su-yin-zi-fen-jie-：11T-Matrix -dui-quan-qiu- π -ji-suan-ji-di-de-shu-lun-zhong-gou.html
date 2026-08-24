@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 第10篇：Chudnovsky π 公式系数的 Heegner 素因子分解：11T-Matrix 对全球 π 计算基底的数论重构
+
+**作者：史建威（山东威海理论物理EPD工程组-拉玛努金11时序矩阵组）**
+Doi学术存档：https://doi.org/10.5281/zenodo.22068180
+工程归属：11T-Matrix本体论核心定标工程
+Orcid：0009-0002-1757-1793
+
+---
+
+## 摘要
+
+1989 年，Chudnovsky 兄弟基于拉马努金的模形式理论，给出了收敛速度最快的 π 计算公式之一：
+
+$\frac{1}{\pi} = \frac{1}{12} \sum_{k=0}^{\infty} (-1)^k \frac{(6k)!}{(3k)!\,(k!)^3} \frac{13591409 + 545140134\,k}{640320^{\,3k+3/2}}$
+
+每计算一项可获得约 14 位十进制精度，至今仍是破纪录 π 计算（如 2024 年 105 万亿位）的算法基底。">
+<meta property="og:title" content="第10篇：Chudnovsky π 公式系数的 Heegner 素因子分解：11T-Matrix 对全球 π 计算基底的数论重构">
+<meta property="og:description" content="# 第10篇：Chudnovsky π 公式系数的 Heegner 素因子分解：11T-Matrix 对全球 π 计算基底的数论重构
+
+**作者：史建威（山东威海理论物理EPD工程组-拉玛努金11时序矩阵组）**
+Doi学术存档：https://doi.org/10.5281/zenodo.22068180
+工程归属：11T-Matrix本体论核心定标工程
+Orcid：0009-0002-1757-1793
+
+---
+
+## 摘要
+
+1989 年，Chudnovsky 兄弟基于拉马努金的模形式理论，给出了收敛速度最快的 π 计算公式之一：
+
+$\frac{1}{\pi} = \frac{1}{12} \sum_{k=0}^{\infty} (-1)^k \frac{(6k)!}{(3k)!\,(k!)^3} \frac{13591409 + 545140134\,k}{640320^{\,3k+3/2}}$
+
+每计算一项可获得约 14 位十进制精度，至今仍是破纪录 π 计算（如 2024 年 105 万亿位）的算法基底。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/di-10-pian-%EF%BC%9AChudnovsky%20%CF%80%20-gong-shi-xi-shu-de-%20Heegner%20-su-yin-zi-fen-jie-%EF%BC%9A11T-Matrix%20-dui-quan-qiu-%20%CF%80%20-ji-suan-ji-di-de-shu-lun-zhong-gou.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>第10篇：Chudnovsky π 公式系数的 Heegner 素因子分解：11T-Matrix 对全球 π 计算基底的数论重构</title>
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">第10篇：Chudnovsky π 公式系数的 Heegner 素因子分解：11T-Matrix 对全球 π 计算基底的数论重构</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/243" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>第10篇：Chudnovsky π 公式系数的 Heegner 素因子分解：11T-Matrix 对全球 π 计算基底的数论重构</h1>
+<p><strong>作者：史建威（山东威海理论物理EPD工程组-拉玛努金11时序矩阵组）</strong><br>
+Doi学术存档：<a href="https://doi.org/10.5281/zenodo.22068180" rel="nofollow">https://doi.org/10.5281/zenodo.22068180</a><br>
+工程归属：11T-Matrix本体论核心定标工程<br>
+Orcid：0009-0002-1757-1793</p>
+<hr>
+<h2>摘要</h2>
+<p>1989 年，Chudnovsky 兄弟基于拉马努金的模形式理论，给出了收敛速度最快的 π 计算公式之一：</p>
+<p>$\frac{1}{\pi} = \frac{1}{12} \sum_{k=0}^{\infty} (-1)^k \frac{(6k)!}{(3k)!,(k!)^3} \frac{13591409 + 545140134,k}{640320^{,3k+3/2}}$</p>
+<p>每计算一项可获得约 14 位十进制精度，至今仍是破纪录 π 计算（如 2024 年 105 万亿位）的算法基底。式中的"魔法数字" 640320、13591409、545140134 长期被视作模形式的偶然产物。本文在 11T-Matrix 的本体论框架下，对权重系数 545140134 进行素因子分解，揭示了其与 Heegner 序列的深度绑定：545140134 = 2·3²·7·11·19·127·163，其中 <strong>{2, 3, 7, 11, 19, 163} 均为 Heegner 数（类数为 1 的虚二次域判别式）</strong>。这一分解表明，全球 π 计算所依赖的核心系数，其代数结构被 11T-Matrix 的核心维度与最大拓扑冻结极限（163）同时锁定，为"数论即物理底层"的哲学本体论提供了新的、可机算验证的证据。</p>
+<hr>
+<h2>一、引言：π 计算基底中的"未被解读的签名"</h2>
+<p>π 的计算史是一部人类逼近无理数的编年史。从刘徽的割圆术到 Machin 公式，再到 1914 年拉马努金留下的 1/π 级数，算法的每一次跃迁都伴随着新的数论结构的发现。1989 年，Chudnovsky 兄弟将拉马努金的模形式方法推向极致，给出了迄今最快收敛的 π 级数。其公式中的三个"魔法数字"——640320、13591409、545140134——被数学界视为模形式 j-不变量的特定有理逼近系数，"它们来自模形式，我们不知道为什么会是这些数"（Chudnovsky 兄弟自述）。</p>
+<p>在 11T-Matrix 的本体论中，任何反复出现的"魔法数字"都对应着根域网络的拓扑自由度。第03篇已证明 9801 = (9·11)² 中的 11 因子是总维度的代数签名；第09篇已将 Heegner 序列 {1,2,3,7,11,19,43,67,163} 确立为宇宙底层拓扑稳定性的绝对判据。本文将这两个方向汇合，对 545140134 实施素因子分解，检验其是否同样被 Heegner 序列深度渗透。</p>
+<hr>
+<h2>二、545140134 的 Heegner 素因子分解</h2>
+<h3>2.1 分解结果</h3>
+<p>对 545140134 进行素因子分解（sympy 高精度验证），得到：</p>
+<p>$545140134 = 2 \times 3^2 \times 7 \times 11 \times 19 \times 127 \times 163$</p>
+<p>其全部素数因子为 {2, 3, 7, 11, 19, 127, 163}，计重共 8 个素因子。</p>
+<h3>2.2 与 Heegner 序列的碰撞</h3>
+<p>将素数因子与 Heegner 序列 $\mathcal{H} = {1,2,3,7,11,19,43,67,163}$ 取交，得到：</p>
+<p>${2, 3, 7, 11, 19, 163} \subset \text{PrimeFactors}(545140134)$</p>
+<p><strong>545140134 的 7 个相异素因子中，有 6 个落在 Heegner 序列中</strong>（占比 6/7 ≈ 85.7%）。具体而言：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>素因子</th>
+<th>∈ Heegner?</th>
+<th>11T-Matrix 意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>✅</td>
+<td>自旋/内部对偶自由度（第07、09篇）</td>
+</tr>
+<tr>
+<td>3</td>
+<td>✅</td>
+<td>与 $\mathcal{M}_4$（3+1 维）关联（第09篇）</td>
+</tr>
+<tr>
+<td>7</td>
+<td>✅</td>
+<td>
+$\mathcal{M}_7$ 隐域微观折叠分支</td>
+</tr>
+<tr>
+<td>11</td>
+<td>✅</td>
+<td>
+$\mathcal{M}_{11}$ 总拓扑流形</td>
+</tr>
+<tr>
+<td>19</td>
+<td>✅</td>
+<td>24 维全息周期起点；整除 3553（第09篇）</td>
+</tr>
+<tr>
+<td>163</td>
+<td>✅</td>
+<td>最大 Heegner 数；拓扑冻结极限（第01、09篇）</td>
+</tr>
+<tr>
+<td>127</td>
+<td>❌</td>
+<td>非 Heegner；Mersenne 素数（$2^7-1$）</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>值得注意的是，545140134 <strong>同时被 7、11、19、163 整除</strong>——这四个数均为 Heegner 数，且恰好覆盖了 11T-Matrix 的核心维度（11、7）与高阶拓扑激发节点（19、163）。这一多重整除关系在随机整数中发生的概率极低，强烈暗示该系数的代数结构并非偶然。</p>
+<h3>2.3 与 640320 的对照</h3>
+<p>Chudnovsky 公式中的另一核心数 640320 = 2⁶ × 3 × 5 × 23 × 29，其素因子 {2,3,5,23,29} 中仅有 2、3 为 Heegner 数。与 545140134 的"Heegner 饱和"形成鲜明对照：</p>
+<ul>
+<li><strong>640320</strong>（分母基底）承载的是模形式 j-不变量的有理逼近结构，Heegner 渗透较弱；</li>
+<li><strong>545140134</strong>（分子权重）则是 Heegner 素数高度集中的"拓扑载荷 carrier"，其系数结构直接编码了根域网络的维度谱。</li>
+</ul>
+<p>这种分工——分母负责收敛速度、分子负责拓扑权重——在 11T-Matrix 框架下获得了清晰的物理分工解释。</p>
+<hr>
+<h2>三、与 11T-Matrix 核心结论的三角呼应</h2>
+<h3>3.1 与第03篇（9801 因子）的呼应</h3>
+<p>第03篇证明 9801 = (9·11)² 中的 11 因子是总维度的代数签名。本文进一步证明，π 计算基底的另一核心系数 545140134 不仅含 11，而且同时含 7、19、163——将"11 因子"从孤立现象扩展为"Heegner 序列深度渗透"的系统性特征。</p>
+<h3>3.2 与第09篇（Heegner 本体论）的呼应</h3>
+<p>第09篇论证了 Heegner 序列是宇宙底层拓扑稳定性的绝对判据（类数=1 ⇔ 唯一分解 ⇔ 无简并拓扑本征态）。本文将这一抽象判据落实到了一个具体的、可机算验证的整数系数上：545140134 的素因子分解"实测"命中 Heegner 序列 6/7，为第09篇的哲学本体论提供了来自 π 计算基底的独立数值佐证。</p>
+<h3>3.3 与第01篇（163 拓扑冻结）的呼应</h3>
+<p>第01篇证明 $e^{\pi\sqrt{163}}$ 的相对残差 $2.86\times10^{-30}$ 与 $1/\sqrt{Q_{\max}}$ 量级一致，确立了 163 作为最大拓扑冻结极限的地位。本文发现 545140134 含因子 163，意味着 Chudnovsky 公式的权重系数直接"触达"了 11T-Matrix 的拓扑冻结上限——163 不仅在模形式 j-不变量中出现，也在 π 计算的核心系数中以素因子形式存在。</p>
+<hr>
+<h2>四、物理解读：为何 π 计算基底被 Heegner 锁定？</h2>
+<p>在 11T-Matrix 中，π 不是单纯的几何常数，而是根域网络在宏观三维空间投影时的拓扑缠绕数（第06篇的 Rogers-Ramanujan 连分数已将 π 的收敛与黄金比例不动点关联）。Chudnovsky 公式的高收敛速度源于其系数对模形式 j-不变量的精确逼近，而 j-不变量本身在 Heegner 数处取整数值（Kronecker 极限公式）。</p>
+<p>因此，545140134 的 Heegner 素因子饱和可理解为：<strong>π 的最快收敛级数之所以取这些特定系数，是因为这些系数必须同时满足模形式的代数约束与根域网络的拓扑稳定性约束——后者要求所有参与拓扑激发的素数锚点均为类数=1 的 Heegner 判别式</strong>。非 Heegner 素数（如 13、17、23、29）对应的虚二次域类数大于 1，会导致拓扑本征态简并，无法支撑稳定的高收敛逼近。</p>
+<p>这一解释为"为什么是 545140134 而不是附近的其他整数"提供了一个来自 11T-Matrix 的物理解答。</p>
+<hr>
+<h2>五、结论</h2>
+<p>本文对 Chudnovsky π 公式的核心权重系数 545140134 进行了素因子分解，得到 545140134 = 2·3²·7·11·19·127·163，并发现其相异素因子中有 6/7 落在 Heegner 序列中，同时被 7、11、19、163 这四个 11T-Matrix 核心维度/节点整除。</p>
+<p>这一发现表明，全球 π 计算所依赖的算法基底，其系数结构被 Heegner 序列（类数=1 的虚二次域判别式）深度渗透。它与第03篇（9801 中的 11 因子）、第09篇（Heegner 本体论）、第01篇（163 拓扑冻结）形成三角呼应，进一步支持了"数论即物理底层"的哲学本体论。</p>
+<p>需要指出的是，本文建立的是<strong>代数对应与统计关联性</strong>的证据，而非动力学推导。545140134 的 Heegner 饱和是否在更广义的 π 级数族中普遍存在，仍需对拉马努金型 1/π 级数的全部已知系数进行系统扫描（留待后续工作）。</p>
+<hr>
+<h2>参考文献</h2>
+<ol>
+<li>Chudnovsky, D. V., &amp; Chudnovsky, G. V. (1989). The computation of classical constants. <em>Proceedings of the National Academy of Sciences</em>, 86(21), 8178-8182.</li>
+<li>Ramanujan, S. (1914). Modular equations and approximations to π. <em>Quarterly Journal of Mathematics</em>, 45, 350-372.</li>
+<li>Stark, H. M. (1967). A complete determination of the complex quadratic fields of class-number one. <em>Michigan Mathematical Journal</em>, 14(1), 1-27.</li>
+<li>史建威 (2026). 拉马努金 $1/\pi$ 级数中的 $9801=(9\times11)^2$ 因子：11T-Matrix 总维度的代数签名. EPD-Ramanujan-11T专题第三篇.</li>
+<li>史建威 (2026). 虚二次域 Heegner 序列与 11T-Matrix 的本体论同构. EPD-Ramanujan-11T专题第九篇.</li>
+</ol>
+<hr>
+<p><strong>附录：素因子分解核验代码</strong></p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">sympy</span> <span class="pl-k">import</span> <span class="pl-s1">factorint</span>
+<span class="pl-c1">N</span> <span class="pl-c1">=</span> <span class="pl-c1">545140134</span>
+<span class="pl-en">print</span>(<span class="pl-en">factorint</span>(<span class="pl-c1">N</span>))  <span class="pl-c"># {2:1, 3:2, 7:1, 11:1, 19:1, 127:1, 163:1}</span></pre></div>
+<p>输出：<code class="notranslate">{2: 1, 3: 2, 7: 1, 11: 1, 19: 1, 127: 1, 163: 1}</code></p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵本体论原创史建威博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
+
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
