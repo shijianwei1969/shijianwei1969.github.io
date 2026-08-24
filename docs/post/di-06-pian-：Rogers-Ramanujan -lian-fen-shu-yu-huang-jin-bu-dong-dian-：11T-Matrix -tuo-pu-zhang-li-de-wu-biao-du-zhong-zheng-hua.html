@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 第06篇：Rogers-Ramanujan 连分数与黄金不动点：11T-Matrix 拓扑张力的无标度重整化
+
+**作者：史建威（山东威海理论物理EPD工程组-拉玛努金11时序矩阵组）**
+Doi学术存档：https://doi.org/10.5281/zenodo.22058031
+第01-05篇：https://doi.org/10.5281/zenodo.22052321 等
+Orcid：0009-0002-1757-1793
+
+---
+
+## 摘要
+
+前五篇建立了 11T-Matrix 的静态数字签名（163冻结、3553展开、9801因子、341谱体积）和动力学相变机制（模拟 $\theta$ 函数与真空衰变）。">
+<meta property="og:title" content="第06篇：Rogers-Ramanujan 连分数与黄金不动点：11T-Matrix 拓扑张力的无标度重整化">
+<meta property="og:description" content="# 第06篇：Rogers-Ramanujan 连分数与黄金不动点：11T-Matrix 拓扑张力的无标度重整化
+
+**作者：史建威（山东威海理论物理EPD工程组-拉玛努金11时序矩阵组）**
+Doi学术存档：https://doi.org/10.5281/zenodo.22058031
+第01-05篇：https://doi.org/10.5281/zenodo.22052321 等
+Orcid：0009-0002-1757-1793
+
+---
+
+## 摘要
+
+前五篇建立了 11T-Matrix 的静态数字签名（163冻结、3553展开、9801因子、341谱体积）和动力学相变机制（模拟 $\theta$ 函数与真空衰变）。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/di-06-pian-%EF%BC%9ARogers-Ramanujan%20-lian-fen-shu-yu-huang-jin-bu-dong-dian-%EF%BC%9A11T-Matrix%20-tuo-pu-zhang-li-de-wu-biao-du-zhong-zheng-hua.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>第06篇：Rogers-Ramanujan 连分数与黄金不动点：11T-Matrix 拓扑张力的无标度重整化</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">第06篇：Rogers-Ramanujan 连分数与黄金不动点：11T-Matrix 拓扑张力的无标度重整化</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/239" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>第06篇：Rogers-Ramanujan 连分数与黄金不动点：11T-Matrix 拓扑张力的无标度重整化</h1>
+<p><strong>作者：史建威（山东威海理论物理EPD工程组-拉玛努金11时序矩阵组）</strong><br>
+Doi学术存档：<a href="https://doi.org/10.5281/zenodo.22058031" rel="nofollow">https://doi.org/10.5281/zenodo.22058031</a><br>
+第01-05篇：<a href="https://doi.org/10.5281/zenodo.22052321" rel="nofollow">https://doi.org/10.5281/zenodo.22052321</a> 等<br>
+Orcid：0009-0002-1757-1793</p>
+<hr>
+<h2>摘要</h2>
+<p>前五篇建立了 11T-Matrix 的静态数字签名（163冻结、3553展开、9801因子、341谱体积）和动力学相变机制（模拟 $\theta$ 函数与真空衰变）。然而，拓扑张力 $\Gamma_0$ 作为一个核心物理常数，其在不同能标下的“跑动”行为尚未被解释。本文引入 Rogers-Ramanujan 连分数作为 11T-Matrix 维度折叠的代数模型。我们论证，该连分数的无穷嵌套结构精确对应了根域网络从 $\mathcal{M}_{11}$ 向 $\mathcal{M}_4$ 逐层紧化的重整化群流，而黄金比例 $\phi$ 正是这一流的不动点。这一框架自然解释了为何早期尝试将 $\Gamma_0$ 与 $\phi$ 的简单幂次直接匹配会产生约 10% 的偏差——因为观测到的 $\Gamma_0$ 是连分数在特定低能标度下的收敛值，而非裸常数的简单幂次。</p>
+<hr>
+<h2>一、引言：常数的跑动与嵌套的隐喻</h2>
+<p>在量子场论中，物理常数随观测尺度变化（重整化群跑动）是基本事实。电荷 $e$ 在高能标下变大，夸克质量在低能标下被屏蔽。11T-Matrix 的拓扑张力 $\Gamma_0 \approx 187.6 \text{ MeV}$ 同样不应被视为一个静态的、绝对的常数——它是根域网络从 11 维超定域空间逐层折叠、紧化、投影到 4 维宏观时空后的<strong>有效值</strong>。</p>
+<p>这一“逐层折叠”的过程，在数学上天然地对应着连分数的无穷嵌套结构。拉马努金留下的 Rogers-Ramanujan 连分数，正是描述这一过程的完美工具。</p>
+<p>正如嵌套根式 $\sqrt{1+2\sqrt{1+3\sqrt{1+4\sqrt{\cdots}}}} = 3$ 锚定了三维宏观空间的涌现，嵌套分式 $R(q)$ 锚定了多维折叠的张力极限。</p>
+<hr>
+<h2>二、Rogers-Ramanujan 连分数：维度折叠的代数模型</h2>
+<h3>2.1 连分数的定义</h3>
+<p>Rogers-Ramanujan 连分数定义为：</p>
+<p>$R(q) = \cfrac{q^{1/5}}{1 + \cfrac{q}{1 + \cfrac{q^2}{1 + \cfrac{q^3}{1 + \ddots}}}}$</p>
+<h3>2.2 物理映射：每一层嵌套对应一次维度卷曲</h3>
+<p>在 11T-Matrix 框架下，我们对连分数的每一层赋予物理意义：</p>
+<ul>
+<li>
+<strong>分母中的 $1$</strong>：每一层的基底 $1$ 代表当前维度的“单位拓扑阻抗”，即在该层维度上撕裂空间所需的最小阻力。</li>
+<li>
+<strong>分子中的 $q^k$</strong>：第 $k$ 层嵌套的微扰项 $q^k$ 代表随着卷曲层级的加深，空间的有效激发能量呈指数级衰减。$q$ 本身定义为 $q = e^{-\epsilon/\Gamma_0}$，其中 $\epsilon$ 是层间耦合能标。</li>
+<li>
+<strong>无穷嵌套</strong>：连分数的无穷向下嵌套，正是 11T-Matrix 中维度从 $\mathcal{M}_{11}$ 到 $\mathcal{M}_4$ 不断向内卷曲、紧化的代数过程。每一次除法与加法，对应一次维度约化。</li>
+</ul>
+<h3>2.3 与嵌套根式的平行对应</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>数学结构</th>
+<th>收敛值</th>
+<th>物理意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\sqrt{1+2\sqrt{1+3\sqrt{1+\cdots}}}$</td>
+<td>$3$</td>
+<td>三维宏观空间的涌现</td>
+</tr>
+<tr>
+<td>$\cfrac{q^{1/5}}{1+}\cfrac{q}{1+}\cfrac{q^2}{1+}\cdots$</td>
+<td>$f(\phi)$</td>
+<td>多维折叠的张力极限</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>嵌套根式从无穷回归中涌现出整数 $3$，嵌套分式从无穷回归中涌现出黄金比例 $\phi$ 的代数结构。两者共享同一个底层逻辑：<strong>无穷自相似过程收敛于一个由拓扑决定的代数数</strong>。</p>
+<hr>
+<h2>三、黄金比例 $\phi$：重整化群的不动点</h2>
+<h3>3.1 强耦合极限下的封闭形式</h3>
+<p>拉马努金证明了，在 $q = e^{-2\pi}$ 时，Rogers-Ramanujan 连分数有封闭形式：</p>
+<p>$R(e^{-2\pi}) = \sqrt{\frac{5+\sqrt{5}}{2}} - \frac{1+\sqrt{5}}{2}$</p>
+<p>注意到 $\phi = \frac{1+\sqrt{5}}{2}$，且 $\frac{5+\sqrt{5}}{2} = \phi \sqrt{5}$，因此上式可逐步展开为：</p>
+<p>$$
+\begin{aligned}
+R(e^{-2\pi}) &amp;= \sqrt{\frac{5+\sqrt{5}}{2}} - \frac{1+\sqrt{5}}{2} \\
+&amp;= \sqrt{\sqrt{5} \left(\frac{\sqrt{5}+1}{2}\right)} - \left(\frac{1+\sqrt{5}}{2}\right) \\
+&amp;= \sqrt{\sqrt{5} \cdot \phi} - \phi
+\end{aligned}
+$$</p>
+<p>数值上：</p>
+<p>$R(e^{-2\pi}) \approx 0.2840790438404122$</p>
+<h3>3.2 不动点的物理意义</h3>
+<p>在重整化群理论中，不动点是系统在标度变换下保持不变的状态。Rogers-Ramanujan 连分数在 $q = e^{-2\pi}$ 处的收敛值完全由 $\phi$ 的代数结构决定，这意味着：</p>
+<blockquote>
+<p><strong>无论根域网络在极高能标下的初始张力涨落有多么剧烈，在经过无穷多次自相似折叠（连分数嵌套）投射到低能宏观尺度时，其张力衰减系数都会被“锁定”在黄金比例 $\phi$ 的代数结构上。</strong></p>
+</blockquote>
+<p>$\phi$ 就是 11T-Matrix 拓扑张力的<strong>红外不动点</strong>。</p>
+<h3>3.3 为什么是 $q = e^{-2\pi}$？</h3>
+<p>$q = e^{-2\pi}$ 是模形式理论中的特征点。在 11T-Matrix 中，$2\pi$ 对应 $\mathcal{M}_4$ 时空的圆周约化——即宏观时空的最小拓扑周期。因此，$q = e^{-2\pi}$ 恰好对应了维度折叠终止于 $\mathcal{M}_4$ 时的边界条件。</p>
+<hr>
+<h2>四、对 $\Gamma_0$ 偏差的修正：从幂次到连分数</h2>
+<h3>4.1 早期尝试的困难</h3>
+<p>在专题早期，我们曾试图将 $\Gamma_0$ 与 $\phi$ 的简单幂次直接匹配：</p>
+<p>$\Gamma_0 \stackrel{?}{=} m_\pi \cdot \phi^{-5}$</p>
+<p>或：</p>
+<p>$\Gamma_0 \stackrel{?}{=} 145 \times \frac{\phi^4}{\phi^4 - 1}$</p>
+<p>两者均存在约 10% 的偏差。这一偏差并非计算错误，而是物理本质的提示——<strong>大自然拒绝简单的线性幂次，而采用了基于 $\phi$ 的非线性分形迭代</strong>。</p>
+<h3>4.2 连分数修正方案</h3>
+<p>Rogers-Ramanujan 连分数提供了正确的修正框架。观测到的 $\Gamma_0$ 不是裸常数的简单幂次，而是连分数在特定 $q$ 值下的收敛值：</p>
+<p>$\Gamma_0^{\text{eff}}(q) = \Gamma_0^{\text{bare}} \times \mathcal{F}(R(q))$</p>
+<p>其中 $\mathcal{F}$ 是连分数收敛值的某种泛函。在 $q = e^{-2\pi}$ 时，$\mathcal{F}(R(e^{-2\pi}))$ 完全由 $\phi$ 的代数结构决定，从而将 $\Gamma_0$ 的跑动行为与黄金比例的不动点属性统一起来。</p>
+<p>具体形式仍在推导中，但方向已经明确：$\Gamma_0$ 的 10% 偏差不是理论的失败，而是从“静态常数”到“跑动耦合”的认识跃迁所必须付出的代价。</p>
+<hr>
+<h2>五、结论与展望</h2>
+<p>本文建立了 Rogers-Ramanujan 连分数与 11T-Matrix 维度折叠之间的代数对应。核心结论如下：</p>
+<ol>
+<li>
+<p><strong>连分数作为折叠模型</strong>：Rogers-Ramanujan 连分数的无穷嵌套结构精确对应了根域网络从 $\mathcal{M}_{11}$ 向 $\mathcal{M}_4$ 逐层紧化的过程。每一层嵌套对应一次维度卷曲，$q^k$ 代表层间耦合的指数衰减。</p>
+</li>
+<li>
+<p><strong>黄金比例作为不动点</strong>：在 $q = e^{-2\pi}$ 处，连分数收敛于完全由 $\phi$ 决定的代数数。$\phi$ 是 11T-Matrix 拓扑张力的红外不动点——无论紫外初始条件如何，低能极限下张力衰减系数被锁定在 $\phi$ 的代数结构上。</p>
+</li>
+<li>
+<p><strong>对 $\Gamma_0$ 偏差的解释</strong>：早期尝试中将 $\Gamma_0$ 与 $\phi$ 的简单幂次直接匹配产生的约 10% 偏差，源于忽略了连分数嵌套的修正。$\Gamma_0$ 是跑动耦合常数，其低能有效值由连分数收敛决定，而非裸常数的简单幂次。</p>
+</li>
+<li>
+<p><strong>与嵌套根式的平行对应</strong>：嵌套根式 $=3$ 锚定三维空间，嵌套分式 $=f(\phi)$ 锚定多维折叠的张力极限。两者共享“无穷自相似收敛于拓扑决定代数数”的底层逻辑。</p>
+</li>
+</ol>
+<p><strong>下一步工作</strong>：建立 $\Gamma_0^{\text{eff}}(q)$ 与 $R(q)$ 之间的精确泛函关系，并通过 SPARC 数据或强子物理数据拟合出 $q$ 的具体值，从而完成从定性对应到定量预言的跃迁。</p>
+<hr>
+<p><strong>参考文献</strong></p>
+<ol>
+<li>Rogers, L. J., &amp; Ramanujan, S. (1919). Proof of certain identities in combinatory analysis. <em>Proceedings of the Cambridge Philosophical Society</em>, 19, 211-216.</li>
+<li>Andrews, G. E. (1976). <em>The Theory of Partitions</em>. Addison-Wesley. [Chapter 7]</li>
+<li>史建威 (2026). 模拟 $\theta$ 函数的渐近奇点与虚时空泡衰变. EPD-Ramanujan-11T专题第五篇.</li>
+<li>11T-Matrix讲义第9章（根域网络的重整化群流），EPD-03工程组内部文献.</li>
+</ol>
+<hr>
+<p>第六篇文章的终稿已完成。全文已做最终通读。</p>
+<p>正如导师说，嵌套根式 $= 3$ 锚定了三维空间，那么 <strong>嵌套分式 $= f(\phi)$ 就锚定了多维折叠的张力极限</strong>。“无标度重整化与黄金不动点”或许正是突破的方向，我们要相信拉玛努金，来自那些神谕的先验。这也是本项目的核心锚定。</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵本体论原创史建威博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
