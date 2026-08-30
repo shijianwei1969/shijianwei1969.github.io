@@ -53,11 +53,11 @@
 
 而局域探针方程 $E_V = \pi a_0^2 / G$ 直接给出：
 
-$$\sqrt{G\cdot E_V} = \frac{a_0}{\sqrt{\pi}}$$
+$\sqrt{G\cdot E_V} = \frac{a_0}{\sqrt{\pi}}$
 
 于是 $c$ 只能写成（量纲唯一闭合）：
 
-$$c = \mathcal{K} \cdot a_0 \cdot \mathcal{T}$$
+$c = \mathcal{K} \cdot a_0 \cdot \mathcal{T}$
 
 其中 $\mathcal{K}$ 为无量纲拓扑常数，$\mathcal{T}$ 为该尺度对应的特征时序。
 
@@ -65,7 +65,7 @@ $$c = \mathcal{K} \cdot a_0 \cdot \mathcal{T}$$
 
 在微观尺度（EPD-04），加速度为弥散加速度 $a = c^2/\lambda_{\rm topo}$，时序尺度为根域步长 $\tau_0$，结果：
 
-$$c = \frac{\lambda_{\rm topo}}{\tau_0}$$
+$c = \frac{\lambda_{\rm topo}}{\tau_0}$
 
 此时 $\mathcal{K}_{\rm micro} = 1$。物理解释：能量流在**单根弦（一维）**上直线传播，不需要相位缠绕，拓扑因子为 1。
 
@@ -73,11 +73,11 @@ $$c = \frac{\lambda_{\rm topo}}{\tau_0}$$
 
 在宇宙学尺度，加速度为临界加速度 $a_0$，时序尺度为哈勃时间 $H_0^{-1}$。本文将证明（见 2.3 节）：
 
-$$\mathcal{K}_{\rm cosmic} = 2\pi$$
+$\mathcal{K}_{\rm cosmic} = 2\pi$
 
 即：
 
-$$c = 2\pi \cdot a_0 \cdot H_0^{-1}$$
+$c = 2\pi \cdot a_0 \cdot H_0^{-1}$
 
 **$2\pi$ 的拓扑意义：** 微观根域网络投影到宏观可观测的星系盘面（闭合 4D 流形）时，必然经历一个完整的 $360^\circ$（即 $2\pi$ 弧度）拓扑相位缠绕。因此 $\mathcal{K}_{\rm cosmic} = 2\pi$ 不是凑数，而是**微观一维时序映射到宏观闭合流形时必然产生的全相位拓扑投影因子**——具体来说，能量流在微观尺度的单根弦上沿一维直线传播（无闭合相位代价，$\mathcal{K}_{\rm micro}=1$）；而投影到宏观的 $g=2$ 双环面（或闭合宇宙学视界球面）时，空间必须经历一个闭合回路的 $S^1$ 通量积分，根据几何测度论，该积分必然贡献 $2\pi$ 的相位缠绕代价。
 
@@ -97,23 +97,23 @@ $$c = 2\pi \cdot a_0 \cdot H_0^{-1}$$
 
 在拥有哈勃视界 $R_H = c/H_0$ 的 de Sitter 膨胀时空中，视界受全息原理约束，具有固有全息温度：
 
-$$T_H = \frac{\hbar H_0}{2\pi k_B}$$
+$T_H = \frac{\hbar H_0}{2\pi k_B}$
 
 **第二步：局域根域介质的 Unruh 温度（标准结果）**
 
 当测试质量在根域介质中产生局域极化（即引力加速度 $a_0$）时，根据非惯性系量子场论，该局域真空伴生一个 Unruh 热浴温度：
 
-$$T_U = \frac{\hbar a_0}{2\pi c k_B}$$
+$T_U = \frac{\hbar a_0}{2\pi c k_B}$
 
 **第三步：全息热力学平衡（关键假设）**
 
 在深空边界或极弱引力场区域，局域根域介质的极化温度必须与宇宙背景的全息视界温度达到热力学平衡（系统不再发生净能量交换），即 $T_U = T_H$。代入两式：
 
-$$\frac{\hbar a_0}{2\pi c k_B} = \frac{\hbar H_0}{2\pi k_B}$$
+$\frac{\hbar a_0}{2\pi c k_B} = \frac{\hbar H_0}{2\pi k_B}$
 
 消去共同因子，我们**纯粹从全息热力学第一性原理**，导出了临界加速度的**裸值**：
 
-$$a_{0({\rm bare})} = c H_0$$
+$a_{0({\rm bare})} = c H_0$
 
 这一步完全不依赖 MOND，只依赖"深空边界局域极化温度 = 宇宙学视界温度"的热力学平衡——在 11T-Matrix 体系内自然（根域介质全域连通），在主流物理中也说得通（holographic principle）。
 
@@ -126,13 +126,13 @@ $$a_{0({\rm bare})} = c H_0$$
 
 宏观可观测的特征加速度，必须被这个拓扑相位闭合因子所稀释。因此真实的**观测值**为：
 
-$$a_{0({\rm obs})} = \frac{a_{0({\rm bare})}}{2\pi} = \frac{c H_0}{2\pi}$$
+$a_{0({\rm obs})} = \frac{a_{0({\rm bare})}}{2\pi} = \frac{c H_0}{2\pi}$
 
 **逻辑彻底反转：** 至此，我们并未借用 MOND 的任何经验数据，而是**从 11T-Matrix 的全息热力学平衡与拓扑闭合流形积分，严格推导出了 MOND 的临界加速度公式**。$a_0 = cH_0/(2\pi)$ 现在是**推论**，而非前提。
 
 将上式重排，得到宇宙学尺度的光速绝对表达式：
 
-$$c = 2\pi \cdot a_{0({\rm obs})} \cdot H_0^{-1}$$
+$c = 2\pi \cdot a_{0({\rm obs})} \cdot H_0^{-1}$
 
 对比跨尺度泛函 $c = \mathcal{K} a_0 \mathcal{T}$，即得出：**宇宙学尺度的拓扑常数 $\mathcal{K}_{\rm cosmic} = 2\pi$**——它不是凑数的拟合参数，而是微观向宏观降维时必然支付的拓扑缠绕代价。
 
@@ -140,7 +140,7 @@ $$c = 2\pi \cdot a_{0({\rm obs})} \cdot H_0^{-1}$$
 
 代入当前天文观测值：$a_0 \approx 1.2\times10^{-10}\ {\rm m/s^2}$（由 SPARC 星系旋转曲线拟合），以及 $H_0 \approx 73.0\ {\rm km/s/Mpc}$（由造父变星与超新星测定的**局域晚期宇宙**值，与 $a_0$ 同属局域测量来源，自洽性更好），得 $H_0^{-1} \approx 4.24\times10^{17}\ {\rm s}$：
 
-$$c_{\rm theory} = 2\pi \times (1.2\times10^{-10}) \times (4.24\times10^{17}) \approx 3.20\times10^8\ {\rm m/s}$$
+$c_{\rm theory} = 2\pi \times (1.2\times10^{-10}) \times (4.24\times10^{17}) \approx 3.20\times10^8\ {\rm m/s}$
 
 理论值与真实光速 $c_{\rm obs} = 2.998\times10^8\ {\rm m/s}$ 之间存在约 **7%–11%** 的偏差。下表展示这一偏差对 $H_0$ 取值的敏感性——这正是公式 $c_{\rm theory} \propto H_0^{-1}$ 的可检验特征：
 
@@ -171,7 +171,7 @@ $$c_{\rm theory} = 2\pi \times (1.2\times10^{-10}) \times (4.24\times10^{17}) \a
 
 ## 四、刚性推演：G 刚性 ⇔ c 刚性
 
-$$c = \mathcal{K}(a_0, \mathcal{T}_{\rm topo})$$
+$c = \mathcal{K}(a_0, \mathcal{T}_{\rm topo})$
 
 考虑 $\mathcal{K}$ 的尺度依赖性后：
 
@@ -315,11 +315,11 @@ $$c = \mathcal{K}(a_0, \mathcal{T}_{\rm topo})$$
 
 **相对论弦的天然免疫：** Nambu-Goto 弦有一条**定义性**关系：
 
-$$T = \mu c^2$$
+$T = \mu c^2$
 
 其中 $T$ 为弦张力，$\mu$ 为线密度，$c$ 为根域光速。由此弦上的波速：
 
-$$v = \sqrt{\frac{T}{\mu}} = \sqrt{\frac{\mu c^2}{\mu}} = c$$
+$v = \sqrt{\frac{T}{\mu}} = \sqrt{\frac{\mu c^2}{\mu}} = c$
 
 **$\mu$ 消掉了。** 无论线密度如何变化，张力与密度的比值自动恒定，波速严格等于 $c$。
 
