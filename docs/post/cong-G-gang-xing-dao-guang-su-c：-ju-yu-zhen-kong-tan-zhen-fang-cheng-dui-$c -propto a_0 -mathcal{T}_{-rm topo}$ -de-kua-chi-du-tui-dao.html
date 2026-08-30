@@ -57,7 +57,17 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     body {padding: 8px;}
     .postTitle{font-size:24px;}
 }
-
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
 </style>
 
 
@@ -155,7 +165,416 @@ P3	$c/G$ 乘积在广阔物质区严格常数，仅在边界滑移	跨尺度（�
 《局域真空探针》一文（$E_V=\pi a_0^2/G$）不是孤立成果，而是整个拼图的中心枢纽：它通过标定介质状态，把 G（刚度）与 c（波速）锁进同一个方程 $c \propto a_0 \mathcal{T}</em>{\rm topo}$。G 刚性的研究由此成为 c 的唯一突破口——测 G 的地方，就是测 c 的地方。<br>
 更意外的是：用星系边缘的 $a_0$ 乘以哈勃时序尺度，可直接读出光速 $3\times10^8\ \mathrm{m/s}$。宇宙学尺度与微观尺度在 $c = \mathcal{K}, a, \mathcal{T}$ 下实现统一，EPD-03、EPD-04、EPD-05 由此构成完整闭环。<br>
 核心一句话：G 与 c 同源于根域介质；介质状态由 $a_0$ 标定；故 G 刚性 ? c 刚性，G 滑移处 c 同步滑移。<br>
-Copyright ? 2026 11时序矩阵本体论</p></div>
+Copyright ? 2026 11时序矩阵本体论</p>
+<h1>EPD-06 附录A</h1>
+<h2>为什么G和c在广阔能量区间内刚性：两级解耦与相对论弦自稳定机制</h2>
+<p><strong>文档编号</strong>：EPD-06 附录A<br>
+<strong>状态</strong>：正式构建<br>
+<strong>模型版本</strong>：11T-Matrix<br>
+<strong>前置文档</strong>：EPD-03、EPD-04、EPD-05、EPD-06 主文<br>
+<strong>配套工程参考</strong>：方向1·EPD精标、M₃（时序饱和度）、M₄（自旋拓扑）<br>
+<strong>构建日期</strong>：2026-08-30</p>
+<hr>
+<h3>摘要</h3>
+<p>超定域根域辐照的基底能量，在信息熵 $206$ bits 高点到 $10^{-15}\ \text{J/m}^2$ 低点的广阔区间内，$G$ 与 $c$ 始终保持刚性。本文给出该客观事实的系统性解释：$G$ 与 $c$ 属于单根根域联络单元的固有拓扑参数（层次A），$E_V$ 属于联络单元的组装密度（层次B）。两级解耦使 $G$、$c$ 在能量密度跨越 40 个数量级以上时仍严格刚性。机制的核心动力学根源是相对论弦自稳定：$T = \mu c^2$ 导致波速 $v = \sqrt{T/\mu} = c$，$\mu$ 在波速中消去，波速天然免疫于介质密度变化。本文同时界定两个失效边界（超级中心、深空边界），与主文档三点纠正严格一致。</p>
+<hr>
+<h3>一、问题与事实</h3>
+<h4>1.1 观测事实</h4>
+<p>根域辐照基底能量，在以下区间内：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>区域</th>
+<th>信息熵/能量密度</th>
+<th>$G$</th>
+<th>$c$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>超定域根域辐照高点</td>
+<td>
+$\approx 206$ bits</td>
+<td>刚性</td>
+<td>刚性</td>
+</tr>
+<tr>
+<td>深空边界低点</td>
+<td>$\approx 10^{-15}\ \text{J/m}^2$</td>
+<td>刚性</td>
+<td>刚性</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>能量密度跨度超过 40 个数量级，而 $G$ 与 $c$ 无任何可测变化。任何普通介质的行为均与此相悖：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>介质</th>
+<th>密度变化</th>
+<th>响应参数变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>水（液态→气态）</td>
+<td>
+$\sim 10^3$ 倍</td>
+<td>声速 $1500 \to 300\ \text{m/s}$，变 5 倍</td>
+</tr>
+<tr>
+<td>钢（常温→高温）</td>
+<td>$\sim 1%$</td>
+<td>弹性模量下降 10% 以上</td>
+</tr>
+<tr>
+<td>量子海（$206$ bits $\to 10^{-15}\ \text{J/m}^2$）</td>
+<td>
+${}&amp;gt; 10^{12}$ 倍</td>
+<td><strong>$G$、$c$ 零变化</strong></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h4>1.2 悖论所在</h4>
+<p>如果 $G$、$c$ 依赖宏观能量密度，则上述区间内必然出现梯度滑移。事实否认了这一点。唯一的逻辑出路：<strong>$G$、$c$ 不是"联络集合密度"的集合属性，而是"单个根域联络单元"的固有属性。</strong></p>
+<hr>
+<h3>二、两级解耦机制</h3>
+<h4>2.1 结构的两个层次</h4>
+<p>将根域基底能量拆分为两个独立层次：</p>
+<pre class="notranslate"><code class="notranslate">层次A：单根根域联络单元的固有拓扑参数
+       ─────────────────────────────────
+       λ_topo（空间弥散尺度）
+       τ₀   （时序步长）
+       m₀   （质量单元）
+       由根域拓扑 K=0 锁定
+       不随环境状态改变
+       ─────────────────────────────────
+       决定：G、c
+
+层次B：根域联络单元的组装密度（空间排列）
+       ─────────────────────────────────
+       n_link = 单位体积内联络单元数目
+       d_link = 联络单元间距（网眼大小）
+       ─────────────────────────────────
+       决定：E_V
+</code></pre>
+<h4>2.2 解耦对照表</h4>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>物理量</th>
+<th>归属层次</th>
+<th>依赖对象</th>
+<th>对能量密度的响应</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>$G$</strong></td>
+<td>层次A</td>
+<td>单弦极化响应率</td>
+<td><strong>刚性</strong></td>
+</tr>
+<tr>
+<td><strong>$c$</strong></td>
+<td>层次A</td>
+<td>$\lambda_{\text{topo}} / \tau_0$</td>
+<td><strong>刚性</strong></td>
+</tr>
+<tr>
+<td><strong>$E_V$</strong></td>
+<td>层次B</td>
+<td>
+$n_{\text{link}} \times$ 单联络能量</td>
+<td>随联络密度变化</td>
+</tr>
+<tr>
+<td>真空涨落幅度</td>
+<td>层次B</td>
+<td>联络密度的局部波动</td>
+<td>随密度变化</td>
+</tr>
+<tr>
+<td>宏观时空曲率</td>
+<td>层次B</td>
+<td>联络密度的梯度分布</td>
+<td>随密度变化</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h4>2.3 渔网类比</h4>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>属性</th>
+<th>渔网类比</th>
+<th>量子海</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>绳的材质</td>
+<td>尼龙或钢丝</td>
+<td>根域联络单元（拓扑锁定）</td>
+</tr>
+<tr>
+<td>绳上波速</td>
+<td>由材质决定，与网眼大小无关</td>
+<td>$c = \lambda_{\text{topo}} / \tau_0$</td>
+</tr>
+<tr>
+<td>网眼大小</td>
+<td>可松可紧</td>
+<td>联络间距（能量密度低→网眼大）</td>
+</tr>
+<tr>
+<td>绳的波速是否随网眼变化？</td>
+<td>否</td>
+<td><strong>$G$、$c$ 刚性</strong></td>
+</tr>
+<tr>
+<td>绳断</td>
+<td>波传不过去</td>
+<td><strong>绝对真空，$G$、$c$ 无定义</strong></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h3>三、动力学根源：相对论弦自稳定</h3>
+<h4>3.1 为什么普通介质做不到</h4>
+<p>普通介质的波速：$v = \sqrt{\text{弹性模量} / \rho}$。密度一变，波速必变。水的声速变 5 倍。量子海若照此规律，40 个数量级的能量变化早已使 $c$ 面目全非。</p>
+<h4>3.2 相对论弦的天然免疫</h4>
+<p>相对论弦有一条固有关系：</p>
+<p>$$
+T = \mu c^2
+$$</p>
+<p>其中 $T$ 为弦张力，$\mu$ 为线密度，$c$ 为根域光速。由此弦上的波速：</p>
+<p>$$
+v = \sqrt{\frac{T}{\mu}} = \sqrt{\frac{\mu c^2}{\mu}} = c
+$$</p>
+<p><strong>$\mu$ 消掉了。</strong> 无论线密度如何变化，张力与密度的比值自动恒定，波速严格等于 $c$。</p>
+<p>核心原因：<strong>相对论弦的全部张力都来自其自身的能量密度（紧绑），不存在"外部提供的刚度"。</strong> 密度降，张力同步降；密度升，张力同步升。比值恒为 $c^2$，波速恒为 $c$。</p>
+<h4>3.3 自稳定机制总表</h4>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>项目</th>
+<th>普通介质（水、钢）</th>
+<th>相对论弦（根域联络）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>张力来源</td>
+<td>外部化学键/晶格</td>
+<td>自身能量密度 $T = \mu c^2$
+</td>
+</tr>
+<tr>
+<td>密度变化时</td>
+<td>弹性模量不变，波速变</td>
+<td>张力同比变化，波速不变</td>
+</tr>
+<tr>
+<td>免疫性</td>
+<td>无</td>
+<td>
+<strong>完全免疫</strong>（边界条件内）</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h4>3.4 能量密度变化时微观上发生了什么</h4>
+<p>能量密度由 $206$ bits 降至 $10^{-15}\ \text{J/m}^2$：</p>
+<ol>
+<li>
+<strong>层次B变化</strong>：联络间距拉大，$n_{\text{link}}$ 急剧下降，单个联络的能量承载减少；</li>
+<li>
+<strong>层次A不变</strong>：单根弦的 $\lambda_{\text{topo}}$、$\tau_0$ 仍由拓扑锁定，$T = \mu c^2$ 关系在每根弦上依然成立；</li>
+<li>
+<strong>结果</strong>：每根弦上的波速仍然是 $c$。整片量子海的宏观响应（$G$、$c$）不变。</li>
+</ol>
+<hr>
+<h3>四、信息熵 206 bits 的定位</h3>
+<h4>4.1 206 bits 是什么</h4>
+<p><strong>$206$ bits 不是能量密度，而是单根根域联络单元的信息容量上限。</strong></p>
+<h4>4.2 206 bits 锁定什么</h4>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>对象</th>
+<th>归属层次</th>
+<th>锁定的参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单根联络的信息容量</td>
+<td>层次A</td>
+<td>态空间完备数量 → $\lambda_{\text{topo}}$、$\tau_0$ 的比例关系</td>
+</tr>
+<tr>
+<td>量子态可区分总数</td>
+<td>层次A</td>
+<td>
+$2^{206}$ 种 → 单弦固有振动模态数</td>
+</tr>
+<tr>
+<td>联络单元密度</td>
+<td>层次B</td>
+<td>不锁定（随环境改变）</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h4>4.3 为什么能量密度降低不减 206 bits</h4>
+<p>能量密度降低减少的是<strong>弦的数量</strong>（层次B），不减<strong>单根弦的信息位</strong>（层次A）。每根弦仍然携带 $206$ bits 的固有信息，仍然按同一 $\lambda_{\text{topo}}/\tau_0$ 振动。因此：</p>
+<ul>
+<li>宏观能量密度 → 下降（弦少了）</li>
+<li>单弦波速 $c$ → 不变（单弦信息位没变）</li>
+<li>单弦极化响应 $G$ → 不变（弦材质没变）</li>
+</ul>
+<hr>
+<h3>五、失效边界：什么时候不再刚性</h3>
+<p>两级解耦并非绝对。存在两个极限，超过即失效：</p>
+<h4>5.1 超级中心（能量密度极高区）</h4>
+<p>质量汇聚达到极限，对量子海的极化压迫<strong>从外部改变了单根弦的参数本身</strong>：</p>
+<ul>
+<li>弦被压缩到超过拓扑锁定的最小空间弥散 $\lambda_{\text{topo}}$；</li>
+<li>
+$\tau_0$ 被外部压迫改变；</li>
+<li>层次A 被破坏 → <strong>$G$ 滑移、$c$ 同步变化</strong>。</li>
+</ul>
+<h4>5.2 深空边界（能量密度极低区）</h4>
+<p>联络间距拉大超过临界值：</p>
+<ul>
+<li>间距 ${}&amp;gt; n\lambda_{\text{topo}}$（整数倍）时，耦联断裂；</li>
+<li>单根弦的独立参数不再成立；</li>
+<li>波无传播载体 → <strong>$c$ 无定义</strong>；</li>
+<li>极化无响应对象 → <strong>$G \to 0$</strong>。</li>
+</ul>
+<h4>5.3 边界对照表</h4>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>区域</th>
+<th>能量状态</th>
+<th>层次A</th>
+<th>层次B</th>
+<th>$G$</th>
+<th>$c$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>超级中心</td>
+<td>极高</td>
+<td>被破坏</td>
+<td>极端致密</td>
+<td>滑移→0</td>
+<td>在界处失效</td>
+</tr>
+<tr>
+<td>中间广阔区</td>
+<td>
+$206$ bits ↔ $10^{-15}\ \text{J/m}^2$
+</td>
+<td><strong>完整</strong></td>
+<td>任意变化</td>
+<td><strong>刚性</strong></td>
+<td><strong>刚性</strong></td>
+</tr>
+<tr>
+<td>深空边界</td>
+<td>极低</td>
+<td>耦联断裂</td>
+<td>接近为空</td>
+<td>$\to 0$</td>
+<td>无定义</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>这与 EPD-06 主文三点纠正完全一致：<strong>$G$ 只在超级中心与深空边界滑移为 0，中间区间刚性。</strong></p>
+<hr>
+<h3>六、对 EPD-06 主文的支撑</h3>
+<p>两级解耦机制对整个 EPD-06 推导链提供的强化：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>主文命题</th>
+<th>附录A支撑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+$G$ 与 $c$ 同源（同为介质读数）</td>
+<td>同一根单弦的两个响应参数</td>
+</tr>
+<tr>
+<td>
+$G$ 刚性 ⇔ $c$ 刚性</td>
+<td>同属层次A，同为拓扑锁定</td>
+</tr>
+<tr>
+<td>
+$c \propto a_0 \mathcal{T}_{\text{topo}}$ 可跨环境推演</td>
+<td>
+$a_0$ 反映层次B，$\mathcal{T}_{\text{topo}}$ 反映层次A</td>
+</tr>
+<tr>
+<td>边界处 $c$ 滑移</td>
+<td>边界处层次A被破坏</td>
+</tr>
+<tr>
+<td>卡西米尔板间 $c$ 变化预言</td>
+<td>板间联络间距被边界条件拉伸的极端试验</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h3>七、诚实披露</h3>
+<p>以下各条均属建构假说层，待严格证明，目前不上升为定理：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>待完成项</th>
+<th>当前状态</th>
+<th>所需工作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+$T = \mu c^2$ 的严格导出</td>
+<td>建构假说</td>
+<td>从 $M_3$（时序饱和度）与 $M_4$（自旋拓扑）严格推出</td>
+</tr>
+<tr>
+<td>
+$206$ bits → $\lambda_{\text{topo}}/\tau_0$ 的定量映射</td>
+<td>建构假说</td>
+<td>建立信息容量与空间/时序弥散的解析关系</td>
+</tr>
+<tr>
+<td>边界临界值的精确整数倍</td>
+<td>建构假说</td>
+<td>确定"整数倍"的具体数值</td>
+</tr>
+<tr>
+<td>
+$206$ bits 上限的经验来源</td>
+<td>待交叉验证</td>
+<td>与贝蒂数等拓扑参数的对应关系</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h3>八、结论</h3>
+<blockquote>
+<p><strong>$G$ 与 $c$ 的刚性，来自两级解耦：能量密度属于层次B（组装密度），$G$、$c$ 属于层次A（单弦固有参数）。只要单弦完整存在，无论弦多寡，$G$、$c$ 都严格刚性。动力学根源是相对论弦自稳定——波速中的密度因子被 $T = \mu c^2$ 精确消去。</strong></p>
+<p><strong>$G$ 与 $c$ 的同步滑移，来自边界处层次A的破坏：超级中心从外压垮单弦参数，深空边界拉断弦间耦联。中间广阔区间，弦在，则刚性与光同在。</strong></p>
+</blockquote>
+<hr>
+<p><strong>文档结束</strong></p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
@@ -180,7 +599,7 @@ if("2026-07-10"!=""){
 </script></div>
 </body>
 <script>
-var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
 var utterancesLoad=0;
 
 let themeSettings={
@@ -254,7 +673,70 @@ function iFrameLoading(){
     }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
 
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
 
 </script>
 <script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
