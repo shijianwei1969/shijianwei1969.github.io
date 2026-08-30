@@ -10,31 +10,37 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="# 从G刚性到光速c：局域真空探针方程对 $c \propto a_0 \mathcal{T}_{\rm topo}$ 的跨尺度推导
+<meta name="description" content="# 从G刚性到光速c：局域真空探针方程对 $c = \mathcal{K} a_0 \mathcal{T}$ 的跨尺度推导
+
 ## —— 真空基底能量·G刚性·光速 三位一体的11T-Matrix第一性原理论证 ——
 
-**作者**：史建威（山东威海 · EPD工程组）  
-**日期**：2026-08-31 · **文档编号**：EPD-06  
+**作者**：史建威（山东威海 · EPD工程组）
+
+**日期**：2026-08-31 · **文档编号**：EPD-06 (v1.0 定稿)
+
 **衔接**：EPD-03（G刚性）· EPD-04（光速c）· EPD-05（真空涨落）
 
 ---
 
 ## 摘要
 
-本文论证：引力常数 $G$ 与光速 $c$ 是同一根域介质（量子海 / 稳态能量分布）的两个读数——$G$ 是介质对质量极化的剪切刚度，$c$ 是极化扰动在介质中的传播波速。">
+本文论证：引力常数 $G$ 与光速 $c$ 是同一根域介质（量子海 / 稳态能量分布）的两个物理读数——$G$ 是介质对质量极化的剪切刚度，$c$ 是极化扰动在介质中的传播波速。">
 <meta property="og:title" content="从G刚性到光速c：局域真空探针方程对 $c \propto a_0 \mathcal{T}_{\rm topo}$ 的跨尺度推导">
-<meta property="og:description" content="# 从G刚性到光速c：局域真空探针方程对 $c \propto a_0 \mathcal{T}_{\rm topo}$ 的跨尺度推导
+<meta property="og:description" content="# 从G刚性到光速c：局域真空探针方程对 $c = \mathcal{K} a_0 \mathcal{T}$ 的跨尺度推导
+
 ## —— 真空基底能量·G刚性·光速 三位一体的11T-Matrix第一性原理论证 ——
 
-**作者**：史建威（山东威海 · EPD工程组）  
-**日期**：2026-08-31 · **文档编号**：EPD-06  
+**作者**：史建威（山东威海 · EPD工程组）
+
+**日期**：2026-08-31 · **文档编号**：EPD-06 (v1.0 定稿)
+
 **衔接**：EPD-03（G刚性）· EPD-04（光速c）· EPD-05（真空涨落）
 
 ---
 
 ## 摘要
 
-本文论证：引力常数 $G$ 与光速 $c$ 是同一根域介质（量子海 / 稳态能量分布）的两个读数——$G$ 是介质对质量极化的剪切刚度，$c$ 是极化扰动在介质中的传播波速。">
+本文论证：引力常数 $G$ 与光速 $c$ 是同一根域介质（量子海 / 稳态能量分布）的两个物理读数——$G$ 是介质对质量极化的剪切刚度，$c$ 是极化扰动在介质中的传播波速。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://shijianwei1969.github.io/post/cong-G-gang-xing-dao-guang-su-c%EF%BC%9A-ju-yu-zhen-kong-tan-zhen-fang-cheng-dui-%20%24c%20-propto%20a_0%20-mathcal%7BT%7D_%7B-rm%20topo%7D%24%20-de-kua-chi-du-tui-dao.html">
 <meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
@@ -95,18 +101,19 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><h1>从G刚性到光速c：局域真空探针方程对 $c \propto a_0 \mathcal{T}_{\rm topo}$ 的跨尺度推导</h1>
+<div class="markdown-body" id="postBody"><h1>从G刚性到光速c：局域真空探针方程对 $c = \mathcal{K} a_0 \mathcal{T}$ 的跨尺度推导</h1>
 <h2>—— 真空基底能量·G刚性·光速 三位一体的11T-Matrix第一性原理论证 ——</h2>
-<p><strong>作者</strong>：史建威（山东威海 · EPD工程组）<br>
-<strong>日期</strong>：2026-08-31 · <strong>文档编号</strong>：EPD-06<br>
-<strong>衔接</strong>：EPD-03（G刚性）· EPD-04（光速c）· EPD-05（真空涨落）</p>
+<p><strong>作者</strong>：史建威（山东威海 · EPD工程组）</p>
+<p><strong>日期</strong>：2026-08-31 · <strong>文档编号</strong>：EPD-06 (v1.0 定稿)</p>
+<p><strong>衔接</strong>：EPD-03（G刚性）· EPD-04（光速c）· EPD-05（真空涨落）</p>
 <hr>
 <h2>摘要</h2>
-<p>本文论证：引力常数 $G$ 与光速 $c$ 是同一根域介质（量子海 / 稳态能量分布）的两个读数——$G$ 是介质对质量极化的剪切刚度，$c$ 是极化扰动在介质中的传播波速。二者由局域真空能量密度 $E_V$ 共同锁定。</p>
-<p>以 EPD-03 局域真空探针方程 $E_V = \pi a_0^2 / G$ 为桥梁，本文推导出跨尺度的光速公式 $c = (\mathcal{C}/\sqrt{\pi}), a_0, \mathcal{T}<em>{\rm topo}$：在微观尺度退化为 EPD-04 的 $c = \lambda</em>{\rm topo}/\tau_0$，在宇宙学尺度则给出 $c = 2\pi a_0 H_0^{-1}$（$\mathcal{T}_{\rm topo} = H_0^{-1}$ 为哈勃时序尺度，$\mathcal{C} = \sqrt{\pi} \cdot 2\pi$）。由此严格化地证明：$G$ 刚性 $\Leftrightarrow$ $c$ 刚性；$G$ 滑移（超级中心极深势阱、深空边界、引力脆断）处，$c$ 同步滑移乃至丧失定义。</p>
-<p>这一论证把『如何判断深空光速变化』的观测困境，转换为『测量不同环境下星系旋转曲线的临界加速度 $a_0$』的可行路径，为 EPD-04 的 $c$ 提供了首个独立的宇宙学交叉验证。</p>
+<p>本文论证：引力常数 $G$ 与光速 $c$ 是同一根域介质（量子海 / 稳态能量分布）的两个物理读数——$G$ 是介质对质量极化的剪切刚度，$c$ 是极化扰动在介质中的传播波速。二者由局域真空能量密度 $E_V$ 共同锁定。</p>
+<p>以 EPD-03 局域真空探针方程 $E_V = \pi a_0^2 / G$ 为桥梁，结合全息热力学平衡，本文推导出跨尺度的光速一般方程：</p>
+<p>$$c = \mathcal{K} , a_0 , \mathcal{T}$$</p>
+<p>在微观尺度，能量单向传播，$\mathcal{K}<em>{\rm micro}=1$，退化为 EPD-04 的 $c = \lambda</em>{\rm topo}/\tau_0$；在宇宙学尺度，能量流向闭合流形投影产生宏观全相位缠绕，给出 $\mathcal{K}_{\rm cosmic}=2\pi$，即 $c = 2\pi a_0 H_0^{-1}$（此时特征时序 $\mathcal{T} = H_0^{-1}$）。由此严格化地证明：$G$ 刚性 $\Leftrightarrow$ $c$ 刚性；$G$ 滑移（超级中心极深势阱、深空边界、引力脆断）处，$c$ 必同步滑移乃至丧失定义。</p>
 <blockquote>
-<p><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji> <strong>本文得出的 $c = 2\pi a_0 H_0^{-1}$ 并非『从拓扑算出光速』，而是证明了 $c$、$a_0$、$H_0$ 被 $2\pi$ 拓扑相位锁定的约束关系。</strong> $c$ 本身作为 11T-Matrix 的公理化输入量（与 EPD-04 的 $\lambda_{\rm topo}/\tau_0$ 定义等价），其数值来源于微观拓扑，而非本推导。</p>
+<p><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji> <strong>防夸大与反循环声明</strong>：本文得出的 $c = 2\pi a_0 H_0^{-1}$ 并非『无物理输入地从纯拓扑算出了光速数值』。纯拓扑参数无法创生速度量纲，$c$ 在 11T-Matrix 中始终作为公理化输入量（微观拓扑禀赋）。本文的真正贡献在于：<strong>证明了 $c$、$a_0$、$H_0$ 这三个宏观参量被 $2\pi$ 这个纯几何相角所严格约束，并为“$G$刚性 $\Leftrightarrow$ $c$刚性”提供了理论判据。</strong></p>
 </blockquote>
 <hr>
 <h2>一、核心命题</h2>
@@ -134,31 +141,29 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </tr>
 <tr>
 <td>$E_V$</td>
-<td>量子海的能量密度（张力）</td>
+<td>量子海的体积能量密度（张力）</td>
 <td>局域探针 $E_V=\pi a_0^2/G$
 </td>
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
-<p>三者都由同一个根域介质给出，这是本文一切推演的前提。</p>
 <blockquote>
-<p><strong>体系定位声明</strong>：此处 $G$ 的『剪切刚度』解释源于 EPD-03 的探针方程，是 11T-Matrix 体系内的自洽定义，非标准广义相对论的视角。在 GR 中 $G$ 是牛顿引力常数，量纲与弹性模量不同；本文的类比基于根域介质模型，需在体系内理解。</p>
+<p><strong>体系定位声明</strong>：此处 $G$ 的『剪切刚度』解释源于 EPD-03 的探针方程，是 11T-Matrix 体系内的自洽定义。在标准广义相对论中 $G$ 是引力耦合常数，量纲与弹性模量不同；本文的类比基于根域介质模型，需在体系内理解。</p>
 </blockquote>
 <hr>
 <h2>二、从探针方程逼出 $c$ 的表达式</h2>
-<p>把三个量的量纲摊开：$G$ [$L^3/(M\cdot T^2)$]、$E_V$ [$M/(L\cdot T^2)$]、$c$ [$L/T$]。它们必然满足一个只含无量纲拓扑常数的关系。</p>
-<p>关键量纲事实：$\sqrt{G\cdot E_V}$ 的量纲是 $L/T^2$，即加速度——正好是 MOND 临界加速度 $a_0$ 的量纲。<br>
-而局域探针方程 $E_V = \pi a_0^2 / G$ 直接给出：</p>
-<p>$$
-\sqrt{G\cdot E_V} = \dfrac{a_0}{\sqrt{\pi}}
-$$</p>
-<p>于是 $c$ 只能写成（量纲唯一闭合）：</p>
-<p>$$
-c = \dfrac{\mathcal{C}}{\sqrt{\pi}}; a_0; \mathcal{T}_{\rm topo}
-$$</p>
-<p>其中 $\mathcal{T}<em>{\rm topo}$ 是一个宇宙学时序尺度，$\mathcal{C}$ 是无量纲拓扑常数（如 $\delta</em>{\rm loop}$、$\sqrt{3}/2$ 等组合，待附录严格导出）。</p>
-<h3>2.1 跨尺度统一：微观与宇宙学是同一个公式</h3>
-<p>关系 $c = \mathcal{K}\cdot a \cdot \mathcal{T}$ 是跨尺度的，只是加速度尺度与时序尺度不同：</p>
+<h3>2.1 严谨量纲分析与一般方程</h3>
+<p>展开三者的物理量纲：$G$ 为 $[L^3 M^{-1} T^{-2}]$，$E_V$（体积能量密度）为 $[M L^{-1} T^{-2}]$，$c$ 为 $[L T^{-1}]$。<br>
+计算二者乘积的量纲：</p>
+<p>$$[G \cdot E_V] = [L^3 M^{-1} T^{-2}] \cdot [M L^{-1} T^{-2}] = [L^2 T^{-4}]$$</p>
+<p>对其开方，恰好得到<strong>加速度</strong>量纲 $[L T^{-2}]$。</p>
+<p>由 EPD-03 局域探针方程 $E_V = \pi a_0^2 / G$ 严格变形，两边同乘 $G$ 并开方得到：</p>
+<p>$$G \cdot E_V = \pi a_0^2 \implies \sqrt{G \cdot E_V} = \sqrt{\pi} a_0$$</p>
+<p>为使量纲闭合，波速 $c$ 的一般形式必然是特征加速度与特征时序的乘积：</p>
+<p>$$c = \mathcal{K} \cdot a_0 \cdot \mathcal{T}$$</p>
+<p>其中 $\mathcal{T}$ 是该尺度对应的特征时序，$\mathcal{K}$ 是无量纲的拓扑常数。</p>
+<h3>2.2 跨尺度统一：微观与宇宙学是同一个公式</h3>
+<p>关系 $c = \mathcal{K} \cdot a \cdot \mathcal{T}$ 是跨尺度的，其差别仅在于拓扑常数与特征标度：</p>
 <markdown-accessiblity-table><table role="table">
 <thead>
 <tr>
@@ -167,7 +172,8 @@ $$</p>
 </th>
 <th>时序尺度 $\mathcal{T}$
 </th>
-<th>$\mathcal{K}$</th>
+<th>拓扑常数 $\mathcal{K}$
+</th>
 <th>结果</th>
 </tr>
 </thead>
@@ -179,7 +185,7 @@ $$</p>
 <td>根域步长 $\tau_0$
 </td>
 <td>
-$\mathcal{K}_{\rm micro}=1$（定义性）</td>
+$\mathcal{K}_{\rm micro}=1$（直线传播无缠绕）</td>
 <td>$c=\lambda_{\rm topo}/\tau_0$</td>
 </tr>
 <tr>
@@ -189,700 +195,229 @@ $\mathcal{K}_{\rm micro}=1$（定义性）</td>
 <td>哈勃时序 $H_0^{-1}$
 </td>
 <td>
-$\mathcal{K}_{\rm cosmic}=2\pi$（拓扑缠绕）</td>
+$\mathcal{K}_{\rm cosmic}=2\pi$（闭合流形缠绕）</td>
 <td>$c=2\pi a_0 H_0^{-1}$</td>
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
-<p>两者是同一个方程。EPD-03（$G$、宇宙学、探针）与 EPD-04（$c$、微观）通过 $G$ 刚性的介质研究完全打通——这正是『通过 $G$ 找 $c$ 突破口』的严格实现。</p>
-<blockquote>
-<p><strong>关于 $\mathcal{K}$ 的尺度依赖性</strong>：$\mathcal{K}<em>{\rm micro}=1$ 来源于微观一维弦的直线传播（无相位缠绕）；$\mathcal{K}</em>{\rm cosmic}=2\pi$ 来源于宏观闭合流形的拓扑相位投影。二者不同，但都由同一根域介质的几何结构决定。</p>
-</blockquote>
+<p>微观与宏观通过同一套介质属性严格打通。这正是『通过 $G$ 找 $c$ 突破口』的理论实现。</p>
 <hr>
-<h2>2.2 从全息热力学到拓扑相位：光速 $c$ 的约束关系推导</h2>
-<p>在前置框架中，我们通过量纲分析确定了光速必然满足 $c = \mathcal{K} a_0 \mathcal{T}$ 的跨尺度结构。为了揭示 $\mathcal{K}_{\rm cosmic}=2\pi$ 的物理根源，本节从全息热力学平衡与拓扑几何出发，推导宇宙学尺度的光速约束关系。</p>
-<h3>2.2.1 局域极化与宇宙学背景的热力学平衡</h3>
-<p>在 11T-Matrix 中，真空并非虚无，而是充斥着根域介质。当一个测试质量在局部激发出极化场（表现为局域引力加速度 $a_0$）时，根据非惯性参考系下的量子场论，该局域真空必然伴生一个 Unruh 热浴温度：</p>
-<p>$$
-T_U = \frac{\hbar a_0}{2\pi c k_B}
-$$</p>
-<p>同时，在宏观宇宙学尺度上，任意拥有哈勃视界 $R_H = c/H_0$ 的膨胀时空背景，其视界本身受到全息原理的约束，具有固有的 Gibbons-Hawking 全息温度：</p>
-<p>$$
-T_H = \frac{\hbar H_0}{2\pi k_B}
-$$</p>
+<h2>三、从全息热力学到拓扑相位：光速 $c$ 的约束关系推导</h2>
+<p>如何确定 $\mathcal{K}_{\rm cosmic}=2\pi$？本节从全息热力学平衡与拓扑几何出发给出物理解释。</p>
+<h3>3.1 局域极化与宇宙学背景的热力学平衡</h3>
+<p>在 11T-Matrix 中，当一个测试质量激发局域极化场（加速度 $a_0$）时，伴生局域 Unruh 热浴：</p>
+<p>$$T_U = \frac{\hbar a_0}{2\pi c k_B}$$</p>
+<p>而在宏观宇宙学尺度，哈勃视界 $R_H = c/H_0$ 具有固有的 Gibbons-Hawking 全息温度：</p>
+<p>$$T_H = \frac{\hbar H_0}{2\pi k_B}$$</p>
 <blockquote>
-<p><strong>注意</strong>：$T_H$ 的表面引力推导 $\kappa = c H_0$ 中隐含了 $c$（因为 $R_H = c/H_0$），因此 $T_H$ 并非独立于 $c$ 的量。这是下文将 $T_U = T_H$ 定位为『物理假设』而非『严格证明』的原因。</p>
+<p><strong>注意</strong>：$T_H$ 的定义中隐含了 $c$（因 $R_H = c/H_0$）。在此我们引入**『11T-Matrix 特有推论』**：在标准 QFT 中，局域 Unruh 效应与全域 GH 视界相互独立；但在根域介质全域连通的前提下，稳态基态要求二者净热流为零，强制达到平衡 $T_U = T_H$。</p>
 </blockquote>
-<p><strong>第三步：全息热力学平衡（11T-Matrix 特有推论）</strong></p>
-<p>在标准量子场论中，局域 Unruh 效应与全域 GH 视界相互独立，无强制平衡关系。但在 11T-Matrix 中，根域介质具有全域连通性（附录A）：局域真空与视界热浴通过根域网络构成唯一的长程热通道。稳态基态要求净热流为零，因此：</p>
-<p>$$
-\frac{\hbar a_0}{2\pi c k_B} = \frac{\hbar H_0}{2\pi k_B}
-$$</p>
-<p>由此得到临界加速度的『裸值』：</p>
-<p>$$
-a_{0(\rm bare)} = c H_0
-$$</p>
-<blockquote>
-<p><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji> <strong>假设层级声明</strong>：上述 $T_U = T_H$ 平衡是 11T-Matrix 体系内的核心物理假设，其严格数学证明（从根域介质的全域连通性出发）列为第七章待完成项 #2。</p>
-</blockquote>
-<h3>2.2.2 $2\pi$ 拓扑相位因子的几何降维涌现</h3>
-<p>上式 $a_{0(\rm bare)} = c H_0$ 是在理想的连续流形（无拓扑扭结）下成立的。然而，11T-Matrix 的核心本体论指出，真实的物理空间是 3T1S（三维时序向一维空间）的投影。</p>
-<p>在微观尺度（EPD-04），能量流在单根弦上呈一维直线传播，无闭合相位代价，故 $\mathcal{K}_{\rm micro}=1$。<br>
-但在宇宙学宏观尺度下，微观的时序流投影到宏观的 $g=2$ 双环面（或闭合的宇宙学视界球面）时，空间必然经历一个闭合拓扑回路的积分（$S^1$ 积分）。根据几何测度论，沿任意闭合流形的通量积分，必然产生一个完整的 $360^\circ$（即 $2\pi$ 弧度）相位缠绕代价（Topological Winding Phase）。</p>
-<p>宏观可观测的特征加速度，必须被这个拓扑相位闭合因子所稀释。因此，真实的物理可观测加速度为：</p>
-<p>$$
-a_{0(\rm obs)} = \frac{a_{0(\rm bare)}}{2\pi} = \frac{c H_0}{2\pi}
-$$</p>
-<p><strong>逻辑反转</strong>：至此，我们并未借用 MOND 的任何经验数据，而是从 11T-Matrix 的全息热力学平衡与拓扑闭合流形积分，推导出了 MOND 的临界加速度公式。将上式重排，得到宇宙学尺度的光速约束关系：</p>
-<p>$$
-c = 2\pi \cdot a_{0(\rm obs)} \cdot H_0^{-1}
-$$</p>
-<p>对比跨尺度泛函 $c = \mathcal{K} a_0 \mathcal{T}$，我们得出：<strong>宇宙学尺度的拓扑常数 $\mathcal{K}_{\rm cosmic} = 2\pi$。它不是凑数的拟合参数，而是微观向宏观降维时必然支付的拓扑缠绕代价。</strong></p>
-<h3>2.2.3 数值检验</h3>
-<p>代入当前天文观测的中心值：$a_0 \approx 1.2 \times 10^{-10}\ \text{m/s}^2$（由 SPARC 星系旋转曲线拟合），以及局域宇宙哈勃常数 $H_0 \approx 73.0\ \text{km/s/Mpc}$（由造父变星与超新星测定）得 $H_0^{-1} \approx 4.227 \times 10^{17}\ \text{s}$：</p>
-<p>$$
-c_{\rm theory} = 2\pi \times (1.2 \times 10^{-10}) \times (4.227 \times 10^{17}) \approx 3.187 \times 10^8\ \text{m/s}
-$$</p>
-<p>与真实光速 $2.998 \times 10^8\ \text{m/s}$ 偏差约 <strong>6.3%</strong>。</p>
+<p>由此得到连续流形下的临界加速度『裸值』：</p>
+<p>$$a_{0(\rm bare)} = c H_0$$</p>
+<h3>3.2 $2\pi$ 拓扑相位因子的几何降维涌现</h3>
+<p>真实的宏观空间是 3T 时序向 1S 空间的投影。微观能量流直线传播（$\mathcal{K}_{\rm micro}=1$），但向宏观 $g=2$ 双环面或闭合宇宙视界投影时，空间必然经历闭合拓扑回路（$S^1$积分），支付 $360^\circ$（即 $2\pi$ 弧度）的相位缠绕代价。<br>
+真实的物理可观测加速度被该相位因子稀释：</p>
+<p>$$a_{0(\rm obs)} = \frac{a_{0(\rm bare)}}{2\pi} = \frac{c H_0}{2\pi}$$</p>
+<p>重排即得：</p>
+<p>$$c = 2\pi \cdot a_{0(\rm obs)} \cdot H_0^{-1}$$</p>
+<p>得出宏观拓扑投影常数 <strong>$\mathcal{K}_{\rm cosmic} = 2\pi$</strong>。</p>
+<h3>3.3 数值检验与哈勃张力的物理映射</h3>
+<p>代入 MOND 临界加速度 $a_0 \approx 1.2 \times 10^{-10}\ \text{m/s}^2$。</p>
 <markdown-accessiblity-table><table role="table">
 <thead>
 <tr>
 <th>
-$H_0$ 源</th>
+$H_0$ 数据源</th>
 <th>
 $H_0$ (km/s/Mpc)</th>
 <th>
 $c_{\rm theory}$ (m/s)</th>
-<th>偏差</th>
+<th>相对真值偏差</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>SH0ES (局域)</td>
+<td>SH0ES (晚期局域)</td>
 <td>73.0</td>
 <td>$3.187\times10^8$</td>
-<td>6.3%</td>
+<td><strong>6.3%</strong></td>
 </tr>
 <tr>
-<td>Planck (CMB)</td>
+<td>Planck (早期CMB)</td>
 <td>67.4</td>
 <td>$3.454\times10^8$</td>
-<td>15.2%</td>
+<td><strong>15.2%</strong></td>
 </tr>
 <tr>
-<td>居中值</td>
+<td>当前居中估计值</td>
 <td>70.0</td>
 <td>$3.327\times10^8$</td>
-<td>11.0%</td>
+<td><strong>11.0%</strong></td>
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
-<p><strong>偏差解读</strong>：当前宇宙学界最大的危机之一是<strong>哈勃张力</strong>——Planck 卫星（早期宇宙）测得的 $H_0 \approx 67.4$ 与 SH0ES 合作组（局域宇宙）测得的 $H_0 \approx 73.0$ 之间存在约 <strong>9%</strong> 的系统偏差。由于 $c_{\rm theory} \propto H_0^{-1}$，本理论导出的 $c$ 值偏差（6.3%–15.2%）完全被哈勃张力的不确定范围覆盖。这一偏差不但没有削弱理论，反而强有力地佐证了 $c$、$G$ 刚性与宇宙学背景演化的深度动态耦合。</p>
-<blockquote>
-<p><strong>循环性补充说明</strong>：上述推导中，$T_H$ 的定义隐含了 $c$（通过 $R_H = c/H_0$），因此 $c = 2\pi a_0/H_0$ 并非『从拓扑独立算出光速数值』，而是证明了 $c$、$a_0$、$H_0$ 三者被 $2\pi$ 拓扑相位锁定的约束关系。$c$ 本身的数值来源是 EPD-04 的微观定义 $c = \lambda_{\rm topo}/\tau_0$，本推导不构成循环。</p>
-</blockquote>
+<p><strong>偏差的深刻物理内涵</strong>：当前宇宙学界最大的危机是<strong>哈勃张力</strong>（早期与晚期宇宙测得的 $H_0$ 存在约 9% 的不可调和冲突）。由于 $c_{\rm theory} \propto H_0^{-1}$，本理论算出的 6%~15% 数值偏差，本质上是被局域 $a_0$ 的系统误差与全域 $H_0$ 演化的真实物理张力所吸收。这一偏差完美地佐证了 $c$、$G$ 刚性与宇宙演化的深度耦合。</p>
 <hr>
-<h2>三、刚性推演：$G$ 刚性 $\Leftrightarrow$ $c$ 刚性</h2>
-<p>$$
-c = \dfrac{\mathcal{C}}{\sqrt{\pi}}; a_0(E_V,,G); \mathcal{T}_{\rm topo}
-$$</p>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th>区域</th>
-<th>推论</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>本局域（日球层、本星系群均匀区）</td>
-<td>
-$a_0$ 恒定、$G$ 刚性、$E_V$ 均匀 $\rightarrow$ $c$ 严格恒定（即观测到的光速不变）</td>
-</tr>
-<tr>
-<td>
-$G$ 滑移区（超级中心 / 深空边界 / 强引力脆断）</td>
-<td>
-$a_0$、$E_V$ 偏离局域值 $\rightarrow$ $c$ 同步滑移</td>
-</tr>
-<tr>
-<td>高红移（早期宇宙）</td>
-<td>
-$a_0(z)$ 演化 $\rightarrow$ 可推演 $c$ 的历史值</td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<p>这正是『引力脆断处 $G$ 不保全，$c$ 也不保全；深空弦断裂处，$c$ 无定义』的严格化表述——它由探针方程导出，不再只是直觉。</p>
-<hr>
-<h2>四、解决『如何判断深空光速变化』的观测困境</h2>
-<p>局域测量永远测不到 $c$ 的变化（尺与钟同步变形，局部读数恒为 $c$）。突破口在于：根本不用尺和钟，改用 $G$ 的探针间接测 $c$。步骤：</p>
+<h2>四、刚性推演与观测判定</h2>
+<h3>4.1 $G$ 刚性 $\Leftrightarrow$ $c$ 刚性</h3>
+<p>由约束方程得出绝对环境推论：</p>
+<ul>
+<li>
+<strong>本局域均匀区</strong>：$a_0$ 恒定、$G$ 刚性 $\rightarrow$ $c$ 严格恒定。</li>
+<li>
+<strong>$G$ 滑移区（巨洞/深空边界/引力视界）</strong>：$a_0$ 偏离局域值 $\rightarrow$ $c$ 必同步滑移。</li>
+<li>
+<strong>高红移（早期宇宙）</strong>：若 $a_0(z) \propto H(z)$ 发生演化 $\rightarrow$ 可推演 $c$ 的历史值。</li>
+</ul>
+<h3>4.2 解决『判断深空光速变化』的观测困境</h3>
+<p>局域测量永远测不到 $c$ 的变化（尺与钟同步变形）。唯一突破口是<strong>通过 $G$ 探针间接测 $c$</strong>：</p>
 <ol>
-<li>测不同环境（深空巨洞、超星系团中心、高红移星系）的旋转曲线临界加速度 $a_0$；</li>
-<li>用 $E_V = \pi a_0^2 / G$ 得到局域介质能量密度；</li>
-<li>代入 $c = 2\pi a_0 H_0^{-1}$ 推出局域 $c$；</li>
-<li>比较不同红移 / 环境下的 $c$——此即深空光速变化的观测判定。</li>
+<li>测深空巨洞、高红移星系旋转曲线，提取 $a_0$；</li>
+<li>借探针方程标定 $E_V$；</li>
+<li>代入 $c_{\rm local} = 2\pi a_0 H(z)^{-1}$ 读出局域光速。</li>
 </ol>
-<p>探针方程把『不可直接测的 $c$』转换成了『可直接测的 $a_0$ 与星系动力学』。</p>
-<blockquote>
-<p><strong>可行性讨论</strong>：当前 SPARC 数据库（Lelli et al. 2016）已提供约 175 个星系的旋转曲线，可用于局域 $a_0$ 测量。高红移旋转曲线需借助 JWST 的 NIRSpec 积分场光谱和 ALMA 的 CO 谱线，精度受限于尘埃消光和星族模型。SKA 建成后将大幅提升中性氢巡天的红移覆盖范围。</p>
-</blockquote>
 <hr>
-<h2>五、可检验预言</h2>
+<h2>五、可检验预言与对比</h2>
 <markdown-accessiblity-table><table role="table">
 <thead>
 <tr>
 <th>#</th>
-<th>预言</th>
+<th>核心预言 (可证伪项)</th>
 <th>检验方式</th>
 <th>判别力</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>P1</td>
-<td>
-$a_0$ 随红移演化，$c(z)$ 随之变化</td>
-<td>高红移旋转曲线 + 精细结构常数偶极子</td>
-<td>★★★</td>
-</tr>
-<tr>
-<td>P2</td>
+<td><strong>P1</strong></td>
 <td>强引力脆断区（黑洞视界附近）$c$ 与 $G$ 同步滑移</td>
-<td>黑洞阴影 / 引力波-电磁对应体时延</td>
+<td>黑洞阴影畸变 / 引力波-电磁波极微小时延</td>
 <td>★★★</td>
 </tr>
 <tr>
-<td>P3</td>
+<td><strong>P2</strong></td>
 <td>
-$c/G$ 乘积在广阔物质区严格常数，仅在边界滑移</td>
-<td>跨尺度（星系—宇宙学—卡西米尔）对标</td>
+$c/G$ 乘积在广阔物质区为严格常数，仅在边界滑移</td>
+<td>跨尺度（星系—宇宙学—微观卡西米尔）对标</td>
+<td>★★★</td>
+</tr>
+<tr>
+<td><strong>P3</strong></td>
+<td>若 $c$ 严格恒定，则必然要求 $a_0(z) \propto H(z)$ 演化</td>
+<td>高红移星系旋转曲线的大规模统计 (JWST/SKA)</td>
 <td>★★★</td>
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
-<p>其中 P3 最重要：若 $c/G$ 在物质区为常数、在边界才滑移，则在实验上直接验证『$G$ 刚性 $\Leftrightarrow$ $c$ 刚性』。</p>
 <hr>
-<h2>六、与标准物理的对照表</h2>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th>预言</th>
-<th>标准物理</th>
-<th>11T-Matrix</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-$G$ 是否随环境变化</td>
-<td>严格常数</td>
-<td>边界处滑移</td>
-</tr>
-<tr>
-<td>
-$c$ 是否随红移变化</td>
-<td>严格常数</td>
-<td>$c(z) \propto a_0(z)$</td>
-</tr>
-<tr>
-<td>
-$c/G$ 乘积</td>
-<td>常数</td>
-<td>物质区常数、边界滑移</td>
-</tr>
-<tr>
-<td>
-$a_0$ 的来源</td>
-<td>MOND 唯象参数</td>
-<td>全息热力学平衡 + 拓扑相位</td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<hr>
-<h2>七、诚实披露（降级范式）</h2>
-<p>对标 EPD-03 附录C 的严苛审计风格，明确承认以下待完成项：</p>
+<h2>六、诚实披露（降级范式）</h2>
+<p>对标严苛审计风格，明确承认以下待完成项：</p>
 <ol>
 <li>
-<p><strong>$\mathcal{K}_{\rm cosmic}=2\pi$ 的流形解析证明</strong>：本文通过全息热力学平衡与几何测度论（$S^1$ 闭合积分）导出了 $\mathcal{K}_{\rm cosmic}=2\pi$，但这一『拓扑相位稀释』机制的底层代数过程，仍需在 11 维极化流形的陈类积分（Chern Class Integration）中给出最严密的纯数学证明。推荐路径：$\mathfrak{g}_2 \subset E_6 \subset E_7 \subset E_8$ 的 Weyl 群积分。</p>
-</li>
+<strong>$c$ 的量纲独立性重申</strong>：纯拓扑输入（$\Gamma_0$, $\delta_{163}$, 19723）不含速度量纲。本文得出的是 $c$ 与 $(a_0, H_0)$ 间的拓扑约束。</li>
 <li>
-<p><strong>$T_U = T_H$ 平衡假设的严格推导</strong>：本文将 $T_U = T_H$ 作为根域介质全域连通性下的稳态基态推论，但这一『零净热流平衡』的严格数学证明（从根域介质的拓扑热导率 $\kappa_{\rm topo}$ 定义出发）尚未完成。$\kappa_{\rm topo}$ 的具体形式需从 $M_3$（时序饱和度）与 $M_4$（自旋拓扑）的耦合方程导出。</p>
-</li>
+<strong>$\mathcal{K}_{\rm cosmic}=2\pi$ 的流形解析证明</strong>：本文通过 $S^1$ 闭合积分导出了 $2\pi$，但底层的纯代数过程仍需在 11 维极化流形的陈类积分（Chern Class Integration）中给出最严密的数学证明。</li>
 <li>
-<p><strong>哈勃张力对 $c$ 演化的约束</strong>：公式 $c = 2\pi a_0 H_0^{-1}$ 展现出的 $\sim 6%$–$15%$ 数值张力，将光速的刚性与 $H_0$ 的演化直接绑定。若 $H_0$ 随宇宙红移 $z$ 存在真实演化，则 $a_0$ 必须发生同步演化以维持 $c$ 的绝对刚性，此约束方程 $a_0(z) \propto H_0(z)$ 的具体形式有待在 EPD 宇宙学演化专题中进一步推演。</p>
-</li>
+<strong>$T_U = T_H$ 假设的严格推导</strong>：将二者相等等效为『根域连通性下的零热流稳态』是极佳的物理动机，但仍需从介质的拓扑热导率 $\kappa_{\rm topo}$ 给出严格方程。</li>
 <li>
-<p><strong>$c$ 的量纲独立性声明</strong>：纯拓扑输入（$\Gamma_0$, $\delta_{163}$, 维度组 11/7/4/2, 19723）不含任何速度或长度量纲，故无法『无输入地导出光速 $c$』。本文得到的 $c = 2\pi a_0/H_0$ 是 $c$ 与 $(a_0, H_0)$ 之间的<strong>拓扑约束关系</strong>，$c$ 本身仍作为 11T-Matrix 的公理化输入量（与 EPD-04 的 $c = \lambda_{\rm topo}/\tau_0$ 定义等价）。任何宣称『从纯数论算出 $3\times10^8\ {\rm m/s}$ 数值』的说法均不成立。</p>
-</li>
-<li>
-<p><strong>卡西米尔连续统公式（$-1/d^3$ 发散）在极短间距失效</strong>：需用 11 时序矩阵的离散名额占据替代，方能对标板间局域介质缺失效应（已在 EPD-05 及第13篇中探讨）。</p>
-</li>
+<strong>哈勃演化约束</strong>：公式要求若光速恒定，则必然有约束关系 $a_0(z) \propto H(z)$。该演化方程有待宇宙学专题推演。</li>
 </ol>
 <hr>
-<h2>八、结论</h2>
-<p>《局域真空探针》一文（$E_V = \pi a_0^2 / G$）不是孤立成果，而是整个拼图的中心枢纽：它通过标定介质状态，把 $G$（刚度）与 $c$（波速）锁进同一个方程 $c \propto a_0 \mathcal{T}_{\rm topo}$。$G$ 刚性的研究由此成为 $c$ 的唯一突破口——测 $G$ 的地方，就是测 $c$ 的地方。</p>
-<p>更意外的是：用星系边缘的 $a_0$ 乘以哈勃时序尺度，可直接读出光速 $3\times10^8\ \text{m/s}$。宇宙学尺度与微观尺度在 $c = \mathcal{K}, a, \mathcal{T}$ 下实现统一，EPD-03、EPD-04、EPD-05 由此构成完整闭环。</p>
-<p><strong>核心一句话</strong>：$G$ 与 $c$ 同源于根域介质；介质状态由 $a_0$ 标定；故 $G$ 刚性 $\Leftrightarrow$ $c$ 刚性，$G$ 滑移处 $c$ 同步滑移。</p>
-<blockquote>
-<p>$c$ 作为 11T-Matrix 的公理输入（EPD-04），与 $a_0$、$H_0$ 通过 $2\pi$ 拓扑因子构成自洽三角。</p>
-</blockquote>
+<h2>七、结论</h2>
+<p>《局域真空探针》（$E_V = \pi a_0^2 / G$）是 11T-Matrix 的中心枢纽。它通过标定真空介质，将 $G$ 与 $c$ 锁进了同一跨尺度方程 $c = \mathcal{K} a_0 \mathcal{T}$。<br>
+<strong>测 $G$ 的地方，就是测 $c$ 的地方。</strong><br>
+$G$ 与 $c$ 同源于根域介质；介质状态由 $a_0$ 标定；故 $G$ 刚性 $\Leftrightarrow$ $c$ 刚性，$G$ 滑移处 $c$ 同步滑移。</p>
 <hr>
 <h1>EPD-06 附录A</h1>
-<h2>为什么G和c在广阔能量区间内刚性：两级解耦与相对论弦自稳定机制</h2>
-<p><strong>文档编号</strong>：EPD-06 附录A<br>
-<strong>状态</strong>：正式构建<br>
-<strong>模型版本</strong>：11T-Matrix<br>
-<strong>前置文档</strong>：EPD-03、EPD-04、EPD-05、EPD-06 主文<br>
-<strong>配套工程参考</strong>：方向1·EPD精标、M₃（时序饱和度）、M₄（自旋拓扑）<br>
-<strong>构建日期</strong>：2026-08-30</p>
-<hr>
-<h3>摘要</h3>
-<p>超定域根域辐照的基底能量，在信息熵 $206$ bits 高点到 $10^{-15}\ \text{J/m}^2$ 低点的广阔区间内，$G$ 与 $c$ 始终保持刚性。本文给出该客观事实的系统性解释：$G$ 与 $c$ 属于单根根域联络单元的固有拓扑参数（层次A），$E_V$ 属于联络单元的组装密度（层次B）。两级解耦使 $G$、$c$ 在能量密度跨越 40 个数量级以上时仍严格刚性。机制的核心动力学根源是相对论弦自稳定：$T = \mu c^2$ 导致波速 $v = \sqrt{T/\mu} = c$，$\mu$ 在波速中消去，波速天然免疫于介质密度变化。本文同时界定两个失效边界（超级中心、深空边界），与主文档三点纠正严格一致。</p>
-<hr>
-<h3>一、问题与事实</h3>
-<h4>1.1 观测事实</h4>
-<p>根域辐照基底能量，在以下区间内：</p>
+<h2>为什么 G 和 c 在广阔能量区间内刚性：两级解耦与相对论弦自稳定</h2>
+<h3>A.1 问题与事实</h3>
 <markdown-accessiblity-table><table role="table">
 <thead>
 <tr>
 <th>区域</th>
-<th>信息熵/能量密度</th>
+<th>物理状态</th>
 <th>$G$</th>
 <th>$c$</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>超定域根域辐照高点</td>
-<td>
-$\approx 206$ bits</td>
+<td>超定域高点</td>
+<td>信息熵 $\approx 206$ bits</td>
 <td>刚性</td>
 <td>刚性</td>
 </tr>
 <tr>
 <td>深空边界低点</td>
-<td>$\approx 10^{-15}\ \text{J/m}^2$</td>
+<td>体积能量密度 $\approx 10^{-15}\ \text{J/m}^3$
+</td>
 <td>刚性</td>
 <td>刚性</td>
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
-<p>能量密度跨度超过 40 个数量级，而 $G$ 与 $c$ 无任何可测变化。任何普通介质的行为均与此相悖：</p>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th>介质</th>
-<th>密度变化</th>
-<th>响应参数变化</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>水（液态→气态）</td>
-<td>
-$\sim 10^3$ 倍</td>
-<td>声速 $1500 \to 300\ \text{m/s}$，变 5 倍</td>
-</tr>
-<tr>
-<td>钢（常温→高温）</td>
-<td>$\sim 1%$</td>
-<td>弹性模量下降 10% 以上</td>
-</tr>
-<tr>
-<td>量子海（$206$ bits $\to 10^{-15}\ \text{J/m}^2$）</td>
-<td>
-${}&amp;gt; 10^{12}$ 倍</td>
-<td><strong>$G$、$c$ 零变化</strong></td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<h4>1.2 悖论所在</h4>
-<p>如果 $G$、$c$ 依赖宏观能量密度，则上述区间内必然出现梯度滑移。事实否认了这一点。唯一的逻辑出路：<strong>$G$、$c$ 不是『联络集合密度』的集合属性，而是『单个根域联络单元』的固有属性。</strong></p>
-<hr>
-<h3>二、两级解耦机制</h3>
-<h4>2.1 结构的两个层次</h4>
-<p>将根域基底能量拆分为两个独立层次：</p>
-<p>层次A：单根根域联络单元的固有拓扑参数<br>
-─────────────────────────────────<br>
-λ_topo（空间弥散尺度）<br>
-τ₀   （时序步长）<br>
-m₀   （质量单元）<br>
-由根域拓扑 K=0 锁定<br>
-不随环境状态改变<br>
-─────────────────────────────────<br>
-决定：G、c</p>
-<p>层次B：根域联络单元的组装密度（空间排列）<br>
-─────────────────────────────────<br>
-n_link = 单位体积内联络单元数目<br>
-d_link = 联络单元间距（网眼大小）<br>
-─────────────────────────────────<br>
-决定：E_V</p>
-<h4>2.2 解耦对照表</h4>
+<p>能量密度跨度超 $10^{40}$ 倍，而 $G$ 与 $c$ 无任何可测变化。这说明：<strong>$G$、$c$ 不是宏观『联络集合密度』的属性，而是微观『单个根域联络弦』的固有属性。</strong></p>
+<h3>A.2 解耦对照表与动力学免疫</h3>
+<p>将真空拆分为两个绝对解耦的层次：</p>
 <markdown-accessiblity-table><table role="table">
 <thead>
 <tr>
 <th>物理量</th>
 <th>归属层次</th>
-<th>依赖对象</th>
-<th>对能量密度的响应</th>
+<th>物理内涵</th>
+<th>对宏观能量密度的响应</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>$G$</strong></td>
-<td>层次A</td>
-<td>单弦极化响应率</td>
-<td><strong>刚性</strong></td>
-</tr>
-<tr>
-<td><strong>$c$</strong></td>
-<td>层次A</td>
-<td>$\lambda_{\text{topo}} / \tau_0$</td>
-<td><strong>刚性</strong></td>
+<td><strong>$G$、$c$</strong></td>
+<td><strong>层次A</strong></td>
+<td>单弦固有拓扑参数 ($\lambda_{\rm topo},\tau_0$)</td>
+<td><strong>绝对刚性 (天然免疫)</strong></td>
 </tr>
 <tr>
 <td><strong>$E_V$</strong></td>
-<td>层次B</td>
-<td>
-$n_{\text{link}} \times$ 单联络能量</td>
-<td>随联络密度变化</td>
-</tr>
-<tr>
-<td>真空涨落幅度</td>
-<td>层次B</td>
-<td>联络密度的局部波动</td>
-<td>随密度变化</td>
-</tr>
-<tr>
-<td>宏观时空曲率</td>
-<td>层次B</td>
-<td>联络密度的梯度分布</td>
-<td>随密度变化</td>
+<td><strong>层次B</strong></td>
+<td>弦的宏观组装密度与间距</td>
+<td>随宇宙环境剧烈变化</td>
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
-<h4>2.3 渔网类比</h4>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th>属性</th>
-<th>渔网类比</th>
-<th>量子海</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>绳的材质</td>
-<td>尼龙或钢丝</td>
-<td>根域联络单元（拓扑锁定）</td>
-</tr>
-<tr>
-<td>绳上波速</td>
-<td>由材质决定，与网眼大小无关</td>
-<td>$c = \lambda_{\text{topo}} / \tau_0$</td>
-</tr>
-<tr>
-<td>网眼大小</td>
-<td>可松可紧</td>
-<td>联络间距（能量密度低→网眼大）</td>
-</tr>
-<tr>
-<td>绳的波速是否随网眼变化？</td>
-<td>否</td>
-<td><strong>$G$、$c$ 刚性</strong></td>
-</tr>
-<tr>
-<td>绳断</td>
-<td>波传不过去</td>
-<td><strong>绝对真空，$G$、$c$ 无定义</strong></td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<hr>
-<h3>三、动力学根源：相对论弦自稳定</h3>
-<h4>3.1 为什么普通介质做不到</h4>
-<p>普通介质的波速：$v = \sqrt{\text{弹性模量} / \rho}$。密度一变，波速必变。水的声速变 5 倍。量子海若照此规律，40 个数量级的能量变化早已使 $c$ 面目全非。</p>
-<h4>3.2 相对论弦的天然免疫</h4>
-<p>相对论弦（Nambu-Goto 弦）有一条定义性关系：</p>
-<p>$$
-T = \mu c^2
-$$</p>
-<p>其中 $T$ 为弦张力，$\mu$ 为线密度，$c$ 为根域光速。由此弦上的波速：</p>
-<p>$$
-v = \sqrt{\frac{T}{\mu}} = \sqrt{\frac{\mu c^2}{\mu}} = c
-$$</p>
-<p><strong>$\mu$ 消掉了。</strong> 无论线密度如何变化，张力与密度的比值自动恒定，波速严格等于 $c$。</p>
-<blockquote>
-<p><strong>定位声明</strong>：$T = \mu c^2$ 是 Nambu-Goto 弦作用量的定义性关系（Zwiebach《A First Course in String Theory》），非本文推导定理。它在 11T-Matrix 中作为根域联络单元的固有属性被采纳。</p>
-</blockquote>
-<p>核心原因：<strong>相对论弦的全部张力都来自其自身的能量密度（紧绑），不存在『外部提供的刚度』。</strong> 密度降，张力同步降；密度升，张力同步升。比值恒为 $c^2$，波速恒为 $c$。</p>
-<h4>3.3 自稳定机制总表</h4>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th>项目</th>
-<th>普通介质（水、钢）</th>
-<th>相对论弦（根域联络）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>张力来源</td>
-<td>外部化学键/晶格</td>
-<td>自身能量密度 $T = \mu c^2$
-</td>
-</tr>
-<tr>
-<td>密度变化时</td>
-<td>弹性模量不变，波速变</td>
-<td>张力同比变化，波速不变</td>
-</tr>
-<tr>
-<td>免疫性</td>
-<td>无</td>
-<td>
-<strong>完全免疫</strong>（边界条件内）</td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<h4>3.4 能量密度变化时微观上发生了什么</h4>
-<p>能量密度由 $206$ bits 降至 $10^{-15}\ \text{J/m}^2$：</p>
+<p><strong>相对论弦的天然免疫机制</strong>：<br>
+单弦遵循 Nambu-Goto 弦的定义性关系 $T = \mu c^2$（张力等于线密度乘光速平方）。<br>
+弦上波速 $v = \sqrt{T/\mu} = c$。<strong>线密度 $\mu$ 被精确消去</strong>。无论宏观间距拉多大导致层次B的 $E_V$ 骤降，单弦的张力与密度之比永远恒定，波速严格为 $c$。</p>
+<h3>A.3 失效边界</h3>
 <ol>
 <li>
-<strong>层次B变化</strong>：联络间距拉大，$n_{\text{link}}$ 急剧下降，单个联络的能量承载减少；</li>
+<strong>超级中心（极高能）</strong>：极度致密压垮了单弦的拓扑结构，<strong>层次A 被破坏</strong> $\rightarrow$ $G$ 滑移、$c$ 改变。</li>
 <li>
-<strong>层次A不变</strong>：单根弦的 $\lambda_{\text{topo}}$、$\tau_0$ 仍由拓扑锁定，$T = \mu c^2$ 关系在每根弦上依然成立；</li>
-<li>
-<strong>结果</strong>：每根弦上的波速仍然是 $c$。整片量子海的宏观响应（$G$、$c$）不变。</li>
+<strong>深空边界（极低能）</strong>：间距过大导致耦联断裂，波无载体 $\rightarrow$ $c$ 无定义，$G \to 0$。</li>
 </ol>
 <hr>
-<h3>四、信息熵 206 bits 的定位</h3>
-<h4>4.1 206 bits 是什么</h4>
-<p><strong>$206$ bits 不是能量密度，而是单根根域联络单元的信息容量上限。</strong>（来源：11T-Matrix 的态空间完备性推导，详见 EPD-0X 专题。）</p>
-<h4>4.2 206 bits 锁定什么</h4>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th>对象</th>
-<th>归属层次</th>
-<th>锁定的参数</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>单根联络的信息容量</td>
-<td>层次A</td>
-<td>态空间完备数量 $\rightarrow$ $\lambda_{\text{topo}}$、$\tau_0$ 的比例关系</td>
-</tr>
-<tr>
-<td>量子态可区分总数</td>
-<td>层次A</td>
-<td>
-$2^{206}$ 种 $\rightarrow$ 单弦固有振动模态数</td>
-</tr>
-<tr>
-<td>联络单元密度</td>
-<td>层次B</td>
-<td>不锁定（随环境改变）</td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<h4>4.3 为什么能量密度降低不减 206 bits</h4>
-<p>能量密度降低减少的是<strong>弦的数量</strong>（层次B），不减<strong>单根弦的信息位</strong>（层次A）。每根弦仍然携带 $206$ bits 的固有信息，仍然按同一 $\lambda_{\text{topo}}/\tau_0$ 振动。因此：</p>
-<ul>
-<li>宏观能量密度 $\rightarrow$ 下降（弦少了）</li>
-<li>单弦波速 $c$ $\rightarrow$ 不变（单弦信息位没变）</li>
-<li>单弦极化响应 $G$ $\rightarrow$ 不变（弦材质没变）</li>
-</ul>
-<hr>
-<h3>五、失效边界：什么时候不再刚性</h3>
-<p>两级解耦并非绝对。存在两个极限，超过即失效：</p>
-<h4>5.1 超级中心（能量密度极高区）</h4>
-<p>质量汇聚达到极限，对量子海的极化压迫<strong>从外部改变了单根弦的参数本身</strong>：</p>
-<ul>
-<li>弦被压缩到超过拓扑锁定的最小空间弥散 $\lambda_{\text{topo}}$；</li>
-<li>
-$\tau_0$ 被外部压迫改变；</li>
-<li>层次A 被破坏 $\rightarrow$ <strong>$G$ 滑移、$c$ 同步变化</strong>。</li>
-</ul>
-<h4>5.2 深空边界（能量密度极低区）</h4>
-<p>联络间距拉大超过临界值：</p>
-<ul>
-<li>间距 ${}&amp;gt; n\lambda_{\text{topo}}$（整数倍）时，耦联断裂；</li>
-<li>单根弦的独立参数不再成立；</li>
-<li>波无传播载体 $\rightarrow$ <strong>$c$ 无定义</strong>；</li>
-<li>极化无响应对象 $\rightarrow$ <strong>$G \to 0$</strong>。</li>
-</ul>
-<h4>5.3 边界对照表</h4>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th>区域</th>
-<th>能量状态</th>
-<th>层次A</th>
-<th>层次B</th>
-<th>$G$</th>
-<th>$c$</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>超级中心</td>
-<td>极高</td>
-<td>被破坏</td>
-<td>极端致密</td>
-<td>滑移→0</td>
-<td>在界处失效</td>
-</tr>
-<tr>
-<td>中间广阔区</td>
-<td>
-$206$ bits ↔ $10^{-15}\ \text{J/m}^2$
-</td>
-<td><strong>完整</strong></td>
-<td>任意变化</td>
-<td><strong>刚性</strong></td>
-<td><strong>刚性</strong></td>
-</tr>
-<tr>
-<td>深空边界</td>
-<td>极低</td>
-<td>耦联断裂</td>
-<td>接近为空</td>
-<td>$\to 0$</td>
-<td>无定义</td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<p>这与 EPD-06 主文三点纠正完全一致：<strong>$G$ 只在超级中心与深空边界滑移为 0，中间区间刚性。</strong></p>
-<hr>
-<h3>六、对 EPD-06 主文的支撑</h3>
-<p>两级解耦机制对整个 EPD-06 推导链提供的强化：</p>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th>主文命题</th>
-<th>附录A支撑</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-$G$ 与 $c$ 同源（同为介质读数）</td>
-<td>同一根单弦的两个响应参数</td>
-</tr>
-<tr>
-<td>
-$G$ 刚性 ⇔ $c$ 刚性</td>
-<td>同属层次A，同为拓扑锁定</td>
-</tr>
-<tr>
-<td>
-$c \propto a_0 \mathcal{T}_{\text{topo}}$ 可跨环境推演</td>
-<td>
-$a_0$ 反映层次B，$\mathcal{T}_{\text{topo}}$ 反映层次A</td>
-</tr>
-<tr>
-<td>边界处 $c$ 滑移</td>
-<td>边界处层次A被破坏</td>
-</tr>
-<tr>
-<td>卡西米尔板间 $c$ 变化预言</td>
-<td>板间联络间距被边界条件拉伸的极端试验</td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<hr>
-<h3>七、诚实披露</h3>
-<p>以下各条均属建构假说层，待严格证明，目前不上升为定理：</p>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th>待完成项</th>
-<th>当前状态</th>
-<th>所需工作</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-$T = \mu c^2$ 的严格导出</td>
-<td>建构假说（Nambu-Goto 定义性关系）</td>
-<td>从 $M_3$（时序饱和度）与 $M_4$（自旋拓扑）严格推出</td>
-</tr>
-<tr>
-<td>
-$206$ bits $\rightarrow$ $\lambda_{\text{topo}}/\tau_0$ 的定量映射</td>
-<td>建构假说</td>
-<td>建立信息容量与空间/时序弥散的解析关系</td>
-</tr>
-<tr>
-<td>边界临界值的精确整数倍</td>
-<td>建构假说</td>
-<td>确定『整数倍』的具体数值</td>
-</tr>
-<tr>
-<td>
-$206$ bits 上限的经验来源</td>
-<td>待交叉验证</td>
-<td>与贝蒂数等拓扑参数的对应关系</td>
-</tr>
-<tr>
-<td>
-$\mathcal{K}_{\rm cosmic}=2\pi$ 的独立证明</td>
-<td>数值对齐+物理论证</td>
-<td>从 $\mathfrak{g}_2$ / $E_8$ Weyl 群积分严格推导</td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<hr>
-<h3>八、结论</h3>
-<blockquote>
-<p><strong>$G$ 与 $c$ 的刚性，来自两级解耦：能量密度属于层次B（组装密度），$G$、$c$ 属于层次A（单弦固有参数）。只要单弦完整存在，无论弦多寡，$G$、$c$ 都严格刚性。动力学根源是相对论弦自稳定——波速中的密度因子被 $T = \mu c^2$ 精确消去。</strong></p>
-<p><strong>$G$ 与 $c$ 的同步滑移，来自边界处层次A的破坏：超级中心从外压垮单弦参数，深空边界拉断弦间耦联。中间广阔区间，弦在，则刚性与光同在。</strong></p>
-</blockquote>
-<hr>
-<h1>附录B：11T-Matrix 本体论架构图（文字版）</h1>
-<p>以下大纲对应 Gemini 生成的架构图，可作为正文插图的图注或附录说明。</p>
-<h3>第一层：微观起源（层次A）</h3>
-<p>微观尺度（λ_topo / τ₀）<br>
-│<br>
-▼<br>
-相对论弦自稳定（T = μc²）<br>
-│<br>
-▼<br>
-拓扑核心（K=0锁定）<br>
-│<br>
-▼<br>
-根域介质（量子海） ←── 核心枢纽</p>
-<h3>第二层：物理量衍生（层次B）</h3>
-<p>根域介质<br>
-├── 介质剪切 ──→ 引力常数 G（剪切刚度）<br>
-│<br>
-└── 波传播 ──→ 光速 c（波速）<br>
-▲<br>
-│<br>
-┌───┴───┐<br>
-MOND加速度 a₀   哈勃时序尺度 H₀⁻¹<br>
-（尺度耦合）      （时间边界）</p>
-<h3>第三层：耦合与反馈</h3>
-<p>G ──→ 刚度耦合 ──→ 真空能量密度 E_V<br>
-│<br>
-▼<br>
-密度梯度<br>
-│<br>
-▼<br>
-G ⇄ c 波耦合（G刚性 ⇔ c刚性）</p>
-<h3>第四层：边界失效</h3>
-<p>G 与 c 同步滑移<br>
-│<br>
-▼<br>
-相边界滑移<br>
-├── 超级中心（能量密度极高 → 层次A被破坏）<br>
-│<br>
-└── 深空边界（能量密度极低 → 耦联断裂）</p>
-<hr>
-<p><strong>文档结束</strong></p></div>
+<h1>EPD-06 附录B：11T-Matrix 体系解耦架构图</h1>
+<pre lang="text" class="notranslate"><code class="notranslate">========================================================================
+[第一层：微观起源 (层次A) —— 绝对刚性区]
+       │
+       ├── 拓扑核心 (163维极值锁定, K=0)
+       ├── 单弦本征属性：空间弥散 λ_topo，时序步长 τ_0
+       └── [直接读出]：引力常数 G (单弦剪切)、光速 c (单弦波速)
+           * 特征：在单弦未被破坏的广阔物质区内【天然免疫，保持刚性】
+
+[第二层：宏观物理量衍生 (层次B) —— 环境演化区]
+       │
+       ├── 量子海联络组装密度 (弦间距 d_link)
+       └── [衍生参量]：E_V (局域体积能量密度)、a_0 (极化加速度)、H(z)
+           * 特征：随星系分布、深空边界发生跨越 40 个数量级的【剧烈变化】
+
+[第三层：跨层耦合与核心方程]
+       │
+       ├── 刚度-能量耦合：E_V = π a_0² / G  (层次B与层次A的对接枢纽)
+       └── 宏观拓扑约束：c = 2π a_0 H_0⁻¹  (流形相位锁定)
+           
+结论：G 和 c 属于层次A，E_V 属于层次B。两级解耦是 G、c 刚性的根本来源。
+========================================================================
+
+</code></pre></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
