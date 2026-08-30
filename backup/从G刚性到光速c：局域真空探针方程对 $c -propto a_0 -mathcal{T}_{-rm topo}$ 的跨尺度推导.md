@@ -17,7 +17,7 @@
 以 EPD-03 局域真空探针方程 $E_V = \pi a_0^2 / G$ 为桥梁，结合全息热力学平衡，本文推导出跨尺度的光速一般方程：
 
 
-$$c = \mathcal{K} \, a_0 \, \mathcal{T}$$
+$c = \mathcal{K} \, a_0 \, \mathcal{T}$
 
 
 在微观尺度，能量单向传播，$\mathcal{K}_{\rm micro}=1$，退化为 EPD-04 的 $c = \lambda_{\rm topo}/\tau_0$；在宇宙学尺度，能量流向闭合流形投影产生宏观全相位缠绕，给出 $\mathcal{K}_{\rm cosmic}=2\pi$，即 $c = 2\pi a_0 H_0^{-1}$（此时特征时序 $\mathcal{T} = H_0^{-1}$）。由此严格化地证明：$G$ 刚性 $\Leftrightarrow$ $c$ 刚性；$G$ 滑移（超级中心极深势阱、深空边界、引力脆断）处，$c$ 必同步滑移乃至丧失定义。
@@ -52,7 +52,7 @@ $$c = \mathcal{K} \, a_0 \, \mathcal{T}$$
 计算二者乘积的量纲：
 
 
-$$[G \cdot E_V] = [L^3 M^{-1} T^{-2}] \cdot [M L^{-1} T^{-2}] = [L^2 T^{-4}]$$
+$[G \cdot E_V] = [L^3 M^{-1} T^{-2}] \cdot [M L^{-1} T^{-2}] = [L^2 T^{-4}]$
 
 
 对其开方，恰好得到**加速度**量纲 $[L T^{-2}]$。
@@ -60,13 +60,13 @@ $$[G \cdot E_V] = [L^3 M^{-1} T^{-2}] \cdot [M L^{-1} T^{-2}] = [L^2 T^{-4}]$$
 由 EPD-03 局域探针方程 $E_V = \pi a_0^2 / G$ 严格变形，两边同乘 $G$ 并开方得到：
 
 
-$$G \cdot E_V = \pi a_0^2 \implies \sqrt{G \cdot E_V} = \sqrt{\pi} a_0$$
+$G \cdot E_V = \pi a_0^2 \implies \sqrt{G \cdot E_V} = \sqrt{\pi} a_0$
 
 
 为使量纲闭合，波速 $c$ 的一般形式必然是特征加速度与特征时序的乘积：
 
 
-$$c = \mathcal{K} \cdot a_0 \cdot \mathcal{T}$$
+$c = \mathcal{K} \cdot a_0 \cdot \mathcal{T}$
 
 
 其中 $\mathcal{T}$ 是该尺度对应的特征时序，$\mathcal{K}$ 是无量纲的拓扑常数。
@@ -93,20 +93,20 @@ $$c = \mathcal{K} \cdot a_0 \cdot \mathcal{T}$$
 在 11T-Matrix 中，当一个测试质量激发局域极化场（加速度 $a_0$）时，伴生局域 Unruh 热浴：
 
 
-$$T_U = \frac{\hbar a_0}{2\pi c k_B}$$
+$T_U = \frac{\hbar a_0}{2\pi c k_B}$
 
 
 而在宏观宇宙学尺度，哈勃视界 $R_H = c/H_0$ 具有固有的 Gibbons-Hawking 全息温度：
 
 
-$$T_H = \frac{\hbar H_0}{2\pi k_B}$$
+$T_H = \frac{\hbar H_0}{2\pi k_B}$
 
 > **注意**：$T_H$ 的定义中隐含了 $c$（因 $R_H = c/H_0$）。在此我们引入**『11T-Matrix 特有推论』**：在标准 QFT 中，局域 Unruh 效应与全域 GH 视界相互独立；但在根域介质全域连通的前提下，稳态基态要求二者净热流为零，强制达到平衡 $T_U = T_H$。
 
 由此得到连续流形下的临界加速度『裸值』：
 
 
-$$a_{0(\rm bare)} = c H_0$$
+$a_{0(\rm bare)} = c H_0$
 
 ### 3.2 $2\pi$ 拓扑相位因子的几何降维涌现
 
@@ -114,13 +114,13 @@ $$a_{0(\rm bare)} = c H_0$$
 真实的物理可观测加速度被该相位因子稀释：
 
 
-$$a_{0(\rm obs)} = \frac{a_{0(\rm bare)}}{2\pi} = \frac{c H_0}{2\pi}$$
+$a_{0(\rm obs)} = \frac{a_{0(\rm bare)}}{2\pi} = \frac{c H_0}{2\pi}$
 
 
 重排即得：
 
 
-$$c = 2\pi \cdot a_{0(\rm obs)} \cdot H_0^{-1}$$
+$c = 2\pi \cdot a_{0(\rm obs)} \cdot H_0^{-1}$
 
 
 得出宏观拓扑投影常数 **$\mathcal{K}_{\rm cosmic} = 2\pi$**。
