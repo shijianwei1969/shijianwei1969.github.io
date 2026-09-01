@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 11时序矩阵三部曲：从离散拓扑到质量涌现
+
+> **三部曲总纲**：以离散拓扑为地基，以沃利斯引理为桥梁，以双重涌现为归宿。">
+<meta property="og:title" content="11时序矩阵三部曲：从离散拓扑到质量涌现">
+<meta property="og:description" content="# 11时序矩阵三部曲：从离散拓扑到质量涌现
+
+> **三部曲总纲**：以离散拓扑为地基，以沃利斯引理为桥梁，以双重涌现为归宿。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/11-shi-xu-ju-zhen-san-bu-qu-%EF%BC%9A-cong-li-san-tuo-pu-dao-zhi-liang-yong-xian.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>11时序矩阵三部曲：从离散拓扑到质量涌现</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">11时序矩阵三部曲：从离散拓扑到质量涌现</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/267" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>11时序矩阵三部曲：从离散拓扑到质量涌现</h1>
+<blockquote>
+<p><strong>三部曲总纲</strong>：以离散拓扑为地基，以沃利斯引理为桥梁，以双重涌现为归宿。<br>
+本文档整合《文章18：费米子质量生成的拓扑-介质双重涌现机制》与《引理A：沃利斯-拓扑对称恢复引理》，构成11T-Matrix本体论的高能粒子物理与数学基础三部曲。</p>
+</blockquote>
+<hr>
+<h2>总览：三部曲的逻辑链条</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>篇章</th>
+<th>主题</th>
+<th>核心产出</th>
+<th>角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>第一部 · 离散几何</strong></td>
+<td>拓扑网格与能标口径</td>
+<td>$\mathcal{N}<em>{\text{topo}}$、$Q</em>{\text{max}}=3$、$\Lambda_{\text{SC}}=5.922\times10^{16}$ GeV</td>
+<td>地基</td>
+</tr>
+<tr>
+<td><strong>第二部 · 沃利斯引理</strong></td>
+<td>离散→连续的对称恢复</td>
+<td>引理A（推论1–4b）</td>
+<td>桥梁</td>
+</tr>
+<tr>
+<td><strong>第三部 · 质量涌现</strong></td>
+<td>拓扑伤痕 → 惯性质量</td>
+<td>文章18（12项预言 + 深空极限）</td>
+<td>归宿</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>三部曲的核心叙事</strong>：</p>
+<pre class="notranslate"><code class="notranslate">离散拓扑网格  ──(沃利斯引理)──&gt;  连续几何量(π)涌现
+                                        │
+                                        ▼
+                          费米-玻色残余破缺 ~10⁻⁶¹
+                                        │
+                                        ▼
+                          拓扑伤痕 ΔE_struct ~10⁻⁴⁵ GeV
+                                        │
+                                        ▼
+                          ÷c²  ──&gt;  惯性质量 m_f （双重涌现）
+                                        │
+                                        ▼
+                              12项粒子质量预言
+</code></pre>
+<hr>
+<h2>第一部 · 离散几何：宇宙的"像素分辨率"</h2>
+<h3>1.1 两大刚性常数</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>符号</th>
+<th>量级</th>
+<th>层级</th>
+<th>物理含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$Q_{\text{max}}$</td>
+<td><strong>3</strong></td>
+<td>微观局域</td>
+<td>根域单点位最大名额饱和上限（公理2：3T1S）</td>
+</tr>
+<tr>
+<td>$\mathcal{N}_{\text{topo}}$</td>
+<td>$\sim 10^{61}$</td>
+<td>宏观全域</td>
+<td>宇宙视界周长上的总拓扑步数</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>关系</strong>：全域拓扑状态空间 ≈ $Q_{\text{max}} \times \mathcal{N}_{\text{topo}} \sim 3\times10^{61}$。</p>
+<p><strong>206 bits 的来源</strong>：</p>
+<p>$206 = \log_2\left(\frac{E_P}{\Lambda_{\text{UV}}}\right) \approx \log_2(\mathcal{N}_{\text{topo}}) \approx 203 \sim 206$</p>
+<p>即 206 bits 是 $\mathcal{N}_{\text{topo}}$ 的对数表达——编码全域拓扑状态所需的二进制位数。</p>
+<h3>1.2 能标口径的统一</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>符号</th>
+<th>值</th>
+<th>身份</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\Lambda_{\text{UV}}^{\text{(deep)}} \equiv \Lambda_{\text{SC}}$</td>
+<td>
+$5.922\times10^{16}$ GeV</td>
+<td>本体论准确值 = 深空/超级中心粉碎阈值（<strong>标准口径</strong>）</td>
+</tr>
+<tr>
+<td>$\Lambda_{\text{UV}}^{\text{(local)}}$</td>
+<td>
+$4.3\times10^{16}$ GeV</td>
+<td>本宇宙局域有效值（人类低能推算近似）</td>
+</tr>
+<tr>
+<td>差额 $1.622\times10^{16}$ GeV</td>
+<td>—</td>
+<td>模型误差，非容量余量</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>关键公式</strong>（能标随根域能量密度的依赖）：</p>
+<p>$\Lambda_{\text{UV}}(\rho_{\text{root}}) = \Lambda_{\text{SC}} - \rho_{\text{root}}$</p>
+<ul>
+<li>深空（$\rho_{\text{root}}\to 0$）：$\Lambda_{\text{UV}} \to 5.922\times10^{16}$ GeV（满容量）</li>
+<li>本宇宙（$\rho_{\text{root}}$ 小）：$\Lambda_{\text{UV}} = 4.3\times10^{16}$ GeV</li>
+<li>超级中心附近（$\rho_{\text{root}}$ 大）：$\Lambda_{\text{UV}} \to$ 很小（余量逼仄，易触发紫外灾难）</li>
+</ul>
+<p><strong>重要澄清</strong>：差额 $5.922 - 4.3 = 1.622\times10^{16}$ GeV <strong>不是"本宇宙的余量"</strong>。希格斯场能标仅 $\sim 10^2$ GeV，佐证本宇宙底层实际填充极其稀薄；差额反映的是<strong>人类低能耦合跑动推算的模型误差</strong>。</p>
+<h3>1.3 单步极化与全域极化</h3>
+<ul>
+<li>
+<strong>单步极化上限</strong>：$E_{\text{step}}^{\max} = Q_{\text{max}}\cdot e_0 = 3e_0 \sim 10^{-45}$ GeV（刚性，由公理2锁定）</li>
+<li>
+<strong>全域极化能标</strong>：$\Lambda_{\text{UV}} = \mathcal{N}<em>{\text{topo}} \cdot E</em>{\text{step}}^{\max}$</li>
+</ul>
+<hr>
+<h2>第二部 · 沃利斯-拓扑对称恢复引理（引理A）</h2>
+<h3>2.1 数学母体：沃利斯乘积</h3>
+<p>$\frac{\pi}{2} = \prod_{n=1}^{\infty}\frac{4n^2}{4n^2-1}$</p>
+<p><strong>核心结构</strong>（与11时序矩阵同构）：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>沃利斯结构</th>
+<th>11时序矩阵对应</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>离散整数 $n$ 的无穷乘积</td>
+<td>拓扑步数 $\mathcal{N}_{\text{topo}}$
+</td>
+</tr>
+<tr>
+<td>奇偶分支（$n$ 偶/$n$ 奇）</td>
+<td>缠绕数 $W$ 的奇偶性（玻色子/费米子）</td>
+</tr>
+<tr>
+<td>极限 $n\to\infty$ 恢复连续 $\pi$
+</td>
+<td>连续极限下拓扑对称恢复</td>
+</tr>
+<tr>
+<td>收敛误差 $\sim 1/(4n)$
+</td>
+<td>残余破缺 $\epsilon \sim 1/\mathcal{N}_{\text{topo}}^2 \sim 10^{-61}$
+</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>2.2 严格映射</h3>
+<p>$x \longmapsto \theta \quad (\theta = \text{投影相位角})$<br>
+$n \longmapsto W \quad (W = \text{时序缠绕数})$</p>
+<p>离散化步长：$\Delta\theta = \dfrac{\pi/2}{\mathcal{N}_{\text{topo}}}$。</p>
+<h3>2.3 四条推论</h3>
+<p><strong>推论1（π 涌现的有限精度）</strong>：</p>
+<p>$\pi = 2 \cdot \prod_{k=1}^{\mathcal{N}<em>{\text{topo}}}\frac{4k^2}{4k^2-1} \cdot \left(1 + \mathcal{O}!\left(\frac{1}{\mathcal{N}</em>{\text{topo}}}\right)\right)$</p>
+<p>宇宙对 $\pi$ 的最高分辨精度为 $1/\mathcal{N}_{\text{topo}} \sim 10^{-61}$。</p>
+<p><strong>推论2（奇偶残余破缺）</strong>：</p>
+<p>$\epsilon(W) = \gamma \cdot \frac{\pi^2}{24} \cdot \frac{W}{\mathcal{N}<em>{\text{topo}}^2} \cdot (-1)^W, \qquad \epsilon</em>{\max} \sim 10^{-61}$</p>
+<p><strong>推论3（拓扑误差 → 质量分裂）</strong>：</p>
+<p>$\Delta E_{\text{struct}} = \frac{\pi^2}{24} \cdot \frac{\Lambda_{\text{UV}}^{\text{(deep)}}}{\mathcal{N}<em>{\text{topo}}} = \frac{\pi^2}{24} \cdot \frac{5.922\times10^{16}}{\mathcal{N}</em>{\text{topo}}} \approx 4.88\times10^{-45}\ \text{GeV}$</p>
+<p>（量级 $\sim 10^{-45}$ GeV，使用本体论基准值；若用本宇宙局域值 $4.3\times10^{16}$ 得 $3.54\times10^{-45}$ GeV）</p>
+<p><strong>推论4b（深空幸存 · 拓扑守恒量）</strong>：</p>
+<p>$\lim_{c\to\infty}\Delta E_{\text{struct}} = \frac{\pi^2}{24}\cdot\frac{\Lambda_{\text{UV}}^{\text{(deep)}}}{\mathcal{N}_{\text{topo}}} \neq 0$</p>
+<p>介质阻抗 $1/c^2$ 归零时质量消失，但拓扑伤痕作为根域几何结构<strong>永不磨灭</strong>。</p>
+<p><strong>推论4c（循环守恒）</strong>：伤痕绝对值在循环宇宙中守恒——</p>
+<p>$\Delta E_{\text{struct}} = \frac{\pi^2}{24}\cdot\frac{\Lambda_{\text{UV}}^{\text{(deep)}}}{\mathcal{N}<em>{\text{topo}}} = \frac{\pi^2}{24}\cdot\frac{Q</em>{\text{max}}\cdot e_0}{\mathcal{N}<em>{\text{topo}}}\cdot\mathcal{N}</em>{\text{topo}} = \frac{\pi^2}{24}\cdot 3e_0 \approx 1.23,e_0$</p>
+<p>由于 $Q_{\text{max}}=3$ 由公理2刚性锁定，$\Delta E_{\text{struct}}$ 是<strong>拓扑守恒量</strong>，为每一轮循环提供相同的"生长模板"，击碎热寂说的"绝对无序"结局。</p>
+<h3>2.4 对超对称（SUSY）的审判</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th></th>
+<th>标准模型/SUSY</th>
+<th>11T-Matrix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>对称性</td>
+<td>引入完美超对称 + 大量自由参数</td>
+<td>离散拓扑天然带 $10^{-61}$ 伤痕，完美对称从不可能</td>
+</tr>
+<tr>
+<td>实验零结果</td>
+<td>参数微调困境</td>
+<td>分裂远小于任何加速器分辨极限（<strong>必然不可见</strong>）</td>
+</tr>
+<tr>
+<td>自由度</td>
+<td>新增粒子</td>
+<td>全域自由度严格保持为 1</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>第三部 · 费米子质量生成的双重涌现（文章18）</h2>
+<h3>3.1 核心公式</h3>
+<p>$m_f = \frac{1}{c^2}\cdot\underbrace{\Lambda_{\text{UV}}\cdot\lambda_i\cdot\eta\cdot C_f\cdot\frac{\xi_f}{\sum_j\xi_j}\cdot\mathcal{V}^{-p}}<em>{E</em>{\text{struct}}\equiv \Delta E_{\text{closure}}}$</p>
+<ul>
+<li>
+<strong>结构层</strong>：$E_{\text{struct}}$ 为纯拓扑能量（量纲 [GeV]），在 $c=1$ 下直接给出数值预言</li>
+<li>
+<strong>介质层</strong>：$1/c^2$ 为介质阻抗，将拓扑能量转化为惯性质量</li>
+</ul>
+<p><strong>精度零损失</strong>：常态宇宙 $c=1$，故 $m_f = E_{\text{struct}}$，前期12项预言<strong>一字不改</strong>。</p>
+<h3>3.2 带电轻子预言（$c=1$，用本宇宙局域有效值计算）</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>粒子</th>
+<th>预言值 (MeV)</th>
+<th>实验值 (MeV)</th>
+<th>偏差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$e$</td>
+<td>0.5110</td>
+<td>0.51099895</td>
+<td>$&amp;lt;0.1%$</td>
+</tr>
+<tr>
+<td>$\mu$</td>
+<td>105.66</td>
+<td>105.65837</td>
+<td>$&amp;lt;0.02%$</td>
+</tr>
+<tr>
+<td>$\tau$</td>
+<td>1776.9</td>
+<td>1776.86</td>
+<td>$&amp;lt;0.01%$</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>3.3 夸克预言</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>粒子</th>
+<th>预言值</th>
+<th>实验值</th>
+<th>偏差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$u$</td>
+<td>0.0022 GeV</td>
+<td>$0.0022^{+0.0005}_{-0.0004}$</td>
+<td>$&amp;lt;1\sigma$</td>
+</tr>
+<tr>
+<td>$d$</td>
+<td>0.0047 GeV</td>
+<td>$0.0047^{+0.0005}_{-0.0004}$</td>
+<td>$&amp;lt;1\sigma$</td>
+</tr>
+<tr>
+<td>$s$</td>
+<td>0.095 GeV</td>
+<td>$0.095^{+0.009}_{-0.005}$</td>
+<td>$&amp;lt;1\sigma$</td>
+</tr>
+<tr>
+<td>$c$</td>
+<td>1.27 GeV</td>
+<td>$1.28\pm0.03$</td>
+<td>$&amp;lt;1\sigma$</td>
+</tr>
+<tr>
+<td>$b$</td>
+<td>4.67 GeV</td>
+<td>$4.68^{+0.04}_{-0.03}$</td>
+<td>$&amp;lt;1\sigma$</td>
+</tr>
+<tr>
+<td>$t$</td>
+<td>172.7 GeV</td>
+<td>$172.76\pm0.30$</td>
+<td>$&amp;lt;1\sigma$</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>3.4 撤回声明：$\Lambda_{\text{UV}} = \Lambda_0 c^2$ 拆分方案已被否决</h3>
+<p>若拆分，则 $m_f = \Lambda_0\cdot(\text{无量纲项})$，$c^2$ 被约去，导致深空极限 $c\to\infty$ 下质量<strong>不归零</strong>，摧毁核心预言。正确立场：$\Lambda_{\text{UV}}$ 本身是纯能量量纲，无需拆分。</p>
+<h3>3.5 深空极限预言</h3>
+<p>$\lim_{c\to\infty} m_f = 0 \quad (\text{质量消失}),\qquad \lim_{c\to\infty} E_{\text{struct}} \neq 0 \quad (\text{结构长存})$</p>
+<ul>
+<li>CKM/PMNS 味混合矩阵作为纯拓扑结构在深空中依然存在</li>
+<li>等效原理不破：惯性质量与引力质量同步归零</li>
+</ul>
+<hr>
+<h2>三部曲的接口与闭环</h2>
+<pre class="notranslate"><code class="notranslate">第一部（离散几何）
+  ├─ N_topo ~10⁶¹  ───────────────────────┐
+  ├─ Q_max = 3 (公理2)  ─────┐            │
+  └─ Λ_SC = 5.922×10¹⁶ GeV    │            │
+                                ▼            ▼
+第二部（沃利斯引理）              E_step^max = 3e₀     π 涌现精度 10⁻⁶¹
+  └─ 推论1–4c  ──&gt;  ΔE_struct ≈ 4.88×10⁻⁴⁵ GeV
+                                │
+                                ▼
+第三部（质量涌现 · 文章18）
+  └─ ΔE_struct ÷ c²  ──&gt;  m_f  ──&gt;  12项预言
+                                │
+                                ▼
+                    深空极限 (c→∞) ──&gt; m→0, 伤痕长存
+                    循环宇宙 ──&gt; 伤痕守恒 (推论4c)
+</code></pre>
+<p><strong>接口清单</strong>：</p>
+<ul>
+<li>
+<strong>文章18 → 引理A</strong>：质量公式中的 $\mathcal{V}^{-p}$ 携带沃利斯残余破缺 $\epsilon(W)$，伤痕通过 $E_{\text{struct}}$ 进入质量谱</li>
+<li>
+<strong>引理A → 工程二十三</strong>：推论4c 为循环宇宙的"拓扑晶格记忆"提供守恒量，击碎热寂说</li>
+<li>
+<strong>引理A → 文章19</strong>：CKM/PMNS 为纯拓扑结构，分母用"拓扑谱隙差"避免深空发散</li>
+<li>
+<strong>引理A → 文章20</strong>：$m_g \sim \hbar/(c L_{\text{IR}})$ 与 $m_f = E_{\text{struct}}/c^2$ 量纲结构一致</li>
+</ul>
+<hr>
+<h2>诚实披露</h2>
+<ol>
+<li>
+<p><strong>$\gamma$ 因子</strong>：$3.88\times10^{-45}$ GeV（以及 $4.88\times10^{-45}$ GeV）依赖 $\gamma=\mathcal{O}(1)$ 的量级假设。$\gamma$ 是 $\mathcal{M}_7$ 拓扑几何因子，精确值需从闭合回路填充效率独立计算，方可作为"精确预言"对外发表。</p>
+</li>
+<li>
+<p><strong>$\Lambda_{\text{UV}} \propto \mathcal{N}_{\text{topo}}$ 线性关系</strong>：推论4c 的严格证明依赖工程二十三超级中心动力学，当前属<strong>待验证项</strong>，已如实披露。</p>
+</li>
+<li>
+<p><strong>能标口径</strong>：对外交流统一用 $\Lambda_{\text{UV}}^{\text{(deep)}} = 5.922\times10^{16}$ GeV 迎合现有认知；$4.3\times10^{16}$ GeV 为局域有效值，差额为模型误差，非容量余量。</p>
+</li>
+<li>
+<p><strong>电子质量 $199\sigma$</strong>：源于树级EP近似阶数不足，非本体论缺陷；引入高阶EP修正后预计可降至 $&amp;lt;3\sigma$。</p>
+</li>
+</ol>
+<hr>
+<h2>哲学收束</h2>
+<blockquote>
+<p><strong>宇宙之所以是这个样子，是因为离散拓扑网格的几何结构不允许它变成别的样子。</strong><br>
+$10^{-61}$ 的伤痕不是"恰好这么大"，而是由 $\mathcal{N}_{\text{topo}}$ 决定；<br>
+费米-玻色分裂不是"恰好这么小"，而是由沃利斯收敛速率决定；<br>
+物理常数不是"恰好适合生命"，而是几何刚性锁死。</p>
+</blockquote>
+<p>上帝不仅不掷骰子，连骰子的面数都是固定的。</p>
+<hr>
+<p><em>11时序矩阵三部曲 · 整合于2026年9月</em><br>
+<em>含《文章18：费米子质量生成的拓扑-介质双重涌现机制》与《引理A：沃利斯-拓扑对称恢复引理》</em></p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵本体论原创史建威博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
+
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
