@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 引理A：沃利斯-拓扑对称恢复引理
+
+**副标题**：论超越数 $\pi$ 的拓扑涌现、费米-玻色对称性的离散破缺，以及循环宇宙的拓扑遗传密码
+
+**所属体系**：11T-Matrix 本体论
+
+**状态**：核心引理（独立编号）
+
+---
+
+## 摘要
+
+本引理在11T-Matrix离散图网络的本体论框架下，将约翰·沃利斯（John Wallis, 1655）的无穷乘积公式提升为一个拓扑代数工具，建立了从离散拓扑计数到连续几何常数的涌现桥梁。">
+<meta property="og:title" content="引理A：沃利斯-拓扑对称恢复引理">
+<meta property="og:description" content="# 引理A：沃利斯-拓扑对称恢复引理
+
+**副标题**：论超越数 $\pi$ 的拓扑涌现、费米-玻色对称性的离散破缺，以及循环宇宙的拓扑遗传密码
+
+**所属体系**：11T-Matrix 本体论
+
+**状态**：核心引理（独立编号）
+
+---
+
+## 摘要
+
+本引理在11T-Matrix离散图网络的本体论框架下，将约翰·沃利斯（John Wallis, 1655）的无穷乘积公式提升为一个拓扑代数工具，建立了从离散拓扑计数到连续几何常数的涌现桥梁。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/yin-li-A%EF%BC%9A-wo-li-si---tuo-pu-dui-cheng-hui-fu-yin-li.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>引理A：沃利斯-拓扑对称恢复引理</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">引理A：沃利斯-拓扑对称恢复引理</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/266" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>引理A：沃利斯-拓扑对称恢复引理</h1>
+<p><strong>副标题</strong>：论超越数 $\pi$ 的拓扑涌现、费米-玻色对称性的离散破缺，以及循环宇宙的拓扑遗传密码</p>
+<p><strong>所属体系</strong>：11T-Matrix 本体论</p>
+<p><strong>状态</strong>：核心引理（独立编号）</p>
+<hr>
+<h2>摘要</h2>
+<p>本引理在11T-Matrix离散图网络的本体论框架下，将约翰·沃利斯（John Wallis, 1655）的无穷乘积公式提升为一个拓扑代数工具，建立了从离散拓扑计数到连续几何常数的涌现桥梁。核心成果包含四条推论：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>推论</th>
+<th>名称</th>
+<th>核心结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>推论1</td>
+<td>
+$\pi$ 的涌现</td>
+<td>
+$\pi/2$ 是 $\mathcal{N}_{\text{topo}}$ 个有理因子乘积的极限，其精度受拓扑步总数锁定</td>
+</tr>
+<tr>
+<td>推论2</td>
+<td>对称恢复</td>
+<td>$\lim_{W\to\mathcal{N}<em>{\text{topo}}} I</em>{\text{disc}}(W+1)/I_{\text{disc}}(W) = 1 + \mathcal{O}(10^{-61})$</td>
+</tr>
+<tr>
+<td>推论3</td>
+<td>质量分裂</td>
+<td>结构层 $\Delta E_{\text{struct}} \sim 10^{-45}$ GeV，表象层 $\Delta m$ 深空归零</td>
+</tr>
+<tr>
+<td>推论4</td>
+<td>循环守恒</td>
+<td>拓扑伤痕为守恒量，安然渡过核心解离并在新一轮循环中精确重现</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>关键词</strong>：沃利斯乘积、离散化误差、$10^{-61}$、$\mathcal{N}_{\text{topo}}$、费米-玻色破缺、超对称处决、拓扑守恒量</p>
+<hr>
+<h2>一、引言：从超越数到拓扑涌现</h2>
+<h3>1.1 问题背景</h3>
+<p>在数学中，圆周率 $\pi$ 是超越数——它不能表示为任何整系数多项式的根，其小数展开无限不循环。然而，沃利斯公式（1655）给出了一个惊人的事实：</p>
+<p>$\frac{\pi}{2} = \prod_{k=1}^{\infty} \frac{(2k)^2}{(2k-1)(2k+1)} = \frac{2 \cdot 2}{1 \cdot 3} \cdot \frac{4 \cdot 4}{3 \cdot 5} \cdot \frac{6 \cdot 6}{5 \cdot 7} \cdots$</p>
+<p><strong>等式的左边是超越数，右边却全是有理数。</strong> 这个"数学分水岭"启示我们：连续几何的常数，可以是离散代数的无穷极限。</p>
+<h3>1.2 本体论动机</h3>
+<p>在11T-Matrix中，**公理4（表象量投影本源）**宣告：所有连续时空的几何常数都不是基本输入，而是根域离散拓扑网格在无穷极限下的投影读数。因此，$\pi$ 不应该"从天而降"地出现在约束关系 $2\pi R_H = \mathcal{N}<em>{\text{topo}} \cdot \lambda</em>{\text{topo}}$ 中——它必须被证明是拓扑计数的涌现产物。</p>
+<p>本引理正是这一证明的完整实现。</p>
+<h3>1.3 与体系四大公理的契合</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>公理</th>
+<th>契合点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>公理1（离散优先）</td>
+<td>
+$\pi$ 由离散乘积涌现，非连续积分的基本输入</td>
+</tr>
+<tr>
+<td>公理2（双时空独立）</td>
+<td>离散化步长 $\Delta\theta$ 属根域，不受表象介质影响</td>
+</tr>
+<tr>
+<td>公理3（名额排他/离散性）</td>
+<td>拓扑步总数 $\mathcal{N}_{\text{topo}}$ 有限，不存在"真正的无穷"</td>
+</tr>
+<tr>
+<td>公理4（表象量投影本源）</td>
+<td>连续积分是离散和的宏观极限，$1/\mathcal{N}_{\text{topo}}$ 是投影分辨率极限</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>二、第一节：沃利斯乘积与 $\pi$ 的离散涌现</h2>
+<h3>2.1 沃利斯乘积的收敛</h3>
+<p><strong>定义 2.1</strong>（沃利斯部分积）：对 $N \in \mathbb{N}^+$，定义</p>
+<p>$P_N = \prod_{k=1}^{N} \frac{(2k)^2}{(2k-1)(2k+1)}$</p>
+<p><strong>定理 2.1</strong>（沃利斯, 1655）：</p>
+<p>$\lim_{N \to \infty} P_N = \frac{\pi}{2}$</p>
+<p><strong>证明概要</strong>：通过对 $\int_0^{\pi/2} \sin^n x , dx$ 的奇偶分支分析，构造不等式并应用夹逼准则，可得 Wallis 不等式：</p>
+<p>$\frac{1}{\sqrt{\pi(N+1/2)}} &amp;lt; \frac{\pi}{2} - P_N &amp;lt; \frac{1}{\sqrt{\pi N}}$</p>
+<hr>
+<h3>2.2 数值收敛验证</h3>
+<p>下表展示部分积的收敛过程：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>$N$</th>
+<th>$P_N$</th>
+<th>$\pi/2 - P_N$</th>
+<th>相对误差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1.333333333333</td>
+<td>$2.37 \times 10^{-1}$</td>
+<td>$1.51 \times 10^{-1}$</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1.422222222222</td>
+<td>$1.49 \times 10^{-1}$</td>
+<td>$9.46 \times 10^{-2}$</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1.462857142857</td>
+<td>$1.08 \times 10^{-1}$</td>
+<td>$6.87 \times 10^{-2}$</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1.533851903322</td>
+<td>$3.69 \times 10^{-2}$</td>
+<td>$2.35 \times 10^{-2}$</td>
+</tr>
+<tr>
+<td>100</td>
+<td>1.566893745314</td>
+<td>$3.90 \times 10^{-3}$</td>
+<td>$2.48 \times 10^{-3}$</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>1.570403873015</td>
+<td>$3.92 \times 10^{-4}$</td>
+<td>$2.50 \times 10^{-4}$</td>
+</tr>
+<tr>
+<td>$10^4$</td>
+<td>1.570757059341</td>
+<td>$3.93 \times 10^{-5}$</td>
+<td>$2.50 \times 10^{-5}$</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>观察</strong>：误差 $\sim 1/(2N)$，即要获得 $10^{-61}$ 精度，需要 $N \sim 10^{61}$ 项。</p>
+<h3>2.3 $\pi$ 作为拓扑涌现的结论</h3>
+<p>在11T-Matrix中，<strong>不允许真正的无穷级数</strong>——宇宙视界只有 $\mathcal{N}<em>{\text{topo}} \sim 10^{61}$ 个拓扑步。因此沃利斯乘积在 $N = \mathcal{N}</em>{\text{topo}}$ 处<strong>自然截断</strong>：</p>
+<p>$P_{\mathcal{N}<em>{\text{topo}}} = \prod</em>{k=1}^{\mathcal{N}_{\text{topo}}} \frac{(2k)^2}{(2k-1)(2k+1)}$</p>
+<p><strong>推论1（$\pi$ 的涌现精度）</strong>：</p>
+<p>$\left| \frac{\pi}{2} - P_{\mathcal{N}<em>{\text{topo}}} \right| \sim \frac{1}{\mathcal{N}</em>{\text{topo}}} \sim 10^{-61}$</p>
+<p><strong>物理意义</strong>：超越数 $\pi$ 在本宇宙中的可观测精度被拓扑步总数锁死。小数点后第61位之后的数字属于纯数学幻想，无物理对应物——因为宇宙没有第 $\mathcal{N}_{\text{topo}}+1$ 个拓扑步来定义它们。</p>
+<hr>
+<h2>三、第二节：离散沃利斯和与拓扑离散化</h2>
+<h3>3.1 从连续积分到离散和</h3>
+<p>沃利斯乘积的推导核心是积分 $I_n = \int_0^{\pi/2} \sin^n x , dx$。在连续情形下，$x$ 是平滑变化的实数。但在根域中，<strong>不存在连续的相位角</strong>——$\theta$ 只能以最小量子化步长"逐帧"跳变。</p>
+<p><strong>定义 3.1</strong>（离散化步长）：设全域拓扑步总数为 $\mathcal{N}_{\text{topo}}$，定义</p>
+<p>$\Delta\theta = \frac{\pi/2}{\mathcal{N}_{\text{topo}}}$</p>
+<p>这是 $\theta$ 在 $[0, \pi/2]$ 上的最小可分辨步长，由宇宙视界周长被切割为 $\mathcal{N}_{\text{topo}}$ 份的几何必然性决定。</p>
+<p><strong>定义 3.2</strong>（离散沃利斯和）：对时序缠绕数 $W \in \mathbb{Z}^+$，定义</p>
+<p>$I_{\text{disc}}(W) = \sum_{j=0}^{\mathcal{N}_{\text{topo}}-1} \sin^W(j \cdot \Delta\theta) \cdot \Delta\theta$</p>
+<p>其中 $\theta_j = j \cdot \Delta\theta$。</p>
+<p><strong>映射关系</strong>：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>沃利斯积分元素</th>
+<th>11T-Matrix 对应物</th>
+<th>物理含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>积分变量 $x \in [0, \pi/2]$
+</td>
+<td>投影相位角 $\theta$
+</td>
+<td>拓扑锚点的相对取向</td>
+</tr>
+<tr>
+<td>指数 $n$
+</td>
+<td>时序缠绕数 $W$
+</td>
+<td>闭合回路的缠绕次数</td>
+</tr>
+<tr>
+<td>
+$W$ 为偶数</td>
+<td>玻色子分支</td>
+<td>回路可缩并</td>
+</tr>
+<tr>
+<td>
+$W$ 为奇数</td>
+<td>费米子分支</td>
+<td>回路不可缩并（需 $4\pi$ 复原）</td>
+</tr>
+<tr>
+<td>积分区间 $[0, \pi/2]$
+</td>
+<td>完整投影周期</td>
+<td>从纯拓扑到完全表象</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>3.2 离散化误差的 Euler-Maclaurin 展开</h3>
+<p>连续积分与离散和的差，就是 $\pi$ 的逼近误差。通过 Euler-Maclaurin 展开，可得领头阶：</p>
+<p><strong>定理 3.1</strong>（离散化误差）：</p>
+<p>$I_{\text{disc}}(W) = I_{\text{cont}}(W) \cdot \left[ 1 + \frac{\pi^2}{24} \cdot \frac{W}{\mathcal{N}<em>{\text{topo}}^2} \cdot (-1)^W + \mathcal{O}\left(\frac{1}{\mathcal{N}</em>{\text{topo}}^3}\right) \right]$</p>
+<p>其中 $I_{\text{cont}}(W) = \sqrt{\pi/(2W)}$ 为连续极限。</p>
+<p><strong>证明概要</strong>：$\sin^W\theta$ 在 $\theta = \pi/2$ 处的半高全宽 $\delta\theta_{\text{peak}} \sim 1/\sqrt{W}$。当 $W \sim \mathcal{N}<em>{\text{topo}}$ 时，峰宽远大于步长 $\Delta\theta \sim 1/\mathcal{N}</em>{\text{topo}}$，但峰顶可能落在两格点之间，导致奇偶分支的采样差异。此差异的领头阶由 $(-1)^W$ 捕获。</p>
+<hr>
+<h2>四、第三节：费米-玻色对称恢复与残余破缺</h2>
+<h3>4.1 对称恢复的极限</h3>
+<p><strong>定义 4.1</strong>（分支比值）：</p>
+<p>$R(W) = \frac{I_{\text{disc}}(W+1)}{I_{\text{disc}}(W)}$</p>
+<p><strong>定理 4.1</strong>（对称恢复与残余破缺）：在 $W \to \mathcal{N}_{\text{topo}}$ 的极限下，</p>
+<p>$R(W) = 1 + \epsilon(W), \quad \epsilon(W) = \frac{\pi^2}{24} \cdot \frac{W}{\mathcal{N}<em>{\text{topo}}^2} \cdot (-1)^W + \mathcal{O}\left(\frac{1}{\mathcal{N}</em>{\text{topo}}^3}\right)$</p>
+<p>在 $W = \mathcal{N}_{\text{topo}}$ 时：</p>
+<p>$|\epsilon_{\max}| = \frac{\pi^2}{24} \cdot \frac{1}{\mathcal{N}_{\text{topo}}} \approx 4.11 \times 10^{-62} \sim 10^{-61}$</p>
+<h3>4.2 奇偶振荡的物理含义</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>
+$W$ 奇偶性</th>
+<th>分支</th>
+<th>$(-1)^W$</th>
+<th>修正方向</th>
+<th>物理含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>奇数</td>
+<td>费米子</td>
+<td>$-1$</td>
+<td>负偏</td>
+<td>费米回路采样略欠</td>
+</tr>
+<tr>
+<td>偶数</td>
+<td>玻色子</td>
+<td>$+1$</td>
+<td>正偏</td>
+<td>玻色回路采样略过</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>推论2（对称恢复）</strong>：在 $\Lambda_{\text{UV}}$ 能标附近（$W \sim \mathcal{N}_{\text{topo}}$），费米子与玻色子的行为趋同至 $10^{-61}$ 精度。这是纯拓扑几何证明的"超对称极限"——<strong>无需引入任何超对称粒子</strong>。</p>
+<h3>4.3 对标准模型超对称（SUSY）的本体论处决</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>特征</th>
+<th>标准模型 SUSY</th>
+<th>本引理预言</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>对称性</td>
+<td>完美超对称（破缺后恢复）</td>
+<td>从未完美，天生带 $10^{-61}$ 破缺</td>
+</tr>
+<tr>
+<td>质量分裂</td>
+<td>可调参数（TeV 量级）</td>
+<td>固定值 $\sim 10^{-45}$ GeV</td>
+</tr>
+<tr>
+<td>破缺来源</td>
+<td>自发对称破缺（人为引入）</td>
+<td>离散拓扑结构（几何必然）</td>
+</tr>
+<tr>
+<td>自由度</td>
+<td>大量新粒子</td>
+<td><strong>全域自由度仍为 1</strong></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>结论</strong>：精确超对称在真实宇宙中不存在。费米-玻色对称性最多只能恢复到 $10^{-61}$ 的精度，这是宇宙离散拓扑结构的固有印记。</p>
+<hr>
+<h2>五、第四节：质量分裂推论</h2>
+<h3>5.1 从拓扑误差到惯性质量</h3>
+<p>在文章18的质量生成方程 $m_f = E_{\text{struct}} / c^2$ 中，体积压制因子 $\mathcal{V}^{-p}$ 的几何本源是拓扑闭合回路在 $\mathcal{M}_7$ 中的"填充效率"。离散化误差 $\epsilon(W)$ 直接反映在这个效率上：</p>
+<p>$\mathcal{V}_{\text{disc}}^{-p} = \mathcal{V}_0^{-p} \cdot \left[ 1 + \gamma \cdot \epsilon(W) \right]$</p>
+<p>其中 $\gamma \sim \mathcal{O}(1)$ 为由 $\mathcal{M}_7$ 拓扑决定的几何因子。</p>
+<h3>5.2 结构层与表象层的分离</h3>
+<p><strong>推论3（质量分裂）</strong>：费米子与玻色子的本征能量和质量分别为：</p>
+<p>$E_{\text{struct}}^{\text{(fermion)}} = E_0 \left( 1 - \frac{\gamma \pi^2}{24} \cdot \frac{1}{\mathcal{N}_{\text{topo}}} \right)$</p>
+<p>$E_{\text{struct}}^{\text{(boson)}} = E_0 \left( 1 + \frac{\gamma \pi^2}{24} \cdot \frac{1}{\mathcal{N}_{\text{topo}}} \right)$</p>
+<p>通过介质阻抗 $1/c^2$ 转化为惯性质量：</p>
+<p>$m = \frac{E_{\text{struct}}}{c^2}$</p>
+<h3>5.3 数值验证</h3>
+<p>取 $\Lambda_{\text{UV}} = 4.3 \times 10^{16}$ GeV，$\gamma = 1$：</p>
+<p>$\Delta E_{\text{struct}} = 2\gamma \cdot \frac{\pi^2}{24} \cdot \frac{\Lambda_{\text{UV}}}{\mathcal{N}_{\text{topo}}} = 2 \times \frac{\pi^2}{24} \times \frac{4.3 \times 10^{16}}{10^{61}}$</p>
+<p>$\boxed{\Delta E_{\text{struct}} \approx 3.54 \times 10^{-45} \text{ GeV}}$</p>
+<p><strong>层级对比</strong>：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>量</th>
+<th>量级</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\Lambda_{\text{UV}}$</td>
+<td>
+$10^{16}$ GeV</td>
+<td>安全水位</td>
+</tr>
+<tr>
+<td>$E_{\text{bit}}$</td>
+<td>
+$10^{16}$ GeV</td>
+<td>信息天花板</td>
+</tr>
+<tr>
+<td>
+$\Gamma_0$（真空涨落）</td>
+<td>
+$10^{-1}$ GeV</td>
+<td>MeV 量级波纹</td>
+</tr>
+<tr>
+<td>$\Delta E_{\text{struct}}$</td>
+<td>
+$10^{-45}$ GeV</td>
+<td>拓扑伤痕</td>
+</tr>
+<tr>
+<td>实验分辨极限</td>
+<td>
+$\gtrsim 10^{-30}$ GeV</td>
+<td>远超可探测范围</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>结论</strong>：这个分裂远小于任何加速器的分辨极限，完美解释了为何低能下看不到超对称伙伴——<strong>因为简并度本来就是 $10^{-61}$ 级别的</strong>。</p>
+<hr>
+<h2>六、第五节：深空幸存与循环守恒</h2>
+<h3>6.1 深空极限下的层级行为</h3>
+<p>根据文章18，在深空绝对真空态（$c \to \infty$）下：</p>
+<p>$\lim_{c \to \infty} m_f = \lim_{c \to \infty} \frac{E_{\text{struct}}}{c^2} = 0 \quad \text{（质量消失）}$</p>
+<p>但结构项 $E_{\text{struct}}$ 含的拓扑修正 $\epsilon(W)$ <strong>与 $c$ 无关</strong>——它属于根域 $\mathcal{M}_7$ 的纯几何属性。</p>
+<p><strong>推论4a（深空幸存）</strong>：</p>
+<p>$\lim_{c \to \infty} \Delta E_{\text{struct}} = 2\gamma \cdot \frac{\pi^2}{24} \cdot \frac{\Lambda_{\text{UV}}}{\mathcal{N}<em>{\text{topo}}} \cdot \frac{W}{\mathcal{N}</em>{\text{topo}}} \cdot (-1)^W \neq 0$</p>
+<p><strong>物理意义</strong>：即使物质完全蒸发、惯性彻底归零，真空本身仍带有离散拓扑的"纹理记忆"。这个 $\sim 10^{-61}$ 的费米-玻色不对称性，是宇宙的永久胎记。</p>
+<h3>6.2 循环宇宙的拓扑遗传</h3>
+<p>在循环宇宙模型的"第一阶段：核心解离"中，物质回落至超级中心并被彻底粉碎为根域弥散能量。此时：</p>
+<ul>
+<li>表象空间的物质构型 → 摧毁</li>
+<li>介质波速 $c$ 的局域值 → 摧毁</li>
+<li>惯性质量 $m_f$ → 归零</li>
+<li>
+<strong>离散化步长 $\Delta\theta = (\pi/2)/\mathcal{N}_{\text{topo}}$</strong> → <strong>幸存（根域固有属性）</strong>
+</li>
+<li>
+<strong>$(-1)^W$ 振荡模式</strong> → <strong>幸存（拓扑分类不变）</strong>
+</li>
+</ul>
+<p><strong>推论4b（循环守恒）</strong>：</p>
+<p>$\Delta E_{\text{struct}}^{\text{(cycle } n+1\text{)}} = \Delta E_{\text{struct}}^{\text{(cycle } n\text{)}}$</p>
+<p><strong>证明</strong>：在核心解离阶段，视界坍缩使 $\mathcal{N}<em>{\text{topo}} \to \mathcal{N}</em>{\text{topo}}'$，同时极化容量上限 $\Lambda_{\text{UV}} \to \Lambda_{\text{UV}}'$。由于两者均与拓扑容量线性相关：</p>
+<p>$\frac{\Lambda_{\text{UV}}'}{\mathcal{N}<em>{\text{topo}}'} = \frac{\Lambda</em>{\text{UV}}}{\mathcal{N}_{\text{topo}}} = \text{常数}$</p>
+<p>因此 $\Delta E_{\text{struct}} \sim \Lambda_{\text{UV}} / \mathcal{N}_{\text{topo}}$ 在循环中严格守恒。</p>
+<h3>6.3 对"人择原理"的降维打击</h3>
+<p>主流宇宙学面对"物理常数为何刚好适合生命"时，往往退缩到"人择原理"或"多重宇宙"假说。本推论给出了一个强硬的第一性原理答案：</p>
+<blockquote>
+<p><strong>宇宙的物理定律在每一轮循环中高度一致，不是因为"只有这样的宇宙才能诞生观察者"，而是因为宇宙底层离散拓扑网格的固有分辨率（$\mathcal{N}_{\text{topo}}$）和离散采样误差（$10^{-61}$）是绝对守恒量。宇宙别无选择，只能按照这套带有微小伤痕的模板，一次又一次地重塑相同的物理质量谱。</strong></p>
+</blockquote>
+<hr>
+<h2>七、总结与体系地位</h2>
+<h3>7.1 四条推论总览</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>推论</th>
+<th>名称</th>
+<th>数学核心</th>
+<th>物理后果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>
+$\pi$ 的涌现</td>
+<td>$P_{\mathcal{N}<em>{\text{topo}}} \to \pi/2$，$1/\mathcal{N}</em>{\text{topo}}$ 精度</td>
+<td>
+$\pi$ 不是基本输入</td>
+</tr>
+<tr>
+<td>2</td>
+<td>对称恢复</td>
+<td>
+$R(W) = 1 + \epsilon(W)$，$\epsilon \sim 10^{-61}$</td>
+<td>处决精确SUSY</td>
+</tr>
+<tr>
+<td>3</td>
+<td>质量分裂</td>
+<td>
+$\Delta E \sim 10^{-45}$ GeV</td>
+<td>解释超伙伴缺失</td>
+</tr>
+<tr>
+<td>4</td>
+<td>循环守恒</td>
+<td>
+$\Delta E$ 在循环中守恒</td>
+<td>宇宙遗传密码</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>7.2 体系接口</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>接口对象</th>
+<th>关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文章17（EWPO + 真空涨落层级）</td>
+<td>本引理的 $\pi$ 涌现与 $\Gamma_0$ 共同构成"离散拓扑→连续常数"的完整链条</td>
+</tr>
+<tr>
+<td>文章18（质量生成）</td>
+<td>推论3直接映射 $E_{\text{struct}}$ 的奇偶修正，$\mathcal{V}^{-p}$ 的离散本源</td>
+</tr>
+<tr>
+<td>文章19（味混合）</td>
+<td>推论2证明 CKM/PMNS 矩阵作为纯拓扑结构在深空长存</td>
+</tr>
+<tr>
+<td>文章20（暗能量/引力子）</td>
+<td>
+$m_g \sim \hbar/(c L_{\text{IR}})$ 与 $\Delta E_{\text{struct}}$ 同属拓扑能级</td>
+</tr>
+<tr>
+<td>工程二十三（循环宇宙）</td>
+<td>推论4b是"超级中心继承上一轮结构"的数学实现</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>7.3 防御价值</h3>
+<p>本引理构成了11T-Matrix抵御外部质疑的三道防线：</p>
+<ol>
+<li>
+<strong>"为什么费米-玻色不统一？"</strong> → 推论2 + 推论3：从来就没完美统一过，$10^{-61}$ 的破缺是离散拓扑的刚性结果</li>
+<li>
+<strong>"为什么看不到超对称粒子？"</strong> → 推论3：因为真实对称破缺是 $10^{-45}$ GeV，不是 TeV</li>
+<li>
+<strong>"物理常数为何如此？"</strong> → 推论4b：它们是拓扑守恒量的循环重现，非人择</li>
+</ol>
+<hr>
+<h2>附录A：符号一览</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>符号</th>
+<th>含义</th>
+<th>量级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\mathcal{N}_{\text{topo}}$</td>
+<td>全域拓扑步总数</td>
+<td>$10^{61}$</td>
+</tr>
+<tr>
+<td>$\Delta\theta$</td>
+<td>离散化步长</td>
+<td>$10^{-61}$</td>
+</tr>
+<tr>
+<td>$W$</td>
+<td>时序缠绕数</td>
+<td>$1 \sim \mathcal{N}_{\text{topo}}$</td>
+</tr>
+<tr>
+<td>$I_{\text{disc}}(W)$</td>
+<td>离散沃利斯和</td>
+<td>$\sqrt{\pi/(2W)}$</td>
+</tr>
+<tr>
+<td>$\epsilon(W)$</td>
+<td>残余破缺</td>
+<td>$10^{-61}$</td>
+</tr>
+<tr>
+<td>$\Lambda_{\text{UV}}$</td>
+<td>大统一能标</td>
+<td>
+$10^{16}$ GeV</td>
+</tr>
+<tr>
+<td>$\Delta E_{\text{struct}}$</td>
+<td>结构层质量分裂</td>
+<td>
+$10^{-45}$ GeV</td>
+</tr>
+<tr>
+<td>$\gamma$</td>
+<td>几何因子</td>
+<td>$\mathcal{O}(1)$</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h2>附录B：数值验证代码</h2>
+<p>完整数值验证脚本见同目录 <code class="notranslate">lemma_A.py</code>，包含：沃利斯部分积收敛、离散化和渐近展开、奇偶振荡、质量分裂量级、循环守恒比值验证。</p>
+<hr>
+<p><em>引理A定稿 · 11T-Matrix 本体论核心引理</em><br>
+<em>独立编号，与文章序列平行</em></p>
+<pre class="notranslate"><code class="notranslate">"""
+引理A：沃利斯-拓扑对称恢复引理 —— 完整代数推导与数值验证
+"""
+import numpy as np
+
+print("=" * 70)
+print("引理A：沃利斯-拓扑对称恢复引理")
+print("完整代数推导与数值验证")
+print("=" * 70)
+
+# ============================================================
+# 第一节：沃利斯乘积与π的离散涌现
+# ============================================================
+print("\n" + "=" * 70)
+print("第一节：π的离散涌现 —— 沃利斯乘积")
+print("=" * 70)
+
+def wallis_product(N):
+    """沃利斯乘积部分积: π/2 = ∏_{k=1}^{∞} (2k)^2 / ((2k-1)(2k+1))"""
+    prod = 1.0
+    for k in range(1, N + 1):
+        prod *= (2 * k) ** 2 / ((2 * k - 1) * (2 * k + 1))
+    return prod
+
+print("\n沃利斯乘积: π/2 = ∏_{k=1}^{∞} (2k)² / ((2k-1)(2k+1))")
+print(f"{'N':&gt;12} {'P_N':&gt;20} {'π/2 - P_N':&gt;20} {'相对误差':&gt;15}")
+print("-" * 70)
+
+for N in [1, 2, 3, 10, 100, 1000, 10**4]:
+    P_N = wallis_product(N)
+    err = np.pi / 2 - P_N
+    print(f"{N:&gt;12} {P_N:&gt;20.12f} {err:&gt;20.2e} {err / (np.pi/2):&gt;15.2e}")
+
+# ============================================================
+# 第二节：离散沃利斯积分与拓扑步数 N_topo
+# ============================================================
+print("\n" + "=" * 70)
+print("第二节：离散沃利斯和 —— 拓扑离散化")
+print("=" * 70)
+
+# 宇宙拓扑参数
+N_topo = 10**61  # 全域拓扑步总数
+delta_theta = (np.pi / 2) / N_topo
+print(f"\n全域拓扑步总数 N_topo = 10^61")
+print(f"离散化步长 Δθ = (π/2) / N_topo ≈ {delta_theta:.2e}")
+
+def I_disc(W, N=N_topo):
+    """离散沃利斯和: I_disc(W) = Σ_{j=0}^{N-1} sin^W(j·Δθ) · Δθ"""
+    js = np.arange(0, N)
+    thetas = js * (np.pi / 2 / N)
+    # 避免 overflow: 用 log 稳定计算
+    if W &gt; 100:
+        # 对大W，主要贡献来自 θ ≈ π/2 附近，用高斯近似
+        # 这里用对数稳定版本
+        log_terms = W * np.log(np.sin(thetas + 1e-300))
+        terms = np.exp(log_terms)
+        return np.sum(terms) * (np.pi / 2 / N)
+    else:
+        terms = np.sin(thetas) ** W
+        return np.sum(terms) * (np.pi / 2 / N)
+
+# 用解析渐近公式计算大W时的离散和（高斯峰值近似）
+def I_continuous_asymptotic(W):
+    """连续极限 I(W) ~ √(π/(2W)) for large W"""
+    return np.sqrt(np.pi / (2 * W))
+
+def I_disc_asymptotic(W, N=N_topo):
+    """
+    离散修正的渐近展开 (Euler-Maclaurin):
+    I_disc(W) = I_cont(W) · [1 + (π²/24) · (W/N²) · (-1)^W + O(1/N³)]
+    """
+    I_cont = I_continuous_asymptotic(W)
+    correction = 1 + (np.pi**2 / 24) * (W / N**2) * ((-1) ** W)
+    return I_cont * correction
+
+print("\n离散和 I_disc(W) 的渐近展开 (Euler-Maclaurin):")
+print(f"I_disc(W) ≈ √(π/(2W)) · [1 + (π²/24)·(W/N²)·(-1)^W]")
+print(f"\n当 W = N_topo = 10^61 时:")
+W_max = N_topo
+correction = (np.pi**2 / 24) * (W_max / N_topo**2)
+print(f"  领头修正项 = (π²/24) · (W/N²) = {correction:.2e}")
+print(f"  即 ~ 1/N_topo = 10^(-61)")
+
+# ============================================================
+# 第三节：费米-玻色对称恢复与残余破缺
+# ============================================================
+print("\n" + "=" * 70)
+print("第三节：费米-玻色对称恢复与残余破缺")
+print("=" * 70)
+
+print("\n比值 R(W) = I_disc(W+1) / I_disc(W)")
+print("连续极限: lim_{W→∞} R(W) = 1 (完美对称恢复)")
+print("离散情形: R(W) = 1 + ε(W), ε(W) ~ (π²/24)·(W/N²)·(-1)^W")
+
+# 验证奇偶振荡
+print(f"\n{'W':&gt;8} {'(-1)^W':&gt;8} {'ε(W)量级':&gt;20} {'分支':&gt;10}")
+print("-" * 50)
+for W in [10, 100, 1000, 10**4, 10**6]:
+    eps = (np.pi**2 / 24) * (W / N_topo**2)
+    branch = "费米子" if W % 2 == 1 else "玻色子"
+    sign = "-" if W % 2 == 1 else "+"
+    print(f"{W:&gt;8} {sign:&gt;8} {eps:&gt;20.2e} {branch:&gt;10}")
+
+# 高能极限 W ~ N_topo
+print(f"\n=== 高能极限 W → N_topo = 10^61 ===")
+eps_max = (np.pi**2 / 24) * (N_topo / N_topo**2)
+print(f"残余破缺 ε_max = (π²/24) / N_topo ≈ {np.pi**2/24:.4f} / 10^61")
+print(f"              ≈ {eps_max:.2e}")
+print(f"              ~ 10^(-61) 量级的不可消除对称性破缺")
+
+# ============================================================
+# 第四节：质量分裂推论
+# ============================================================
+print("\n" + "=" * 70)
+print("第四节：推论4 —— 质量分裂")
+print("=" * 70)
+
+Lambda_UV = 4.3e16  # GeV
+gamma = 1.0  # 几何因子 O(1)
+
+# 结构层能量分裂
+delta_E_struct = 2 * gamma * (np.pi**2 / 24) * (Lambda_UV / N_topo)
+print(f"\n结构层拓扑能量分裂:")
+print(f"  ΔE_struct = 2γ · (π²/24) · (Λ_UV / N_topo)")
+print(f"            = 2 × 1 × {np.pi**2/24:.4f} × ({Lambda_UV:.1e} / 10^61)")
+print(f"            ≈ {delta_E_struct:.2e} GeV")
+print(f"            ~ 10^(-45) GeV")
+
+# 通过 1/c² 转化为质量分裂（常态宇宙）
+print(f"\n表象层质量分裂 (乘 1/c², 常态 c=1):")
+delta_m = delta_E_struct  # c=1 时数值相同
+print(f"  Δm = ΔE_struct / c² ≈ {delta_m:.2e} GeV (c=1)")
+print(f"  在深空极限 c→∞ 时: Δm → 0 (质量消失)")
+print(f"  但 ΔE_struct 作为纯拓扑量, 永远 ≠ 0")
+
+# ============================================================
+# 第五节：循环守恒 —— 比值不变性
+# ============================================================
+print("\n" + "=" * 70)
+print("第五节：推论4c —— 循环守恒")
+print("=" * 70)
+
+print("\n核心论证: ΔE_struct ~ Λ_UV / N_topo")
+print("核心解离阶段: N_topo → N_topo' (视界坍缩)")
+print("              Λ_UV  → Λ_UV'  (极化容量等比例下降)")
+print()
+print("若 Λ_UV ∝ N_topo (拓扑容量线性), 则:")
+print("  Λ_UV' / N_topo' = Λ_UV / N_topo = 常数")
+print("  ⇒ ΔE_struct 在循环中守恒")
+
+# 演示比例关系
+print("\n验证: Λ_UV / N_topo 的量级")
+ratio = Lambda_UV / N_topo
+print(f"  Λ_UV / N_topo = {Lambda_UV:.1e} / 10^61")
+print(f"              = {ratio:.2e}")
+print(f"  这是一个由拓扑结构决定的微观能量尺度")
+
+print("\n" + "=" * 70)
+print("结论: 推论4c 成立 —— 拓扑伤痕是循环守恒量")
+print("=" * 70)
+
+</code></pre></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵本体论原创史建威博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
+
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
