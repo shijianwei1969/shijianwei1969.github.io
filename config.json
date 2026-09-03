@@ -1,8 +1,8 @@
 {
     "title": "11时序矩阵本体论原创史建威博客",
     "subTitle": "山东威海高中物理教师 · 理论物理原创研究发布",
-    "avatarUrl": "https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1",
-    "iconUrl": "https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1",
+    "avatarUrl": "[https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1](https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1)",
+    "iconUrl": "[https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1](https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1)",
     "author": "史建威",
     "copyright": "© 史建威 原创理论著作，未经授权禁止转载、AI搬运及二次改写商用",
     "startSite": "2026-07-10",
@@ -11,8 +11,7 @@
     "countVisitors": 1,
     "defaultLabel": "理论物理",
     "GMEEK_VERSION": "last",
-    "themeMode": "system",
-    "allHead": "<script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\\\(', '\\\\)']], packages: {'[+]': ['ams','newcommand']}, processEscapes: true }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>",
+    "allHead": "",
     "sideInfo": [
         {
             "title": "关于作者",
