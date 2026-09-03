@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     name: Generate blog
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
     if: ${{ github.event.repository.owner.id == github.event.sender.id || github.event_name == 'schedule' }}
     permissions: write-all
     steps:
@@ -20,19 +20,10 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Get config.json
         run: |
-          set +e
           echo "====== check config.json file ======"
           cat config.json
-          echo "cat return: $?"
           echo "====== check config.json end  ======"
           jq --version
-          echo "jq version return: $?"
-          echo "====== config json parse test ======"
-          jq -r ".GMEEK_VERSION" config.json
-          echo "parse GMEEK_VERSION return: $?"
-          jq -r ".email" config.json
-          echo "parse email return: $?"
-          set -e
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
@@ -73,7 +64,7 @@ jobs:
           
   deploy:
     name: Deploy blog
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
     needs: build
     permissions:
       contents: write
