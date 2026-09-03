@@ -11,7 +11,8 @@
     "countVisitors": 1,
     "defaultLabel": "理论物理",
     "GMEEK_VERSION": "last",
-    "allHead": "<script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\\\(', '\\\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script>",
+    "themeMode": "system",
+    "allHead": "<script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\\\(', '\\\\)']], packages: {'[+]': ['ams','newcommand']}, processEscapes: true }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>",
     "sideInfo": [
         {
             "title": "关于作者",
