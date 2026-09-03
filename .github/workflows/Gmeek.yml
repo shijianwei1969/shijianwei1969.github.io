@@ -1,50 +1,73 @@
-name: Gmeek Build & Deploy
-
+name: build Gmeek
 on:
-  push:
-    branches: [ main ]
   workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  issues:
+    types: [opened, edited]
+  schedule:
+    - cron: "0 16 * * *"
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
+    if: ${{ github.event.repository.owner.id == github.event.sender.id || github.event_name == 'schedule' }}
+    permissions: write-all
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v6
-        with:
-          python-version: "3.12"
-
-      - name: Install gmeek
-        run: |
-          python -m pip install --upgrade pip
-          pip install gmeek
-
-      - name: Build site with Gmeek
-        run: gmeek build
-
-      - name: Configure GitHub Pages
+      - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@v5
 
-      - name: Upload pages artifact
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.8'
+
+      - name: Clone Gmeek
+        run: |
+          git clone https://github.com/Meekdai/Gmeek.git /opt/Gmeek
+          cd /opt/Gmeek
+          lastTag=$(git describe --tags `git rev-list --tags --max-count=1`)
+          git checkout $lastTag
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r /opt/Gmeek/requirements.txt
+
+      - name: Run Gmeek
+        run: |
+          cp -r ./* /opt/Gmeek/
+          cd /opt/Gmeek
+          python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ github.event.issue.number }}'
+          cp -a /opt/Gmeek/docs ${{ github.workspace }}
+          cp -a /opt/Gmeek/backup ${{ github.workspace }}
+          cp /opt/Gmeek/blogBase.json ${{ github.workspace }}
+
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -a -m "🎉 auto build by Gmeek" || echo "nothing to commit"
+          git push || echo "nothing to push"
+
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          path: 'docs/.'
 
   deploy:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    concurrency:
+      group: "pages"
+      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
