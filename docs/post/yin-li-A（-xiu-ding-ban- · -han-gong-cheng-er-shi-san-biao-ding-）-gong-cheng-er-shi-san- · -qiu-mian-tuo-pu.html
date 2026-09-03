@@ -5,11 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
-    <script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script>
-    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
-        let theme = localStorage.getItem("meek_theme") || "light";
-        document.documentElement.setAttribute("data-color-mode", theme);
-    </script>
+    <script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams','newcommand']}, processEscapes: true }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
 <meta name="description" content="# 工程二十三 · 球面拓扑
 ## 一维拓扑链 → 三维球面的几何因子标定
 https://doi.org/10.5281/zenodo.22256229
@@ -51,7 +48,17 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     body {padding: 8px;}
     .postTitle{font-size:24px;}
 }
-
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
 </style>
 
 
@@ -380,103 +387,123 @@ $6.14\times10^{-47}$ GeV$^4$</td>
 </table></markdown-accessiblity-table>
 <hr>
 <h2><em>— 引理A 修订版 · 接入工程二十三 · 球面拓扑</em></h2>
-<h1>"""<br>
-工程二十三：球面拓扑 —— 一维拓扑链 → 三维球面映射的几何因子</h1>
-<p>目标：标定引理A 推论3/4d 中遗留的 O(10) 几何因子 γ，<br>
-使拓扑伤痕 ΔE 与真空涨落能 ρ_vac 精确锁定观测值。</p>
-<p>体系前提（已由推论4c 严格证明锁定）：</p>
-<ul>
-<li>e0 刚性（根域最小能量量子），Q_max = 3（公理2，3T1S）</li>
-<li>N_topo = 2^206 ≈ 1.028×10^62 （206 bits 信息天花板）</li>
-<li>Λ_UV^(deep) = 5.922×10^16 GeV （粉碎阈值，广延量）</li>
-<li>Λ_UV = 3 e0 N_topo  ⟹  e0 = Λ_UV / (3 N_topo)</li>
-</ul>
-<p>遗留问题：纯一维链代入得 ΔE_1D = (π²/8) e0 ≈ 2.37×10^-46 GeV，<br>
-而观测/旧值指向 ~10^-45 GeV，差一个 O(10) 的球面几何因子。<br>
-"""</p>
-<p>import numpy as np</p>
-<h1>---------- 基础常数 ----------</h1>
-<p>Q_max = 3                      # 微观名额上限（刚性）<br>
-N_topo = 2**206                # 全域拓扑步数（206 bits）<br>
-Lambda_UV = 5.922e16           # 深空基准 / 粉碎阈值 [GeV]<br>
-pi = np.pi</p>
-<p>e0 = Lambda_UV / (Q_max * N_topo)   # 根域最小能量量子 [GeV]<br>
-DE_1D = (pi**2 / 8) * e0            # 纯一维拓扑链伤痕 [GeV]</p>
-<p>print("=" * 62)<br>
-print("工程二十三 · 输入（刚性锚定）")<br>
-print("=" * 62)<br>
-print(f"Q_max              = {Q_max}")<br>
-print(f"N_topo = 2^206      = {N_topo:.4e}")<br>
-print(f"Λ_UV^(deep)         = {Lambda_UV:.3e} GeV")<br>
-print(f"e0 = Λ/(3 N_topo)  = {e0:.4e} GeV")<br>
-print(f"ΔE_1D = (π²/8) e0  = {DE_1D:.4e} GeV")</p>
-<h1>---------- 观测锚点 ----------</h1>
-<h1>推论4d：ρ_vac = M_Pl^4 / N_topo^2 ；用其反推 e0 应有的放大倍数</h1>
-<p>M_Pl = 1.2209e19       # 约化普朗克质量 [GeV] （c=ℏ=1）<br>
-rho_obs = 3.645e-47     # 观测暗能量密度 [GeV^4] (Planck 2018)</p>
-<p>rho_raw = M_Pl<strong>4 / N_topo</strong>2     # 纯一维（无几何因子）预测<br>
-print("\n" + "=" * 62)<br>
-print("工程二十三 · 推论4d 反向锚定")<br>
-print("=" * 62)<br>
-print(f"ρ_raw = M_Pl^4 / N_topo^2 = {rho_raw:.4e} GeV^4")<br>
-print(f"ρ_obs (Planck 2018)        = {rho_obs:.4e} GeV^4")<br>
-print(f"缺失几何因子 ρ_obs/ρ_raw   = {rho_obs/rho_raw:.6f}")</p>
-<h1>---------- 球面几何因子的理论构造 ----------</h1>
-<h1>一维链 → 三维球面的映射，几何因子 γ 来自：</h1>
-<h1>(i)  球面积分  4π</h1>
-<h1>(ii) 径向模数  (N_topo)^(1/3) 的统计权重</h1>
-<h1>(iii) Q_max = 3 的微观名额修正</h1>
-<h1></h1>
-<h1>候选构造（均属 O(10)，待球面拓扑严格判定）：</h1>
-<p>candidates = {}</p>
-<h1>候选 A：纯球面积分 4π （体积元 dΩ 归一化到 4π）</h1>
-<p>candidates["A: 4π"] = 4 * pi</p>
-<h1>候选 B：Q_max/(4π) —— 推论4d 已发现的最优因子</h1>
-<p>candidates["B: Q_max/(4π)"] = Q_max / (4 * pi)</p>
-<h1>候选 C：表面积/体积混合 (4π)^(2/3) —— 三维球壳计数</h1>
-<p>candidates["C: (4π)^(2/3)"] = (4 * pi) ** (2 / 3)</p>
-<h1>候选 D：径向模数因子 N_topo^(1/3) 的 e0 重整化</h1>
-<h1>ΔE_3D = ΔE_1D × (4π)^(1/3)  （每个径向壳贡献 4π 个角向模）</h1>
-<p>candidates["D: (4π)^(1/3)"] = (4 * pi) ** (1 / 3)</p>
-<h1>候选 E：组合 —— 推论4c/d 共同最优解</h1>
-<h1>γ = (4π)^(2/3) / Q_max   （面积-体积混合 ÷ 名额修正）</h1>
-<p>candidates["E: (4π)^(2/3)/Q_max"] = (4 * pi) ** (2 / 3) / Q_max</p>
-<p>print("\n" + "=" * 62)<br>
-print("工程二十三 · 几何因子候选（一维 → 三维球面）")<br>
-print("=" * 62)</p>
-<p>best_gamma = None<br>
-best_DE = None<br>
-for name, gamma in candidates.items():<br>
-DE_3D = DE_1D * gamma<br>
-ratio = DE_3D / 1e-45   # 相对 10^-45 GeV 目标量级<br>
-print(f"  {name:22s} γ = {gamma:8.4f}   ΔE = {DE_3D:.4e} GeV  (~{ratio:.2f}×10^-45)")</p>
-<h1>---------- 判定：哪个候选把 ΔE 带到 ~10^-45 且闭合 4d? ----------</h1>
-<h1>自洽条件：同一 γ 必须同时满足</h1>
-<h1>(1) ΔE_3D = ΔE_1D × γ ≈ 量级 10^-45 GeV</h1>
-<h1>(2) ρ_vac 修正后与 ρ_obs 一致（推论4d 闭环）</h1>
-<h1></h1>
-<h1>物理约束：三维拓扑步数 = (一维链)^3 的统计包裹，</h1>
-<h1>每个径向壳的角向简并度 = 4π（球面积分的自然单位），</h1>
-<h1>故最自然的 γ 应含 (4π)^n 且 n ~ 1/3 或 2/3。</h1>
-<p>print("\n" + "=" * 62)<br>
-print("工程二十三 · 自洽判定")<br>
-print("=" * 62)</p>
-<p>for name, gamma in candidates.items():<br>
-DE_3D = DE_1D * gamma<br>
-# 推论4d 闭环：ρ 应被同一 γ 修正（ρ ∝ ΔE^2 量纲一致性）<br>
-rho_3D = rho_raw * gamma**2<br>
-# 判定：ΔE 在 [1,10]×10^-45 且 ρ_3D 在 [0.1, 10]×ρ_obs<br>
-de_ok = 1e-45 &lt;= DE_3D &lt;= 1e-44<br>
-rho_ok = 0.1 * rho_obs &lt;= rho_3D &lt;= 10 * rho_obs<br>
-flag = "✅ 双闭环" if (de_ok and rho_ok) else "—"<br>
-print(f"  {name:22s} ΔE={DE_3D:.3e}  ρ={rho_3D:.3e}  {flag}")</p>
-<h1>---------- 输出推荐值 ----------</h1>
-<h1>选择同时闭合 ΔE 与 ρ 的候选（若存在），否则给最优折中</h1>
-<p>print("\n" + "=" * 62)<br>
-print("工程二十三 · 结论占位（待球面拓扑严格标定）")<br>
-print("=" * 62)<br>
-print("（严格判定需由球面拓扑的谐波展开 / 角向简并度计算完成，")<br>
-print(" 见配套文档 engineering_23_spherical_topology.md）")</p></div>
+<pre class="notranslate"><code class="notranslate">"""
+工程二十三：球面拓扑 —— 一维拓扑链 → 三维球面映射的几何因子
+=================================================================
+目标：标定引理A 推论3/4d 中遗留的 O(10) 几何因子 γ，
+      使拓扑伤痕 ΔE 与真空涨落能 ρ_vac 精确锁定观测值。
+
+体系前提（已由推论4c 严格证明锁定）：
+  - e0 刚性（根域最小能量量子），Q_max = 3（公理2，3T1S）
+  - N_topo = 2^206 ≈ 1.028×10^62 （206 bits 信息天花板）
+  - Λ_UV^(deep) = 5.922×10^16 GeV （粉碎阈值，广延量）
+  - Λ_UV = 3 e0 N_topo  ⟹  e0 = Λ_UV / (3 N_topo)
+
+遗留问题：纯一维链代入得 ΔE_1D = (π²/8) e0 ≈ 2.37×10^-46 GeV，
+          而观测/旧值指向 ~10^-45 GeV，差一个 O(10) 的球面几何因子。
+"""
+
+import numpy as np
+
+# ---------- 基础常数 ----------
+Q_max = 3                      # 微观名额上限（刚性）
+N_topo = 2**206                # 全域拓扑步数（206 bits）
+Lambda_UV = 5.922e16           # 深空基准 / 粉碎阈值 [GeV]
+pi = np.pi
+
+e0 = Lambda_UV / (Q_max * N_topo)   # 根域最小能量量子 [GeV]
+DE_1D = (pi**2 / 8) * e0            # 纯一维拓扑链伤痕 [GeV]
+
+print("=" * 62)
+print("工程二十三 · 输入（刚性锚定）")
+print("=" * 62)
+print(f"Q_max              = {Q_max}")
+print(f"N_topo = 2^206      = {N_topo:.4e}")
+print(f"Λ_UV^(deep)         = {Lambda_UV:.3e} GeV")
+print(f"e0 = Λ/(3 N_topo)  = {e0:.4e} GeV")
+print(f"ΔE_1D = (π²/8) e0  = {DE_1D:.4e} GeV")
+
+# ---------- 观测锚点 ----------
+# 推论4d：ρ_vac = M_Pl^4 / N_topo^2 ；用其反推 e0 应有的放大倍数
+M_Pl = 1.2209e19       # 约化普朗克质量 [GeV] （c=ℏ=1）
+rho_obs = 3.645e-47     # 观测暗能量密度 [GeV^4] (Planck 2018)
+
+rho_raw = M_Pl**4 / N_topo**2     # 纯一维（无几何因子）预测
+print("\n" + "=" * 62)
+print("工程二十三 · 推论4d 反向锚定")
+print("=" * 62)
+print(f"ρ_raw = M_Pl^4 / N_topo^2 = {rho_raw:.4e} GeV^4")
+print(f"ρ_obs (Planck 2018)        = {rho_obs:.4e} GeV^4")
+print(f"缺失几何因子 ρ_obs/ρ_raw   = {rho_obs/rho_raw:.6f}")
+
+# ---------- 球面几何因子的理论构造 ----------
+# 一维链 → 三维球面的映射，几何因子 γ 来自：
+#   (i)  球面积分  4π
+#   (ii) 径向模数  (N_topo)^(1/3) 的统计权重
+#   (iii) Q_max = 3 的微观名额修正
+#
+# 候选构造（均属 O(10)，待球面拓扑严格判定）：
+candidates = {}
+
+# 候选 A：纯球面积分 4π （体积元 dΩ 归一化到 4π）
+candidates["A: 4π"] = 4 * pi
+
+# 候选 B：Q_max/(4π) —— 推论4d 已发现的最优因子
+candidates["B: Q_max/(4π)"] = Q_max / (4 * pi)
+
+# 候选 C：表面积/体积混合 (4π)^(2/3) —— 三维球壳计数
+candidates["C: (4π)^(2/3)"] = (4 * pi) ** (2 / 3)
+
+# 候选 D：径向模数因子 N_topo^(1/3) 的 e0 重整化
+#   ΔE_3D = ΔE_1D × (4π)^(1/3)  （每个径向壳贡献 4π 个角向模）
+candidates["D: (4π)^(1/3)"] = (4 * pi) ** (1 / 3)
+
+# 候选 E：组合 —— 推论4c/d 共同最优解
+#   γ = (4π)^(2/3) / Q_max   （面积-体积混合 ÷ 名额修正）
+candidates["E: (4π)^(2/3)/Q_max"] = (4 * pi) ** (2 / 3) / Q_max
+
+print("\n" + "=" * 62)
+print("工程二十三 · 几何因子候选（一维 → 三维球面）")
+print("=" * 62)
+
+best_gamma = None
+best_DE = None
+for name, gamma in candidates.items():
+    DE_3D = DE_1D * gamma
+    ratio = DE_3D / 1e-45   # 相对 10^-45 GeV 目标量级
+    print(f"  {name:22s} γ = {gamma:8.4f}   ΔE = {DE_3D:.4e} GeV  (~{ratio:.2f}×10^-45)")
+
+# ---------- 判定：哪个候选把 ΔE 带到 ~10^-45 且闭合 4d? ----------
+# 自洽条件：同一 γ 必须同时满足
+#   (1) ΔE_3D = ΔE_1D × γ ≈ 量级 10^-45 GeV
+#   (2) ρ_vac 修正后与 ρ_obs 一致（推论4d 闭环）
+#
+# 物理约束：三维拓扑步数 = (一维链)^3 的统计包裹，
+#   每个径向壳的角向简并度 = 4π（球面积分的自然单位），
+#   故最自然的 γ 应含 (4π)^n 且 n ~ 1/3 或 2/3。
+
+print("\n" + "=" * 62)
+print("工程二十三 · 自洽判定")
+print("=" * 62)
+
+for name, gamma in candidates.items():
+    DE_3D = DE_1D * gamma
+    # 推论4d 闭环：ρ 应被同一 γ 修正（ρ ∝ ΔE^2 量纲一致性）
+    rho_3D = rho_raw * gamma**2
+    # 判定：ΔE 在 [1,10]×10^-45 且 ρ_3D 在 [0.1, 10]×ρ_obs
+    de_ok = 1e-45 &lt;= DE_3D &lt;= 1e-44
+    rho_ok = 0.1 * rho_obs &lt;= rho_3D &lt;= 10 * rho_obs
+    flag = "✅ 双闭环" if (de_ok and rho_ok) else "—"
+    print(f"  {name:22s} ΔE={DE_3D:.3e}  ρ={rho_3D:.3e}  {flag}")
+
+# ---------- 输出推荐值 ----------
+# 选择同时闭合 ΔE 与 ρ 的候选（若存在），否则给最优折中
+print("\n" + "=" * 62)
+print("工程二十三 · 结论占位（待球面拓扑严格标定）")
+print("=" * 62)
+print("（严格判定需由球面拓扑的谐波展开 / 角向简并度计算完成，")
+print(" 见配套文档 engineering_23_spherical_topology.md）")
+</code></pre></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
@@ -501,34 +528,9 @@ if("2026-07-10"!=""){
 </script></div>
 </body>
 <script>
-var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
 var utterancesLoad=0;
 
-let themeSettings={
-    "dark": ["dark","moon","#00f0ff","dark-blue"],
-    "light": ["light","sun","#ff5000","github-light"],
-    "auto": ["auto","sync","","preferred-color-scheme"]
-};
-function changeTheme(mode, icon, color, utheme){
-    document.documentElement.setAttribute("data-color-mode",mode);
-    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
-    document.getElementById("themeSwitch").parentNode.style.color=color;
-    if(utterancesLoad==1){utterancesTheme(utheme);}
-}
-function modeSwitch(){
-    let currentMode=document.documentElement.getAttribute('data-color-mode');
-    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
-    localStorage.setItem("meek_theme", newMode);
-    if(themeSettings[newMode]){
-        changeTheme(...themeSettings[newMode]);
-    }
-}
-function utterancesTheme(theme){
-    const message={type:'set-theme',theme: theme};
-    const iframe=document.getElementsByClassName('utterances-frame')[0];
-    iframe.contentWindow.postMessage(message,'https://utteranc.es');
-}
-if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
 console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
 </script>
 
@@ -552,9 +554,7 @@ function openComments(){
     script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
     script.setAttribute("issue-term","title");
     
-    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
-    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
-    else{script.setAttribute("theme","preferred-color-scheme");}
+    script.setAttribute("theme","dark");
     
     script.setAttribute("crossorigin","anonymous");
     script.setAttribute("async","");
@@ -575,7 +575,70 @@ function iFrameLoading(){
     }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
 
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
 
 </script>
 <script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
