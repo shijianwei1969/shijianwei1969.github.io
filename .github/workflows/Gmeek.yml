@@ -24,6 +24,11 @@ jobs:
         with:
           python-version: '3.8'
 
+      - name: Install system deps for lxml
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libxml2-dev libxslt-dev
+
       - name: Clone Gmeek
         run: |
           git clone https://github.com/Meekdai/Gmeek.git /opt/Gmeek
