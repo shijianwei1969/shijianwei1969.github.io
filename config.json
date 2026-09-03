@@ -1,18 +1,17 @@
 {
-    "title": "11 时序矩阵本体论原创史建威博客",
-    "subTitle": "山东威海高中物理教师・理论物理原创研究发布",
+    "title": "11时序矩阵本体论原创史建威博客",
+    "subTitle": "山东威海高中物理教师 · 理论物理原创研究发布",
     "avatarUrl": "https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1",
     "iconUrl": "https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1",
     "author": "史建威",
-    "copyright": "© 史建威 原创理论著作，未经授权禁止转载、AI 搬运及二次改写商用",
+    "copyright": "© 史建威 原创理论著作，未经授权禁止转载、AI搬运及二次改写商用",
     "startSite": "2026-07-10",
     "per_page": 10,
     "needComment": 1,
     "countVisitors": 1,
     "defaultLabel": "理论物理",
     "GMEEK_VERSION": "last",
-    "themeMode": "system",
-    "allHead": "<script>(function(){var Z='\\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(s){return s.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');}t=t.replace(/(\\$[^\\$]+?\\$)/g,function(m){return restore(m);});t=t.replace(/\\$\\$([\\s\\S]*?)\\$\\$/g,function(m){return restore(m);});e.innerHTML=t;};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix);}else{fix();}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\\\(', '\\\\)']], packages: {'[+]': ['ams','newcommand']}, processEscapes: true }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'></script>",
+    "allHead": "<script>(function(){var Z='\\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\\$\\$([\\s\\S]*?)\\$\\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\\\])\\$([^\\n$]+?)\\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\\\(', '\\\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>",
     "sideInfo": [
         {
             "title": "关于作者",
