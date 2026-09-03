@@ -28,6 +28,10 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: 3.8
+      - name: Install system lib for lxml
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libxml2-dev libxslt-dev
       - name: Clone source code
         run: |
           GMEEK_VERSION=$(jq -r ".GMEEK_VERSION" config.json)
