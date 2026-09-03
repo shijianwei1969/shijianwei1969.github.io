@@ -13,23 +13,23 @@ https://doi.org/10.5281/zenodo.22256229
 
 $\Delta E_{\text{struct}} = \frac{\pi^2}{8}\,e_0, \qquad e_0 = \frac{\Lambda_{\text{UV}}^{\text{(deep)}}}{Q_{\max}\,\mathcal{N}_{\text{topo}}}$
 
-其中 $e_0$ 是**刚性常数**（$Q_{\max}=3$ 与基准尺度 $l_{r,0}$ 锁定），$\Lambda_{\text{UV}}$ 是**广延量**（$\Lambda_{\text{UV}} \propto \mathcal{N}_{\text{topo}}$）。代数层无懈可击。
+其中 $e_0$ 是**刚性常数**（ $Q_{\max}=3$ 与基准尺度  $l_{r,0}$ 锁定） ， $\Lambda_{\text{UV}}$  是**广延量**（ $\Lambda_{\text{UV}} \propto \mathcal{N}_{\text{topo}}$  ）。代数层无懈可击。
 
 但代入纯一维拓扑链的数值后：
 
-$\mathcal{N}_{\text{topo}} = 2^{206} \approx 1.0284\times10^{62}, \quad \Lambda_{\text{UV}}^{\text{(deep)}} = 5.922\times10^{16}\ \text{GeV}$
+$$\mathcal{N}_{\text{topo}} = 2^{206} \approx 1.0284\times10^{62}, \quad \Lambda_{\text{UV}}^{\text{(deep)}} = 5.922\times10^{16}\ \text{GeV}$$
 
-$e_0 = \frac{5.922\times10^{16}}{3\times 1.0284\times10^{62}} \approx 1.919\times10^{-46}\ \text{GeV}$
+$$e_0 = \frac{5.922\times10^{16}}{3\times 1.0284\times10^{62}} \approx 1.919\times10^{-46}\ \text{GeV}$$
 
-$\Delta E_{\text{1D}} = \frac{\pi^2}{8}\,e_0 \approx 2.37\times10^{-46}\ \text{GeV}$
+$$\Delta E_{\text{1D}} = \frac{\pi^2}{8}\,e_0 \approx 2.37\times10^{-46}\ \text{GeV}$$
 
 **与观测/旧值指向的 $\sim 10^{-45}$ GeV 相差约 4–20 倍**。这就是「一维拓扑链 → 三维表象空间」映射中尚未计入的**球面几何因子**。
 
 推论4d（真空能反向锚定）暴露出**完全同源**的缺口：
 
-$\rho_{\text{raw}} = \frac{M_{\text{Pl}}^4}{\mathcal{N}_{\text{topo}}^2} \approx 2.10\times10^{-48}\ \text{GeV}^4, \quad \rho_{\text{obs}} = 3.645\times10^{-47}\ \text{GeV}^4$
+$$\rho_{\text{raw}} = \frac{M_{\text{Pl}}^4}{\mathcal{N}_{\text{topo}}^2} \approx 2.10\times10^{-48}\ \text{GeV}^4, \quad \rho_{\text{obs}} = 3.645\times10^{-47}\ \text{GeV}^4$$
 
-$\frac{\rho_{\text{obs}}}{\rho_{\text{raw}}} \approx 17.35 = \frac{Q_{\max}}{4\pi}\ \text{的量级}^{-1}$
+$$\frac{\rho_{\text{obs}}}{\rho_{\text{raw}}} \approx 17.35 = \frac{Q_{\max}}{4\pi}\ \text{的量级}^{-1}$$
 
 **两个缺口是同一个几何因子在两侧的表现**——这正是工程二十三要捕获的。
 
@@ -58,9 +58,9 @@ $\frac{\rho_{\text{obs}}}{\rho_{\text{raw}}} \approx 17.35 = \frac{Q_{\max}}{4\p
 
 三维拓扑步数的统计包裹关系：
 
-$\mathcal{N}_{\text{3D}} \sim \frac{4\pi}{3}\,R_H^3 / \lambda_{\text{topo}}^3 = \frac{4\pi}{3}\,\mathcal{N}_{\text{topo}}$
+$$\mathcal{N}_{\text{3D}} \sim \frac{4\pi}{3}\,R_H^3 / \lambda_{\text{topo}}^3 = \frac{4\pi}{3}\,\mathcal{N}_{\text{topo}}$$
 
-但伤痕 $\Delta E$ 是**能量量纲**（一维链上每步的极化差），映射到三维时要乘的是**每个径向壳的角向模权重**，即 $(4\pi)^{1/3}$ 量级的因子，再叠加体积-面积混合修正 $(4\pi)^{2/3}$。
+但伤痕  $\Delta E$ 是**能量量纲**（一维链上每步的极化差），映射到三维时要乘的是**每个径向壳的角向模权重**，即 $(4\pi)^{1/3}$  量级的因子，再叠加体积-面积混合修正  $(4\pi)^{2/3}$。
 
 ### 2.2 候选集
 
@@ -76,8 +76,8 @@ $\mathcal{N}_{\text{3D}} \sim \frac{4\pi}{3}\,R_H^3 / \lambda_{\text{topo}}^3 = 
 
 一个合格的 $\gamma$ 必须**同时**闭合推论3 与推论4d：
 
-1. **伤痕闭环**：$\Delta E_{\text{3D}} = \Delta E_{\text{1D}}\cdot\gamma$ 落在 $[1,10]\times10^{-45}$ GeV
-2. **真空能闭环**：$\rho_{\text{3D}} = \rho_{\text{raw}}\cdot\gamma^2$ 落在 $[0.1,10]\times\rho_{\text{obs}}$
+1. **伤痕闭环**：$\Delta E_{\text{3D}} = \Delta E_{\text{1D}}\cdot\gamma$  落在  $[1,10]\times10^{-45}$ GeV
+2. **真空能闭环**： $\rho_{\text{3D}} = \rho_{\text{raw}}\cdot\gamma^2$   落在 $[0.1,10]\times\rho_{\text{obs}}$
 
 ---
 
@@ -107,19 +107,19 @@ $\boxed{\gamma = (4\pi)^{2/3} \approx 5.405}$
 
 ### 4.2 推论3（伤痕）精确值
 
-$\Delta E_{\text{struct}} = \gamma \cdot \frac{\pi^2}{8}\,e_0 = (4\pi)^{2/3}\cdot\frac{\pi^2}{8}\cdot\frac{\Lambda_{\text{UV}}^{\text{(deep)}}}{3\mathcal{N}_{\text{topo}}}$
+$$\Delta E_{\text{struct}} = \gamma \cdot \frac{\pi^2}{8}\,e_0 = (4\pi)^{2/3}\cdot\frac{\pi^2}{8}\cdot\frac{\Lambda_{\text{UV}}^{\text{(deep)}}}{3\mathcal{N}_{\text{topo}}}$$
 
-$\boxed{\Delta E_{\text{struct}} \approx 1.28\times10^{-45}\ \text{GeV}}$
+$$\boxed{\Delta E_{\text{struct}} \approx 1.28\times10^{-45}\ \text{GeV}}$$
 
 ### 4.3 推论4d（真空能）精确值
 
-$\rho_{\text{vac}} = \gamma^2 \cdot \frac{M_{\text{Pl}}^4}{\mathcal{N}_{\text{topo}}^2} = (4\pi)^{4/3}\cdot\frac{M_{\text{Pl}}^4}{(2^{206})^2}$
+$$\rho_{\text{vac}} = \gamma^2 \cdot \frac{M_{\text{Pl}}^4}{\mathcal{N}_{\text{topo}}^2} = (4\pi)^{4/3}\cdot\frac{M_{\text{Pl}}^4}{(2^{206})^2}$$
 
-$\rho_{\text{vac}} \approx 6.14\times10^{-47}\ \text{GeV}^4$
+$$\rho_{\text{vac}} \approx 6.14\times10^{-47}\ \text{GeV}^4$$
 
 相对观测值 $3.645\times10^{-47}$ GeV$^4$ 的误差 **+68%**（在量级精确与单参数拟合可接受范围）。
 
-> **若进一步叠加 $Q_{\max}=3$ 的微观名额修正**（候选 E 的方向，$\gamma \to \gamma/Q_{\max}$），可将 6.14 压至 $2.05\times10^{-47}$，与观测误差缩至 44%。这提示**最终精确因子可能是 $(4\pi)^{2/3}\cdot\mathcal{F}(Q_{\max})$**，其中 $\mathcal{F}(3)$ 待球面谐波展开的严格计算确定。工程二十三给出的 **$(4\pi)^{2/3}$ 是主项，误差项 $\mathcal{F}(Q_{\max})$ 量级 $\mathcal{O}(1)$。**
+> **若进一步叠加 $Q_{\max}=3$ 的微观名额修正**（候选 E 的方向，$\gamma \to \gamma/Q_{\max}$ ），可将 6.14 压至 $2.05\times10^{-47}$，与观测误差缩至 44%。这提示**最终精确因子可能是 $(4\pi)^{2/3}\cdot\mathcal{F}(Q_{\max})$**，其中 $\mathcal{F}(3)$ 待球面谐波展开的严格计算确定。工程二十三给出的 **$(4\pi)^{2/3}$ 是主项，误差项 $\mathcal{F}(Q_{\max})$ 量级 $\mathcal{O}(1)$。**
 
 ---
 
@@ -144,7 +144,7 @@ $\rho_{\text{vac}} \approx 6.14\times10^{-47}\ \text{GeV}^4$
 
 ## 七、诚实披露
 
-- **$\gamma=(4\pi)^{2/3}$** 的选定基于双闭环判据与量纲自然性，**主项正确**，残余 $\mathcal{F}(Q_{\max})$ 为 $\mathcal{O}(1)$ 待严格化
+- **$\gamma=(4\pi)^{2/3}$** 的选定基于双闭环判据与量纲自然性，**主项正确**，残余   $\mathcal{F}(Q_{\max})$ 为 $\mathcal{O}(1)$      待严格化
 - 若将 $\mathcal{F}(Q_{\max})$ 一并计入，最终精度有望进入 **10% 以内**
 - 沙盒核验脚本：`engineering_23_spherical_topology.py`，所有数值可复算
 
@@ -163,11 +163,11 @@ $\rho_{\text{vac}} \approx 6.14\times10^{-47}\ \text{GeV}^4$
 
 **含球面几何因子的精确表达式**：
 
-$\Delta E_{\text{struct}} = \underbrace{(4\pi)^{2/3}}_{\gamma}\cdot\frac{\pi^2}{8}\,e_0 = (4\pi)^{2/3}\cdot\frac{\pi^2}{8}\cdot\frac{\Lambda_{\text{UV}}^{\text{(deep)}}}{Q_{\max}\,\mathcal{N}_{\text{topo}}}$
+$$\Delta E_{\text{struct}} = \underbrace{(4\pi)^{2/3}}_{\gamma}\cdot\frac{\pi^2}{8}\,e_0 = (4\pi)^{2/3}\cdot\frac{\pi^2}{8}\cdot\frac{\Lambda_{\text{UV}}^{\text{(deep)}}}{Q_{\max}\,\mathcal{N}_{\text{topo}}}$$
 
 **数值**：
 
-$\boxed{\Delta E_{\text{struct}} \approx 1.28\times10^{-45}\ \text{GeV}}$
+$$\boxed{\Delta E_{\text{struct}} \approx 1.28\times10^{-45}\ \text{GeV}}$$
 
 （旧值 $2.37\times10^{-46}$ 为纯一维链代入，未含球面因子；旧值 $4.88\times10^{-45}$ 为历史局域口径，已归档。）
 
@@ -175,7 +175,7 @@ $\boxed{\Delta E_{\text{struct}} \approx 1.28\times10^{-45}\ \text{GeV}}$
 
 ## 推论4c（不变）：循环守恒
 
-$\Delta E_{\text{struct}} = \frac{\pi^2}{8}\,e_0$
+$$\Delta E_{\text{struct}} = \frac{\pi^2}{8}\,e_0$$
 
 **$\mathcal{N}_{\text{topo}}$ 在代数中消去，$e_0$ 刚性（推论4c (A) 逻辑）** → 伤痕在循环中严格守恒。
 
@@ -185,11 +185,11 @@ $\Delta E_{\text{struct}} = \frac{\pi^2}{8}\,e_0$
 
 ## 推论4d（修订）：真空涨落能 / 暗能量
 
-$\rho_{\text{vac}} = (4\pi)^{4/3}\cdot\frac{M_{\text{Pl}}^4}{\mathcal{N}_{\text{topo}}^2}$
+$$\rho_{\text{vac}} = (4\pi)^{4/3}\cdot\frac{M_{\text{Pl}}^4}{\mathcal{N}_{\text{topo}}^2}$$
 
 **数值**：
 
-$\boxed{\rho_{\text{vac}} \approx 6.14\times10^{-47}\ \text{GeV}^4}$
+$$\boxed{\rho_{\text{vac}} \approx 6.14\times10^{-47}\ \text{GeV}^4}$$
 
 相对 Planck 2018 观测值 $3.645\times10^{-47}$ GeV$^4$ 的误差 **+68%**（量级精确；残余 $\mathcal{O}(1)$ 来自 $\mathcal{F}(Q_{\max})$ 待严格化）。
 

@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
-    <script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams','newcommand']}, processEscapes: true }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
-    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
 <meta name="description" content="# 工程二十三 · 球面拓扑
 ## 一维拓扑链 → 三维球面的几何因子标定
 https://doi.org/10.5281/zenodo.22256229
@@ -102,15 +105,15 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <h2>〇、问题缘起</h2>
 <p>推论4c 的严格证明（史老师拨乱反正，选定 <strong>(A) 逻辑</strong>）确立了：</p>
 <p>$\Delta E_{\text{struct}} = \frac{\pi^2}{8},e_0, \qquad e_0 = \frac{\Lambda_{\text{UV}}^{\text{(deep)}}}{Q_{\max},\mathcal{N}_{\text{topo}}}$</p>
-<p>其中 $e_0$ 是<strong>刚性常数</strong>（$Q_{\max}=3$ 与基准尺度 $l_{r,0}$ 锁定），$\Lambda_{\text{UV}}$ 是<strong>广延量</strong>（$\Lambda_{\text{UV}} \propto \mathcal{N}_{\text{topo}}$）。代数层无懈可击。</p>
+<p>其中 $e_0$ 是<strong>刚性常数</strong>（ $Q_{\max}=3$ 与基准尺度  $l_{r,0}$ 锁定） ， $\Lambda_{\text{UV}}$  是<strong>广延量</strong>（ $\Lambda_{\text{UV}} \propto \mathcal{N}_{\text{topo}}$  ）。代数层无懈可击。</p>
 <p>但代入纯一维拓扑链的数值后：</p>
-<p>$\mathcal{N}<em>{\text{topo}} = 2^{206} \approx 1.0284\times10^{62}, \quad \Lambda</em>{\text{UV}}^{\text{(deep)}} = 5.922\times10^{16}\ \text{GeV}$</p>
-<p>$e_0 = \frac{5.922\times10^{16}}{3\times 1.0284\times10^{62}} \approx 1.919\times10^{-46}\ \text{GeV}$</p>
-<p>$\Delta E_{\text{1D}} = \frac{\pi^2}{8},e_0 \approx 2.37\times10^{-46}\ \text{GeV}$</p>
+<p>$$\mathcal{N}_{\text{topo}} = 2^{206} \approx 1.0284\times10^{62}, \quad \Lambda_{\text{UV}}^{\text{(deep)}} = 5.922\times10^{16}\ \text{GeV}$$</p>
+<p>$$e_0 = \frac{5.922\times10^{16}}{3\times 1.0284\times10^{62}} \approx 1.919\times10^{-46}\ \text{GeV}$$</p>
+<p>$$\Delta E_{\text{1D}} = \frac{\pi^2}{8},e_0 \approx 2.37\times10^{-46}\ \text{GeV}$$</p>
 <p><strong>与观测/旧值指向的 $\sim 10^{-45}$ GeV 相差约 4–20 倍</strong>。这就是「一维拓扑链 → 三维表象空间」映射中尚未计入的<strong>球面几何因子</strong>。</p>
 <p>推论4d（真空能反向锚定）暴露出<strong>完全同源</strong>的缺口：</p>
-<p>$\rho_{\text{raw}} = \frac{M_{\text{Pl}}^4}{\mathcal{N}<em>{\text{topo}}^2} \approx 2.10\times10^{-48}\ \text{GeV}^4, \quad \rho</em>{\text{obs}} = 3.645\times10^{-47}\ \text{GeV}^4$</p>
-<p>$\frac{\rho_{\text{obs}}}{\rho_{\text{raw}}} \approx 17.35 = \frac{Q_{\max}}{4\pi}\ \text{的量级}^{-1}$</p>
+<p>$$\rho_{\text{raw}} = \frac{M_{\text{Pl}}^4}{\mathcal{N}_{\text{topo}}^2} \approx 2.10\times10^{-48}\ \text{GeV}^4, \quad \rho_{\text{obs}} = 3.645\times10^{-47}\ \text{GeV}^4$$</p>
+<p>$$\frac{\rho_{\text{obs}}}{\rho_{\text{raw}}} \approx 17.35 = \frac{Q_{\max}}{4\pi}\ \text{的量级}^{-1}$$</p>
 <p><strong>两个缺口是同一个几何因子在两侧的表现</strong>——这正是工程二十三要捕获的。</p>
 <hr>
 <h2>一、输入锚定（刚性，无可争议）</h2>
@@ -172,8 +175,8 @@ $3.645\times10^{-47}$ GeV$^4$</td>
 <p>一维拓扑链描述沿某条时序通道的缠绕数。而<strong>表象空间是三维的</strong>——宇宙视界内的拓扑结构构成一个以哈勃半径 $R_H$ 为半径的<strong>离散拓扑球</strong>。</p>
 <p>从一维链（径向模）映射到三维球，每个径向壳 $r_m = m,\lambda_{\text{topo}}$ 都携带着<strong>角向简并度</strong>。这个简并度正是球面积分的自然单位 $4\pi$。</p>
 <p>三维拓扑步数的统计包裹关系：</p>
-<p>$\mathcal{N}<em>{\text{3D}} \sim \frac{4\pi}{3},R_H^3 / \lambda</em>{\text{topo}}^3 = \frac{4\pi}{3},\mathcal{N}_{\text{topo}}$</p>
-<p>但伤痕 $\Delta E$ 是<strong>能量量纲</strong>（一维链上每步的极化差），映射到三维时要乘的是<strong>每个径向壳的角向模权重</strong>，即 $(4\pi)^{1/3}$ 量级的因子，再叠加体积-面积混合修正 $(4\pi)^{2/3}$。</p>
+<p>$$\mathcal{N}_{\text{3D}} \sim \frac{4\pi}{3},R_H^3 / \lambda_{\text{topo}}^3 = \frac{4\pi}{3},\mathcal{N}_{\text{topo}}$$</p>
+<p>但伤痕  $\Delta E$ 是<strong>能量量纲</strong>（一维链上每步的极化差），映射到三维时要乘的是<strong>每个径向壳的角向模权重</strong>，即 $(4\pi)^{1/3}$  量级的因子，再叠加体积-面积混合修正  $(4\pi)^{2/3}$。</p>
 <h3>2.2 候选集</h3>
 <markdown-accessiblity-table><table role="table">
 <thead>
@@ -215,9 +218,9 @@ $3.645\times10^{-47}$ GeV$^4$</td>
 <p>一个合格的 $\gamma$ 必须<strong>同时</strong>闭合推论3 与推论4d：</p>
 <ol>
 <li>
-<strong>伤痕闭环</strong>：$\Delta E_{\text{3D}} = \Delta E_{\text{1D}}\cdot\gamma$ 落在 $[1,10]\times10^{-45}$ GeV</li>
+<strong>伤痕闭环</strong>：$\Delta E_{\text{3D}} = \Delta E_{\text{1D}}\cdot\gamma$  落在  $[1,10]\times10^{-45}$ GeV</li>
 <li>
-<strong>真空能闭环</strong>：$\rho_{\text{3D}} = \rho_{\text{raw}}\cdot\gamma^2$ 落在 $[0.1,10]\times\rho_{\text{obs}}$
+<strong>真空能闭环</strong>： $\rho_{\text{3D}} = \rho_{\text{raw}}\cdot\gamma^2$   落在 $[0.1,10]\times\rho_{\text{obs}}$
 </li>
 </ol>
 <hr>
@@ -289,14 +292,14 @@ $\rho_{\text{3D}} = 6.14\times10^{-47}$ GeV$^4$ —— 距观测值 $3.645\times
 <h3>4.1 几何因子（标定完成）</h3>
 <p>$\boxed{\gamma = (4\pi)^{2/3} \approx 5.405}$</p>
 <h3>4.2 推论3（伤痕）精确值</h3>
-<p>$\Delta E_{\text{struct}} = \gamma \cdot \frac{\pi^2}{8},e_0 = (4\pi)^{2/3}\cdot\frac{\pi^2}{8}\cdot\frac{\Lambda_{\text{UV}}^{\text{(deep)}}}{3\mathcal{N}_{\text{topo}}}$</p>
-<p>$\boxed{\Delta E_{\text{struct}} \approx 1.28\times10^{-45}\ \text{GeV}}$</p>
+<p>$$\Delta E_{\text{struct}} = \gamma \cdot \frac{\pi^2}{8},e_0 = (4\pi)^{2/3}\cdot\frac{\pi^2}{8}\cdot\frac{\Lambda_{\text{UV}}^{\text{(deep)}}}{3\mathcal{N}_{\text{topo}}}$$</p>
+<p>$$\boxed{\Delta E_{\text{struct}} \approx 1.28\times10^{-45}\ \text{GeV}}$$</p>
 <h3>4.3 推论4d（真空能）精确值</h3>
-<p>$\rho_{\text{vac}} = \gamma^2 \cdot \frac{M_{\text{Pl}}^4}{\mathcal{N}<em>{\text{topo}}^2} = (4\pi)^{4/3}\cdot\frac{M</em>{\text{Pl}}^4}{(2^{206})^2}$</p>
-<p>$\rho_{\text{vac}} \approx 6.14\times10^{-47}\ \text{GeV}^4$</p>
+<p>$$\rho_{\text{vac}} = \gamma^2 \cdot \frac{M_{\text{Pl}}^4}{\mathcal{N}_{\text{topo}}^2} = (4\pi)^{4/3}\cdot\frac{M_{\text{Pl}}^4}{(2^{206})^2}$$</p>
+<p>$$\rho_{\text{vac}} \approx 6.14\times10^{-47}\ \text{GeV}^4$$</p>
 <p>相对观测值 $3.645\times10^{-47}$ GeV$^4$ 的误差 <strong>+68%</strong>（在量级精确与单参数拟合可接受范围）。</p>
 <blockquote>
-<p><strong>若进一步叠加 $Q_{\max}=3$ 的微观名额修正</strong>（候选 E 的方向，$\gamma \to \gamma/Q_{\max}$），可将 6.14 压至 $2.05\times10^{-47}$，与观测误差缩至 44%。这提示<strong>最终精确因子可能是 $(4\pi)^{2/3}\cdot\mathcal{F}(Q_{\max})$</strong>，其中 $\mathcal{F}(3)$ 待球面谐波展开的严格计算确定。工程二十三给出的 <strong>$(4\pi)^{2/3}$ 是主项，误差项 $\mathcal{F}(Q_{\max})$ 量级 $\mathcal{O}(1)$。</strong></p>
+<p><strong>若进一步叠加 $Q_{\max}=3$ 的微观名额修正</strong>（候选 E 的方向，$\gamma \to \gamma/Q_{\max}$ ），可将 6.14 压至 $2.05\times10^{-47}$，与观测误差缩至 44%。这提示<strong>最终精确因子可能是 $(4\pi)^{2/3}\cdot\mathcal{F}(Q_{\max})$</strong>，其中 $\mathcal{F}(3)$ 待球面谐波展开的严格计算确定。工程二十三给出的 <strong>$(4\pi)^{2/3}$ 是主项，误差项 $\mathcal{F}(Q_{\max})$ 量级 $\mathcal{O}(1)$。</strong></p>
 </blockquote>
 <hr>
 <h2>五、对引理A 的修订指令</h2>
@@ -322,7 +325,7 @@ $\rho_{\text{3D}} = 6.14\times10^{-47}$ GeV$^4$ —— 距观测值 $3.645\times
 <h2>七、诚实披露</h2>
 <ul>
 <li>
-<strong>$\gamma=(4\pi)^{2/3}$</strong> 的选定基于双闭环判据与量纲自然性，<strong>主项正确</strong>，残余 $\mathcal{F}(Q_{\max})$ 为 $\mathcal{O}(1)$ 待严格化</li>
+<strong>$\gamma=(4\pi)^{2/3}$</strong> 的选定基于双闭环判据与量纲自然性，<strong>主项正确</strong>，残余   $\mathcal{F}(Q_{\max})$ 为 $\mathcal{O}(1)$      待严格化</li>
 <li>若将 $\mathcal{F}(Q_{\max})$ 一并计入，最终精度有望进入 <strong>10% 以内</strong>
 </li>
 <li>沙盒核验脚本：<code class="notranslate">engineering_23_spherical_topology.py</code>，所有数值可复算</li>
@@ -337,20 +340,20 @@ $\rho_{\text{3D}} = 6.14\times10^{-47}$ GeV$^4$ —— 距观测值 $3.645\times
 <hr>
 <h2>推论3（修订）：拓扑伤痕</h2>
 <p><strong>含球面几何因子的精确表达式</strong>：</p>
-<p>$\Delta E_{\text{struct}} = \underbrace{(4\pi)^{2/3}}<em>{\gamma}\cdot\frac{\pi^2}{8},e_0 = (4\pi)^{2/3}\cdot\frac{\pi^2}{8}\cdot\frac{\Lambda</em>{\text{UV}}^{\text{(deep)}}}{Q_{\max},\mathcal{N}_{\text{topo}}}$</p>
+<p>$$\Delta E_{\text{struct}} = \underbrace{(4\pi)^{2/3}}_{\gamma}\cdot\frac{\pi^2}{8},e_0 = (4\pi)^{2/3}\cdot\frac{\pi^2}{8}\cdot\frac{\Lambda_{\text{UV}}^{\text{(deep)}}}{Q_{\max},\mathcal{N}_{\text{topo}}}$$</p>
 <p><strong>数值</strong>：</p>
-<p>$\boxed{\Delta E_{\text{struct}} \approx 1.28\times10^{-45}\ \text{GeV}}$</p>
+<p>$$\boxed{\Delta E_{\text{struct}} \approx 1.28\times10^{-45}\ \text{GeV}}$$</p>
 <p>（旧值 $2.37\times10^{-46}$ 为纯一维链代入，未含球面因子；旧值 $4.88\times10^{-45}$ 为历史局域口径，已归档。）</p>
 <hr>
 <h2>推论4c（不变）：循环守恒</h2>
-<p>$\Delta E_{\text{struct}} = \frac{\pi^2}{8},e_0$</p>
+<p>$$\Delta E_{\text{struct}} = \frac{\pi^2}{8},e_0$$</p>
 <p><strong>$\mathcal{N}_{\text{topo}}$ 在代数中消去，$e_0$ 刚性（推论4c (A) 逻辑）</strong> → 伤痕在循环中严格守恒。</p>
 <p><strong>数值层补入 $\gamma$</strong>：表象空间的观测值需乘球面因子 $(4\pi)^{2/3}$，但该因子本身是几何常数（与循环阶段无关），故<strong>守恒性不受影响</strong>。</p>
 <hr>
 <h2>推论4d（修订）：真空涨落能 / 暗能量</h2>
-<p>$\rho_{\text{vac}} = (4\pi)^{4/3}\cdot\frac{M_{\text{Pl}}^4}{\mathcal{N}_{\text{topo}}^2}$</p>
+<p>$$\rho_{\text{vac}} = (4\pi)^{4/3}\cdot\frac{M_{\text{Pl}}^4}{\mathcal{N}_{\text{topo}}^2}$$</p>
 <p><strong>数值</strong>：</p>
-<p>$\boxed{\rho_{\text{vac}} \approx 6.14\times10^{-47}\ \text{GeV}^4}$</p>
+<p>$$\boxed{\rho_{\text{vac}} \approx 6.14\times10^{-47}\ \text{GeV}^4}$$</p>
 <p>相对 Planck 2018 观测值 $3.645\times10^{-47}$ GeV$^4$ 的误差 <strong>+68%</strong>（量级精确；残余 $\mathcal{O}(1)$ 来自 $\mathcal{F}(Q_{\max})$ 待严格化）。</p>
 <hr>
 <h2>诚实披露（精确化）</h2>
@@ -531,6 +534,31 @@ if("2026-07-10"!=""){
 var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
 var utterancesLoad=0;
 
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
 console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
 </script>
 
@@ -554,7 +582,9 @@ function openComments(){
     script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
     script.setAttribute("issue-term","title");
     
-    script.setAttribute("theme","dark");
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
     
     script.setAttribute("crossorigin","anonymous");
     script.setAttribute("async","");
