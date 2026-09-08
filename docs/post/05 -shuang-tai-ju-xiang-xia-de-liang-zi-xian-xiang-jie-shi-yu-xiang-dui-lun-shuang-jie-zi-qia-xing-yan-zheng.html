@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 双态具象下的量子现象解释与相对论双解自洽性验证
+### Explanations of Quantum Phenomena Under the Dual-State Model and Verification of Self-Consistency with the Dual Solutions of General Relativity
+
+**Doi及英文版**：https://doi.org/10.5281/zenodo.22656146
+**ORCID**：0009-0002-1757-1793
+**作者**：史建威（山东威海 · 理论物理EPD工程组）  
+**体系**：11T-Matrix核心公理
+
+---
+
+我们以「三维伞」为统一具象模型，把双缝干涉、量子纠缠、量子隧穿三大经典量子谜题全部还原为可直观想象的物理过程；再进一步对接广义相对论的光速双解，验证双态一元论与相对论框架的完全自洽。">
+<meta property="og:title" content="05 双态具象下的量子现象解释与相对论双解自洽性验证">
+<meta property="og:description" content="# 双态具象下的量子现象解释与相对论双解自洽性验证
+### Explanations of Quantum Phenomena Under the Dual-State Model and Verification of Self-Consistency with the Dual Solutions of General Relativity
+
+**Doi及英文版**：https://doi.org/10.5281/zenodo.22656146
+**ORCID**：0009-0002-1757-1793
+**作者**：史建威（山东威海 · 理论物理EPD工程组）  
+**体系**：11T-Matrix核心公理
+
+---
+
+我们以「三维伞」为统一具象模型，把双缝干涉、量子纠缠、量子隧穿三大经典量子谜题全部还原为可直观想象的物理过程；再进一步对接广义相对论的光速双解，验证双态一元论与相对论框架的完全自洽。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/05%20-shuang-tai-ju-xiang-xia-de-liang-zi-xian-xiang-jie-shi-yu-xiang-dui-lun-shuang-jie-zi-qia-xing-yan-zheng.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>05 双态具象下的量子现象解释与相对论双解自洽性验证</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">05 双态具象下的量子现象解释与相对论双解自洽性验证</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/278" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>双态具象下的量子现象解释与相对论双解自洽性验证</h1>
+<h3>Explanations of Quantum Phenomena Under the Dual-State Model and Verification of Self-Consistency with the Dual Solutions of General Relativity</h3>
+<p><strong>Doi及英文版</strong>：<a href="https://doi.org/10.5281/zenodo.22656146" rel="nofollow">https://doi.org/10.5281/zenodo.22656146</a><br>
+<strong>ORCID</strong>：0009-0002-1757-1793<br>
+<strong>作者</strong>：史建威（山东威海 · 理论物理EPD工程组）<br>
+<strong>体系</strong>：11T-Matrix核心公理</p>
+<hr>
+<p>我们以「三维伞」为统一具象模型，把双缝干涉、量子纠缠、量子隧穿三大经典量子谜题全部还原为可直观想象的物理过程；再进一步对接广义相对论的光速双解，验证双态一元论与相对论框架的完全自洽。整个过程不引入任何额外假设，完全基于「一套3s标度主干、正反两面投影」的双态本体图像。</p>
+<h2>一、三大量子现象的双态具象解释</h2>
+<p><strong>统一具象基底</strong>：整个宇宙是一把由3s刚性标度主干撑开的三维伞。</p>
+<ul>
+<li>伞的<strong>正面</strong> = 3S1T显化时空：有单向时间箭头、有光速上限、物质沿空间运动、因果清晰，是我们观测到的经典世界。</li>
+<li>伞的<strong>背面</strong> = 3T时序根域：无单向时间、所有构型同时存在、受全域压强驱动、无传播过程，是超定域拓扑基底。</li>
+<li>所有量子现象，本质都是「背面的拓扑过程，在正面投下的影子」。</li>
+</ul>
+<h3>1. 双缝干涉：不是粒子分身，是背面拓扑的双通道同时存在</h3>
+<p><strong>经典困境</strong>：标准量子力学认为“一个粒子同时通过两条缝，自身与自身干涉”，但物理上无法理解一个实体如何同时占据两个位置；哥本哈根诠释回避本体问题，多世界诠释引入平行宇宙，都无法给出直观的物理图像。</p>
+<p><strong>双态具象图像</strong>：<br>
+发射出去的不是一个在伞正面运动的实物小球，而是一个从伞骨主干延伸出的拓扑结构——它在伞背面是一整套候选构型集合，天然覆盖所有满足压强约束的延展通道。</p>
+<ul>
+<li>到达双缝位置时，两条缝对应的几何通道都满足背面的拓扑压强约束，因此两条通道的构型同时保留在背面的3T时序集合里；</li>
+<li>这不是“粒子分成两半走了两条路”，而是伞背面的拓扑网络，天然同时包含了两条通路的构型，就像伞布的纹路天然同时覆盖左右两个区域；</li>
+<li>当拓扑构型最终投影到伞正面的观测屏时，背面构型之间的压强耦合（相长/相消），就会在正面呈现出明暗相间的干涉条纹。</li>
+</ul>
+<p><strong>本体论本质</strong>：干涉条纹不是“粒子波的叠加”，而是<strong>3T根域候选构型集合的耦合模式，在3S空间的概率投影</strong>。没有粒子分身，没有波粒二象性的跳跃，只有同一拓扑结构的背面构型与正面投影。</p>
+<h3>2. 量子纠缠：不是超距通信，是同一主干的双端点同步</h3>
+<p><strong>经典困境</strong>：两个纠缠粒子相距数光年，测量一个的状态，另一个瞬间坍缩。经典物理无法理解超距作用，相对论禁止超光速信息传递，被称为“幽灵般的超距作用”。</p>
+<p><strong>双态具象图像</strong>：<br>
+两个纠缠粒子，不是伞正面的两个独立小球，而是<strong>同一根伞骨主干上的两个末梢投影</strong>。</p>
+<ul>
+<li>它们在伞正面的3S空间里，坐标相距遥远，呈现为两个独立的可观测粒子；</li>
+<li>但在伞背面的3T根域里，它们本就是同一个闭合拓扑结构，共享同一个标度主干分量，从来就没有分开过；</li>
+<li>当你测量其中一个，本质是扰动了这根主干的局部张力；主干是刚性整体，张力调整瞬间传遍整个结构，另一端的投影自然同步变化。</li>
+</ul>
+<p><strong>本体论本质</strong>：不存在“两个粒子之间的超光速通信”，因为它们根本就不是两个独立的本体。<strong>超距作用的假象，来自于把“同一主干的两个投影”当成了“两个独立的实体”</strong>。整个过程不传递有效信息、不发送信号，只是同一拓扑结构的整体调整，完全不违反相对论的光速约束——相对论管的是伞正面的传播，管不着伞骨本身的张力调整。</p>
+<h3>3. 量子隧穿：不是穿墙魔法，是背面拓扑的压强绕行</h3>
+<p><strong>经典困境</strong>：粒子能量低于势垒高度，按经典物理不可能翻越；但量子力学中粒子有概率隧穿势垒，仿佛凭空获得了额外能量，物理机制长期模糊。</p>
+<p><strong>双态具象图像</strong>：<br>
+势垒在伞正面是一座不可翻越的能量山峰，但在伞背面的3T拓扑里，它只是一个局域的压强高峰。</p>
+<ul>
+<li>伞背面的拓扑候选集合，就像水流一样天然沿着压强最低的方向延展，不会被局域高峰挡住——它不需要在正面翻越山峰，而是沿着背面的拓扑网络绕开压强高峰；</li>
+<li>对应到伞正面，就表现为粒子“凭空”出现在势垒另一侧，仿佛穿过了墙壁；</li>
+<li>隧穿概率的大小，取决于背面拓扑中绕开通路的压强适配程度，适配度越高，隧穿概率越大。</li>
+</ul>
+<p><strong>本体论本质</strong>：隧穿不是“粒子借用真空能量穿墙”，而是<strong>3T根域拓扑沿低压路径的自然延展，在3S空间的投影表现</strong>。势垒只存在于显化层的能量尺度，对根域的拓扑压强分布来说，只有路径适配与否，没有“不可逾越”的壁垒。</p>
+<hr>
+<h2>二、双态结构与广义相对论双解的完全自洽性</h2>
+<h3>1. 广义相对论的百年疑难：超光速解的“非物理”标签</h3>
+<p>广义相对论爱因斯坦场方程的时空几何中，天然存在三类世界线解：</p>
+<ul>
+<li><strong>类时解（v &lt; c）</strong>：对应有静质量物质的运动，因果律成立，对应可观测的宏观世界，被公认为物理解；</li>
+<li><strong>类光解（v = c）</strong>：对应光子等零质量粒子的传播；</li>
+<li><strong>类空解（等效 v &gt; c）</strong>：世界线间隔为负，等效速度超光速，因果倒置，百年来一直被视为纯数学的非物理解，没有真实物理对应。</li>
+</ul>
+<p>主流物理始终默认超光速解是数学冗余，因为它与光速极限、因果律冲突。但从双态一元论的视角看，这两套解恰恰完美对应了双态时空的两个层级，各有其明确的物理实在，非但不矛盾，反而互补。</p>
+<h3>2. 双态分层对应：两套解各归其位</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">广义相对论解类型</th>
+<th align="left">对应双态层级</th>
+<th align="left">物理本质</th>
+<th align="left">因果与光速属性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">类时解（亚光速，v &lt; c）</td>
+<td align="left">3S1T显化层</td>
+<td align="left">显化时空的物质运动与能量传播</td>
+<td align="left">因果律成立，光速为极限速度</td>
+</tr>
+<tr>
+<td align="left">类空解（超光速，v &gt; c）</td>
+<td align="left">3T根域层</td>
+<td align="left">根域拓扑的整体调整与构型筛选</td>
+<td align="left">无单向因果，等效超光速，不传递信息</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>3. 为什么完全和谐，没有矛盾</h3>
+<p>核心原因在于：<strong>相对论的光速极限和因果律，本身就有明确的适用边界——它只约束3S1T显化时空内的传播过程</strong>。双态结构不但不违反相对论，反而给广义相对论的两套解都赋予了清晰的物理意义，填补了“超光速解非物理”的百年空白：</p>
+<h4>第一，超光速解不是“快子”，是拓扑整体调整</h4>
+<p>类空解对应的不是“超光速运动的粒子”，而是3T根域的拓扑整体调整。这个过程不发生在3S空间里，不涉及物质和信号的传播，自然不受光速约束。它在3S1T中的观测效应是“瞬时的”，但这是投影时间差为零，不是真实的超光速运动。</p>
+<h4>第二，因果律只在显化层有效，根域无“先后因果”</h4>
+<p>类空解的“因果倒置”，在传统视角里是悖论；但在双态结构里，3T根域本身就是所有构型同时并存的闭合时序，没有单向时间箭头，自然不存在“因果先后”的问题。因果律本身就是显化层的涌现属性，不是宇宙全域的普适规则。</p>
+<h4>第三，两套解不是“同一时空的两种粒子”，而是“同一基底的两个投影层”</h4>
+<p>广义相对论的数学形式之所以天然包含两套解，本质是它的场方程无意中触及了时空的双态本质——它描述的不只是显化层的时空弯曲，而是整个拓扑基底的形变。类时解对应正面的显化效应，类空解对应背面的拓扑效应，二者本来就是一体两面，和谐共存。</p>
+<hr>
+<h2>结语</h2>
+<p>双态一元论最核心的价值，是把之前物理理论中所有“反常的、非物理的、数学冗余的”部分，都放回了它该在的层级。<br>
+量子效应不是微观世界的魔法，是伞背面的拓扑过程在正面投下的影子；超光速解不是数学错误，是基底拓扑调整的形式化表达。所有看似矛盾的东西，只是因为之前我们只看到了伞的正面，没看到它还有一个结构完全对称、规则完全对偶的背面。</p>
+<h2>宇宙只有一套拓扑主干，只是投影出了两面。一面是我们熟悉的经典时空，一面是我们感知不到的拓扑基底。所有的物理谜题，本质都是只看一面、不看两面造成的认知偏差。</h2>
+<blockquote>
+<p><strong>三级可信度分层声明</strong></p>
+<ul>
+<li>L1（核心结论）：三大量子现象均为3T根域拓扑过程在3S显化层的投影效应；双态结构与广义相对论双解完全自洽</li>
+<li>L2（推导逻辑）：基于3S↔3T正交对偶规则与双态分层模型推导，符合双态一元论公理框架</li>
+<li>L3（延伸推论）：广义相对论类空解具有明确的物理本体论意义，并非纯数学冗余</li>
+</ul>
+</blockquote>
+<hr></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵本体论原创史建威博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+
+
+</html>
