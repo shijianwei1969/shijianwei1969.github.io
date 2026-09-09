@@ -92,7 +92,9 @@ ORCID：0009-0002-1757-1793
 
 下图示意体系内部结构关系：嵌套边框表示“装载”关系——拓扑体与表象时空都被装载在超定域 3S 刚性骨架之中。
 
-（添加图片注释，不超过 140 字）
+<img width="1860" height="716" alt="Image" src="https://github.com/user-attachments/assets/ba17edeb-7236-48d4-ba56-2955460ce7e2" />
+
+（11时序矩阵参数图解）
 ---
 **Author**: Shi Jianwei, Project Director, Shandong Weihai Theoretical Physics EPD Engineering Group
 
@@ -179,72 +181,3 @@ The diagram below illustrates the structural relationships within the system: ne
 
 *(Image caption to be added, no more than 140 characters)*
 
----
-<html style="margin:0;padding:0;">
-<div style="background-color:transparent;box-sizing:border-box;font-family:'PingFang SC','Roboto','Segoe UI',Arial,sans-serif;color:#1A1B1C;">
-  <div style="font-size:15px;font-weight:600;margin:0 0 2px;">11T-Matrix 参数体系 · 四区块结构（示意）</div>
-  <div style="font-size:12px;color:#6B7280;margin:0 0 12px;">11 参数 = 超定域 3S（3）＋ 表象 3S1T（4）＋ 拓扑体 3T1S（4）</div>
-
-  <!-- 超定域（外层容器） -->
-  <div style="border:2px solid #9BBBF4;border-radius:16px;padding:14px 14px 12px;background:rgba(155,187,244,0.10);box-sizing:border-box;">
-    <div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:baseline;">
-      <div style="font-size:13px;font-weight:600;color:#3B5BA9;">超定域时空 · 3S · 刚性骨架</div>
-      <div style="font-size:12px;color:#3B5BA9;background:rgba(155,187,244,0.25);border-radius:8px;padding:2px 8px;">不参与演化 · 静态容器</div>
-    </div>
-    <div style="font-size:12px;color:#4A5568;margin:4px 0 12px;line-height:1.5;">
-      超级中心压延出的球状拓扑延展结构——超级大宇宙的空间骨架，万物的超所；装载拓扑体与表象时空的一切；与表象空间同构
-    </div>
-
-    <!-- 表象（中层） -->
-    <div style="border:1.5px solid #A3D5E8;border-radius:12px;padding:12px 12px 10px;background:rgba(163,213,232,0.12);box-sizing:border-box;">
-      <div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:baseline;">
-        <div style="font-size:13px;font-weight:600;color:#2B6B8A;">表象时空 · 3S1T · 演化舞台</div>
-        <div style="font-size:12px;color:#2B6B8A;background:rgba(163,213,232,0.30);border-radius:8px;padding:2px 8px;">参与演化</div>
-      </div>
-      <div style="font-size:12px;color:#4A5568;margin:4px 0 10px;line-height:1.5;">
-        3S：演化中的空间，刚性骨架的显现；1T：时间，演化的序参量
-      </div>
-
-      <!-- 拓扑体（内层） -->
-      <div style="border:1.5px solid #C9A7E8;border-radius:12px;padding:12px;background:rgba(201,167,232,0.10);box-sizing:border-box;">
-        <div style="font-size:13px;font-weight:600;color:#6B3FA0;">万物拓扑体 · 3T ＋ 1S</div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
-          <div style="flex:1 1 140px;min-width:0;padding:10px 12px;background:#FFFFFF;border:1px solid rgba(0,0,0,0.08);border-radius:10px;box-sizing:border-box;">
-            <div style="font-size:12px;font-weight:600;color:#6B3FA0;">3T · 构型</div>
-            <div style="font-size:12px;color:#4A5568;margin-top:2px;line-height:1.5;">拓扑体的内部拓扑构型自由度（缠绕、连接、圈结构等形态特征）</div>
-          </div>
-          <div style="flex:1 1 140px;min-width:0;padding:10px 12px;background:#FFFFFF;border:1px solid rgba(0,0,0,0.08);border-radius:10px;box-sizing:border-box;">
-            <div style="font-size:12px;font-weight:600;color:#6B3FA0;">1S · 紧致度</div>
-            <div style="font-size:12px;color:#4A5568;margin-top:2px;line-height:1.5;">拓扑体的紧致/弥散程度（本次修正定位：非超定域基底）</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 参数计数条 -->
-  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;">
-    <div style="flex:1 1 100px;min-width:0;padding:8px 10px;border-radius:10px;background:rgba(155,187,244,0.18);box-sizing:border-box;text-align:center;">
-      <div style="font-size:12px;color:#3B5BA9;">超定域 3S</div>
-      <div style="font-size:16px;font-weight:600;color:#1A1B1C;">3</div>
-    </div>
-    <div style="flex:1 1 100px;min-width:0;padding:8px 10px;border-radius:10px;background:rgba(163,213,232,0.22);box-sizing:border-box;text-align:center;">
-      <div style="font-size:12px;color:#2B6B8A;">表象 3S</div>
-      <div style="font-size:16px;font-weight:600;color:#1A1B1C;">3</div>
-    </div>
-    <div style="flex:1 1 100px;min-width:0;padding:8px 10px;border-radius:10px;background:rgba(163,213,232,0.22);box-sizing:border-box;text-align:center;">
-      <div style="font-size:12px;color:#2B6B8A;">表象 1T</div>
-      <div style="font-size:16px;font-weight:600;color:#1A1B1C;">1</div>
-    </div>
-    <div style="flex:1 1 100px;min-width:0;padding:8px 10px;border-radius:10px;background:rgba(201,167,232,0.20);box-sizing:border-box;text-align:center;">
-      <div style="font-size:12px;color:#6B3FA0;">拓扑 3T</div>
-      <div style="font-size:16px;font-weight:600;color:#1A1B1C;">3</div>
-    </div>
-    <div style="flex:1 1 100px;min-width:0;padding:8px 10px;border-radius:10px;background:rgba(201,167,232,0.20);box-sizing:border-box;text-align:center;">
-      <div style="font-size:12px;color:#6B3FA0;">拓扑 1S</div>
-      <div style="font-size:16px;font-weight:600;color:#1A1B1C;">1</div>
-    </div>
-  </div>
-  <div style="font-size:12px;color:#6B7280;margin-top:8px;text-align:right;">合计 3＋3＋1＋3＋1 ＝ 11</div>
-</div>
-</html>
