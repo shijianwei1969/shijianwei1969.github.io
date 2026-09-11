@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="019 M₈ 引力极化场张量：引力的涌现机制
+ 
+上一篇我们完成了M₇根域名额斥力张量的推导，双机制中的排斥机制已经定量闭环。">
+<meta property="og:title" content="文章019 M₈ 引力极化场张量：引力的涌现机制">
+<meta property="og:description" content="019 M₈ 引力极化场张量：引力的涌现机制
+ 
+上一篇我们完成了M₇根域名额斥力张量的推导，双机制中的排斥机制已经定量闭环。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/wen-zhang-019%20M%E2%82%88%20-yin-li-ji-hua-chang-zhang-liang-%EF%BC%9A-yin-li-de-yong-xian-ji-zhi.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>文章019 M₈ 引力极化场张量：引力的涌现机制</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">文章019 M₈ 引力极化场张量：引力的涌现机制</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/282" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><p>019 M₈ 引力极化场张量：引力的涌现机制</p>
+<p>上一篇我们完成了M₇根域名额斥力张量的推导，双机制中的排斥机制已经定量闭环。从这一篇开始，我们进入吸引机制的核心——M₈引力极化场张量。</p>
+<p>M₈描述的是净余能量极化在大尺度上的统计平均效应，它取代了广义相对论中“时空弯曲”的几何概念，将引力重新定义为能量极化压强的宏观涌现。本篇将完成M₈的弱场极限推导，证明其在太阳系尺度上与广义相对论等价，同时揭示其与M₇斥力张量共同构成的引力-斥力双机制如何自然消解奇点问题。</p>
+<p>一、M₈的核心定位：能量极化的统计平均算子</p>
+<p>M₈是描述净余能量局域凝聚导致的根域时空极化效应，及其向表象时空投影的4×4张量算子。它的核心任务是回答一个根本问题：为什么物质之间会表现出相互吸引？</p>
+<p>在本框架中，答案不是“时空弯曲了”，也不是“引力子交换”，而是：净余能量的局域凝聚会在根域3T1S时空中产生极化畸变，该畸变投影到表象时空后，表现为等效的吸引性曲率。 这一效应在大尺度上的统计平均，就是我们观测到的万有引力。</p>
+<p>与广义相对论的本体论差异</p>
+<p>广义相对论将引力诠释为时空几何的内禀弯曲，物质告诉时空如何弯曲，时空告诉物质如何运动。M₈采取了完全不同的本体论立场：引力不是时空的属性，而是能量极化的投影读数。两者在弱场极限下数学等价，但本体论根基不同——一个是几何，一个是统计。</p>
+<p>这个差异的意义在于：几何无法量子化，但统计效应天然与量子力学兼容。引力不需要“量子引力”，因为它从来就不是微观基本力。</p>
+<p>二、能量极化的统计平均机制</p>
+<p>2.1 极化压强的物理图像</p>
+<p>考虑真空中一片区域存在一个质量为M的物体。物体周围的净余能量密度分布并不均匀——物体内部能量密度高，外部能量密度低。这种不均匀性会在根域时空中产生极化梯度，类似于电荷在介质中产生的极化场。</p>
+<p>当这一极化效应投影到表象时空时，表现为一个指向能量凝聚中心的压强梯度。物体并不是被“拉”向中心，而是被周围的量子涨落极化压强“推”向中心。 这就是“引力是推不是拉”的物理图像。</p>
+<p>2.2 弱场极限下的牛顿引力推导</p>
+<p>在弱场、低速、大尺度极限下，能量极化的统计平均效应可以简化为：极化强度与源质量M成正比，与距离r的平方成反比（三维空间通量稀释的统计平均结果），在目标质量m处的耦合强度与m成正比。</p>
+<p>由此直接得到引力势能和引力大小：</p>
+<p>U_{\text{att}}(r) = -G \frac{Mm}{r}, \quad F_{\text{att}}(r) = -G \frac{Mm}{r^2}</p>
+<p>其中引力常数G是能量极化投影效率的量纲换算因子，其数值极小（6.674\times10^{-11}）是因为大尺度下能量密度被空间体积极度稀释，极化效应的投影强度相应微弱。</p>
+<p>2.3 关于“引力看总量”的严谨表述</p>
+<p>需要澄清的是，上述平方反比律的导出依赖于远场球对称近似。在球对称质量分布下，外部引力场完全由总质量决定，与内部结构无关。但对于非球对称分布（如哑铃状天体），外部引力场需要通过M₈张量的通量积分计算，结果依赖于质量分布的具体形态。然而，在远场极限下（观测距离远大于天体尺度），任何质量分布的外部引力场都收敛到平方反比律，仅由总质量主导。因此，“引力看总量”是远场球对称近似下的有效结论，并非普适规则。这一修正不影响M₈张量在星系尺度和宇宙尺度上的应用，因为这些场景均满足远场球对称近似条件。</p>
+<p>三、M₈张量的弱场形式</p>
+<p>3.1 张量结构</p>
+<p>M₈是一个4×4张量算子，在弱场极限下对平直时空度规施加微扰：</p>
+<p>g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu}</p>
+<p>其中极化扰动 h_{\mu\nu} 由能量-动量分布决定：</p>
+<p>\Box \bar{h}<em>{\mu\nu} = -\kappa , T</em>{\mu\nu}</p>
+<p>\kappa = 8\pi G/c^4为能量极化耦合系数。在静态球对称源下，M₈退化为对角形式，径向分量服从平方反比衰减，角向分量为次级修正。</p>
+<p>3.2 与广义相对论的弱场等价</p>
+<p>在上述弱场极限下，M₈的场方程退化为爱因斯坦场方程的线性形式：</p>
+<p>R_{\mu\nu} - \frac{1}{2}R g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}</p>
+<p>因此，广义相对论的三大经典验证——引力红移、光线偏折、水星近日点进动——在M₈框架下全部自然复现。数学等价并不意味着本体论相同：广义相对论认为是时空弯曲了，M₈认为是能量极化不均匀了。在弱场下两者无法区分，但在强场下（如黑洞核心）M₈有M₇斥力截断，不会产生奇点。</p>
+<p>四、正反物质引力同号的机制解释</p>
+<p>一个常见的质疑是：如果引力是量子涨落极化产生的压强差效应，那么正反物质是否会对量子涨落产生相反的屏蔽，从而导致相互排斥？</p>
+<p>本框架的回答是否定的。 关键在于：本框架中的“量子涨落极化”是由净余能量密度梯度驱动的，而非电磁相互作用。正反物质（如氢原子与反氢原子）具有完全相同的总质量和能量密度分布，因此它们对量子涨落模式的极化屏蔽效应完全相同，产生的压强差方向也完全相同。CERN ALPHA实验（2023）观测到反氢原子在地球引力场中向下加速，与正物质一致，这正是本框架的预期结果。这一机制与电磁相互作用无关，不依赖电荷符号，因此正反物质引力同号是自然的。</p>
+<p>五、奇点消解机制</p>
+<p>M₈的吸引效应在极端致密环境下会受到M₇斥力的对抗。当物质被压缩到名额饱和密度时，M₇的排斥效应急剧增强，抵消M₈的吸引，阻止无限坍缩。因此，黑洞内部不存在奇点，而是由M₇支撑的高密度稳态核心。</p>
+<p>中子星质量上限的定量计算（详见工程十七）表明，当斥力支撑占比约23%时，最大稳定质量可从广义相对论预言的 2.0,M_\odot 提升至 2.4\sim2.8,M_\odot，与观测兼容。</p>
+<p>六、在矩阵体系中的联动位置</p>
+<p>M₈与M₇构成双机制的核心对偶：M₇排斥、M₈吸引，两者共同决定了从基本粒子到星系尺度的所有稳态结构。M₈的弱场输出直接作为M₁₀星系演化矩阵的引力项输入，同时通过M₁投影为表象时空的度规读数。</p>
+<p>结语</p>
+<p>M₈引力极化场张量完成了引力的涌现机制论证：引力不是时空几何，不是基本力，而是能量极化在大尺度上的统计平均效应。它在弱场下与广义相对论等价，在强场下由M₇斥力截断消除奇点，正反物质引力同号由能量密度驱动机制自然保证。</p>
+<p>引力从此不再是“四种基本力”中的一个异类，而是与微观力同源、与量子自然兼容的宏观涌现效应。</p>
+<p>附录：幂次转换的拓扑坐标证明</p>
+<p>本附录从11T-Matrix超定域拓扑的第一性原理出发，完成「根域绝对能量密度3次方递减→局域表象引力平方反比」的完整定量推导，为正文M₈引力极化场张量的弱场平方反比律提供底层拓扑本体论支撑，彻底贯彻零参数纲领（ZPP）。</p>
+<p>A.1 两套坐标系与投影比例尺定义</p>
+<p>绝对拓扑坐标系（上帝视角）</p>
+<p>以根域中心为原点，用R表示径向坐标，单位为拓扑节点间隔，是全域统一的刚性长度标尺。根域能量密度的原生分布由拓扑压延体的几何结构决定，沿径向严格服从3次方递减：<br>
+\rho(R) = \frac{C}{R^3}<br>
+其中C为与根域总能量相关的常数，该式为11T-Matrix拓扑结构的固有结论，无经验拟合参数。</p>
+<p>局域表象坐标系（观测视角）</p>
+<p>以同样的根域中心为原点，用r表示径向坐标，单位为局域测量的“米”，其长度基准由局域真空涨落幅度决定，随局域能量密度变化。</p>
+<p>投影比例尺</p>
+<p>根据投影协变公理，局域长度标尺的绝对长度随能量密度升高而等比例缩短。设局域单位长度对应的绝对长度为L(R)，则局域坐标微分dr与绝对坐标微分dR满足：<br>
+dR = L(R) \cdot dr<br>
+定义投影比例尺函数k(R)为局域长度元与绝对长度元的比值：<br>
+k(R) = \frac{dr}{dR} = \frac{1}{L(R)}<br>
+物理意义：1个单位的绝对拓扑长度dR，在局域表象中用标尺测量得到的长度为dr。</p>
+<ul>
+<li>能量密度越高，真空涨落幅度越小，局域标准标尺越短，相同绝对长度对应的局域测量值越大，即k(R)越大；</li>
+<li>远离根域的背景区域，能量密度趋近背景值，k(R) \to 1，局域标尺与绝对标尺重合。</li>
+</ul>
+<p>A.2 投影比例尺的标度关系</p>
+<p>能量密度为单位体积的能量，体积为长度的3次幂，因此长度标度与能量密度的1/3次方成反比，即L(R) \propto \rho(R)^{-1/3}。代入投影比例尺的定义得：<br>
+k(R) \propto \rho(R)^{1/3}<br>
+将绝对坐标系下的能量密度分布\rho(R) \propto R^{-3}代入，直接得到：<br>
+k(R) \propto (R^{-3})^{1/3} = R^{-1}<br>
+即越靠近根域中心，投影比例尺越大，局域测量的长度数值被拉伸得越显著。</p>
+<p>A.3 能量密度梯度的坐标变换</p>
+<p>绝对坐标系下，能量密度的径向梯度为：<br>
+\frac{d\rho}{dR} = -\frac{3C}{R^4}<br>
+根据微分链式法则，局域坐标系下的能量密度梯度为：<br>
+\frac{d\rho}{dr} = \frac{d\rho}{dR} \cdot \frac{dR}{dr} = \frac{d\rho}{dR} \cdot \frac{1}{k(R)}<br>
+将\frac{d\rho}{dR} \propto R^{-4}和k(R) \propto R^{-1}代入，得：<br>
+\left| \frac{d\rho}{dr} \right| \propto R^{-4} \cdot R = R^{-3}<br>
+即局域能量密度梯度的绝对值与绝对径向坐标的3次方成反比。</p>
+<p>A.4 平方反比引力的导出</p>
+<p>根据正文M₈的极化压强机制，局域观测到的引力加速度g(r)与局域能量密度梯度的绝对值成正比：<br>
+g(r) \propto \left| \frac{d\rho}{dr} \right|<br>
+在弱场近似下（星系外围、太阳系等梯度平缓区域），局域径向坐标r与绝对径向坐标R近似满足线性对应关系r \approx R（背景区域k\to1，标度差异可忽略），代入上式得：<br>
+g(r) \propto \frac{1}{r^2}<br>
+即局域观测的引力加速度严格服从平方反比定律，与正文M₈弱场推导的结果完全一致。</p>
+<p>A.5 结论</p>
+<p>本推导从超定域拓扑的原生3次方能量分布出发，仅通过投影协变公理的坐标变换，就自然得到了局域表象的平方反比引力，全程无额外经验假设，完美符合零参数纲领。正文M₈张量的弱场平方反比律，本质上就是拓扑原生3次方梯度经过投影标度变换后的宏观表象，两者是同一物理规律在不同坐标系下的表达，不存在任何逻辑断层。</p>
+<p>马宝说物理：019篇的核心 takeaways</p>
+<p>第一条：引力是推，不是拉。</p>
+<p>你站在地面上，不是地球把你“拉”住的，是周围的量子涨落把你“推”向地球的。听起来反直觉，但算出来结果一模一样——苹果还是往下掉，月亮还是围着地球转。只是解释不一样了。而且这个“推”的机制天然保证了正反物质都被往同一个方向推，CERN的实验结果完全吻合。</p>
+<p>第二条：“引力看总量”要看场合。</p>
+<p>远场球对称的时候，引力确实只跟总质量有关，跟内部结构没关系。但要是碰上哑铃状的天体，就得老老实实用M₈张量做积分。那句话是图省事写的，严谨的说法是：远场球对称近似下，引力由总质量主导。</p>
+<p>第三条：引力不需要量子化，因为它不是微观力。</p>
+<p>水压不需要量子化，因为它是大量水分子碰撞的统计平均。引力也一样——它是大量量子涨落极化压强的统计平均。非要去量子化引力，就像非要量子化水压一样，找错了对象。</p>
+<p> </p>
+<p>物理意义解读：马宝</p>
+<p>归档标记：数理落地工程十三 · M₈引力极化场张量 · 正式归档（修订版）</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵本体论原创史建威博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+
+
+</html>
