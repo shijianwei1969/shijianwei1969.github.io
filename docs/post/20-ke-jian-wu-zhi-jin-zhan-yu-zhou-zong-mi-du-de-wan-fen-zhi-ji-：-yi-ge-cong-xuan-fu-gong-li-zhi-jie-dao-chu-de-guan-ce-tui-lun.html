@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="---
+title: '20可见物质仅占宇宙总密度的万分之几：一个从悬浮公理直接导出的观测推论'
+subtitle: '双态拓扑宇宙学研究 其三'
+author:
+  - '山东威海理论物理 EPD 工程组'
+date: '2026'
+doi: '10.5281/zenodo.22740605（待归档）'
+keywords:
+  - 双态拓扑宇宙学
+  - 阿基米德悬浮
+  - 背景能量海
+  - 重子占比
+  - 暗物质
+  - 宇宙学密度参数
+abstract: |
+  本文给出一个极简、可直接复算的宇宙学推论。">
+<meta property="og:title" content="20可见物质仅占宇宙总密度的万分之几：一个从悬浮公理直接导出的观测推论">
+<meta property="og:description" content="---
+title: '20可见物质仅占宇宙总密度的万分之几：一个从悬浮公理直接导出的观测推论'
+subtitle: '双态拓扑宇宙学研究 其三'
+author:
+  - '山东威海理论物理 EPD 工程组'
+date: '2026'
+doi: '10.5281/zenodo.22740605（待归档）'
+keywords:
+  - 双态拓扑宇宙学
+  - 阿基米德悬浮
+  - 背景能量海
+  - 重子占比
+  - 暗物质
+  - 宇宙学密度参数
+abstract: |
+  本文给出一个极简、可直接复算的宇宙学推论。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/20-ke-jian-wu-zhi-jin-zhan-yu-zhou-zong-mi-du-de-wan-fen-zhi-ji-%EF%BC%9A-yi-ge-cong-xuan-fu-gong-li-zhi-jie-dao-chu-de-guan-ce-tui-lun.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>20可见物质仅占宇宙总密度的万分之几：一个从悬浮公理直接导出的观测推论</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">20可见物质仅占宇宙总密度的万分之几：一个从悬浮公理直接导出的观测推论</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/289" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><hr>
+<p>title: "20可见物质仅占宇宙总密度的万分之几：一个从悬浮公理直接导出的观测推论"<br>
+subtitle: "双态拓扑宇宙学研究 其三"<br>
+author:</p>
+<ul>
+<li>"山东威海理论物理 EPD 工程组"<br>
+date: "2026"<br>
+doi: "10.5281/zenodo.22740605（待归档）"<br>
+keywords:</li>
+<li>双态拓扑宇宙学</li>
+<li>阿基米德悬浮</li>
+<li>背景能量海</li>
+<li>重子占比</li>
+<li>暗物质</li>
+<li>宇宙学密度参数<br>
+abstract: |<br>
+本文给出一个极简、可直接复算的宇宙学推论。在双态拓扑宇宙学（DSTC）框架下，<br>
+背景能量海的密度已由星系团中性悬浮条件锚定为<br>
+$\rho_{\mathrm{bg}}\simeq 2\times10^{-24}\ \mathrm{kg,m^{-3}}$（其一的结论）。<br>
+取宇宙发光/重子物质的平均密度上限 $\rho_{\mathrm{bar}}\lesssim 4\times10^{-28}\ \mathrm{kg,m^{-3}}$，<br>
+二者直接相除即得<br>
+$\rho_{\mathrm{bar}}/\rho_{\mathrm{bg}}\lesssim 2\times10^{-4}$，<br>
+即<strong>全部重子物质仅占背景总密度的约万分之二，可见发光物质仅约十万分之一点五</strong>。<br>
+本文的核心不是给出新观测，而是<strong>澄清一处长期的概念错位</strong>：<br>
+标准宇宙学所说的"重子占约 $5%$"，其分母是总物质密度 $\rho_m$，<br>
+而本文的分母是背景能量海密度 $\rho_{\mathrm{bg}}$；二者并不矛盾，<br>
+只是分母不同。一旦区分清楚，"暗物质为何找不到"便有了直接的本体论答案——<br>
+它不是缺失的质量，而是<strong>把背景能量海的支撑误认成了物质</strong>。<br>
+全文仅依赖两个可直接观测的量相除，不含任何拟合参数，<br>
+并给出三个可证伪预言。</li>
+</ul>
+<hr>
+<h1>一、引言：一个可以心算的宇宙学数字</h1>
+<p>宇宙学有一个长期流传的"熟悉数字"：普通物质（重子）约占宇宙总质能密度的 $5%$，<br>
+暗物质约占 $27%$，暗能量约占 $68%$。于是公众与不少研究者自然地得出结论：<br>
+"可见物质占了可观的一部分。"</p>
+<p>这个数字本身没有算错，但它的<strong>分母</strong>是"总物质/质能密度" $\rho_m+\rho_\Lambda$。<br>
+如果换一个更根本的分母——<strong>整个宇宙浸于其中的背景能量海密度</strong> $\rho_{\mathrm{bg}}$——<br>
+答案会彻底改变。本文的目的就是把这个新答案算清楚，并说明它为何不是悖论。</p>
+<p>双态拓扑宇宙学（DSTC）的前两篇已经建立了如下图景：</p>
+<ul>
+<li>
+<strong>其一</strong>：星系团在背景能量海中满足阿基米德中性悬浮条件<br>
+$\bar\rho(R_b)=\rho_{\mathrm{bg}}$，并由不自转的星系团标定出<br>
+$\rho_{\mathrm{bg}}\simeq 2\times10^{-24}\ \mathrm{kg,m^{-3}}$；</li>
+<li>
+<strong>其二</strong>：凝聚体与根域构成双态分层，背景密度的第一性原理来源留作 B 支待推导。</li>
+</ul>
+<p>本文不引入任何新假设，仅把<strong>已锚定的 $\rho_{\mathrm{bg}}$</strong> 与<strong>宇宙发光/重子密度的既有观测上限</strong>相除。结论是定量的、心算级别的：</p>
+<blockquote>
+<p><strong>宇宙可见物质占总密度的比例，是"万分之几"的量级，而不是百分之几。</strong></p>
+</blockquote>
+<h1>二、三个密度口径必须严格区分</h1>
+<p>一切混淆都来自"占比"的分母没有写清。为避免歧义，本文固定使用以下三种口径。</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>符号</th>
+<th>名称</th>
+<th>数值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\rho_{\mathrm{lum}}$</td>
+<td>发光物质密度</td>
+<td>$\sim 1.5\times10^{-28}$</td>
+<td>恒星与发光气体</td>
+</tr>
+<tr>
+<td>$\rho_{\mathrm{bar}}$</td>
+<td>全部重子密度</td>
+<td>$\lesssim 4\times10^{-28}$</td>
+<td>重子（含气体、尘埃）上限</td>
+</tr>
+<tr>
+<td>$\rho_{\mathrm{bg}}$</td>
+<td>背景能量海密度</td>
+<td>$2\times10^{-24}$</td>
+<td>DSTC 悬浮公理的普适常数</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>相应地，我们定义三种"占比"，<strong>三者不可混用</strong>：</p>
+<p>$$
+f_{\mathrm{lum}}^{\mathrm{(bg)}} \equiv \frac{\rho_{\mathrm{lum}}}{\rho_{\mathrm{bg}}},\qquad
+f_{\mathrm{bar}}^{\mathrm{(bg)}} \equiv \frac{\rho_{\mathrm{bar}}}{\rho_{\mathrm{bg}}},\qquad
+f_{\mathrm{bar}}^{\mathrm{(tot)}} \equiv \frac{\rho_{\mathrm{bar}}}{\rho_m+\rho_\Lambda}
+\approx 5% .
+$$</p>
+<p>其中第三式正是标准宇宙学的"重子占约 $5%$"。前两个则是本文的对象。<br>
+<strong>标准模型的 $5%$ 与本文的"万分之二"可以同时为真</strong>——它们只是分母不同。<br>
+真正需要追问的是：在"宇宙究竟由什么构成"这个问题上，哪一个分母才是本体论上根本的。</p>
+<h1>三、直接相除：从两个观测量得到一个推论</h1>
+<p>取其一已锚定的背景密度</p>
+<p>$$
+\rho_{\mathrm{bg}} = 2\times10^{-24}\ \mathrm{kg,m^{-3}} ,
+\tag{3.1}
+$$</p>
+<p>与宇宙重子平均密度的保守上限</p>
+<p>$$
+\rho_{\mathrm{bar}} \lesssim 4\times10^{-28}\ \mathrm{kg,m^{-3}} .
+\tag{3.2}
+$$</p>
+<p>二者相除：</p>
+<p>$$
+f_{\mathrm{bar}}^{\mathrm{(bg)}}
+= \frac{\rho_{\mathrm{bar}}}{\rho_{\mathrm{bg}}}
+\lesssim \frac{4\times10^{-28}}{2\times10^{-24}}
+= 2\times10^{-4}
+\approx 0.02% = \text{万分之二}.
+\tag{3.3}
+$$</p>
+<p>若只计真正发光的恒星物质 $\rho_{\mathrm{lum}}\sim 1.5\times10^{-28}$，则</p>
+<p>$$
+f_{\mathrm{lum}}^{\mathrm{(bg)}}
+\approx \frac{1.5\times10^{-28}}{2\times10^{-24}}
+\approx 7.5\times10^{-5}
+\approx 0.0075%
+= \text{十万分之一点五}.
+\tag{3.4}
+$$</p>
+<p><strong>这正是"万分之几"的定量来源。</strong> 它不是一个拟合结果，也不是理论参数，<br>
+而是 $\rho_{\mathrm{bg}}$（来自其一的观测标定）与重子密度（来自既有宇宙学观测）的直接比值。</p>
+<blockquote>
+<p><strong>推论</strong>：宇宙不是"由物质组成的宇宙"，而是"漂浮在巨大能量海表面上的一层极薄物质浪花"。<br>
+物质的占比不是百分之几，而是万分之几。</p>
+</blockquote>
+<h1>四、为何这一结果与标准宇宙学不矛盾</h1>
+<p>必须诚实指出：本节推论<strong>不否定</strong>标准宇宙学的重子密度测量。<br>
+$\Omega_b h^2$、原初核合成、CMB 峰比给出的 $\rho_{\mathrm{bar}}$ 是可靠的观测事实，<br>
+本文直接沿用其上限。冲突只发生在<strong>解释层面</strong>。</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>口径</th>
+<th>数值</th>
+<th>对应问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\rho_{\mathrm{bar}}/\rho_m$</td>
+<td>$\sim 5%$</td>
+<td>总物质中重子占多少</td>
+</tr>
+<tr>
+<td>$\rho_{\mathrm{bar}}/\rho_{\mathrm{bg}}$</td>
+<td>$\sim 2\times10^{-4}$</td>
+<td><strong>背景能量海中重子占多少</strong></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>标准模型把分母取为 $\rho_m$（总物质），于是重子占约 $5%$，其余由暗物质补齐。<br>
+DSTC 把分母取为 $\rho_{\mathrm{bg}}$（背景能量海），于是<strong>全部重子也只占万分之二</strong>。</p>
+<p>二者的差异揭示了一个本体论分歧：</p>
+<ul>
+<li>若宇宙的基本构成是"物质 + 虚空"，则 $5%$ 是自然的答案；</li>
+<li>若宇宙的基本构成是"背景能量海 + 其上的拓扑凝聚体"，则万分之二才是自然的答案，<br>
+而"暗物质"只是<strong>将背景支撑误归为物质</strong>的语言残留。</li>
+</ul>
+<p><strong>本文不宣称推翻了 $\rho_{\mathrm{bar}}$ 的观测，只重写了它的分母。</strong></p>
+<h1>五、为何这个数字必然成立</h1>
+<p>从 DSTC 的公理看，"万分之几"不是偶然，而是<strong>悬浮图景的逻辑必然</strong>。</p>
+<p><strong>公理（悬浮原理）</strong>：凝聚体在背景能量海中中性悬浮，要求球内平均密度等于背景密度<br>
+$\bar\rho(R_b)=\rho_{\mathrm{bg}}$。这意味着 $\rho_{\mathrm{bg}}$ 是<strong>全域统一的基准密度</strong>，<br>
+一切天体系统的质量分布都围绕它分层。</p>
+<p>于是：</p>
+<ol>
+<li>
+$\rho_{\mathrm{bg}}$ 必须是宇宙中最"宏大的"密度尺度——它是悬浮的基准；</li>
+<li>重子物质只集中在局部凝聚体中，其宇宙平均密度天然远低于 $\rho_{\mathrm{bg}}$；</li>
+<li>因此 $\rho_{\mathrm{bar}}/\rho_{\mathrm{bg}}\ll 1$ 是结构形成的<strong>必要条件</strong>：<br>
+若重子占比过高，凝聚体将因自引力过强而无法被背景浮力中性支撑。</li>
+</ol>
+<p>换言之，"万分之几"不是意外的小数字，而是<strong>分层悬浮能够成立的尺度条件</strong>。<br>
+这与海洋的直觉完全同构：海面的浪花（物质）相对于整片海洋（背景）永远是极少量的——<br>
+若浪花占了海洋的相当部分，海面就不再平静，分层结构也就无法维持。</p>
+<h1>六、三个可证伪预言</h1>
+<p>一个纯粹的观测推论若要成为科学命题，必须明确"怎样算它错了"。<br>
+以下任一预言被观测否定，都将削弱或推翻本推论。</p>
+<p><strong>预言一（矮星系延展）</strong>。<br>
+矮星系重子占比极低、最接近本征凝聚态，其 HI 盘外缘的悬浮半径偏差应与其他低质量系统<br>
+遵循同一单调关系（详见其一），而非表现出独立的额外质量成分。</p>
+<p><strong>预言二（悬浮半径汇合）</strong>。<br>
+任意凝聚体的悬浮半径 $R_b=(3M/4\pi\rho_{\mathrm{bg}})^{1/3}$ 所预言的边界，<br>
+应与 X 射线截断、弱引力透镜边界、卫星轨道拱点在<strong>同一半径</strong>汇合。<br>
+若不同类别对象的汇合半径需要显著不同的 $\rho_{\mathrm{bg}}$，则 $\rho_{\mathrm{bg}}$ 的普适性被否证。</p>
+<p><strong>预言三（高红移不演化）</strong>。<br>
+若 $\rho_{\mathrm{bg}}$ 是背景能量海的本体论基准而非宇宙学演化量，<br>
+则高红移天体在其所在位置的局域平均密度仍应落在同一 $\rho_{\mathrm{bg}}$ 量级，<br>
+而不应随宇宙学时间显著演化。若观测显示系统性演化，则"背景普适常数"的解释需修正。</p>
+<p>这三个预言中，<strong>预言二是本推论最直接的判决性检验</strong>：它把"万分之几"这个数字<br>
+与可直接观测的边界尺度一一对应起来。</p>
+<h1>七、结论</h1>
+<p>本文只做了一件事：把两个可直接观测的量相除。</p>
+<p>$$
+\frac{\rho_{\mathrm{bar}}}{\rho_{\mathrm{bg}}}
+\lesssim 2\times10^{-4}
+\approx \text{万分之二},\qquad
+\frac{\rho_{\mathrm{lum}}}{\rho_{\mathrm{bg}}}
+\approx 7.5\times10^{-5}
+\approx \text{十万分之一点五}.
+$$</p>
+<p>由此得到一个简单、惊人却完全自洽的图景：</p>
+<blockquote>
+<p><strong>宇宙可见物质占总密度的万分之几；所谓"暗物质"，是把背景能量海的阿基米德支撑<br>
+误认成了缺失的质量。</strong></p>
+</blockquote>
+<p>本文刻意保持论证链最短，因为它不是理论推导，而是<strong>内部一致性检验</strong>：<br>
+悬浮公理一旦锚定了 $\rho_{\mathrm{bg}}$，"物质只是浪花"便是直接推论。<br>
+它的价值不在惊奇，而在<strong>可检验</strong>——预言二把全部赌注压在了可观测的边界尺度上。</p>
+<blockquote>
+<p><strong>方法论声明</strong>：本推论是 $\rho_{\mathrm{bg}}=2\times10^{-24}$ 成立条件下的逻辑推论，<br>
+不是独立的观测证据。$\rho_{\mathrm{bg}}$ 的普适性仍需 SPARC 全样本与星系团样本<br>
+逐系统检验；B 支（由根域参数第一性导出 $\rho_{\mathrm{bg}}$）仍待完成。<br>
+在此之前，本文的结论应被视为一个<strong>待实证检验的强预言</strong>，而非既成事实。</p>
+</blockquote>
+<h1>附录 A：数值自检（可复现）</h1>
+<p>以下计算由脚本 <code class="notranslate">可见物质占比.py</code> 独立复现，结果与正文一致。</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>量</th>
+<th>取值</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\rho_{\mathrm{bg}}$</td>
+<td>$2.00\times10^{-24}$</td>
+<td>其一，星系团悬浮标定</td>
+</tr>
+<tr>
+<td>$\rho_{\mathrm{lum}}$</td>
+<td>$1.50\times10^{-28}$</td>
+<td>发光物质平均密度（保守估计）</td>
+</tr>
+<tr>
+<td>$\rho_{\mathrm{bar}}$</td>
+<td>$4.00\times10^{-28}$</td>
+<td>全部重子密度上限</td>
+</tr>
+<tr>
+<td>$\rho_{\mathrm{bar}}/\rho_{\mathrm{bg}}$</td>
+<td>$2.00\times10^{-4}$</td>
+<td>正文式 (3.3)</td>
+</tr>
+<tr>
+<td>$\rho_{\mathrm{lum}}/\rho_{\mathrm{bg}}$</td>
+<td>$7.50\times10^{-5}$</td>
+<td>正文式 (3.4)</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>脚本不调用任何外部拟合，仅执行上述除法与三口径对比，任何人可自行复算。</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵本体论原创史建威博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
