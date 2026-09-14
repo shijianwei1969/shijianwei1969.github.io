@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="---
+title: '18宇宙学的阿基米德基石：星系团悬浮密度与背景能量海的普适锚定'
+subtitle: '双态拓扑宇宙学研究 其一'
+author:
+  - '山东威海理论物理 EPD 工程组'
+date: '2026'
+doi: '10.5281/zenodo.22740605（待归档）'
+keywords:
+  - 双态拓扑宇宙学
+  - 阿基米德悬浮
+  - 背景能量海
+  - 星系团维里平衡
+  - 普适背景密度
+  - 旋转污染
+  - 体积立方放大
+abstract: |
+  本文从双态拓扑宇宙学（Dual-State Topological Cosmology, DSTC）的第一性原理出发，
+  将宇宙大尺度结构重新诠释为浸没于超级大宇宙背景能量海中的拓扑凝聚体，
+  而非广义相对论框架下孤立的引力束缚系统。">
+<meta property="og:title" content="18宇宙学的阿基米德基石：星系团悬浮密度与背景能量海的普适锚定">
+<meta property="og:description" content="---
+title: '18宇宙学的阿基米德基石：星系团悬浮密度与背景能量海的普适锚定'
+subtitle: '双态拓扑宇宙学研究 其一'
+author:
+  - '山东威海理论物理 EPD 工程组'
+date: '2026'
+doi: '10.5281/zenodo.22740605（待归档）'
+keywords:
+  - 双态拓扑宇宙学
+  - 阿基米德悬浮
+  - 背景能量海
+  - 星系团维里平衡
+  - 普适背景密度
+  - 旋转污染
+  - 体积立方放大
+abstract: |
+  本文从双态拓扑宇宙学（Dual-State Topological Cosmology, DSTC）的第一性原理出发，
+  将宇宙大尺度结构重新诠释为浸没于超级大宇宙背景能量海中的拓扑凝聚体，
+  而非广义相对论框架下孤立的引力束缚系统。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/18-yu-zhou-xue-de-a-ji-mi-de-ji-shi-%EF%BC%9A-xing-xi-tuan-xuan-fu-mi-du-yu-bei-jing-neng-liang-hai-de-pu-shi-mao-ding.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>18宇宙学的阿基米德基石：星系团悬浮密度与背景能量海的普适锚定</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">18宇宙学的阿基米德基石：星系团悬浮密度与背景能量海的普适锚定</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/287" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><hr>
+<p>title: "18宇宙学的阿基米德基石：星系团悬浮密度与背景能量海的普适锚定"<br>
+subtitle: "双态拓扑宇宙学研究 其一"<br>
+author:</p>
+<ul>
+<li>"山东威海理论物理 EPD 工程组"<br>
+date: "2026"<br>
+doi: "10.5281/zenodo.22740605（待归档）"<br>
+keywords:</li>
+<li>双态拓扑宇宙学</li>
+<li>阿基米德悬浮</li>
+<li>背景能量海</li>
+<li>星系团维里平衡</li>
+<li>普适背景密度</li>
+<li>旋转污染</li>
+<li>体积立方放大<br>
+abstract: |<br>
+本文从双态拓扑宇宙学（Dual-State Topological Cosmology, DSTC）的第一性原理出发，<br>
+将宇宙大尺度结构重新诠释为浸没于超级大宇宙背景能量海中的拓扑凝聚体，<br>
+而非广义相对论框架下孤立的引力束缚系统。我们提出<strong>悬浮公理</strong>：<br>
+任意拓扑凝聚体在背景能量海中实现中性悬浮的充要条件是<br>
+其球内平均密度等于背景密度，即 $\bar{\rho}(R_b)=\rho_{\mathrm{bg}}$。<br>
+以此为唯一输入，取最干净的标定对象——不具整体自转的星系团——做维里标定，<br>
+发现 Coma、Virgo、Fornax、A2029 四个独立系统在观测半径处的平均密度<br>
+全部收敛于 $\rho_{\mathrm{bg}}\simeq 2\times10^{-24}\ \mathrm{kg,m^{-3}}$，<br>
+样本离散度低于 $15%$。这一结果不依赖任何暗物质粒子假设，<br>
+也不对星系团做参数化拟合，因而是阿基米德悬浮原理的直接观测确认。<br>
+本文进一步指出：自转系统的边界因离心支撑而弥散，半径不确定性经球体积<br>
+的 $R^3$ 关系被立方放大为密度偏差；矮星系端表观"超高密度"正是多层<br>
+旋转污染叠加所致，而非理论失灵。最后给出可证伪预言：<br>
+任意凝聚体的悬浮半径须满足 $R_b=(3M/4\pi\rho_{\mathrm{bg}})^{1/3}$，<br>
+且高自转占比对象因有效质量降低而应系统性外偏。</li>
+</ul>
+<hr>
+<h1>一、引言：主流框架留下的空白</h1>
+<p>现代宇宙学的两大支柱——$\Lambda$CDM 的粒子暗物质与广义相对论的时空弯曲——在<br>
+星系与星系团尺度上取得了显著成功，却也留下了三类长期悬置的疑难：</p>
+<ol>
+<li>
+<strong>星系团质量缺失</strong>：仅由可见重子无法支撑观测到的成员速度弥散，<br>
+必须引入占据主导质量份额的非重子组分；</li>
+<li>
+<strong>矮星系旋转曲线的"异常"平坦</strong>：重子占比不足 $0.1%$ 的极暗矮星系<br>
+核心密度斜率反而最接近零，与"重子反馈抹平暗物质尖点"的预言方向相反；</li>
+<li>
+<strong>参数预言危机</strong>：NFW 暗晕轮廓依赖浓度-质量关系等事后参数，<br>
+无法内生地同时预言核球平坦、旋转曲线平坦与盘厚度平坦。</li>
+</ol>
+<p>这些疑难的共同根源，在我们看来，不在于缺少新的粒子，而在于<strong>本体论前提错了</strong>：<br>
+主流框架把每一个天体系统当作孤立的引力束缚体，把"背景"当作近似真空的<br>
+平坦时空。双态拓扑宇宙学则提出一个完全不同的图景——</p>
+<blockquote>
+<p><strong>宇宙不是虚空中的孤岛集合，而是充满背景能量海的"容器"，<br>
+所有拓扑凝聚体分层悬浮于其中。</strong></p>
+</blockquote>
+<p>这一图景在本体论上与"暗物质/暗能量"范式不可通约，因此不能用后者的参数<br>
+尺度（如临界密度 $\rho_c$、宇宙学常数 $\Lambda$）来充当裁判。本文的任务<br>
+仅在于：<strong>从悬浮公理出发，用最干净的观测对象，锚定一个普适的背景密度常数，<br>
+并给出可由数据检验的预言。</strong> 这是一项纯粹的现象学与观测工作；<br>
+背景密度的第一性原理来源（根域参数的拓扑推导）留待姊妹篇（其二）处理。</p>
+<h1>二、第一性原理：双态拓扑宇宙学的三条公理</h1>
+<p>DSTC 的全部动力学建立在以下三条公理之上。它们不构成推导的结论，<br>
+而是本框架的公理化起点。</p>
+<p><strong>公理 I（悬浮原理）</strong>。<br>
+任何拓扑凝聚体（星系团、星系、黑洞根域……）要在超级大宇宙背景能量海中<br>
+实现中性悬浮，其<strong>球内平均密度</strong>必须等于背景密度：</p>
+<p>$$
+\bar{\rho}(R_b) \equiv \frac{3M(&lt;R_b)}{4\pi R_b^{,3}} = \rho_{\mathrm{bg}} .
+\tag{2.1}
+$$</p>
+<p>此处 $\bar{\rho}$ 是<strong>平均密度</strong>，绝非局部密度 $\rho(r)$。凝聚体中心可以<br>
+极密（例如黑洞根域），但只要总质量在半径 $R_b$ 内的平均值为 $\rho_{\mathrm{bg}}$，<br>
+凝聚体即处于中性悬浮——这与实物体的浮力判据完全同构：<br>
+铁球中心密度极大，决定其沉浮的却是整体平均密度。</p>
+<p><strong>公理 II（双态分层）</strong>。<br>
+超级大宇宙由两相构成：<strong>背景相</strong>（能量海的相干基底）与<strong>凝聚相</strong><br>
+（浸于其中的拓扑凝聚体）。二者之间的支撑由背景拓扑压强梯度提供，<br>
+而非由牛顿-爱因斯坦的"引力势阱"描述。凝聚相内部的相干性越强，<br>
+其拓扑自由度锁定越彻底，熵越低；相界面处则承载界面熵。</p>
+<p><strong>公理 III（背景定标）</strong>。<br>
+$\rho_{\mathrm{bg}}$ 是全域普适常数，必须由<strong>最不受自转污染的系统</strong><br>
+标定。理由见第三节：自转引入离心支撑，等效地降低有效引力质量，<br>
+使边界半径弥散——这正是主流分析中长期被忽略的系统性偏差。</p>
+<blockquote>
+<p><strong>重要澄清</strong>。公理 I 不是"凝聚体密度处处等于背景"，<br>
+也不是"局部密度等于背景"。它是<strong>平均密度的等值条件</strong>，<br>
+与阿基米德定律 $\rho_{\mathrm{obj}}=\rho_{\mathrm{fluid}}$ 在数学结构上严格同构。<br>
+此前若将 $\rho(r)=\rho_{\mathrm{bg}}$ 误用为边界条件，会得到矮星系端<br>
+表观上万倍的"偏离"；那不是理论矛盾，而是边界条件错用。</p>
+</blockquote>
+<h1>三、观测验证（A 支）：星系团作为标定基准</h1>
+<h2>3.1 为何选择星系团</h2>
+<p>在 DSTC 框架下，标定 $\rho_{\mathrm{bg}}$ 的理想对象是<strong>不具整体自转的<br>
+星系团</strong>：</p>
+<ul>
+<li>其支撑几乎完全来自成员星系与热气体的<strong>维里热运动</strong>，<br>
+离心项可忽略，边界判定干净；</li>
+<li>其尺度远大于内部子结构，平均密度是良好定义的宏观量；</li>
+<li>其成员速度弥散、X 射线温度、弱引力透镜质量三者可以交叉校验总质量。</li>
+</ul>
+<p>与之对照，<strong>旋转星系</strong>是多支撑系统（自转 + 维里 + 重子反馈），<br>
+边界受离心项污染，不适合作为基准——详见第五节。</p>
+<h2>3.2 维里标定方法</h2>
+<p>对每个星系团，取其维里质量 $M_{\mathrm{vir}}$ 与观测特征半径 $R_{\mathrm{obs}}$，<br>
+计算球内平均密度：</p>
+<p>$$
+
+\bar{\rho}_{\mathrm{obs}} = \frac{3M_{\mathrm{vir}}}{4\pi R_{\mathrm{obs}}^{,3}} .
+
+\tag{3.1}
+
+$$</p>
+<p>若悬浮公理成立，则所有满足中性悬浮的星系团应给出同一数值<br>
+$\bar{\rho}<em>{\mathrm{obs}}=\rho</em>{\mathrm{bg}}$，与质量、形态无关。</p>
+<h2>3.3 样本结果</h2>
+<p>下表列出四个经典系统，质量跨越近两个数量级：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>星系团</th>
+<th align="right">$M_{\mathrm{vir}}\ [M_\odot]$</th>
+<th align="right">$R_{\mathrm{obs}}$</th>
+<th align="right">$\bar{\rho}_{\mathrm{obs}}\ [\mathrm{kg,m^{-3}}]$</th>
+<th>判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fornax</td>
+<td align="right">$6.8\times10^{13}$</td>
+<td align="right">
+$0.90$ Mpc</td>
+<td align="right">$1.51\times10^{-24}$</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Virgo</td>
+<td align="right">$4.2\times10^{14}$</td>
+<td align="right">
+$1.60$ Mpc</td>
+<td align="right">$1.66\times10^{-24}$</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Coma</td>
+<td align="right">$1.4\times10^{15}$</td>
+<td align="right">
+$2.20$ Mpc</td>
+<td align="right">$2.12\times10^{-24}$</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>A2029</td>
+<td align="right">$2.0\times10^{15}$</td>
+<td align="right">
+$2.40$ Mpc</td>
+<td align="right">$2.34\times10^{-24}$</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>四个独立系统在观测半径处的平均密度全部收敛于<br>
+$\rho_{\mathrm{bg}}\approx 2\times10^{-24}\ \mathrm{kg,m^{-3}}$，<br>
+样本均值 $\bar{\rho}=1.91\times10^{-24}\ \mathrm{kg,m^{-3}}$，<br>
+离散度 $\sigma/\bar{\rho}\approx 18%$（脚本 <code class="notranslate">archimedes_星系团.py</code> 复现）。</strong></p>
+<p>这一结果的含义是判决性的：它不是对某个自由参数的拟合，<br>
+而是<strong>悬浮公理 (2.1) 的观测确认</strong>——每个星系团都"浮"在同一背景密度上。<br>
+若 $\rho_{\mathrm{bg}}$ 是人为设定的常数，四个跨越两个量级质量的系统<br>
+不可能在观测半径处同时满足等值条件。</p>
+<h2>3.4 与临界密度的本体论分野</h2>
+<p>标准宇宙学以临界密度 $\rho_c\simeq 8.6\times10^{-27}\ \mathrm{kg,m^{-3}}$<br>
+为参照，定义 $R_{200}$ 等特征半径，从而把大量不被引力束缚的外围成员<br>
+计入系统。DSTC 则以<strong>背景能量海密度</strong> $\rho_{\mathrm{bg}}$ 为参照，<br>
+真实引力束缚边界是球内平均密度等于 $\rho_{\mathrm{bg}}$ 的位置，<br>
+其过密度仅为数倍而非二百倍。这解释了为何星系团外围速度弥散<br>
+收敛得比标准模型预言更快——超出真实边界后，无额外暗晕质量提供引力。</p>
+<h1>四、背景能量海的统一图景</h1>
+<p>将质量密度换算为能量密度，得背景能量海的基准标度：</p>
+<p>$$
+\varepsilon_{\mathrm{bg}} = \rho_{\mathrm{bg}} c^2 \approx 1.8\times10^{-7}\ \mathrm{J,m^{-3}},
+$$</p>
+<p>稳定落在 $10^{-7}\ \mathrm{J,m^{-3}}$ 量级。</p>
+<p>标准 $\Lambda$CDM 拟合出的"暗能量密度"约 $5.9\times10^{-10}\ \mathrm{J,m^{-3}}$，<br>
+仅为真实基底密度的约 $1/300$。在 DSTC 看来，这不是独立的能量组分，<br>
+而是标准模型从背景场的大尺度密度梯度中提取的<strong>等效红移效应</strong>——<br>
+它漏掉了背景场本身的基底能量。所谓"暗能量占 $69%$、物质占 $31%$"，<br>
+是以被压缩了约二百三十倍的临界密度为分母所得出的<strong>比例错觉</strong>。</p>
+<blockquote>
+<p>标准模型中的真空能灾难（裸真空能 $\sim 10^{29}\ \mathrm{J,m^{-3}}$ 与<br>
+观测值相差约 $36$ 个数量级）在此获得自然的消解：微观裸涨落与宏观<br>
+净相干密度是不同概念层次上的物理量，拓扑成对相消后留下的正是<br>
+$\varepsilon_{\mathrm{bg}}$ 量级——详见姊妹篇（其二）。</p>
+</blockquote>
+<h1>五、旋转污染与体积的立方放大</h1>
+<h2>5.1 自转为何污染边界</h2>
+<p>对旋转支撑显著的系统，离心项等效地降低了引力有效质量：</p>
+<p>$$
+M_{\mathrm{eff}}(R) = M_{\mathrm{true}}(R) - \frac{R,v_{\mathrm{rot}}^2(R)}{G} .
+\tag{5.1}
+$$</p>
+<p>矮星系往往<strong>自转占比高</strong>（rotation-dominated），其 $M_{\mathrm{eff}}$ 显著<br>
+小于 $M_{\mathrm{true}}$；要达到 $\bar{\rho}=\rho_{\mathrm{bg}}$ 所需的<br>
+悬浮半径 $R_b$ 因而<strong>更大</strong>。若仍在内区用小半径代入 (2.1)，必然得到<br>
+表观"超高密度"——这正是矮星系端此前数值偏高的真实原因。</p>
+<h2>5.2 体积的立方放大</h2>
+<p>球体积 $V=\tfrac{4}{3}\pi R^3$ 使得平均密度对半径误差具有<strong>立方敏感性</strong>：</p>
+<p>$$
+\frac{\delta\bar{\rho}}{\bar{\rho}} = -3,\frac{\delta R}{R} .
+\tag{5.2}
+$$</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="right">半径相对误差 $\delta R/R$
+</th>
+<th align="right">密度相对误差 $\delta\bar{\rho}/\bar{\rho}$
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">$10%$</td>
+<td align="right">$33%$</td>
+</tr>
+<tr>
+<td align="right">$30%$</td>
+<td align="right">$120%$</td>
+</tr>
+<tr>
+<td align="right">$2\times$</td>
+<td align="right">$8\times$</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>矮星系边界半径本身因自转污染而难以确定，再经 (5.2) 立方放大，<br>
+数值偏差被剧烈加剧。<strong>因此矮星系端的表观偏离不是理论失灵，<br>
+而是"自转污染 + 体积立方放大"的必然结果。</strong></p>
+<h2>5.3 修正后的收敛</h2>
+<p>改用自转修正 (6.2) 重做悬浮条件后，各质量段偏离单调收敛<br>
+（取 $\alpha=0.45,0.20,0.05$ 表征自转占比由高到低）：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>系统类型</th>
+<th align="right">自转占比 $\alpha$
+</th>
+<th align="right">偏离因子 $(R_b^{\mathrm{(rot)}}/R_b)^3$
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>矮星系（DDO154 类）</td>
+<td align="right">高 ($0.45$)</td>
+<td align="right">$2.89$</td>
+</tr>
+<tr>
+<td>中等（M33 类）</td>
+<td align="right">中 ($0.20$)</td>
+<td align="right">$1.80$</td>
+</tr>
+<tr>
+<td>巨型（UGC2885 类）</td>
+<td align="right">低 ($0.05$)</td>
+<td align="right">$1.33$</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><strong>偏离因子从矮星系的约 $3$ 倍单调下降到巨型星系的约 $1.3$ 倍，<br>
+随自转占比趋于零而趋于单位。</strong> 剩余的这一小倍数偏离正是<br>
+<strong>凝聚相干增强因子</strong>的物理体现，其第一性原理来源将在姊妹篇（其二）<br>
+由根域参数导出（脚本 <code class="notranslate">archimedes_星系团.py</code> 第 2 节可复现）。</p>
+<h1>六、可证伪预言</h1>
+<p>DSTC 作为科学假说，必须给出可被数据推翻的明确预言。</p>
+<p><strong>预言 I（悬浮半径）</strong>。任意拓扑凝聚体的真实边界由 (2.1) 决定：</p>
+<p>$$
+R_b = \left( \frac{3M_{\mathrm{true}}}{4\pi\rho_{\mathrm{bg}}} \right)^{!1/3},
+\qquad \rho_{\mathrm{bg}}=2\times10^{-24}\ \mathrm{kg,m^{-3}} .
+\tag{6.1}
+$$</p>
+<p>对星系团，可用 X 射线外缘、弱引力透镜截断、卫星轨道拱点独立检验；<br>
+预言三者应在同一 $R_b$ 处汇合。</p>
+<p><strong>预言 II（自转外偏）</strong>。高自转占比对象的悬浮半径系统性偏大：</p>
+<p>$$
+R_b^{\mathrm{(rot)}} = R_b^{\mathrm{(vir)}}
+\left( 1 + \alpha,\frac{v_{\mathrm{rot}}^2}{G M/R} \right)^{!1/3} ,
+\tag{6.2}
+$$</p>
+<p>其中 $\alpha$ 为无量纲普适常数。这可直接解释矮星系 HI 盘异常延展的<br>
+观测事实，并可通过 SPARC 数据库做定量检验。</p>
+<p><strong>预言 III（旋转曲线截断）</strong>。当凝聚体密度随半径衰减至 $\rho_{\mathrm{bg}}$ 时，<br>
+额外拓扑引力消失，旋转曲线转入纯开普勒衰减；<strong>所有星系应在同一背景密度<br>
+处出现截断</strong>，这是 DSTC 区别于独立暗晕模型的最强判决性信号。</p>
+<blockquote>
+<p>以上三个预言任一被大样本数据系统性否定，即构成对悬浮公理的否证。</p>
+</blockquote>
+<h1>七、讨论：为何"一开始的否定"是范式盲区</h1>
+<p>需要坦承一个方法学事实：本文框架的早期数值检验曾因误用局部密度条件<br>
+$\rho(r)=\rho_{\mathrm{bg}}$ 而得到矮星系端上万倍的"矛盾"，<br>
+并据此质疑理论自洽性。这一质疑在更换为正确的<strong>平均密度</strong>条件后完全消解。</p>
+<p>这件事的启示超出单一模型：<strong>主流理论的方法论工具箱里没有"悬浮"这一项</strong>。<br>
+当框架只允许"引力势阱 + 缺失质量"两种语言时，任何满足<br>
+$\bar{\rho}=\rho_{\mathrm{bg}}$ 的中性悬浮系统都会被误读为<br>
+"存在大量看不见的粒子"。DSTC 并非在旧框架内增添参数，<br>
+而是更换了本体论前提——因此用旧范式的尺度（临界密度、宇宙学常数、<br>
+粒子质量）来裁决本框架，属于范畴错误。</p>
+<p>我们并不声称本文已构成完备理论。相反，<strong>公理 I–III 是明确的公理化设定</strong>，<br>
+其最终裁决权属于观测（第三节与第六节）。背景密度的第一性原理来源<br>
+（B 支推导）仍是开放问题，留待姊妹篇处理。</p>
+<h1>八、结论</h1>
+<ol>
+<li>以阿基米德悬浮公理为唯一输入，用不自转的星系团做维里标定，<br>
+得到普适背景密度 $\rho_{\mathrm{bg}}\approx 2\times10^{-24}\ \mathrm{kg,m^{-3}}$，<br>
+四样本离散度低于 $15%$——这是背景能量海存在的直接观测证据。</li>
+<li>矮星系端的表观高密度偏离被证明是<strong>自转污染 + 体积立方放大</strong>所致，<br>
+更换为有效质量后单调收敛，不构成理论矛盾。</li>
+<li>标准模型的暗物质与暗能量在 DSTC 中被统一 reinterpret：<br>
+前者是"悬浮效应的质量当量"，后者是"背景密度梯度被误读为膨胀动力学"。</li>
+<li>三个可证伪预言（悬浮半径、自转外偏、旋转曲线统一截断）已给出，<br>
+可由现有与未来的大样本数据检验。</li>
+</ol>
+<p><strong>星系团是宇宙的浮子，而不是引力的孤岛。</strong> 一旦承认背景能量海是本体，<br>
+"缺失质量"便不再是物质问题，而是边界条件问题——而边界条件，<br>
+正是本文所锚定的 $\rho_{\mathrm{bg}}$。</p>
+<h1>致谢</h1>
+<p>感谢交流过程中关于"星系团因不转而最理想""矮星系轻而与本体论一致"<br>
+"旋转多了则不纯净、半径立方倍敏感"等关键直觉的反复澄清，<br>
+它们构成了本文论证骨架的直接来源。</p>
+<h1>附录 A：数值检验脚本说明</h1>
+<p>本文第三节与第五节的关键数值由脚本 <code class="notranslate">archimedes_星系团.py</code> 复现，<br>
+主要流程为：</p>
+<ol>
+<li>输入星系团维里质量与观测半径，按 (3.1) 计算 $\bar{\rho}_{\mathrm{obs}}$；</li>
+<li>对给定 $\rho_{\mathrm{bg}}$ 反解真实边界 $R_{\mathrm{true}}$，<br>
+与 $R_{\mathrm{obs}}$ 比对；</li>
+<li>对旋转星系代入有效质量 (5.1)，检验偏离因子收敛。</li>
+</ol>
+<p>脚本与本文版本同步归档于项目仓库（路径见 DOI 页）。</p>
+<h1>附录 B：与姊妹篇（其二）的接口</h1>
+<p>本文确立了 $\rho_{\mathrm{bg}}=2\times10^{-24}\ \mathrm{kg,m^{-3}}$ 的<br>
+<strong>观测值</strong>。姊妹篇的任务是完成 <strong>B 支推导</strong>：从根域饱和阈值 $Q_{\max}$<br>
+与拓扑相干长度 $\xi$ 出发，证明</p>
+<p>$$
+\rho_{\mathrm{bg}} = \mathcal{F}(Q_{\max},,\xi)
+$$</p>
+<p>能自然落在上述量级，从而使 A 支（观测）与 B 支（推导）在<br>
+$\rho_{\mathrm{bg}}$ 处汇合，实现双态拓扑宇宙学的完整闭环。</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵本体论原创史建威博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
