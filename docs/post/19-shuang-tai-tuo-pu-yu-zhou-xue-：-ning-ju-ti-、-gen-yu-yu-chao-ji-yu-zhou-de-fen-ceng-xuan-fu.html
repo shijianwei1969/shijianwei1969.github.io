@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="---
+title: '19双态拓扑宇宙学：凝聚体、根域与超级宇宙的分层悬浮'
+subtitle: '双态拓扑宇宙学研究 其二'
+author:
+  - '山东威海理论物理 EPD 工程组'
+date: '2026'
+doi: '10.5281/zenodo.22740605（待归档）'
+keywords:
+  - 双态拓扑宇宙学
+  - 根域
+  - 拓扑凝聚体
+  - 背景能量海
+  - 相干长度
+  - 饱和阈值
+  - 分层悬浮
+  - 真空能灾难
+relation:
+  references: './第一篇_宇宙学的阿基米德基石.md'
+abstract: |
+  本文是双态拓扑宇宙学（DSTC）系列的第二篇，承接第一篇确立的观测事实——
+  背景能量海密度 $\rho_{\mathrm{bg}}\simeq 2\times10^{-24}\ \mathrm{kg\,m^{-3}}$——
+  致力于构建其本体论框架与第一性原理来源。">
+<meta property="og:title" content="19双态拓扑宇宙学：凝聚体、根域与超级宇宙的分层悬浮">
+<meta property="og:description" content="---
+title: '19双态拓扑宇宙学：凝聚体、根域与超级宇宙的分层悬浮'
+subtitle: '双态拓扑宇宙学研究 其二'
+author:
+  - '山东威海理论物理 EPD 工程组'
+date: '2026'
+doi: '10.5281/zenodo.22740605（待归档）'
+keywords:
+  - 双态拓扑宇宙学
+  - 根域
+  - 拓扑凝聚体
+  - 背景能量海
+  - 相干长度
+  - 饱和阈值
+  - 分层悬浮
+  - 真空能灾难
+relation:
+  references: './第一篇_宇宙学的阿基米德基石.md'
+abstract: |
+  本文是双态拓扑宇宙学（DSTC）系列的第二篇，承接第一篇确立的观测事实——
+  背景能量海密度 $\rho_{\mathrm{bg}}\simeq 2\times10^{-24}\ \mathrm{kg\,m^{-3}}$——
+  致力于构建其本体论框架与第一性原理来源。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/19-shuang-tai-tuo-pu-yu-zhou-xue-%EF%BC%9A-ning-ju-ti-%E3%80%81-gen-yu-yu-chao-ji-yu-zhou-de-fen-ceng-xuan-fu.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>19双态拓扑宇宙学：凝聚体、根域与超级宇宙的分层悬浮</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">19双态拓扑宇宙学：凝聚体、根域与超级宇宙的分层悬浮</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/288" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><hr>
+<p>title: "19双态拓扑宇宙学：凝聚体、根域与超级宇宙的分层悬浮"<br>
+subtitle: "双态拓扑宇宙学研究 其二"<br>
+author:</p>
+<ul>
+<li>"山东威海理论物理 EPD 工程组"<br>
+date: "2026"<br>
+doi: "10.5281/zenodo.22740605（待归档）"<br>
+keywords:</li>
+<li>双态拓扑宇宙学</li>
+<li>根域</li>
+<li>拓扑凝聚体</li>
+<li>背景能量海</li>
+<li>相干长度</li>
+<li>饱和阈值</li>
+<li>分层悬浮</li>
+<li>真空能灾难<br>
+relation:<br>
+references: "./第一篇_宇宙学的阿基米德基石.md"<br>
+abstract: |<br>
+本文是双态拓扑宇宙学（DSTC）系列的第二篇，承接第一篇确立的观测事实——<br>
+背景能量海密度 $\rho_{\mathrm{bg}}\simeq 2\times10^{-24}\ \mathrm{kg,m^{-3}}$——<br>
+致力于构建其本体论框架与第一性原理来源。我们将宇宙二分为背景相与凝聚相，<br>
+阐明星系、星系团、黑洞根域均是浸于背景能量海中的拓扑凝聚体，<br>
+其悬浮支撑来自背景拓扑压强梯度而非引力势阱。文章系统讨论了根域作为<br>
+凝聚体核心的相干结构、背景"容器"的非平庸拓扑复杂性、界面熵与浮力平衡，<br>
+并明确给出尚待完成的 B 支推导任务：由根域饱和阈值 $Q_{\max}$ 与拓扑相干<br>
+长度 $\xi$ 导出 $\rho_{\mathrm{bg}}$。作为对照，本文还说明主流的暗物质<br>
+/暗能量/真空能疑难如何在 DSTC 中统一消解。</li>
+</ul>
+<hr>
+<h1>一、引言：从观测锚定到本体论</h1>
+<p>姊妹篇（其一）从<strong>悬浮公理</strong>出发，用不自转的星系团做维里标定，<br>
+确立了普适背景密度</p>
+<p>$$
+\rho_{\mathrm{bg}} \approx 2\times10^{-24}\ \mathrm{kg,m^{-3}} .
+\tag{1.1}
+$$</p>
+<p>这一数值不依赖暗物质粒子，也不对星系团做参数化拟合。本文的目标是回答：<br>
+<strong>这个密度从何而来？</strong> 更根本地——宇宙的本体论结构是什么，<br>
+使得"悬浮"成为自然的动力学状态？</p>
+<p>标准宇宙学的回答是几何的：物质告诉时空如何弯曲，弯曲告诉物质如何运动。<br>
+DSTC 采取完全不同的立场：</p>
+<blockquote>
+<p><strong>引力不是时空的属性，而是背景能量极化的宏观涌现；<br>
+凝聚体不是被"吸引"，而是被背景拓扑压强梯度"托住"。</strong></p>
+</blockquote>
+<p>本文分六部分：第二节建立双态本体论；第三节刻画根域与凝聚体；<br>
+第四节讨论背景容器的拓扑复杂性；第五节给出 B 支推导的候选框架<br>
+（并明确承认其尚未闭合）；第六节消解三大主流疑难。</p>
+<h1>二、双态本体论：背景相与凝聚相</h1>
+<h2>2.1 两相定义</h2>
+<p>超级大宇宙由两相构成：</p>
+<ul>
+<li>
+<strong>背景相（相干基底）</strong>：全域相干的拓扑激发海，是物理量得以定义的<br>
+"容器"。它承载一个普适背景密度 $\rho_{\mathrm{bg}}$ 与特征加速度尺度<br>
+$a_0\simeq 1.07\times10^{-10}\ \mathrm{m,s^{-2}}$（见第五节）。</li>
+<li>
+<strong>凝聚相（拓扑凝聚体）</strong>：背景相中因拓扑激发重叠而局域相干增强的区域，<br>
+从黑洞根域、星系核球、星系团核到星系团整体，构成尺度自相似的凝聚谱系。</li>
+</ul>
+<p>两相之间不存在物质种类的差异，只有<strong>相干程度的差异</strong>——<br>
+这与超导中正常态与凝聚态的同源性完全同构。</p>
+<h2>2.2 分层悬浮的动力学</h2>
+<p>凝聚体在背景海中悬浮的判据即第一篇的 (2.1)：</p>
+<p>$$
+\bar{\rho}(R_b) = \rho_{\mathrm{bg}} .
+\tag{2.1}
+$$</p>
+<p>其动力学机制不是牛顿引力，而是<strong>背景拓扑压强梯度</strong>的支撑。<br>
+在凝聚体-背景界面处，拓扑耦合的缺失产生向内的内聚拉力<br>
+（等效表面张力），而背景的相干压强梯度提供向外的支撑。<br>
+二者在 $\bar{\rho}=\rho_{\mathrm{bg}}$ 处达到中性平衡。</p>
+<blockquote>
+<p><strong>关键</strong>：这里没有"引力势阱"的语言，而是<strong>浮力平衡</strong>的语言。<br>
+这正是 DSTC 与 $\Lambda$CDM 在本体论上的不可通约之处。</p>
+</blockquote>
+<h2>2.3 熵的共轭循环</h2>
+<p>凝聚体内部相干性极强，是相干相内的<strong>低熵区</strong>；界面处拓扑自由度部分释放，<br>
+承载<strong>界面熵</strong>（与贝肯斯坦-霍金熵同构）。当物质沉降至根域被彻底拆解后，<br>
+物质熵转化为背景拓扑自由度——<strong>总熵在全域循环中守恒</strong>。</p>
+<blockquote>
+<p>必须强调：这不是"熵被消灭"，而是<strong>熵在不同自由度之间共轭转换</strong>。<br>
+完整的熵平衡方程（含体熵、界面熵、拓扑挠曲熵）仍是开放任务，<br>
+需在第二阶段与 B 支推导协同完成。</p>
+</blockquote>
+<h1>三、根域：凝聚体的致密核心</h1>
+<h2>3.1 凝聚态的双路径实现</h2>
+<p>凝聚态的核心判据只有一个：<strong>系统特征波长超过组分间距，出现宏观相干性。</strong><br>
+由此存在两条对称路径：</p>
+<ul>
+<li><strong>低温低密度路径</strong>：通过降温拉长热波长，对应星系晕、核球的普通凝聚相；</li>
+<li><strong>极高压高密度路径</strong>：通过压缩间距至特征波长以下，对应黑洞核心的<strong>根域</strong>。</li>
+</ul>
+<p>根域不需要低温，反而伴随极高等效能量密度；但因组分间距被压缩至拓扑尺度以下，<br>
+依然保持完美宏观相干性。这是"奇点替代"机制的核心。</p>
+<h2>3.2 M₇ 斥力支撑</h2>
+<p>当密度逼近饱和上限 $Q_{\max}$ 时，根域斥力张量 $M_7$ 的排斥效应急剧增强，<br>
+阻止无限坍缩，形成稳定的致密支撑面。序参量达到第二饱和值 $\psi_{\mathrm{root}}$，<br>
+能量密度存在物理上限——<strong>不存在数学奇点</strong>。</p>
+<p>落入根域的重子激发失去个体粒子属性，融入背景致密相干态：<br>
+不是"堆积在奇点"，而是<strong>转化为背景场本身的凝聚相</strong>。</p>
+<h2>3.3 跨尺度自相似谱系</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>尺度层级</th>
+<th>凝聚体</th>
+<th>核心致密相</th>
+<th>外围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>恒星级</td>
+<td>黑洞拓扑凝聚体</td>
+<td>根域</td>
+<td>吸积盘/冕</td>
+</tr>
+<tr>
+<td>星系级</td>
+<td>星系凝聚体</td>
+<td>核球+中心根域</td>
+<td>银晕</td>
+</tr>
+<tr>
+<td>星系团级</td>
+<td>星系团凝聚体</td>
+<td>团核巨椭圆群</td>
+<td>团内介质</td>
+</tr>
+<tr>
+<td>全域级</td>
+<td>超级宇宙凝聚滴</td>
+<td>超级中心根域</td>
+<td>背景能量海</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>四者共享同一套金兹堡-朗道型凝聚机制，仅本征参数的尺度量级不同——<br>
+这正是第一篇观测锚定的普适性来源。</p>
+<h1>四、背景容器：远比均匀流体复杂</h1>
+<h2>4.1 为何"容器"不能当作真空</h2>
+<p>第一篇将背景能量海视为均匀的 $\rho_{\mathrm{bg}}$，这在<strong>观测锚定的层面</strong><br>
+足够精确。但在本体论层面，背景绝非空虚的容器：</p>
+<ul>
+<li>它具有<strong>拓扑相干结构</strong>，其相干长度 $\xi$ 与饱和阈值 $Q_{\max}$<br>
+决定了所有凝聚体的特征尺度；</li>
+<li>它存在<strong>拓扑相变界面</strong>，界面处物理定律的有效描述可发生跳变；</li>
+<li>它承载<strong>全域统一的节律</strong>（"宇宙时间"的拓扑来源）。</li>
+</ul>
+<p>因此，阿基米德平衡 (2.1) 不是简单流体中的 $\rho_{\mathrm{obj}}=\rho_{\mathrm{fluid}}$，<br>
+而是<strong>背景压强梯度与凝聚体自引力在相变界面处的连续匹配</strong>。<br>
+严格表述需引入序参量场 $\psi(\mathbf{r})$ 的自由能泛函（见下节）。</p>
+<h2>4.2 界面与虚空</h2>
+<p>需要严格区分：<strong>界面</strong>是相干相内部的物理量（承载界面熵），<br>
+而<strong>虚空</strong>（若其在框架中存在）不承载任何物理量。<br>
+凝聚体的边界是相变界面，不是实体壁；物理性质连续过渡，<br>
+符合凝聚态相变的普遍规律。</p>
+<blockquote>
+<p>第一篇的"悬浮"在所有层面均闭合于相干相内部；<br>
+不存在与"外部虚空"的动力学耦合——这是 DSTC 本体论的刚性边界。</p>
+</blockquote>
+<h1>五、B 支推导：从根域参数到 $\rho_{\mathrm{bg}}$
+</h1>
+<h2>5.1 任务陈述</h2>
+<p>姊妹篇确立了 $\rho_{\mathrm{bg}}$ 的<strong>观测值</strong> (1.1)。本文的未完成任务是<br>
+<strong>从第一性原理导出同一数值</strong>：</p>
+<p>$$
+\rho_{\mathrm{bg}} \overset{?}{=} \mathcal{F}(Q_{\max},,\xi,,\mu^*,,\alpha,,\beta) ,
+\tag{5.1}
+$$</p>
+<p>其中 $Q_{\max}$ 为根域饱和阈值，$\xi$ 为拓扑相干长度，<br>
+$\mu^*$ 为有效拓扑质量，$\alpha,\beta$ 为 GL 泛函本征参数。</p>
+<h2>5.2 候选框架：金兹堡-朗道 型泛函</h2>
+<p>背景相的序参量 $\psi$ 满足定态方程（各向同性简化）：</p>
+<p>$$<br>
+\alpha,\psi + \beta,|\psi|^2\psi</p>
+<ul>
+<li>\frac{\hbar^2}{2\mu^*}\nabla^2\psi = 0 .<br>
+\tag{5.2}<br>
+$$</li>
+</ul>
+<p>其解给出背景的相干压强与特征梯度。自然标度构造为：</p>
+<p>$$
+\rho_{\mathrm{bg}} \sim \frac{Q_{\max}}{\xi^3} ,
+\qquad
+a_0 \sim \frac{Q_{\max}}{\mu^*} .
+\tag{5.3}
+$$</p>
+<p>若 (5.3) 成立，则 $\rho_{\mathrm{bg}}$ 与 $a_0$ 通过 $\xi$ 关联：</p>
+<p>$$
+\rho_{\mathrm{bg}} \sim \frac{a_0,\mu^*}{\xi^2} .
+\tag{5.4}
+$$</p>
+<p><strong>问题</strong>：代入观测值 $\rho_{\mathrm{bg}}=2\times10^{-24}$、<br>
+$a_0=1.07\times10^{-10}$ 后，(5.4) 要求<br>
+$\mu^*/\xi^2 \sim 2\times10^{-14}\ \mathrm{kg,m^{-1}}$——<br>
+这一组合必须由根域微观理论独立给出，不能事后调节。<br>
+<strong>这正是 B 支推导的核心难度所在。</strong></p>
+<h2>5.3 诚实限定</h2>
+<p>我们<strong>不声称</strong> (5.1)–(5.4) 已经闭合。当前状态是：</p>
+<ul>
+<li>A 支（观测→$\rho_{\mathrm{bg}}$）：<strong>已闭合</strong>（第一篇）；</li>
+<li>B 支（根域参数→$\rho_{\mathrm{bg}}$）：<strong>部分构建，待完成</strong>。</li>
+</ul>
+<p>具体待办清单：</p>
+<ol>
+<li>写出背景相完整的 GL 型自由能泛函，明确 $\psi$ 的拓扑含义；</li>
+<li>从 $Q_{\max}$ 与 $\xi$ 推导 (5.3) 的精确系数；</li>
+<li>证明相变界面处的压强梯度匹配条件等价于悬浮公理 (2.1)；</li>
+<li>给出 $\mu^*$、$\xi$ 与观测标度（$\rho_{\mathrm{bg}}$、$a_0$）的<br>
+无量纲组合，检验是否自然落在 $10^0$ 量级。</li>
+</ol>
+<p><strong>只有 B 支闭合，A 支与 B 支在 $\rho_{\mathrm{bg}}$ 处的汇合才构成完整论证。</strong><br>
+在此之前，本文是<strong>框架性工作</strong>，不是终结性推导。</p>
+<h1>六、主流三大疑难的统一消解</h1>
+<h2>6.1 暗物质</h2>
+<p><strong>标准叙事</strong>：星系团中观测到额外引力，必存在非重子粒子。</p>
+<p><strong>DSTC 叙事</strong>：背景拓扑压强梯度提供额外的<strong>等效引力</strong>，凝聚体的悬浮<br>
+由 $\bar{\rho}=\rho_{\mathrm{bg}}$ 决定，不需要额外粒子。<br>
+"暗物质"是"把背景浮力误当成未知质量"的语义产物。</p>
+<h2>6.2 暗能量</h2>
+<p>第一篇已算出：标准拟合的"暗能量密度"<br>
+$\sim 5.9\times10^{-10}\ \mathrm{J,m^{-3}}$ 仅为<br>
+$\varepsilon_{\mathrm{bg}}=\rho_{\mathrm{bg}}c^2\approx 1.8\times10^{-7}\ \mathrm{J,m^{-3}}$<br>
+的约 $1/300$。DSTC 认为红移是光子穿过背景密度梯度的波长拉伸，<br>
+而非空间膨胀；标准模型提取的只是<strong>梯度效应</strong>，漏掉了<strong>基底本身</strong>。</p>
+<h2>6.3 真空能灾难</h2>
+<p>量子场论的裸真空能 $\sim 10^{29}\ \mathrm{J,m^{-3}}$ 与观测值相差约 $36$<br>
+个数量级。DSTC 的消解路径：</p>
+<ul>
+<li>微观裸涨落是<strong>未相消的拓扑自由度</strong>之和；</li>
+<li>宏观观测到的是<strong>拓扑成对相消后的净相干密度</strong>；</li>
+<li>二者属于不同概念层次，<strong>$36$ 个量级的差异是范畴错配，不是理论矛盾</strong>。</li>
+</ul>
+<p>这与超导中"裸电子质量"与"超导有效质量"的区分同构，<br>
+不是人择微调，而是<strong>相干态的本征性质</strong>。</p>
+<h1>七、跨尺度同构：一个启发式例证</h1>
+<p>作为框架的自洽性检验，考虑氢原子的双重尺度：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>尺度</th>
+<th align="right">数值</th>
+<th>物理本质</th>
+<th>主导相互作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>量子概率云</td>
+<td align="right">
+$\sim 0.2$ nm</td>
+<td>电子电荷分布范围</td>
+<td>电磁</td>
+</tr>
+<tr>
+<td>引力拓扑流形</td>
+<td align="right">
+$\sim 5.8$ cm</td>
+<td>总质量引力场与背景平衡</td>
+<td>引力</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>核心区均由强相互作用主导（电磁/引力），决定日常"大小"；<br>
+外层均为弱相互作用的弥散延伸，与背景无缝衔接。<br>
+核心与背景的密度反差对应相互作用强度差（电磁比引力强约 $10^{36}$ 倍，<br>
+对应尺度差约 $9$ 个量级）。这种<strong>跨 $36$ 个数量级的同构</strong><br>
+是 DSTC 框架优雅性的一个侧面印证——但<strong>不是已完成的推导</strong>，<br>
+仍需在第二阶段量化。</p>
+<h1>八、结论与路线图</h1>
+<ol>
+<li>DSTC 的本体论是<strong>两相分层</strong>：背景相（容器）+ 凝聚相（拓扑凝聚体），<br>
+悬浮由背景拓扑压强梯度支撑，而非引力势阱。</li>
+<li>根域是凝聚体的致密核心，经 $M_7$ 斥力支撑避免奇点，<br>
+跨恒星-星系-星系团-全域四层自相似。</li>
+<li>背景容器远比均匀流体复杂，其相干结构决定了所有凝聚体的特征尺度。</li>
+<li>
+<strong>B 支推导（由 $Q_{\max}$、$\xi$ 导出 $\rho_{\mathrm{bg}}$）尚未闭合</strong>，<br>
+本文给出了候选框架 (5.1)–(5.4) 与明确待办清单。</li>
+<li>暗物质、暗能量、真空能灾难在 DSTC 中统一消解。</li>
+</ol>
+<p><strong>从观测锚定（第一篇）到本体论构建（本篇），DSTC 已具备完整的逻辑骨架；<br>
+从骨架到可计算的物理理论，只差 B 支推导这一座桥。</strong></p>
+<h1>致谢</h1>
+<p>感谢第一篇成文过程中的反复澄清与直觉贡献；<br>
+感谢指出"根域的第一性推导不易、容器本身复杂"这一关键限定，<br>
+它直接决定了本文对 B 支完成度的诚实定位。</p>
+<h1>附录：A 支–B 支汇合示意图（文字描述）</h1>
+<pre class="notranslate"><code class="notranslate">       观测世界                        理论世界
+    ┌──────────────┐              ┌──────────────┐
+    │ 星系团维里标定 │ ──A支──→   │ ρ_bg = 2e-24 │
+    └──────────────┘              └──────┬───────┘
+                                          │
+                                          ↓ （待闭合）
+                                   ┌──────────────┐
+                                   │ GL泛函 + 根域 │
+                                   │ Q_max, ξ 导出 │
+                                   └──────────────┘
+</code></pre>
+<p>当 A 支的观测值与 B 支的推导值在 $\rho_{\mathrm{bg}}$ 处汇合，<br>
+双态拓扑宇宙学即完成从公理到可计算理论的升级。</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵本体论原创史建威博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
+
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
