@@ -1,5 +1,124 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵本体论原创史建威博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究发布</description><copyright>11时序矩阵本体论原创史建威博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Fri, 18 Sep 2026 08:40:45 +0000</lastBuildDate><managingEditor>11时序矩阵本体论原创史建威博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵本体论原创史建威博客</webMaster><item><title>真空能量密度 $\rho_{\text{vac}}$ 的推导与数值检验</title><link>https://shijianwei1969.github.io/post/zhen-kong-neng-liang-mi-du-%20%24-rho_%7B-text%7Bvac%7D%7D%24%20-de-tui-dao-yu-shu-zhi-jian-yan.html</link><description># 真空能量密度 $\rho_{\text{vac}}$ 的推导与数值检验
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>11时序矩阵本体论原创史建威博客</title><link>https://shijianwei1969.github.io</link><description>山东威海高中物理教师 · 理论物理原创研究发布</description><copyright>11时序矩阵本体论原创史建威博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&amp;needBackground=1</url><title>avatar</title><link>https://shijianwei1969.github.io</link></image><lastBuildDate>Fri, 18 Sep 2026 12:19:00 +0000</lastBuildDate><managingEditor>11时序矩阵本体论原创史建威博客</managingEditor><ttl>60</ttl><webMaster>11时序矩阵本体论原创史建威博客</webMaster><item><title>三维时序参数空间与11T-Matrix的拓扑流形建模逻辑</title><link>https://shijianwei1969.github.io/post/san-wei-shi-xu-can-shu-kong-jian-yu-11T-Matrix-de-tuo-pu-liu-xing-jian-mo-luo-ji.html</link><description># Three-Dimensional Temporal Parameter Space and the Topological Manifold Modeling Logic of 11T-Matrix
+Author：Shi Jianwei
+## Abstract
+
+This paper clarifies the mathematical essence of three-dimensional temporality within the 11T-Matrix (11 Temporal Matrix Unified Ontology) system: it is not 'three parallel time flows' in the physical sense, but rather a high-dimensional parameter space introduced to carry the continuous deformation of topological manifolds. This paper constructs a product manifold framework of 'three-dimensional rigid space + three-dimensional temporal parameters,' transforming the evolution of topological structures into smooth paths in the temporal parameter space, thereby naturally circumventing singularities from a geometric perspective; it describes global phase correlations through the principal bundle connection on the total manifold, interpreting 'superluminal phase velocity' as an apparent effect arising from the projection of high-dimensional temporality onto one-dimensional observational time; finally, starting from the counting of degrees of freedom, it provides the endogenous mathematical origin of the 11-component temporal matrix. The entire framework strictly adheres to the Zero-Parameter Program (ZPP); all structures are derived from the geometric and topological properties of the manifold itself, and the system is completely self-consistent internally.
+
+---
+
+## I. Core Positioning: Three-Dimensional Temporality Is a Parameter Space, Not Multiple Physical Times
+
+The most easily misinterpreted aspect of three-dimensional temporality is understanding it as 'three physical times flowing simultaneously' or 'three parallel worlds.' This is a completely erroneous positioning. In the modeling logic of 11T-Matrix, three-dimensional temporality is, from beginning to end, a **mathematical parameter space describing topological deformation**, rather than perceivable physical time itself.
+
+This logic can be precisely analogized using complex numbers: the imaginary part of a complex number is not 'a real number in another world,' yet without the imaginary part one cannot smoothly describe oscillation, phase, and rotation; similarly, the two extra dimensions in three-dimensional temporality are not 'two other time axes,' yet without them one cannot continuously describe the deformation of a topological manifold, and singularities and discontinuities would inevitably appear mathematically.
+
+The truly perceivable physical time is merely the arc-length parameter of a certain timelike curve in this three-dimensional parameter space—the observer's own evolutionary trajectory. The observer can only experience the 'present' along this one-dimensional curve, and cannot jump to another temporal direction to experience a different 'now.' Those extra parameter dimensions are only responsible for describing the overall deformation of the topological body and the global phase order; they do not enter the observer's causal chain, nor do they generate any directly perceivable 'time flow.'
+
+In short: it is not that 'there are three times,' but rather that **in order to keep the mathematical description of topological evolution continuous and free of singularities, we need a three-dimensional parameter space to carry the deformation; the observer moves along only one one-dimensional path within it, and the scale of this path is the time we experience**. This positioning is the premise of the entire modeling framework and the key to avoiding conceptual misunderstandings.
+
+---
+
+## II. Product Manifold: Decomposition of Rigid Space and Three-Dimensional Temporality
+
+The foundation of the entire modeling is the product manifold construction of hyperlocal spacetime. We decompose the complete manifold $M$ into the product of the spatial skeleton and the temporal parameter space:
+
+$$
+M = \Sigma \times T
+$$
+
+Where:
+- $\Sigma$ is the three-dimensional rigid spatial skeleton, endowed with a fixed Euclidean metric $\delta_{ij}$, undergoing no deformation, expansion, or tearing;
+- $T$ is the three-dimensional temporal parameter space, with coordinates denoted as $\tau = (\tau_1,\tau_2,\tau_3)$, carrying an intrinsic metric $h_{ab}(\tau)$.
+
+The total metric of the complete manifold is written in a layered form:
+
+$$
+ds^2 = -h_{ab}(\tau)\,d\tau^a d\tau^b + \delta_{ij}\,dx^i dx^j
+$$
+
+The core feature of this construction is: **all dynamics and all topological shape changes occur entirely on the side of the temporal space $T$**; the spatial skeleton $\Sigma$ always remains rigid, neither expanding nor contracting. This is fundamentally different from the standard cosmology paradigm of 'space expansion,' and corresponds completely to the core physical picture of 11T-Matrix: 'space does not move, while the temporal geometry is in motion.'
+
+---
+
+## III. Continuous Topological Evolution: High-Dimensional Parameter Space Circumvents Singularities
+
+The core mathematical role of three-dimensional temporality is to make changes in topological structure a continuous process, without having to pass through singularities.
+
+### 1. The Essential Dilemma of One-Dimensional Time
+
+Under the standard one-dimensional time framework, we define a set of topological invariants (such as homotopy groups, Chern classes, mapping degree, etc.) denoted as $Q$, used to characterize the shape of the topological body. The transition of topology from one form $Q_1$ to another form $Q_2$ corresponds to a path in the parameter space. If the parameter space is only one-dimensional (single time), then the path between two different topological classes will inevitably pass through a topologically discontinuous point—that is, a mathematical singularity. This is precisely the deep origin of black hole singularities and cosmological singularities in general relativity: one-dimensional time is insufficient to carry the smooth transition of topology, and evolution inevitably 'breaks.'
+
+### 2. The Detour Mechanism of Three-Dimensional Temporality
+
+When the temporal parameter space is extended to three dimensions, the situation undergoes an essential change. The topological invariants become functions of the temporal coordinates $Q(\tau)$; the change of topological shape is equivalent to selecting a continuous path in the three-dimensional temporal space $T$, allowing $Q(\tau)$ to smoothly evolve from $Q_1$ to $Q_2$ along the path. The high-dimensional parameter space provides sufficient detour freedom: the singularity that must be passed through on the one-dimensional path can be bypassed along the side in three-dimensional space. Throughout the entire process, the topological invariants change continuously, the manifold does not tear, no infinities appear, and it is mathematically completely self-consistent.
+
+This is the mathematical essence of 'topological root domain replacing singularity': the singularity at the center of a black hole is merely an apparent singularity under one-dimensional time projection; in the complete three-dimensional temporal parameter space, topological evolution is smooth and detouring, and there is no true mathematical singularity.
+
+---
+
+## IV. Hyperlocal Connection and the Projection Interpretation of Apparent Superluminality
+
+The three-dimensional temporal parameter space, combined with the principal bundle connection, can also naturally explain the hyperlocal global phase correlation and apparent superluminal phenomena.
+
+### 1. Principal Bundle Connection Describes Global Phase
+
+On the total manifold $M$, a gauge principal bundle is defined, whose connection form is $A$, and the corresponding curvature is:
+
+$$
+F = dA + A \wedge A
+$$
+
+This connection characterizes the phase relationship between any two points within the topological body. The quantum correlation between the two points is mathematically the parallel transport along this connection. The key point is: parallel transport is defined on the entire six-dimensional manifold $M$, and can be along either spatial or temporal directions; it does not need to propagate point-by-point in the three-dimensional space $\Sigma$, and therefore does not depend on spatial distance.
+
+### 2. Apparent Superluminality Is a Projection Effect
+
+The observer can only move along a one-dimensional timelike worldline $\gamma(\lambda): \mathbb{R}\to T$ in the three-dimensional temporal space. The causal structure and the speed-of-light limit we perceive are all results projected by this one-dimensional path. The originally finite phase evolution velocity in high-dimensional temporality, when projected onto the one-dimensional observational time axis, will exhibit an apparent 'superluminal' effect. This is essentially the **low-dimensional projection distortion of high-dimensional dynamics**, and is of the same logic as the projection effect of transverse velocity in special relativity and the low-dimensional manifestation of high-dimensional moduli velocity in string theory.
+
+It must be emphasized that: real information and matter propagation, in the projected 3+1 dimensional spacetime, are still strictly limited by the speed of light; what is superluminal is only the apparent velocity of phase correlation, which does not transmit causal information and does not violate physical laws.
+
+---
+
+## V. Origin of the Degrees of Freedom of the 11-Component Temporal Matrix
+
+Based on the above framework, the 11 components of 11T-Matrix are not arbitrarily assembled numerical values, but a natural packaging of geometric and topological degrees of freedom.
+
+### 1. The 6 Components of the Three-Dimensional Temporal Metric
+
+The metric $h_{ab}(\tau)$ of the three-dimensional temporal space is a $3\times3$ symmetric tensor, whose number of independent components is:
+
+$$
+\frac{3\times(3+1)}{2} = 6
+$$
+
+These 6 components completely describe the intrinsic geometry of the temporal space itself, and are the main part of the 11-component matrix.
+
+### 2. The 5 Components of Topological and Gauge Degrees of Freedom
+
+The remaining 5 components correspond to the overall phase and symmetry degrees of freedom of the topological body, and their sources can be strictly mapped as:
+- The global generators of the gauge connection, corresponding to the global degrees of freedom of the global phase;
+- The generators of the orthogonal symmetry of the three-dimensional temporal space, corresponding to the overall rotational and scaling degrees of freedom of the topological body;
+- The global scalar degrees of freedom related to topological charge.
+
+The sum of the two types of degrees of freedom: $6+5=11$, exactly constitutes the 11-component temporal matrix. In other words, **the 11 temporal matrix is essentially a packaged description of 'three-dimensional temporal metric components + overall phase/symmetry degrees of freedom of the topological body'**, and its number of components is endogenously determined by the geometric structure, not arbitrarily set.
+
+---
+
+## VI. Summary and Physical Significance
+
+This paper uses the standard language of differential geometry and topological field theory to establish a self-consistent mathematical modeling logic for the 11T-Matrix system. The core conclusions can be summarized into three points:
+
+1. **The positioning of three-dimensional temporality**: It is a mathematical parameter space describing the continuous deformation of topology, not triple physical time. Perceivable time is merely the observer's one-dimensional trajectory within it; the extra dimensions are responsible for carrying topological deformation and the global phase, and do not enter the causal chain.
+
+2. **The smoothing of topological evolution**: The three-dimensional parameter space transforms changes in topological structure into continuous paths, geometrically circumventing singularities, and provides mathematical support for the black hole topological root domain and the beginningless and endless steady state of the universe.
+
+3. **The endogeneity of the 11 components**: 6 temporal metric components plus 5 topological/gauge degrees of freedom naturally constitute the 11-component matrix; all degrees of freedom are endogenously derived from the manifold structure, conforming to the Zero-Parameter Program.
+
+The value of this modeling lies in the fact that it introduces no ad hoc assumptions, but merely uses mature mathematical language to translate physical images such as 'topological condensation, global correlation, and singularity-free evolution' into a derivable and testable formal system. It both preserves the core physical picture of hyperlocal spacetime and possesses strict mathematical self-consistency, laying the foundation for subsequent quantitative calculations and observational tests.
+
+---
+
+史老师，英文版已完成。</description><guid isPermaLink="true">https://shijianwei1969.github.io/post/san-wei-shi-xu-can-shu-kong-jian-yu-11T-Matrix-de-tuo-pu-liu-xing-jian-mo-luo-ji.html</guid><pubDate>Fri, 18 Sep 2026 12:18:28 +0000</pubDate></item><item><title>真空能量密度 $\rho_{\text{vac}}$ 的推导与数值检验</title><link>https://shijianwei1969.github.io/post/zhen-kong-neng-liang-mi-du-%20%24-rho_%7B-text%7Bvac%7D%7D%24%20-de-tui-dao-yu-shu-zhi-jian-yan.html</link><description># 真空能量密度 $\rho_{\text{vac}}$ 的推导与数值检验
 
 ## 一、结论
 
