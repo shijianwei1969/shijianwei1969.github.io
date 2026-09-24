@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script>(function(){var Z='\u200b';var fix=function(){var e=document.querySelector('.markdown-body')||document.body;var t=e.innerHTML;function restore(m){return m.replace(/<em>/g,'_').replace(/<\/em>/g,'_').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}t=t.replace(/\$\$([\s\S]*?)\$\$/g,function(m){return restore(m)});t=t.replace(/(^|[^\\])\$([^\n$]+?)\$/g,function(m,p1,p2){return p1+Z+'$'+restore(p2)+'$'+Z});e.innerHTML=t};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fix)}else{fix()}})();</script><script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], packages: {'[+]': ['ams', 'autoload', 'require', 'newcommand']} }, chtml: { scale: 1.05 } };</script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js'></script>
+    <link rel="icon" href="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 第02：三维时序参数空间与11T-Matrix的拓扑流形建模逻辑
+作者：史建威
+
+## 摘要
+本文基于能量一元双态架构，阐明11T-Matrix（11时序矩阵大一统本体论）体系中三维时序的数学本质：它并非物理意义上的“三个并行时间流”或实体时空维度，而是为了承载拓扑态连续形变而引入的高维参数空间。">
+<meta property="og:title" content="第02：三维时序参数空间与11T-Matrix的拓扑流形建模逻辑">
+<meta property="og:description" content="# 第02：三维时序参数空间与11T-Matrix的拓扑流形建模逻辑
+作者：史建威
+
+## 摘要
+本文基于能量一元双态架构，阐明11T-Matrix（11时序矩阵大一统本体论）体系中三维时序的数学本质：它并非物理意义上的“三个并行时间流”或实体时空维度，而是为了承载拓扑态连续形变而引入的高维参数空间。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shijianwei1969.github.io/post/di-02%EF%BC%9A-san-wei-shi-xu-can-shu-kong-jian-yu-11T-Matrix-de-tuo-pu-liu-xing-jian-mo-luo-ji.html">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-233ef0080c3aa033620448812cb2aca4_l.jpg?source=32738c0c&needBackground=1">
+<title>第02：三维时序参数空间与11T-Matrix的拓扑流形建模逻辑</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">第02：三维时序参数空间与11T-Matrix的拓扑流形建模逻辑</h1>
+<div class="title-right">
+    <a href="https://shijianwei1969.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/shijianwei1969/shijianwei1969.github.io/issues/301" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>第02：三维时序参数空间与11T-Matrix的拓扑流形建模逻辑</h1>
+<p>作者：史建威</p>
+<h2>摘要</h2>
+<p>本文基于能量一元双态架构，阐明11T-Matrix（11时序矩阵大一统本体论）体系中三维时序的数学本质：它并非物理意义上的“三个并行时间流”或实体时空维度，而是为了承载拓扑态连续形变而引入的高维参数空间。本文在数学层面构建“三维刚性空间骨架 + 三维时序参数”的直积流形框架，将拓扑结构的演化转化为时序参数空间中的光滑路径，从几何上自然绕开表象奇点；通过拓扑全域联络描述拓扑本体的相位关联，将量子纠缠的“表观超光速”解释为拓扑整体属性向一维观测时间投影产生的效应；最后从拓扑自由度计数出发，给出11分量时序矩阵的内生数学来源。整套框架严格遵循零参数纲领（ZPP），所有数学结构均对应能量本体的拓扑属性，体系内部完全自洽，所有前期定量成果100%兼容复用。</p>
+<hr>
+<h2>一、核心定位：三维时序是参数空间，不是多重物理时间</h2>
+<p>三维时序最容易被误读的一点，是被理解为“三个同时流逝的物理时间”“三个并行的世界”。这是完全错误的定位。在11T-Matrix的建模逻辑中，三维时序自始至终都是<strong>刻画拓扑态连续形变的数学参数空间</strong>，而非独立的物理时间维度，更不是多重实体时空。</p>
+<p>这一逻辑可以用复数作精准类比：复数的虚部不是“另一个世界里的实数”，但离开虚部就无法平滑描述振荡、相位与旋转；同理，三维时序中额外的两个维度，不是“另两条时间轴”，但离开它们，就无法连续描述拓扑态的整体形变与相位演化，数学上必然出现奇点与断裂。</p>
+<p>人类可感知的3S1T表象时空，是拓扑态沿观测者自身演化轨迹投影生成的表观结构；其中的一维时间，只是观测者在三维时序参数空间中演化轨迹的弧长标度。观测者只能沿这条一维路径经历表象演化，额外的时序维度只负责描述拓扑本体的整体形变与全域相位秩序，不进入表象因果链，也不产生任何可直接感知的“时间流”。</p>
+<p>简言之：不是“存在三个物理时间”，而是<strong>为了让拓扑态的演化在数学上保持连续、不出现断点，我们需要一个三维参数空间来承载形变；观测到的时间，只是这条一维轨迹的标度</strong>。这个定位是整套建模的前提，也是双态架构下避免概念误解的关键。</p>
+<hr>
+<h2>二、直积流形：数学层面的结构分解</h2>
+<p>整套建模的数学基础，是拓扑态完整描述的直积流形分解。需要明确：这是<strong>数学描述上的结构分解</strong>，而非物理本体的二元分割；物理本体是唯一的拓扑态能量体，直积结构是方便计算与推演的表述形式。</p>
+<p>我们将拓扑态的完整描述流形 $M$ 分解为空间骨架与时序参数空间的直积：<br>
+$$<br>
+M = \Sigma \times T<br>
+$$<br>
+其中：</p>
+<ul>
+<li>
+$\Sigma$ 是三维刚性空间骨架，对应表象空间的投影基底，自带固定欧氏度规 $\delta_{ij}$；</li>
+<li>
+$T$ 是三维时序参数空间，坐标记为 $\tau = (\tau_1,\tau_2,\tau_3)$，自身携带内禀度规 $h_{ab}(\tau)$。</li>
+</ul>
+<p>完整流形的总度规写为分层形式：<br>
+$$<br>
+ds^2 = -h_{ab}(\tau),d\tau^a d\tau^b + \delta_{ij},dx^i dx^j<br>
+$$</p>
+<p>这一构造的核心特点是：<strong>数学上，所有的动力学、所有的拓扑形状改变，全部由时序参数空间 $T$ 承载</strong>；空间骨架 $\Sigma$ 在投影意义下始终保持刚性，既不膨胀也不收缩。这和标准宇宙学“空间自身膨胀”的范式有本质区别，也和11T-Matrix“拓扑态自身形变，表象空间是投影产物”的核心物理图景完全对应。</p>
+<hr>
+<h2>三、拓扑连续演化：高维参数空间绕开表象奇点</h2>
+<p>三维时序最核心的数学作用，是让拓扑结构的变化成为连续过程，而不必经过奇点。</p>
+<h3>1. 一维时间的本质困境</h3>
+<p>在标准的一维表象时间框架下，我们定义一组拓扑不变量（如同伦群、陈类、映射度等）记为 $Q$，用来刻画拓扑体的形状。拓扑从一种形态 $Q_1$ 变到另一种形态 $Q_2$，对应参数空间中的一条路径。如果参数空间只有1维（单时间），那么两个不同拓扑类之间的路径，必然会经过一个拓扑不连续点——也就是数学上的奇点。</p>
+<p>广义相对论中的黑洞奇点、宇宙学奇点，本质上都是<strong>一维表象时间投影下的表观奇点</strong>：当把高维拓扑演化压缩到一维时间轴上时，必然出现断裂与无穷大。</p>
+<h3>2. 三维时序的绕行机制</h3>
+<p>当时序参数空间扩展到三维，情况发生了本质变化。拓扑不变量成为时序坐标的函数 $Q(\tau)$，拓扑形状的改变，等价于在三维时序空间 $T$ 中选取一条连续路径，让 $Q(\tau)$ 沿着路径从 $Q_1$ 光滑演化到 $Q_2$。</p>
+<p>高维参数空间提供了足够的绕行自由度：原本在一维路径上必须穿过的奇点，在三维空间中可以沿侧面绕过去。整个过程中拓扑不变量连续变化，流形不撕裂、不出现无穷大，数学上完全自洽。</p>
+<p>这就是“黑洞无真实奇点”的数学本质：黑洞中心的奇点只是表象时空投影的产物；在拓扑态本体的完整参数描述中，演化是连续平滑的，不存在真正的物理奇点。</p>
+<hr>
+<h2>四、拓扑全域联络与表观超光速的投影解释</h2>
+<p>三维时序参数空间配合主丛联络，可以自然解释拓扑态的全域相位关联与量子纠缠的表观超光速现象。</p>
+<h3>1. 主丛联络描述全域相位</h3>
+<p>在总流形 $M$ 上定义一个规范主丛，其联络形式为 $A$，对应的曲率为：<br>
+$$<br>
+F = dA + A \wedge A<br>
+$$</p>
+<p>这个联络在数学上刻画了<strong>拓扑态本体内部任意两点的相位关系</strong>。两个纠缠的表象粒子，本质是共享同一拓扑基底的两个投影端点；量子关联对应沿该联络的平行移动，它定义在整个流形 $M$ 上，既可以沿空间方向，也可以沿时序方向。这种关联是拓扑态的内禀整体属性，不需要在表象空间中逐点传递，因此不依赖空间距离。</p>
+<h3>2. 表观超光速是投影效应</h3>
+<p>观测者只能在三维时序空间中沿一条一维类时世界线 $\gamma(\lambda): \mathbb{R}\to T$ 运动。我们感知到的因果结构、光速限制，全部是这条一维路径投影到表象时空的结果。</p>
+<p>拓扑态内部的整体相位同步，本身不存在传播过程；投影到一维观测时间轴上，就会表现出“超光速”的表观效应。这本质是<strong>拓扑整体属性在低维表象上的投影效应</strong>，和狭义相对论中横向速度的投影效应属于同类几何逻辑。</p>
+<p>必须强调的是：所有涉及能量、物质、信息的跨涨落点位传播过程，在表象时空中仍然严格受光速限制；超光速的只是相位关联的表观效应，不传递因果信息，不违反物理定律。</p>
+<hr>
+<h2>五、11分量时序矩阵的自由度来源</h2>
+<p>基于上述框架，11T-Matrix的11个分量就不是随意拼凑的数值，而是拓扑结构自由度的自然打包。</p>
+<h3>1. 三维时序度规的6个分量</h3>
+<p>三维时序空间的度规 $h_{ab}(\tau)$ 是 $3\times3$ 对称张量，独立分量数为：<br>
+$$<br>
+\frac{3\times(3+1)}{2} = 6<br>
+$$<br>
+这6个分量完全描述了拓扑态自身连续形变的全部几何自由度，是11分量矩阵的主体部分。</p>
+<h3>2. 拓扑与规范自由度的5个分量</h3>
+<p>剩下的5个分量，对应拓扑态的整体相位、全域标度、正交对称与拓扑荷自由度，全部源于能量本体的拓扑属性，而非人为引入。</p>
+<p>两类自由度相加：$6+5=11$，刚好构成11分量的时序矩阵。也就是说，<strong>11时序矩阵本质上是“拓扑态自身形变自由度 + 整体拓扑/规范自由度”的完整打包描述</strong>，其分量数由拓扑结构内生决定，完全符合零参数纲领，没有人为设定的自由参数。</p>
+<hr>
+<h2>六、总结与物理意义</h2>
+<p>本文用标准的微分几何与拓扑场论语言，为11T-Matrix体系建立了自洽的数学建模逻辑，核心结论可以归纳为三点：</p>
+<ol>
+<li><strong>三维时序的定位</strong>：它是描述拓扑态连续形变的数学参数空间，不是三重物理时间。可感知的3S1T表象时空是拓扑态的投影产物，观测时间只是观测者在参数空间中一维轨迹的标度，额外维度承载拓扑形变与全域相位，不进入表象因果链。</li>
+<li><strong>拓扑演化的光滑性</strong>：三维参数空间让拓扑态的演化转化为连续路径，从几何上绕开表象奇点，为黑洞拓扑根域、宇宙稳态循环提供了严格的数学支撑。</li>
+<li><strong>11分量的内生性</strong>：6个拓扑形变自由度加5个整体拓扑/规范自由度，自然构成11分量时序矩阵，所有自由度均由能量本体的拓扑结构内生，严格遵循零参数纲领。</li>
+</ol>
+<p>这套建模框架没有引入任何特设假设，只是用成熟的数学语言，将“能量一元、双态架构、全域关联、无奇点演化”等物理图像，转化为可推导、可检验的形式体系。它既完整保留了11时序矩阵的全部数学结论，又将物理意义准确锚定到能量本体的拓扑属性上，完全符合V2.0版四大公理基准，为后续的定量计算与观测检验奠定了基础。</p>
+<hr>
+<h2>附录：关键概念注释（适配本文拓扑与张量计算）</h2>
+<h3>注释1：拓扑不变量物理意义</h3>
+<p>拓扑不变量是刻画拓扑本体<strong>整体连通结构、扭转结构、孔洞结构</strong>的守恒量。拓扑体发生光滑拉伸、弯曲、连续形变时，拓扑不变量保持恒定；仅当拓扑发生撕裂、脆断、粘合等结构性重构时，拓扑不变量才会发生跳变。几何形变依赖度规，可连续变化；拓扑不变量度规无关，是体系本质拓扑类别的区分依据。本文中拓扑不变量用于区分不同拓扑相，解释三维时序参数空间如何规避一维表象时间的演化奇点。</p>
+<h3>注释2：对称度规张量独立分量计数原理</h3>
+<p>三维时序参数空间度规为对称二阶张量，满足对称性 $h_{ab}=h_{ba}$。<br>
+$n$ 维对称方阵总独立分量通用公式：<br>
+$$<br>
+\frac{n(n+1)}{2}<br>
+$$<br>
+对于三维时序空间 $n=3$：<br>
+总矩阵格点共 $9$ 个，但非对角元素两两对称、数值完全等价，存在重复计数。除以2是<strong>剔除对称冗余、统计真实独立自由度</strong>的标准操作，最终得到 $6$ 个独立时序几何分量，为11T-Matrix内生自由度来源之一。</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://shijianwei1969.github.io">11时序矩阵本体论原创史建威博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("2026-07-10"!=""){
+    var startSite=new Date("2026-07-10");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","shijianwei1969/shijianwei1969.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
